@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   { to: '/', icon: 'fa-home', label: '首页' },
   { to: '/blog', icon: 'fa-pen-fancy', label: '博客' },
   { to: '/toys', icon: 'fa-gamepad', label: '小玩具' },
+  { to: '/games', icon: 'fa-dice', label: '小游戏' },
   { to: '/docs', icon: 'fa-book', label: '文档' },
   { to: '/about', icon: 'fa-info-circle', label: '关于' },
 ]
@@ -47,13 +49,16 @@ export default function Navbar() {
             ))}
           </div>
 
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setMobileOpen(p => !p)}
-            aria-label="菜单"
-          >
-            <i className={`fas ${mobileOpen ? 'fa-times' : 'fa-bars'}`} />
-          </button>
+          <div className="nav-actions">
+            <ThemeToggle />
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setMobileOpen(p => !p)}
+              aria-label="菜单"
+            >
+              <i className={`fas ${mobileOpen ? 'fa-times' : 'fa-bars'}`} />
+            </button>
+          </div>
         </div>
       </nav>
       {mobileOpen && <div className="nav-overlay" onClick={() => setMobileOpen(false)} />}

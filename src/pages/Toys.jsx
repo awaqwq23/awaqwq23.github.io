@@ -1,14 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
-function useScrollReveal() {
-  const ref = useRef(null); const [show, setShow] = useState(false)
-  useEffect(() => {
-    const el = ref.current; if (!el) return
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setShow(true); obs.unobserve(el) } }, { threshold: 0.1 })
-    obs.observe(el); return () => obs.disconnect()
-  }, [])
-  return [ref, show]
-}
 function AS({ children, d = 0 }) {
   const [ref, show] = useScrollReveal()
   return <div ref={ref} className={`reveal${show ? ' visible' : ''}`} style={{ transitionDelay: `${d}s` }}>{children}</div>
@@ -16,11 +8,27 @@ function AS({ children, d = 0 }) {
 
 const toys = [
   {
+    name: '🎮 小游戏厅',
+    desc: '2048、贪吃蛇、扫雷、井字棋、打地鼠… 7 款纯浏览器小游戏，成绩本地保存，随点随玩！',
+    to: '/games',
+    bg: 'linear-gradient(135deg, #F59E0B, #EF4444)',
+    icon: 'fa-dice',
+    internal: true,
+  },
+  {
     name: '💓 Heartbeat',
     desc: '一个用来视奸我电脑在干什么的小玩具，copy from quq，her github：https://github.com/shenxianovo/Heartbeat',
     url: 'https://awaqwq233.com/heartbeat/',
     bg: 'linear-gradient(135deg, #667eea, #764ba2)',
     icon: 'fa-heart',
+  },
+  {
+    name: '🔖 资料收藏',
+    desc: '我的收藏夹、开发软件、AI 工具与娱乐导航合集，好东西都堆在这儿。',
+    to: '/docs',
+    bg: 'linear-gradient(135deg, #10B981, #059669)',
+    icon: 'fa-bookmark',
+    internal: true,
   },
   {
     name: '🎵 更多精彩',
@@ -65,6 +73,10 @@ export default function Toys() {
                   <span className="btn btn-sm btn-disabled">
                     <i className="fas fa-clock" /> 即将上线
                   </span>
+                ) : toy.internal ? (
+                  <Link to={toy.to} className="btn btn-sm btn-primary">
+                    <i className="fas fa-arrow-right" /> 进入
+                  </Link>
                 ) : toy.contact ? (
                   <a href={toy.url} className="btn btn-sm btn-primary">
                     <i className="fas fa-envelope" /> 联系我

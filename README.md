@@ -21,32 +21,58 @@
 
 - **Vite + React 18** — 现代前端框架
 - **React Router** — 客户端路由
-- **纯 CSS** — 零 UI 依赖，手写样式
+- **纯 CSS** — 零 UI 依赖，手写样式，支持 🌙 深色 / ☀️ 浅色主题
 - **Font Awesome** — 图标库
 - **Google Fonts (Inter)** — 字体
 - **GitHub Actions** — 自动构建部署
 - **GitHub Pages** — 免费托管
 
+## ✨ 功能亮点
+
+- 🌗 **深色模式** — 跟随系统或手动切换，无刷新闪烁，记忆偏好
+- 🎮 **小游戏厅** — 7 款纯浏览器小游戏，成绩本地保存：
+  2048 · 贪吃蛇 · 记忆翻牌 · 扫雷 · 井字棋（不败 AI）· 反应测试 · 打地鼠
+- 🔖 **资料收藏** — 收藏夹 / 开发软件 / AI 工具 / 工具软件 / 图片生成 / 娱乐导航，支持搜索
+- 📝 **博客系统** — 分类筛选 + 日期排序 + 标签
+- 🎯 **首页数据墙** — 滚动触发的数字滚动动画
+- ⬆️ **回到顶部** — 带滚动进度环
+- 🚫 **404 页面** — 走丢也不怕
+
 ## 站点结构
 
 ```
-├── index.html                 # Vite 入口
+├── index.html                 # Vite 入口 (含无闪烁主题初始化脚本)
 ├── src/
 │   ├── main.jsx               # React 入口
-│   ├── App.jsx                # 路由 & 布局
-│   ├── App.css                # 全局样式 (深海蓝主题)
+│   ├── App.jsx                # 路由 & 布局 & 404
+│   ├── App.css                # 全局样式 (深海蓝主题 + 深色模式)
+│   ├── hooks/
+│   │   ├── useTheme.js        # 深浅色主题切换
+│   │   └── useScrollReveal.js # 滚动淡入动画
 │   ├── components/
-│   │   ├── Navbar.jsx         # 顶部导航栏
+│   │   ├── Navbar.jsx         # 顶部导航栏 + 主题开关
 │   │   ├── Footer.jsx         # 页脚
-│   │   └── PostCard.jsx       # 博客文章卡片
+│   │   ├── PostCard.jsx       # 博客文章卡片
+│   │   ├── ThemeToggle.jsx    # 🌙/☀️ 主题切换按钮
+│   │   └── BackToTop.jsx      # 回到顶部按钮 (带进度环)
+│   ├── games/                 # 🎮 小游戏组件
+│   │   ├── Game2048.jsx       # 2048
+│   │   ├── Snake.jsx          # 贪吃蛇
+│   │   ├── Memory.jsx         # 记忆翻牌
+│   │   ├── Minesweeper.jsx    # 扫雷
+│   │   ├── TicTacToe.jsx      # 井字棋 (minimax 不败 AI)
+│   │   ├── ReactionTest.jsx   # 反应测试
+│   │   └── WhackAMole.jsx     # 打地鼠
 │   └── pages/
-│       ├── Home.jsx           # 首页 — 动态渐变 Hero + 导航卡片 + 最新文章
+│       ├── Home.jsx           # 首页 — 动态渐变 Hero + 数据墙 + 导航卡片 + 最新文章
 │       ├── Blog.jsx           # 博客列表 — 分类筛选 + 日期排序
-│       ├── Toys.jsx           # 小玩具 — 外部项目链接
+│       ├── Toys.jsx           # 小玩具 — 项目 / 游戏 / 资料入口
+│       ├── Games.jsx          # 小游戏厅 — 7 款小游戏
+│       ├── Docs.jsx           # 资料 — 6 大模块导航 + 搜索
 │       └── About.jsx          # 关于我 — 个人简介 + 技能 + 时间线
 ├── public/
-│   └── blog/
-│       └── posts/             # 静态博客文章 (HTML + index.json)
+│   ├── blog/posts/            # 静态博客文章 (HTML + index.json)
+│   └── materials/             # 资料页数据 (收藏夹 / 开发软件 / AI / 工具 / 图片 / 娱乐)
 ├── .github/workflows/deploy.yml  # GitHub Actions 自动部署
 └── README.md
 ```

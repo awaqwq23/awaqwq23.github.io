@@ -39,20 +39,60 @@ const features = [
     desc: '记录技术笔记、生活随想和项目心得。支持按分类和日期浏览。',
   },
   {
+    to: '/games',
+    icon: 'fa-dice',
+    bg: 'linear-gradient(135deg, #F59E0B, #EF4444)',
+    title: '🎮 小游戏厅',
+    desc: '2048、贪吃蛇、扫雷、井字棋… 7 款纯浏览器小游戏，随点随玩。',
+  },
+  {
     to: '/toys',
     icon: 'fa-gamepad',
     bg: 'linear-gradient(135deg, #8B5CF6, #6D28D9)',
-    title: '🎮 小玩具',
+    title: '🧸 小玩具',
     desc: '各种有趣的小项目和在线工具，部署在不同的服务器上，随时来玩。',
+  },
+  {
+    to: '/docs',
+    icon: 'fa-book',
+    bg: 'linear-gradient(135deg, #10B981, #059669)',
+    title: '🔖 资料收藏',
+    desc: '收藏夹、开发软件、AI 工具与娱乐导航，好东西都在这里。',
   },
   {
     to: '/about',
     icon: 'fa-user',
     bg: 'linear-gradient(135deg, #06B6D4, #0891B2)',
     title: '👤 关于我',
-    desc: '了解关于 awapwq233 的更多信息，包括经历、兴趣和联系方式。',
+    desc: '了解关于 awaqwq233 的更多信息，包括经历、兴趣和联系方式。',
   },
 ]
+
+const stats = [
+  { icon: 'fa-dice', value: 7, suffix: '', label: '款小游戏' },
+  { icon: 'fa-bookmark', value: 260, suffix: '+', label: '条收藏' },
+  { icon: 'fa-pen-fancy', value: 3, suffix: '', label: '篇文章' },
+  { icon: 'fa-mug-hot', value: 2026, suffix: '', label: '一直在折腾' },
+]
+
+function CountUp({ end, suffix = '', duration = 1400 }) {
+  const [val, setVal] = useState(0)
+  const [ref, show] = useScrollReveal()
+  useEffect(() => {
+    if (!show) return
+    let raf
+    const t0 = performance.now()
+    const tick = (now) => {
+      const p = Math.min((now - t0) / duration, 1)
+      const eased = 1 - Math.pow(1 - p, 3)
+      setVal(Math.round(end * eased))
+      if (p < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [show, end, duration])
+  return <span ref={ref}>{val}{suffix}</span>
+}
 
 export default function Home() {
   const [posts, setPosts] = useState([])
@@ -94,6 +134,21 @@ export default function Home() {
               <i className="fas fa-rocket" /> 逛逛玩具
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ====== Stats ====== */}
+      <section className="stats-section">
+        <div className="stats-band">
+          {stats.map((s, i) => (
+            <AnimatedSection key={s.label} delay={i * 0.08}>
+              <div className="stat-item">
+                <i className={`fas ${s.icon}`} />
+                <div className="stat-num"><CountUp end={s.value} suffix={s.suffix} /></div>
+                <div className="stat-label">{s.label}</div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
       </section>
 

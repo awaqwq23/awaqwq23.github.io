@@ -1,0 +1,33 @@
+[
+  {
+    "category": "AI 生图",
+    "icon": "fa-wand-magic-sparkles",
+    "items": [
+      { "name": "Midjourney", "desc": "画质天花板级的 AI 绘画，出图质感极强", "url": "https://www.midjourney.com/" },
+      { "name": "Stable Diffusion", "desc": "开源可本地部署的生图模型，玩法自由度最高", "url": "https://stability.ai/" },
+      { "name": "DALL·E 3", "desc": "OpenAI 生图模型，对提示词理解精准", "url": "https://openai.com/dall-e-3" },
+      { "name": "即梦 AI", "desc": "字节出品的中文 AI 创作平台，图片与视频都能生成", "url": "https://jimeng.jianying.com/" },
+      { "name": "Leonardo AI", "desc": "面向游戏与美术素材的生图平台", "url": "https://leonardo.ai/" }
+    ]
+  },
+  {
+    "category": "图片处理 / 抠图",
+    "icon": "fa-scissors",
+    "items": [
+      { "name": "remove.bg", "desc": "一键 AI 抠图去背景", "url": "https://www.remove.bg/zh" },
+      { "name": "Cleanup.pictures", "desc": "涂抹即可智能移除图片里多余的物体", "url": "https://cleanup.pictures/" },
+      { "name": "Upscayl", "desc": "开源 AI 图片无损放大工具", "url": "https://upscayl.org/" },
+      { "name": "Photopea", "desc": "浏览器里的免费在线 PS，兼容 psd", "url": "https://www.photopea.com/" }
+    ]
+  },
+  {
+    "category": "设计 / 素材",
+    "icon": "fa-palette",
+    "items": [
+      { "name": "Figma", "desc": "业界主流的在线 UI 设计与协作工具", "url": "https://www.figma.com/" },
+      { "name": "Canva", "desc": "海量模板的傻瓜式在线设计，做海报很快", "url": "https://www.canva.cn/" },
+      { "name": "Unsplash", "desc": "高质量免费可商用图库", "url": "https://unsplash.com/" },
+      { "name": "IconPark", "desc": "字节开源的多风格矢量图标库", "url": "https://iconpark.oceanengine.com/" }
+    ]
+  }
+]

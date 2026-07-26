@@ -1,0 +1,42 @@
+[
+  {
+    "category": "系统 / 效率",
+    "icon": "fa-bolt",
+    "items": [
+      { "name": "PowerToys", "desc": "微软官方的 Windows 增强套件，窗口管理、批量改名、取色等", "url": "https://learn.microsoft.com/zh-cn/windows/powertoys/" },
+      { "name": "Everything", "desc": "秒搜全盘文件，Windows 本地搜索神器", "url": "https://www.voidtools.com/zh-cn/" },
+      { "name": "Snipaste", "desc": "强大的截图 + 贴图工具，取色标注一步到位", "url": "https://www.snipaste.com/" },
+      { "name": "uTools", "desc": "可插件扩展的效率启动器，一个搜索框搞定一切", "url": "https://u.tools/" },
+      { "name": "7-Zip", "desc": "免费开源的高压缩率解压缩软件", "url": "https://www.7-zip.org/" }
+    ]
+  },
+  {
+    "category": "下载 / 网络",
+    "icon": "fa-download",
+    "items": [
+      { "name": "IDM", "desc": "老牌多线程下载器，提速明显", "url": "https://www.internetdownloadmanager.com/" },
+      { "name": "qBittorrent", "desc": "干净无广告的开源 BT 下载工具", "url": "https://www.qbittorrent.org/" },
+      { "name": "Motrix", "desc": "颜值在线的全能下载器，支持 HTTP/BT/磁力", "url": "https://motrix.app/" }
+    ]
+  },
+  {
+    "category": "媒体 / 图像",
+    "icon": "fa-photo-film",
+    "items": [
+      { "name": "PotPlayer", "desc": "功能强大的本地视频播放器", "url": "https://potplayer.daum.net/" },
+      { "name": "IrfanView", "desc": "轻量极速的看图与批处理工具", "url": "https://www.irfanview.com/" },
+      { "name": "HandBrake", "desc": "开源视频转码压制利器", "url": "https://handbrake.fr/" },
+      { "name": "OBS Studio", "desc": "免费开源的直播与录屏软件", "url": "https://obsproject.com/zh-cn" }
+    ]
+  },
+  {
+    "category": "在线小工具",
+    "icon": "fa-wrench",
+    "items": [
+      { "name": "TinyPNG", "desc": "在线图片智能压缩，肉眼几乎无损", "url": "https://tinypng.com/" },
+      { "name": "Squoosh", "desc": "Google 出品的本地图片压缩转换工具", "url": "https://squoosh.app/" },
+      { "name": "JSON 格式化", "desc": "在线校验、格式化、压缩 JSON", "url": "https://www.json.cn/" },
+      { "name": "Carbon", "desc": "把代码片段变成好看的分享图", "url": "https://carbon.now.sh/" }
+    ]
+  }
+]

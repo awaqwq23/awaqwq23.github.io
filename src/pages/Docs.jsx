@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 
 function useScrollReveal() {
   const ref = useRef(null); const [show, setShow] = useState(false)
@@ -34,34 +35,34 @@ const MODULES = [
   {
     id: 'ai',
     name: 'AI 工具',
-    desc: '占位 —— 等 awa 来填一些好用的 AI 工具跳转',
+    desc: '对话大模型、编程助手、AI 写作与音乐等常用入口',
     icon: 'fa-robot',
     bg: 'linear-gradient(135deg, #fc466b, #3f5efb)',
-    placeholder: true,
+    json: '/materials/ai-tools.json',
   },
   {
     id: 'tools',
     name: '工具软件',
-    desc: '占位 —— 等 awa 来填一些常用的本地工具下载',
+    desc: '效率、下载、媒体处理与在线小工具合集',
     icon: 'fa-toolbox',
     bg: 'linear-gradient(135deg, #f093fb, #f5576c)',
-    placeholder: true,
+    json: '/materials/tools.json',
   },
   {
     id: 'image',
     name: '图片生成',
-    desc: '占位 —— 等 awa 来填一些 AI 生图 / 图片处理网站',
+    desc: 'AI 生图、抠图放大与设计素材站',
     icon: 'fa-image',
     bg: 'linear-gradient(135deg, #fa709a, #fee140)',
-    placeholder: true,
+    json: '/materials/image-tools.json',
   },
   {
     id: 'fun',
     name: '其他娱乐',
-    desc: '占位 —— 等 awa 来填一些摸鱼 / 娱乐相关网站',
+    desc: '追番、游戏、音乐电台与好玩的网站',
     icon: 'fa-gamepad',
     bg: 'linear-gradient(135deg, #4facfe, #00f2fe)',
-    placeholder: true,
+    json: '/materials/fun.json',
   },
 ]
 
@@ -102,6 +103,10 @@ export default function Docs() {
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
   const topRef = useRef(null)
+  const location = useLocation()
+
+  // 点击导航栏"文档"时回到资料首页
+  useEffect(() => { setActiveModule(null); setSearch('') }, [location.key])
 
   useEffect(() => {
     if (!activeModule) { setData(null); return }

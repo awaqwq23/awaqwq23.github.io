@@ -1,0 +1,41 @@
+[
+  {
+    "category": "对话 / 大模型",
+    "icon": "fa-comments",
+    "items": [
+      { "name": "ChatGPT", "desc": "OpenAI 出品，最出圈的对话式 AI，写代码、写文案、答疑样样行", "url": "https://chat.openai.com/" },
+      { "name": "Claude", "desc": "Anthropic 出品，超长上下文、写作与代码能力极强，本站也靠它搭建喵", "url": "https://claude.ai/" },
+      { "name": "Gemini", "desc": "Google 的多模态大模型，深度整合搜索与 Workspace", "url": "https://gemini.google.com/" },
+      { "name": "DeepSeek", "desc": "国产开源强模型，推理与代码能力出色，价格友好", "url": "https://chat.deepseek.com/" },
+      { "name": "通义千问", "desc": "阿里出品的中文大模型，办公与文档场景好用", "url": "https://tongyi.aliyun.com/" },
+      { "name": "Kimi", "desc": "月之暗面出品，超长文本阅读理解一绝", "url": "https://kimi.moonshot.cn/" }
+    ]
+  },
+  {
+    "category": "编程 / 开发助手",
+    "icon": "fa-code",
+    "items": [
+      { "name": "GitHub Copilot", "desc": "编辑器里的 AI 结对编程，边写边补全", "url": "https://github.com/features/copilot" },
+      { "name": "Cursor", "desc": "内置 AI 的代码编辑器，可以直接对整个仓库对话改代码", "url": "https://cursor.com/" },
+      { "name": "Claude Code", "desc": "终端里的 AI 编程 Agent，能读写文件、跑命令、提 PR", "url": "https://www.claude.com/product/claude-code" },
+      { "name": "v0", "desc": "Vercel 出品，用一句话生成 React + Tailwind 界面", "url": "https://v0.dev/" }
+    ]
+  },
+  {
+    "category": "写作 / 效率",
+    "icon": "fa-pen-nib",
+    "items": [
+      { "name": "Notion AI", "desc": "笔记里内建的 AI，总结、续写、翻译一键搞定", "url": "https://www.notion.so/product/ai" },
+      { "name": "Perplexity", "desc": "带引用来源的 AI 搜索引擎，查资料很靠谱", "url": "https://www.perplexity.ai/" },
+      { "name": "Grammarly", "desc": "英文写作语法与润色助手", "url": "https://www.grammarly.com/" }
+    ]
+  },
+  {
+    "category": "语音 / 音乐",
+    "icon": "fa-music",
+    "items": [
+      { "name": "Suno", "desc": "输入歌词与风格，一键生成完整歌曲", "url": "https://suno.com/" },
+      { "name": "ElevenLabs", "desc": "极其自然的 AI 语音合成与声音克隆", "url": "https://elevenlabs.io/" }
+    ]
+  }
+]
