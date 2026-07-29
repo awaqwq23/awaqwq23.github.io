@@ -35,7 +35,7 @@ try {
 
   & $git.Source push origin HEAD
   if ($LASTEXITCODE -ne 0) { throw '自动推送失败，请检查网络或远端是否有新提交' }
-  Write-Output '每日收藏夹与音乐数据已同步并推送。'
+  Write-Output '本周收藏夹与音乐数据已同步并推送。'
 }
 finally {
   Stop-Transcript | Out-Null

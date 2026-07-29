@@ -19,7 +19,7 @@ const MODULES = [
   {
     id: 'favorites',
     name: '我的收藏夹',
-    desc: '每天从 Microsoft Edge 自动同步，分类、搜索与原链接完整保留',
+    desc: '每周从 Microsoft Edge 自动同步，分类、搜索与原链接完整保留',
     icon: 'fa-bookmark',
     bg: 'linear-gradient(135deg, #667eea, #764ba2)',
     json: '/materials/favorites.json',

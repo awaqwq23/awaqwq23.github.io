@@ -11,7 +11,7 @@ if (-not (Test-Path -LiteralPath $syncScript)) {
 $action = New-ScheduledTaskAction `
   -Execute 'powershell.exe' `
   -Argument "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$syncScript`""
-$trigger = New-ScheduledTaskTrigger -Daily -At '09:00'
+$trigger = New-ScheduledTaskTrigger -Weekly -WeeksInterval 1 -DaysOfWeek Monday -At '09:00'
 $principal = New-ScheduledTaskPrincipal -UserId $userId -LogonType Interactive -RunLevel Limited
 $settings = New-ScheduledTaskSettingsSet `
   -StartWhenAvailable `
@@ -25,7 +25,7 @@ Register-ScheduledTask `
   -Trigger $trigger `
   -Principal $principal `
   -Settings $settings `
-  -Description '每天同步 Edge 收藏夹与网易云音乐到 awaqwq233.github.io，并推送 GitHub。' `
+  -Description '每周一同步 Edge 收藏夹与网易云音乐到 awaqwq233.github.io，并推送 GitHub。' `
   -Force | Out-Null
 
-Write-Output "每日同步任务已启用：$taskName（每天 09:00，错过后尽快补跑）"
+Write-Output "每周同步任务已启用：$taskName（每周一 09:00，错过后尽快补跑）"
