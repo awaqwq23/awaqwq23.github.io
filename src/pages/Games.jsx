@@ -8,6 +8,7 @@ import Minesweeper from '../games/Minesweeper'
 import TicTacToe from '../games/TicTacToe'
 import ReactionTest from '../games/ReactionTest'
 import WhackAMole from '../games/WhackAMole'
+import AIWorldBreakout from '../games/AIWorldBreakout'
 
 function AS({ children, d = 0 }) {
   const [ref, show] = useScrollReveal(0.05)
@@ -15,6 +16,7 @@ function AS({ children, d = 0 }) {
 }
 
 const GAMES = [
+  { id: 'ai-breakout', name: 'AI 统治世界', emoji: '◎', desc: '选择 AI 挡板，击碎传统科技公司', tag: '新作', bg: 'linear-gradient(135deg, #07111f, #0e7490 55%, #10a37f)', Comp: AIWorldBreakout },
   { id: '2048', name: '2048', emoji: '🔢', desc: '滑动合并数字，冲击 2048 方块', tag: '益智', bg: 'linear-gradient(135deg, #667eea, #764ba2)', Comp: Game2048 },
   { id: 'snake', name: '贪吃蛇', emoji: '🐍', desc: '经典贪吃蛇，越吃越快越长', tag: '街机', bg: 'linear-gradient(135deg, #11998e, #38ef7d)', Comp: Snake },
   { id: 'memory', name: '记忆翻牌', emoji: '🃏', desc: '翻开相同图案配对消除', tag: '记忆', bg: 'linear-gradient(135deg, #fc466b, #3f5efb)', Comp: Memory },

@@ -1,0 +1,464 @@
+{
+  "syncedAt": "2026-07-29T00:36:40+08:00",
+  "source": "网易云音乐本地曲库",
+  "profileUrl": "https://music.163.com/#/user/home?id=2095542575",
+  "categories": [
+    {
+      "id": "favorites",
+      "name": "收藏的歌",
+      "icon": "fa-heart",
+      "color": "#ec4141",
+      "playlistIds": [
+        "3166050812"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=3166050812",
+      "total": 712,
+      "cached": 28,
+      "emptyHint": "先在网易云打开红心歌单，下一次同步会自动补齐本地缓存曲目。",
+      "items": [
+        {
+          "id": "2664045219",
+          "name": "ミッドナイト・リフレクション",
+          "artist": "NOMELON NOLEMON",
+          "album": "ミッドナイト・リフレクション",
+          "cover": "https://p4.music.126.net/N1f3BByBpfdSUjFMgXRXnA==/109951170359994351.jpg",
+          "url": "https://music.163.com/#/song?id=2664045219"
+        },
+        {
+          "id": "2008987398",
+          "name": "Baby you",
+          "artist": "有華",
+          "album": "Baby you",
+          "cover": "https://p3.music.126.net/zSxhW8KU8yUjmOnwjlS1fg==/109951168171131557.jpg",
+          "url": "https://music.163.com/#/song?id=2008987398"
+        },
+        {
+          "id": "1499313762",
+          "name": "ドーナドーナのうた",
+          "artist": "月乃",
+          "album": "アリスサウンドアルバムVol.33 ドーナドーナ いっしょにわるいことをしよう (オリジナル・サウンドトラック)",
+          "cover": "https://p4.music.126.net/U1FL0detk4kXvnclCkaJfg==/109951172661624241.jpg",
+          "url": "https://music.163.com/#/song?id=1499313762"
+        },
+        {
+          "id": "29460679",
+          "name": "Best of my Love",
+          "artist": "安田レイ",
+          "album": "Will",
+          "cover": "https://p4.music.126.net/1T0xbrsvV5i_Dm-4Mf47og==/109951169205493933.jpg",
+          "url": "https://music.163.com/#/song?id=29460679"
+        },
+        {
+          "id": "2020880853",
+          "name": "Dye the sky. -25 colors-",
+          "artist": "シャイニーカラーズ",
+          "album": "THE IDOLM@STER SHINY COLORS WING COLLECTION -B side-",
+          "cover": "https://p3.music.126.net/tM1S4-q5Tt2cYUs0LTrcrw==/109951170278147013.jpg",
+          "url": "https://music.163.com/#/song?id=2020880853"
+        },
+        {
+          "id": "1896176735",
+          "name": "a.m.3:21",
+          "artist": "yama",
+          "album": "a.m.3:21",
+          "cover": "https://p3.music.126.net/jupOhGTh2KgISq9UgS8_AQ==/109951166635874986.jpg",
+          "url": "https://music.163.com/#/song?id=1896176735"
+        },
+        {
+          "id": "2036894489",
+          "name": "Cupid - Twin Ver. (FIFTY FIFTY) (Sped Up Version)",
+          "artist": "FIFTY FIFTY",
+          "album": "Cupid - Twin Ver. (FIFTY FIFTY) (Sped Up Version)",
+          "cover": "https://p3.music.126.net/jRzYe5V3sm42dqMvCao3sA==/109951172244034492.jpg",
+          "url": "https://music.163.com/#/song?id=2036894489"
+        },
+        {
+          "id": "1826139261",
+          "name": "グッバイ宣言",
+          "artist": "Chinozo",
+          "album": "グッバイ宣言",
+          "cover": "https://p3.music.126.net/Z1AFIihesYf82qg1T6Mspg==/109951165791544099.jpg",
+          "url": "https://music.163.com/#/song?id=1826139261"
+        },
+        {
+          "id": "2624523918",
+          "name": "惑う星",
+          "artist": "結束バンド",
+          "album": "We will",
+          "cover": "https://p3.music.126.net/0OOsOCEGPGS90fkD_5oNBQ==/109951169937993245.jpg",
+          "url": "https://music.163.com/#/song?id=2624523918"
+        },
+        {
+          "id": "2003496927",
+          "name": "フラッシュバッカー",
+          "artist": "結束バンド",
+          "album": "結束バンド",
+          "cover": "https://p4.music.126.net/dqzbrDjhtm4p9zoeCAGByA==/109951168110209473.jpg",
+          "url": "https://music.163.com/#/song?id=2003496927"
+        },
+        {
+          "id": "2057223791",
+          "name": "TOMATO",
+          "artist": "7co",
+          "album": "TOMATO",
+          "cover": "https://p4.music.126.net/hNCfYxmXnMRkuOh2yR5TMw==/109951170165177009.jpg",
+          "url": "https://music.163.com/#/song?id=2057223791"
+        },
+        {
+          "id": "692193",
+          "name": "永夜のパレード",
+          "artist": "JUMA / ケーキ姫☆優海",
+          "album": "幻想遊園郷 ～Fantastic Park～",
+          "cover": "https://p4.music.126.net/_0EPPAiKLQqddTZ5eKSqBw==/109951163136011717.jpg",
+          "url": "https://music.163.com/#/song?id=692193"
+        },
+        {
+          "id": "1428275780",
+          "name": "やっぱり雨は降るんだね",
+          "artist": "ツユ",
+          "album": "やっぱり雨は降るんだね",
+          "cover": "https://p4.music.126.net/W2d7V9bQYnZmSC56Zk2U8w==/109951165779434460.jpg",
+          "url": "https://music.163.com/#/song?id=1428275780"
+        },
+        {
+          "id": "2082330819",
+          "name": "言っちゃいけないことばっか浮かぶよな",
+          "artist": "Guiano / 理芽",
+          "album": "imagine",
+          "cover": "https://p4.music.126.net/k6sJsG30rdYmRkfN8Z6lZA==/109951168916555109.jpg",
+          "url": "https://music.163.com/#/song?id=2082330819"
+        },
+        {
+          "id": "1487501535",
+          "name": "春夢",
+          "artist": "May'n",
+          "album": "15Colors -nu skool-",
+          "cover": "https://p4.music.126.net/jkNWazF_oTmiNqh_18EDww==/109951170165166068.jpg",
+          "url": "https://music.163.com/#/song?id=1487501535"
+        },
+        {
+          "id": "1369723738",
+          "name": "勘冴えて悔しいわ",
+          "artist": "ずっと真夜中でいいのに。",
+          "album": "今は今で誓いは笑みで",
+          "cover": "https://p3.music.126.net/qS7T-BkUtHdf1iumCp-QHg==/109951171178944596.jpg",
+          "url": "https://music.163.com/#/song?id=1369723738"
+        },
+        {
+          "id": "1870469768",
+          "name": "老人と海",
+          "artist": "ヨルシカ",
+          "album": "老人と海",
+          "cover": "https://p3.music.126.net/5aHcGADR5i6biE5TSqf_aQ==/109951166295171725.jpg",
+          "url": "https://music.163.com/#/song?id=1870469768"
+        },
+        {
+          "id": "441491410",
+          "name": "Wild",
+          "artist": "Monogem",
+          "album": "Wild",
+          "cover": "https://p3.music.126.net/EMpuz8Uw5ZhsiWSAbxGZWg==/109951173628289557.jpg",
+          "url": "https://music.163.com/#/song?id=441491410"
+        },
+        {
+          "id": "531786301",
+          "name": "summertime",
+          "artist": "cinnamons / evening cinema",
+          "album": "summertime",
+          "cover": "https://p4.music.126.net/nyB2oIWz_4PLS_HXnVMfLw==/109951170986869056.jpg",
+          "url": "https://music.163.com/#/song?id=531786301"
+        },
+        {
+          "id": "1984758339",
+          "name": "すずめ feat.十明",
+          "artist": "RADWIMPS / 十明",
+          "album": "すずめ feat.十明",
+          "cover": "https://p4.music.126.net/jHIFF-TBXfG3hbh4IOnudQ==/109951167911814845.jpg",
+          "url": "https://music.163.com/#/song?id=1984758339"
+        },
+        {
+          "id": "459159104",
+          "name": "刚好遇见你",
+          "artist": "李玉刚",
+          "album": "2017年中央电视台元宵晚会",
+          "cover": "https://p3.music.126.net/jccKWY2Eze3r9VmXTP2qxw==/18721384487924169.jpg",
+          "url": "https://music.163.com/#/song?id=459159104"
+        },
+        {
+          "id": "1344897943",
+          "name": "你是人间四月天",
+          "artist": "邵帅",
+          "album": "你是人间四月天",
+          "cover": "https://p4.music.126.net/kQJQD58WkmQneTneOYe22A==/109951164252455813.jpg",
+          "url": "https://music.163.com/#/song?id=1344897943"
+        },
+        {
+          "id": "2011122001",
+          "name": "东西",
+          "artist": "林俊呈",
+          "album": "东西 东西 林俊呈 （抖音版）",
+          "cover": "https://p4.music.126.net/Hp6g1i2T-MobpDEIU9j0yQ==/109951168200005609.jpg",
+          "url": "https://music.163.com/#/song?id=2011122001"
+        },
+        {
+          "id": "2142857204",
+          "name": "雑踏、僕らの街",
+          "artist": "トゲナシトゲアリ",
+          "album": "雑踏、僕らの街",
+          "cover": "https://p3.music.126.net/WZCpLIj7c9hxL8CHSthviA==/109951169472322801.jpg",
+          "url": "https://music.163.com/#/song?id=2142857204"
+        },
+        {
+          "id": "1360592706",
+          "name": "紅蓮華",
+          "artist": "LiSA",
+          "album": "紅蓮華",
+          "cover": "https://p3.music.126.net/90cd-XI5j0XlCSA4anuJMA==/109951166199033558.jpg",
+          "url": "https://music.163.com/#/song?id=1360592706"
+        },
+        {
+          "id": "1991012773",
+          "name": "ギターと孤独と蒼い惑星",
+          "artist": "結束バンド",
+          "album": "ギターと孤独と蒼い惑星",
+          "cover": "https://p3.music.126.net/rfstzrVK05hCPjU-4mzSFA==/109951167983448236.jpg",
+          "url": "https://music.163.com/#/song?id=1991012773"
+        },
+        {
+          "id": "432698441",
+          "name": "All We Know",
+          "artist": "The Chainsmokers / Phoebe Ryan",
+          "album": "All We Know",
+          "cover": "https://p3.music.126.net/Brb_siU1rT3eBqsk1LsrOg==/109951170372861476.jpg",
+          "url": "https://music.163.com/#/song?id=432698441"
+        },
+        {
+          "id": "1873321491",
+          "name": "Wake (Live)",
+          "artist": "Hillsong Young & Free",
+          "album": "Wake",
+          "cover": "https://p3.music.126.net/Uo7OXdK3g4LQdc2hzJ14qQ==/109951166328143737.jpg",
+          "url": "https://music.163.com/#/song?id=1873321491"
+        }
+      ]
+    },
+    {
+      "id": "recommended",
+      "name": "我推荐的歌",
+      "icon": "fa-thumbs-up",
+      "color": "#8b5cf6",
+      "playlistIds": [
+        "14160602286",
+        "7080378497"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=14160602286",
+      "total": 14,
+      "cached": 0,
+      "emptyHint": "已识别“真正喜欢的歌 / 好听”歌单；在网易云打开歌单后会同步曲目明细。",
+      "items": []
+    },
+    {
+      "id": "learning",
+      "name": "我想学的歌",
+      "icon": "fa-graduation-cap",
+      "color": "#f59e0b",
+      "playlistIds": [
+        "14111301255"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=14111301255",
+      "total": 22,
+      "cached": 22,
+      "emptyHint": "创建或打开名为“想学的歌”的网易云歌单后会自动同步。",
+      "items": [
+        {
+          "id": "2664045219",
+          "name": "ミッドナイト・リフレクション",
+          "artist": "NOMELON NOLEMON",
+          "album": "ミッドナイト・リフレクション",
+          "cover": "https://p4.music.126.net/N1f3BByBpfdSUjFMgXRXnA==/109951170359994351.jpg",
+          "url": "https://music.163.com/#/song?id=2664045219"
+        },
+        {
+          "id": "2008987398",
+          "name": "Baby you",
+          "artist": "有華",
+          "album": "Baby you",
+          "cover": "https://p3.music.126.net/zSxhW8KU8yUjmOnwjlS1fg==/109951168171131557.jpg",
+          "url": "https://music.163.com/#/song?id=2008987398"
+        },
+        {
+          "id": "1487501535",
+          "name": "春夢",
+          "artist": "May'n",
+          "album": "15Colors -nu skool-",
+          "cover": "https://p4.music.126.net/jkNWazF_oTmiNqh_18EDww==/109951170165166068.jpg",
+          "url": "https://music.163.com/#/song?id=1487501535"
+        },
+        {
+          "id": "2624523918",
+          "name": "惑う星",
+          "artist": "結束バンド",
+          "album": "We will",
+          "cover": "https://p3.music.126.net/0OOsOCEGPGS90fkD_5oNBQ==/109951169937993245.jpg",
+          "url": "https://music.163.com/#/song?id=2624523918"
+        },
+        {
+          "id": "1984758339",
+          "name": "すずめ feat.十明",
+          "artist": "RADWIMPS / 十明",
+          "album": "すずめ feat.十明",
+          "cover": "https://p4.music.126.net/jHIFF-TBXfG3hbh4IOnudQ==/109951167911814845.jpg",
+          "url": "https://music.163.com/#/song?id=1984758339"
+        },
+        {
+          "id": "692193",
+          "name": "永夜のパレード",
+          "artist": "JUMA / ケーキ姫☆優海",
+          "album": "幻想遊園郷 ～Fantastic Park～",
+          "cover": "https://p4.music.126.net/_0EPPAiKLQqddTZ5eKSqBw==/109951163136011717.jpg",
+          "url": "https://music.163.com/#/song?id=692193"
+        },
+        {
+          "id": "1369723738",
+          "name": "勘冴えて悔しいわ",
+          "artist": "ずっと真夜中でいいのに。",
+          "album": "今は今で誓いは笑みで",
+          "cover": "https://p3.music.126.net/qS7T-BkUtHdf1iumCp-QHg==/109951171178944596.jpg",
+          "url": "https://music.163.com/#/song?id=1369723738"
+        },
+        {
+          "id": "2082330819",
+          "name": "言っちゃいけないことばっか浮かぶよな",
+          "artist": "Guiano / 理芽",
+          "album": "imagine",
+          "cover": "https://p4.music.126.net/k6sJsG30rdYmRkfN8Z6lZA==/109951168916555109.jpg",
+          "url": "https://music.163.com/#/song?id=2082330819"
+        },
+        {
+          "id": "1428275780",
+          "name": "やっぱり雨は降るんだね",
+          "artist": "ツユ",
+          "album": "やっぱり雨は降るんだね",
+          "cover": "https://p4.music.126.net/W2d7V9bQYnZmSC56Zk2U8w==/109951165779434460.jpg",
+          "url": "https://music.163.com/#/song?id=1428275780"
+        },
+        {
+          "id": "2057223791",
+          "name": "TOMATO",
+          "artist": "7co",
+          "album": "TOMATO",
+          "cover": "https://p4.music.126.net/hNCfYxmXnMRkuOh2yR5TMw==/109951170165177009.jpg",
+          "url": "https://music.163.com/#/song?id=2057223791"
+        },
+        {
+          "id": "1826139261",
+          "name": "グッバイ宣言",
+          "artist": "Chinozo",
+          "album": "グッバイ宣言",
+          "cover": "https://p3.music.126.net/Z1AFIihesYf82qg1T6Mspg==/109951165791544099.jpg",
+          "url": "https://music.163.com/#/song?id=1826139261"
+        },
+        {
+          "id": "1896176735",
+          "name": "a.m.3:21",
+          "artist": "yama",
+          "album": "a.m.3:21",
+          "cover": "https://p3.music.126.net/jupOhGTh2KgISq9UgS8_AQ==/109951166635874986.jpg",
+          "url": "https://music.163.com/#/song?id=1896176735"
+        },
+        {
+          "id": "1870469768",
+          "name": "老人と海",
+          "artist": "ヨルシカ",
+          "album": "老人と海",
+          "cover": "https://p3.music.126.net/5aHcGADR5i6biE5TSqf_aQ==/109951166295171725.jpg",
+          "url": "https://music.163.com/#/song?id=1870469768"
+        },
+        {
+          "id": "2142857204",
+          "name": "雑踏、僕らの街",
+          "artist": "トゲナシトゲアリ",
+          "album": "雑踏、僕らの街",
+          "cover": "https://p3.music.126.net/WZCpLIj7c9hxL8CHSthviA==/109951169472322801.jpg",
+          "url": "https://music.163.com/#/song?id=2142857204"
+        },
+        {
+          "id": "1991012773",
+          "name": "ギターと孤独と蒼い惑星",
+          "artist": "結束バンド",
+          "album": "ギターと孤独と蒼い惑星",
+          "cover": "https://p3.music.126.net/rfstzrVK05hCPjU-4mzSFA==/109951167983448236.jpg",
+          "url": "https://music.163.com/#/song?id=1991012773"
+        },
+        {
+          "id": "432698441",
+          "name": "All We Know",
+          "artist": "The Chainsmokers / Phoebe Ryan",
+          "album": "All We Know",
+          "cover": "https://p3.music.126.net/Brb_siU1rT3eBqsk1LsrOg==/109951170372861476.jpg",
+          "url": "https://music.163.com/#/song?id=432698441"
+        },
+        {
+          "id": "1873321491",
+          "name": "Wake (Live)",
+          "artist": "Hillsong Young & Free",
+          "album": "Wake",
+          "cover": "https://p3.music.126.net/Uo7OXdK3g4LQdc2hzJ14qQ==/109951166328143737.jpg",
+          "url": "https://music.163.com/#/song?id=1873321491"
+        },
+        {
+          "id": "459159104",
+          "name": "刚好遇见你",
+          "artist": "李玉刚",
+          "album": "2017年中央电视台元宵晚会",
+          "cover": "https://p3.music.126.net/jccKWY2Eze3r9VmXTP2qxw==/18721384487924169.jpg",
+          "url": "https://music.163.com/#/song?id=459159104"
+        },
+        {
+          "id": "1344897943",
+          "name": "你是人间四月天",
+          "artist": "邵帅",
+          "album": "你是人间四月天",
+          "cover": "https://p4.music.126.net/kQJQD58WkmQneTneOYe22A==/109951164252455813.jpg",
+          "url": "https://music.163.com/#/song?id=1344897943"
+        },
+        {
+          "id": "2011122001",
+          "name": "东西",
+          "artist": "林俊呈",
+          "album": "东西 东西 林俊呈 （抖音版）",
+          "cover": "https://p4.music.126.net/Hp6g1i2T-MobpDEIU9j0yQ==/109951168200005609.jpg",
+          "url": "https://music.163.com/#/song?id=2011122001"
+        },
+        {
+          "id": "2003496927",
+          "name": "フラッシュバッカー",
+          "artist": "結束バンド",
+          "album": "結束バンド",
+          "cover": "https://p4.music.126.net/dqzbrDjhtm4p9zoeCAGByA==/109951168110209473.jpg",
+          "url": "https://music.163.com/#/song?id=2003496927"
+        },
+        {
+          "id": "29460679",
+          "name": "Best of my Love",
+          "artist": "安田レイ",
+          "album": "Will",
+          "cover": "https://p4.music.126.net/1T0xbrsvV5i_Dm-4Mf47og==/109951169205493933.jpg",
+          "url": "https://music.163.com/#/song?id=29460679"
+        }
+      ]
+    },
+    {
+      "id": "mastered",
+      "name": "我会的歌",
+      "icon": "fa-microphone-lines",
+      "color": "#10b981",
+      "playlistIds": [],
+      "playlistUrl": "https://music.163.com/",
+      "total": 0,
+      "cached": 0,
+      "emptyHint": "网易云中还没有“会的歌”歌单；创建同名歌单后会自动出现在这里。",
+      "items": []
+    }
+  ]
+}

@@ -19,10 +19,19 @@ const MODULES = [
   {
     id: 'favorites',
     name: '我的收藏夹',
-    desc: '浏览器收藏夹导出，包含游戏、Wiki、资源站等共 246+ 条',
+    desc: '每天从 Microsoft Edge 自动同步，分类、搜索与原链接完整保留',
     icon: 'fa-bookmark',
     bg: 'linear-gradient(135deg, #667eea, #764ba2)',
     json: '/materials/favorites.json',
+  },
+  {
+    id: 'music',
+    name: '网易云音乐收藏',
+    desc: '红心收藏、推荐、想学与会唱的歌，跟随本地歌单同步',
+    icon: 'fa-music',
+    bg: 'linear-gradient(135deg, #ec4141, #991b1b)',
+    json: '/materials/netease-music.json',
+    kind: 'music',
   },
   {
     id: 'dev',
@@ -97,6 +106,117 @@ function domainOf(url) {
   try { return new URL(url).hostname.replace(/^www\./, '') } catch { return url }
 }
 
+function MusicLibrary({ data, search, setSearch }) {
+  const categories = data?.categories || []
+  const query = search.trim().toLowerCase()
+  const allSongs = categories.flatMap(cat => cat.items.map(song => ({ ...song, _category: cat.name })))
+  const searchResults = query
+    ? allSongs.filter(song => `${song.name} ${song.artist} ${song.album} ${song._category}`.toLowerCase().includes(query))
+    : []
+
+  const renderSong = (song, i, color) => (
+    <a className="music-song" href={song.url} target="_blank" rel="noopener" key={`${song.id}-${i}`}>
+      <span className="music-song-index">{String(i + 1).padStart(2, '0')}</span>
+      {song.cover ? (
+        <img src={song.cover} alt="" loading="lazy" referrerPolicy="no-referrer" />
+      ) : (
+        <span className="music-song-cover" style={{ background: color }}><i className="fas fa-music" /></span>
+      )}
+      <span className="music-song-copy">
+        <strong>{song.name}</strong>
+        <small>{song.artist} · {song.album}</small>
+      </span>
+      <i className="fas fa-play music-song-play" />
+    </a>
+  )
+
+  return (
+    <div className="music-library">
+      <div className="music-hero">
+        <div className="music-record"><span><i className="fas fa-music" /></span></div>
+        <div>
+          <span className="music-eyebrow">AWA'S MUSIC LIBRARY</span>
+          <h2>此刻在听，也在学着唱</h2>
+          <p>{allSongs.length} 首本地已缓存曲目 · 同步于 {new Date(data.syncedAt).toLocaleString('zh-CN')}</p>
+        </div>
+        <a href={data.profileUrl} target="_blank" rel="noopener" className="music-profile-link">
+          打开网易云 <i className="fas fa-arrow-up-right-from-square" />
+        </a>
+      </div>
+
+      <div className="music-category-overview">
+        {categories.map(cat => (
+          <a
+            href={`#music-${cat.id}`}
+            className="music-category-chip"
+            style={{ '--music-color': cat.color }}
+            key={cat.id}
+          >
+            <i className={`fas ${cat.icon}`} />
+            <span><strong>{cat.name}</strong><small>{cat.cached} 首已同步{cat.total > cat.cached ? ` / 歌单 ${cat.total} 首` : ''}</small></span>
+          </a>
+        ))}
+      </div>
+
+      <div className="docs-search music-search">
+        <i className="fas fa-search" />
+        <input
+          type="text"
+          placeholder={`搜索 ${allSongs.length} 首已同步歌曲……`}
+          value={search}
+          onChange={event => setSearch(event.target.value)}
+        />
+        {search && <button onClick={() => setSearch('')}><i className="fas fa-times" /></button>}
+      </div>
+
+      {query ? (
+        <section className="music-section">
+          <div className="music-section-head">
+            <div><span>SEARCH RESULTS</span><h3>搜索结果</h3></div>
+            <strong>{searchResults.length}</strong>
+          </div>
+          <div className="music-song-list">
+            {searchResults.length
+              ? searchResults.map((song, i) => renderSong(song, i, '#ec4141'))
+              : <div className="music-empty"><i className="fas fa-compact-disc" /><p>没有找到这首歌</p></div>}
+          </div>
+        </section>
+      ) : categories.map(cat => (
+        <section className="music-section" id={`music-${cat.id}`} key={cat.id} style={{ '--music-color': cat.color }}>
+          <div className="music-section-head">
+            <div>
+              <span>PLAYLIST // {cat.id.toUpperCase()}</span>
+              <h3><i className={`fas ${cat.icon}`} /> {cat.name}</h3>
+            </div>
+            <a href={cat.playlistUrl} target="_blank" rel="noopener">
+              {cat.total || cat.cached} 首 <i className="fas fa-arrow-right" />
+            </a>
+          </div>
+          {cat.items.length ? (
+            <>
+              <div className="music-song-list">
+                {cat.items.slice(0, 24).map((song, i) => renderSong(song, i, cat.color))}
+              </div>
+              {cat.items.length > 24 && (
+                <a className="music-more" href={cat.playlistUrl} target="_blank" rel="noopener">
+                  还有 {cat.items.length - 24} 首已同步歌曲，在网易云查看完整歌单
+                  <i className="fas fa-arrow-up-right-from-square" />
+                </a>
+              )}
+            </>
+          ) : (
+            <a className="music-empty" href={cat.playlistUrl} target="_blank" rel="noopener">
+              <i className={`fas ${cat.icon}`} />
+              <p>{cat.emptyHint}</p>
+              <span>打开网易云歌单 <i className="fas fa-arrow-right" /></span>
+            </a>
+          )}
+        </section>
+      ))}
+    </div>
+  )
+}
+
 export default function Docs() {
   const [activeModule, setActiveModule] = useState(null)
   const [data, setData] = useState(null)
@@ -126,7 +246,7 @@ export default function Docs() {
   // 子页面
   if (activeModule) {
     const m = MODULES.find(x => x.id === activeModule)
-    const allItems = data ? data.flatMap(c => c.items.map(i => ({ ...i, _cat: c.category, _icon: c.icon }))) : []
+    const allItems = Array.isArray(data) ? data.flatMap(c => c.items.map(i => ({ ...i, _cat: c.category, _icon: c.icon }))) : []
     const filteredItems = search
       ? allItems.filter(it => (it.name + ' ' + it.url + ' ' + (it.desc || '')).toLowerCase().includes(search.toLowerCase()))
       : allItems
@@ -166,8 +286,10 @@ export default function Docs() {
             <i className="fas fa-spinner fa-spin" style={{ fontSize: '2rem', display: 'block', marginBottom: '1rem' }} />
             加载中...
           </p>
-        ) : !data || data.length === 0 ? (
+        ) : !data || (Array.isArray(data) && data.length === 0) ? (
           <p className="text-muted" style={{ textAlign: 'center', padding: '3rem' }}>暂无内容</p>
+        ) : m.kind === 'music' ? (
+          <MusicLibrary data={data} search={search} setSearch={setSearch} />
         ) : (
           <>
             {/* 搜索框 */}
@@ -257,7 +379,7 @@ export default function Docs() {
     )
   }
 
-  // 主页：6 大模块卡片
+  // 主页：资料模块卡片
   return (
     <div className="page">
       <AS>

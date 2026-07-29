@@ -6,6 +6,7 @@ dist
 Thumbs.db
 *.swp
 *.swo
+scripts/daily_sync.log
 .idea/
 .vscode/
 *.sublime-*
