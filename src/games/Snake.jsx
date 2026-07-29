@@ -84,16 +84,23 @@ export default function Snake() {
       const isBody = !isHead && snake.some(s => s.x === x && s.y === y)
       const isFood = food.x === x && food.y === y
       cells.push(
-        <div key={`${x}-${y}`} className={`snake-cell${isHead ? ' head' : ''}${isBody ? ' body' : ''}${isFood ? ' food' : ''}`} />
+        <div key={`${x}-${y}`} className={`snake-cell${isHead ? ' head' : ''}${isBody ? ' body' : ''}${isFood ? ' food' : ''}`}>
+          {isHead && <span className="snake-ai-mark">◎</span>}
+          {(isBody || isFood) && <span className={`context-token${isBody ? ' body-token' : ''}`}>2k</span>}
+        </div>
       )
     }
 
   return (
     <div className="snake-game">
+      <div className="game-theme-note chatgpt-note">
+        <span className="brand-orb openai-orb">◎</span>
+        <div><strong>ChatGPT 上下文</strong><small>每个方块都是 2k 上下文，别让对话撞上长度限制。</small></div>
+      </div>
       <div className="game-scorebar">
-        <div className="score-box"><span>长度</span><strong>{snake.length}</strong></div>
-        <div className="score-box"><span>得分</span><strong>{score}</strong></div>
-        <div className="score-box"><span>最高</span><strong>{best}</strong></div>
+        <div className="score-box"><span>上下文块</span><strong>{snake.length}</strong></div>
+        <div className="score-box"><span>当前上下文</span><strong>{score * 2}k</strong></div>
+        <div className="score-box"><span>最长上下文</span><strong>{best * 2}k</strong></div>
         <button className="btn btn-sm btn-primary" onClick={reset}>
           <i className="fas fa-redo" /> {over ? '重来' : '重开'}
         </button>
@@ -102,15 +109,15 @@ export default function Snake() {
         {cells}
         {!running && !over && snake.length === 1 && (
           <div className="game-overlay"><div>
-            <h3>🐍 贪吃蛇</h3>
-            <p>方向键 / WASD 控制，空格暂停</p>
+            <h3>◎ ChatGPT 上下文</h3>
+            <p>吃掉 2k 上下文块；方向键 / WASD 控制，空格暂停</p>
             <button className="btn btn-sm btn-primary" onClick={reset}>开始</button>
           </div></div>
         )}
         {over && (
           <div className="game-overlay"><div>
-            <h3>💥 撞车了</h3>
-            <p>得分 <strong>{score}</strong></p>
+            <h3>💥 上下文已丢失</h3>
+            <p>你的 AI 忘记了所有上下文。此前记住了 <strong>{score * 2}k</strong>。</p>
             <button className="btn btn-sm btn-primary" onClick={reset}>再来一局</button>
           </div></div>
         )}
@@ -129,6 +136,7 @@ export default function Snake() {
         </div>
         <button onClick={() => turn({ x: 0, y: 1 })} aria-label="下"><i className="fas fa-chevron-down" /></button>
       </div>
+      <p className="game-hint">每吃一个方块获得 2k 上下文；撞墙或撞到自己时，AI 会忘记全部上下文。</p>
     </div>
   )
 }

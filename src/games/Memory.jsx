@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
+import { COMPANY_CATALOG, COMPANY_LOGO_URL } from './companyCatalog'
 
-const EMOJIS = ['🐱', '🐶', '🦊', '🐼', '🐨', '🦁', '🐯', '🐸', '🐙', '🦄', '🐧', '🐢']
 const BEST_KEY = 'memory_best_moves'
+const MEMORY_COMPANIES = COMPANY_CATALOG.filter(company =>
+  !['Block', 'Comcast', 'CrowdStrike', 'ServiceNow'].includes(company.name)
+)
 
 function shuffle(arr) {
   const a = arr.slice()
@@ -13,8 +16,8 @@ function shuffle(arr) {
 }
 
 function makeDeck(pairs) {
-  const chosen = shuffle(EMOJIS).slice(0, pairs)
-  return shuffle([...chosen, ...chosen]).map((emoji, i) => ({ id: i, emoji, flipped: false, matched: false }))
+  const chosen = shuffle(MEMORY_COMPANIES).slice(0, pairs)
+  return shuffle([...chosen, ...chosen]).map((company, i) => ({ id: i, company, flipped: false, matched: false }))
 }
 
 export default function Memory() {
@@ -54,7 +57,7 @@ export default function Memory() {
       setMoves(m => m + 1)
       lock.current = true
       const [a, b] = nf
-      if (nc[a].emoji === nc[b].emoji) {
+      if (nc[a].company.name === nc[b].company.name) {
         setTimeout(() => {
           setCards(cs => cs.map((c, i) => (i === a || i === b) ? { ...c, matched: true } : c))
           setFlipped([]); lock.current = false
@@ -82,6 +85,10 @@ export default function Memory() {
 
   return (
     <div className="memory-game">
+      <div className="game-theme-note company-note">
+        <span className="brand-orb"><i className="fas fa-building" /></span>
+        <div><strong>互联网公司配对</strong><small>认准商标，把两张相同公司的卡片配成一对。</small></div>
+      </div>
       <div className="game-scorebar">
         <div className="score-box"><span>步数</span><strong>{moves}</strong></div>
         <div className="score-box"><span>用时</span><strong>{seconds}s</strong></div>
@@ -99,20 +106,23 @@ export default function Memory() {
             key={c.id}
             className={`memory-card${c.flipped || c.matched ? ' flipped' : ''}${c.matched ? ' matched' : ''}`}
             onClick={() => flip(i)}
-            aria-label="翻牌"
+            aria-label={c.flipped || c.matched ? c.company.name : '翻开公司卡牌'}
           >
             <span className="memory-face front"><i className="fas fa-question" /></span>
-            <span className="memory-face back">{c.emoji}</span>
+            <span className="memory-face back">
+              <img src={COMPANY_LOGO_URL(c.company.icon)} alt="" />
+              <small>{c.company.name}</small>
+            </span>
           </button>
         ))}
       </div>
       {won && (
         <div className="game-banner success">
-          🎉 全部配对成功！用了 <strong>{moves}</strong> 步、<strong>{seconds}</strong> 秒
+          🎉 所有互联网公司都配对成功！用了 <strong>{moves}</strong> 步、<strong>{seconds}</strong> 秒
           <button className="btn btn-sm btn-primary" onClick={() => reset()}>再来一次</button>
         </div>
       )}
-      <p className="game-hint">翻开两张相同的卡牌即可消除，用最少步数完成挑战～</p>
+      <p className="game-hint">翻开两个相同的公司商标即可配对，用最少步数完成互联网公司图鉴～</p>
     </div>
   )
 }

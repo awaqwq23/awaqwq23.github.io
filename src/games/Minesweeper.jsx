@@ -118,12 +118,16 @@ export default function Minesweeper() {
 
   return (
     <div className="mine-game">
+      <div className="game-theme-note claude-note">
+        <span className="brand-orb anthropic-orb">A\</span>
+        <div><strong>Claude A\ 封号排查</strong><small>每个方块代表一个 IP，数字表示周围有多少个风控 IP。</small></div>
+      </div>
       <div className="game-scorebar">
-        <div className="score-box"><span>💣 剩余</span><strong>{cfg.mines - flags}</strong></div>
-        <div className="score-box"><span>⏱ 用时</span><strong>{seconds}s</strong></div>
+        <div className="score-box"><span>⚠️ 待排查 IP</span><strong>{cfg.mines - flags}</strong></div>
+        <div className="score-box"><span>⏱ 排查用时</span><strong>{seconds}s</strong></div>
         <div className="score-box">
-          <span>状态</span>
-          <strong>{status === 'won' ? '😎 胜利' : status === 'lost' ? '💥 失败' : '🙂 进行'}</strong>
+          <span>账号状态</span>
+          <strong>{status === 'won' ? '✅ 安全' : status === 'lost' ? 'A\\ 已风控' : '🙂 正常'}</strong>
         </div>
         <select className="sort-select" value={level} onChange={e => setLevel(e.target.value)}>
           {Object.entries(LEVELS).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
@@ -142,17 +146,21 @@ export default function Minesweeper() {
                 className={cls.join(' ')}
                 onClick={() => reveal(r, c)}
                 onContextMenu={(e) => toggleFlag(e, r, c)}
+                title={`IP 10.${level === 'easy' ? 10 : level === 'medium' ? 20 : 30}.${r + 1}.${c + 1}`}
+                aria-label={`选择 IP 10.${level === 'easy' ? 10 : level === 'medium' ? 20 : 30}.${r + 1}.${c + 1}`}
                 style={cell.revealed && !cell.mine && cell.count ? { color: NUM_COLORS[cell.count] } : undefined}
               >
                 {cell.revealed
-                  ? (cell.mine ? '💣' : cell.count || '')
-                  : (cell.flagged ? '🚩' : '')}
+                  ? (cell.mine ? 'A\\' : cell.count || '')
+                  : (cell.flagged ? '🛡️' : '')}
               </button>
             )
           }))}
         </div>
       </div>
-      <p className="game-hint">左键翻开，右键（手机长按菜单/旗帜键）插旗。避开所有地雷即可获胜！</p>
+      {status === 'lost' && <div className="game-banner danger">你访问了危险 IP，账号已经被 A\ 风控。</div>}
+      {status === 'won' && <div className="game-banner success">排查完成！所有危险 IP 都已隔离，Claude 账号暂时安全。</div>}
+      <p className="game-hint">点击方块选择对应 IP；数字代表周围风控 IP 数量。右键可用 🛡️ 标记可疑地址。</p>
     </div>
   )
 }

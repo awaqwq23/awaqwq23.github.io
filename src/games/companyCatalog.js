@@ -64,6 +64,8 @@ const LEGACY_ICON_URLS = {
   adobe: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/adobe.svg',
   oracle: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/oracle.svg',
   tencentqq: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tencentqq.svg',
+  openai: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/openai.svg',
+  bytedance: 'https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/bytedance.svg',
 }
 
 export const COMPANY_LOGO_URL = (slug) => LEGACY_ICON_URLS[slug] || `https://cdn.simpleicons.org/${slug}`

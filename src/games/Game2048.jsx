@@ -143,28 +143,38 @@ export default function Game2048() {
 
   return (
     <div className="g2048">
+      <div className="game-theme-note deepseek-note">
+        <span className="brand-orb deepseek-orb">鲸</span>
+        <div><strong>合成大银鲸</strong><small>把相同额度的 DeepSeek Token 合并，直到 2048k。</small></div>
+      </div>
       <div className="game-scorebar">
-        <div className="score-box"><span>分数</span><strong>{score}</strong></div>
-        <div className="score-box"><span>最高</span><strong>{best}</strong></div>
+        <div className="score-box"><span>你拿到了</span><strong>{score}k DeepSeek Token</strong></div>
+        <div className="score-box"><span>历史最多</span><strong>{best}k DeepSeek Token</strong></div>
         <button className="btn btn-sm btn-primary" onClick={reset}><i className="fas fa-redo" /> 新游戏</button>
       </div>
       <div className="g2048-board" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         {grid.map((row, r) => row.map((v, c) => (
           <div key={`${r}-${c}`} className={`g2048-tile${v ? ' filled' : ''}`} style={tileStyle(v)}>
-            {v || ''}
+            {v ? (
+              <>
+                {v >= 2048 && <span className="token-whale">🐋</span>}
+                <strong>{v}k</strong>
+                <small>Token</small>
+              </>
+            ) : ''}
           </div>
         )))}
         {(over || won) && (
           <div className="game-overlay">
             <div>
-              <h3>{won ? '🎉 达成 2048！' : '游戏结束'}</h3>
-              <p>本局得分 <strong>{score}</strong></p>
+              <h3>{won ? '🐋 大银鲸合成成功！' : 'Token 池装不下了'}</h3>
+              <p>你拿到了 <strong>{score}k DeepSeek Token</strong></p>
               <button className="btn btn-sm btn-primary" onClick={reset}>再来一局</button>
             </div>
           </div>
         )}
       </div>
-      <p className="game-hint">方向键 / WASD 移动，手机可滑动。相同数字合并，冲击 2048！</p>
+      <p className="game-hint">方向键 / WASD 移动，手机可滑动。合并相同 Token，冲击 2048k 大银鲸！</p>
     </div>
   )
 }

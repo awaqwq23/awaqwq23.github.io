@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { COMPANY_LOGO_URL } from './companyCatalog'
 
 const HOLES = 9
 const GAME_TIME = 30
@@ -65,6 +66,13 @@ export default function WhackAMole() {
 
   return (
     <div className="whack-game">
+      <div className="game-theme-note whack-ai-note">
+        <span className="brand-duo">
+          <img src={COMPANY_LOGO_URL('anthropic')} alt="Anthropic" />
+          <img src={COMPANY_LOGO_URL('deepseek')} alt="DeepSeek" />
+        </span>
+        <div><strong>打 A\</strong><small>Claude 的公司标志加分，DeepSeek 标志扣分。</small></div>
+      </div>
       <div className="game-scorebar">
         <div className="score-box"><span>得分</span><strong>{score}</strong></div>
         <div className="score-box"><span>剩余</span><strong>{time}s</strong></div>
@@ -75,22 +83,30 @@ export default function WhackAMole() {
       </div>
       <div className="whack-board">
         {Array.from({ length: HOLES }).map((_, i) => (
-          <button key={i} className="whack-hole" onClick={() => whack(i)} aria-label="地洞">
+          <button key={i} className="whack-hole" onClick={() => whack(i)} aria-label="AI 标志">
             <span className="whack-dirt" />
             <span className={`whack-mole${active === i ? (bombActive ? ' bomb' : ' up') : ''}${hit === i ? ' hit' : ''}`}>
-              {active === i ? (bombActive ? '💣' : '🐹') : ''}
+              {active === i && (
+                <span className={`whack-brand ${bombActive ? 'deepseek' : 'anthropic'}`}>
+                  <img
+                    src={COMPANY_LOGO_URL(bombActive ? 'deepseek' : 'anthropic')}
+                    alt={bombActive ? 'DeepSeek' : 'Anthropic'}
+                  />
+                  <small>{bombActive ? 'DeepSeek' : 'Claude'}</small>
+                </span>
+              )}
             </span>
           </button>
         ))}
         {!running && (
           <div className="game-overlay"><div>
-            <h3>{time === 0 ? '⏰ 时间到！' : '🔨 打地鼠'}</h3>
-            <p>{time === 0 ? <>本局得分 <strong>{score}</strong></> : '30 秒内敲打地鼠，别敲炸弹（-3）！'}</p>
+            <h3>{time === 0 ? '⏰ 时间到！' : '🔨 打 A\\'}</h3>
+            <p>{time === 0 ? <>本局得分 <strong>{score}</strong></> : '30 秒内敲 Claude（+1），别误敲 DeepSeek（-3）！'}</p>
             <button className="btn btn-sm btn-primary" onClick={start}>{time === 0 ? '再来一局' : '开始游戏'}</button>
           </div></div>
         )}
       </div>
-      <p className="game-hint">🐹 +1 分，💣 -3 分。30 秒内尽可能拿高分！</p>
+      <p className="game-hint">Claude A\ +1 分，DeepSeek -3 分。玩法和原来的打地鼠完全一样。</p>
     </div>
   )
 }

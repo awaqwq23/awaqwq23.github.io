@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { COMPANY_LOGO_URL } from './companyCatalog'
 
 const LINES = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -93,13 +94,21 @@ export default function TicTacToe() {
 
   return (
     <div className="ttt-game">
+      <div className="game-theme-note ttt-ai-note">
+        <span className="ttt-versus">
+          <img src={COMPANY_LOGO_URL('openai')} alt="ChatGPT" />
+          <b>VS</b>
+          <img src={COMPANY_LOGO_URL(hard ? 'anthropic' : 'bytedance')} alt={hard ? 'Claude' : '豆包'} />
+        </span>
+        <div><strong>ChatGPT 对战 {hard ? 'Claude' : '豆包'}</strong><small>你始终使用 ChatGPT 商标并先手。</small></div>
+      </div>
       <div className="game-scorebar">
-        <div className="score-box"><span>你赢</span><strong>{stats.win}</strong></div>
+        <div className="score-box"><span>ChatGPT 赢</span><strong>{stats.win}</strong></div>
         <div className="score-box"><span>平局</span><strong>{stats.draw}</strong></div>
-        <div className="score-box"><span>AI 赢</span><strong>{stats.lose}</strong></div>
+        <div className="score-box"><span>{hard ? 'Claude' : '豆包'}赢</span><strong>{stats.lose}</strong></div>
         <select className="sort-select" value={hard ? 'hard' : 'easy'} onChange={e => { setHard(e.target.value === 'hard'); reset() }}>
-          <option value="hard">地狱难度（必平）</option>
-          <option value="easy">简单（会手滑）</option>
+          <option value="hard">Claude · 地狱难度</option>
+          <option value="easy">豆包 · 简单难度</option>
         </select>
         <button className="btn btn-sm btn-primary" onClick={reset}><i className="fas fa-redo" /> 重开</button>
       </div>
@@ -111,18 +120,18 @@ export default function TicTacToe() {
             onClick={() => play(i)}
             disabled={!!v || !!done || turn !== 'X'}
           >
-            {v === 'X' && <i className="fas fa-times" />}
-            {v === 'O' && <i className="far fa-circle" />}
+            {v === 'X' && <img className="ttt-brand-mark" src={COMPANY_LOGO_URL('openai')} alt="ChatGPT" />}
+            {v === 'O' && <img className="ttt-brand-mark" src={COMPANY_LOGO_URL(hard ? 'anthropic' : 'bytedance')} alt={hard ? 'Claude' : '豆包'} />}
           </button>
         ))}
       </div>
       <div className={`game-banner${result?.player === 'X' ? ' success' : result?.player === 'O' ? ' danger' : ''}`} style={{ visibility: done ? 'visible' : 'hidden' }}>
-        {result?.player === 'X' && '🎉 你赢啦！'}
-        {result?.player === 'O' && '🤖 AI 赢了，再战一局？'}
-        {!result && full && '🤝 平局！势均力敌'}
+        {result?.player === 'X' && `🎉 ChatGPT 战胜了${hard ? ' Claude' : '豆包'}！`}
+        {result?.player === 'O' && `🤖 ${hard ? 'Claude' : '豆包'}赢了，再战一局？`}
+        {!result && full && `🤝 ChatGPT 与${hard ? ' Claude' : '豆包'}平局`}
         <button className="btn btn-sm btn-primary" onClick={reset}>再来</button>
       </div>
-      <p className="game-hint">你执 ✕ 先手，AI 执 ○。地狱难度下最好的结果就是平局哦～</p>
+      <p className="game-hint">你执 ChatGPT 商标先手；高难度对手是 Claude，低难度对手是豆包。棋力规则保持不变。</p>
     </div>
   )
 }

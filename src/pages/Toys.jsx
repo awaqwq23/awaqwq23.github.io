@@ -9,7 +9,7 @@ function AS({ children, d = 0 }) {
 const toys = [
   {
     name: '🎮 小游戏厅',
-    desc: '2048、贪吃蛇、扫雷、井字棋、打地鼠… 7 款纯浏览器小游戏，成绩本地保存，随点随玩！',
+    desc: '合成大银鲸、ChatGPT 上下文、Claude 风控排查、SEPA 手速测试… 9 款纯浏览器小游戏！',
     to: '/games',
     bg: 'linear-gradient(135deg, #F59E0B, #EF4444)',
     icon: 'fa-dice',

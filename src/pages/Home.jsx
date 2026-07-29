@@ -43,7 +43,7 @@ const features = [
     icon: 'fa-dice',
     bg: 'linear-gradient(135deg, #F59E0B, #EF4444)',
     title: '🎮 小游戏厅',
-    desc: '2048、贪吃蛇、扫雷、井字棋… 7 款纯浏览器小游戏，随点随玩。',
+    desc: '合成大银鲸、ChatGPT 上下文、Claude 风控排查、SEPA 手速测试… 9 款纯浏览器小游戏。',
   },
   {
     to: '/toys',
