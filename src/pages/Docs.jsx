@@ -23,6 +23,7 @@ const MODULES = [
     icon: 'fa-bookmark',
     bg: 'linear-gradient(135deg, #667eea, #764ba2)',
     json: '/materials/favorites.json',
+    kind: 'favorites',
   },
   {
     id: 'music',
@@ -112,6 +113,107 @@ const catGradients = [
 
 function domainOf(url) {
   try { return new URL(url).hostname.replace(/^www\./, '') } catch { return url }
+}
+
+function folderStats(folder) {
+  return (folder.items?.length || 0) + (folder.folders || []).reduce((total, child) => total + folderStats(child), 0)
+}
+
+function flattenFavorites(folders, trail = [], result = []) {
+  for (const folder of folders || []) {
+    const path = [...trail, folder.name]
+    for (const item of folder.items || []) result.push({ ...item, path: path.join(' / ') })
+    flattenFavorites(folder.folders, path, result)
+  }
+  return result
+}
+
+function FavoriteFolder({ folder, depth = 0 }) {
+  const total = folderStats(folder)
+  return (
+    <details className="favorite-tree-folder" defaultOpen={depth === 0}>
+      <summary>
+        <span className="favorite-folder-main">
+          <i className="fas fa-folder" />
+          <span>
+            <strong>{folder.name}</strong>
+            <small>{total} 条收藏 · {(folder.folders || []).length} 个子文件夹</small>
+          </span>
+        </span>
+        <i className="fas fa-chevron-down favorite-tree-chevron" />
+      </summary>
+      <div className="favorite-tree-children">
+        {(folder.items || []).map((item, index) => (
+          <a className="link-item favorite-tree-link" href={item.url} target="_blank" rel="noopener" key={`${item.url}-${index}`}>
+            <div className="link-item-icon" style={{ background: catGradients[depth % catGradients.length] }}>
+              <i className="fas fa-bookmark" />
+            </div>
+            <div className="link-item-body">
+              <div className="link-item-name">{item.name}</div>
+              <div className="link-item-host">{domainOf(item.url)}</div>
+            </div>
+            <i className="fas fa-chevron-right link-item-arrow" />
+          </a>
+        ))}
+        {(folder.folders || []).map((child, index) => (
+          <FavoriteFolder folder={child} depth={depth + 1} key={`${child.name}-${index}`} />
+        ))}
+      </div>
+    </details>
+  )
+}
+
+function FavoritesTree({ data, search, setSearch }) {
+  const allItems = flattenFavorites(data?.roots || [])
+  const query = search.trim().toLowerCase()
+  const results = query
+    ? allItems.filter(item => `${item.name} ${item.url} ${item.path}`.toLowerCase().includes(query))
+    : []
+
+  return (
+    <div className="favorites-tree">
+      <div className="favorites-tree-meta">
+        <span><i className="fas fa-folder-tree" /> {data.folderCount || 0} 个文件夹</span>
+        <span><i className="fas fa-bookmark" /> {data.linkCount || allItems.length} 条收藏</span>
+        <span><i className="fab fa-edge" /> {data.profile || 'Default'}</span>
+      </div>
+      <div className="docs-search">
+        <i className="fas fa-search" />
+        <input
+          type="text"
+          placeholder={`搜索 ${allItems.length} 条收藏及文件夹路径……`}
+          value={search}
+          onChange={event => setSearch(event.target.value)}
+        />
+        {search && <button onClick={() => setSearch('')}><i className="fas fa-times" /></button>}
+      </div>
+
+      {query ? (
+        <div className="favorite-search-results">
+          <p className="text-muted">找到 <strong>{results.length}</strong> 个结果</p>
+          <div className="link-list">
+            {results.map((item, index) => (
+              <a className="link-item" href={item.url} target="_blank" rel="noopener" key={`${item.url}-${index}`}>
+                <div className="link-item-icon" style={{ background: catGradients[index % catGradients.length] }}>
+                  <i className="fas fa-bookmark" />
+                </div>
+                <div className="link-item-body">
+                  <div className="link-item-name">{item.name}</div>
+                  <div className="link-item-desc">{item.path}</div>
+                  <div className="link-item-host">{domainOf(item.url)}</div>
+                </div>
+                <i className="fas fa-chevron-right link-item-arrow" />
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="favorite-tree-roots">
+          {(data.roots || []).map((folder, index) => <FavoriteFolder folder={folder} key={`${folder.name}-${index}`} />)}
+        </div>
+      )}
+    </div>
+  )
 }
 
 function MusicLibrary({ data, search, setSearch }) {
@@ -297,6 +399,8 @@ export default function Docs() {
           </p>
         ) : !data || (Array.isArray(data) && data.length === 0) ? (
           <p className="text-muted" style={{ textAlign: 'center', padding: '3rem' }}>暂无内容</p>
+        ) : m.kind === 'favorites' ? (
+          <FavoritesTree data={data} search={search} setSearch={setSearch} />
         ) : m.kind === 'music' ? (
           <MusicLibrary data={data} search={search} setSearch={setSearch} />
         ) : (

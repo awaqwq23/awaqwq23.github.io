@@ -1,1351 +1,1435 @@
-[
-  {
-    "category": "收藏夹栏 / 游戏",
-    "items": [
-      {
-        "name": "欢迎来到 Steam",
-        "url": "https://store.steampowered.com/"
-      },
-      {
-        "name": "Steam 社区 :: Steam 社区市场",
-        "url": "https://steamcommunity.com/market/"
-      },
-      {
-        "name": "Dashboard | StellaBase",
-        "url": "https://stella.ennead.cc/"
-      },
-      {
-        "name": "异环自动化",
-        "url": "https://docs.qq.com/doc/DTkNUTG5tY0ZacUZB"
-      },
-      {
-        "name": "Home - VRChat",
-        "url": "https://vrchat.com/home"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / 泰拉",
-    "items": [
-      {
-        "name": "指南/各职业发展路线/月亮领主后 - 灾厄中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
-        "url": "https://calamity.huijiwiki.com/wiki/%E6%8C%87%E5%8D%97/%E5%90%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E8%B7%AF%E7%BA%BF/%E6%9C%88%E4%BA%AE%E9%A2%86%E4%B8%BB%E5%90%8E"
-      },
-      {
-        "name": "武器 - 灾厄中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
-        "url": "https://calamity.huijiwiki.com/wiki/%E6%AD%A6%E5%99%A8#%E5%8F%AC%E5%94%A4%E6%AD%A6%E5%99%A8"
-      },
-      {
-        "name": "指南/Boss Rush攻略 - 灾厄中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
-        "url": "https://calamity.huijiwiki.com/wiki/%E6%8C%87%E5%8D%97/Boss_Rush%E6%94%BB%E7%95%A5"
-      },
-      {
-        "name": "官方中文泰拉瑞亚维基百科（The Official Chinese Terraria Wiki） - 最详细的中文泰拉瑞亚百科",
-        "url": "https://terraria.wiki.gg/zh/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / 舟",
-    "items": [
-      {
-        "name": "明日方舟 - Arknights",
-        "url": "https://ak.hypergryph.com/#index"
-      },
-      {
-        "name": "首页 - PRTS - 玩家共同构筑的明日方舟中文Wiki",
-        "url": "https://prts.wiki/w/%E9%A6%96%E9%A1%B5"
-      },
-      {
-        "name": "明日方舟随机挑战生成器",
-        "url": "https://kiccl.github.io/fz/"
-      },
-      {
-        "name": "龙门币凑数路径计算器",
-        "url": "https://ark-lmd.top/#/"
-      },
-      {
-        "name": "集印事件藏品自用 NGA玩家社区",
-        "url": "https://ngabbs.com/read.php?tid=44619053&rand=218"
-      },
-      {
-        "name": "明日方舟工具箱",
-        "url": "https://arkntools.app/#/"
-      },
-      {
-        "name": "「明日方舟：终末地」临行事项",
-        "url": "https://endfield.hypergryph.com/activity/final-prep-orders?inviteCode=d59df036f4f85b53b0ec6f05ca6c4680"
-      },
-      {
-        "name": "呼吸 - 序言组曲：孤行之人 - 泰拉记事社 - TERRA HISTORICUS",
-        "url": "https://comic.hypergryph.com/terra-historicus/comic/0694/episode/2863"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / alice",
-    "items": [
-      {
-        "name": "NanameHacha.Dev / AliceInCradle.Dev - Sticks to Beginner",
-        "url": "https://aliceincradle.dev/"
-      },
-      {
-        "name": "Alice In Cradle 简体中文官方网站 - 免费下载最新官方中文汉化版游戏",
-        "url": "https://cn.aliceincradle.com/"
-      },
-      {
-        "name": "Alice In Cradle 简体中文官方网站 - 免费下载最新官方中文汉化版游戏",
-        "url": "https://cn.aliceincradle.dev/"
-      },
-      {
-        "name": "与我共享 - Alice In Cradle Save File Share",
-        "url": "https://aics.shiro.dev/home?path=cloudreve%3A%2F%2Fshared_with_me"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / steam联机",
-    "items": [
-      {
-        "name": "吉星派对官网",
-        "url": "https://se.feimogames.com/home"
-      },
-      {
-        "name": "饥荒：联机版 - 饥荒维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
-        "url": "https://dontstarve.huijiwiki.com/wiki/%E9%A5%A5%E8%8D%92%EF%BC%9A%E8%81%94%E6%9C%BA%E7%89%88"
-      },
-      {
-        "name": "以撒的结合中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
-        "url": "https://isaac.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5"
-      },
-      {
-        "name": "散樱乱武大型攻略- 文集 哔哩哔哩专栏",
-        "url": "https://www.bilibili.com/read/readlist/rl180044?spm_id_from=333.1369.opus.module_collection.click"
-      },
-      {
-        "name": "全网最详细图文注释！！！ 饥荒 联机版文件的作用与修改 - 哔哩哔哩",
-        "url": "https://www.bilibili.com/opus/382593101157601567?from=search&spm_id_from=333.337.0.0"
-      },
-      {
-        "name": "深海迷航2互动地图-提供深海迷航2全部蓝图,碎片,适应,黑匣子,升级模块,矿物,利维坦等攻略收集点位",
-        "url": "https://www.gamersky.com/tools/map/sn2/?ref=bz"
-      },
-      {
-        "name": "Steam等级计算、游戏收藏徽章、年限徽章以及特殊徽章速查表 | 呢喃Ninc",
-        "url": "https://blog.ninc.top/posts/cheat-sheet/steam-badge"
-      },
-      {
-        "name": "吉星派对账号中心",
-        "url": "https://se.feimogames.com/usercenter"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / 网站导航",
-    "items": [
-      {
-        "name": "非线性列车 — By. Juij",
-        "url": "https://juij.fun/#%E7%AB%99%E5%8F%B0%E5%AF%BC%E8%88%AA"
-      },
-      {
-        "name": "网站导航点这里",
-        "url": "https://flowus.cn/mioss/share/df2a530c-0f8b-4f12-8d0f-c02fe0b293d5"
-      },
-      {
-        "name": "一一清梦分享库",
-        "url": "https://www.kdocs.cn/l/caHRNWver4AR"
-      },
-      {
-        "name": "游戏资源库 - NS头号玩家",
-        "url": "https://nsthwj.cn/#/switch"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / 其他杂项",
-    "items": [
-      {
-        "name": "《异环》「海特洛定居指南」网页活动",
-        "url": "https://yh.wanmei.com/net/260326card/index.html?inviteCode=CE0WQZ9PDP"
-      },
-      {
-        "name": "最佳炉石传说套牌 - 2025年八月 - HSReplay.net",
-        "url": "https://hsreplay.net/decks/?hl=zh-hans"
-      },
-      {
-        "name": "红色警戒2战网 | Ra2ol",
-        "url": "https://www.ra2ol.com/"
-      },
-      {
-        "name": "异环脚本_123云盘免登录下载不限速",
-        "url": "https://1835681195.share.123pan.cn/123pan/1WJ4Td-9SxP3?notoken=1&pwd=saki"
-      },
-      {
-        "name": "Graphwar 杀手 | 皓子的杂站",
-        "url": "https://howiehz.top/misc/tools/graphwar-killer/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 游戏 / gal",
-    "items": [
-      {
-        "name": "我的Galgame资源发布站 - 忧郁的loli_忧郁的弟弟",
-        "url": "https://www.ttloli.com/"
-      },
-      {
-        "name": "我的Galgame资源发布站-初音的青葱",
-        "url": "https://fufugal.com/"
-      },
-      {
-        "name": "青桔网-由青桔移植组建立的非盈利型galgame免费分享平台",
-        "url": "https://www.qingju.org/"
-      },
-      {
-        "name": "量子ACG",
-        "url": "https://lzacg.cc/"
-      },
-      {
-        "name": "Tsukihime",
-        "url": "https://tsukiweb.holofield.fr/"
-      },
-      {
-        "name": "Paper2Galgame",
-        "url": "https://www.paper2gal.top/"
-      },
-      {
-        "name": "TouchGal - 一站式Galgame文化社区!",
-        "url": "https://www.touchgal.top/"
-      },
-      {
-        "name": "真红小站",
-        "url": "https://www.shinnku.com/"
-      },
-      {
-        "name": "稻荷GAL - 免费Galgame资源下载分享社区",
-        "url": "https://inarigal.com/"
-      },
-      {
-        "name": "Navel Official Website",
-        "url": "https://project-navel.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 娱乐",
-    "items": [
-      {
-        "name": "哔哩哔哩 (゜-゜)つロ 干杯~-bilibili",
-        "url": "https://www.bilibili.com/"
-      },
-      {
-        "name": "高能玩家聚集地 - 小黑盒",
-        "url": "https://www.xiaoheihe.cn/app/bbs/home"
-      },
-      {
-        "name": "这本轻小说真厉害！2025 TOP榜单- 轻小说文库",
-        "url": "https://www.wenku8.net/zt/sugoi/2025.php"
-      },
-      {
-        "name": "SakuraFrp",
-        "url": "https://www.natfrp.com/user/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 娱乐 / 番小说漫画",
-    "items": [
-      {
-        "name": "Bangumi 番组计划",
-        "url": "https://bgm.tv/"
-      },
-      {
-        "name": "海绵宝宝第三季国语 第02集-Omofun动漫",
-        "url": "https://cn.211dm.com/anime/1072e0128be574a48459fb1d/play/1/2.html"
-      },
-      {
-        "name": "蜜柑计划 - Mikan Project",
-        "url": "https://mikanime.tv/"
-      },
-      {
-        "name": "新番卫星观测站 | 長門番堂",
-        "url": "https://yuc.wiki/new/"
-      },
-      {
-        "name": "火花影视库2(1)",
-        "url": "https://www.kdocs.cn/l/cbcQPkESfLpu?R=L1MvNA%3D%3D"
-      },
-      {
-        "name": "2023《BanG Dream! It's MyGO!!!!!》动漫BT迅雷下载 - 樱花动漫",
-        "url": "https://sakuras.me/movie/82458696.html"
-      },
-      {
-        "name": "Browse :: Nyaa",
-        "url": "https://nyaa.si/"
-      },
-      {
-        "name": "Anime字幕论坛 - Powered by Discuz!",
-        "url": "https://bbs.acgrip.com/"
-      },
-      {
-        "name": "樱花动漫-热门动漫在线-专注动漫的门户网站",
-        "url": "https://yinghuadongman.org.cn/"
-      },
-      {
-        "name": "今日更新-MuteFun动漫网站-无声乐趣-(゜-゜)つロ 干杯~",
-        "url": "https://www.mutefun.tv/label/new.html"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 娱乐 / 神秘小网站",
-    "items": [
-      {
-        "name": "东方幻存神签 - THBWiki · 专业性的东方Project维基百科 - TBSGroup",
-        "url": "https://thwiki.cc/%E4%B8%9C%E6%96%B9%E5%B9%BB%E5%AD%98%E7%A5%9E%E7%AD%BE"
-      },
-      {
-        "name": "下次一定 - 专门为白嫖怪开发的宝藏网站",
-        "url": "https://www.iiice.cn/#/"
-      },
-      {
-        "name": "MTool - 玩家专属的游戏翻译与修改工具 | 支持多种主流游戏引擎的智能处理工具",
-        "url": "https://mtool.app/?lang=chs"
-      },
-      {
-        "name": "爱上-宇宙恐龙-芝顿",
-        "url": "https://cdn.m-78.jp/zetton/1000000000000/sc/index.html"
-      },
-      {
-        "name": "武汉大学 | neo-RLEwiki",
-        "url": "https://rle.oau.app/campus/WHU"
-      },
-      {
-        "name": "半夏的后花园 – 一个普普通通女孩子的博客",
-        "url": "https://www.subanxia.cn/"
-      },
-      {
-        "name": "Steam Trading Site Tracker | Steam 挂刀行情站",
-        "url": "https://www.iflow.work/"
-      },
-      {
-        "name": "Mikutap",
-        "url": "https://miku.sci-fifans.net/"
-      },
-      {
-        "name": "美化包 ★ 枫の主题社",
-        "url": "https://winmoes.com/theme/themepack"
-      },
-      {
-        "name": "LiteLoaderQQNT",
-        "url": "https://liteloaderqqnt.github.io/"
-      },
-      {
-        "name": "催眠 Web APP",
-        "url": "https://hypnosis.stand.homes/"
-      },
-      {
-        "name": "图灵测试｜真人还是 AI？ | 任意门",
-        "url": "https://www.anyanygame.com/turing-test"
-      },
-      {
-        "name": "VOCAKEE 社区·VOCALOID声库下载站",
-        "url": "https://x.vocakey.wiki/"
-      },
-      {
-        "name": "首页 | OpenList",
-        "url": "https://vb.vocakey.wiki/"
-      },
-      {
-        "name": "CVoice 声音印象测试",
-        "url": "https://chiooone.com/cvoice/?qq_aio_chat_type=3"
-      },
-      {
-        "name": "Haleydu/Cimoc: 漫画阅读器",
-        "url": "https://github.com/Haleydu/Cimoc"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 娱乐 / 桌游",
-    "items": [
-      {
-        "name": "爱桌游_桌游玩家的大本营",
-        "url": "https://www.zhuoyoux.com/"
-      },
-      {
-        "name": "CNGAME副站长的小屋 | VLink",
-        "url": "https://vlink.cc/cngame"
-      },
-      {
-        "name": "桌游合集 - game.hullqin.cn",
-        "url": "https://game.hullqin.cn/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 娱乐 / 娱乐小网站",
-    "items": [
-      {
-        "name": "完美许愿器 - 所有的愿望都已标好了代价",
-        "url": "https://wish.closeai.moe/"
-      },
-      {
-        "name": "青椒模拟器 - 硬核学术生存游戏",
-        "url": "https://tenure.feedscription.com/"
-      },
-      {
-        "name": "无尽合成",
-        "url": "https://hc.tsdo.in/"
-      },
-      {
-        "name": "I'm Not a Robot",
-        "url": "https://neal.fun/not-a-robot/"
-      },
-      {
-        "name": "截图猜动画",
-        "url": "https://lab.magiconch.com/ani-trace/"
-      },
-      {
-        "name": "能不能好好说话？",
-        "url": "https://lab.magiconch.com/nbnhhsh/"
-      },
-      {
-        "name": "在线钢琴模拟器 - 全键盘模拟钢琴 - 网页上弹钢琴 - 钢琴在线玩",
-        "url": "https://www.xiwnn.com/piano/"
-      },
-      {
-        "name": "星尘幻梦 - 首页",
-        "url": "https://re.xcdream.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 娱乐 / 生成图片小网站",
-    "items": [
-      {
-        "name": "女神异闻录5 预告信生成器",
-        "url": "https://yuluoxk.cn/p5/"
-      },
-      {
-        "name": "第壱話 使徒、襲来 - 福音战士標題生成器 - Evangelion Title Card Generator - 神奇海螺实验室",
-        "url": "https://lab.magiconch.com/eva-title/"
-      },
-      {
-        "name": "One Last Image - 卢浮宫生成器 - One Last Kiss 风格 封面生成 图片转线稿 - 神奇海螺实验室",
-        "url": "https://lab.magiconch.com/one-last-image/"
-      },
-      {
-        "name": "OCTemplate",
-        "url": "https://octemplate.top/akrecruit"
-      },
-      {
-        "name": "明日方舟标题生成器",
-        "url": "https://arknights-logo-generator.netlify.app/"
-      },
-      {
-        "name": "蔚蓝档案标题生成器",
-        "url": "https://tmp.nulla.top/ba-logo/"
-      },
-      {
-        "name": "中国制霸生成器 - 中国三十四省级行政区域制霸标记生成工具",
-        "url": "https://lab.magiconch.com/china-ex/?_wv=1"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学校网站 / 常用网站",
-    "items": [
-      {
-        "name": "上网认证",
-        "url": "http://portal.whu.edu.cn:8080/eportal/index.jsp?wlanuserip=8b360f6e52035981402cf977bacdd128&wlanacname=29185648f4390d796f547ee673c1581a&ssid=&nasip=7c5eb3e356fdfc14806593293102756d&snmpagentip=&mac=082509717daa2616e60e0bc8e8fff767&t=wireless-v2&url=096e8e7059e430e05980c3c547fed4ab7ccaeae90dfffda4ace4874ac81c5ad69031883e2cfd5141&apmac=&nasid=29185648f4390d796f547ee673c1581a&vid=185575b24d54035b&port=6b91e5d679d68d6b&nasportid=ac41d60d7f1382081362a1ed29e6af27abb71058b9ece1673db09c32006d55e14db47d83fb040b36"
-      },
-      {
-        "name": "智慧珞珈",
-        "url": "https://zhlj.whu.edu.cn/pc/index"
-      },
-      {
-        "name": "武汉大学计算机学院专业课一体化平台",
-        "url": "https://cslabcg.whu.edu.cn/indexcs/simple.jsp?loginErr=0"
-      },
-      {
-        "name": "CS易办：让事更容易办",
-        "url": "http://cseben.whu.edu.cn/ebanbenke/ebanbenke_manage.php"
-      },
-      {
-        "name": "CS易办欢迎本科生",
-        "url": "https://cseben.whu.edu.cn/ebanbenke/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学校网站 / 官网",
-    "items": [
-      {
-        "name": "武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/"
-      },
-      {
-        "name": "武汉大学",
-        "url": "https://www.whu.edu.cn/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学校网站 / 办公网站",
-    "items": [
-      {
-        "name": "校园网自助服务系统",
-        "url": "http://172.19.1.10:8080/selfservice/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学校网站 / 教授",
-    "items": [
-      {
-        "name": "玄跻峰-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/info/1019/2947.htm"
-      },
-      {
-        "name": "谢晓媛的个人主页",
-        "url": "https://xiaoyuanxie.github.io/"
-      },
-      {
-        "name": "王峰-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/info/1019/2940.htm"
-      },
-      {
-        "name": "彭蓉-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/info/1019/2951.htm"
-      },
-      {
-        "name": "刘进-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/info/1019/2952.htm"
-      },
-      {
-        "name": "武汉大学 李兵--中文主页--首页",
-        "url": "https://jszy.whu.edu.cn/libing/zh_CN/index.htm"
-      },
-      {
-        "name": "袁梦霆-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/info/1019/2500.htm"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学校网站 / 学习网站",
-    "items": [
-      {
-        "name": "学习通",
-        "url": "https://i.chaoxing.com/base?t=1762065283312"
-      },
-      {
-        "name": "虚拟仿真实验教学项目管理平台",
-        "url": "https://xfsy.whu.edu.cn/website/index.action"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学校网站 / 文档资料网站",
-    "items": [
-      {
-        "name": "武大正版软件",
-        "url": "https://ca-whu-edu-cn-s.vpn.whu.edu.cn/index.html"
-      },
-      {
-        "name": "课程 - 武汉大学",
-        "url": "https://aipractice.whu.edu.cn/courses"
-      },
-      {
-        "name": "联创云打印",
-        "url": "https://print.lib.whu.edu.cn/client/new/cprintPc/cprint.html"
-      },
-      {
-        "name": "新生专栏-武汉大学学生资助管理中心",
-        "url": "https://zzgl.whu.edu.cn/xszl.htm"
-      },
-      {
-        "name": "WHU课程评价收集与查询系统",
-        "url": "https://whucourses.cn/"
-      },
-      {
-        "name": "‍​‌‍‌​​​‬​​​‍​​‌​‌​‌⁠​‌​​​‍​​‬⁠​‍​⁠‍‍‬﻿​​​​⁠​​‌​​武汉大学新人指引 - 飞书云文档",
-        "url": "https://standardai.feishu.cn/docx/BOVudYQVso74qYxh7JNcYLQ7nng"
-      },
-      {
-        "name": "Hello，WHUCAO | WHUCodingAndOpen",
-        "url": "https://whucodingandopen.github.io/whucao/"
-      },
-      {
-        "name": "计算机学院本科生思想政治素质综合评价实施细则（2024年12月修订）-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/content.jsp?urltype=news.NewsContentUrl&wbtreeid=2001&wbnewsid=50891"
-      },
-      {
-        "name": "关于评选2025-2026学年计算机学院本科生先进集体和优秀个人的通知-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/info/1055/59521.htm"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习",
-    "items": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/"
-      },
-      {
-        "name": "AI 智能体实战速成指南：从零到企业级落地 | ai-agents-from-zero",
-        "url": "https://didilili.github.io/ai-agents-from-zero/#/"
-      },
-      {
-        "name": "Ragas 框架",
-        "url": "https://docs.ragas.org.cn/en/stable/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 专业知识学习 / 做题",
-    "items": [
-      {
-        "name": "题目列表 - 洛谷",
-        "url": "https://www.luogu.com.cn/problem/list?page=6"
-      },
-      {
-        "name": "力扣 (LeetCode) 全球极客挚爱的技术成长平台",
-        "url": "https://leetcode.cn/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 专业知识学习 / 知识",
-    "items": [
-      {
-        "name": "写给.NET程序员们：你所不知道的Python社区 · Issue #72 · shnug/jobs",
-        "url": "https://github.com/shnug/jobs/issues/72"
-      },
-      {
-        "name": "HTML5 教程 | 菜鸟教程",
-        "url": "https://www.runoob.com/html/html5-intro.html"
-      },
-      {
-        "name": "Vue.js - 渐进式 JavaScript 框架 | Vue.js",
-        "url": "https://cn.vuejs.org/"
-      },
-      {
-        "name": "在VMware 17虚拟机上安装Windows 11操作系统（全程有图超级详细）+VMware使用技巧_vmware17安装win11-CSDN博客",
-        "url": "https://blog.csdn.net/L3145824894/article/details/132240566"
-      },
-      {
-        "name": "HTML 全局属性",
-        "url": "https://www.w3school.com.cn/tags/html_ref_standardattributes.asp"
-      },
-      {
-        "name": "HTML 标签参考手册",
-        "url": "https://www.w3school.com.cn/tags/index.asp"
-      },
-      {
-        "name": "Re01 HTML 教学小工具",
-        "url": "https://www.midorg.com/h.html"
-      },
-      {
-        "name": "组合数学-非降路径问题总结 - 知乎",
-        "url": "https://zhuanlan.zhihu.com/p/67774955"
-      },
-      {
-        "name": "ASCII文本，十六进制，二进制，十进制，Base64转换器",
-        "url": "https://www.rapidtables.org/zh-CN/convert/number/ascii-hex-bin-dec-converter.html"
-      },
-      {
-        "name": "MySQL :: MySQL Documentation",
-        "url": "https://dev.mysql.com/doc/?utm_source=chatgpt.com"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 专业知识学习",
-    "items": [
-      {
-        "name": "准备您的环境 --- Preparing Your Environment",
-        "url": "https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.4/sqcug/preparing-your-environment.html#GUID-18B1EA79-F586-44A4-93F2-036444E3CE7B"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 学校学习",
-    "items": [
-      {
-        "name": "‌‌‌‌‌‌​﻿‌﻿‌﻿‬​‍​﻿​‍‌‬​​‬​⁠‍​﻿​﻿‍​⁠‍​​​⁠​​﻿​​​​‍​‌‬飞书云文档",
-        "url": "https://spartalab.feishu.cn/wiki/EblnwPMB4iqak6k2dM9cUJXuntb"
-      },
-      {
-        "name": "专任教师-武汉大学计算机学院",
-        "url": "https://cs.whu.edu.cn/szdw/zrjs.htm"
-      },
-      {
-        "name": "学习通个人空间",
-        "url": "https://i.chaoxing.com/base?ws=1&t=1774168614310"
-      },
-      {
-        "name": "PlantUML图表编辑器",
-        "url": "https://www.jser.com/g/plantuml-editor"
-      },
-      {
-        "name": "PlantUML 编辑器 | 一个安全免费的工具箱",
-        "url": "https://app.timelessq.com/office/plantuml-editor"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 通用知识学习",
-    "items": [
-      {
-        "name": "有道翻译",
-        "url": "https://smartisandict.youdao.com/translate"
-      },
-      {
-        "name": "多邻国 - 学得轻松，学有所成的日语 课程！",
-        "url": "https://www.duolingo.com/characters"
-      },
-      {
-        "name": "U校园AI版",
-        "url": "https://ucloud.unipus.cn/app/cmgt/resource-detail/20000129374#6bcd9c8e69e090b&6bcd9c8e72e090b"
-      },
-      {
-        "name": "墨墨背单词 - 高效抗遗忘，轻松规划海量词汇记忆。",
-        "url": "https://www.maimemo.com/home/web_study"
-      },
-      {
-        "name": "Godot Hub",
-        "url": "https://godothub.com/"
-      },
-      {
-        "name": "创建.NET控制台应用程序 - .NET | Microsoft Learn",
-        "url": "https://learn.microsoft.com/zh-cn/dotnet/core/tutorials/create-console-app?pivots=vscode"
-      },
-      {
-        "name": "管理扩展 |Visual Studio 市场 --- Manage Extensions | Visual Studio Marketplace",
-        "url": "https://marketplace.visualstudio.com/manage/publishers/awaqwq233"
-      },
-      {
-        "name": "VibeMathed - tracking math problems solved by AI models",
-        "url": "https://vibemathed.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 文献辅助",
-    "items": [
-      {
-        "name": "上传论文",
-        "url": "https://vpcs.fanyu.com/upload/101001"
-      },
-      {
-        "name": "字数计算器",
-        "url": "http://www.zishujisuanqi.com/"
-      },
-      {
-        "name": "StackEdit中文版",
-        "url": "https://stackedit.cn/app#"
-      },
-      {
-        "name": "GitHub 文件加速代理 - 快速访问 GitHub 文件",
-        "url": "https://gh-proxy.com/"
-      },
-      {
-        "name": "太乙开源服务系统",
-        "url": "https://www.taiyi.top/home"
-      },
-      {
-        "name": "DownGit",
-        "url": "https://downgit.github.io/#/home"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 资料",
-    "items": [
-      {
-        "name": "旧版声明 | SurviveSJTUManual",
-        "url": "https://survivesjtu.gitbook.io/survivesjtumanual/xu/sheng-ming"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 比赛 / 数模",
-    "items": [
-      {
-        "name": "2025全国大学生数学建模竞赛论文展示 - 中国大学生在线",
-        "url": "https://dxs.moe.gov.cn/zx/hd/sxjm/sxjmlw/2025qgdxssxjmjslwzs/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 比赛",
-    "items": [
-      {
-        "name": "中国大学生计算机设计大赛",
-        "url": "https://2026.jsjds.com.cn/index"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 仓库 / 个人仓库",
-    "items": [
-      {
-        "name": "谭逸皓 / project24798 · GitLab",
-        "url": "https://cslabcg.whu.edu.cn/vdir/Gitlab/2024302111122/project24798-6754"
-      },
-      {
-        "name": "2025SE-WowoHands / Tetris · GitLab",
-        "url": "https://csgitlab.whu.edu.cn/wowo-hands/tetris"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 学习 / 仓库 / 学习仓库",
-    "items": [
-      {
-        "name": "GitHub - MIKUZ12/ExamPass-Assistant: Customized ExamPass Assistant Codex skill · GitHub",
-        "url": "https://github.com/MIKUZ12/ExamPass-Assistant"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 工具",
-    "items": [
-      {
-        "name": "腾讯文档",
-        "url": "https://docs.qq.com/desktop?nlc=1"
-      },
-      {
-        "name": "Online FlowChart & Diagrams Editor - Mermaid Live Editor",
-        "url": "https://mermaid.live/edit#pako:eNpVjcFugzAQRH_F2lMrkYgQgrEPlRrS5hKpPeRUyGEVHIwSbGSM0hT49xqiqu1qDzuaN7MdHHUugMPpoq9HicaS_SZTxM1zmkhTNrbC5kBms6d-KyyptBK3nqwftpo0Utd1qYrHO78eIZJ0uxETxMpSnYe7lUz5NyV6skl3WFtdH_46-6vuyUtavktX_9-RRrjUa3pCfsLZEQ1J0EwIeFCYMgduTSs8qISpcJTQjW4GVopKZMDdmaM5Z5CpwWVqVB9aVz8xo9tCguu-NE61dY5WbEosDP4iQuXCJLpVFvhiOVUA7-DTqYjN41XMWLRkYbykzLk34GEwpyFjlLpdhHFEw8GDr-mrP4_pyncTRD6lfrAavgGjH3XM"
-      },
-      {
-        "name": "测速网 - 专业测网速, 网速测试, 宽带提速, 游戏测速, 直播测速, 5G测速, 物联网监测,Wi-Fi 7,Wi-Fi 6,FTTR,全屋Wi-Fi - SpeedTest.cn",
-        "url": "https://www.speedtest.cn/"
-      },
-      {
-        "name": "合乎周礼｜问礼成文，释礼还意",
-        "url": "https://hehuzhouli.com/#translator"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 工具 / 邮箱",
-    "items": [
-      {
-        "name": "(9封未读) 网易邮箱6.0版",
-        "url": "https://mail.163.com/js6/main.jsp?df=mail163_letter#module=read.ReadModule%7C%7B%22area%22%3A%22normal%22%2C%22isThread%22%3Afalse%2C%22viewType%22%3A%22%22%2C%22id%22%3A%2258%3A1tbiOhS0N2issNMAbwACsn%22%2C%22fid%22%3A1%7D"
-      },
-      {
-        "name": "收件箱 (37) - lym820288706@gmail.com - Gmail",
-        "url": "https://mail.google.com/mail/u/1/#inbox"
-      },
-      {
-        "name": "收件箱 - efecemoma92@gmail.com - Gmail",
-        "url": "https://mail.google.com/mail/u/0/#inbox"
-      },
-      {
-        "name": "(5封未读) 网易邮箱6.0版",
-        "url": "https://mail.163.com/js6/main.jsp?df=mail163_letter#module=welcome.WelcomeModule%7C%7B%7D"
-      },
-      {
-        "name": "武汉大学电子邮件系统",
-        "url": "https://email.whu.edu.cn/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 工具 / 有用小工具",
-    "items": [
-      {
-        "name": "Olib - 飞书云文档",
-        "url": "https://dquyl9k1r5u.feishu.cn/docx/HdPzd8HOwoWrzRxxdM3ckoYJn6c"
-      },
-      {
-        "name": "OneNote",
-        "url": "https://onenote.cloud.microsoft/"
-      },
-      {
-        "name": "搜索 | M365 Copilot",
-        "url": "https://m365.cloud.microsoft/search/?ocid=cmmwn2yed7c&origindomain=microsoft365&client-request-id=dcd1d9c3-ea91-4143-beaa-98bac1ba7459"
-      },
-      {
-        "name": "手写体生成器",
-        "url": "https://handwrite.dogliu.top/"
-      },
-      {
-        "name": "清华大学开源软件镜像站 | Tsinghua Open Source Mirror",
-        "url": "https://mirrors.tuna.tsinghua.edu.cn/#"
-      },
-      {
-        "name": "Online MP3 Cutter - Cut Songs, Make Ringtones",
-        "url": "https://mp3cut.net/"
-      },
-      {
-        "name": "LaTeX公式编辑器 - 在线数学公式工具 | 在线工具集",
-        "url": "https://tooltool.net/zh/latex"
-      },
-      {
-        "name": "IPv6 测试",
-        "url": "https://test-ipv6.com/"
-      },
-      {
-        "name": "视频转 GIF 转换器 - FreeConvert.com",
-        "url": "https://www.freeconvert.com/zh/convert/video-to-gif"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 工具 / 其他杂项",
-    "items": [
-      {
-        "name": "武汉大学: 简介 | LinkedIn",
-        "url": "https://www.linkedin.com/school/wuhan-university/"
-      },
-      {
-        "name": "人才评估",
-        "url": "https://ctrip.ceping.com/pc?elink=VsIbc825DTA2q7Zl8rBtwzZRX9wkaKaP5OevKZFxiOsS0NtiIUSCy6GZFahvt1Ay#/promise"
-      },
-      {
-        "name": "Microsoft——AI、云、生产力、计算、游戏和应用",
-        "url": "https://www.microsoft.com/zh-cn"
-      },
-      {
-        "name": "教育 - Microsoft Azure",
-        "url": "https://portal.azure.com/?Microsoft_Azure_Education_correlationId=0ce572c6-252a-4f38-b947-d1f8f7bdcd01&Microsoft_Azure_Education_newA4E=true&Microsoft_Azure_Education_asoSubGuid=dd16ee18-031a-4d62-81b1-c5a0f160d8d9#view/Microsoft_Azure_Education/EducationMenuBlade/~/overview"
-      },
-      {
-        "name": "我的应用 | 高德控制台",
-        "url": "https://console.amap.com/dev/key/app"
-      },
-      {
-        "name": "您的项目 - Overleaf, 在线LaTeX编辑器",
-        "url": "https://cn.overleaf.com/project"
-      },
-      {
-        "name": "百度图片 | 免费AI图像生成工具与海量高清图平台",
-        "url": "https://image.baidu.com/?fr=shitu"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 工具 / 音频",
-    "items": [
-      {
-        "name": "Freesound",
-        "url": "https://freesound.org/"
-      },
-      {
-        "name": "歌詞検索サイト うたてん",
-        "url": "https://utaten.com/"
-      },
-      {
-        "name": "音效素材_免费下载 音效库 - 爱给网",
-        "url": "https://www.aigei.com/sound/class/?wd=%E9%9F%B3%E6%95%88%E5%85%8D%E8%B4%B9%E7%BD%91&msclkid=39e1fd246b6311a4a6569402dcc61bad"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 网站",
-    "items": [
-      {
-        "name": "Your Star | awapwq233",
-        "url": "https://awapwq233.github.io/posts/Your-Star/"
-      },
-      {
-        "name": "非遗数字生命互动引擎",
-        "url": "http://182.92.76.74:3000/"
-      },
-      {
-        "name": "武汉大学动漫协会-WHUDAYS",
-        "url": "https://whudays.github.io/"
-      },
-      {
-        "name": "shenxianovo — A passionate developer and creator. I build scalable, user-friendly, and delightful digital experiences.",
-        "url": "https://shenxianovo.com/"
-      },
-      {
-        "name": "awaqwq233 · 主页",
-        "url": "https://awaqwq23.github.io/"
-      },
-      {
-        "name": "轻量云游戏服专区",
-        "url": "https://lightgame.cloud.tencent.com/index"
-      },
-      {
-        "name": "快来视奸我ヽ（≧□≦）ノ",
-        "url": "https://awaqwq233.com/heartbeat/"
-      },
-      {
-        "name": "补药视奸我ヽ（≧□≦）ノ",
-        "url": "https://heartbeat.shenxianovo.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / ai",
-    "items": [
-      {
-        "name": "DeepSeek - 探索未至之境",
-        "url": "https://chat.deepseek.com/"
-      },
-      {
-        "name": "Google Gemini",
-        "url": "https://gemini.google.com/app"
-      },
-      {
-        "name": "ChatGPT",
-        "url": "https://chatgpt.com/"
-      },
-      {
-        "name": "Claude",
-        "url": "https://claude.ai/new"
-      },
-      {
-        "name": "Kimi",
-        "url": "https://www.kimi.com/chat/19ab9fb4-a2f2-8384-8000-09b875c37a07"
-      },
-      {
-        "name": "grok.com",
-        "url": "https://grok.com/"
-      },
-      {
-        "name": "豆包 - 字节跳动旗下 AI 智能助手",
-        "url": "https://www.doubao.com/chat/?channel=bing_sem&from_login=1"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / AIbot / 模型",
-    "items": [
-      {
-        "name": "Dashboard | Claude Platform",
-        "url": "https://platform.claude.com/dashboard"
-      },
-      {
-        "name": "Kimi - K2 长思考上线",
-        "url": "https://www.kimi.com/?data_source=tracer&utm_campaign=TR_jdqncC3B&utm_content=&utm_medium=%E5%BF%85%E5%BA%94&utm_source=bing&utm_term=ai-kimi&tr_param1=ai+kimi&msclkid=20de0fb1fafc1fed8dc56694a408aff5"
-      },
-      {
-        "name": "SiliconCloud",
-        "url": "https://cloud.siliconflow.cn/sft-kamy305vi4/account/ak"
-      },
-      {
-        "name": "DeepSeek 开放平台",
-        "url": "https://platform.deepseek.com/usage"
-      },
-      {
-        "name": "OpenAI Platform",
-        "url": "https://platform.openai.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / AIbot / 教程",
-    "items": [
-      {
-        "name": "KouriChat",
-        "url": "https://kourichat.com/"
-      },
-      {
-        "name": "【AI接入微信】小刻都能学会的干员接入微信教程 - 小黑盒",
-        "url": "https://www.xiaoheihe.cn/app/bbs/link/159248162?htk=4acbeed190bc0f7b8a0b780b51d72d04"
-      },
-      {
-        "name": "用户指南 | MaiBot 文档中心",
-        "url": "https://docs.mai-mai.org/manual/"
-      },
-      {
-        "name": "AI中转站评测 | Claude/Gemini/Codex中转站评测对比 | Help AIO",
-        "url": "https://www.helpaio.com/transit"
-      },
-      {
-        "name": "首次调用 API | DeepSeek API Docs",
-        "url": "https://api-docs.deepseek.com/zh-cn/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / AIbot / 中转站",
-    "items": [
-      {
-        "name": "WildAI",
-        "url": "https://bewild.ai/subscribe"
-      },
-      {
-        "name": "SoruxGPT",
-        "url": "https://app.soruxgpt.com/"
-      },
-      {
-        "name": "ChatGPT 中文版",
-        "url": "https://ai.lanjingchat.com/"
-      },
-      {
-        "name": "Cow AI",
-        "url": "https://www.opencowbot.com/dashboard/overview"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / AIbot / 其他",
-    "items": [
-      {
-        "name": "随便聊聊 · XSimple",
-        "url": "https://xsimplechat.com/chat"
-      },
-      {
-        "name": "花生AI | 超好用的视频创作智能体",
-        "url": "https://www.huasheng.cn/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / AIbot",
-    "items": [
-      {
-        "name": "👋 I'm AstrBot | AstrBot",
-        "url": "https://docs.astrbot.app/what-is-astrbot.html"
-      },
-      {
-        "name": "接入框架 | NapCatQQ",
-        "url": "https://napneko.github.io/use/integration"
-      },
-      {
-        "name": "SoruxGPT",
-        "url": "https://ai.soruxgpt.com/console/token"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 外国 / vpn",
-    "items": [
-      {
-        "name": "首页 - Shadowsocks.com",
-        "url": "https://secure.shadowsocks.au/index.php"
-      },
-      {
-        "name": "管理产品 - Shadowsocks.com",
-        "url": "https://secure.shadowsocks.au/clientarea.php?action=productdetails&id=1864582"
-      },
-      {
-        "name": "iKuuu 官网 - 快如闪电的全球边缘网络加速服务",
-        "url": "https://ikuuupro.com/"
-      },
-      {
-        "name": "Blurpath 代理 - 购买住宅IP高级代理 |最佳代理网站——Blurpath",
-        "url": "https://blurpath.com/?channel_code=IPjiance"
-      },
-      {
-        "name": "Reddit - 全网主阵地",
-        "url": "https://www.reddit.com/"
-      },
-      {
-        "name": "首页 — iKuuu VPN",
-        "url": "https://ikuuu.org/user#"
-      },
-      {
-        "name": "V2free",
-        "url": "https://v2free.net/user"
-      },
-      {
-        "name": "SakuraCat",
-        "url": "https://c4-sakuracat.com/login"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 外国 / 外国网站",
-    "items": [
-      {
-        "name": "Google",
-        "url": "https://www.google.com.hk/index.html"
-      },
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/"
-      },
-      {
-        "name": "Google AI Studio",
-        "url": "https://aistudio.google.com/prompts/new_chat"
-      },
-      {
-        "name": "Google",
-        "url": "https://www.google.gp/?hl=zh-CN"
-      },
-      {
-        "name": "Gmail",
-        "url": "https://mail.google.com/mail/u/0/?hl=zh-CN"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 外国 / 辅助网站",
-    "items": [
-      {
-        "name": "5SIM 活跃订单 – 管理当前虚拟号码",
-        "url": "https://5sim.net/zh/activation/active"
-      },
-      {
-        "name": "美国地址生成器 - 美国身份生成器 - 美国信用卡生成器",
-        "url": "https://www.meiguodizhi.com/"
-      },
-      {
-        "name": "我的IP地址 | IPAddress.my",
-        "url": "https://www.ipaddress.my/zh_cn"
-      },
-      {
-        "name": "bbbestb/bestcnvpn: 【国内梯子排行】最好用的VPN梯子推荐与科学上网测评 -梯子、科学上网、翻墙、机场、v2ray、trojan、shadowsock",
-        "url": "https://github.com/bbbestb/bestcnvpn"
-      },
-      {
-        "name": "What Is My IP Address - See Your Public Address - IPv4 & IPv6",
-        "url": "https://whatismyipaddress.com/"
-      },
-      {
-        "name": "💸各大机场优惠券汇总",
-        "url": "https://www.ermao.net/article/23w1svxa/"
-      },
-      {
-        "name": "羊毛优惠集锦 - 霂明导航",
-        "url": "https://n.mumingfang.com/server_discounts"
-      },
-      {
-        "name": "日本地址生成器 | 免费生成真实日本地址、邮编、电话 - MockAddress",
-        "url": "https://mockaddress.com/jp-address/"
-      },
-      {
-        "name": "华为手机、平板安装microG使用Play商店和ChatGPT教程 - Alan's Blog - 个人博客",
-        "url": "https://www.toalan.com/archives/71/"
-      },
-      {
-        "name": "德国地址生成器 - 德国身份生成器 - 德国信用卡生成器",
-        "url": "https://www.meiguodizhi.com/de-address"
-      },
-      {
-        "name": "randomiban.com",
-        "url": "http://randomiban.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 服务器",
-    "items": [
-      {
-        "name": "账单- Microsoft Azure",
-        "url": "https://portal.azure.com/#view/Microsoft_Azure_GTM/Billing.MenuView/~/costAnalysis/scopeId/%2Fproviders%2FMicrosoft.Billing%2FbillingAccounts%2F69b6d745-6e23-55e3-26b9-1cf9eab5d314%3A083d1369-dc43-4fc8-a418-cdfc3dc9e71c_2019-05-31/scope/BillingAccount"
-      },
-      {
-        "name": "服务器- Microsoft Azure",
-        "url": "https://portal.azure.com/#@820288706qq.onmicrosoft.com/resource/subscriptions/dd16ee18-031a-4d62-81b1-c5a0f160d8d9/resourcegroups/awaqwq233-1_group/providers/Microsoft.Compute/virtualMachines/awaqwq233/overview"
-      },
-      {
-        "name": "SillyTavern",
-        "url": "http://57.158.99.134:8000/"
-      },
-      {
-        "name": "启明星-云服务",
-        "url": "https://cloud.y.qq.com/product/separation/doc"
-      },
-      {
-        "name": "轻量应用服务器控制台",
-        "url": "https://swasnext.console.aliyun.com/servers/cn-wuhan-lr"
-      },
-      {
-        "name": "阿里云域名",
-        "url": "https://wanwang.aliyun.com/domain/searchresult/?domainCartTradeParams=dr_29379033_1778648307195&spm=5176.29379033.0.domain-just-search&keyword=awaqwq233&suffix="
-      },
-      {
-        "name": "tx域名",
-        "url": "https://cloud.tencent.com/act/pro/domain?fromSource=gwzcw.9716130.9716130.9716130&utm_medium=cpc&utm_id=gwzcw.9716130.9716130.9716130&msclkid=280f6f73078510f8838e057702571ed4"
-      },
-      {
-        "name": "领域 |注册情况 |820288706@qq.com 的账户 |Cloudflare --- Domains | Registrations | 820288706@qq.com's Account | Cloudflare",
-        "url": "https://dash.cloudflare.com/8896aa66cf9344049b6331f6e858e093/domains/registrations/purchase?query=awaqwq233"
-      },
-      {
-        "name": "我的域名 - 域名注册 - 控制台",
-        "url": "https://console.cloud.tencent.com/domain/all-domain/manage/domain-eu72x8jq/basicinfo"
-      },
-      {
-        "name": "我的域名 - DNSPod-免费智能DNS解析服务商-电信_网通_教育网,智能DNS",
-        "url": "https://console.dnspod.cn/dns/list/detail/awaqwq233.com/records"
-      },
-      {
-        "name": "轻量云游戏服专区",
-        "url": "https://lightgame.cloud.tencent.com/server"
-      },
-      {
-        "name": "成本管理: 颜铭 李 - Microsoft Azure",
-        "url": "https://portal.azure.com/#view/Microsoft_Azure_CostManagement/Menu/~/paymentmethods/scope/%2Fproviders%2FMicrosoft.Billing%2FbillingAccounts%2F69b6d745-6e23-55e3-26b9-1cf9eab5d314%3A083d1369-dc43-4fc8-a418-cdfc3dc9e71c_2019-05-31/open/costanalysisv3.subscriptions/openedBy/BillingAccount.CostAnalysis.CBR%3ASubscriptions"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏",
-    "items": [
-      {
-        "name": "搜索 - Microsoft 必应",
-        "url": "https://www.bing.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 工作",
-    "items": [
-      {
-        "name": "总部暑期日常实习",
-        "url": "https://careers.citics.com/summer/interns"
-      },
-      {
-        "name": "携程集团招聘官网",
-        "url": "https://job.ctrip.com/#/"
-      },
-      {
-        "name": "首页（中信证券股份有限公司）",
-        "url": "https://www.citicsinfo.com/oa/sys/portal/page.jsp?portalId=16c79a6df29298b3d7446794de39fc5b"
-      },
-      {
-        "name": "哔哩哔哩-招聘",
-        "url": "https://jobs.bilibili.com/campus/positions?type=3"
-      },
-      {
-        "name": "鹰角网络招聘官网",
-        "url": "https://career.hypergryph.com/"
-      }
-    ]
-  },
-  {
-    "category": "收藏夹栏 / 微软领奖",
-    "items": [
-      {
-        "name": "首页 – 微软积分商城",
-        "url": "https://rewards.bing.com/dashboard"
-      },
-      {
-        "name": "Microsoft Bing Rewards Daily Task Script: Microsoft Bing Rewards Daily Task Script. 微软必应奖励每日任务脚本，使用油猴脚本刷取微软积分。",
-        "url": "https://gitee.com/idbb98/microsoft-bing-rewards-daily-task-script#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%E6%8C%87%E5%8D%97"
-      }
-    ]
-  },
-  {
-    "category": "其他收藏夹",
-    "items": [
-      {
-        "name": "职位列表 - TalentsAI 专家数据标注平台",
-        "url": "https://www.talents-ai.com/jobs?inviteId=u_c599085768c44142b5a1ec8577edb60a"
-      }
-    ]
-  },
-  {
-    "category": "移动设备收藏夹",
-    "items": [
-      {
-        "name": "禁漫天堂發布頁-APP下載 回家的路",
-        "url": "https://jmcomica.org/"
-      }
-    ]
-  }
-]
+{
+  "profile": "Default",
+  "folderCount": 56,
+  "linkCount": 271,
+  "roots": [
+    {
+      "name": "收藏夹栏",
+      "items": [
+        {
+          "name": "搜索 - Microsoft 必应",
+          "url": "https://www.bing.com/"
+        }
+      ],
+      "folders": [
+        {
+          "name": "游戏",
+          "items": [
+            {
+              "name": "欢迎来到 Steam",
+              "url": "https://store.steampowered.com/"
+            },
+            {
+              "name": "Steam 社区 :: Steam 社区市场",
+              "url": "https://steamcommunity.com/market/"
+            },
+            {
+              "name": "Dashboard | StellaBase",
+              "url": "https://stella.ennead.cc/"
+            },
+            {
+              "name": "异环自动化",
+              "url": "https://docs.qq.com/doc/DTkNUTG5tY0ZacUZB"
+            },
+            {
+              "name": "Home - VRChat",
+              "url": "https://vrchat.com/home"
+            }
+          ],
+          "folders": [
+            {
+              "name": "泰拉",
+              "items": [
+                {
+                  "name": "指南/各职业发展路线/月亮领主后 - 灾厄中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
+                  "url": "https://calamity.huijiwiki.com/wiki/%E6%8C%87%E5%8D%97/%E5%90%84%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E8%B7%AF%E7%BA%BF/%E6%9C%88%E4%BA%AE%E9%A2%86%E4%B8%BB%E5%90%8E"
+                },
+                {
+                  "name": "武器 - 灾厄中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
+                  "url": "https://calamity.huijiwiki.com/wiki/%E6%AD%A6%E5%99%A8#%E5%8F%AC%E5%94%A4%E6%AD%A6%E5%99%A8"
+                },
+                {
+                  "name": "指南/Boss Rush攻略 - 灾厄中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
+                  "url": "https://calamity.huijiwiki.com/wiki/%E6%8C%87%E5%8D%97/Boss_Rush%E6%94%BB%E7%95%A5"
+                },
+                {
+                  "name": "官方中文泰拉瑞亚维基百科（The Official Chinese Terraria Wiki） - 最详细的中文泰拉瑞亚百科",
+                  "url": "https://terraria.wiki.gg/zh/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "舟",
+              "items": [
+                {
+                  "name": "明日方舟 - Arknights",
+                  "url": "https://ak.hypergryph.com/#index"
+                },
+                {
+                  "name": "首页 - PRTS - 玩家共同构筑的明日方舟中文Wiki",
+                  "url": "https://prts.wiki/w/%E9%A6%96%E9%A1%B5"
+                },
+                {
+                  "name": "明日方舟随机挑战生成器",
+                  "url": "https://kiccl.github.io/fz/"
+                },
+                {
+                  "name": "龙门币凑数路径计算器",
+                  "url": "https://ark-lmd.top/#/"
+                },
+                {
+                  "name": "集印事件藏品自用 NGA玩家社区",
+                  "url": "https://ngabbs.com/read.php?tid=44619053&rand=218"
+                },
+                {
+                  "name": "明日方舟工具箱",
+                  "url": "https://arkntools.app/#/"
+                },
+                {
+                  "name": "「明日方舟：终末地」临行事项",
+                  "url": "https://endfield.hypergryph.com/activity/final-prep-orders?inviteCode=d59df036f4f85b53b0ec6f05ca6c4680"
+                },
+                {
+                  "name": "呼吸 - 序言组曲：孤行之人 - 泰拉记事社 - TERRA HISTORICUS",
+                  "url": "https://comic.hypergryph.com/terra-historicus/comic/0694/episode/2863"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "alice",
+              "items": [
+                {
+                  "name": "NanameHacha.Dev / AliceInCradle.Dev - Sticks to Beginner",
+                  "url": "https://aliceincradle.dev/"
+                },
+                {
+                  "name": "Alice In Cradle 简体中文官方网站 - 免费下载最新官方中文汉化版游戏",
+                  "url": "https://cn.aliceincradle.com/"
+                },
+                {
+                  "name": "Alice In Cradle 简体中文官方网站 - 免费下载最新官方中文汉化版游戏",
+                  "url": "https://cn.aliceincradle.dev/"
+                },
+                {
+                  "name": "与我共享 - Alice In Cradle Save File Share",
+                  "url": "https://aics.shiro.dev/home?path=cloudreve%3A%2F%2Fshared_with_me"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "steam联机",
+              "items": [
+                {
+                  "name": "吉星派对官网",
+                  "url": "https://se.feimogames.com/home"
+                },
+                {
+                  "name": "饥荒：联机版 - 饥荒维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
+                  "url": "https://dontstarve.huijiwiki.com/wiki/%E9%A5%A5%E8%8D%92%EF%BC%9A%E8%81%94%E6%9C%BA%E7%89%88"
+                },
+                {
+                  "name": "以撒的结合中文维基 - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
+                  "url": "https://isaac.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5"
+                },
+                {
+                  "name": "散樱乱武大型攻略- 文集 哔哩哔哩专栏",
+                  "url": "https://www.bilibili.com/read/readlist/rl180044?spm_id_from=333.1369.opus.module_collection.click"
+                },
+                {
+                  "name": "全网最详细图文注释！！！ 饥荒 联机版文件的作用与修改 - 哔哩哔哩",
+                  "url": "https://www.bilibili.com/opus/382593101157601567?from=search&spm_id_from=333.337.0.0"
+                },
+                {
+                  "name": "深海迷航2互动地图-提供深海迷航2全部蓝图,碎片,适应,黑匣子,升级模块,矿物,利维坦等攻略收集点位",
+                  "url": "https://www.gamersky.com/tools/map/sn2/?ref=bz"
+                },
+                {
+                  "name": "Steam等级计算、游戏收藏徽章、年限徽章以及特殊徽章速查表 | 呢喃Ninc",
+                  "url": "https://blog.ninc.top/posts/cheat-sheet/steam-badge"
+                },
+                {
+                  "name": "吉星派对账号中心",
+                  "url": "https://se.feimogames.com/usercenter"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "网站导航",
+              "items": [
+                {
+                  "name": "非线性列车 — By. Juij",
+                  "url": "https://juij.fun/#%E7%AB%99%E5%8F%B0%E5%AF%BC%E8%88%AA"
+                },
+                {
+                  "name": "网站导航点这里",
+                  "url": "https://flowus.cn/mioss/share/df2a530c-0f8b-4f12-8d0f-c02fe0b293d5"
+                },
+                {
+                  "name": "一一清梦分享库",
+                  "url": "https://www.kdocs.cn/l/caHRNWver4AR"
+                },
+                {
+                  "name": "游戏资源库 - NS头号玩家",
+                  "url": "https://nsthwj.cn/#/switch"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "其他杂项",
+              "items": [
+                {
+                  "name": "《异环》「海特洛定居指南」网页活动",
+                  "url": "https://yh.wanmei.com/net/260326card/index.html?inviteCode=CE0WQZ9PDP"
+                },
+                {
+                  "name": "最佳炉石传说套牌 - 2025年八月 - HSReplay.net",
+                  "url": "https://hsreplay.net/decks/?hl=zh-hans"
+                },
+                {
+                  "name": "红色警戒2战网 | Ra2ol",
+                  "url": "https://www.ra2ol.com/"
+                },
+                {
+                  "name": "异环脚本_123云盘免登录下载不限速",
+                  "url": "https://1835681195.share.123pan.cn/123pan/1WJ4Td-9SxP3?notoken=1&pwd=saki"
+                },
+                {
+                  "name": "Graphwar 杀手 | 皓子的杂站",
+                  "url": "https://howiehz.top/misc/tools/graphwar-killer/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "gal",
+              "items": [
+                {
+                  "name": "我的Galgame资源发布站 - 忧郁的loli_忧郁的弟弟",
+                  "url": "https://www.ttloli.com/"
+                },
+                {
+                  "name": "我的Galgame资源发布站-初音的青葱",
+                  "url": "https://fufugal.com/"
+                },
+                {
+                  "name": "青桔网-由青桔移植组建立的非盈利型galgame免费分享平台",
+                  "url": "https://www.qingju.org/"
+                },
+                {
+                  "name": "量子ACG",
+                  "url": "https://lzacg.cc/"
+                },
+                {
+                  "name": "Tsukihime",
+                  "url": "https://tsukiweb.holofield.fr/"
+                },
+                {
+                  "name": "Paper2Galgame",
+                  "url": "https://www.paper2gal.top/"
+                },
+                {
+                  "name": "TouchGal - 一站式Galgame文化社区!",
+                  "url": "https://www.touchgal.top/"
+                },
+                {
+                  "name": "真红小站",
+                  "url": "https://www.shinnku.com/"
+                },
+                {
+                  "name": "稻荷GAL - 免费Galgame资源下载分享社区",
+                  "url": "https://inarigal.com/"
+                },
+                {
+                  "name": "Navel Official Website",
+                  "url": "https://project-navel.com/"
+                }
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
+          "name": "娱乐",
+          "items": [
+            {
+              "name": "哔哩哔哩 (゜-゜)つロ 干杯~-bilibili",
+              "url": "https://www.bilibili.com/"
+            },
+            {
+              "name": "高能玩家聚集地 - 小黑盒",
+              "url": "https://www.xiaoheihe.cn/app/bbs/home"
+            },
+            {
+              "name": "这本轻小说真厉害！2025 TOP榜单- 轻小说文库",
+              "url": "https://www.wenku8.net/zt/sugoi/2025.php"
+            },
+            {
+              "name": "SakuraFrp",
+              "url": "https://www.natfrp.com/user/"
+            }
+          ],
+          "folders": [
+            {
+              "name": "番小说漫画",
+              "items": [
+                {
+                  "name": "Bangumi 番组计划",
+                  "url": "https://bgm.tv/"
+                },
+                {
+                  "name": "海绵宝宝第三季国语 第02集-Omofun动漫",
+                  "url": "https://cn.211dm.com/anime/1072e0128be574a48459fb1d/play/1/2.html"
+                },
+                {
+                  "name": "蜜柑计划 - Mikan Project",
+                  "url": "https://mikanime.tv/"
+                },
+                {
+                  "name": "新番卫星观测站 | 長門番堂",
+                  "url": "https://yuc.wiki/new/"
+                },
+                {
+                  "name": "火花影视库2(1)",
+                  "url": "https://www.kdocs.cn/l/cbcQPkESfLpu?R=L1MvNA%3D%3D"
+                },
+                {
+                  "name": "2023《BanG Dream! It's MyGO!!!!!》动漫BT迅雷下载 - 樱花动漫",
+                  "url": "https://sakuras.me/movie/82458696.html"
+                },
+                {
+                  "name": "Browse :: Nyaa",
+                  "url": "https://nyaa.si/"
+                },
+                {
+                  "name": "Anime字幕论坛 - Powered by Discuz!",
+                  "url": "https://bbs.acgrip.com/"
+                },
+                {
+                  "name": "樱花动漫-热门动漫在线-专注动漫的门户网站",
+                  "url": "https://yinghuadongman.org.cn/"
+                },
+                {
+                  "name": "今日更新-MuteFun动漫网站-无声乐趣-(゜-゜)つロ 干杯~",
+                  "url": "https://www.mutefun.tv/label/new.html"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "神秘小网站",
+              "items": [
+                {
+                  "name": "东方幻存神签 - THBWiki · 专业性的东方Project维基百科 - TBSGroup",
+                  "url": "https://thwiki.cc/%E4%B8%9C%E6%96%B9%E5%B9%BB%E5%AD%98%E7%A5%9E%E7%AD%BE"
+                },
+                {
+                  "name": "下次一定 - 专门为白嫖怪开发的宝藏网站",
+                  "url": "https://www.iiice.cn/#/"
+                },
+                {
+                  "name": "MTool - 玩家专属的游戏翻译与修改工具 | 支持多种主流游戏引擎的智能处理工具",
+                  "url": "https://mtool.app/?lang=chs"
+                },
+                {
+                  "name": "爱上-宇宙恐龙-芝顿",
+                  "url": "https://cdn.m-78.jp/zetton/1000000000000/sc/index.html"
+                },
+                {
+                  "name": "武汉大学 | neo-RLEwiki",
+                  "url": "https://rle.oau.app/campus/WHU"
+                },
+                {
+                  "name": "半夏的后花园 – 一个普普通通女孩子的博客",
+                  "url": "https://www.subanxia.cn/"
+                },
+                {
+                  "name": "Steam Trading Site Tracker | Steam 挂刀行情站",
+                  "url": "https://www.iflow.work/"
+                },
+                {
+                  "name": "Mikutap",
+                  "url": "https://miku.sci-fifans.net/"
+                },
+                {
+                  "name": "美化包 ★ 枫の主题社",
+                  "url": "https://winmoes.com/theme/themepack"
+                },
+                {
+                  "name": "LiteLoaderQQNT",
+                  "url": "https://liteloaderqqnt.github.io/"
+                },
+                {
+                  "name": "催眠 Web APP",
+                  "url": "https://hypnosis.stand.homes/"
+                },
+                {
+                  "name": "图灵测试｜真人还是 AI？ | 任意门",
+                  "url": "https://www.anyanygame.com/turing-test"
+                },
+                {
+                  "name": "VOCAKEE 社区·VOCALOID声库下载站",
+                  "url": "https://x.vocakey.wiki/"
+                },
+                {
+                  "name": "首页 | OpenList",
+                  "url": "https://vb.vocakey.wiki/"
+                },
+                {
+                  "name": "CVoice 声音印象测试",
+                  "url": "https://chiooone.com/cvoice/?qq_aio_chat_type=3"
+                },
+                {
+                  "name": "Haleydu/Cimoc: 漫画阅读器",
+                  "url": "https://github.com/Haleydu/Cimoc"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "桌游",
+              "items": [
+                {
+                  "name": "爱桌游_桌游玩家的大本营",
+                  "url": "https://www.zhuoyoux.com/"
+                },
+                {
+                  "name": "CNGAME副站长的小屋 | VLink",
+                  "url": "https://vlink.cc/cngame"
+                },
+                {
+                  "name": "桌游合集 - game.hullqin.cn",
+                  "url": "https://game.hullqin.cn/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "娱乐小网站",
+              "items": [
+                {
+                  "name": "完美许愿器 - 所有的愿望都已标好了代价",
+                  "url": "https://wish.closeai.moe/"
+                },
+                {
+                  "name": "青椒模拟器 - 硬核学术生存游戏",
+                  "url": "https://tenure.feedscription.com/"
+                },
+                {
+                  "name": "无尽合成",
+                  "url": "https://hc.tsdo.in/"
+                },
+                {
+                  "name": "I'm Not a Robot",
+                  "url": "https://neal.fun/not-a-robot/"
+                },
+                {
+                  "name": "截图猜动画",
+                  "url": "https://lab.magiconch.com/ani-trace/"
+                },
+                {
+                  "name": "能不能好好说话？",
+                  "url": "https://lab.magiconch.com/nbnhhsh/"
+                },
+                {
+                  "name": "在线钢琴模拟器 - 全键盘模拟钢琴 - 网页上弹钢琴 - 钢琴在线玩",
+                  "url": "https://www.xiwnn.com/piano/"
+                },
+                {
+                  "name": "星尘幻梦 - 首页",
+                  "url": "https://re.xcdream.com/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "生成图片小网站",
+              "items": [
+                {
+                  "name": "女神异闻录5 预告信生成器",
+                  "url": "https://yuluoxk.cn/p5/"
+                },
+                {
+                  "name": "第壱話 使徒、襲来 - 福音战士標題生成器 - Evangelion Title Card Generator - 神奇海螺实验室",
+                  "url": "https://lab.magiconch.com/eva-title/"
+                },
+                {
+                  "name": "One Last Image - 卢浮宫生成器 - One Last Kiss 风格 封面生成 图片转线稿 - 神奇海螺实验室",
+                  "url": "https://lab.magiconch.com/one-last-image/"
+                },
+                {
+                  "name": "OCTemplate",
+                  "url": "https://octemplate.top/akrecruit"
+                },
+                {
+                  "name": "明日方舟标题生成器",
+                  "url": "https://arknights-logo-generator.netlify.app/"
+                },
+                {
+                  "name": "蔚蓝档案标题生成器",
+                  "url": "https://tmp.nulla.top/ba-logo/"
+                },
+                {
+                  "name": "中国制霸生成器 - 中国三十四省级行政区域制霸标记生成工具",
+                  "url": "https://lab.magiconch.com/china-ex/?_wv=1"
+                }
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
+          "name": "学校网站",
+          "items": [],
+          "folders": [
+            {
+              "name": "常用网站",
+              "items": [
+                {
+                  "name": "上网认证",
+                  "url": "http://portal.whu.edu.cn:8080/eportal/index.jsp?wlanuserip=8b360f6e52035981402cf977bacdd128&wlanacname=29185648f4390d796f547ee673c1581a&ssid=&nasip=7c5eb3e356fdfc14806593293102756d&snmpagentip=&mac=082509717daa2616e60e0bc8e8fff767&t=wireless-v2&url=096e8e7059e430e05980c3c547fed4ab7ccaeae90dfffda4ace4874ac81c5ad69031883e2cfd5141&apmac=&nasid=29185648f4390d796f547ee673c1581a&vid=185575b24d54035b&port=6b91e5d679d68d6b&nasportid=ac41d60d7f1382081362a1ed29e6af27abb71058b9ece1673db09c32006d55e14db47d83fb040b36"
+                },
+                {
+                  "name": "智慧珞珈",
+                  "url": "https://zhlj.whu.edu.cn/pc/index"
+                },
+                {
+                  "name": "武汉大学计算机学院专业课一体化平台",
+                  "url": "https://cslabcg.whu.edu.cn/indexcs/simple.jsp?loginErr=0"
+                },
+                {
+                  "name": "CS易办：让事更容易办",
+                  "url": "http://cseben.whu.edu.cn/ebanbenke/ebanbenke_manage.php"
+                },
+                {
+                  "name": "CS易办欢迎本科生",
+                  "url": "https://cseben.whu.edu.cn/ebanbenke/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "官网",
+              "items": [
+                {
+                  "name": "武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/"
+                },
+                {
+                  "name": "武汉大学",
+                  "url": "https://www.whu.edu.cn/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "办公网站",
+              "items": [
+                {
+                  "name": "校园网自助服务系统",
+                  "url": "http://172.19.1.10:8080/selfservice/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "教授",
+              "items": [
+                {
+                  "name": "玄跻峰-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/info/1019/2947.htm"
+                },
+                {
+                  "name": "谢晓媛的个人主页",
+                  "url": "https://xiaoyuanxie.github.io/"
+                },
+                {
+                  "name": "王峰-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/info/1019/2940.htm"
+                },
+                {
+                  "name": "彭蓉-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/info/1019/2951.htm"
+                },
+                {
+                  "name": "刘进-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/info/1019/2952.htm"
+                },
+                {
+                  "name": "武汉大学 李兵--中文主页--首页",
+                  "url": "https://jszy.whu.edu.cn/libing/zh_CN/index.htm"
+                },
+                {
+                  "name": "袁梦霆-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/info/1019/2500.htm"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "学习网站",
+              "items": [
+                {
+                  "name": "学习通",
+                  "url": "https://i.chaoxing.com/base?t=1762065283312"
+                },
+                {
+                  "name": "虚拟仿真实验教学项目管理平台",
+                  "url": "https://xfsy.whu.edu.cn/website/index.action"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "文档资料网站",
+              "items": [
+                {
+                  "name": "武大正版软件",
+                  "url": "https://ca-whu-edu-cn-s.vpn.whu.edu.cn/index.html"
+                },
+                {
+                  "name": "课程 - 武汉大学",
+                  "url": "https://aipractice.whu.edu.cn/courses"
+                },
+                {
+                  "name": "联创云打印",
+                  "url": "https://print.lib.whu.edu.cn/client/new/cprintPc/cprint.html"
+                },
+                {
+                  "name": "新生专栏-武汉大学学生资助管理中心",
+                  "url": "https://zzgl.whu.edu.cn/xszl.htm"
+                },
+                {
+                  "name": "WHU课程评价收集与查询系统",
+                  "url": "https://whucourses.cn/"
+                },
+                {
+                  "name": "‍​‌‍‌​​​‬​​​‍​​‌​‌​‌⁠​‌​​​‍​​‬⁠​‍​⁠‍‍‬﻿​​​​⁠​​‌​​武汉大学新人指引 - 飞书云文档",
+                  "url": "https://standardai.feishu.cn/docx/BOVudYQVso74qYxh7JNcYLQ7nng"
+                },
+                {
+                  "name": "Hello，WHUCAO | WHUCodingAndOpen",
+                  "url": "https://whucodingandopen.github.io/whucao/"
+                },
+                {
+                  "name": "计算机学院本科生思想政治素质综合评价实施细则（2024年12月修订）-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/content.jsp?urltype=news.NewsContentUrl&wbtreeid=2001&wbnewsid=50891"
+                },
+                {
+                  "name": "关于评选2025-2026学年计算机学院本科生先进集体和优秀个人的通知-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/info/1055/59521.htm"
+                }
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
+          "name": "学习",
+          "items": [
+            {
+              "name": "GitHub",
+              "url": "https://github.com/"
+            },
+            {
+              "name": "AI 智能体实战速成指南：从零到企业级落地 | ai-agents-from-zero",
+              "url": "https://didilili.github.io/ai-agents-from-zero/#/"
+            },
+            {
+              "name": "Ragas 框架",
+              "url": "https://docs.ragas.org.cn/en/stable/"
+            }
+          ],
+          "folders": [
+            {
+              "name": "专业知识学习",
+              "items": [
+                {
+                  "name": "准备您的环境 --- Preparing Your Environment",
+                  "url": "https://docs.oracle.com/en/database/oracle/sql-developer-command-line/25.4/sqcug/preparing-your-environment.html#GUID-18B1EA79-F586-44A4-93F2-036444E3CE7B"
+                }
+              ],
+              "folders": [
+                {
+                  "name": "做题",
+                  "items": [
+                    {
+                      "name": "题目列表 - 洛谷",
+                      "url": "https://www.luogu.com.cn/problem/list?page=6"
+                    },
+                    {
+                      "name": "力扣 (LeetCode) 全球极客挚爱的技术成长平台",
+                      "url": "https://leetcode.cn/"
+                    }
+                  ],
+                  "folders": []
+                },
+                {
+                  "name": "知识",
+                  "items": [
+                    {
+                      "name": "写给.NET程序员们：你所不知道的Python社区 · Issue #72 · shnug/jobs",
+                      "url": "https://github.com/shnug/jobs/issues/72"
+                    },
+                    {
+                      "name": "HTML5 教程 | 菜鸟教程",
+                      "url": "https://www.runoob.com/html/html5-intro.html"
+                    },
+                    {
+                      "name": "Vue.js - 渐进式 JavaScript 框架 | Vue.js",
+                      "url": "https://cn.vuejs.org/"
+                    },
+                    {
+                      "name": "在VMware 17虚拟机上安装Windows 11操作系统（全程有图超级详细）+VMware使用技巧_vmware17安装win11-CSDN博客",
+                      "url": "https://blog.csdn.net/L3145824894/article/details/132240566"
+                    },
+                    {
+                      "name": "HTML 全局属性",
+                      "url": "https://www.w3school.com.cn/tags/html_ref_standardattributes.asp"
+                    },
+                    {
+                      "name": "HTML 标签参考手册",
+                      "url": "https://www.w3school.com.cn/tags/index.asp"
+                    },
+                    {
+                      "name": "Re01 HTML 教学小工具",
+                      "url": "https://www.midorg.com/h.html"
+                    },
+                    {
+                      "name": "组合数学-非降路径问题总结 - 知乎",
+                      "url": "https://zhuanlan.zhihu.com/p/67774955"
+                    },
+                    {
+                      "name": "ASCII文本，十六进制，二进制，十进制，Base64转换器",
+                      "url": "https://www.rapidtables.org/zh-CN/convert/number/ascii-hex-bin-dec-converter.html"
+                    },
+                    {
+                      "name": "MySQL :: MySQL Documentation",
+                      "url": "https://dev.mysql.com/doc/?utm_source=chatgpt.com"
+                    }
+                  ],
+                  "folders": []
+                }
+              ]
+            },
+            {
+              "name": "学校学习",
+              "items": [
+                {
+                  "name": "‌‌‌‌‌‌​﻿‌﻿‌﻿‬​‍​﻿​‍‌‬​​‬​⁠‍​﻿​﻿‍​⁠‍​​​⁠​​﻿​​​​‍​‌‬飞书云文档",
+                  "url": "https://spartalab.feishu.cn/wiki/EblnwPMB4iqak6k2dM9cUJXuntb"
+                },
+                {
+                  "name": "专任教师-武汉大学计算机学院",
+                  "url": "https://cs.whu.edu.cn/szdw/zrjs.htm"
+                },
+                {
+                  "name": "学习通个人空间",
+                  "url": "https://i.chaoxing.com/base?ws=1&t=1774168614310"
+                },
+                {
+                  "name": "PlantUML图表编辑器",
+                  "url": "https://www.jser.com/g/plantuml-editor"
+                },
+                {
+                  "name": "PlantUML 编辑器 | 一个安全免费的工具箱",
+                  "url": "https://app.timelessq.com/office/plantuml-editor"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "通用知识学习",
+              "items": [
+                {
+                  "name": "有道翻译",
+                  "url": "https://smartisandict.youdao.com/translate"
+                },
+                {
+                  "name": "多邻国 - 学得轻松，学有所成的日语 课程！",
+                  "url": "https://www.duolingo.com/characters"
+                },
+                {
+                  "name": "U校园AI版",
+                  "url": "https://ucloud.unipus.cn/app/cmgt/resource-detail/20000129374#6bcd9c8e69e090b&6bcd9c8e72e090b"
+                },
+                {
+                  "name": "墨墨背单词 - 高效抗遗忘，轻松规划海量词汇记忆。",
+                  "url": "https://www.maimemo.com/home/web_study"
+                },
+                {
+                  "name": "Godot Hub",
+                  "url": "https://godothub.com/"
+                },
+                {
+                  "name": "创建.NET控制台应用程序 - .NET | Microsoft Learn",
+                  "url": "https://learn.microsoft.com/zh-cn/dotnet/core/tutorials/create-console-app?pivots=vscode"
+                },
+                {
+                  "name": "管理扩展 |Visual Studio 市场 --- Manage Extensions | Visual Studio Marketplace",
+                  "url": "https://marketplace.visualstudio.com/manage/publishers/awaqwq233"
+                },
+                {
+                  "name": "VibeMathed - tracking math problems solved by AI models",
+                  "url": "https://vibemathed.com/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "文献辅助",
+              "items": [
+                {
+                  "name": "上传论文",
+                  "url": "https://vpcs.fanyu.com/upload/101001"
+                },
+                {
+                  "name": "字数计算器",
+                  "url": "http://www.zishujisuanqi.com/"
+                },
+                {
+                  "name": "StackEdit中文版",
+                  "url": "https://stackedit.cn/app#"
+                },
+                {
+                  "name": "GitHub 文件加速代理 - 快速访问 GitHub 文件",
+                  "url": "https://gh-proxy.com/"
+                },
+                {
+                  "name": "太乙开源服务系统",
+                  "url": "https://www.taiyi.top/home"
+                },
+                {
+                  "name": "DownGit",
+                  "url": "https://downgit.github.io/#/home"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "资料",
+              "items": [
+                {
+                  "name": "旧版声明 | SurviveSJTUManual",
+                  "url": "https://survivesjtu.gitbook.io/survivesjtumanual/xu/sheng-ming"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "比赛",
+              "items": [
+                {
+                  "name": "中国大学生计算机设计大赛",
+                  "url": "https://2026.jsjds.com.cn/index"
+                }
+              ],
+              "folders": [
+                {
+                  "name": "数模",
+                  "items": [
+                    {
+                      "name": "2025全国大学生数学建模竞赛论文展示 - 中国大学生在线",
+                      "url": "https://dxs.moe.gov.cn/zx/hd/sxjm/sxjmlw/2025qgdxssxjmjslwzs/"
+                    }
+                  ],
+                  "folders": []
+                }
+              ]
+            },
+            {
+              "name": "仓库",
+              "items": [],
+              "folders": [
+                {
+                  "name": "个人仓库",
+                  "items": [
+                    {
+                      "name": "谭逸皓 / project24798 · GitLab",
+                      "url": "https://cslabcg.whu.edu.cn/vdir/Gitlab/2024302111122/project24798-6754"
+                    },
+                    {
+                      "name": "2025SE-WowoHands / Tetris · GitLab",
+                      "url": "https://csgitlab.whu.edu.cn/wowo-hands/tetris"
+                    }
+                  ],
+                  "folders": []
+                },
+                {
+                  "name": "学习仓库",
+                  "items": [
+                    {
+                      "name": "GitHub - MIKUZ12/ExamPass-Assistant: Customized ExamPass Assistant Codex skill · GitHub",
+                      "url": "https://github.com/MIKUZ12/ExamPass-Assistant"
+                    }
+                  ],
+                  "folders": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "工具",
+          "items": [
+            {
+              "name": "腾讯文档",
+              "url": "https://docs.qq.com/desktop?nlc=1"
+            },
+            {
+              "name": "Online FlowChart & Diagrams Editor - Mermaid Live Editor",
+              "url": "https://mermaid.live/edit#pako:eNpVjcFugzAQRH_F2lMrkYgQgrEPlRrS5hKpPeRUyGEVHIwSbGSM0hT49xqiqu1qDzuaN7MdHHUugMPpoq9HicaS_SZTxM1zmkhTNrbC5kBms6d-KyyptBK3nqwftpo0Utd1qYrHO78eIZJ0uxETxMpSnYe7lUz5NyV6skl3WFtdH_46-6vuyUtavktX_9-RRrjUa3pCfsLZEQ1J0EwIeFCYMgduTSs8qISpcJTQjW4GVopKZMDdmaM5Z5CpwWVqVB9aVz8xo9tCguu-NE61dY5WbEosDP4iQuXCJLpVFvhiOVUA7-DTqYjN41XMWLRkYbykzLk34GEwpyFjlLpdhHFEw8GDr-mrP4_pyncTRD6lfrAavgGjH3XM"
+            },
+            {
+              "name": "测速网 - 专业测网速, 网速测试, 宽带提速, 游戏测速, 直播测速, 5G测速, 物联网监测,Wi-Fi 7,Wi-Fi 6,FTTR,全屋Wi-Fi - SpeedTest.cn",
+              "url": "https://www.speedtest.cn/"
+            },
+            {
+              "name": "合乎周礼｜问礼成文，释礼还意",
+              "url": "https://hehuzhouli.com/#translator"
+            }
+          ],
+          "folders": [
+            {
+              "name": "邮箱",
+              "items": [
+                {
+                  "name": "(9封未读) 网易邮箱6.0版",
+                  "url": "https://mail.163.com/js6/main.jsp?df=mail163_letter#module=read.ReadModule%7C%7B%22area%22%3A%22normal%22%2C%22isThread%22%3Afalse%2C%22viewType%22%3A%22%22%2C%22id%22%3A%2258%3A1tbiOhS0N2issNMAbwACsn%22%2C%22fid%22%3A1%7D"
+                },
+                {
+                  "name": "收件箱 (37) - lym820288706@gmail.com - Gmail",
+                  "url": "https://mail.google.com/mail/u/1/#inbox"
+                },
+                {
+                  "name": "收件箱 - efecemoma92@gmail.com - Gmail",
+                  "url": "https://mail.google.com/mail/u/0/#inbox"
+                },
+                {
+                  "name": "(5封未读) 网易邮箱6.0版",
+                  "url": "https://mail.163.com/js6/main.jsp?df=mail163_letter#module=welcome.WelcomeModule%7C%7B%7D"
+                },
+                {
+                  "name": "武汉大学电子邮件系统",
+                  "url": "https://email.whu.edu.cn/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "有用小工具",
+              "items": [
+                {
+                  "name": "Olib - 飞书云文档",
+                  "url": "https://dquyl9k1r5u.feishu.cn/docx/HdPzd8HOwoWrzRxxdM3ckoYJn6c"
+                },
+                {
+                  "name": "OneNote",
+                  "url": "https://onenote.cloud.microsoft/"
+                },
+                {
+                  "name": "搜索 | M365 Copilot",
+                  "url": "https://m365.cloud.microsoft/search/?ocid=cmmwn2yed7c&origindomain=microsoft365&client-request-id=dcd1d9c3-ea91-4143-beaa-98bac1ba7459"
+                },
+                {
+                  "name": "手写体生成器",
+                  "url": "https://handwrite.dogliu.top/"
+                },
+                {
+                  "name": "清华大学开源软件镜像站 | Tsinghua Open Source Mirror",
+                  "url": "https://mirrors.tuna.tsinghua.edu.cn/#"
+                },
+                {
+                  "name": "Online MP3 Cutter - Cut Songs, Make Ringtones",
+                  "url": "https://mp3cut.net/"
+                },
+                {
+                  "name": "LaTeX公式编辑器 - 在线数学公式工具 | 在线工具集",
+                  "url": "https://tooltool.net/zh/latex"
+                },
+                {
+                  "name": "IPv6 测试",
+                  "url": "https://test-ipv6.com/"
+                },
+                {
+                  "name": "视频转 GIF 转换器 - FreeConvert.com",
+                  "url": "https://www.freeconvert.com/zh/convert/video-to-gif"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "其他杂项",
+              "items": [
+                {
+                  "name": "武汉大学: 简介 | LinkedIn",
+                  "url": "https://www.linkedin.com/school/wuhan-university/"
+                },
+                {
+                  "name": "人才评估",
+                  "url": "https://ctrip.ceping.com/pc?elink=VsIbc825DTA2q7Zl8rBtwzZRX9wkaKaP5OevKZFxiOsS0NtiIUSCy6GZFahvt1Ay#/promise"
+                },
+                {
+                  "name": "Microsoft——AI、云、生产力、计算、游戏和应用",
+                  "url": "https://www.microsoft.com/zh-cn"
+                },
+                {
+                  "name": "教育 - Microsoft Azure",
+                  "url": "https://portal.azure.com/?Microsoft_Azure_Education_correlationId=0ce572c6-252a-4f38-b947-d1f8f7bdcd01&Microsoft_Azure_Education_newA4E=true&Microsoft_Azure_Education_asoSubGuid=dd16ee18-031a-4d62-81b1-c5a0f160d8d9#view/Microsoft_Azure_Education/EducationMenuBlade/~/overview"
+                },
+                {
+                  "name": "我的应用 | 高德控制台",
+                  "url": "https://console.amap.com/dev/key/app"
+                },
+                {
+                  "name": "您的项目 - Overleaf, 在线LaTeX编辑器",
+                  "url": "https://cn.overleaf.com/project"
+                },
+                {
+                  "name": "百度图片 | 免费AI图像生成工具与海量高清图平台",
+                  "url": "https://image.baidu.com/?fr=shitu"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "音频",
+              "items": [
+                {
+                  "name": "Freesound",
+                  "url": "https://freesound.org/"
+                },
+                {
+                  "name": "歌詞検索サイト うたてん",
+                  "url": "https://utaten.com/"
+                },
+                {
+                  "name": "音效素材_免费下载 音效库 - 爱给网",
+                  "url": "https://www.aigei.com/sound/class/?wd=%E9%9F%B3%E6%95%88%E5%85%8D%E8%B4%B9%E7%BD%91&msclkid=39e1fd246b6311a4a6569402dcc61bad"
+                }
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
+          "name": "网站",
+          "items": [
+            {
+              "name": "Your Star | awapwq233",
+              "url": "https://awapwq233.github.io/posts/Your-Star/"
+            },
+            {
+              "name": "非遗数字生命互动引擎",
+              "url": "http://182.92.76.74:3000/"
+            },
+            {
+              "name": "武汉大学动漫协会-WHUDAYS",
+              "url": "https://whudays.github.io/"
+            },
+            {
+              "name": "shenxianovo — A passionate developer and creator. I build scalable, user-friendly, and delightful digital experiences.",
+              "url": "https://shenxianovo.com/"
+            },
+            {
+              "name": "awaqwq233 · 主页",
+              "url": "https://awaqwq23.github.io/"
+            },
+            {
+              "name": "轻量云游戏服专区",
+              "url": "https://lightgame.cloud.tencent.com/index"
+            },
+            {
+              "name": "快来视奸我ヽ（≧□≦）ノ",
+              "url": "https://awaqwq233.com/heartbeat/"
+            },
+            {
+              "name": "补药视奸我ヽ（≧□≦）ノ",
+              "url": "https://heartbeat.shenxianovo.com/"
+            }
+          ],
+          "folders": []
+        },
+        {
+          "name": "ai",
+          "items": [
+            {
+              "name": "DeepSeek - 探索未至之境",
+              "url": "https://chat.deepseek.com/"
+            },
+            {
+              "name": "Google Gemini",
+              "url": "https://gemini.google.com/app"
+            },
+            {
+              "name": "ChatGPT",
+              "url": "https://chatgpt.com/"
+            },
+            {
+              "name": "Claude",
+              "url": "https://claude.ai/new"
+            },
+            {
+              "name": "Kimi",
+              "url": "https://www.kimi.com/chat/19ab9fb4-a2f2-8384-8000-09b875c37a07"
+            },
+            {
+              "name": "grok.com",
+              "url": "https://grok.com/"
+            },
+            {
+              "name": "豆包 - 字节跳动旗下 AI 智能助手",
+              "url": "https://www.doubao.com/chat/?channel=bing_sem&from_login=1"
+            }
+          ],
+          "folders": []
+        },
+        {
+          "name": "AIbot",
+          "items": [
+            {
+              "name": "👋 I'm AstrBot | AstrBot",
+              "url": "https://docs.astrbot.app/what-is-astrbot.html"
+            },
+            {
+              "name": "接入框架 | NapCatQQ",
+              "url": "https://napneko.github.io/use/integration"
+            },
+            {
+              "name": "SoruxGPT",
+              "url": "https://ai.soruxgpt.com/console/token"
+            }
+          ],
+          "folders": [
+            {
+              "name": "模型",
+              "items": [
+                {
+                  "name": "Dashboard | Claude Platform",
+                  "url": "https://platform.claude.com/dashboard"
+                },
+                {
+                  "name": "Kimi - K2 长思考上线",
+                  "url": "https://www.kimi.com/?data_source=tracer&utm_campaign=TR_jdqncC3B&utm_content=&utm_medium=%E5%BF%85%E5%BA%94&utm_source=bing&utm_term=ai-kimi&tr_param1=ai+kimi&msclkid=20de0fb1fafc1fed8dc56694a408aff5"
+                },
+                {
+                  "name": "SiliconCloud",
+                  "url": "https://cloud.siliconflow.cn/sft-kamy305vi4/account/ak"
+                },
+                {
+                  "name": "DeepSeek 开放平台",
+                  "url": "https://platform.deepseek.com/usage"
+                },
+                {
+                  "name": "OpenAI Platform",
+                  "url": "https://platform.openai.com/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "教程",
+              "items": [
+                {
+                  "name": "KouriChat",
+                  "url": "https://kourichat.com/"
+                },
+                {
+                  "name": "【AI接入微信】小刻都能学会的干员接入微信教程 - 小黑盒",
+                  "url": "https://www.xiaoheihe.cn/app/bbs/link/159248162?htk=4acbeed190bc0f7b8a0b780b51d72d04"
+                },
+                {
+                  "name": "用户指南 | MaiBot 文档中心",
+                  "url": "https://docs.mai-mai.org/manual/"
+                },
+                {
+                  "name": "AI中转站评测 | Claude/Gemini/Codex中转站评测对比 | Help AIO",
+                  "url": "https://www.helpaio.com/transit"
+                },
+                {
+                  "name": "首次调用 API | DeepSeek API Docs",
+                  "url": "https://api-docs.deepseek.com/zh-cn/"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "中转站",
+              "items": [
+                {
+                  "name": "WildAI",
+                  "url": "https://bewild.ai/subscribe"
+                },
+                {
+                  "name": "SoruxGPT",
+                  "url": "https://app.soruxgpt.com/"
+                },
+                {
+                  "name": "ChatGPT 中文版",
+                  "url": "https://ai.lanjingchat.com/"
+                },
+                {
+                  "name": "Cow AI",
+                  "url": "https://www.opencowbot.com/dashboard/overview"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "其他",
+              "items": [
+                {
+                  "name": "随便聊聊 · XSimple",
+                  "url": "https://xsimplechat.com/chat"
+                },
+                {
+                  "name": "花生AI | 超好用的视频创作智能体",
+                  "url": "https://www.huasheng.cn/"
+                }
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
+          "name": "外国",
+          "items": [],
+          "folders": [
+            {
+              "name": "vpn",
+              "items": [
+                {
+                  "name": "首页 - Shadowsocks.com",
+                  "url": "https://secure.shadowsocks.au/index.php"
+                },
+                {
+                  "name": "管理产品 - Shadowsocks.com",
+                  "url": "https://secure.shadowsocks.au/clientarea.php?action=productdetails&id=1864582"
+                },
+                {
+                  "name": "iKuuu 官网 - 快如闪电的全球边缘网络加速服务",
+                  "url": "https://ikuuupro.com/"
+                },
+                {
+                  "name": "Blurpath 代理 - 购买住宅IP高级代理 |最佳代理网站——Blurpath",
+                  "url": "https://blurpath.com/?channel_code=IPjiance"
+                },
+                {
+                  "name": "Reddit - 全网主阵地",
+                  "url": "https://www.reddit.com/"
+                },
+                {
+                  "name": "首页 — iKuuu VPN",
+                  "url": "https://ikuuu.org/user#"
+                },
+                {
+                  "name": "V2free",
+                  "url": "https://v2free.net/user"
+                },
+                {
+                  "name": "SakuraCat",
+                  "url": "https://c4-sakuracat.com/login"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "外国网站",
+              "items": [
+                {
+                  "name": "Google",
+                  "url": "https://www.google.com.hk/index.html"
+                },
+                {
+                  "name": "YouTube",
+                  "url": "https://www.youtube.com/"
+                },
+                {
+                  "name": "Google AI Studio",
+                  "url": "https://aistudio.google.com/prompts/new_chat"
+                },
+                {
+                  "name": "Google",
+                  "url": "https://www.google.gp/?hl=zh-CN"
+                },
+                {
+                  "name": "Gmail",
+                  "url": "https://mail.google.com/mail/u/0/?hl=zh-CN"
+                }
+              ],
+              "folders": []
+            },
+            {
+              "name": "辅助网站",
+              "items": [
+                {
+                  "name": "5SIM 活跃订单 – 管理当前虚拟号码",
+                  "url": "https://5sim.net/zh/activation/active"
+                },
+                {
+                  "name": "美国地址生成器 - 美国身份生成器 - 美国信用卡生成器",
+                  "url": "https://www.meiguodizhi.com/"
+                },
+                {
+                  "name": "我的IP地址 | IPAddress.my",
+                  "url": "https://www.ipaddress.my/zh_cn"
+                },
+                {
+                  "name": "bbbestb/bestcnvpn: 【国内梯子排行】最好用的VPN梯子推荐与科学上网测评 -梯子、科学上网、翻墙、机场、v2ray、trojan、shadowsock",
+                  "url": "https://github.com/bbbestb/bestcnvpn"
+                },
+                {
+                  "name": "What Is My IP Address - See Your Public Address - IPv4 & IPv6",
+                  "url": "https://whatismyipaddress.com/"
+                },
+                {
+                  "name": "💸各大机场优惠券汇总",
+                  "url": "https://www.ermao.net/article/23w1svxa/"
+                },
+                {
+                  "name": "羊毛优惠集锦 - 霂明导航",
+                  "url": "https://n.mumingfang.com/server_discounts"
+                },
+                {
+                  "name": "日本地址生成器 | 免费生成真实日本地址、邮编、电话 - MockAddress",
+                  "url": "https://mockaddress.com/jp-address/"
+                },
+                {
+                  "name": "华为手机、平板安装microG使用Play商店和ChatGPT教程 - Alan's Blog - 个人博客",
+                  "url": "https://www.toalan.com/archives/71/"
+                },
+                {
+                  "name": "德国地址生成器 - 德国身份生成器 - 德国信用卡生成器",
+                  "url": "https://www.meiguodizhi.com/de-address"
+                },
+                {
+                  "name": "randomiban.com",
+                  "url": "http://randomiban.com/"
+                }
+              ],
+              "folders": []
+            }
+          ]
+        },
+        {
+          "name": "服务器",
+          "items": [
+            {
+              "name": "账单- Microsoft Azure",
+              "url": "https://portal.azure.com/#view/Microsoft_Azure_GTM/Billing.MenuView/~/costAnalysis/scopeId/%2Fproviders%2FMicrosoft.Billing%2FbillingAccounts%2F69b6d745-6e23-55e3-26b9-1cf9eab5d314%3A083d1369-dc43-4fc8-a418-cdfc3dc9e71c_2019-05-31/scope/BillingAccount"
+            },
+            {
+              "name": "服务器- Microsoft Azure",
+              "url": "https://portal.azure.com/#@820288706qq.onmicrosoft.com/resource/subscriptions/dd16ee18-031a-4d62-81b1-c5a0f160d8d9/resourcegroups/awaqwq233-1_group/providers/Microsoft.Compute/virtualMachines/awaqwq233/overview"
+            },
+            {
+              "name": "SillyTavern",
+              "url": "http://57.158.99.134:8000/"
+            },
+            {
+              "name": "启明星-云服务",
+              "url": "https://cloud.y.qq.com/product/separation/doc"
+            },
+            {
+              "name": "轻量应用服务器控制台",
+              "url": "https://swasnext.console.aliyun.com/servers/cn-wuhan-lr"
+            },
+            {
+              "name": "阿里云域名",
+              "url": "https://wanwang.aliyun.com/domain/searchresult/?domainCartTradeParams=dr_29379033_1778648307195&spm=5176.29379033.0.domain-just-search&keyword=awaqwq233&suffix="
+            },
+            {
+              "name": "tx域名",
+              "url": "https://cloud.tencent.com/act/pro/domain?fromSource=gwzcw.9716130.9716130.9716130&utm_medium=cpc&utm_id=gwzcw.9716130.9716130.9716130&msclkid=280f6f73078510f8838e057702571ed4"
+            },
+            {
+              "name": "领域 |注册情况 |820288706@qq.com 的账户 |Cloudflare --- Domains | Registrations | 820288706@qq.com's Account | Cloudflare",
+              "url": "https://dash.cloudflare.com/8896aa66cf9344049b6331f6e858e093/domains/registrations/purchase?query=awaqwq233"
+            },
+            {
+              "name": "我的域名 - 域名注册 - 控制台",
+              "url": "https://console.cloud.tencent.com/domain/all-domain/manage/domain-eu72x8jq/basicinfo"
+            },
+            {
+              "name": "我的域名 - DNSPod-免费智能DNS解析服务商-电信_网通_教育网,智能DNS",
+              "url": "https://console.dnspod.cn/dns/list/detail/awaqwq233.com/records"
+            },
+            {
+              "name": "轻量云游戏服专区",
+              "url": "https://lightgame.cloud.tencent.com/server"
+            },
+            {
+              "name": "成本管理: 颜铭 李 - Microsoft Azure",
+              "url": "https://portal.azure.com/#view/Microsoft_Azure_CostManagement/Menu/~/paymentmethods/scope/%2Fproviders%2FMicrosoft.Billing%2FbillingAccounts%2F69b6d745-6e23-55e3-26b9-1cf9eab5d314%3A083d1369-dc43-4fc8-a418-cdfc3dc9e71c_2019-05-31/open/costanalysisv3.subscriptions/openedBy/BillingAccount.CostAnalysis.CBR%3ASubscriptions"
+            }
+          ],
+          "folders": []
+        },
+        {
+          "name": "工作",
+          "items": [
+            {
+              "name": "总部暑期日常实习",
+              "url": "https://careers.citics.com/summer/interns"
+            },
+            {
+              "name": "携程集团招聘官网",
+              "url": "https://job.ctrip.com/#/"
+            },
+            {
+              "name": "首页（中信证券股份有限公司）",
+              "url": "https://www.citicsinfo.com/oa/sys/portal/page.jsp?portalId=16c79a6df29298b3d7446794de39fc5b"
+            },
+            {
+              "name": "哔哩哔哩-招聘",
+              "url": "https://jobs.bilibili.com/campus/positions?type=3"
+            },
+            {
+              "name": "鹰角网络招聘官网",
+              "url": "https://career.hypergryph.com/"
+            }
+          ],
+          "folders": []
+        },
+        {
+          "name": "微软领奖",
+          "items": [
+            {
+              "name": "首页 – 微软积分商城",
+              "url": "https://rewards.bing.com/dashboard"
+            },
+            {
+              "name": "Microsoft Bing Rewards Daily Task Script: Microsoft Bing Rewards Daily Task Script. 微软必应奖励每日任务脚本，使用油猴脚本刷取微软积分。",
+              "url": "https://gitee.com/idbb98/microsoft-bing-rewards-daily-task-script#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B%E6%8C%87%E5%8D%97"
+            }
+          ],
+          "folders": []
+        }
+      ]
+    },
+    {
+      "name": "其他收藏夹",
+      "items": [
+        {
+          "name": "职位列表 - TalentsAI 专家数据标注平台",
+          "url": "https://www.talents-ai.com/jobs?inviteId=u_c599085768c44142b5a1ec8577edb60a"
+        }
+      ],
+      "folders": []
+    },
+    {
+      "name": "移动设备收藏夹",
+      "items": [
+        {
+          "name": "禁漫天堂發布頁-APP下載 回家的路",
+          "url": "https://jmcomica.org/"
+        }
+      ],
+      "folders": []
+    }
+  ]
+}

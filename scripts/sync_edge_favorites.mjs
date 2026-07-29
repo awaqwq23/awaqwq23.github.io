@@ -53,29 +53,33 @@ function readBookmarksWithRetry(file, attempts = 4) {
 }
 
 const sourceData = readBookmarksWithRetry(source)
-const categories = new Map()
-const seen = new Set()
+let linkCount = 0
+let folderCount = 0
 
-function addBookmark(category, node) {
+function bookmarkFromNode(node) {
   const url = safeUrl(node.url)
-  if (!url) return
+  if (!url) return null
   const name = String(node.name || new URL(url).hostname).trim()
-  const key = `${name}\n${url}`
-  if (seen.has(key)) return
-  seen.add(key)
-  if (!categories.has(category)) categories.set(category, [])
-  categories.get(category).push({ name, url })
+  linkCount += 1
+  return { name, url }
 }
 
-function walk(node, trail) {
-  if (!node) return
-  if (node.type === 'url') {
-    addBookmark(trail.join(' / ') || '未分类', node)
-    return
+function folderFromNode(node, fallbackName) {
+  folderCount += 1
+  const folder = {
+    name: String(node?.name || fallbackName || '未命名文件夹').trim(),
+    items: [],
+    folders: [],
   }
-
-  const nextTrail = node.name && node.name !== 'root' ? [...trail, node.name] : trail
-  for (const child of node.children || []) walk(child, nextTrail)
+  for (const child of node?.children || []) {
+    if (child.type === 'url') {
+      const bookmark = bookmarkFromNode(child)
+      if (bookmark) folder.items.push(bookmark)
+    } else if (child.type === 'folder') {
+      folder.folders.push(folderFromNode(child))
+    }
+  }
+  return folder
 }
 
 const roots = [
@@ -84,18 +88,20 @@ const roots = [
   ['移动设备收藏夹', sourceData.roots?.synced],
 ]
 
+const tree = []
 for (const [label, root] of roots) {
-  if (!root) continue
-  for (const child of root.children || []) {
-    if (child.type === 'url') addBookmark(label, child)
-    else walk(child, [label])
-  }
+  if (!root || !(root.children || []).length) continue
+  tree.push(folderFromNode(root, label))
+  tree[tree.length - 1].name = label
 }
 
-const result = [...categories.entries()]
-  .filter(([, items]) => items.length)
-  .map(([category, items]) => ({ category, items }))
+const result = {
+  profile,
+  folderCount,
+  linkCount,
+  roots: tree,
+}
 
 fs.mkdirSync(path.dirname(output), { recursive: true })
 fs.writeFileSync(output, `${JSON.stringify(result, null, 2)}\n`, 'utf8')
-console.log(`Edge 收藏夹同步完成：${result.length} 个分类，${seen.size} 条链接（${profile}）`)
+console.log(`Edge 收藏夹同步完成：${folderCount} 个文件夹，${linkCount} 条链接（${profile}）`)

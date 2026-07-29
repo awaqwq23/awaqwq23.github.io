@@ -3,6 +3,8 @@ import os
 import re
 import sqlite3
 import sys
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -32,12 +34,57 @@ def song_from_track(track):
         "artist": " / ".join(item.get("name", "") for item in artists if item.get("name")) or "未知歌手",
         "album": album.get("name") or album.get("albumName") or "未知专辑",
         "cover": cover,
-        "url": f"https://music.163.com/#/song?id={song_id}",
+        "url": f"https://music.163.com/song?id={song_id}",
     }
 
 
 def playlist_url(playlist_id):
-    return f"https://music.163.com/#/playlist?id={playlist_id}" if playlist_id else "https://music.163.com/"
+    return f"https://music.163.com/playlist?id={playlist_id}" if playlist_id else "https://music.163.com/"
+
+
+def collect_track_objects(value, target):
+    if isinstance(value, dict):
+        if (
+            value.get("id")
+            and value.get("name")
+            and (value.get("artists") or value.get("ar"))
+            and (value.get("album") or value.get("al"))
+        ):
+            target[str(value["id"])] = song_from_track(value)
+        for child in value.values():
+            if isinstance(child, (dict, list)):
+                collect_track_objects(child, target)
+            elif isinstance(child, str) and len(child) > 20 and child[:1] in "[{":
+                nested = load_json(child)
+                if nested is not None:
+                    collect_track_objects(nested, target)
+    elif isinstance(value, list):
+        for child in value:
+            collect_track_objects(child, target)
+
+
+def fetch_missing_tracks(track_ids, target):
+    fetched = 0
+    for start in range(0, len(track_ids), 150):
+        batch = track_ids[start:start + 150]
+        query = urllib.parse.urlencode({"ids": json.dumps(batch, separators=(",", ":"))})
+        request = urllib.request.Request(
+            f"https://interface.music.163.com/api/song/detail/?{query}",
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": "https://music.163.com/",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            for track in payload.get("songs") or []:
+                if track.get("id"):
+                    target[str(track["id"])] = song_from_track(track)
+                    fetched += 1
+        except Exception as error:
+            print(f"歌曲详情网络补全失败（批次 {start // 150 + 1}）：{error}", file=sys.stderr)
+    return fetched
 
 
 if not DATABASE.exists():
@@ -51,6 +98,16 @@ for track_id, raw in connection.execute("select id, jsonStr from dbTrack"):
     data = load_json(raw)
     if data:
         tracks[str(track_id)] = song_from_track(data)
+
+# 网易云会把完整歌曲对象分散缓存在多个表中；递归提取可避免只读到 dbTrack 的一小部分。
+for table in ("requestCache", "persistentModel", "historyTracks", "historyPlaylists"):
+    columns = [column[1] for column in connection.execute(f"pragma table_info({table})")]
+    if "jsonStr" not in columns:
+        continue
+    for (raw,) in connection.execute(f"select jsonStr from {table}"):
+        data = load_json(raw)
+        if data is not None:
+            collect_track_objects(data, tracks)
 
 host_rows = connection.execute(
     "select time, jsonStr from persistentModel where uniKey='async:hostResource' order by time desc"
@@ -92,10 +149,13 @@ for playlist_id, (_, playlist) in latest_cache.items():
 
 favorite_id = str(host_data.get("starPlaylistId") or "")
 
-
-def ids_by_names(*names):
-    wanted = set(names)
-    return [playlist_id for playlist_id, item in playlists.items() if item.get("name") in wanted]
+desired_track_ids = {
+    track_id
+    for ids in playlist_tracks.values()
+    for track_id in ids
+}
+missing_track_ids = sorted(desired_track_ids - set(tracks))
+network_fetched = fetch_missing_tracks(missing_track_ids, tracks) if missing_track_ids else 0
 
 
 def build_category(category_id, name, icon, color, playlist_ids, empty_hint):
@@ -139,7 +199,7 @@ categories = [
     for index, (playlist_id, item) in enumerate(playlist_order)
 ]
 
-database_time = datetime.fromtimestamp(DATABASE.stat().st_mtime, timezone.utc).astimezone().isoformat(timespec="seconds")
+synced_time = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
 profile_id = ""
 for item in playlists.values():
     if item.get("userId"):
@@ -147,15 +207,15 @@ for item in playlists.values():
         break
 
 result = {
-    "syncedAt": database_time,
-    "source": "网易云音乐本地曲库",
-    "profileUrl": f"https://music.163.com/#/user/home?id={profile_id}" if profile_id else "https://music.163.com/",
+    "syncedAt": synced_time,
+    "source": "网易云音乐本地曲库与公开歌曲详情",
+    "profileUrl": f"https://music.163.com/user/home?id={profile_id}" if profile_id else "https://music.163.com/",
     "categories": categories,
 }
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(
-    "网易云音乐同步完成："
+    f"网易云音乐同步完成（网络补全 {network_fetched} 首）："
     + "，".join(f"{category['name']} {category['cached']}/{category['total']}" for category in categories)
 )

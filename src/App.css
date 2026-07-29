@@ -836,6 +836,109 @@ ul { list-style: none; }
 }
 .materials-folder-content .link-item:first-child { margin-top: 0.75rem; }
 
+.favorites-tree-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.favorites-tree-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+}
+.favorites-tree-meta i { color: var(--primary); }
+.favorite-tree-roots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.favorite-tree-folder {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+.favorite-tree-folder .favorite-tree-folder {
+  margin-top: 0.5rem;
+  background: color-mix(in srgb, var(--surface-2) 48%, var(--surface));
+}
+.favorite-tree-folder > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 58px;
+  padding: 0.7rem 0.85rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.favorite-tree-folder > summary::-webkit-details-marker { display: none; }
+.favorite-tree-folder[open] > summary {
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.favorite-folder-main {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+.favorite-folder-main > i {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  background: var(--primary-bg);
+  border-radius: 9px;
+}
+.favorite-folder-main > span { display: flex; flex-direction: column; min-width: 0; }
+.favorite-folder-main strong {
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.favorite-folder-main small { color: var(--text-muted); font-size: 0.62rem; }
+.favorite-tree-chevron {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  transition: transform 0.2s;
+}
+.favorite-tree-folder[open] > summary > .favorite-tree-chevron { transform: rotate(180deg); }
+.favorite-tree-children {
+  position: relative;
+  padding: 0.6rem;
+}
+.favorite-tree-folder .favorite-tree-children .favorite-tree-children {
+  margin-left: 0.8rem;
+}
+.favorite-tree-folder .favorite-tree-children .favorite-tree-children::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0.6rem;
+  left: -0.4rem;
+  width: 1px;
+  background: var(--border);
+}
+.favorite-tree-link { margin-top: 0.4rem; }
+.favorite-tree-link:first-child { margin-top: 0; }
+.favorite-search-results > p { margin: 1rem 0; }
+
 /* 子页面：链接列表 */
 .link-list {
   display: flex;
