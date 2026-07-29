@@ -1,24 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { COMPANY_CATALOG, COMPANY_LOGO_URL } from './companyCatalog'
 
 const W = 960
 const H = 620
 const PADDLE_Y = 564
-const BRICK_COLS = 9
-const BRICK_ROWS = 6
-const BRICK_GAP = 8
-const BRICK_W = 92
-const BRICK_H = 38
-
-const COMPANIES = [
-  'Amazon', 'AMD', 'Andreessen', 'Automattic', 'Block', 'Box', 'Cisco', 'Cloudflare', 'Comcast',
-  'CrowdStrike', 'Databricks', 'Dell', 'DigitalOcean', 'DoorDash', 'GitHub', 'GitLab', 'Google', 'IBM',
-  'Intel', 'Meta', 'Microsoft', 'NVIDIA', 'Notion', 'Palantir', 'Postman', 'Red Hat', 'Replit',
-  'SAP', 'ServiceNow', 'Siemens', 'SpaceX', 'Stack Overflow', 'Uber', 'Vercel', 'Zoom', 'Mozilla',
-  'Dropbox', 'Shopify', 'Salesforce', 'Stripe', 'Airbnb', 'Spotify', 'Netflix', 'Adobe', 'Oracle',
-  'Atlassian', 'PayPal', 'Pinterest', 'Snap', 'Reddit', 'Roblox', 'Unity', 'Samsung', 'Sony',
-]
+const BRICK_COLS = 8
+const BRICK_GAP = 10
+const BRICK_W = 100
+const BRICK_H = 40
 
 const ROW_COLORS = ['#FF6B35', '#8B5CF6', '#06B6D4', '#22C55E', '#F59E0B', '#3B82F6']
+const LOGO_CACHE = new Map()
 
 const AIS = {
   openai: {
@@ -50,23 +42,45 @@ const AIS = {
   },
 }
 
-function makeBricks() {
-  const totalW = BRICK_COLS * BRICK_W + (BRICK_COLS - 1) * BRICK_GAP
-  const startX = (W - totalW) / 2
+function shuffled(items) {
+  const result = [...items]
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[result[i], result[j]] = [result[j], result[i]]
+  }
+  return result
+}
 
-  return COMPANIES.map((name, i) => {
-    const col = i % BRICK_COLS
-    const row = Math.floor(i / BRICK_COLS)
-    return {
-      name,
-      x: startX + col * (BRICK_W + BRICK_GAP),
-      y: 64 + row * (BRICK_H + BRICK_GAP),
-      w: BRICK_W,
-      h: BRICK_H,
-      color: ROW_COLORS[row],
-      alive: true,
+function makeBricks() {
+  const count = 28 + Math.floor(Math.random() * 15)
+  const companies = shuffled(COMPANY_CATALOG).slice(0, count)
+  const rows = Math.ceil(count / BRICK_COLS)
+  const baseCount = Math.floor(count / rows)
+  const extra = count % rows
+  const rowCounts = shuffled(Array.from({ length: rows }, (_, i) => baseCount + (i < extra ? 1 : 0)))
+  const bricks = []
+  let companyIndex = 0
+
+  rowCounts.forEach((rowCount, row) => {
+    const totalW = rowCount * BRICK_W + (rowCount - 1) * BRICK_GAP
+    const rowOffset = (Math.random() - 0.5) * Math.min(22, W - totalW - 56)
+    const startX = (W - totalW) / 2 + rowOffset
+    const y = 66 + row * (BRICK_H + BRICK_GAP) + (Math.random() - 0.5) * 4
+    for (let col = 0; col < rowCount; col += 1) {
+      const company = companies[companyIndex]
+      bricks.push({
+        ...company,
+        x: startX + col * (BRICK_W + BRICK_GAP),
+        y,
+        w: BRICK_W,
+        h: BRICK_H,
+        color: ROW_COLORS[row % ROW_COLORS.length],
+        alive: true,
+      })
+      companyIndex += 1
     }
   })
+  return bricks
 }
 
 function freshGame(aiKey) {
@@ -74,7 +88,7 @@ function freshGame(aiKey) {
   return {
     aiKey,
     paddle: { x: (W - ai.width) / 2, width: ai.width },
-    ball: { x: W / 2, y: PADDLE_Y - 14, r: 8, vx: aiKey === 'anthropic' ? 6.4 : 4.8, vy: aiKey === 'anthropic' ? -7.2 : -5.8 },
+    ball: { x: W / 2, y: PADDLE_Y - 14, r: 8, vx: 0, vy: aiKey === 'anthropic' ? -8.6 : -6.3 },
     bricks: makeBricks(),
     particles: [],
     keys: { left: false, right: false },
@@ -112,12 +126,15 @@ export default function AIWorldBreakout() {
   const gameRef = useRef(freshGame('openai'))
   const frameRef = useRef(0)
   const mountedRef = useRef(true)
+  const noticeTimerRef = useRef(null)
   const [selectedAI, setSelectedAI] = useState('openai')
+  const [destructionNotice, setDestructionNotice] = useState(null)
   const [ui, setUi] = useState({
     status: 'ready',
     score: 0,
     retries: 3,
     elapsed: 0,
+    total: gameRef.current.bricks.length,
   })
 
   const syncUi = useCallback(() => {
@@ -128,7 +145,21 @@ export default function AIWorldBreakout() {
       score: g.score,
       retries: g.retries,
       elapsed: g.elapsed,
+      total: g.bricks.length,
     })
+  }, [])
+
+  const showDestruction = useCallback((company) => {
+    const g = gameRef.current
+    if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current)
+    setDestructionNotice({
+      key: `${company.name}-${performance.now()}`,
+      ai: AIS[g.aiKey].name,
+      company: company.name,
+      desc: company.desc,
+      color: AIS[g.aiKey].color,
+    })
+    noticeTimerRef.current = setTimeout(() => setDestructionNotice(null), 5000)
   }, [])
 
   const placeBall = useCallback((status = 'ready') => {
@@ -138,14 +169,16 @@ export default function AIWorldBreakout() {
     g.paddle.x = (W - g.paddle.width) / 2
     g.ball.x = W / 2
     g.ball.y = PADDLE_Y - 14
-    g.ball.vx = g.aiKey === 'anthropic' ? 6.4 : 4.8
-    g.ball.vy = g.aiKey === 'anthropic' ? -7.2 : -5.8
+    g.ball.vx = 0
+    g.ball.vy = g.aiKey === 'anthropic' ? -8.6 : -6.3
     g.lastTime = 0
     syncUi()
   }, [syncUi])
 
   const resetGame = useCallback((aiKey = gameRef.current.aiKey) => {
     gameRef.current = freshGame(aiKey)
+    if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current)
+    setDestructionNotice(null)
     setSelectedAI(aiKey)
     syncUi()
   }, [syncUi])
@@ -171,6 +204,13 @@ export default function AIWorldBreakout() {
 
   useEffect(() => {
     mountedRef.current = true
+    COMPANY_CATALOG.forEach((company) => {
+      if (LOGO_CACHE.has(company.icon)) return
+      const image = new Image()
+      image.crossOrigin = 'anonymous'
+      image.src = COMPANY_LOGO_URL(company.icon)
+      LOGO_CACHE.set(company.icon, image)
+    })
     const onKeyDown = (event) => {
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return
       const key = event.key.toLowerCase()
@@ -208,6 +248,7 @@ export default function AIWorldBreakout() {
       window.removeEventListener('keydown', onKeyDown)
       window.removeEventListener('keyup', onKeyUp)
       window.removeEventListener('blur', clearKeys)
+      if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current)
     }
   }, [launch, placeBall])
 
@@ -270,12 +311,26 @@ export default function AIWorldBreakout() {
         ctx.fillStyle = brick.color
         ctx.fill()
 
+        const logo = LOGO_CACHE.get(brick.icon)
+        if (logo?.complete && logo.naturalWidth) {
+          ctx.drawImage(logo, brick.x + 12, brick.y + 9, 22, 22)
+        } else {
+          roundedRect(ctx, brick.x + 10, brick.y + 8, 24, 24, 6)
+          ctx.fillStyle = `${brick.color}1f`
+          ctx.fill()
+          ctx.fillStyle = brick.color
+          ctx.font = '800 11px Inter, sans-serif'
+          ctx.textAlign = 'center'
+          ctx.textBaseline = 'middle'
+          ctx.fillText(brick.name.slice(0, 1), brick.x + 22, brick.y + 20)
+        }
+
         ctx.fillStyle = '#0f172a'
-        const fontSize = brick.name.length > 11 ? 10 : brick.name.length > 8 ? 11 : 12
+        const fontSize = brick.name.length > 11 ? 8.5 : brick.name.length > 8 ? 9.5 : 11
         ctx.font = `700 ${fontSize}px Inter, sans-serif`
-        ctx.textAlign = 'center'
+        ctx.textAlign = 'left'
         ctx.textBaseline = 'middle'
-        ctx.fillText(brick.name, brick.x + brick.w / 2 + 2, brick.y + brick.h / 2 + 0.5, brick.w - 13)
+        ctx.fillText(brick.name, brick.x + 40, brick.y + brick.h / 2 + 0.5, brick.w - 47)
         ctx.restore()
       })
 
@@ -392,6 +447,7 @@ export default function AIWorldBreakout() {
             hit.alive = false
             g.score += 1
             g.shake = 5
+            showDestruction(hit)
             const wasOutsideX = prevX + g.ball.r < hit.x || prevX - g.ball.r > hit.x + hit.w
             const wasOutsideY = prevY + g.ball.r < hit.y || prevY - g.ball.r > hit.y + hit.h
             if (wasOutsideX && !wasOutsideY) g.ball.vx *= -1
@@ -448,10 +504,10 @@ export default function AIWorldBreakout() {
     }
     frameRef.current = requestAnimationFrame(loop)
     return () => cancelAnimationFrame(frameRef.current)
-  }, [placeBall, syncUi])
+  }, [placeBall, showDestruction, syncUi])
 
   const ai = AIS[selectedAI]
-  const remaining = COMPANIES.length - ui.score
+  const remaining = ui.total - ui.score
   const timeLeft = selectedAI === 'anthropic' ? 120 - ui.elapsed : ui.elapsed
 
   return (
@@ -461,7 +517,7 @@ export default function AIWorldBreakout() {
           <span className="breakout-kicker">AI TAKEOVER PROTOCOL</span>
           <h2>选择你的 AI，清除旧世界</h2>
         </div>
-        <p>击碎全部 {COMPANIES.length} 家传统科技公司，见证 AI 成功统治世界。</p>
+        <p>本局随机生成 {ui.total} 家传统科技公司，击碎全部目标即可见证 AI 统治世界。</p>
       </div>
 
       <div className="ai-select" aria-label="选择 AI 挡板">
@@ -490,7 +546,7 @@ export default function AIWorldBreakout() {
       </div>
 
       <div className="breakout-hud">
-        <div><span>已清除</span><strong>{ui.score}<small> / {COMPANIES.length}</small></strong></div>
+        <div><span>已清除</span><strong>{ui.score}<small> / {ui.total}</small></strong></div>
         <div><span>剩余目标</span><strong>{remaining}</strong></div>
         <div>
           <span>{selectedAI === 'anthropic' ? '剩余时间' : '行动时间'}</span>
@@ -508,6 +564,18 @@ export default function AIWorldBreakout() {
           tabIndex="0"
           aria-label={`AI 统治世界打砖块游戏，当前挡板为 ${ai.name}`}
         />
+
+        {destructionNotice && ['ready', 'playing'].includes(ui.status) && (
+          <div
+            key={destructionNotice.key}
+            className="breakout-destruction-notice"
+            style={{ '--notice-color': destructionNotice.color }}
+            aria-live="polite"
+          >
+            <strong>{destructionNotice.ai} 摧毁了 {destructionNotice.company}</strong>
+            <span>{destructionNotice.desc}</span>
+          </div>
+        )}
 
         {ui.status === 'won' && (
           <div className="breakout-result win" role="dialog" aria-live="assertive">

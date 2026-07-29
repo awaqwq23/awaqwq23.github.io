@@ -4,8 +4,8 @@
   "profileUrl": "https://music.163.com/#/user/home?id=2095542575",
   "categories": [
     {
-      "id": "favorites",
-      "name": "收藏的歌",
+      "id": "playlist-3166050812",
+      "name": "awaqwq233_喜欢的音乐",
       "icon": "fa-heart",
       "color": "#ec4141",
       "playlistIds": [
@@ -14,7 +14,7 @@
       "playlistUrl": "https://music.163.com/#/playlist?id=3166050812",
       "total": 712,
       "cached": 28,
-      "emptyHint": "先在网易云打开红心歌单，下一次同步会自动补齐本地缓存曲目。",
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
       "items": [
         {
           "id": "2664045219",
@@ -243,32 +243,17 @@
       ]
     },
     {
-      "id": "recommended",
-      "name": "我推荐的歌",
-      "icon": "fa-thumbs-up",
+      "id": "playlist-14111301255",
+      "name": "想学的歌",
+      "icon": "fa-list",
       "color": "#8b5cf6",
-      "playlistIds": [
-        "14160602286",
-        "7080378497"
-      ],
-      "playlistUrl": "https://music.163.com/#/playlist?id=14160602286",
-      "total": 14,
-      "cached": 0,
-      "emptyHint": "已识别“真正喜欢的歌 / 好听”歌单；在网易云打开歌单后会同步曲目明细。",
-      "items": []
-    },
-    {
-      "id": "learning",
-      "name": "我想学的歌",
-      "icon": "fa-graduation-cap",
-      "color": "#f59e0b",
       "playlistIds": [
         "14111301255"
       ],
       "playlistUrl": "https://music.163.com/#/playlist?id=14111301255",
       "total": 22,
       "cached": 22,
-      "emptyHint": "创建或打开名为“想学的歌”的网易云歌单后会自动同步。",
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
       "items": [
         {
           "id": "2664045219",
@@ -449,15 +434,101 @@
       ]
     },
     {
-      "id": "mastered",
-      "name": "我会的歌",
-      "icon": "fa-microphone-lines",
-      "color": "#10b981",
-      "playlistIds": [],
-      "playlistUrl": "https://music.163.com/",
-      "total": 0,
+      "id": "playlist-18015248696",
+      "name": "不知道放哪但觉得可能用的上",
+      "icon": "fa-list",
+      "color": "#f59e0b",
+      "playlistIds": [
+        "18015248696"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=18015248696",
+      "total": 1,
       "cached": 0,
-      "emptyHint": "网易云中还没有“会的歌”歌单；创建同名歌单后会自动出现在这里。",
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+      "items": []
+    },
+    {
+      "id": "playlist-18015197013",
+      "name": "稍后再听",
+      "icon": "fa-list",
+      "color": "#10b981",
+      "playlistIds": [
+        "18015197013"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=18015197013",
+      "total": 3,
+      "cached": 0,
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+      "items": []
+    },
+    {
+      "id": "playlist-18015142228",
+      "name": "适合哲学升华bgm",
+      "icon": "fa-list",
+      "color": "#06b6d4",
+      "playlistIds": [
+        "18015142228"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=18015142228",
+      "total": 2,
+      "cached": 0,
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+      "items": []
+    },
+    {
+      "id": "playlist-17607629769",
+      "name": "awaqwq233_的2025年度歌单",
+      "icon": "fa-list",
+      "color": "#3b82f6",
+      "playlistIds": [
+        "17607629769"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=17607629769",
+      "total": 10,
+      "cached": 0,
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+      "items": []
+    },
+    {
+      "id": "playlist-14160602286",
+      "name": "好听",
+      "icon": "fa-list",
+      "color": "#f97316",
+      "playlistIds": [
+        "14160602286"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=14160602286",
+      "total": 5,
+      "cached": 0,
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+      "items": []
+    },
+    {
+      "id": "playlist-7080378497",
+      "name": "真正喜欢的歌",
+      "icon": "fa-list",
+      "color": "#d946ef",
+      "playlistIds": [
+        "7080378497"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=7080378497",
+      "total": 9,
+      "cached": 0,
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+      "items": []
+    },
+    {
+      "id": "playlist-12786298518",
+      "name": "猛男专享",
+      "icon": "fa-list",
+      "color": "#ec4141",
+      "playlistIds": [
+        "12786298518"
+      ],
+      "playlistUrl": "https://music.163.com/#/playlist?id=12786298518",
+      "total": 8,
+      "cached": 0,
+      "emptyHint": "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
       "items": []
     }
   ]

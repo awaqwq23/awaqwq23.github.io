@@ -9,6 +9,7 @@ import Toys from './pages/Toys'
 import Games from './pages/Games'
 import About from './pages/About'
 import Docs from './pages/Docs'
+import MusicCuration from './pages/MusicCuration'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/games" element={<Games />} />
           <Route path="/about" element={<About />} />
           <Route path="/docs" element={<Docs />} />
+          <Route path="/music" element={<MusicCuration />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

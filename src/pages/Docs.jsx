@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 function useScrollReveal() {
   const ref = useRef(null); const [show, setShow] = useState(false)
@@ -26,12 +26,20 @@ const MODULES = [
   },
   {
     id: 'music',
-    name: '网易云音乐收藏',
-    desc: '红心收藏、推荐、想学与会唱的歌，跟随本地歌单同步',
+    name: '网易云歌单镜像',
+    desc: '每周同步本机网易云创建的歌单与已缓存歌曲',
     icon: 'fa-music',
     bg: 'linear-gradient(135deg, #ec4141, #991b1b)',
     json: '/materials/netease-music.json',
     kind: 'music',
+  },
+  {
+    id: 'curated-music',
+    name: '我的手选歌单',
+    desc: '推荐、想学和已经会唱的歌，由我手动维护，不依赖平台同步',
+    icon: 'fa-headphones',
+    bg: 'linear-gradient(135deg, #0f172a, #7c3aed 60%, #ec4899)',
+    route: '/music',
   },
   {
     id: 'dev',
@@ -224,6 +232,7 @@ export default function Docs() {
   const [search, setSearch] = useState('')
   const topRef = useRef(null)
   const location = useLocation()
+  const navigate = useNavigate()
 
   // 点击导航栏"文档"时回到资料首页
   useEffect(() => { setActiveModule(null); setSearch('') }, [location.key])
@@ -335,17 +344,21 @@ export default function Docs() {
             ) : (
               /* 按分类展示 */
               data.map((cat, ci) => (
-                <section key={cat.category} className="materials-category" style={{ marginTop: ci === 0 ? '1rem' : '2.5rem' }}>
-                  <AS>
-                    <h2 className="materials-cat-title">
-                      <i className={`fas ${cat.icon || catIcons[cat.category] || 'fa-folder'}`} style={{ color: 'var(--primary)', marginRight: '0.5rem' }} />
+                <details
+                  key={cat.category}
+                  className="materials-category materials-folder"
+                  defaultOpen={ci === 0}
+                  style={{ marginTop: ci === 0 ? '1rem' : '0.75rem' }}
+                >
+                  <summary className="materials-cat-title">
+                    <span>
+                      <i className={`fas ${cat.icon || catIcons[cat.category] || 'fa-folder'}`} />
                       {cat.category}
-                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 400, marginLeft: '0.5rem' }}>
-                        ({cat.items.length})
-                      </span>
-                    </h2>
-                  </AS>
-                  <div className="link-list">
+                      <small>({cat.items.length})</small>
+                    </span>
+                    <i className="fas fa-chevron-down materials-folder-chevron" />
+                  </summary>
+                  <div className="link-list materials-folder-content">
                     {cat.items.map((it, i) => (
                       <AS key={it.url + i} d={Math.min(i, 10) * 0.02}>
                         <a className="link-item" href={it.url} target="_blank" rel="noopener">
@@ -362,7 +375,7 @@ export default function Docs() {
                       </AS>
                     ))}
                   </div>
-                </section>
+                </details>
               ))
             )}
           </>
@@ -393,7 +406,7 @@ export default function Docs() {
       <div className="docs-modules-grid">
         {MODULES.map((m, i) => (
           <AS key={m.id} d={i * 0.06}>
-            <div className="docs-module-card" onClick={() => setActiveModule(m.id)}>
+            <div className="docs-module-card" onClick={() => m.route ? navigate(m.route) : setActiveModule(m.id)}>
               <div className="docs-module-head" style={{ background: m.bg }}>
                 <i className={`fas ${m.icon}`} />
               </div>

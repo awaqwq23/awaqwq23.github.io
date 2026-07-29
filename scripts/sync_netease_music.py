@@ -122,31 +122,21 @@ def build_category(category_id, name, icon, color, playlist_ids, empty_hint):
     }
 
 
-recommended_ids = ids_by_names("真正喜欢的歌", "好听", "我推荐的歌", "推荐的歌")
-learning_ids = ids_by_names("想学的歌", "我想学的歌")
-mastered_ids = ids_by_names("会的歌", "我会的歌")
-
+palette = ["#ec4141", "#8b5cf6", "#f59e0b", "#10b981", "#06b6d4", "#3b82f6", "#f97316", "#d946ef"]
+playlist_order = sorted(
+    playlists.items(),
+    key=lambda pair: (0 if pair[0] == favorite_id else 1, -int(pair[1].get("updateTime") or 0)),
+)
 categories = [
     build_category(
-        "favorites", "收藏的歌", "fa-heart", "#ec4141",
-        [favorite_id] if favorite_id else [],
-        "先在网易云打开红心歌单，下一次同步会自动补齐本地缓存曲目。",
-    ),
-    build_category(
-        "recommended", "我推荐的歌", "fa-thumbs-up", "#8b5cf6",
-        recommended_ids,
-        "已识别“真正喜欢的歌 / 好听”歌单；在网易云打开歌单后会同步曲目明细。",
-    ),
-    build_category(
-        "learning", "我想学的歌", "fa-graduation-cap", "#f59e0b",
-        learning_ids,
-        "创建或打开名为“想学的歌”的网易云歌单后会自动同步。",
-    ),
-    build_category(
-        "mastered", "我会的歌", "fa-microphone-lines", "#10b981",
-        mastered_ids,
-        "网易云中还没有“会的歌”歌单；创建同名歌单后会自动出现在这里。",
-    ),
+        f"playlist-{playlist_id}",
+        item.get("name") or "未命名歌单",
+        "fa-heart" if playlist_id == favorite_id else "fa-list",
+        palette[index % len(palette)],
+        [playlist_id],
+        "歌单已经同步；在网易云中打开一次后，下次同步会补齐本地缓存的曲目明细。",
+    )
+    for index, (playlist_id, item) in enumerate(playlist_order)
 ]
 
 database_time = datetime.fromtimestamp(DATABASE.stat().st_mtime, timezone.utc).astimezone().isoformat(timespec="seconds")

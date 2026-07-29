@@ -7,6 +7,7 @@ const links = [
   { to: '/blog', icon: 'fa-pen-fancy', label: '博客' },
   { to: '/toys', icon: 'fa-gamepad', label: '小玩具' },
   { to: '/games', icon: 'fa-dice', label: '小游戏' },
+  { to: '/music', icon: 'fa-headphones', label: '我的歌单' },
   { to: '/docs', icon: 'fa-book', label: '文档' },
   { to: '/about', icon: 'fa-info-circle', label: '关于' },
 ]
