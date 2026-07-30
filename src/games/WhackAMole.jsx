@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { COMPANY_LOGO_URL } from './companyCatalog'
+import { creditGameReward } from './aiEconomy'
 
 const HOLES = 9
 const GAME_TIME = 30
@@ -13,11 +14,13 @@ export default function WhackAMole() {
   const [running, setRunning] = useState(false)
   const [best, setBest] = useState(() => Number(localStorage.getItem(BEST_KEY) || 0))
   const [hit, setHit] = useState(-1)
+  const [reward, setReward] = useState(0)
   const moleTimer = useRef(null)
   const countdown = useRef(null)
+  const rewarded = useRef(false)
 
   const start = () => {
-    setScore(0); setTime(GAME_TIME); setRunning(true); setActive(-1)
+    setScore(0); setTime(GAME_TIME); setRunning(true); setActive(-1); setReward(0); rewarded.current = false
   }
 
   useEffect(() => {
@@ -51,10 +54,16 @@ export default function WhackAMole() {
   }, [running])
 
   useEffect(() => {
-    if (!running && score > 0) {
+    if (!running && time === 0 && score > 0) {
       setBest(b => { const nb = Math.max(b, score); localStorage.setItem(BEST_KEY, nb); return nb })
+      if (!rewarded.current) {
+        rewarded.current = true
+        const computeReward = score * 12
+        creditGameReward({ compute: computeReward })
+        setReward(computeReward)
+      }
     }
-  }, [running]) // eslint-disable-line
+  }, [running, score, time])
 
   const whack = (i) => {
     if (!running || i !== active) return
@@ -102,6 +111,7 @@ export default function WhackAMole() {
           <div className="game-overlay"><div>
             <h3>{time === 0 ? '⏰ 时间到！' : '🔨 打 A\\'}</h3>
             <p>{time === 0 ? <>本局得分 <strong>{score}</strong></> : '30 秒内敲 Claude（+1），别误敲 DeepSeek（-3）！'}</p>
+            {reward > 0 && <p>已获得 <strong>◈ {reward} 算力点</strong></p>}
             <button className="btn btn-sm btn-primary" onClick={start}>{time === 0 ? '再来一局' : '开始游戏'}</button>
           </div></div>
         )}

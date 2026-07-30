@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
+import { creditGameReward } from './aiEconomy'
 
 const SIZE = 4
 const BEST_KEY = 'game2048_best'
@@ -94,12 +95,22 @@ export default function Game2048() {
   const [best, setBest] = useState(() => Number(localStorage.getItem(BEST_KEY) || 0))
   const [over, setOver] = useState(false)
   const [won, setWon] = useState(false)
+  const [reward, setReward] = useState(0)
   const touch = useRef(null)
+  const rewarded = useRef(false)
 
   const reset = () => {
     setGrid(addRandom(addRandom(emptyGrid())))
-    setScore(0); setOver(false); setWon(false)
+    setScore(0); setOver(false); setWon(false); setReward(0); rewarded.current = false
   }
+
+  useEffect(() => {
+    if ((!over && !won) || rewarded.current || score <= 0) return
+    rewarded.current = true
+    const tokenM = Math.max(0.1, score / 1000)
+    creditGameReward({ modelId: 'deepseek-v4', tokenM })
+    setReward(tokenM)
+  }, [over, won, score])
 
   const doMove = useCallback((dir) => {
     if (over) return
@@ -169,6 +180,7 @@ export default function Game2048() {
             <div>
               <h3>{won ? '🐋 大银鲸合成成功！' : 'Token 池装不下了'}</h3>
               <p>你拿到了 <strong>{score}k DeepSeek Token</strong></p>
+              {reward > 0 && <p>已存入算力奇点仓库：<strong>{reward.toFixed(2)}M DeepSeek V4 Token</strong></p>}
               <button className="btn btn-sm btn-primary" onClick={reset}>再来一局</button>
             </div>
           </div>

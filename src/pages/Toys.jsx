@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 function AS({ children, d = 0 }) {

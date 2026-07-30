@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { COMPANY_LOGO_URL } from './companyCatalog'
+import { creditGameReward } from './aiEconomy'
 
 const GAME_SECONDS = 5
 const BEST_KEY = 'sepa_token_clicker_best'
@@ -13,6 +14,7 @@ export default function TokenClicker() {
   const deadline = useRef(0)
   const interval = useRef(null)
   const popupId = useRef(0)
+  const rewarded = useRef(false)
 
   const finish = () => {
     clearInterval(interval.current)
@@ -32,6 +34,7 @@ export default function TokenClicker() {
     setRemaining(GAME_SECONDS)
     deadline.current = performance.now() + GAME_SECONDS * 1000
     setPhase('running')
+    rewarded.current = false
   }
 
   useEffect(() => {
@@ -54,6 +57,10 @@ export default function TokenClicker() {
       localStorage.setItem(BEST_KEY, next)
       return next
     })
+    if (!rewarded.current && clicks > 0) {
+      rewarded.current = true
+      creditGameReward({ modelId: 'claude-sonnet-5', tokenM: clicks / 1000 })
+    }
   }, [phase, clicks])
 
   useEffect(() => () => clearInterval(interval.current), [])
@@ -114,7 +121,7 @@ export default function TokenClicker() {
               <h3>{phase === 'done' ? '💳 本轮结算' : '💳 SEPA 手速测试'}</h3>
               <p>
                 {phase === 'done'
-                  ? <>你用 SEPA 薅到了 <strong>A\ {clicks}k Token</strong></>
+                  ? <>你用 SEPA 薅到了 <strong>A\ {clicks}k Token</strong>，已存入算力奇点仓库</>
                   : '模拟前几天的 SEPA 支付薅 Claude：5 秒内尽可能多点。'}
               </p>
               <button className="btn btn-sm btn-primary" onClick={start}>

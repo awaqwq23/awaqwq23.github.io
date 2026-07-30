@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation, Link } from 'react-router-dom'
+import { Routes, Route, useLocation, Link } from 'react-router'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
@@ -10,6 +10,7 @@ import Games from './pages/Games'
 import About from './pages/About'
 import Docs from './pages/Docs'
 import MusicCuration from './pages/MusicCuration'
+import { useEconomyClock } from './games/aiEconomy'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -29,6 +30,7 @@ function NotFound() {
 }
 
 export default function App() {
+  useEconomyClock()
   return (
     <div className="app">
       <ScrollToTop />

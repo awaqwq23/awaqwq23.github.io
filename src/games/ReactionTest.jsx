@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { creditGameReward } from './aiEconomy'
 
 const BEST_KEY = 'reaction_best_ms'
 
@@ -7,6 +8,7 @@ export default function ReactionTest() {
   const [ms, setMs] = useState(0)
   const [best, setBest] = useState(() => Number(localStorage.getItem(BEST_KEY) || 0))
   const [history, setHistory] = useState([])
+  const [reward, setReward] = useState(0)
   const timer = useRef(null)
   const start = useRef(0)
 
@@ -30,6 +32,9 @@ export default function ReactionTest() {
     }
     if (phase === 'now') {
       const t = Math.round(performance.now() - start.current)
+      const computeReward = t < 200 ? 100 : t < 280 ? 75 : t < 380 ? 55 : 40
+      creditGameReward({ compute: computeReward })
+      setReward(computeReward)
       setMs(t)
       setHistory(h => [t, ...h].slice(0, 5))
       setBest(b => {
@@ -62,6 +67,7 @@ export default function ReactionTest() {
         {phase === 'result' && (<><span className="react-ms">{ms}<small>ms</small></span><span>{rank(ms)}</span><small>点击再测一次</small></>)}
         {phase === 'early' && (<><i className="fas fa-times-circle" /><span>太早啦！</span><small>点击重新开始</small></>)}
       </button>
+      {phase === 'result' && <p className="game-hint">本次已获得 <strong>◈ {reward} 算力点</strong></p>}
       {history.length > 0 && (
         <div className="reaction-history">
           最近成绩：{history.map((t, i) => <span key={i} className="react-chip">{t}ms</span>)}
