@@ -47,23 +47,23 @@ const MODELS = [
   { id: 'qwen-36-plus', name: 'Qwen 3.6 Plus', brand: 'Qwen', logo: 'alibabacloud', tier: 'epic', price: '公开接入价', cp: 1820, minLab: 0, released: true },
   { id: 'glm-52', name: 'GLM-5.2', brand: 'Z.ai', logo: 'zhipuai', tier: 'epic', price: '开源 / 接入价', cp: 1950, minLab: 0, released: true },
 
-  { id: 'gpt-56-luna', name: 'GPT-5.6 Luna', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$1.00 / $6.00', cp: 2450, minLab: 3, released: true },
-  { id: 'gpt-56-terra', name: 'GPT-5.6 Terra', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$2.50 / $15.00', cp: 2700, minLab: 3, released: true },
-  { id: 'claude-opus-48', name: 'Claude Opus 4.8', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$5.00 / $25.00', cp: 2850, minLab: 3, released: true },
-  { id: 'grok-45', name: 'Grok 4.5', brand: 'xAI', logo: 'x', tier: 'legendary', price: '$2.00 / $6.00', cp: 3000, minLab: 3, released: true },
-  { id: 'claude-sonnet-5', name: 'Claude Sonnet 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$3.00 / $15.00', cp: 3150, minLab: 3, released: true },
-  { id: 'claude-mythos-5', name: 'Claude Mythos 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '受限开放', cp: 3280, minLab: 3, released: true },
-  { id: 'claude-fable-5', name: 'Claude Fable 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '公开服务价', cp: 3400, minLab: 3, released: true },
-  { id: 'gpt-56-sol', name: 'GPT-5.6 Sol', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$5.00 / $30.00', cp: 3600, minLab: 3, released: true },
+  { id: 'gpt-56-luna', name: 'GPT-5.6 Luna', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$1.00 / $6.00', cp: 2450, minLab: 1, released: true },
+  { id: 'gpt-56-terra', name: 'GPT-5.6 Terra', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$2.50 / $15.00', cp: 2700, minLab: 1, released: true },
+  { id: 'claude-opus-48', name: 'Claude Opus 4.8', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$5.00 / $25.00', cp: 2850, minLab: 1, released: true },
+  { id: 'grok-45', name: 'Grok 4.5', brand: 'xAI', logo: 'x', tier: 'legendary', price: '$2.00 / $6.00', cp: 3000, minLab: 1, released: true },
+  { id: 'claude-sonnet-5', name: 'Claude Sonnet 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$3.00 / $15.00', cp: 3150, minLab: 1, released: true },
+  { id: 'claude-mythos-5', name: 'Claude Mythos 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '受限开放', cp: 3280, minLab: 1, released: true },
+  { id: 'claude-fable-5', name: 'Claude Fable 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '公开服务价', cp: 3400, minLab: 1, released: true },
+  { id: 'gpt-56-sol', name: 'GPT-5.6 Sol', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$5.00 / $30.00', cp: 3600, minLab: 1, released: true },
 
-  { id: 'gpt-6', name: 'GPT-6', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '未发布 · 预测', cp: 6400, minLab: 4, released: false },
-  { id: 'deepseek-v5', name: 'DeepSeek V5', brand: 'DeepSeek', logo: 'deepseek', tier: 'mythical', price: '未发布 · 预测', cp: 6600, minLab: 4, released: false },
-  { id: 'gemini-4-ultra', name: 'Gemini 4 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '未发布 · 预测', cp: 6800, minLab: 4, released: false },
-  { id: 'grok-5', name: 'Grok 5', brand: 'xAI', logo: 'x', tier: 'mythical', price: '未发布 · 预测', cp: 7000, minLab: 4, released: false },
-  { id: 'claude-fable-6', name: 'Claude Fable 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '未发布 · 预测', cp: 7200, minLab: 4, released: false },
-  { id: 'gpt-7', name: 'GPT-7', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '未发布 · 远期预测', cp: 7600, minLab: 4, released: false },
-  { id: 'claude-opus-6', name: 'Claude Opus 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '未发布 · 预测', cp: 7800, minLab: 4, released: false },
-  { id: 'gemini-5-ultra', name: 'Gemini 5 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '未发布 · 远期预测', cp: 8000, minLab: 4, released: false },
+  { id: 'gpt-6', name: 'GPT-6', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '未发布 · 预测', cp: 6400, minLab: 3, released: false },
+  { id: 'deepseek-v5', name: 'DeepSeek V5', brand: 'DeepSeek', logo: 'deepseek', tier: 'mythical', price: '未发布 · 预测', cp: 6600, minLab: 3, released: false },
+  { id: 'gemini-4-ultra', name: 'Gemini 4 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '未发布 · 预测', cp: 6800, minLab: 3, released: false },
+  { id: 'grok-5', name: 'Grok 5', brand: 'xAI', logo: 'x', tier: 'mythical', price: '未发布 · 预测', cp: 7000, minLab: 3, released: false },
+  { id: 'claude-fable-6', name: 'Claude Fable 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '未发布 · 预测', cp: 7200, minLab: 3, released: false },
+  { id: 'gpt-7', name: 'GPT-7', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '未发布 · 远期预测', cp: 7600, minLab: 3, released: false },
+  { id: 'claude-opus-6', name: 'Claude Opus 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '未发布 · 预测', cp: 7800, minLab: 3, released: false },
+  { id: 'gemini-5-ultra', name: 'Gemini 5 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '未发布 · 远期预测', cp: 8000, minLab: 3, released: false },
 ]
 
 const LEGACY_MODEL_IDS = {
@@ -106,7 +106,7 @@ const UPGRADE_DEFS = {
   batch: { icon: '▦', name: '并行抽取协议', desc: '依次解锁 20 / 50 / 100 连抽', story: '通过并行队列跑完高并发抽取项目，让更多请求能在同一批次完成。', max: 3, base: 24 },
   income: { icon: '↗', name: '小游戏加速器', desc: '补给任务收益每级 +20%', story: '通过推荐模型跑完小游戏增长项目，提高了每次挑战带回的算力收益。', max: 5, base: 14 },
   discount: { icon: '％', name: '采购议价器', desc: '抽取价格每级 -5%，十连也靠它打折', story: '通过成本模型跑完供应商议价项目，压低了人民币和算力点的采购成本。', max: 5, base: 18 },
-  lab: { icon: '⌬', name: '模型概率引擎', desc: '逐级提高高档模型概率；Lv.3 开传说，满级普通仅 20%', story: '通过模型路由与评测项目，独立提高高档模型进入抽取池的权重，不影响 Token 数量。', max: 4, base: 22 },
+  lab: { icon: '⌬', name: '模型概率引擎', desc: 'Lv.1 开传说，Lv.3 开神话；满级神话 0.1%', story: '通过模型路由与评测项目，独立提高高档模型进入抽取池的权重，不影响 Token 数量。', max: 4, base: 22 },
   luck: { icon: '✦', name: 'Token 额度扩容', desc: '逐级提高大额 Token 概率，不影响模型档位', story: '通过额度调度与尾部概率校准项目，让大额请求更常出现，同时保持模型概率完全独立。', max: 5, base: 28 },
   auto: { icon: '⟳', name: '自动抽取队列', desc: '从每 60 秒单抽升级到每秒十连', story: '通过代理模型跑完无人值守与高并发队列项目，让抽取终端逐步达到每秒十连。', max: 6, base: 36 },
   pity: { icon: '↓', name: '保底压缩器', desc: '传说硬保底每级降低 5 抽', story: '通过异常检测模型跑完坏运气修正项目，缩短了触发传说保底所需的队列。', max: 5, base: 26 },
@@ -239,12 +239,12 @@ function modelTierRates(lab = 0, softPity = 0) {
   const level = Math.max(0, Math.min(4, lab))
   const baseRates = [
     { common: 80, rare: 18, epic: 2, legendary: 0, mythical: 0 },
-    { common: 67, rare: 27, epic: 6, legendary: 0, mythical: 0 },
-    { common: 52, rare: 33, epic: 15, legendary: 0, mythical: 0 },
-    { common: 38, rare: 35, epic: 24, legendary: 3, mythical: 0 },
-    { common: 20, rare: 35, epic: 30, legendary: 14.97, mythical: 0.03 },
+    { common: 66.9, rare: 27, epic: 6, legendary: 0.1, mythical: 0 },
+    { common: 51.5, rare: 33, epic: 15, legendary: 0.5, mythical: 0 },
+    { common: 38, rare: 35, epic: 24, legendary: 2.95, mythical: 0.05 },
+    { common: 20, rare: 35, epic: 30, legendary: 14.9, mythical: 0.1 },
   ][level]
-  if (level < 3 || softPity <= 0) return baseRates
+  if (level < 1 || softPity <= 0) return baseRates
   const pityBoost = Math.min(softPity, Math.max(0, baseRates.common - 5) / 1.5)
   return {
     ...baseRates,
@@ -298,14 +298,7 @@ function drawStats(luck = 0, lab = 0) {
 function drawCombination(luck = 0, lab = 0, softPity = 0, minimumTier = null) {
   const modelRates = modelTierRates(lab, softPity)
   const tokens = tokenPool(luck)
-  const mythicalModels = MODELS.filter(model => model.tier === 'mythical' && model.minLab <= lab)
-  if (mythicalModels.length && Math.random() < 0.0003) {
-    const model = mythicalModels[Math.floor(Math.random() * mythicalModels.length)]
-    const token = weightedPick(tokens, 'weight')
-    return { model, token, value: model.cp * token.amount, rarity: model.tier }
-  }
-
-  const availableModels = MODELS.filter(model => model.minLab <= lab && model.tier !== 'mythical')
+  const availableModels = MODELS.filter(model => model.minLab <= lab && modelRates[model.tier] > 0)
   const combinations = availableModels.flatMap(model => {
     const modelCount = availableModels.filter(item => item.tier === model.tier).length
     return tokens.map(token => {
@@ -829,18 +822,18 @@ export default function AITokenGacha() {
 
     const pulled = []
     for (let index = 0; index < count; index += 1) {
-      const minimumTier = next.upgrades.lab >= 3 && next.sinceLegendary >= hardPity - 1
+      const minimumTier = next.upgrades.lab >= 1 && next.sinceLegendary >= hardPity - 1
         ? 'legendary'
         : next.sinceEpic >= 29
           ? 'epic'
           : null
-      const softPity = next.upgrades.lab >= 3 && next.sinceLegendary >= 59 ? Math.min(4, (next.sinceLegendary - 58) * 0.16) : 0
+      const softPity = next.upgrades.lab >= 1 && next.sinceLegendary >= 59 ? Math.min(4, (next.sinceLegendary - 58) * 0.16) : 0
       const combination = drawCombination(next.upgrades.luck, next.upgrades.lab, softPity, minimumTier)
       const { model, token, value, rarity } = combination
       const result = { model, token, value, rarity, id: `${Date.now()}-${index}-${Math.random()}` }
       pulled.push(result)
       next.inventory[model.id] = (next.inventory[model.id] || 0) + token.amount
-      next.sinceLegendary = next.upgrades.lab < 3 || TIER_ORDER.indexOf(rarity) >= TIER_ORDER.indexOf('legendary') ? 0 : next.sinceLegendary + 1
+      next.sinceLegendary = next.upgrades.lab < 1 || TIER_ORDER.indexOf(rarity) >= TIER_ORDER.indexOf('legendary') ? 0 : next.sinceLegendary + 1
       next.sinceEpic = TIER_ORDER.indexOf(rarity) >= TIER_ORDER.indexOf('epic') ? 0 : next.sinceEpic + 1
       next.totalDraws += 1
       next.history.unshift({ modelId: model.id, amount: token.amount, tier: rarity, value, at: Date.now() })
@@ -1507,7 +1500,7 @@ export default function AITokenGacha() {
                 <div className="gacha-reactor-core">
                   <span>◈</span>
                   <strong>等待算力注入</strong>
-                  <small>模型档位与 Token 数量独立抽取 · Lv.3 开传说 · 满级普通仅 20%</small>
+                  <small>模型档位与 Token 数量独立抽取 · Lv.1 开传说 · Lv.3 开神话</small>
                 </div>
               ) : (
                 <div className={`gacha-results count-${showcasedResults.length}`}>
@@ -1526,8 +1519,8 @@ export default function AITokenGacha() {
             <div className="gacha-pity">
               <span><b>史诗保底</b><i style={{ width: `${Math.min(100, save.sinceEpic / 30 * 100)}%` }} /></span>
               <em>{save.sinceEpic} / 30</em>
-              <span className={save.upgrades.lab < 3 ? 'locked' : ''}><b>传说保底</b><i style={{ width: `${save.upgrades.lab >= 3 ? Math.min(100, save.sinceLegendary / hardPity * 100) : 0}%` }} /></span>
-              <em>{save.upgrades.lab >= 3 ? `${save.sinceLegendary} / ${hardPity}` : 'Lv.3'}</em>
+              <span className={save.upgrades.lab < 1 ? 'locked' : ''}><b>传说保底</b><i style={{ width: `${save.upgrades.lab >= 1 ? Math.min(100, save.sinceLegendary / hardPity * 100) : 0}%` }} /></span>
+              <em>{save.upgrades.lab >= 1 ? `${save.sinceLegendary} / ${hardPity}` : 'Lv.1'}</em>
             </div>
 
             <div className="gacha-controls">
@@ -1584,7 +1577,7 @@ export default function AITokenGacha() {
             <div className="gacha-side-card compact">
               <span>模型档位</span>
               {TIER_ORDER.map(tier => (
-                <p key={tier}><i style={{ background: TIER_META[tier].color }} />{TIER_META[tier].name}<b>{tier === 'mythical' ? '满级 0.03%' : tier === 'legendary' ? 'Lv.3 开放' : '初始开放'}</b></p>
+                <p key={tier}><i style={{ background: TIER_META[tier].color }} />{TIER_META[tier].name}<b>{tier === 'mythical' ? 'Lv.3 开放' : tier === 'legendary' ? 'Lv.1 开放' : '初始开放'}</b></p>
               ))}
               <small>具体概率统一在“概率与定价”最后一列公开。</small>
             </div>
@@ -1669,13 +1662,13 @@ export default function AITokenGacha() {
             })}
           </div>
           <div className="gacha-upgrade-section-head pool">
-            <div><span>02</span><h4>模型概率曲线</h4><p>每级都会降低普通占比并提高高档模型概率；Lv.3 开放传说，Lv.4 开放神话。</p></div>
+            <div><span>02</span><h4>模型概率曲线</h4><p>Lv.1 开放传说；Lv.3 开放神话 0.05%，Lv.4 提升至 0.1%。</p></div>
           </div>
           <div className="gacha-pool-roadmap">
             {[0, 1, 2, 3, 4].map(level => {
-              const pool = level >= 3 ? MODELS.filter(model => model.minLab === level) : []
+              const pool = level >= 1 ? MODELS.filter(model => model.minLab === level) : []
               const rates = modelTierRates(level)
-              const headline = ['初始开放至史诗', '第一次概率强化', '第二次概率强化', '传说模型开放', '神话模型开放'][level]
+              const headline = ['初始开放至史诗', '传说模型开放', '传说概率强化', '神话模型开放', '神话概率翻倍'][level]
               return (
                 <article key={level} className={`${level === save.upgrades.lab ? 'current ' : ''}${level > save.upgrades.lab ? 'locked' : ''}`}>
                   <span>{level === 0 ? '初始概率' : `概率引擎 Lv.${level}`}</span>
@@ -1683,7 +1676,8 @@ export default function AITokenGacha() {
                   <p>{TIER_ORDER.filter(tier => rates[tier] > 0).map(tier => `${TIER_META[tier].name} ${rates[tier]}%`).join(' · ')}</p>
                   <div>
                     {level === 0 && <small>普通、稀有、史诗模型</small>}
-                    {(level === 1 || level === 2) && <small>不新增档位，只提高高档概率</small>}
+                    {level === 2 && <small>不新增档位，继续提高传说概率</small>}
+                    {level === 4 && <small>不新增型号，神话概率提升至 0.1%</small>}
                     {pool.map(model => <small key={model.id}>{model.name}</small>)}
                   </div>
                   <em>{level < save.upgrades.lab ? '已解锁' : level === save.upgrades.lab ? '当前' : '待解锁'}</em>
@@ -1696,7 +1690,7 @@ export default function AITokenGacha() {
             const def = UPGRADE_DEFS.lab
             const cost = level < def.max ? upgradeCost('lab', level) : null
             const owned = cost ? MODELS.filter(model => model.tier === cost.tier).reduce((sum, model) => sum + (save.inventory[model.id] || 0), 0) : 0
-            const nextMilestone = ['第一次提高高档概率', '第二次提高高档概率', '解锁传说模型', '解锁神话模型'][level]
+            const nextMilestone = ['解锁传说模型', '提高传说概率', '解锁神话模型', '神话概率提升至 0.1%'][level]
             return (
               <div className="gacha-pool-upgrade">
                 <div><b>{level >= def.max ? '模型概率引擎已满级' : `下一步：${nextMilestone}`}</b>
@@ -2218,8 +2212,8 @@ export default function AITokenGacha() {
                   ['common', 'Lv.0', '基础模型'],
                   ['rare', 'Lv.0', '稳定进阶模型'],
                   ['epic', 'Lv.0', '高性能模型'],
-                  ['legendary', 'Lv.3', '顶级模型与大奖演出'],
-                  ['mythical', 'Lv.4', '未发布性能预测模型'],
+                  ['legendary', 'Lv.1', '顶级模型与大奖演出'],
+                  ['mythical', 'Lv.3', '未发布性能预测模型'],
                 ].map(([tier, unlock, description]) => (
                   <tr key={tier}>
                     <td><span className={`gacha-table-tier tier-${tier}`}>{TIER_META[tier].name}</span></td>
@@ -2274,7 +2268,7 @@ export default function AITokenGacha() {
           </div>
           <div className="gacha-rule-notes">
             <p><b>模型与数量分离：</b>先按模型概率引擎抽普通、稀有、史诗、传说或神话模型，再独立抽 Token 数量。大量普通 Token 不会把模型变成传说，小量传说 Token 也仍然是传说模型。</p>
-            <p><b>模型概率：</b>初始池开放普通、稀有与史诗，Lv.1 和 Lv.2 继续提高好模型概率，Lv.3 才能抽到传说，Lv.4 开放神话。满级普通模型降至 20%，神话固定为 0.03%。</p>
+            <p><b>模型概率：</b>初始池开放普通、稀有与史诗，Lv.1 开放传说，Lv.2 继续提高传说概率；Lv.3 开放神话且概率为 0.05%，Lv.4 提升至 0.1%。满级普通模型仍为 20%。</p>
             <p><b>Token 特效：</b>Token 数量不改变模型档位，只强化卡片额度特效：2M 起流光、10M 起波纹、100M 起虹彩、1000M 起奇点风暴。</p>
             <p><b>多连展示：</b>十连及以上会先比较模型档位，再比较“模型兑换基准 × Token 数量”的总价值，只展示排序最高的前 10 个；全部抽取结果仍会进入仓库。</p>
             <p><b>升级效果：</b>模型概率引擎只调整模型档位；Token 额度扩容只调整数量概率；保底只作用于已解锁的模型档位，两条概率线互不串联。</p>

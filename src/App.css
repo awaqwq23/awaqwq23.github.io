@@ -2372,13 +2372,19 @@ ul { list-style: none; }
 /* ---- 扫雷 ---- */
 .mine-board-wrap { max-width: 100%; overflow-x: auto; padding-bottom: 0.25rem; }
 .mine-board {
-  display: grid; gap: 0;
+  --mine-cell-size: 30px;
+  display: grid;
+  grid-template-columns: repeat(var(--mine-cols), var(--mine-cell-size));
+  grid-auto-rows: var(--mine-cell-size);
+  gap: 0;
+  width: max-content;
   overflow: hidden;
   background: var(--game-board); padding: 1px; border-radius: var(--radius-sm);
   margin: 0 auto;
 }
 .mine-cell {
-  width: 30px; height: 30px;
+  width: var(--mine-cell-size);
+  height: var(--mine-cell-size);
   margin: 0;
   border: 1px solid color-mix(in srgb, var(--game-board) 72%, transparent);
   border-radius: 0;
@@ -2390,26 +2396,41 @@ ul { list-style: none; }
 .mine-cell:hover { filter: brightness(1.12); }
 .mine-cell.revealed { background: var(--game-cell); cursor: default; }
 .mine-cell.boom { background: #d97757; color: #fff; font-family: Georgia, serif; font-size: 0.68rem; }
-@media (max-width: 520px) { .mine-cell { width: 24px; height: 24px; font-size: 0.75rem; } }
+@media (max-width: 520px) {
+  .mine-board { --mine-cell-size: 24px; }
+  .mine-cell { font-size: 0.75rem; }
+}
 
 /* ---- 井字棋 ---- */
 .ttt-board {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 8px;
   background: var(--game-board); padding: 8px; border-radius: var(--radius);
   width: min(300px, 80vw); aspect-ratio: 1;
 }
 .ttt-cell {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
   border: none; background: var(--surface); border-radius: var(--radius-sm);
   font-size: 2.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: all 0.15s;
+  transition: background-color 0.15s, box-shadow 0.15s;
 }
 .ttt-cell:hover:not(:disabled) { background: var(--primary-bg); }
 .ttt-cell.x { color: var(--primary); }
 .ttt-cell.o { color: #EC4899; }
 .ttt-cell.win { background: rgba(16,185,129,0.2); animation: winFlash 0.5s ease; }
 .ttt-brand-mark {
-  width: 58%;
-  height: 58%;
+  width: 54px;
+  height: 54px;
+  max-width: 58%;
+  max-height: 58%;
+  flex: 0 0 auto;
   padding: 10%;
   background: #fff;
   border: 1px solid rgba(15, 23, 42, 0.1);
@@ -2432,7 +2453,7 @@ ul { list-style: none; }
   object-fit: contain;
 }
 .ttt-versus b { color: var(--text-muted); font-size: 0.58rem; }
-@keyframes winFlash { 50% { transform: scale(1.08); } }
+@keyframes winFlash { 50% { box-shadow: inset 0 0 0 4px rgba(16,185,129,0.38); } }
 
 /* ---- 反应测试 ---- */
 .reaction-pad {

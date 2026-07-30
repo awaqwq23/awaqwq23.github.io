@@ -145,7 +145,7 @@ export default function Minesweeper() {
         <button className="btn btn-sm btn-primary" onClick={reset}><i className="fas fa-redo" /> 重开</button>
       </div>
       <div className="mine-board-wrap">
-        <div className="mine-board" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
+        <div className="mine-board" style={{ '--mine-cols': cols }}>
           {display.map((row, r) => row.map((cell, c) => {
             const cls = ['mine-cell']
             if (cell.revealed) cls.push('revealed')
