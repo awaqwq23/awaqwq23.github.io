@@ -519,10 +519,10 @@ export default function AITokenGacha() {
   }
 
   useEffect(() => {
-    if (tab !== 'draw' || jackpot || rechargeModal || !save.upgrades.auto || !save.autoDrawEnabled || now < (save.nextAutoAt || 0)) return
+    if (tab !== 'draw' || jackpots.length || rechargeModal || !save.upgrades.auto || !save.autoDrawEnabled || now < (save.nextAutoAt || 0)) return
     const config = autoConfig(save.upgrades.auto)
     doDraw(config.count, save.autoCurrency || 'compute', true)
-  }, [now, tab, jackpot, rechargeModal, save.autoDrawEnabled, save.autoCurrency, save.nextAutoAt, save.upgrades.auto]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [now, tab, jackpots.length, rechargeModal, save.autoDrawEnabled, save.autoCurrency, save.nextAutoAt, save.upgrades.auto]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const exchange = (model, requested) => {
     const owned = save.inventory[model.id] || 0
