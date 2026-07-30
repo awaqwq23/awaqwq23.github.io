@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 
 export const ECONOMY_SAVE_KEY = 'ai_token_gacha_v1'
+export const GPU_EARNING_MULTIPLIER = 100
 
 export const GPU_CATALOG = [
   {
@@ -59,6 +60,7 @@ export function creditGameReward({ compute = 0, money = 0, modelId, tokenM = 0 }
     compute: 0,
     inventory: {},
     gpus: [],
+    gpuPending: { money: 0, tokens: {} },
     lastPassiveAt: Date.now(),
   }
   const inventory = { ...(save.inventory || {}) }
@@ -79,25 +81,28 @@ export function settlePassive(save, at = Date.now(), multiplier = 1) {
 
   let money = 0
   let tokenM = 0
-  const inventory = { ...(save.inventory || {}) }
+  const pending = {
+    money: save.gpuPending?.money || 0,
+    tokens: { ...(save.gpuPending?.tokens || {}) },
+  }
   for (const owned of save.gpus || []) {
     const gpu = GPU_CATALOG.find(item => item.id === owned.gpuId)
     if (!gpu || owned.mode === 'idle') continue
     if (owned.mode === 'mining') {
-      money += gpu.miningPerMinute * minutes * multiplier
+      money += gpu.miningPerMinute * minutes * multiplier * GPU_EARNING_MULTIPLIER
     } else if (owned.mode === 'ai' && owned.modelId) {
-      const generated = gpu.tokenMPerMinute * minutes * multiplier / Math.max(1, owned.modelFactor || 1)
-      inventory[owned.modelId] = (inventory[owned.modelId] || 0) + generated
+      const generated = gpu.tokenMPerMinute * minutes * multiplier * GPU_EARNING_MULTIPLIER / Math.max(1, owned.modelFactor || 1)
+      pending.tokens[owned.modelId] = (pending.tokens[owned.modelId] || 0) + generated
       tokenM += generated
     }
   }
+  pending.money += money
   return {
     money,
     tokenM,
     save: {
       ...save,
-      money: (save.money || 0) + money,
-      inventory,
+      gpuPending: pending,
       lastPassiveAt: at,
     },
   }

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { COMPANY_LOGO_URL } from './companyCatalog'
-import { ECONOMY_SAVE_KEY, GPU_CATALOG, settlePassive } from './aiEconomy'
+import { ECONOMY_SAVE_KEY, GPU_CATALOG, GPU_EARNING_MULTIPLIER, settlePassive } from './aiEconomy'
 
 const SAVE_KEY = ECONOMY_SAVE_KEY
 const TIER_ORDER = ['common', 'rare', 'epic', 'legendary', 'mythical']
@@ -154,6 +154,7 @@ const DEFAULT_SAVE = {
   upgrades: Object.fromEntries(Object.keys(UPGRADE_DEFS).map(key => [key, 0])),
   history: [],
   gpus: [],
+  gpuPending: { money: 0, tokens: {} },
   lastPassiveAt: Date.now(),
   taskReadyAt: 0,
   tasks: { dailyKey: '', weeklyKey: '', completed: {}, runs: { daily: 0, weekly: 0 }, grayHistory: [], hookHistory: [] },
@@ -350,6 +351,11 @@ function getInitialSave() {
       inventory: stored.inventory || {},
       history: stored.history || [],
       gpus: stored.gpus || [],
+      gpuPending: {
+        ...DEFAULT_SAVE.gpuPending,
+        ...(stored.gpuPending || {}),
+        tokens: stored.gpuPending?.tokens || {},
+      },
       tasks: {
         ...DEFAULT_SAVE.tasks,
         ...(stored.tasks || {}),
@@ -829,19 +835,21 @@ export default function AITokenGacha() {
       setNotice(`${currencyType === 'money' ? '现金' : '算力点'}不足：购买 ${gpu.name} 需要 ${currencyType === 'money' ? `¥${price.toLocaleString()}` : `◈${price.toLocaleString()}`}。`)
       return
     }
-    setSave(previous => ({
-      ...previous,
-      money: currencyType === 'money' ? previous.money - price : previous.money,
-      compute: currencyType === 'compute' ? previous.compute - price : previous.compute,
-      gpus: [...previous.gpus, {
-        uid: `${gpu.id}-${Date.now()}-${Math.random()}`,
-        gpuId: gpu.id,
-        mode: 'idle',
-        modelId: 'deepseek-v4',
-        modelFactor: 1,
-      }],
-      lastPassiveAt: Date.now(),
-    }))
+    setSave(previous => {
+      const settled = settlePassive(previous, Date.now(), 1).save
+      return {
+        ...settled,
+        money: currencyType === 'money' ? settled.money - price : settled.money,
+        compute: currencyType === 'compute' ? settled.compute - price : settled.compute,
+        gpus: [...settled.gpus, {
+          uid: `${gpu.id}-${Date.now()}-${Math.random()}`,
+          gpuId: gpu.id,
+          mode: 'idle',
+          modelId: 'deepseek-v4',
+          modelFactor: 1,
+        }],
+      }
+    })
     setNotice(`${gpu.name} 已加入本地机房。`)
   }
 
@@ -865,6 +873,29 @@ export default function AITokenGacha() {
       }
     })
     setNotice(`${gpu.name} 已卖出，到账 ¥${resale.toLocaleString()}。`)
+  }
+
+  const claimGpuEarnings = () => {
+    const settled = settlePassive(save, Date.now(), 1).save
+    const pendingMoney = settled.gpuPending?.money || 0
+    const pendingTokens = settled.gpuPending?.tokens || {}
+    const pendingTokenTotal = Object.values(pendingTokens).reduce((sum, amount) => sum + amount, 0)
+    if (pendingMoney <= 0 && pendingTokenTotal <= 0) {
+      setSave(settled)
+      setNotice('当前还没有可领取的显卡收益。')
+      return
+    }
+    const inventory = { ...settled.inventory }
+    Object.entries(pendingTokens).forEach(([modelId, amount]) => {
+      inventory[modelId] = (inventory[modelId] || 0) + amount
+    })
+    setSave({
+      ...settled,
+      money: settled.money + pendingMoney,
+      inventory,
+      gpuPending: { money: 0, tokens: {} },
+    })
+    setNotice(`显卡收益已领取：¥${pendingMoney.toFixed(2)} 与 ${formatToken(pendingTokenTotal)} Token，待领取收益已归零。`)
   }
 
   const investStock = () => {
@@ -1074,10 +1105,15 @@ export default function AITokenGacha() {
   const ownedModels = MODELS.filter(model => (save.inventory[model.id] || 0) > 0)
   const totalToken = MODELS.reduce((sum, model) => sum + (save.inventory[model.id] || 0), 0)
   const countdown = Math.max(0, Math.ceil((save.taskReadyAt - now) / 1000))
-  const showcasedResults = results.length <= 1 ? results : [results.reduce((best, result) => {
-    const tierDifference = TIER_ORDER.indexOf(result.rarity) - TIER_ORDER.indexOf(best.rarity)
-    return tierDifference > 0 || (tierDifference === 0 && result.value > best.value) ? result : best
-  })]
+  const rankedResults = [...results].sort((a, b) =>
+    TIER_ORDER.indexOf(b.rarity) - TIER_ORDER.indexOf(a.rarity) || b.value - a.value
+  )
+  const showcasedResults = results.length >= 10 ? rankedResults.slice(0, 10) : results
+  const gpuPendingPreview = settlePassive(save, now, typeof document !== 'undefined' && document.hidden ? .5 : 1).save.gpuPending || DEFAULT_SAVE.gpuPending
+  const pendingGpuMoney = gpuPendingPreview.money || 0
+  const pendingGpuTokens = Object.entries(gpuPendingPreview.tokens || {})
+    .filter(([, amount]) => amount > 0)
+  const pendingGpuTokenTotal = pendingGpuTokens.reduce((sum, [, amount]) => sum + amount, 0)
 
   return (
     <div className="ai-gacha">
@@ -1142,10 +1178,14 @@ export default function AITokenGacha() {
                 </div>
               ) : (
                 <div className={`gacha-results count-${showcasedResults.length}`}>
-                  {showcasedResults.map(result => (
-                    <ResultCard key={result.id} result={result} featured />
+                  {showcasedResults.map((result, index) => (
+                    <ResultCard key={result.id} result={result} featured={showcasedResults.length === 1 || index === 0} />
                   ))}
-                  {results.length > 1 && <div className="gacha-more-results">本次 {results.length} 抽仅展示最佳：模型稀有度优先、总价值次优；其余结果已收入仓库</div>}
+                  {results.length >= 10 && (
+                    <div className="gacha-more-results">
+                      本次 {results.length} 抽按模型品质优先、总价值次优排序，展示前 10 个{results.length > 10 ? '；其余结果已收入仓库' : ''}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -1343,7 +1383,21 @@ export default function AITokenGacha() {
         <section className="gacha-panel">
           <div className="gacha-panel-title">
             <div><span>LOCAL GPU FARM</span><h3>显卡商店与本地机房</h3></div>
-            <p>人民币与算力点都按市场正版参考价购买；在线每分钟结算，离线收益减半。</p>
+            <p>显卡收益在本机持续累计，点击领取后才进入余额与 Token 仓库；当前游戏倍率 ×{GPU_EARNING_MULTIPLIER}。</p>
+          </div>
+          <div className="gacha-gpu-pending">
+            <div>
+              <span>UNCLAIMED GPU OUTPUT · ×{GPU_EARNING_MULTIPLIER}</span>
+              <h4>待领取显卡收益</h4>
+              <p>现金 ¥{pendingGpuMoney.toFixed(2)} · Token {formatToken(pendingGpuTokenTotal)}</p>
+            </div>
+            <div className="gacha-gpu-pending-tokens">
+              {pendingGpuTokens.length ? pendingGpuTokens.slice(0, 4).map(([modelId, amount]) => {
+                const model = MODELS.find(item => item.id === modelId)
+                return <span key={modelId}>{model?.name || modelId}<b>{formatToken(amount)}</b></span>
+              }) : <small>收益会按当前显卡模式自动累积在这里</small>}
+            </div>
+            <button disabled={pendingGpuMoney <= 0 && pendingGpuTokenTotal <= 0} onClick={claimGpuEarnings}>领取全部并清零</button>
           </div>
           <div className="gacha-gpu-shop">
             {GPU_CATALOG.map(gpu => (
@@ -1352,7 +1406,7 @@ export default function AITokenGacha() {
                 <div>
                   <span>{gpu.vram}GB GDDR7 · {gpu.aiTops.toLocaleString()} AI TOPS</span>
                   <h4>{gpu.name}</h4>
-                  <p>Qwen3 RAG 约 {gpu.ragTps} tok/s · 挖矿约 ¥{(gpu.miningPerMinute * 1440).toFixed(2)}/天</p>
+                  <p>Qwen3 RAG 约 {gpu.ragTps} tok/s · 游戏挖矿约 ¥{(gpu.miningPerMinute * GPU_EARNING_MULTIPLIER * 1440).toFixed(2)}/天</p>
                 </div>
                 <div className="gacha-gpu-price">
                   <b>¥{gpu.marketPrice.toLocaleString()}</b>
@@ -1392,8 +1446,8 @@ export default function AITokenGacha() {
                       </select>
                     )}
                     <small>
-                      {owned.mode === 'mining' && `在线约 ¥${gpu.miningPerMinute.toFixed(4)}/分钟`}
-                      {owned.mode === 'ai' && `在线约 ${formatToken(gpu.tokenMPerMinute / Math.max(1, owned.modelFactor || 1))}/分钟`}
+                      {owned.mode === 'mining' && `累计约 ¥${(gpu.miningPerMinute * GPU_EARNING_MULTIPLIER).toFixed(2)}/分钟`}
+                      {owned.mode === 'ai' && `累计约 ${formatToken(gpu.tokenMPerMinute * GPU_EARNING_MULTIPLIER / Math.max(1, owned.modelFactor || 1))}/分钟`}
                       {owned.mode === 'idle' && '不产生收益'}
                     </small>
                     <button className="gacha-sell-gpu" onClick={() => sellGpu(owned, gpu)}>卖出 ¥{Math.floor(gpu.marketPrice / 2).toLocaleString()}</button>
@@ -1403,9 +1457,10 @@ export default function AITokenGacha() {
             </div>
           )}
           <div className="gacha-rule-notes">
-            <p><b>时间缓存：</b>整个网站打开时每 60 秒结算一次；关闭页面或隐藏标签后，按本地记录时间补算 50% 收益，单次最多补算 30 天。</p>
-            <p><b>用途差异：</b>挖矿直接产生模拟人民币；运行 AI 产生已选择模型的 Token。高品质模型训练更慢，但兑换价值更高。</p>
-            <p><b>买卖规则：</b>人民币与算力点购买都按市场正版参考价换算；卖出统一按正版价格的一半回收。</p>
+            <p><b>本地累计：</b>整个网站打开时每 60 秒把产出写入待领取池；关闭页面或隐藏标签后，按本地时间补算 50% 收益，单次最多补算 30 天。</p>
+            <p><b>手动领取：</b>挖矿累计模拟人民币，运行 AI 累计所选模型 Token；点击“领取全部并清零”后才会进入正式资产。</p>
+            <p><b>游戏倍率：</b>现金和 Token 产出均为基础速率的 {GPU_EARNING_MULTIPLIER} 倍；高品质模型训练更慢，但兑换价值更高。</p>
+            <p><b>买卖规则：</b>人民币与算力点购买都按市场正版参考价换算；卖出统一按正版价格的一半回收，出售前产生的收益仍保留在待领取池。</p>
           </div>
         </section>
       )}
@@ -1767,12 +1822,12 @@ export default function AITokenGacha() {
             <p><b>模型与数量分离：</b>先按模型概率引擎抽普通、稀有、史诗、传说或神话模型，再独立抽 Token 数量。大量普通 Token 不会把模型变成传说，小量传说 Token 也仍然是传说模型。</p>
             <p><b>模型概率：</b>初始池开放普通、稀有与史诗，Lv.1 和 Lv.2 继续提高好模型概率，Lv.3 才能抽到传说，Lv.4 开放神话。满级普通模型降至 20%，神话固定为 0.03%。</p>
             <p><b>Token 特效：</b>Token 数量不改变模型档位，只强化卡片额度特效：2M 起流光、10M 起波纹、100M 起虹彩、1000M 起奇点风暴。</p>
-            <p><b>多连展示：</b>十连、二十连、五十连和百连只展示本批最佳结果，排序先比较模型档位，再比较“模型兑换基准 × Token 数量”的总价值；全部抽取结果仍会进入仓库。</p>
+            <p><b>多连展示：</b>十连及以上会先比较模型档位，再比较“模型兑换基准 × Token 数量”的总价值，只展示排序最高的前 10 个；全部抽取结果仍会进入仓库。</p>
             <p><b>升级效果：</b>模型概率引擎只调整模型档位；Token 额度扩容只调整数量概率；保底只作用于已解锁的模型档位，两条概率线互不串联。</p>
             <p><b>定价原则：</b>公开 API 价格是品质和兑换基准的主要依据，再结合编码能力微调；带 * 的未来模型为依据厂商历史定价生成的游戏内预测价，并非已发布报价。</p>
             <p><b>经济曲线：</b>初始现金抽税后期望约 {Math.round(drawStats(0, 0, .35).expected / 10)}%，算力抽因溢价更低；模型概率、Token 额度、税率和折扣满级后可超过 100%。Token 与算力点都不能兑换现金。</p>
             <p><b>股票概率：</b>−30 至 −1 合计 53%，+1 至 +30 合计 46%，0 为 1%；区间内整数等概率，单次期望约 −1.09%，提取另收 6% 服务费。</p>
-            <p><b>其他资产：</b>股票每次重新进入时结算且为负期望；显卡可用现金或算力点按正版参考价购买，并按正版价格的一半卖出。</p>
+            <p><b>其他资产：</b>股票每次重新进入时结算且为负期望；显卡按 ×{GPU_EARNING_MULTIPLIER} 游戏速率累计到待领取池，可用现金或算力点购买，并按正版价格的一半卖出。</p>
           </div>
           <button className="gacha-reset" onClick={resetSave}>重置本机模拟存档</button>
         </section>
