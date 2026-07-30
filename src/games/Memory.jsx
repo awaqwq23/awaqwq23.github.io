@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { COMPANY_CATALOG, COMPANY_LOGO_URL } from './companyCatalog'
+import { creditGameReward } from './aiEconomy'
 
 const BEST_KEY = 'memory_best_moves'
 const MEMORY_COMPANIES = COMPANY_CATALOG.filter(company =>
@@ -29,11 +30,13 @@ export default function Memory() {
   const [seconds, setSeconds] = useState(0)
   const [running, setRunning] = useState(false)
   const [best, setBest] = useState(() => Number(localStorage.getItem(BEST_KEY) || 0))
+  const [reward, setReward] = useState(0)
   const lock = useRef(false)
+  const rewarded = useRef(false)
 
   const reset = (p = pairs) => {
     setCards(makeDeck(p)); setFlipped([]); setMoves(0); setWon(false)
-    setSeconds(0); setRunning(false); lock.current = false
+    setSeconds(0); setRunning(false); setReward(0); lock.current = false; rewarded.current = false
   }
 
   useEffect(() => { reset(pairs) /* eslint-disable-next-line */ }, [pairs])
@@ -74,6 +77,12 @@ export default function Memory() {
   useEffect(() => {
     if (cards.length && cards.every(c => c.matched)) {
       setWon(true); setRunning(false)
+      if (!rewarded.current) {
+        rewarded.current = true
+        const computeReward = Math.max(600, pairs * 250 - moves * 20 - seconds * 5)
+        creditGameReward({ compute: computeReward })
+        setReward(computeReward)
+      }
       setBest(b => {
         const nb = (b === 0 || moves < b) ? moves : b
         localStorage.setItem(BEST_KEY, nb); return nb
@@ -119,6 +128,7 @@ export default function Memory() {
       {won && (
         <div className="game-banner success">
           🎉 所有互联网公司都配对成功！用了 <strong>{moves}</strong> 步、<strong>{seconds}</strong> 秒
+          ，获得 <strong>◈ {reward.toLocaleString()} 算力点</strong>
           <button className="btn btn-sm btn-primary" onClick={() => reset()}>再来一次</button>
         </div>
       )}

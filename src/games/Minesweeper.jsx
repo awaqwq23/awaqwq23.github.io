@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { creditGameReward } from './aiEconomy'
 
 const LEVELS = {
   easy: { rows: 9, cols: 9, mines: 10, label: '初级 9×9' },
@@ -40,10 +41,12 @@ export default function Minesweeper() {
   const [status, setStatus] = useState('idle') // idle | playing | won | lost
   const [flags, setFlags] = useState(0)
   const [seconds, setSeconds] = useState(0)
+  const [reward, setReward] = useState(0)
   const timer = useRef(null)
+  const rewarded = useRef(false)
 
   const reset = () => {
-    setBoard(null); setStatus('idle'); setFlags(0); setSeconds(0)
+    setBoard(null); setStatus('idle'); setFlags(0); setSeconds(0); setReward(0); rewarded.current = false
     clearInterval(timer.current)
   }
   useEffect(() => { reset() /* eslint-disable-next-line */ }, [level])
@@ -96,6 +99,13 @@ export default function Minesweeper() {
       b.forEach(row => row.forEach(cc => { if (cc.mine) cc.flagged = true }))
       setBoard(b); setStatus('won'); clearInterval(timer.current)
       setFlags(cfg.mines)
+      if (!rewarded.current) {
+        rewarded.current = true
+        const baseReward = { easy: 1800, medium: 4200, hard: 9000 }[level]
+        const computeReward = Math.max(Math.round(baseReward * .55), baseReward - seconds * 8)
+        creditGameReward({ compute: computeReward })
+        setReward(computeReward)
+      }
       return
     }
     setBoard(b)
@@ -159,7 +169,7 @@ export default function Minesweeper() {
         </div>
       </div>
       {status === 'lost' && <div className="game-banner danger">你访问了危险 IP，账号已经被 A\ 风控。</div>}
-      {status === 'won' && <div className="game-banner success">排查完成！所有危险 IP 都已隔离，Claude 账号暂时安全。</div>}
+      {status === 'won' && <div className="game-banner success">排查完成！所有危险 IP 都已隔离，获得 <strong>◈ {reward.toLocaleString()} 算力点</strong>。</div>}
       <p className="game-hint">点击方块选择对应 IP；数字代表周围风控 IP 数量。右键可用 🛡️ 标记可疑地址。</p>
     </div>
   )

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { creditGameReward } from './aiEconomy'
 
 const N = 17
 const BEST_KEY = 'snake_best'
@@ -19,13 +20,15 @@ export default function Snake() {
   const [over, setOver] = useState(false)
   const [score, setScore] = useState(0)
   const [best, setBest] = useState(() => Number(localStorage.getItem(BEST_KEY) || 0))
+  const [reward, setReward] = useState(0)
   const dirRef = useRef(dir)
   const queued = useRef([])
+  const rewarded = useRef(false)
 
   const reset = () => {
     setSnake(START); setFood(randFood(START)); setDir({ x: 1, y: 0 })
     dirRef.current = { x: 1, y: 0 }; queued.current = []
-    setScore(0); setOver(false); setRunning(true)
+    setScore(0); setOver(false); setRunning(true); setReward(0); rewarded.current = false
   }
 
   const turn = useCallback((nd) => {
@@ -77,6 +80,14 @@ export default function Snake() {
     return () => clearInterval(id)
   }, [running, over, food, score])
 
+  useEffect(() => {
+    if (!over || rewarded.current) return
+    rewarded.current = true
+    const computeReward = 300 + score * 220
+    creditGameReward({ compute: computeReward })
+    setReward(computeReward)
+  }, [over, score])
+
   const cells = []
   for (let y = 0; y < N; y++)
     for (let x = 0; x < N; x++) {
@@ -118,6 +129,7 @@ export default function Snake() {
           <div className="game-overlay"><div>
             <h3>💥 上下文已丢失</h3>
             <p>你的 AI 忘记了所有上下文。此前记住了 <strong>{score * 2}k</strong>。</p>
+            {reward > 0 && <p>按分数结算 <strong>◈ {reward.toLocaleString()} 算力点</strong></p>}
             <button className="btn btn-sm btn-primary" onClick={reset}>再来一局</button>
           </div></div>
         )}

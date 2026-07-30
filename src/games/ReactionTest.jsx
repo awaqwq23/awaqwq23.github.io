@@ -32,7 +32,7 @@ export default function ReactionTest() {
     }
     if (phase === 'now') {
       const t = Math.round(performance.now() - start.current)
-      const computeReward = t < 200 ? 100 : t < 280 ? 75 : t < 380 ? 55 : 40
+      const computeReward = t < 200 ? 1500 : t < 280 ? 1100 : t < 380 ? 800 : t < 500 ? 600 : 450
       creditGameReward({ compute: computeReward })
       setReward(computeReward)
       setMs(t)

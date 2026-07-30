@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { COMPANY_CATALOG, COMPANY_LOGO_URL } from './companyCatalog'
+import { creditGameReward } from './aiEconomy'
 
 const W = 960
 const H = 620
@@ -127,8 +128,10 @@ export default function AIWorldBreakout() {
   const frameRef = useRef(0)
   const mountedRef = useRef(true)
   const noticeTimerRef = useRef(null)
+  const rewardedRef = useRef(false)
   const [selectedAI, setSelectedAI] = useState('openai')
   const [destructionNotice, setDestructionNotice] = useState(null)
+  const [reward, setReward] = useState(0)
   const [ui, setUi] = useState({
     status: 'ready',
     score: 0,
@@ -179,6 +182,8 @@ export default function AIWorldBreakout() {
     gameRef.current = freshGame(aiKey)
     if (noticeTimerRef.current) clearTimeout(noticeTimerRef.current)
     setDestructionNotice(null)
+    setReward(0)
+    rewardedRef.current = false
     setSelectedAI(aiKey)
     syncUi()
   }, [syncUi])
@@ -506,6 +511,14 @@ export default function AIWorldBreakout() {
     return () => cancelAnimationFrame(frameRef.current)
   }, [placeBall, showDestruction, syncUi])
 
+  useEffect(() => {
+    if (!['won', 'lost'].includes(ui.status) || rewardedRef.current) return
+    rewardedRef.current = true
+    const computeReward = 500 + ui.score * 180 + (ui.status === 'won' ? 3500 : 0)
+    creditGameReward({ compute: computeReward })
+    setReward(computeReward)
+  }, [ui.status, ui.score])
+
   const ai = AIS[selectedAI]
   const remaining = ui.total - ui.score
   const timeLeft = selectedAI === 'anthropic' ? 120 - ui.elapsed : ui.elapsed
@@ -583,6 +596,7 @@ export default function AIWorldBreakout() {
             <span>WORLD STATUS // CAPTURED</span>
             <h3>游戏胜利</h3>
             <p>AI 成功统治世界</p>
+            <p>按清除数量结算 <strong>◈ {reward.toLocaleString()} 算力点</strong></p>
             <button className="breakout-action" onClick={() => resetGame(selectedAI)}>再次接管</button>
           </div>
         )}
@@ -592,6 +606,7 @@ export default function AIWorldBreakout() {
             <span>PROTOCOL INTERRUPTED</span>
             <h3>{selectedAI === 'anthropic' && ui.elapsed >= 120 ? '两分钟已到' : '接管失败'}</h3>
             <p>{selectedAI === 'anthropic' && ui.elapsed >= 120 ? 'Anthropic 已自动下线' : '球已失联，旧世界暂时幸存'}</p>
+            <p>按已清除目标结算 <strong>◈ {reward.toLocaleString()} 算力点</strong></p>
             <button className="breakout-action" onClick={() => resetGame(selectedAI)}>重新启动</button>
           </div>
         )}

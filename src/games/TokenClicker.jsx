@@ -11,6 +11,7 @@ export default function TokenClicker() {
   const [remaining, setRemaining] = useState(GAME_SECONDS)
   const [best, setBest] = useState(() => Number(localStorage.getItem(BEST_KEY) || 0))
   const [popups, setPopups] = useState([])
+  const [computeReward, setComputeReward] = useState(0)
   const deadline = useRef(0)
   const interval = useRef(null)
   const popupId = useRef(0)
@@ -31,6 +32,7 @@ export default function TokenClicker() {
     clearInterval(interval.current)
     setClicks(0)
     setPopups([])
+    setComputeReward(0)
     setRemaining(GAME_SECONDS)
     deadline.current = performance.now() + GAME_SECONDS * 1000
     setPhase('running')
@@ -59,7 +61,9 @@ export default function TokenClicker() {
     })
     if (!rewarded.current && clicks > 0) {
       rewarded.current = true
-      creditGameReward({ modelId: 'claude-sonnet-5', tokenM: clicks / 1000 })
+      const compute = 300 + clicks * 120
+      creditGameReward({ compute, modelId: 'claude-sonnet-5', tokenM: clicks / 1000 })
+      setComputeReward(compute)
     }
   }, [phase, clicks])
 
@@ -124,6 +128,7 @@ export default function TokenClicker() {
                   ? <>你用 SEPA 薅到了 <strong>A\ {clicks}k Token</strong>，已存入算力奇点仓库</>
                   : '模拟前几天的 SEPA 支付薅 Claude：5 秒内尽可能多点。'}
               </p>
+              {phase === 'done' && computeReward > 0 && <p>按点击数额外结算 <strong>◈ {computeReward.toLocaleString()} 算力点</strong></p>}
               <button className="btn btn-sm btn-primary" onClick={start}>
                 {phase === 'done' ? '再薅一次' : '开始 5 秒挑战'}
               </button>

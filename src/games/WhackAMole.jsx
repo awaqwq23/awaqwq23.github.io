@@ -58,7 +58,7 @@ export default function WhackAMole() {
       setBest(b => { const nb = Math.max(b, score); localStorage.setItem(BEST_KEY, nb); return nb })
       if (!rewarded.current) {
         rewarded.current = true
-        const computeReward = score * 12
+        const computeReward = 400 + score * 150
         creditGameReward({ compute: computeReward })
         setReward(computeReward)
       }

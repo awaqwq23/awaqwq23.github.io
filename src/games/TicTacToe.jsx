@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { COMPANY_LOGO_URL } from './companyCatalog'
+import { creditGameReward } from './aiEconomy'
 
 const LINES = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -49,6 +50,7 @@ export default function TicTacToe() {
   const [board, setBoard] = useState(Array(9).fill(null))
   const [turn, setTurn] = useState('X')
   const [hard, setHard] = useState(true)
+  const [reward, setReward] = useState(0)
   const [stats, setStats] = useState(() => {
     try { return JSON.parse(localStorage.getItem(STORE)) || { win: 0, lose: 0, draw: 0 } }
     catch { return { win: 0, lose: 0, draw: 0 } }
@@ -75,6 +77,13 @@ export default function TicTacToe() {
 
   useEffect(() => {
     if (!done) return
+    const computeReward = result?.player === 'X'
+      ? (hard ? 2800 : 1800)
+      : result?.player === 'O'
+        ? 350
+        : (hard ? 1000 : 700)
+    creditGameReward({ compute: computeReward })
+    setReward(computeReward)
     setStats(s => {
       const ns = { ...s }
       if (result?.player === 'X') ns.win++
@@ -90,7 +99,7 @@ export default function TicTacToe() {
     if (board[i] || done || turn !== 'X') return
     const b = board.slice(); b[i] = 'X'; setBoard(b); setTurn('O')
   }
-  const reset = () => { setBoard(Array(9).fill(null)); setTurn('X') }
+  const reset = () => { setBoard(Array(9).fill(null)); setTurn('X'); setReward(0) }
 
   return (
     <div className="ttt-game">
@@ -129,6 +138,7 @@ export default function TicTacToe() {
         {result?.player === 'X' && `🎉 ChatGPT 战胜了${hard ? ' Claude' : '豆包'}！`}
         {result?.player === 'O' && `🤖 ${hard ? 'Claude' : '豆包'}赢了，再战一局？`}
         {!result && full && `🤝 ChatGPT 与${hard ? ' Claude' : '豆包'}平局`}
+        {done && <span> · 获得 <strong>◈ {reward.toLocaleString()}</strong></span>}
         <button className="btn btn-sm btn-primary" onClick={reset}>再来</button>
       </div>
       <p className="game-hint">你执 ChatGPT 商标先手；高难度对手是 Claude，低难度对手是豆包。棋力规则保持不变。</p>
