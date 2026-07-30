@@ -11,7 +11,7 @@ const TIER_META = {
   legendary: { name: '传说', color: '#fbbf24' },
   mythical: { name: '神话', color: '#fb7185' },
 }
-const SAVE_VERSION = 2
+const SAVE_VERSION = 4
 const REDEEM_CODES = {
   awaqwq233: 10000,
   喜欢: 10000,
@@ -23,28 +23,54 @@ const REDEEM_CODES = {
 }
 
 const MODELS = [
-  { id: 'deepseek-v4', name: 'DeepSeek V4 Preview', brand: 'DeepSeek', logo: 'deepseek', tier: 'common', price: '$0.35 / $1.40*', cp: 320, minLab: 0 },
-  { id: 'qwen3-coder', name: 'Qwen3 Coder', brand: 'Qwen', logo: 'alibabacloud', tier: 'common', price: '$0.40 / $1.20*', cp: 300, minLab: 0 },
-  { id: 'gemini-35-flash', name: 'Gemini 3.5 Flash', brand: 'Google', logo: 'google', tier: 'rare', price: '$1.50 / $9.00', cp: 450, minLab: 0 },
-  { id: 'gpt-56-luna', name: 'GPT-5.6 Luna', brand: 'OpenAI', logo: 'openai', tier: 'common', price: '$1.00 / $6.00', cp: 430, minLab: 0 },
-  { id: 'grok-build', name: 'Grok Build 0.1', brand: 'xAI', logo: 'x', tier: 'common', price: '$1.00 / $2.00', cp: 380, minLab: 0 },
-  { id: 'gpt-56-terra', name: 'GPT-5.6 Terra', brand: 'OpenAI', logo: 'openai', tier: 'rare', price: '$2.50 / $15.00', cp: 820, minLab: 0 },
-  { id: 'claude-sonnet-5', name: 'Claude Sonnet 5', brand: 'Anthropic', logo: 'anthropic', tier: 'rare', price: '$3.00 / $15.00', cp: 900, minLab: 0 },
-  { id: 'gemini-31-pro', name: 'Gemini 3.1 Pro', brand: 'Google', logo: 'google', tier: 'rare', price: '$2.00 / $12.00', cp: 780, minLab: 0 },
-  { id: 'grok-45', name: 'Grok 4.5', brand: 'xAI', logo: 'x', tier: 'rare', price: '$2.00 / $6.00', cp: 720, minLab: 0 },
-  { id: 'claude-opus-5', name: 'Claude Opus 5', brand: 'Anthropic', logo: 'anthropic', tier: 'epic', price: '$5.00 / $25.00', cp: 1380, minLab: 0 },
-  { id: 'deepseek-v4-final', name: 'DeepSeek V4 正式版', brand: 'DeepSeek', logo: 'deepseek', tier: 'epic', price: '$2.00 / $8.00*', cp: 1250, minLab: 0 },
-  { id: 'deepseek-v5', name: 'DeepSeek V5', brand: 'DeepSeek', logo: 'deepseek', tier: 'epic', price: '$4.00 / $20.00*', cp: 1550, minLab: 0 },
-  { id: 'gpt-57-code', name: 'GPT-5.7 Code', brand: 'OpenAI', logo: 'openai', tier: 'epic', price: '$7.00 / $35.00*', cp: 1650, minLab: 0 },
-  { id: 'gemini-4-ultra', name: 'Gemini 4 Ultra', brand: 'Google', logo: 'google', tier: 'epic', price: '$8.00 / $40.00*', cp: 1800, minLab: 0 },
-  { id: 'gpt-56-sol', name: 'GPT-5.6 Sol', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$5.00 / $30.00', cp: 2000, minLab: 3 },
-  { id: 'claude-fable-5', name: 'Claude Fable 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$10.00 / $50.00', cp: 2500, minLab: 3 },
-  { id: 'gpt-6', name: 'GPT-6', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$12.00 / $60.00*', cp: 3000, minLab: 3 },
-  { id: 'claude-fable-6', name: 'Claude Fable 6', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$15.00 / $75.00*', cp: 3500, minLab: 3 },
-  { id: 'gpt-7', name: 'GPT-7', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '$20.00 / $100.00*', cp: 7200, minLab: 4 },
-  { id: 'claude-opus-6', name: 'Claude Opus 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '$24.00 / $120.00*', cp: 7800, minLab: 4 },
-  { id: 'gemini-5-ultra', name: 'Gemini 5 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '$18.00 / $90.00*', cp: 7500, minLab: 4 },
+  { id: 'gpt-41-mini', name: 'GPT-4.1 mini', brand: 'OpenAI', logo: 'openai', tier: 'common', price: '$0.40 / $1.60', cp: 220, minLab: 0, released: true },
+  { id: 'gemini-25-flash-lite', name: 'Gemini 2.5 Flash-Lite', brand: 'Google', logo: 'google', tier: 'common', price: '$0.10 / $0.40', cp: 240, minLab: 0, released: true },
+  { id: 'claude-35-haiku', name: 'Claude 3.5 Haiku', brand: 'Anthropic', logo: 'anthropic', tier: 'common', price: '$0.80 / $4.00', cp: 280, minLab: 0, released: true },
+  { id: 'qwen25-coder-32b', name: 'Qwen2.5-Coder 32B', brand: 'Qwen', logo: 'alibabacloud', tier: 'common', price: '开源 / 接入价', cp: 300, minLab: 0, released: true },
+  { id: 'codestral-2501', name: 'Codestral 25.01', brand: 'Mistral', logo: 'mistral', tier: 'common', price: '$0.30 / $0.90', cp: 340, minLab: 0, released: true },
+  { id: 'deepseek-v32', name: 'DeepSeek V3.2', brand: 'DeepSeek', logo: 'deepseek', tier: 'common', price: '$0.28 / $0.42', cp: 380, minLab: 0, released: true },
+
+  { id: 'gpt-5-mini', name: 'GPT-5 mini', brand: 'OpenAI', logo: 'openai', tier: 'rare', price: '$0.25 / $2.00', cp: 520, minLab: 0, released: true },
+  { id: 'claude-haiku-45', name: 'Claude Haiku 4.5', brand: 'Anthropic', logo: 'anthropic', tier: 'rare', price: '$1.00 / $5.00', cp: 600, minLab: 0, released: true },
+  { id: 'gemini-3-flash', name: 'Gemini 3 Flash', brand: 'Google', logo: 'google', tier: 'rare', price: '$0.50 / $3.00', cp: 650, minLab: 0, released: true },
+  { id: 'qwen3-coder', name: 'Qwen3-Coder 480B', brand: 'Qwen', logo: 'alibabacloud', tier: 'rare', price: '开源 / 接入价', cp: 720, minLab: 0, released: true },
+  { id: 'grok-4-fast', name: 'Grok 4 Fast', brand: 'xAI', logo: 'x', tier: 'rare', price: '$0.20 / $0.50', cp: 760, minLab: 0, released: true },
+  { id: 'devstral-2', name: 'Devstral 2', brand: 'Mistral', logo: 'mistral', tier: 'rare', price: '$0.40 / $2.00', cp: 820, minLab: 0, released: true },
+  { id: 'deepseek-v4', name: 'DeepSeek V4 Flash', brand: 'DeepSeek', logo: 'deepseek', tier: 'rare', price: '$0.35 / $1.40', cp: 880, minLab: 0, released: true },
+
+  { id: 'gpt-53-codex', name: 'GPT-5.3-Codex', brand: 'OpenAI', logo: 'openai', tier: 'epic', price: '$1.75 / $14.00', cp: 1180, minLab: 0, released: true },
+  { id: 'gpt-55', name: 'GPT-5.5', brand: 'OpenAI', logo: 'openai', tier: 'epic', price: '$5.00 / $30.00', cp: 1450, minLab: 0, released: true },
+  { id: 'claude-sonnet-46', name: 'Claude Sonnet 4.6', brand: 'Anthropic', logo: 'anthropic', tier: 'epic', price: '$3.00 / $15.00', cp: 1500, minLab: 0, released: true },
+  { id: 'gemini-31-pro', name: 'Gemini 3.1 Pro', brand: 'Google', logo: 'google', tier: 'epic', price: '$2.00 / $12.00', cp: 1550, minLab: 0, released: true },
+  { id: 'gemini-35-flash', name: 'Gemini 3.5 Flash', brand: 'Google', logo: 'google', tier: 'epic', price: '$1.50 / $9.00', cp: 1700, minLab: 0, released: true },
+  { id: 'deepseek-v4-final', name: 'DeepSeek V4 Pro', brand: 'DeepSeek', logo: 'deepseek', tier: 'epic', price: '$2.00 / $8.00', cp: 1760, minLab: 0, released: true },
+  { id: 'qwen-36-plus', name: 'Qwen 3.6 Plus', brand: 'Qwen', logo: 'alibabacloud', tier: 'epic', price: '公开接入价', cp: 1820, minLab: 0, released: true },
+  { id: 'glm-52', name: 'GLM-5.2', brand: 'Z.ai', logo: 'zhipuai', tier: 'epic', price: '开源 / 接入价', cp: 1950, minLab: 0, released: true },
+
+  { id: 'gpt-56-luna', name: 'GPT-5.6 Luna', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$1.00 / $6.00', cp: 2450, minLab: 3, released: true },
+  { id: 'gpt-56-terra', name: 'GPT-5.6 Terra', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$2.50 / $15.00', cp: 2700, minLab: 3, released: true },
+  { id: 'claude-opus-48', name: 'Claude Opus 4.8', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$5.00 / $25.00', cp: 2850, minLab: 3, released: true },
+  { id: 'grok-45', name: 'Grok 4.5', brand: 'xAI', logo: 'x', tier: 'legendary', price: '$2.00 / $6.00', cp: 3000, minLab: 3, released: true },
+  { id: 'claude-sonnet-5', name: 'Claude Sonnet 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '$3.00 / $15.00', cp: 3150, minLab: 3, released: true },
+  { id: 'claude-mythos-5', name: 'Claude Mythos 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '受限开放', cp: 3280, minLab: 3, released: true },
+  { id: 'claude-fable-5', name: 'Claude Fable 5', brand: 'Anthropic', logo: 'anthropic', tier: 'legendary', price: '公开服务价', cp: 3400, minLab: 3, released: true },
+  { id: 'gpt-56-sol', name: 'GPT-5.6 Sol', brand: 'OpenAI', logo: 'openai', tier: 'legendary', price: '$5.00 / $30.00', cp: 3600, minLab: 3, released: true },
+
+  { id: 'gpt-6', name: 'GPT-6', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '未发布 · 预测', cp: 6400, minLab: 4, released: false },
+  { id: 'deepseek-v5', name: 'DeepSeek V5', brand: 'DeepSeek', logo: 'deepseek', tier: 'mythical', price: '未发布 · 预测', cp: 6600, minLab: 4, released: false },
+  { id: 'gemini-4-ultra', name: 'Gemini 4 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '未发布 · 预测', cp: 6800, minLab: 4, released: false },
+  { id: 'grok-5', name: 'Grok 5', brand: 'xAI', logo: 'x', tier: 'mythical', price: '未发布 · 预测', cp: 7000, minLab: 4, released: false },
+  { id: 'claude-fable-6', name: 'Claude Fable 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '未发布 · 预测', cp: 7200, minLab: 4, released: false },
+  { id: 'gpt-7', name: 'GPT-7', brand: 'OpenAI', logo: 'openai', tier: 'mythical', price: '未发布 · 远期预测', cp: 7600, minLab: 4, released: false },
+  { id: 'claude-opus-6', name: 'Claude Opus 6', brand: 'Anthropic', logo: 'anthropic', tier: 'mythical', price: '未发布 · 预测', cp: 7800, minLab: 4, released: false },
+  { id: 'gemini-5-ultra', name: 'Gemini 5 Ultra', brand: 'Google', logo: 'google', tier: 'mythical', price: '未发布 · 远期预测', cp: 8000, minLab: 4, released: false },
 ]
+
+const LEGACY_MODEL_IDS = {
+  'grok-build': 'grok-4-fast',
+  'claude-opus-5': 'claude-opus-48',
+  'gpt-57-code': 'gpt-53-codex',
+}
 
 const TOKEN_AMOUNTS = [
   { amount: 1, label: '1M' },
@@ -80,7 +106,6 @@ const UPGRADE_DEFS = {
   batch: { icon: '▦', name: '并行抽取协议', desc: '依次解锁 20 / 50 / 100 连抽', story: '通过并行队列跑完高并发抽取项目，让更多请求能在同一批次完成。', max: 3, base: 24 },
   income: { icon: '↗', name: '小游戏加速器', desc: '补给任务收益每级 +20%', story: '通过推荐模型跑完小游戏增长项目，提高了每次挑战带回的算力收益。', max: 5, base: 14 },
   discount: { icon: '％', name: '采购议价器', desc: '抽取价格每级 -5%，十连也靠它打折', story: '通过成本模型跑完供应商议价项目，压低了人民币和算力点的采购成本。', max: 5, base: 18 },
-  tax: { icon: '⌁', name: '低损耗兑换', desc: '兑换税每级降低 5 个百分点', story: '通过风控模型跑完兑换链路优化项目，减少了 Token 转算力时的系统损耗。', max: 5, base: 20 },
   lab: { icon: '⌬', name: '模型概率引擎', desc: '逐级提高高档模型概率；Lv.3 开传说，满级普通仅 20%', story: '通过模型路由与评测项目，独立提高高档模型进入抽取池的权重，不影响 Token 数量。', max: 4, base: 22 },
   luck: { icon: '✦', name: 'Token 额度扩容', desc: '逐级提高大额 Token 概率，不影响模型档位', story: '通过额度调度与尾部概率校准项目，让大额请求更常出现，同时保持模型概率完全独立。', max: 5, base: 28 },
   auto: { icon: '⟳', name: '自动抽取队列', desc: '从每 60 秒单抽升级到每秒十连', story: '通过代理模型跑完无人值守与高并发队列项目，让抽取终端逐步达到每秒十连。', max: 6, base: 36 },
@@ -90,27 +115,27 @@ const UPGRADE_DEFS = {
   taskProfit: { icon: '↟', name: '任务利润优化', desc: '每级提高任务收入 25%', story: '通过财务模型跑完报价与交付优化项目，提高了每份任务的实际利润。', max: 5, base: 30 },
 }
 
-const VALUE_UPGRADE_KEYS = ['discount', 'tax', 'luck', 'pity', 'batch', 'income', 'auto', 'taskSlots', 'taskQuota', 'taskProfit']
+const VALUE_UPGRADE_KEYS = ['discount', 'luck', 'pity', 'batch', 'income', 'auto', 'taskSlots', 'taskQuota', 'taskProfit']
 
 const WORK_JOBS = [
-  { id: 'labeling', name: '数据标注兼职', desc: '给训练数据分类、纠错和补标签。', duration: 30000, reward: 140, tag: '短工' },
-  { id: 'support', name: '在线客服值班', desc: '回复工单、整理常见问题并安抚客户。', duration: 60000, reward: 300, tag: '标准' },
-  { id: 'server', name: '机房夜班巡检', desc: '检查温度、日志和异常显卡节点。', duration: 90000, reward: 470, tag: '稳定' },
-  { id: 'bugfix', name: '紧急修复外包', desc: '接手线上故障并提交一个能用的修复。', duration: 120000, reward: 660, tag: '技术岗' },
-  { id: 'evaluation', name: '模型评测合同', desc: '运行测试集并整理能力与安全报告。', duration: 180000, reward: 1020, tag: '高薪' },
-  { id: 'consulting', name: '系统架构顾问', desc: '完成一次方案评审与成本优化建议。', duration: 300000, reward: 1800, tag: '长期' },
+  { id: 'labeling', name: '数据标注兼职', desc: '给训练数据分类、纠错和补标签。', duration: 30000, reward: 140, happinessCost: 2, tag: '短工' },
+  { id: 'support', name: '在线客服值班', desc: '回复工单、整理常见问题并安抚客户。', duration: 60000, reward: 300, happinessCost: 4, tag: '标准' },
+  { id: 'server', name: '机房夜班巡检', desc: '检查温度、日志和异常显卡节点。', duration: 90000, reward: 470, happinessCost: 6, tag: '稳定' },
+  { id: 'bugfix', name: '紧急修复外包', desc: '接手线上故障并提交一个能用的修复。', duration: 120000, reward: 660, happinessCost: 8, tag: '技术岗' },
+  { id: 'evaluation', name: '模型评测合同', desc: '运行测试集并整理能力与安全报告。', duration: 180000, reward: 1020, happinessCost: 12, tag: '高薪' },
+  { id: 'consulting', name: '系统架构顾问', desc: '完成一次方案评审与成本优化建议。', duration: 300000, reward: 1800, happinessCost: 18, tag: '长期' },
 ]
 
 const DAILY_TASKS = [
-  { id: 'daily-api', name: '修复支付 API 告警', desc: '排查接口超时并补上回归测试。', modelId: 'deepseek-v4', cost: 0.2, chance: 0.88, reward: 24 },
+  { id: 'daily-api', name: '修复支付 API 告警', desc: '排查接口超时并补上回归测试。', modelId: 'deepseek-v32', cost: 0.2, chance: 0.88, reward: 24 },
   { id: 'daily-docs', name: '整理开源项目文档', desc: '补齐安装、配置和故障排查说明。', modelId: 'qwen3-coder', cost: 0.2, chance: 0.9, reward: 22 },
-  { id: 'daily-ui', name: '检查移动端页面', desc: '找出布局溢出和交互可用性问题。', modelId: 'gpt-56-luna', cost: 0.2, chance: 0.86, reward: 28 },
+  { id: 'daily-ui', name: '检查移动端页面', desc: '找出布局溢出和交互可用性问题。', modelId: 'gpt-41-mini', cost: 0.2, chance: 0.86, reward: 28 },
 ]
 
 const WEEKLY_TASKS = [
-  { id: 'weekly-repo', name: '迁移大型 Monorepo', desc: '升级依赖并让完整测试矩阵通过。', modelId: 'gpt-56-terra', cost: 0.8, chance: 0.82, reward: 180 },
-  { id: 'weekly-incident', name: '复盘生产事故', desc: '跨日志、代码和监控定位真正根因。', modelId: 'claude-opus-5', cost: 0.8, chance: 0.9, reward: 320 },
-  { id: 'weekly-compiler', name: '重构编译工具链', desc: '完成长时间自主编码与性能验证。', modelId: 'claude-fable-5', cost: 0.8, chance: 0.94, reward: 480 },
+  { id: 'weekly-repo', name: '迁移大型 Monorepo', desc: '升级依赖并让完整测试矩阵通过。', modelId: 'gemini-35-flash', cost: 0.8, chance: 0.82, reward: 180 },
+  { id: 'weekly-incident', name: '复盘生产事故', desc: '跨日志、代码和监控定位真正根因。', modelId: 'claude-sonnet-5', cost: 0.8, chance: 0.9, reward: 320 },
+  { id: 'weekly-compiler', name: '重构编译工具链', desc: '完成长时间自主编码与性能验证。', modelId: 'gpt-56-sol', cost: 0.8, chance: 0.94, reward: 480 },
 ]
 
 const LIFE_GOALS = {
@@ -118,29 +143,60 @@ const LIFE_GOALS = {
     name: '房子',
     icon: '⌂',
     levels: [
-      { name: '温馨小屋', price: 5000, desc: '终于有一个放得下显卡和自己的小窝。' },
-      { name: '城市大平层', price: 50000, desc: '给机房、书房和生活都留出足够空间。' },
-      { name: '海景智能别墅', price: 500000, desc: '带独立机房、花园和永远看不完的海。' },
+      { name: '温馨小屋', price: 200000, desc: '终于有一个放得下显卡和自己的小窝。' },
+      { name: '城市大平层', price: 1000000, desc: '给机房、书房和生活都留出足够空间。' },
+      { name: '海景智能别墅', price: 5000000, desc: '带独立机房、花园和永远看不完的海。' },
     ],
   },
   car: {
     name: '车子',
     icon: '◇',
     levels: [
-      { name: '二手通勤车', price: 3000, desc: '能可靠地把你送到下一个项目现场。' },
-      { name: '豪华智能电车', price: 30000, desc: '自动驾驶和算力座舱终于都安排上了。' },
-      { name: '限量未来超跑', price: 300000, desc: '速度、设计和回头率全部拉满。' },
+      { name: '二手通勤车', price: 500000, desc: '能可靠地把你送到下一个项目现场。' },
+      { name: '豪华智能电车', price: 2000000, desc: '自动驾驶和算力座舱终于都安排上了。' },
+      { name: '限量未来超跑', price: 10000000, desc: '速度、设计和回头率全部拉满。' },
     ],
   },
   partner: {
-    name: '对象',
+    name: '女友',
     icon: '♡',
     levels: [
-      { name: '心动相遇', price: 1000, desc: '准备约会基金，遇见愿意理解你的人。' },
-      { name: '稳定伴侣', price: 20000, desc: '一起旅行、生活，也一起面对项目延期。' },
-      { name: '人生搭档', price: 200000, desc: '不是购买一个人，而是投入共同生活与未来。' },
+      { name: '心动相遇', price: 1000000, desc: '准备约会基金，遇见愿意理解你的人。' },
+      { name: '稳定伴侣', price: 5000000, desc: '一起旅行、生活，也一起面对项目延期。' },
+      { name: '人生搭档', price: 20000000, desc: '不是购买一个人，而是投入共同生活与未来。' },
     ],
   },
+}
+
+const FEMINIZATION_GOAL = {
+  name: '投资女装',
+  levels: [
+    { name: '购买服装', price: 10000, desc: '购入第一套女装，幸福度回满。' },
+    { name: '开始吃药', price: 100000, desc: '进入下一阶段，幸福度回满。' },
+    { name: '完成手术', price: 1000000, desc: '完成特殊目标并触发恶坠结局。' },
+  ],
+}
+
+const VENTURE_BANDS = [
+  { id: 'seed', min: 100000, max: 499999, label: '10万–49万', prefixes: ['像素', '青柠', '微光', '纸飞机', '小鲸', '云芽', '松果', '星尘', '薄荷', '代码'], fields: ['工作室', '数据', '软件', '机器人', '网络'] },
+  { id: 'growth', min: 500000, max: 1999999, label: '50万–199万', prefixes: ['远望', '矩阵', '蓝海', '灵犀', '极昼', '脉冲', '天穹', '启明', '涌现', '光年'], fields: ['智能', '科技', '算力', '系统', '云服务'] },
+  { id: 'scale', min: 2000000, max: 9999999, label: '200万–999万', prefixes: ['寰宇', '量子', '万象', '超弦', '深空', '奇点', '泰坦', '昆仑', '长城', '银河'], fields: ['产业集团', '人工智能', '芯片科技', '具身智能', '基础设施'] },
+  { id: 'mega', min: 10000000, max: Infinity, label: '1000万以上', prefixes: ['新纪元', '地平线', '联合未来', '全球智算', '星际资本', '创世引擎', '太初', '世界模型', '超级智能', '文明跃迁'], fields: ['控股', '研究院', '生态集团', '技术联盟', '产业基金'] },
+]
+
+function venturePool(amount) {
+  const band = VENTURE_BANDS.find(item => amount >= item.min && amount <= item.max) || VENTURE_BANDS[VENTURE_BANDS.length - 1]
+  return {
+    ...band,
+    companies: band.prefixes.flatMap((prefix, prefixIndex) =>
+      band.fields.map((field, fieldIndex) => ({
+        id: `${band.id}-${prefixIndex}-${fieldIndex}`,
+        name: `${prefix}${field}`,
+        sector: ['AI 招聘平台', '企业软件', '编程智能体', '算力服务', '机器人团队'][(prefixIndex + fieldIndex) % 5],
+        risk: ['保守扩张', '稳健增长', '高波动押注'][(prefixIndex * 2 + fieldIndex) % 3],
+      }))
+    ),
+  }
 }
 
 const DEFAULT_SAVE = {
@@ -161,9 +217,11 @@ const DEFAULT_SAVE = {
   autoDrawEnabled: false,
   autoCurrency: 'compute',
   nextAutoAt: 0,
-  stocks: { balance: 0, principal: 0, history: [], lastEntrySettlementAt: 0, serviceFee: 0.06 },
+  stocks: { balance: 0, principal: 0, history: [], lastEntrySettlementAt: 0 },
+  venture: { active: null, totalInvested: 0, totalReturned: 0, history: [] },
   lifeGoals: { house: 0, car: 0, partner: 0, victoryShown: false },
-  chastity: 100,
+  lifeExtras: { cakes: 0, pcVisits: 0, feminization: 0 },
+  status: { happiness: 100, health: 100, corruption: 0, hasHiv: false, infectedCount: 0, ending: null },
   work: { active: null, completed: 0, totalEarned: 0, history: [] },
   redeemedCodes: {},
 }
@@ -213,7 +271,7 @@ function tokenEffect(amount) {
   return { id: 'base', name: '标准额度' }
 }
 
-function drawStats(luck = 0, lab = 0, taxRate = 0.35) {
+function drawStats(luck = 0, lab = 0) {
   const modelRates = modelTierRates(lab)
   const tokens = tokenPool(luck)
   const tokenWeight = tokens.reduce((sum, token) => sum + token.weight, 0)
@@ -234,7 +292,7 @@ function drawStats(luck = 0, lab = 0, taxRate = 0.35) {
     })
   })
 
-  return { rarityRates, expected: Math.round(expected * (1 - taxRate)) }
+  return { rarityRates, expected: Math.round(expected) }
 }
 
 function drawCombination(luck = 0, lab = 0, softPity = 0, minimumTier = null) {
@@ -277,6 +335,19 @@ function formatDuration(duration) {
   const minutes = Math.floor(duration / 60000)
   const seconds = Math.round((duration % 60000) / 1000)
   return seconds ? `${minutes} 分 ${seconds} 秒` : `${minutes} 分钟`
+}
+
+function clampStat(value, min = 0, max = 100) {
+  return Math.max(min, Math.min(max, Number(value) || 0))
+}
+
+function hookIncomeMultiplier(corruption = 0) {
+  return 1 + Math.floor(Math.max(0, corruption) / 10) * 0.1
+}
+
+function pcPriceFor(corruption = 0) {
+  const discount = Math.floor(Math.max(0, -corruption) / 10) * 0.05
+  return Math.round(10000 * Math.max(0.5, 1 - discount))
 }
 
 function maxBatch(level) {
@@ -341,14 +412,23 @@ function getInitialSave() {
   try {
     const stored = JSON.parse(localStorage.getItem(SAVE_KEY))
     if (!stored) return DEFAULT_SAVE
-    const isLegacySave = (stored.saveVersion || 1) < SAVE_VERSION
+    const isLegacySave = (stored.saveVersion || 1) < 2
+    const { tax: legacyTax, ...storedUpgrades } = stored.upgrades || {}
+    const { serviceFee: legacyServiceFee, ...storedStocks } = stored.stocks || {}
+    const { diseasePending: legacyDiseasePending, ...storedLifeExtras } = stored.lifeExtras || {}
+    const inventory = { ...(stored.inventory || {}) }
+    Object.entries(LEGACY_MODEL_IDS).forEach(([legacyId, currentId]) => {
+      if (!inventory[legacyId]) return
+      inventory[currentId] = (inventory[currentId] || 0) + inventory[legacyId]
+      delete inventory[legacyId]
+    })
     return {
       ...DEFAULT_SAVE,
       ...stored,
       saveVersion: SAVE_VERSION,
       money: isLegacySave ? Number(stored.money || 0) + 900 : (stored.money ?? DEFAULT_SAVE.money),
-      upgrades: { ...DEFAULT_SAVE.upgrades, ...stored.upgrades },
-      inventory: stored.inventory || {},
+      upgrades: { ...DEFAULT_SAVE.upgrades, ...storedUpgrades },
+      inventory,
       history: stored.history || [],
       gpus: stored.gpus || [],
       gpuPending: {
@@ -362,8 +442,21 @@ function getInitialSave() {
         completed: stored.tasks?.completed || {},
         runs: { ...DEFAULT_SAVE.tasks.runs, ...(stored.tasks?.runs || {}) },
       },
-      stocks: { ...DEFAULT_SAVE.stocks, ...(stored.stocks || {}) },
+      stocks: { ...DEFAULT_SAVE.stocks, ...storedStocks },
+      venture: {
+        ...DEFAULT_SAVE.venture,
+        ...(stored.venture || {}),
+        history: stored.venture?.history || [],
+      },
       lifeGoals: { ...DEFAULT_SAVE.lifeGoals, ...(stored.lifeGoals || {}) },
+      lifeExtras: { ...DEFAULT_SAVE.lifeExtras, ...storedLifeExtras },
+      status: {
+        ...DEFAULT_SAVE.status,
+        ...(stored.status || {}),
+        corruption: stored.status?.corruption ?? clampStat(100 - (stored.chastity ?? 100), -100, 100),
+        hasHiv: stored.status?.hasHiv ?? Boolean(legacyDiseasePending),
+        infectedCount: stored.status?.infectedCount ?? (legacyDiseasePending ? 1 : 0),
+      },
       work: {
         ...DEFAULT_SAVE.work,
         ...(stored.work || {}),
@@ -552,8 +645,10 @@ export default function AITokenGacha() {
   const [now, setNow] = useState(Date.now())
   const [selectedExchange, setSelectedExchange] = useState({})
   const [stockAmount, setStockAmount] = useState('')
+  const [ventureAmount, setVentureAmount] = useState('')
   const [redeemInput, setRedeemInput] = useState('')
   const [victoryOpen, setVictoryOpen] = useState(false)
+  const [lifeEvent, setLifeEvent] = useState(null)
   const [jackpots, setJackpots] = useState([])
   const revealTimer = useRef(null)
 
@@ -573,6 +668,12 @@ export default function AITokenGacha() {
   }, [])
 
   useEffect(() => {
+    if (save.status?.ending && lifeEvent?.type !== 'ending') {
+      setLifeEvent({ type: 'ending', kind: save.status.ending })
+    }
+  }, [save.status?.ending, lifeEvent?.type])
+
+  useEffect(() => {
     const active = save.work?.active
     if (!active || now < active.finishAt) return
     const job = WORK_JOBS.find(item => item.id === active.jobId)
@@ -581,11 +682,19 @@ export default function AITokenGacha() {
       return
     }
     const record = { id: `${active.finishAt}-${job.id}`, jobId: job.id, reward: job.reward, at: active.finishAt }
+    const workingPastZero = (save.status?.happiness ?? 100) <= 0
     setSave(previous => {
       if (previous.work?.active?.finishAt !== active.finishAt) return previous
+      const status = { ...DEFAULT_SAVE.status, ...(previous.status || {}) }
+      const exhausted = status.happiness <= 0
       return {
         ...previous,
         money: previous.money + job.reward,
+        status: {
+          ...status,
+          happiness: exhausted ? 0 : Math.max(0, status.happiness - job.happinessCost),
+          health: exhausted ? Math.max(0, status.health - job.happinessCost) : status.health,
+        },
         work: {
           ...previous.work,
           active: null,
@@ -595,7 +704,9 @@ export default function AITokenGacha() {
         },
       }
     })
-    setNotice(`打工完成：${job.name} 工资到账 ¥${job.reward.toLocaleString()}。`)
+    setNotice(workingPastZero
+      ? `打工完成：工资到账 ¥${job.reward.toLocaleString()}；幸福度已经为 0，本次健康度 −${job.happinessCost}。`
+      : `打工完成：工资到账 ¥${job.reward.toLocaleString()}，幸福度 −${job.happinessCost}。`)
   }, [now, save.work?.active])
 
   useEffect(() => {
@@ -656,14 +767,13 @@ export default function AITokenGacha() {
     }))
   }, [save.tasks.dailyKey, save.tasks.weeklyKey])
 
-  const taxRate = Math.max(0.1, 0.35 - save.upgrades.tax * 0.05)
   const discount = save.upgrades.discount * 0.05
   const hardPity = 80 - save.upgrades.pity * 5
   const availableModels = MODELS.filter(model => model.minLab <= save.upgrades.lab)
   const currentAuto = autoConfig(save.upgrades.auto)
   const stats = useMemo(
-    () => drawStats(save.upgrades.luck, save.upgrades.lab, taxRate),
-    [save.upgrades.luck, save.upgrades.lab, taxRate],
+    () => drawStats(save.upgrades.luck, save.upgrades.lab),
+    [save.upgrades.luck, save.upgrades.lab],
   )
 
   const drawPrice = (count, type = currency) => {
@@ -673,7 +783,7 @@ export default function AITokenGacha() {
   }
 
   const expectedReturn = stats.expected
-  const maxExpectedReturn = useMemo(() => drawStats(5, 4, 0.1).expected, [])
+  const maxExpectedReturn = useMemo(() => drawStats(5, 4).expected, [])
 
   const playSound = (tier) => {
     try {
@@ -761,7 +871,7 @@ export default function AITokenGacha() {
     const owned = save.inventory[model.id] || 0
     const amount = requested === 'all' ? owned : Math.min(requested, owned)
     if (amount <= 0) return
-    const gained = Math.floor(amount * model.cp * (1 - taxRate))
+    const gained = Math.floor(amount * model.cp)
     setSave(previous => ({
       ...previous,
       compute: previous.compute + gained,
@@ -781,7 +891,7 @@ export default function AITokenGacha() {
     let total = 0
     selected.forEach(model => {
       const amount = inventory[model.id] || 0
-      gained += Math.floor(amount * model.cp * (1 - taxRate))
+      gained += Math.floor(amount * model.cp)
       total += amount
       inventory[model.id] = 0
     })
@@ -927,11 +1037,9 @@ export default function AITokenGacha() {
       setNotice('请输入有效的提取金额。')
       return
     }
-    const fee = amount * save.stocks.serviceFee
-    const received = amount - fee
     setSave(previous => ({
       ...previous,
-      money: previous.money + received,
+      money: previous.money + amount,
       stocks: {
         ...previous.stocks,
         balance: previous.stocks.balance - amount,
@@ -939,7 +1047,81 @@ export default function AITokenGacha() {
       },
     }))
     setStockAmount('')
-    setNotice(`已提取 ¥${amount.toFixed(2)}，服务费 ¥${fee.toFixed(2)}，实际到账 ¥${received.toFixed(2)}。`)
+    setNotice(`已从股票账户提取 ¥${amount.toFixed(2)}，全额到账。`)
+  }
+
+  const startVentureInvestment = () => {
+    const amount = Number(ventureAmount)
+    if (save.venture?.active) {
+      setNotice('请先从当前生成的 3 家候选企业中选择一家。')
+      return
+    }
+    if (!Number.isFinite(amount) || amount < 100000) {
+      setNotice('企业投资最低需要 ¥100,000。')
+      return
+    }
+    if (amount > save.money) {
+      setNotice('现金余额不足，无法完成这笔企业投资。')
+      return
+    }
+    const band = venturePool(amount)
+    const candidates = [...band.companies]
+    for (let index = candidates.length - 1; index > 0; index -= 1) {
+      const swap = Math.floor(Math.random() * (index + 1))
+      ;[candidates[index], candidates[swap]] = [candidates[swap], candidates[index]]
+    }
+    const active = {
+      id: `${Date.now()}-${Math.random()}`,
+      amount,
+      bandId: band.id,
+      bandLabel: band.label,
+      candidates: candidates.slice(0, 3),
+      startedAt: Date.now(),
+    }
+    setSave(previous => ({
+      ...previous,
+      money: previous.money - amount,
+      venture: {
+        ...previous.venture,
+        active,
+        totalInvested: (previous.venture?.totalInvested || 0) + amount,
+      },
+    }))
+    setVentureAmount('')
+    setNotice(`已投入 ¥${amount.toLocaleString()}，从该价格区间的 50 家企业中生成了 3 家候选。`)
+  }
+
+  const chooseVentureCompany = company => {
+    const active = save.venture?.active
+    if (!active || !active.candidates.some(item => item.id === company.id)) return
+    const totalInvested = save.venture.totalInvested || 0
+    const totalReturned = save.venture.totalReturned || 0
+    const remainingLossBudget = Math.max(0, totalInvested - totalReturned - 1)
+    const maximumRate = Math.max(0, Math.min(500, Math.floor(remainingLossBudget / active.amount * 100)))
+    const returnRate = Math.floor(Math.random() * (maximumRate + 1))
+    const returned = Math.min(
+      remainingLossBudget,
+      Number((active.amount * returnRate / 100).toFixed(2)),
+    )
+    const record = {
+      id: active.id,
+      at: Date.now(),
+      company,
+      amount: active.amount,
+      returnRate,
+      returned,
+    }
+    setSave(previous => ({
+      ...previous,
+      money: previous.money + returned,
+      venture: {
+        ...previous.venture,
+        active: null,
+        totalReturned: (previous.venture.totalReturned || 0) + returned,
+        history: [record, ...(previous.venture.history || [])].slice(0, 12),
+      },
+    }))
+    setNotice(`${company.name} 项目结束：回收率 ${returnRate}%，返还 ¥${returned.toLocaleString()}；企业投资职业总账仍为亏损。`)
   }
 
   const buyLifeGoal = category => {
@@ -954,9 +1136,135 @@ export default function AITokenGacha() {
     const nextGoals = { ...save.lifeGoals, [category]: currentLevel + 1 }
     const won = Object.entries(LIFE_GOALS).every(([key, definition]) => nextGoals[key] >= definition.levels.length)
     if (won) nextGoals.victoryShown = true
-    setSave(previous => ({ ...previous, money: previous.money - item.price, lifeGoals: nextGoals }))
+    setSave(previous => ({
+      ...previous,
+      money: previous.money - item.price,
+      lifeGoals: nextGoals,
+      status: { ...DEFAULT_SAVE.status, ...(previous.status || {}), happiness: 100 },
+    }))
     setNotice(`人生目标升级：${goal.name} · ${item.name}`)
     if (won) setVictoryOpen(true)
+  }
+
+  const buyFeminizationGoal = () => {
+    const currentLevel = save.lifeExtras?.feminization || 0
+    const item = FEMINIZATION_GOAL.levels[currentLevel]
+    if (!item) return
+    if (save.money < item.price) {
+      setNotice(`现金不足：完成“${item.name}”需要 ¥${item.price.toLocaleString()}。`)
+      return
+    }
+    const nextLevel = currentLevel + 1
+    const completed = nextLevel >= FEMINIZATION_GOAL.levels.length
+    setSave(previous => {
+      const status = { ...DEFAULT_SAVE.status, ...(previous.status || {}) }
+      return {
+        ...previous,
+        money: previous.money - item.price,
+        lifeExtras: { ...previous.lifeExtras, feminization: nextLevel },
+        status: {
+          ...status,
+          happiness: 100,
+          corruption: completed ? 100 : status.corruption,
+          ending: completed ? 'fallen' : status.ending,
+        },
+      }
+    })
+    setNotice(`特殊目标升级：${item.name}，幸福度已回满。`)
+    if (completed) setLifeEvent({ type: 'ending', kind: 'fallen' })
+  }
+
+  const buyCake = () => {
+    const price = 10000
+    if (save.money < price) {
+      setNotice('现金不足：蛋糕需要 ¥10,000。')
+      return
+    }
+    const availableCodes = Object.keys(REDEEM_CODES).filter(code => code !== 'quq' && !save.redeemedCodes?.[code])
+    const codeWon = Math.random() < 0.1
+    const code = codeWon
+      ? (availableCodes.length ? availableCodes[Math.floor(Math.random() * availableCodes.length)] : Object.keys(REDEEM_CODES)[0])
+      : ''
+    setSave(previous => ({
+      ...previous,
+      money: previous.money - price,
+      lifeExtras: { ...previous.lifeExtras, cakes: (previous.lifeExtras?.cakes || 0) + 1 },
+    }))
+    setLifeEvent({ type: 'cake', code })
+  }
+
+  const buyPcVisit = () => {
+    const currentStatus = { ...DEFAULT_SAVE.status, ...(save.status || {}) }
+    const price = pcPriceFor(currentStatus.corruption)
+    if (save.money < price) {
+      setNotice(`现金不足：本次 PC 需要 ¥${price.toLocaleString()}。`)
+      return
+    }
+    const alreadyHasHiv = currentStatus.hasHiv
+    const acquiredHiv = !alreadyHasHiv && Math.random() < 0.1
+    const nextCorruption = clampStat(currentStatus.corruption - 1, -100, 100)
+    const nextInfectedCount = alreadyHasHiv
+      ? Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, currentStatus.infectedCount || 0) * 2)
+      : acquiredHiv ? 1 : currentStatus.infectedCount
+    const ending = nextCorruption <= -100 ? 'prison' : currentStatus.ending
+    setSave(previous => ({
+      ...previous,
+      money: previous.money - price,
+      lifeExtras: {
+        ...previous.lifeExtras,
+        pcVisits: (previous.lifeExtras?.pcVisits || 0) + 1,
+      },
+      status: {
+        ...previous.status,
+        happiness: 100,
+        health: alreadyHasHiv ? Math.max(0, currentStatus.health - 2) : currentStatus.health,
+        corruption: nextCorruption,
+        hasHiv: alreadyHasHiv || acquiredHiv,
+        infectedCount: nextInfectedCount,
+        ending,
+      },
+    }))
+    if (ending) setLifeEvent({ type: 'ending', kind: ending })
+    else if (acquiredHiv) setLifeEvent({ type: 'hiv-acquired', source: 'PC' })
+    else setLifeEvent({ type: 'pc-happy' })
+  }
+
+  const buyHealth = fullTreatment => {
+    const price = fullTreatment ? 1000000 : 100000
+    if (save.money < price) {
+      setNotice(`现金不足：本次健康服务需要 ¥${price.toLocaleString()}。`)
+      return
+    }
+    setSave(previous => {
+      const status = { ...DEFAULT_SAVE.status, ...(previous.status || {}) }
+      return {
+        ...previous,
+        money: previous.money - price,
+        status: {
+          ...status,
+          health: fullTreatment ? 100 : Math.min(100, status.health + 50),
+          hasHiv: fullTreatment ? false : status.hasHiv,
+        },
+      }
+    })
+    setNotice(fullTreatment
+      ? '已支付 ¥1,000,000：健康度回满并去除艾滋状态。'
+      : '已支付 ¥100,000：健康度恢复 50 点。')
+  }
+
+  const resetAfterEnding = () => {
+    setSave({
+      ...DEFAULT_SAVE,
+      upgrades: { ...DEFAULT_SAVE.upgrades },
+      redeemedCodes: { ...(save.redeemedCodes || {}) },
+      lastPassiveAt: Date.now(),
+    })
+    setResults([])
+    setJackpots([])
+    setVictoryOpen(false)
+    setLifeEvent(null)
+    setTab('draw')
+    setNotice('结局已完成，本机游戏进度已重置；已使用兑换码记录保留。')
   }
 
   const executeTask = task => {
@@ -1050,23 +1358,44 @@ export default function AITokenGacha() {
   }
 
   const sellHook = () => {
-    const chastity = save.chastity ?? 100
-    if (chastity <= 0) {
-      setNotice('贞洁度已经归零，无法继续选择这个任务。')
-      return
+    const currentStatus = { ...DEFAULT_SAVE.status, ...(save.status || {}) }
+    const alreadyHasHiv = currentStatus.hasHiv
+    const acquiredHiv = !alreadyHasHiv && Math.random() < 0.05
+    const nextCorruption = clampStat(currentStatus.corruption + 1, -100, 100)
+    const multiplier = hookIncomeMultiplier(nextCorruption)
+    const baseEarned = 1500 + Math.floor(Math.random() * 8501)
+    const earned = Math.round(baseEarned * multiplier)
+    const nextInfectedCount = alreadyHasHiv
+      ? Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, currentStatus.infectedCount || 0) * 2)
+      : acquiredHiv ? 1 : currentStatus.infectedCount
+    const ending = nextCorruption >= 100 ? 'fallen' : currentStatus.ending
+    const record = {
+      id: `${Date.now()}-hook-${Math.random()}`,
+      at: Date.now(),
+      earned,
+      baseEarned,
+      multiplier,
+      acquiredHiv,
     }
-    const earned = 1500 + Math.floor(Math.random() * 8501)
-    const record = { id: `${Date.now()}-hook-${Math.random()}`, at: Date.now(), earned }
     setSave(previous => ({
       ...previous,
       money: previous.money + earned,
-      chastity: Math.max(0, (previous.chastity ?? 100) - 1),
+      status: {
+        ...previous.status,
+        health: alreadyHasHiv ? Math.max(0, currentStatus.health - 2) : currentStatus.health,
+        corruption: nextCorruption,
+        hasHiv: alreadyHasHiv || acquiredHiv,
+        infectedCount: nextInfectedCount,
+        ending,
+      },
       tasks: {
         ...previous.tasks,
         hookHistory: [record, ...(previous.tasks.hookHistory || [])].slice(0, 8),
       },
     }))
-    setNotice(`卖钩子完成：获得 ¥${earned.toLocaleString()}，贞洁度 −1。`)
+    setNotice(`卖钩子完成：获得 ¥${earned.toLocaleString()}，恶坠度 +1${alreadyHasHiv ? '，健康度 −2' : ''}。`)
+    if (ending) setLifeEvent({ type: 'ending', kind: ending })
+    else if (acquiredHiv) setLifeEvent({ type: 'hiv-acquired', source: '卖钩子' })
   }
 
   const redeemCode = event => {
@@ -1114,6 +1443,10 @@ export default function AITokenGacha() {
   const pendingGpuTokens = Object.entries(gpuPendingPreview.tokens || {})
     .filter(([, amount]) => amount > 0)
   const pendingGpuTokenTotal = pendingGpuTokens.reduce((sum, [, amount]) => sum + amount, 0)
+  const lifeCompleted = Object.entries(LIFE_GOALS).every(([key, goal]) => save.lifeGoals[key] >= goal.levels.length)
+  const playerStatus = { ...DEFAULT_SAVE.status, ...(save.status || {}) }
+  const currentPcPrice = pcPriceFor(playerStatus.corruption)
+  const currentHookMultiplier = hookIncomeMultiplier(playerStatus.corruption)
 
   return (
     <div className="ai-gacha">
@@ -1132,7 +1465,9 @@ export default function AITokenGacha() {
           <span className="money"><small>模拟余额</small><b>¥ {save.money.toFixed(2)}</b></span>
           <span className="compute"><small>算力点</small><b>◈ {save.compute.toLocaleString()}</b></span>
           <span className="token"><small>Token 库存</small><b>{formatToken(totalToken)}</b></span>
-          <span className="chastity"><small>贞洁度</small><b>{save.chastity ?? 100} / 100</b></span>
+          <span className="happiness"><small>幸福度</small><b>{playerStatus.happiness} / 100</b></span>
+          <span className={`health${playerStatus.hasHiv ? ' hiv' : ''}`}><small>健康度</small><b>{playerStatus.health} / 100{playerStatus.hasHiv ? ' · 艾滋' : ''}</b></span>
+          <span className="corruption"><small>恶坠度</small><b>{playerStatus.corruption > 0 ? '+' : ''}{playerStatus.corruption}</b></span>
         </div>
       </header>
 
@@ -1141,11 +1476,9 @@ export default function AITokenGacha() {
           ['draw', '✦', '抽取终端'],
           ['inventory', '▣', `Token 仓库 ${ownedModels.length ? `· ${ownedModels.length}` : ''}`],
           ['upgrade', '↗', '升级中心'],
-          ['hardware', '▧', `显卡机房 ${save.gpus.length ? `· ${save.gpus.length}` : ''}`],
-          ['stocks', '⌁', '股票账户'],
-          ['work', '⚒', save.work?.active ? '打工 · 进行中' : '打工赚钱'],
+          ['assets', '▧', `投资市场与显卡 ${save.gpus.length ? `· ${save.gpus.length}` : ''}`],
+          ['earn', '⚒', save.work?.active ? '赚钱行业 · 进行中' : '赚钱行业'],
           ['life', '◇', '人生目标'],
-          ['tasks', '✓', '互联网任务'],
           ['rules', 'i', '概率与定价'],
         ].map(([id, icon, label]) => (
           <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}>
@@ -1165,7 +1498,7 @@ export default function AITokenGacha() {
                 <span>DRAW / {save.totalDraws.toLocaleString()}</span>
               </div>
               <div className="gacha-reactor-hud bottom">
-                <span>VALUE / ◈{expectedReturn} TAXED EV</span>
+                <span>VALUE / ◈{expectedReturn} CURRENT EV</span>
                 <span>LAB / LV.{save.upgrades.lab}</span>
               </div>
               <div className="gacha-orbit orbit-one" />
@@ -1263,7 +1596,7 @@ export default function AITokenGacha() {
         <section className="gacha-panel">
           <div className="gacha-panel-title">
             <div><span>INVENTORY</span><h3>Token 仓库与兑换</h3></div>
-            <p>当前克扣 <b>{(taxRate * 100).toFixed(0)}%</b>；Token 只能换算力点，算力点只能抽奖。</p>
+            <p>Token 按模型兑换基准全额换算为算力点；算力点只能用于抽奖与显卡购买。</p>
           </div>
           {!ownedModels.length ? (
             <div className="gacha-empty"><b>仓库还是空的</b><span>先去抽取终端获得第一份模型 Token。</span></div>
@@ -1271,7 +1604,7 @@ export default function AITokenGacha() {
             <div className="gacha-inventory-grid">
               {ownedModels.map(model => {
                 const owned = save.inventory[model.id]
-                const afterTax = Math.floor(model.cp * (1 - taxRate))
+                const exchangeValue = Math.floor(model.cp)
                 return (
                   <article key={model.id} className={`gacha-inventory-card tier-${model.tier}`}>
                     <label className="gacha-exchange-check" title="加入批量兑换">
@@ -1283,7 +1616,7 @@ export default function AITokenGacha() {
                     </label>
                     <ModelLogo model={model} />
                     <div><span>{TIER_META[model.tier].name}</span><h4>{model.name}</h4><small>持有 {formatToken(owned)}</small></div>
-                    <div className="gacha-exchange-value"><small>每 1M 税后</small><b>◈ {afterTax.toLocaleString()}</b></div>
+                    <div className="gacha-exchange-value"><small>每 1M 全额兑换</small><b>◈ {exchangeValue.toLocaleString()}</b></div>
                     <div className="gacha-exchange-actions">
                       <button disabled={owned < 1} onClick={() => exchange(model, 1)}>兑换 1M</button>
                       <button onClick={() => exchange(model, 'all')}>全部兑换</button>
@@ -1310,7 +1643,7 @@ export default function AITokenGacha() {
             <p>模型档位概率与 Token 数量概率是两条完全独立的升级线。</p>
           </div>
           <div className="gacha-upgrade-section-head">
-            <div><span>01</span><h4>提高总期望与运行效率</h4><p>当前税后价值 ◈{expectedReturn}/抽，满级约 ◈{maxExpectedReturn}/抽。</p></div>
+            <div><span>01</span><h4>提高总期望与运行效率</h4><p>当前兑换价值 ◈{expectedReturn}/抽，满级约 ◈{maxExpectedReturn}/抽。</p></div>
           </div>
           <div className="gacha-upgrade-grid">
             {VALUE_UPGRADE_KEYS.map(key => {
@@ -1379,7 +1712,7 @@ export default function AITokenGacha() {
         </section>
       )}
 
-      {tab === 'hardware' && (
+      {tab === 'assets' && (
         <section className="gacha-panel">
           <div className="gacha-panel-title">
             <div><span>LOCAL GPU FARM</span><h3>显卡商店与本地机房</h3></div>
@@ -1465,7 +1798,7 @@ export default function AITokenGacha() {
         </section>
       )}
 
-      {tab === 'stocks' && (
+      {tab === 'assets' && (
         <section className="gacha-panel">
           <div className="gacha-panel-title">
             <div><span>LOCAL PAPER MARKET</span><h3>模拟股票账户</h3></div>
@@ -1474,8 +1807,8 @@ export default function AITokenGacha() {
           <div className="gacha-stock-overview">
             <article><span>股票市值</span><b>¥{save.stocks.balance.toFixed(2)}</b><small>未提取资产</small></article>
             <article><span>累计投入本金</span><b>¥{save.stocks.principal.toFixed(2)}</b><small>仅作盈亏参考</small></article>
-            <article><span>账面盈亏</span><b className={save.stocks.balance - save.stocks.principal >= 0 ? 'up' : 'down'}>{save.stocks.balance - save.stocks.principal >= 0 ? '+' : ''}¥{(save.stocks.balance - save.stocks.principal).toFixed(2)}</b><small>未扣提取服务费</small></article>
-            <article><span>提取服务费</span><b>{(save.stocks.serviceFee * 100).toFixed(0)}%</b><small>每次提取时收取</small></article>
+            <article><span>账面盈亏</span><b className={save.stocks.balance - save.stocks.principal >= 0 ? 'up' : 'down'}>{save.stocks.balance - save.stocks.principal >= 0 ? '+' : ''}¥{(save.stocks.balance - save.stocks.principal).toFixed(2)}</b><small>实时账面结果</small></article>
+            <article><span>资金取回</span><b>100%</b><small>提取金额全额到账</small></article>
           </div>
           <StockCandlestickChart history={save.stocks.history || []} />
           <div className="gacha-stock-trade">
@@ -1504,7 +1837,7 @@ export default function AITokenGacha() {
           </div>
           <div className="gacha-stock-rule">
             <b>结算规则</b>
-            <p>每次重新进入时从 −30% 至 +30% 的整数波动中随机结算，并带有轻微负期望；提取另收 6% 服务费。详细概率统一列在“概率与定价”。</p>
+            <p>每次重新进入时从 −30% 至 +30% 的整数波动中随机结算，并带有轻微负期望；股票资金可随时全额取回。详细概率统一列在“概率与定价”。</p>
           </div>
           <div className="gacha-stock-history">
             <h4>最近结算</h4>
@@ -1518,10 +1851,77 @@ export default function AITokenGacha() {
               ))
             )}
           </div>
+          <section className="gacha-venture">
+            <div className="gacha-panel-title compact">
+              <div><span>RECRUITING VENTURE MARKET</span><h3>企业投资与招聘市场</h3></div>
+              <p>最低投入 ¥100,000；每个金额区间有 50 家候选企业，每次随机出现 3 家供你选择。</p>
+            </div>
+            <div className="gacha-venture-overview">
+              <article><span>职业累计投入</span><b>¥{(save.venture?.totalInvested || 0).toLocaleString()}</b></article>
+              <article><span>职业累计返还</span><b>¥{(save.venture?.totalReturned || 0).toLocaleString()}</b></article>
+              <article><span>职业总账</span><b className="down">−¥{Math.max(0, (save.venture?.totalInvested || 0) - (save.venture?.totalReturned || 0)).toLocaleString()}</b></article>
+              <article><span>候选库</span><b>每档 50 家</b></article>
+            </div>
+            {!save.venture?.active ? (
+              <div className="gacha-venture-entry">
+                <label htmlFor="venture-amount">本轮投资金额</label>
+                <input
+                  id="venture-amount"
+                  type="number"
+                  min="100000"
+                  step="10000"
+                  value={ventureAmount}
+                  onChange={event => setVentureAmount(event.target.value)}
+                  placeholder="至少 100000"
+                />
+                <div>
+                  {[100000, 500000, 2000000, 10000000].map(amount => (
+                    <button key={amount} onClick={() => setVentureAmount(String(amount))}>
+                      ¥{amount >= 10000 ? `${amount / 10000}万` : amount}
+                    </button>
+                  ))}
+                </div>
+                <button className="primary" onClick={startVentureInvestment}>投资并生成 3 家企业</button>
+              </div>
+            ) : (
+              <div className="gacha-venture-candidates">
+                <header>
+                  <div><span>本轮投入</span><b>¥{save.venture.active.amount.toLocaleString()}</b></div>
+                  <small>{save.venture.active.bandLabel} · 已从 50 家候选中随机抽取</small>
+                </header>
+                <div>
+                  {save.venture.active.candidates.map(company => (
+                    <article key={company.id}>
+                      <span>{company.sector}</span>
+                      <h4>{company.name}</h4>
+                      <p>{company.risk} · 招聘团队正在扩张</p>
+                      <button onClick={() => chooseVentureCompany(company)}>选择这家企业</button>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )}
+            {!!save.venture?.history?.length && (
+              <div className="gacha-venture-history">
+                <h4>最近企业投资</h4>
+                {save.venture.history.slice(0, 6).map(item => (
+                  <div key={item.id}>
+                    <span>{new Date(item.at).toLocaleString()}</span>
+                    <b>{item.company.name} · 回收率 {item.returnRate}%</b>
+                    <small>投入 ¥{item.amount.toLocaleString()} → 返还 ¥{item.returned.toLocaleString()}</small>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="gacha-stock-rule">
+              <b>总账必亏规则</b>
+              <p>单次回收率会在 0%–500% 范围内随机；系统按历史累计亏损额度限制本轮上限，确保企业投资职业的累计返还始终低于累计投入。</p>
+            </div>
+          </section>
         </section>
       )}
 
-      {tab === 'work' && (() => {
+      {tab === 'earn' && (() => {
         const active = save.work?.active
         const activeJob = active ? WORK_JOBS.find(job => job.id === active.jobId) : null
         const remaining = active ? Math.max(0, active.finishAt - now) : 0
@@ -1529,21 +1929,21 @@ export default function AITokenGacha() {
         return (
           <section className="gacha-panel gacha-work-panel">
             <div className="gacha-panel-title">
-              <div><span>LOCAL JOB BOARD</span><h3>打工赚钱</h3></div>
-              <p>选择岗位并等待工资结算；基准收入约为每分钟 ¥300，一次只能进行一份工作。</p>
+              <div><span>ALL MONEY-MAKING INDUSTRIES</span><h3>赚钱行业</h3></div>
+              <p>打工岗位、卖钩子、Token 打灰与互联网任务统一集中在这里；基准打工收入约为每分钟 ¥300。</p>
             </div>
             <div className="gacha-work-hero">
               <div><span>当前模拟余额</span><b>¥{save.money.toFixed(2)}</b></div>
               <div><span>累计打工收入</span><b>¥{(save.work?.totalEarned || 0).toLocaleString()}</b></div>
               <div><span>完成岗位</span><b>{save.work?.completed || 0} 次</b></div>
-              <p>计时保存在本机存档中，可以切换到其他页面；到点后工资会自动到账。</p>
+              <p>打工会消耗幸福度；幸福度已经为 0 时继续打工，改为消耗同等健康度。计时保存在本机存档中。</p>
             </div>
             {active && activeJob && (
               <div className="gacha-work-active" role="status">
                 <div>
                   <span>正在工作</span>
                   <h4>{activeJob.name}</h4>
-                  <p>预计工资 ¥{activeJob.reward} · 剩余 {formatDuration(remaining)}</p>
+                  <p>预计工资 ¥{activeJob.reward} · 消耗 {playerStatus.happiness > 0 ? '幸福度' : '健康度'} {activeJob.happinessCost} · 剩余 {formatDuration(remaining)}</p>
                 </div>
                 <b>{Math.ceil(remaining / 1000)}s</b>
                 <i><span style={{ width: `${progress}%` }} /></i>
@@ -1557,7 +1957,7 @@ export default function AITokenGacha() {
                     <span>{job.tag}</span>
                     <h4>{job.name}</h4>
                     <p>{job.desc}</p>
-                    <div><b>¥{job.reward}</b><small>{formatDuration(job.duration)} · 约 ¥{Math.round(job.reward / job.duration * 60000)}/分钟</small></div>
+                    <div><b>¥{job.reward}</b><small>{formatDuration(job.duration)} · 约 ¥{Math.round(job.reward / job.duration * 60000)}/分钟 · {playerStatus.happiness > 0 ? '幸福' : '健康'} −{job.happinessCost}</small></div>
                     <button disabled={Boolean(active)} onClick={() => startWork(job)}>
                       {isActive ? '工作进行中' : active ? '已有工作' : '开始打工'}
                     </button>
@@ -1588,7 +1988,19 @@ export default function AITokenGacha() {
         <section className="gacha-panel">
           <div className="gacha-panel-title">
             <div><span>ENDGAME GOALS</span><h3>人生目标清单</h3></div>
-            <p>用任务、挖矿和经营赚到的现金，逐级完成房子、车子和对象目标。</p>
+            <p>用赚钱行业、投资市场和显卡机房带回的现金，逐级完成房子、车子和女友目标。</p>
+          </div>
+          <div className="gacha-wellbeing">
+            <div className="gacha-wellbeing-stats">
+              <article><span>幸福度</span><b>{playerStatus.happiness} / 100</b><i><em style={{ width: `${playerStatus.happiness}%` }} /></i></article>
+              <article className={playerStatus.hasHiv ? 'danger' : ''}><span>健康度</span><b>{playerStatus.health} / 100</b><i><em style={{ width: `${playerStatus.health}%` }} /></i><small>{playerStatus.hasHiv ? '艾滋状态 · PC/卖钩子健康 −2' : '当前没有艾滋'}</small></article>
+              <article><span>恶坠度</span><b>{playerStatus.corruption > 0 ? '+' : ''}{playerStatus.corruption}</b><i><em style={{ width: `${(playerStatus.corruption + 100) / 2}%` }} /></i></article>
+              <article><span>累计艾滋人数</span><b>{playerStatus.infectedCount.toLocaleString()}</b><small>艾滋状态下每次 PC 或卖钩子翻倍</small></article>
+            </div>
+            <div className="gacha-health-actions">
+              <button disabled={save.money < 100000 || playerStatus.health >= 100} onClick={() => buyHealth(false)}>¥10万 · 健康 +50</button>
+              <button disabled={save.money < 1000000 || (playerStatus.health >= 100 && !playerStatus.hasHiv)} onClick={() => buyHealth(true)}>¥100万 · 健康回满并去除艾滋</button>
+            </div>
           </div>
           <div className="gacha-life-progress">
             <div>
@@ -1621,14 +2033,58 @@ export default function AITokenGacha() {
               )
             })}
           </div>
+          <div className="gacha-life-extras">
+            <article className="cake">
+              <span>PORTAL SPECIAL</span>
+              <h4>蛋糕 · ¥10,000 / 个</h4>
+              <p>买下以后会告诉你一个关于蛋糕的重要事实；另有 10% 概率获得一个隐藏兑换码。</p>
+              <small>已经买了 {save.lifeExtras?.cakes || 0} 个蛋糕</small>
+              <button onClick={buyCake}>买一个蛋糕</button>
+            </article>
+            <article className="pc">
+              <span>PC SERVICE</span>
+              <h4>PC · ¥{currentPcPrice.toLocaleString()} / 次</h4>
+              <p>幸福度回满、恶坠度 −1；有 10% 概率获得艾滋。艾滋状态下进行 PC 还会使健康度 −2、累计艾滋人数翻倍。</p>
+              <small>已经 PC {save.lifeExtras?.pcVisits || 0} 次 · 每 −10 恶坠度价格再降 5%</small>
+              <button onClick={buyPcVisit}>进行一次 PC</button>
+            </article>
+          </div>
+          <article className="gacha-feminization-goal">
+            <header>
+              <div><span>SPECIAL ENDING ROUTE</span><h4>{FEMINIZATION_GOAL.name}</h4><p>特殊目标每级都会回满幸福度；三级全部完成后立即触发恶坠结局。</p></div>
+              <b>Lv.{save.lifeExtras?.feminization || 0}/3</b>
+            </header>
+            <div>
+              {FEMINIZATION_GOAL.levels.map((level, index) => {
+                const currentLevel = save.lifeExtras?.feminization || 0
+                return (
+                  <section key={level.name} className={index < currentLevel ? 'done' : index === currentLevel ? 'next' : ''}>
+                    <span>{index + 1}</span>
+                    <div><b>{level.name}</b><small>{level.desc}</small></div>
+                    <em>¥{level.price.toLocaleString()}</em>
+                  </section>
+                )
+              })}
+            </div>
+            <button disabled={(save.lifeExtras?.feminization || 0) >= 3} onClick={buyFeminizationGoal}>
+              {(save.lifeExtras?.feminization || 0) >= 3
+                ? '特殊目标已完成'
+                : `完成下一步 · ¥${FEMINIZATION_GOAL.levels[save.lifeExtras?.feminization || 0].price.toLocaleString()}`}
+            </button>
+          </article>
+          {lifeCompleted && (
+            <button className="gacha-life-settlement" onClick={() => setVictoryOpen(true)}>
+              查看人生赢家结算 · 当前买过 {save.lifeExtras?.cakes || 0} 个蛋糕
+            </button>
+          )}
           <div className="gacha-stock-rule life-note">
-            <b>关于“对象”</b>
+            <b>关于“女友”</b>
             <p>这里的花费代表约会、共同旅行和生活基金，不是把人当作可以买卖的物品。真正的关系当然不能用价格衡量。</p>
           </div>
         </section>
       )}
 
-      {tab === 'tasks' && (
+      {tab === 'earn' && (
         <section className="gacha-panel">
           <div className="gacha-panel-title">
             <div><span>INTERNET CONTRACTS</span><h3>Token 工作台与互联网任务</h3></div>
@@ -1639,16 +2095,14 @@ export default function AITokenGacha() {
             <div>
               <span>HIGH RISK · INSTANT CASH</span>
               <h4>卖钩子</h4>
-              <p>立即获得随机 ¥1,500–10,000；每次选择都会永久消耗 1 点贞洁度。</p>
+              <p>基础收入随机 ¥1,500–10,000，恶坠度 +1；每 +10 恶坠度，收入倍率增加 10%。每次有 5% 概率获得艾滋。</p>
               {!!save.tasks.hookHistory?.length && (
                 <small>上次收入 ¥{save.tasks.hookHistory[0].earned.toLocaleString()} · 已选择 {save.tasks.hookHistory.length} 次记录</small>
               )}
             </div>
             <div className="gacha-hook-action">
-              <span>贞洁度 <b>{save.chastity ?? 100} / 100</b></span>
-              <button disabled={(save.chastity ?? 100) <= 0} onClick={sellHook}>
-                {(save.chastity ?? 100) > 0 ? '卖钩子 · 贞洁度 −1' : '贞洁度已耗尽'}
-              </button>
+              <span>恶坠度 <b>{playerStatus.corruption > 0 ? '+' : ''}{playerStatus.corruption}</b> · 收入 ×{currentHookMultiplier.toFixed(1)}</span>
+              <button onClick={sellHook}>卖钩子 · 恶坠度 +1</button>
             </div>
           </article>
           <div className="gacha-task-group gacha-gray-work">
@@ -1752,7 +2206,7 @@ export default function AITokenGacha() {
           </div>
           <div className="gacha-audit-summary">
             <article><span>当前单抽成本</span><b>¥{drawPrice(1, 'money')} / ◈{drawPrice(1, 'compute')}</b><small>连抽不额外打折</small></article>
-            <article><span>当前税后价值</span><b>◈{expectedReturn} / 抽</b><small>初始现金回收约 {Math.round(drawStats(0, 0, .35).expected / 10)}%</small></article>
+            <article><span>当前兑换价值</span><b>◈{expectedReturn} / 抽</b><small>初始现金回收约 {Math.round(drawStats(0, 0).expected / 10)}%</small></article>
             <article><span>最高 Token 额度</span><b>1wM</b><small>概率统一见表格末栏</small></article>
             <article><span>当前模型概率</span><b>引擎 Lv.{save.upgrades.lab}</b><small>普通模型 {stats.rarityRates.common.toFixed(2)}%</small></article>
           </div>
@@ -1779,7 +2233,7 @@ export default function AITokenGacha() {
           </div>
           <div className="gacha-table-wrap">
             <table className="gacha-model-table">
-              <thead><tr><th>模型档位</th><th>模型</th><th>API 标价 $ / MTok</th><th>兑换基准</th><th>状态</th><th>当前模型概率</th></tr></thead>
+              <thead><tr><th>模型档位</th><th>模型</th><th>公开 / 参考接入价</th><th>能力兑换基准</th><th>发布与解锁状态</th><th>当前模型概率</th></tr></thead>
               <tbody>
                 {MODELS.map(model => (
                   <tr key={model.id}>
@@ -1787,7 +2241,7 @@ export default function AITokenGacha() {
                     <td><b>{model.name}</b></td>
                     <td>{model.price}</td>
                     <td>◈ {model.cp.toLocaleString()} / M</td>
-                    <td>{model.minLab <= save.upgrades.lab ? '池中' : `概率引擎 Lv.${model.minLab}`}</td>
+                    <td>{model.released ? '已发布' : '预测 · 未发布'} · {model.minLab <= save.upgrades.lab ? '池中' : `概率引擎 Lv.${model.minLab}`}</td>
                     <td className={model.minLab > save.upgrades.lab ? 'gacha-locked-rate' : ''}>{model.minLab <= save.upgrades.lab ? `${modelChance(model, save.upgrades.lab).toFixed(3)}%` : '锁定'}</td>
                   </tr>
                 ))}
@@ -1824,10 +2278,14 @@ export default function AITokenGacha() {
             <p><b>Token 特效：</b>Token 数量不改变模型档位，只强化卡片额度特效：2M 起流光、10M 起波纹、100M 起虹彩、1000M 起奇点风暴。</p>
             <p><b>多连展示：</b>十连及以上会先比较模型档位，再比较“模型兑换基准 × Token 数量”的总价值，只展示排序最高的前 10 个；全部抽取结果仍会进入仓库。</p>
             <p><b>升级效果：</b>模型概率引擎只调整模型档位；Token 额度扩容只调整数量概率；保底只作用于已解锁的模型档位，两条概率线互不串联。</p>
-            <p><b>定价原则：</b>公开 API 价格是品质和兑换基准的主要依据，再结合编码能力微调；带 * 的未来模型为依据厂商历史定价生成的游戏内预测价，并非已发布报价。</p>
-            <p><b>经济曲线：</b>初始现金抽税后期望约 {Math.round(drawStats(0, 0, .35).expected / 10)}%，算力抽因溢价更低；模型概率、Token 额度、税率和折扣满级后可超过 100%。Token 与算力点都不能兑换现金。</p>
-            <p><b>股票概率：</b>−30 至 −1 合计 53%，+1 至 +30 合计 46%，0 为 1%；区间内整数等概率，单次期望约 −1.09%，提取另收 6% 服务费。</p>
+            <p><b>模型分档：</b>普通到传说只收录已经正式发布或公开可用的模型，并按综合能力、编程与代理能力重新分级；所有尚未发布的预测型号只存在于神话池。</p>
+            <p><b>能力原则：</b>兑换基准主要参考厂商公开能力表、编程与代理评测，再结合接入成本做游戏化微调；神话模型没有真实售价，页面只标记为未发布预测。</p>
+            <p><b>经济曲线：</b>初始现金抽兑换期望约 {Math.round(drawStats(0, 0).expected / 10)}%，算力抽因溢价更低；模型概率、Token 额度和折扣升级后可继续提高回报。Token 与算力点都不能兑换现金。</p>
+            <p><b>股票概率：</b>−30 至 −1 合计 53%，+1 至 +30 合计 46%，0 为 1%；区间内整数等概率，单次期望约 −1.09%，账户资金全额取回。</p>
+            <p><b>企业投资：</b>每个价格区间有 50 家候选企业，投入后随机展示 3 家；单次回收率 0%–500%，但职业累计返还始终低于累计投入。</p>
             <p><b>其他资产：</b>股票每次重新进入时结算且为负期望；显卡按 ×{GPU_EARNING_MULTIPLIER} 游戏速率累计到待领取池，可用现金或算力点购买，并按正版价格的一半卖出。</p>
+            <p><b>人生状态：</b>打工消耗幸福度，幸福度为 0 后继续打工改扣健康度；PC 与人生目标回满幸福度。卖钩子有 5%、PC 有 10% 概率获得艾滋，艾滋状态下再次进行任一行为会扣 2 健康并令累计艾滋人数翻倍。</p>
+            <p><b>恶坠结局：</b>卖钩子令恶坠度 +1 并按每 +10 提高 10% 收入；PC 令恶坠度 −1 并按每 −10 降低 5% 价格。达到 +100、−100 或完成女装特殊目标时触发对应结局。</p>
           </div>
           <button className="gacha-reset" onClick={resetSave}>重置本机模拟存档</button>
         </section>
@@ -1884,6 +2342,56 @@ export default function AITokenGacha() {
         )
       })()}
 
+      {lifeEvent && (
+        <div className={`gacha-life-event ${lifeEvent.type}`} role="dialog" aria-modal="true" aria-labelledby="gacha-life-event-title">
+          <article>
+            {lifeEvent.type === 'cake' && (
+              <>
+                <span>APERTURE LABS NOTICE</span>
+                <h3 id="gacha-life-event-title">蛋糕是个谎言</h3>
+                <p>你花 ¥10,000 买到了一条经典真相。蛋糕数量已经记入人生结算。</p>
+                {lifeEvent.code
+                  ? <div className="gacha-cake-code"><small>10% 隐藏奖励命中</small><b>{lifeEvent.code}</b><p>请复制后到页面底部兑换；兑换码不会加入公开列表。</p></div>
+                  : <small>这次没有抽到隐藏兑换码。</small>}
+                <button onClick={() => setLifeEvent(null)}>我早就知道</button>
+              </>
+            )}
+            {lifeEvent.type === 'pc-happy' && (
+              <>
+                <span>NIGHT COMPLETE</span>
+                <h3 id="gacha-life-event-title">很开心，很爽</h3>
+                <p>幸福度已经回满，恶坠度 −1。本次没有获得新的艾滋状态。</p>
+                <button onClick={() => setLifeEvent(null)}>继续游戏</button>
+              </>
+            )}
+            {lifeEvent.type === 'hiv-acquired' && (
+              <>
+                <span>MEDICAL EMERGENCY</span>
+                <h3 id="gacha-life-event-title">你获得了艾滋</h3>
+                <p>本次由 {lifeEvent.source} 触发。累计艾滋人数从 1 开始；今后每次 PC 或卖钩子都会使人数翻倍，并使健康度 −2。</p>
+                <button onClick={() => setLifeEvent(null)}>知道了</button>
+              </>
+            )}
+            {lifeEvent.type === 'ending' && (
+              <>
+                <span>{lifeEvent.kind === 'fallen' ? 'CORRUPTION ENDING' : 'PRISON ENDING'}</span>
+                <h3 id="gacha-life-event-title">
+                  {lifeEvent.kind === 'fallen' ? '图灵派雌坠小南娘结局' : '入狱结局'}
+                </h3>
+                <p>
+                  {lifeEvent.kind === 'fallen'
+                    ? '恶坠度已经达到 +100，或女装特殊目标全部完成。'
+                    : '恶坠度已经达到 −100。'}
+                  确认结局后，本机游戏进度会重置。
+                </p>
+                {playerStatus.infectedCount > 0 && <b className="gacha-ending-infections">你让 {playerStatus.infectedCount.toLocaleString()} 人得了艾滋</b>}
+                <button className="danger" onClick={resetAfterEnding}>确认结局并重置游戏</button>
+              </>
+            )}
+          </article>
+        </div>
+      )}
+
       {victoryOpen && (
         <div className="gacha-victory" role="dialog" aria-modal="true" aria-labelledby="gacha-victory-title">
           <div className="gacha-victory-rays" />
@@ -1891,7 +2399,8 @@ export default function AITokenGacha() {
             <span>✦ LIFE COMPLETE ✦</span>
             <h3 id="gacha-victory-title">你已经完成了人生目标！<br />（但愿吧）</h3>
             <p>最好的房子、最好的车子，还有愿意一起生活的人。Token 世界的主线故事已经通关。</p>
-            <div><b>海景智能别墅</b><b>限量未来超跑</b><b>人生搭档</b><b className="chastity">贞洁度 {save.chastity ?? 100} / 100</b></div>
+            <div><b>海景智能别墅</b><b>限量未来超跑</b><b>人生搭档</b><b>买过 {save.lifeExtras?.cakes || 0} 个蛋糕</b><b>幸福度 {playerStatus.happiness}</b><b>健康度 {playerStatus.health}</b><b>恶坠度 {playerStatus.corruption > 0 ? '+' : ''}{playerStatus.corruption}</b></div>
+            {playerStatus.infectedCount > 0 && <p className="gacha-victory-infections">你让 {playerStatus.infectedCount.toLocaleString()} 人得了艾滋</p>}
             <button onClick={() => setVictoryOpen(false)}>继续我的人生</button>
           </article>
         </div>

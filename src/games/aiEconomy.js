@@ -55,7 +55,7 @@ export function writeEconomy(save) {
 
 export function creditGameReward({ compute = 0, money = 0, modelId, tokenM = 0 }) {
   const save = readEconomy() || {
-    saveVersion: 2,
+    saveVersion: 4,
     money: 1000,
     compute: 0,
     inventory: {},
