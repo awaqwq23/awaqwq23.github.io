@@ -116,7 +116,13 @@ export default function Snake() {
           <i className="fas fa-redo" /> {over ? '重来' : '重开'}
         </button>
       </div>
-      <div className="snake-board" style={{ gridTemplateColumns: `repeat(${N}, 1fr)` }}>
+      <div
+        className="snake-board"
+        style={{
+          gridTemplateColumns: `repeat(${N}, minmax(0, 1fr))`,
+          gridTemplateRows: `repeat(${N}, minmax(0, 1fr))`,
+        }}
+      >
         {cells}
         {!running && !over && snake.length === 1 && (
           <div className="game-overlay"><div>

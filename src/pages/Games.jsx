@@ -11,6 +11,8 @@ import WhackAMole from '../games/WhackAMole'
 import AIWorldBreakout from '../games/AIWorldBreakout'
 import TokenClicker from '../games/TokenClicker'
 import AITokenGacha from '../games/AITokenGacha'
+import FlyingWhale from '../games/FlyingWhale'
+import JoyBeanRunner from '../games/JoyBeanRunner'
 
 function AS({ children, d = 0 }) {
   const [ref, show] = useScrollReveal(0.05)
@@ -19,6 +21,8 @@ function AS({ children, d = 0 }) {
 
 const GAMES = [
   { id: 'ai-token-gacha', name: '算力奇点：模型抽卡', emoji: '✦', desc: '抽模型 Token、兑换算力、升级整座 AI 实验室', tag: '新作', bg: 'radial-gradient(circle at 50% 44%, #fbbf24 0 3%, #7c3aed 18%, #111827 58%, #030712)', Comp: AITokenGacha },
+  { id: 'flying-whale', name: '我的大银鲸会飞', emoji: '🐋', desc: '点击跃升加分，穿过其他 AI 公司的封锁', tag: '新作', bg: 'linear-gradient(145deg, #061b3c, #2563eb 58%, #7dd3fc)', Comp: FlyingWhale },
+  { id: 'joy-bean-runner', name: '震动的欢乐豆', emoji: '🫘', desc: '让豆包欢乐豆跳过其他 AI 公司，跑得更远', tag: '新作', bg: 'linear-gradient(145deg, #7c2d12, #f43f5e 54%, #fdba74)', Comp: JoyBeanRunner },
   { id: 'ai-breakout', name: 'AI 统治世界', emoji: '◎', desc: '选择 AI 挡板，击碎传统科技公司', tag: '新作', bg: 'linear-gradient(135deg, #07111f, #0e7490 55%, #10a37f)', Comp: AIWorldBreakout },
   { id: '2048', name: '合成大银鲸', emoji: '🐋', desc: '合并 DeepSeek Token，冲击 2048k 大银鲸', tag: '益智', bg: 'linear-gradient(135deg, #172554, #4d6bfe)', Comp: Game2048 },
   { id: 'snake', name: 'ChatGPT 上下文', emoji: '◎', desc: '每吃一个 2k 上下文块，记忆就更长', tag: '街机', bg: 'linear-gradient(135deg, #064e3b, #10a37f)', Comp: Snake },

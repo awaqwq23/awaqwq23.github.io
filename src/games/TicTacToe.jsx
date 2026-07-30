@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { COMPANY_LOGO_URL } from './companyCatalog'
 import { creditGameReward } from './aiEconomy'
 
@@ -51,6 +51,7 @@ export default function TicTacToe() {
   const [turn, setTurn] = useState('X')
   const [hard, setHard] = useState(true)
   const [reward, setReward] = useState(0)
+  const settled = useRef(false)
   const [stats, setStats] = useState(() => {
     try { return JSON.parse(localStorage.getItem(STORE)) || { win: 0, lose: 0, draw: 0 } }
     catch { return { win: 0, lose: 0, draw: 0 } }
@@ -58,7 +59,7 @@ export default function TicTacToe() {
 
   const result = winner(board)
   const full = board.every(Boolean)
-  const done = result || full
+  const done = Boolean(result || full)
 
   useEffect(() => {
     if (turn === 'O' && !done) {
@@ -76,7 +77,8 @@ export default function TicTacToe() {
   }, [turn, done, hard])
 
   useEffect(() => {
-    if (!done) return
+    if (!done || settled.current) return
+    settled.current = true
     const computeReward = result?.player === 'X'
       ? (hard ? 2800 : 1800)
       : result?.player === 'O'
@@ -92,14 +94,18 @@ export default function TicTacToe() {
       localStorage.setItem(STORE, JSON.stringify(ns))
       return ns
     })
-    // eslint-disable-next-line
-  }, [done])
+  }, [done, hard, result?.player])
 
   const play = (i) => {
     if (board[i] || done || turn !== 'X') return
     const b = board.slice(); b[i] = 'X'; setBoard(b); setTurn('O')
   }
-  const reset = () => { setBoard(Array(9).fill(null)); setTurn('X'); setReward(0) }
+  const reset = () => {
+    settled.current = false
+    setBoard(Array(9).fill(null))
+    setTurn('X')
+    setReward(0)
+  }
 
   return (
     <div className="ttt-game">
