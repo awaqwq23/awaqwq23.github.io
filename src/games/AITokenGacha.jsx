@@ -221,7 +221,18 @@ const DEFAULT_SAVE = {
   venture: { active: null, totalInvested: 0, totalReturned: 0, history: [] },
   lifeGoals: { house: 0, car: 0, partner: 0, victoryShown: false },
   lifeExtras: { cakes: 0, pcVisits: 0, feminization: 0 },
-  status: { happiness: 100, health: 100, corruption: 0, hasHiv: false, infectedCount: 0, ending: null },
+  status: {
+    happiness: 100,
+    health: 100,
+    corruption: 0,
+    hasHiv: false,
+    hookCount: 0,
+    hivDirectCount: 0,
+    hivIndirectCount: 0,
+    hivHookStreak: 0,
+    infectedCount: 0,
+    ending: null,
+  },
   work: { active: null, completed: 0, totalEarned: 0, history: [] },
   redeemedCodes: {},
 }
@@ -448,6 +459,10 @@ function getInitialSave() {
         ...(stored.status || {}),
         corruption: stored.status?.corruption ?? clampStat(100 - (stored.chastity ?? 100), -100, 100),
         hasHiv: stored.status?.hasHiv ?? Boolean(legacyDiseasePending),
+        hookCount: stored.status?.hookCount ?? 0,
+        hivDirectCount: stored.status?.hivDirectCount ?? (stored.status?.hasHiv ? Math.max(1, stored.status?.infectedCount || 1) : 0),
+        hivIndirectCount: stored.status?.hivIndirectCount ?? 0,
+        hivHookStreak: stored.status?.hivHookStreak ?? 0,
         infectedCount: stored.status?.infectedCount ?? (legacyDiseasePending ? 1 : 0),
       },
       work: {
@@ -676,17 +691,24 @@ export default function AITokenGacha() {
     }
     const record = { id: `${active.finishAt}-${job.id}`, jobId: job.id, reward: job.reward, at: active.finishAt }
     const workingPastZero = (save.status?.happiness ?? 100) <= 0
+    const currentStatus = { ...DEFAULT_SAVE.status, ...(save.status || {}) }
+    const exhausted = currentStatus.happiness <= 0
+    const nextHealth = exhausted ? Math.max(0, currentStatus.health - job.happinessCost) : currentStatus.health
+    const triggeredDeath = exhausted && nextHealth <= 0
     setSave(previous => {
       if (previous.work?.active?.finishAt !== active.finishAt) return previous
       const status = { ...DEFAULT_SAVE.status, ...(previous.status || {}) }
-      const exhausted = status.happiness <= 0
+      const exhaustedLocal = status.happiness <= 0
+      const nextHealthLocal = exhaustedLocal ? Math.max(0, status.health - job.happinessCost) : status.health
+      const triggeredDeathLocal = exhaustedLocal && nextHealthLocal <= 0
       return {
         ...previous,
         money: previous.money + job.reward,
         status: {
           ...status,
-          happiness: exhausted ? 0 : Math.max(0, status.happiness - job.happinessCost),
-          health: exhausted ? Math.max(0, status.health - job.happinessCost) : status.health,
+          happiness: exhaustedLocal ? 0 : Math.max(0, status.happiness - job.happinessCost),
+          health: nextHealthLocal,
+          ending: triggeredDeathLocal ? 'death' : status.ending,
         },
         work: {
           ...previous.work,
@@ -697,6 +719,9 @@ export default function AITokenGacha() {
         },
       }
     })
+    if (triggeredDeath) {
+      setLifeEvent({ type: 'ending', kind: 'death' })
+    }
     setNotice(workingPastZero
       ? `打工完成：工资到账 ¥${job.reward.toLocaleString()}；幸福度已经为 0，本次健康度 −${job.happinessCost}。`
       : `打工完成：工资到账 ¥${job.reward.toLocaleString()}，幸福度 −${job.happinessCost}。`)
@@ -1196,10 +1221,15 @@ export default function AITokenGacha() {
     const alreadyHasHiv = currentStatus.hasHiv
     const acquiredHiv = !alreadyHasHiv && Math.random() < 0.1
     const nextCorruption = clampStat(currentStatus.corruption - 1, -100, 100)
-    const nextInfectedCount = alreadyHasHiv
-      ? Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, currentStatus.infectedCount || 0) * 2)
-      : acquiredHiv ? 1 : currentStatus.infectedCount
-    const ending = nextCorruption <= -100 ? 'prison' : currentStatus.ending
+    const nextHasHiv = alreadyHasHiv || acquiredHiv
+    const nextHealth = nextHasHiv ? Math.max(0, currentStatus.health - 2) : currentStatus.health
+    const triggeredDeath = nextHealth <= 0
+    const ending = triggeredDeath ? 'death' : nextCorruption <= -100 ? 'prison' : currentStatus.ending
+    // PC 不会让累计艾滋人数翻倍或推高直接感染数；只在得艾滋时重置连续计数
+    const nextHivStreak = acquiredHiv ? 0 : (currentStatus.hivHookStreak || 0)
+    const nextHivDirect = currentStatus.hivDirectCount || 0
+    const nextHivIndirect = currentStatus.hivIndirectCount || 0
+    const nextInfectedCount = nextHivDirect + nextHivIndirect
     setSave(previous => ({
       ...previous,
       money: previous.money - price,
@@ -1210,14 +1240,18 @@ export default function AITokenGacha() {
       status: {
         ...previous.status,
         happiness: 100,
-        health: alreadyHasHiv ? Math.max(0, currentStatus.health - 2) : currentStatus.health,
+        health: nextHealth,
         corruption: nextCorruption,
-        hasHiv: alreadyHasHiv || acquiredHiv,
+        hasHiv: nextHasHiv,
+        hivDirectCount: nextHivDirect,
+        hivIndirectCount: nextHivIndirect,
+        hivHookStreak: nextHivStreak,
         infectedCount: nextInfectedCount,
         ending,
       },
     }))
-    if (ending) setLifeEvent({ type: 'ending', kind: ending })
+    if (ending === 'death') setLifeEvent({ type: 'ending', kind: 'death' })
+    else if (ending) setLifeEvent({ type: 'ending', kind: 'prison' })
     else if (acquiredHiv) setLifeEvent({ type: 'hiv-acquired', source: 'PC' })
     else setLifeEvent({ type: 'pc-happy' })
   }
@@ -1230,6 +1264,12 @@ export default function AITokenGacha() {
     }
     setSave(previous => {
       const status = { ...DEFAULT_SAVE.status, ...(previous.status || {}) }
+      const wasHiv = status.hasHiv
+      const hookStreak = status.hivHookStreak || 0
+      const extraIndirect = (fullTreatment && wasHiv && hookStreak > 1)
+        ? 2 * (hookStreak - 1)
+        : 0
+      const nextIndirect = (status.hivIndirectCount || 0) + extraIndirect
       return {
         ...previous,
         money: previous.money - price,
@@ -1237,6 +1277,9 @@ export default function AITokenGacha() {
           ...status,
           health: fullTreatment ? 100 : Math.min(100, status.health + 50),
           hasHiv: fullTreatment ? false : status.hasHiv,
+          hivIndirectCount: nextIndirect,
+          hivHookStreak: fullTreatment && wasHiv ? 0 : status.hivHookStreak,
+          infectedCount: (status.hivDirectCount || 0) + nextIndirect,
         },
       }
     })
@@ -1249,7 +1292,7 @@ export default function AITokenGacha() {
     setSave({
       ...DEFAULT_SAVE,
       upgrades: { ...DEFAULT_SAVE.upgrades },
-      redeemedCodes: { ...(save.redeemedCodes || {}) },
+      redeemedCodes: {},
       lastPassiveAt: Date.now(),
     })
     setResults([])
@@ -1257,7 +1300,7 @@ export default function AITokenGacha() {
     setVictoryOpen(false)
     setLifeEvent(null)
     setTab('draw')
-    setNotice('结局已完成，本机游戏进度已重置；已使用兑换码记录保留。')
+    setNotice('结局已完成，本机游戏进度与兑换码使用记录均已重置。')
   }
 
   const executeTask = task => {
@@ -1358,10 +1401,20 @@ export default function AITokenGacha() {
     const multiplier = hookIncomeMultiplier(nextCorruption)
     const baseEarned = 1500 + Math.floor(Math.random() * 8501)
     const earned = Math.round(baseEarned * multiplier)
-    const nextInfectedCount = alreadyHasHiv
-      ? Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, currentStatus.infectedCount || 0) * 2)
-      : acquiredHiv ? 1 : currentStatus.infectedCount
-    const ending = nextCorruption >= 100 ? 'fallen' : currentStatus.ending
+    const nextHasHiv = alreadyHasHiv || acquiredHiv
+    const nextHealth = nextHasHiv ? Math.max(0, currentStatus.health - 2) : currentStatus.health
+    const triggeredDeath = nextHealth <= 0
+    const ending = triggeredDeath ? 'death' : nextCorruption >= 100 ? 'fallen' : currentStatus.ending
+    // 直接感染人数 = 得艾滋后累计卖钩子数量
+    const nextHivDirect = nextHasHiv
+      ? Math.min(Number.MAX_SAFE_INTEGER, (currentStatus.hivDirectCount || 0) + 1)
+      : currentStatus.hivDirectCount || 0
+    // 间接感染人数：连续卖钩子直到康复后按 2 * (x - 1) 累加，得艾滋时启动新一轮
+    const nextHivStreak = nextHasHiv
+      ? (acquiredHiv ? 1 : Math.min(Number.MAX_SAFE_INTEGER, (currentStatus.hivHookStreak || 0) + 1))
+      : currentStatus.hivHookStreak || 0
+    const nextHivIndirect = currentStatus.hivIndirectCount || 0
+    const nextInfectedCount = nextHivDirect + nextHivIndirect
     const record = {
       id: `${Date.now()}-hook-${Math.random()}`,
       at: Date.now(),
@@ -1375,9 +1428,13 @@ export default function AITokenGacha() {
       money: previous.money + earned,
       status: {
         ...previous.status,
-        health: alreadyHasHiv ? Math.max(0, currentStatus.health - 2) : currentStatus.health,
+        health: nextHealth,
         corruption: nextCorruption,
-        hasHiv: alreadyHasHiv || acquiredHiv,
+        hasHiv: nextHasHiv,
+        hookCount: (previous.status?.hookCount || 0) + 1,
+        hivDirectCount: nextHivDirect,
+        hivIndirectCount: nextHivIndirect,
+        hivHookStreak: nextHivStreak,
         infectedCount: nextInfectedCount,
         ending,
       },
@@ -1386,8 +1443,9 @@ export default function AITokenGacha() {
         hookHistory: [record, ...(previous.tasks.hookHistory || [])].slice(0, 8),
       },
     }))
-    setNotice(`卖钩子完成：获得 ¥${earned.toLocaleString()}，恶坠度 +1${alreadyHasHiv ? '，健康度 −2' : ''}。`)
-    if (ending) setLifeEvent({ type: 'ending', kind: ending })
+    setNotice(`卖钩子完成：获得 ¥${earned.toLocaleString()}，恶坠度 +1${nextHasHiv ? '，健康度 −2' : ''}。`)
+    if (ending === 'death') setLifeEvent({ type: 'ending', kind: 'death' })
+    else if (ending) setLifeEvent({ type: 'ending', kind: 'fallen' })
     else if (acquiredHiv) setLifeEvent({ type: 'hiv-acquired', source: '卖钩子' })
   }
 
@@ -1413,11 +1471,11 @@ export default function AITokenGacha() {
   }
 
   const resetSave = () => {
-    if (!window.confirm('确定重置抽卡存档吗？余额、Token 和升级都会恢复初始状态；兑换码使用记录会保留。')) return
+    if (!window.confirm('确定重置抽卡存档吗？余额、Token 和升级都会恢复初始状态；兑换码使用记录也会清空。')) return
     setSave({
       ...DEFAULT_SAVE,
       upgrades: { ...DEFAULT_SAVE.upgrades },
-      redeemedCodes: { ...(save.redeemedCodes || {}) },
+      redeemedCodes: {},
       lastPassiveAt: Date.now(),
     })
     setResults([])
@@ -1989,7 +2047,7 @@ export default function AITokenGacha() {
               <article><span>幸福度</span><b>{playerStatus.happiness} / 100</b><i><em style={{ width: `${playerStatus.happiness}%` }} /></i></article>
               <article className={playerStatus.hasHiv ? 'danger' : ''}><span>健康度</span><b>{playerStatus.health} / 100</b><i><em style={{ width: `${playerStatus.health}%` }} /></i><small>{playerStatus.hasHiv ? '艾滋状态 · PC/卖钩子健康 −2' : '当前没有艾滋'}</small></article>
               <article><span>恶坠度</span><b>{playerStatus.corruption > 0 ? '+' : ''}{playerStatus.corruption}</b><i><em style={{ width: `${(playerStatus.corruption + 100) / 2}%` }} /></i></article>
-              <article><span>累计艾滋人数</span><b>{playerStatus.infectedCount.toLocaleString()}</b><small>艾滋状态下每次 PC 或卖钩子翻倍</small></article>
+              <article><span>累计艾滋人数</span><b>{playerStatus.infectedCount.toLocaleString()}</b><small>直接 {playerStatus.hivDirectCount || 0} · 间接 {playerStatus.hivIndirectCount || 0} · 已卖钩子 {playerStatus.hookCount || 0} 次</small></article>
             </div>
             <div className="gacha-health-actions">
               <button disabled={save.money < 100000 || playerStatus.health >= 100} onClick={() => buyHealth(false)}>¥10万 · 健康 +50</button>
@@ -2031,14 +2089,14 @@ export default function AITokenGacha() {
             <article className="cake">
               <span>PORTAL SPECIAL</span>
               <h4>蛋糕 · ¥10,000 / 个</h4>
-              <p>买下以后会告诉你一个关于蛋糕的重要事实；另有 10% 概率获得一个隐藏兑换码。</p>
+              <p>买下以后会告诉你一个关于蛋糕的重要事实。</p>
               <small>已经买了 {save.lifeExtras?.cakes || 0} 个蛋糕</small>
               <button onClick={buyCake}>买一个蛋糕</button>
             </article>
             <article className="pc">
               <span>PC SERVICE</span>
               <h4>PC · ¥{currentPcPrice.toLocaleString()} / 次</h4>
-              <p>幸福度回满、恶坠度 −1；有 10% 概率获得艾滋。艾滋状态下进行 PC 还会使健康度 −2、累计艾滋人数翻倍。</p>
+              <p>幸福度回满、恶坠度 −1；有 10% 概率获得艾滋。艾滋状态下进行 PC 还会使健康度 −2。健康度归零会立刻触发死亡结局。</p>
               <small>已经 PC {save.lifeExtras?.pcVisits || 0} 次 · 每 −10 恶坠度价格再降 5%</small>
               <button onClick={buyPcVisit}>进行一次 PC</button>
             </article>
@@ -2278,7 +2336,7 @@ export default function AITokenGacha() {
             <p><b>股票概率：</b>−30 至 −1 合计 53%，+1 至 +30 合计 46%，0 为 1%；区间内整数等概率，单次期望约 −1.09%，账户资金全额取回。</p>
             <p><b>企业投资：</b>每个价格区间有 50 家候选企业，投入后随机展示 3 家；单次回收率 0%–500%，但职业累计返还始终低于累计投入。</p>
             <p><b>其他资产：</b>股票每次重新进入时结算且为负期望；显卡按 ×{GPU_EARNING_MULTIPLIER} 游戏速率累计到待领取池，可用现金或算力点购买，并按正版价格的一半卖出。</p>
-            <p><b>人生状态：</b>打工消耗幸福度，幸福度为 0 后继续打工改扣健康度；PC 与人生目标回满幸福度。卖钩子有 5%、PC 有 10% 概率获得艾滋，艾滋状态下再次进行任一行为会扣 2 健康并令累计艾滋人数翻倍。</p>
+            <p><b>人生状态：</b>打工消耗幸福度，幸福度为 0 后继续打工改扣健康度；PC 与人生目标回满幸福度。卖钩子有 5%、PC 有 10% 概率获得艾滋，艾滋状态下再次进行任一行为会扣 2 健康。健康度归零会立刻触发死亡结局。</p>
             <p><b>恶坠结局：</b>卖钩子令恶坠度 +1 并按每 +10 提高 10% 收入；PC 令恶坠度 −1 并按每 −10 降低 5% 价格。达到 +100、−100 或完成女装特殊目标时触发对应结局。</p>
           </div>
           <button className="gacha-reset" onClick={resetSave}>重置本机模拟存档</button>
@@ -2345,8 +2403,8 @@ export default function AITokenGacha() {
                 <h3 id="gacha-life-event-title">蛋糕是个谎言</h3>
                 <p>你花 ¥10,000 买到了一条经典真相。蛋糕数量已经记入人生结算。</p>
                 {lifeEvent.code
-                  ? <div className="gacha-cake-code"><small>10% 隐藏奖励命中</small><b>{lifeEvent.code}</b><p>请复制后到页面底部兑换；兑换码不会加入公开列表。</p></div>
-                  : <small>这次没有抽到隐藏兑换码。</small>}
+                  ? <div className="gacha-cake-code"><b>{lifeEvent.code}</b><p>请复制后到页面底部兑换；兑换码不会加入公开列表。</p></div>
+                  : <small>这次没有额外奖励。</small>}
                 <button onClick={() => setLifeEvent(null)}>我早就知道</button>
               </>
             )}
@@ -2362,23 +2420,36 @@ export default function AITokenGacha() {
               <>
                 <span>MEDICAL EMERGENCY</span>
                 <h3 id="gacha-life-event-title">你获得了艾滋</h3>
-                <p>本次由 {lifeEvent.source} 触发。累计艾滋人数从 1 开始；今后每次 PC 或卖钩子都会使人数翻倍，并使健康度 −2。</p>
+                <p>本次由 {lifeEvent.source} 触发。直接感染人数从此后每次卖钩子累加；彻底治愈时会按 2 × (连续卖钩子 − 1) 累加间接感染人数。每次行为还会使健康度 −2。</p>
                 <button onClick={() => setLifeEvent(null)}>知道了</button>
               </>
             )}
             {lifeEvent.type === 'ending' && (
               <>
-                <span>{lifeEvent.kind === 'fallen' ? 'CORRUPTION ENDING' : 'PRISON ENDING'}</span>
+                <span>
+                  {lifeEvent.kind === 'fallen' ? 'CORRUPTION ENDING'
+                    : lifeEvent.kind === 'prison' ? 'PRISON ENDING'
+                    : 'DEATH ENDING'}
+                </span>
                 <h3 id="gacha-life-event-title">
-                  {lifeEvent.kind === 'fallen' ? '图灵派雌坠小南娘结局' : '入狱结局'}
+                  {lifeEvent.kind === 'fallen' ? '图灵派雌坠小南娘结局'
+                    : lifeEvent.kind === 'prison' ? '入狱结局'
+                    : '死亡结局'}
                 </h3>
                 <p>
                   {lifeEvent.kind === 'fallen'
                     ? '恶坠度已经达到 +100，或女装特殊目标全部完成。'
-                    : '恶坠度已经达到 −100。'}
-                  确认结局后，本机游戏进度会重置。
+                    : lifeEvent.kind === 'prison'
+                      ? '恶坠度已经达到 −100。'
+                      : '健康度已经降到 0，身体再也撑不住了。'}
+                  确认结局后，本机游戏进度与兑换码使用记录会一起重置。
                 </p>
-                {playerStatus.infectedCount > 0 && <b className="gacha-ending-infections">你让 {playerStatus.infectedCount.toLocaleString()} 人得了艾滋</b>}
+                {(playerStatus.hookCount || 0) > 0 && (
+                  <div className="gacha-ending-infections">
+                    <b>累计艾滋人数 {playerStatus.infectedCount.toLocaleString()}</b>
+                    <small>直接 {playerStatus.hivDirectCount || 0} · 间接 {playerStatus.hivIndirectCount || 0} · 卖钩子 {playerStatus.hookCount || 0} 次</small>
+                  </div>
+                )}
                 <button className="danger" onClick={resetAfterEnding}>确认结局并重置游戏</button>
               </>
             )}
@@ -2394,7 +2465,11 @@ export default function AITokenGacha() {
             <h3 id="gacha-victory-title">你已经完成了人生目标！<br />（但愿吧）</h3>
             <p>最好的房子、最好的车子，还有愿意一起生活的人。Token 世界的主线故事已经通关。</p>
             <div><b>海景智能别墅</b><b>限量未来超跑</b><b>人生搭档</b><b>买过 {save.lifeExtras?.cakes || 0} 个蛋糕</b><b>幸福度 {playerStatus.happiness}</b><b>健康度 {playerStatus.health}</b><b>恶坠度 {playerStatus.corruption > 0 ? '+' : ''}{playerStatus.corruption}</b></div>
-            {playerStatus.infectedCount > 0 && <p className="gacha-victory-infections">你让 {playerStatus.infectedCount.toLocaleString()} 人得了艾滋</p>}
+            {(playerStatus.hookCount || 0) > 0 && (
+              <p className="gacha-victory-infections">
+                你让 {playerStatus.infectedCount.toLocaleString()} 人得了艾滋（直接 {playerStatus.hivDirectCount || 0} · 间接 {playerStatus.hivIndirectCount || 0} · 卖钩子 {playerStatus.hookCount || 0} 次）
+              </p>
+            )}
             <button onClick={() => setVictoryOpen(false)}>继续我的人生</button>
           </article>
         </div>
