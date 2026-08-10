@@ -13,6 +13,7 @@ import TokenClicker from '../games/TokenClicker'
 import AITokenGacha from '../games/AITokenGacha'
 import FlyingWhale from '../games/FlyingWhale'
 import JoyBeanRunner from '../games/JoyBeanRunner'
+import SteamLibrary from '../components/SteamLibrary'
 
 function AS({ children, d = 0 }) {
   const [ref, show] = useScrollReveal(0.05)
@@ -77,7 +78,7 @@ export default function Games() {
     <div className="page">
       <AS>
         <div className="section-header">
-          <h1><i className="fas fa-dice" style={{ color: 'var(--primary)' }} /> 小游戏厅</h1>
+          <h1><i className="fas fa-dice" style={{ color: 'var(--primary)' }} /> 本站小游戏</h1>
           <p>{GAMES.length} 款纯浏览器小游戏，无需下载，随点随玩 🎮 成绩会存在本地</p>
           <div className="section-line" />
         </div>
@@ -99,6 +100,17 @@ export default function Games() {
           </AS>
         ))}
       </div>
+      <AS>
+        <section className="steam-library-section">
+          <div className="section-header steam-section-header">
+            <div>
+              <h2><i className="fab fa-steam" /> 我的 Steam 游戏库</h2>
+              <p>玩过什么，以及时间都花去了哪里。</p>
+            </div>
+          </div>
+          <SteamLibrary />
+        </section>
+      </AS>
     </div>
   )
 }

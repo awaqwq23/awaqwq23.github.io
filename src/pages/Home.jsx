@@ -42,8 +42,8 @@ const features = [
     to: '/games',
     icon: 'fa-dice',
     bg: 'linear-gradient(135deg, #F59E0B, #EF4444)',
-    title: '🎮 小游戏厅',
-    desc: '合成大银鲸、ChatGPT 上下文、Claude 风控排查、SEPA 手速测试… 9 款纯浏览器小游戏。',
+    title: '🎮 游戏厅',
+    desc: '玩几款浏览器小游戏，也可以看看我的 Steam 游戏库和游玩时长。',
   },
   {
     to: '/toys',
@@ -58,6 +58,13 @@ const features = [
     bg: 'linear-gradient(135deg, #10B981, #059669)',
     title: '🔖 资料收藏',
     desc: '收藏夹、开发软件、AI 工具与娱乐导航，好东西都在这里。',
+  },
+  {
+    to: '/today',
+    icon: 'fa-wand-magic-sparkles',
+    bg: 'linear-gradient(135deg, #F97316, #EC4899)',
+    title: '🎲 今天选什么',
+    desc: '从武大附近的餐厅和我的 Steam 游戏库里，随机解决今天最难的两个问题。',
   },
   {
     to: '/about',

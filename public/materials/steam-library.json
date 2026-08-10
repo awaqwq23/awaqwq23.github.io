@@ -1,0 +1,17 @@
+{
+  "status": "setup_required",
+  "updatedAt": null,
+  "steamId": "76561198825902593",
+  "profile": {
+    "name": "awaqwq233",
+    "url": "https://steamcommunity.com/profiles/76561198825902593/",
+    "avatar": "https://avatars.fastly.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg"
+  },
+  "stats": {
+    "gameCount": 0,
+    "playedGameCount": 0,
+    "totalMinutes": 0,
+    "recentMinutes": 0
+  },
+  "games": []
+}
