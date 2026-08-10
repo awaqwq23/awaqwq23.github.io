@@ -104,6 +104,7 @@ function TodayPicker() {
   const [scanStatus, setScanStatus] = useState('idle')
   const [scanMessage, setScanMessage] = useState('')
   const manifestInputRef = useRef(null)
+  const foodRequestRef = useRef({ id: 0, controller: null })
   const foodTimerRef = useRef(null)
   const gameTimerRef = useRef(null)
 
@@ -113,6 +114,8 @@ function TodayPicker() {
       .then(setSteamData)
       .catch(() => setSteamData({ status: 'unavailable', games: [] }))
     return () => {
+      foodRequestRef.current.id += 1
+      foodRequestRef.current.controller?.abort()
       clearInterval(foodTimerRef.current)
       clearInterval(gameTimerRef.current)
     }
@@ -124,11 +127,17 @@ function TodayPicker() {
   }, [installedGames])
 
   const loadRestaurants = async (mode, requestedRadius = radius) => {
+    const requestId = foodRequestRef.current.id + 1
+    foodRequestRef.current.id = requestId
+    foodRequestRef.current.controller?.abort()
+    foodRequestRef.current.controller = null
     setFoodMode(mode)
     setFoodStatus('loading')
     setFoodError('')
     setFoodResult(null)
+    setRestaurants([])
     let origin = mode === 'whu' ? WHU : null
+    if (origin) setFoodOrigin(origin)
     try {
       if (mode === 'nearby') {
         if (!navigator.geolocation) throw new Error('当前浏览器不支持定位')
@@ -137,20 +146,28 @@ function TodayPicker() {
           timeout: 12000,
           maximumAge: 5 * 60 * 1000,
         }))
+        if (requestId !== foodRequestRef.current.id) return
         origin = { lat: position.coords.latitude, lon: position.coords.longitude, label: '我的位置' }
+        setFoodOrigin(origin)
       }
 
       const query = `[out:json][timeout:18];nwr(around:${requestedRadius},${origin.lat},${origin.lon})[amenity~"^(restaurant|fast_food|cafe|food_court|canteen)$"][name];out center tags;`
       const controller = new AbortController()
+      foodRequestRef.current.controller = controller
       const timeoutId = setTimeout(() => controller.abort(), 20000)
       const response = await fetch('https://overpass-api.de/api/interpreter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
         body: `data=${encodeURIComponent(query)}`,
         signal: controller.signal,
-      }).finally(() => clearTimeout(timeoutId))
+      }).finally(() => {
+        clearTimeout(timeoutId)
+        if (foodRequestRef.current.controller === controller) foodRequestRef.current.controller = null
+      })
+      if (requestId !== foodRequestRef.current.id) return
       if (!response.ok) throw new Error(`附近店铺查询失败（${response.status}）`)
       const payload = await response.json()
+      if (requestId !== foodRequestRef.current.id) return
       const seen = new Set()
       const places = payload.elements.flatMap(element => {
         const lat = element.lat ?? element.center?.lat
@@ -180,6 +197,7 @@ function TodayPicker() {
       setRestaurants(mergedPlaces)
       setFoodStatus('ready')
     } catch (error) {
+      if (requestId !== foodRequestRef.current.id) return
       const fixedPlaces = origin ? getInformationCampusFood(origin, requestedRadius) : []
       if (fixedPlaces.length) {
         setFoodOrigin(origin)
