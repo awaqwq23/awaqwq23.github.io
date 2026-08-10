@@ -1,7 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
 
-const WHU = { lat: 30.53941, lon: 114.3664, label: '武汉大学' }
+const WHU = { lat: 30.5308439, lon: 114.3546982, label: '武汉大学信息学部' }
+const WHU_CAMPUS_BOUNDS = [
+  { minLat: 30.5262, maxLat: 30.5360, minLon: 114.3495, maxLon: 114.3608 },
+  { minLat: 30.5300, maxLat: 30.5490, minLon: 114.3570, maxLon: 114.3830 },
+]
+const WHU_INFORMATION_FOOD = [
+  { id: 'whu-info-canteen-1', name: '信息学部学生一食堂', type: 'canteen', lat: 30.528325, lon: 114.359267, priority: 'information-campus' },
+  { id: 'whu-info-canteen-2', name: '信息学部学生二食堂', type: 'canteen', lat: 30.52703, lon: 114.358662, priority: 'information-campus' },
+  { id: 'whu-info-canteen-3', name: '信息学部学生三食堂', type: 'canteen', lat: 30.52716, lon: 114.358375, priority: 'information-campus' },
+  { id: 'whu-info-canteen-4', name: '信息学部学生四食堂', type: 'canteen', lat: 30.52716, lon: 114.358375, priority: 'information-campus' },
+  { id: 'whu-info-xinghuyuan', name: '星湖园餐厅', type: 'restaurant', lat: 30.5327278, lon: 114.3550221 },
+].map(place => ({ ...place, isCampus: true }))
 const INSTALLED_STORAGE_KEY = 'awa-installed-steam-games'
 const FOOD_TYPES = {
   restaurant: '餐厅',
@@ -19,6 +30,24 @@ function distanceBetween(lat1, lon1, lat2, lon2) {
   const value = Math.sin(latDistance / 2) ** 2
     + Math.cos(radians(lat1)) * Math.cos(radians(lat2)) * Math.sin(lonDistance / 2) ** 2
   return earthRadius * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value))
+}
+
+function isInsideWhuCampus(lat, lon) {
+  return WHU_CAMPUS_BOUNDS.some(bounds => lat >= bounds.minLat && lat <= bounds.maxLat
+    && lon >= bounds.minLon && lon <= bounds.maxLon)
+}
+
+function getFoodWeight(place) {
+  const distanceWeight = 1 / Math.max(0.2, Math.sqrt(place.distance))
+  if (place.priority === 'information-campus') return distanceWeight * 6
+  if (place.isCampus) return distanceWeight * 3
+  return distanceWeight
+}
+
+function getInformationCampusFood(origin, radius) {
+  return WHU_INFORMATION_FOOD
+    .map(place => ({ ...place, distance: distanceBetween(origin.lat, origin.lon, place.lat, place.lon) }))
+    .filter(place => place.distance <= radius / 1000)
 }
 
 function weightedPick(items, getWeight) {
@@ -99,8 +128,8 @@ function TodayPicker() {
     setFoodStatus('loading')
     setFoodError('')
     setFoodResult(null)
+    let origin = mode === 'whu' ? WHU : null
     try {
-      let origin = WHU
       if (mode === 'nearby') {
         if (!navigator.geolocation) throw new Error('当前浏览器不支持定位')
         const position = await new Promise((resolve, reject) => navigator.geolocation.getCurrentPosition(resolve, reject, {
@@ -111,12 +140,15 @@ function TodayPicker() {
         origin = { lat: position.coords.latitude, lon: position.coords.longitude, label: '我的位置' }
       }
 
-      const query = `[out:json][timeout:25];nwr(around:${requestedRadius},${origin.lat},${origin.lon})[amenity~"^(restaurant|fast_food|cafe|food_court|canteen)$"][name];out center tags;`
+      const query = `[out:json][timeout:18];nwr(around:${requestedRadius},${origin.lat},${origin.lon})[amenity~"^(restaurant|fast_food|cafe|food_court|canteen)$"][name];out center tags;`
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 20000)
       const response = await fetch('https://overpass-api.de/api/interpreter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
         body: `data=${encodeURIComponent(query)}`,
-      })
+        signal: controller.signal,
+      }).finally(() => clearTimeout(timeoutId))
       if (!response.ok) throw new Error(`附近店铺查询失败（${response.status}）`)
       const payload = await response.json()
       const seen = new Set()
@@ -136,14 +168,26 @@ function TodayPicker() {
           lat,
           lon,
           distance: distanceBetween(origin.lat, origin.lon, lat, lon),
+          isCampus: isInsideWhuCampus(lat, lon) || /武汉大学|武大/.test(name),
         }]
-      }).sort((left, right) => left.distance - right.distance)
-      if (!places.length) throw new Error('这个范围内没有找到餐厅，试试扩大范围')
+      })
+      const fixedPlaces = getInformationCampusFood(origin, requestedRadius)
+      const mergedPlaces = [...fixedPlaces, ...places]
+        .filter((place, index, all) => all.findIndex(candidate => candidate.name === place.name) === index)
+        .sort((left, right) => left.distance - right.distance)
+      if (!mergedPlaces.length) throw new Error('这个范围内没有找到餐厅，试试扩大范围')
       setFoodOrigin(origin)
-      setRestaurants(places)
+      setRestaurants(mergedPlaces)
       setFoodStatus('ready')
     } catch (error) {
-      if (error.code === 1) setFoodError('定位权限被拒绝，可以改用“武大附近”')
+      const fixedPlaces = origin ? getInformationCampusFood(origin, requestedRadius) : []
+      if (fixedPlaces.length) {
+        setFoodOrigin(origin)
+        setRestaurants(fixedPlaces)
+        setFoodStatus('ready')
+        return
+      }
+      if (error.code === 1) setFoodError('定位权限被拒绝，可以改用“信息学部附近”')
       else if (error.code === 2) setFoodError('暂时无法获取位置，可以稍后重试')
       else if (error.code === 3) setFoodError('定位超时，可以稍后重试')
       else setFoodError(error.message || '查询失败，请稍后重试')
@@ -169,7 +213,7 @@ function TodayPicker() {
         const pool = availableRestaurants.length > 1 && foodResult
           ? availableRestaurants.filter(place => place.id !== foodResult.id)
           : availableRestaurants
-        setFoodResult(weightedPick(pool, place => 1 / Math.max(0.2, Math.sqrt(place.distance))))
+        setFoodResult(weightedPick(pool, getFoodWeight))
         setFoodStatus('ready')
       }
     }, 65)
@@ -278,7 +322,7 @@ function TodayPicker() {
           </header>
 
           <div className="decision-segments">
-            <button type="button" className={foodMode === 'whu' ? 'active' : ''} onClick={() => loadRestaurants('whu')}><i className="fas fa-school" /> 武大附近</button>
+            <button type="button" className={foodMode === 'whu' ? 'active' : ''} onClick={() => loadRestaurants('whu')}><i className="fas fa-school" /> 信息学部附近</button>
             <button type="button" className={foodMode === 'nearby' ? 'active' : ''} onClick={() => loadRestaurants('nearby')}><i className="fas fa-location-crosshairs" /> 我附近</button>
           </div>
           <div className="decision-options">
@@ -305,7 +349,7 @@ function TodayPicker() {
           <div className={`decision-result food-result${foodStatus === 'rolling' ? ' rolling' : ''}`}>
             {foodResult ? (
               <>
-                <span>{FOOD_TYPES[foodResult.type] || '吃点好的'} · 距{foodOrigin.label} {foodResult.distance.toFixed(1)} km</span>
+                <span>{foodResult.priority === 'information-campus' ? '信部优先 · ' : foodResult.isCampus ? '校内优先 · ' : ''}{FOOD_TYPES[foodResult.type] || '吃点好的'} · 距{foodOrigin.label} {foodResult.distance.toFixed(1)} km</span>
                 <h3>{foodResult.name}</h3>
                 {foodResult.cuisine && <p>{foodResult.cuisine.replaceAll(';', ' · ')}</p>}
                 <a href={`https://www.openstreetmap.org/?mlat=${foodResult.lat}&mlon=${foodResult.lon}#map=18/${foodResult.lat}/${foodResult.lon}`} target="_blank" rel="noopener">
