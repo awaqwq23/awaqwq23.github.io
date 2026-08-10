@@ -9,7 +9,7 @@ if (!apiKey) throw new Error('Missing STEAM_API_KEY')
 
 async function steamRequest(interfaceName, method, version, parameters = {}) {
   const url = new URL(`https://api.steampowered.com/${interfaceName}/${method}/${version}/`)
-  url.search = new URLSearchParams({ key: apiKey, steamid: steamId, format: 'json', ...parameters })
+  url.search = new URLSearchParams({ key: apiKey, format: 'json', ...parameters })
   const response = await fetch(url)
   if (!response.ok) throw new Error(`Steam API ${method} failed with ${response.status}`)
   return response.json()
@@ -17,10 +17,11 @@ async function steamRequest(interfaceName, method, version, parameters = {}) {
 
 const [ownedResult, profileResult] = await Promise.all([
   steamRequest('IPlayerService', 'GetOwnedGames', 'v1', {
+    steamid: steamId,
     include_appinfo: 'true',
     include_played_free_games: 'true',
   }),
-  steamRequest('ISteamUser', 'GetPlayerSummaries', 'v2'),
+  steamRequest('ISteamUser', 'GetPlayerSummaries', 'v2', { steamids: steamId }),
 ])
 
 const owned = ownedResult.response
