@@ -1,12 +1,12 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-10T19:17:53.452Z",
+  "updatedAt": "2026-08-11T02:28:40.324Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
+    "status": 1,
     "lastLogoff": "2026-08-10T16:12:36.000Z"
   },
   "stats": {
