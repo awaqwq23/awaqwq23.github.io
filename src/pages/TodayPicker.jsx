@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
+import { GAME_CATEGORY_OPTIONS, getGameCategory, getGameCategoryOption } from '../data/steamGameCategories'
 
 const WHU = { lat: 30.5308439, lon: 114.3546982, label: '武汉大学信息学部' }
 const WHU_CAMPUS_BOUNDS = [
@@ -98,6 +99,7 @@ function TodayPicker() {
     catch { return [] }
   })
   const [gameScope, setGameScope] = useState('all')
+  const [gameCategories, setGameCategories] = useState(() => GAME_CATEGORY_OPTIONS.map(option => option.id))
   const [gameWeight, setGameWeight] = useState('playtime')
   const [gameResult, setGameResult] = useState(null)
   const [gameStatus, setGameStatus] = useState('idle')
@@ -248,10 +250,27 @@ function TodayPicker() {
       ...game,
       installed: true,
     }))
-    return [...merged.values()]
+    return [...merged.values()].map(game => ({ ...game, category: getGameCategory(game) }))
   }, [steamGames, installedGames])
 
-  const gamePool = useMemo(() => gameScope === 'installed' ? allGames.filter(game => game.installed) : allGames, [allGames, gameScope])
+  const scopedGames = useMemo(() => gameScope === 'installed' ? allGames.filter(game => game.installed) : allGames, [allGames, gameScope])
+  const gameCategoryCounts = useMemo(() => Object.fromEntries(GAME_CATEGORY_OPTIONS.map(option => [
+    option.id,
+    scopedGames.filter(game => game.category === option.id).length,
+  ])), [scopedGames])
+  const gamePool = useMemo(() => scopedGames.filter(game => gameCategories.includes(game.category)), [scopedGames, gameCategories])
+
+  const toggleGameCategory = categoryId => {
+    setGameCategories(current => current.includes(categoryId)
+      ? current.filter(id => id !== categoryId)
+      : [...current, categoryId])
+    setGameResult(null)
+  }
+
+  const toggleAllGameCategories = () => {
+    setGameCategories(current => current.length === GAME_CATEGORY_OPTIONS.length ? [] : GAME_CATEGORY_OPTIONS.map(option => option.id))
+    setGameResult(null)
+  }
 
   const addInstalledGames = games => {
     if (!games.length) {
@@ -265,6 +284,7 @@ function TodayPicker() {
       return [...merged.values()].sort((left, right) => left.name.localeCompare(right.name))
     })
     setGameScope('installed')
+    setGameResult(null)
     setScanStatus('ready')
     setScanMessage(`已在本机识别 ${games.length} 款 Steam 游戏`)
   }
@@ -399,6 +419,25 @@ function TodayPicker() {
             <button type="button" className={gameScope === 'all' ? 'active' : ''} onClick={() => { setGameScope('all'); setGameResult(null) }}><i className="fas fa-layer-group" /> 整个库</button>
             <button type="button" className={gameScope === 'installed' ? 'active' : ''} onClick={() => { setGameScope('installed'); setGameResult(null) }} disabled={!installedGames.length}><i className="fas fa-hard-drive" /> 已安装 {installedGames.length || ''}</button>
           </div>
+
+          <div className="game-category-picker">
+            <div className="game-category-heading">
+              <span>抽取范围</span>
+              <button type="button" onClick={toggleAllGameCategories}>{gameCategories.length === GAME_CATEGORY_OPTIONS.length ? '清空' : '全选'}</button>
+            </div>
+            <div className="game-category-options">
+              {GAME_CATEGORY_OPTIONS.map(option => (
+                <label className={gameCategories.includes(option.id) ? 'active' : ''} title={option.description} key={option.id}>
+                  <input type="checkbox" checked={gameCategories.includes(option.id)} onChange={() => toggleGameCategory(option.id)} />
+                  <i className={`fas ${option.icon}`} />
+                  <span>{option.label}</span>
+                  <small>{gameCategoryCounts[option.id]}</small>
+                </label>
+              ))}
+            </div>
+            <p><i className="fas fa-circle-info" /> 垃圾游戏 = 完全没有启动时长或免费；星引擎派对已单独拆出。</p>
+          </div>
+
           <div className="decision-options">
             <label>抽取方式
               <select value={gameWeight} onChange={event => { setGameWeight(event.target.value); setGameResult(null) }}>
@@ -416,7 +455,7 @@ function TodayPicker() {
                   {gameResult.installed && <span><i className="fas fa-hard-drive" /> 已安装</span>}
                 </div>
                 <div className="game-result-copy">
-                  <span>{formatPlaytime(gameResult.playtimeForever)} · 本轮概率 {gameResult.drawChance?.toFixed(1) || '—'}%</span>
+                  <span>{getGameCategoryOption(gameResult.category)?.label} · {formatPlaytime(gameResult.playtimeForever)} · 本轮概率 {gameResult.drawChance?.toFixed(1) || '—'}%</span>
                   <h3>{gameResult.name}</h3>
                   <div>
                     {gameResult.installed && <a href={`steam://run/${gameResult.appid}`}><i className="fas fa-play" /> 启动游戏</a>}

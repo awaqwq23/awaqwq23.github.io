@@ -4685,6 +4685,40 @@ ul { list-style: none; }
   outline: none;
 }
 .decision-options select:focus { border-color: var(--primary); }
+.game-category-picker { margin-top: 0.75rem; }
+.game-category-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem; }
+.game-category-heading > span { color: var(--text-muted); font-size: 0.62rem; font-weight: 800; }
+.game-category-heading > button {
+  padding: 0;
+  color: #1a9fff;
+  font: 800 0.62rem var(--font-sans);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.game-category-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.38rem; }
+.game-category-options label {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.64rem;
+  font-weight: 800;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.game-category-options label.active { color: #087dbb; background: rgba(26,159,255,0.1); border-color: rgba(26,159,255,0.45); }
+.game-category-options label:has(input:focus-visible) { outline: 2px solid #1a9fff; outline-offset: 2px; }
+.game-category-options input { position: absolute; opacity: 0; pointer-events: none; }
+.game-category-options label > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.game-category-options label > small { min-width: 1.25rem; color: inherit; font: 800 0.55rem var(--font-mono); text-align: right; opacity: 0.75; }
+.game-category-picker > p { margin-top: 0.42rem; color: var(--text-muted); font-size: 0.57rem; line-height: 1.5; }
 .decision-result {
   min-height: 225px;
   display: flex;
@@ -4761,6 +4795,7 @@ ul { list-style: none; }
   .today-picker-hero { padding: 1.4rem; }
   .decision-options { flex-direction: column; }
   .decision-result { min-height: 200px; }
+  .game-category-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .installed-game-reader .manifest-fallback { display: block; margin: 0.45rem 0 0; }
 }
 
