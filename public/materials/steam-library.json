@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-11T13:43:55.772Z",
+  "updatedAt": "2026-08-11T19:26:54.234Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-08-10T16:12:36.000Z"
+    "status": 0,
+    "lastLogoff": "2026-08-11T17:11:10.000Z"
   },
   "stats": {
-    "gameCount": 231,
-    "playedGameCount": 172,
-    "totalMinutes": 167590,
-    "recentMinutes": 1678
+    "gameCount": 232,
+    "playedGameCount": 173,
+    "totalMinutes": 167743,
+    "recentMinutes": 1830
   },
   "games": [
     {
@@ -150,9 +150,9 @@
     {
       "appid": 286160,
       "name": "Tabletop Simulator",
-      "playtimeForever": 5697,
-      "playtimeTwoWeeks": 60,
-      "lastPlayed": "2026-08-11T13:27:05.000Z",
+      "playtimeForever": 5825,
+      "playtimeTwoWeeks": 187,
+      "lastPlayed": "2026-08-11T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/286160/19f5b90e3c7084758f885ded843631b13929fa26.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/286160/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/286160/",
@@ -4681,6 +4681,31 @@
       }
     },
     {
+      "appid": 1299120,
+      "name": "Mosaique Neko Waifus 2",
+      "playtimeForever": 25,
+      "playtimeTwoWeeks": 25,
+      "lastPlayed": "2026-08-11T17:41:48.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1299120/2668ef9045f0c326e8d468f1faffd1db62384f48.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1299120/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1299120/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "4",
+          "3"
+        ]
+      }
+    },
+    {
       "appid": 281990,
       "name": "Stellaris",
       "playtimeForever": 24,
@@ -6449,7 +6474,23 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/668630/4821569fdcde5100761669d70050480d1509db48.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/668630/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/668630/"
+      "storeUrl": "https://store.steampowered.com/app/668630/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "23"
+        ]
+      }
     },
     {
       "appid": 704850,
@@ -6459,7 +6500,24 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/704850/351a94d88850d4e0495e8a880f87af4a881f7d78.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/704850/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/704850/"
+      "storeUrl": "https://store.steampowered.com/app/704850/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          18,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "28"
+        ]
+      }
     },
     {
       "appid": 740240,
@@ -6469,7 +6527,20 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/740240/ce1c2c221950e310de7fd8425f573e4dced5c113.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/740240/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/740240/"
+      "storeUrl": "https://store.steampowered.com/app/740240/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          62
+        ],
+        "genreIds": [
+          "4",
+          "2"
+        ]
+      }
     },
     {
       "appid": 860510,
@@ -6479,7 +6550,26 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/860510/8875efb23a0fc1f079f227508d981f2cba82d735.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/860510/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/860510/"
+      "storeUrl": "https://store.steampowered.com/app/860510/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          29,
+          55,
+          57,
+          23,
+          41,
+          42,
+          62
+        ],
+        "genreIds": [
+          "25"
+        ]
+      }
     },
     {
       "appid": 862740,
@@ -6489,7 +6579,25 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/862740/08a62a0091858d0f75489c3d420e6f7a22434ab9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/862740/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/862740/"
+      "storeUrl": "https://store.steampowered.com/app/862740/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "4",
+          "23"
+        ]
+      }
     },
     {
       "appid": 898450,
@@ -6499,7 +6607,21 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/898450/90b36a36166f66f1032b4bb9e35082f9c5a4c86e.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/898450/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/898450/"
+      "storeUrl": "https://store.steampowered.com/app/898450/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
+        ]
+      }
     },
     {
       "appid": 1018800,
@@ -6509,7 +6631,24 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1018800/1c565af995c4a4167f34cce35779b7b082f12fc1.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1018800/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1018800/"
+      "storeUrl": "https://store.steampowered.com/app/1018800/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23",
+          "28"
+        ]
+      }
     },
     {
       "appid": 1029980,
@@ -6519,7 +6658,20 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1029980/1d552c7387d7df63937841d6bd5065e7ce6842a2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1029980/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1029980/"
+      "storeUrl": "https://store.steampowered.com/app/1029980/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
+        ]
+      }
     },
     {
       "appid": 1053710,
@@ -6529,7 +6681,23 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1053710/0efc0c5e80b66389d33981aceaf67b7309b4baec.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1053710/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1053710/"
+      "storeUrl": "https://store.steampowered.com/app/1053710/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "23",
+          "3"
+        ]
+      }
     },
     {
       "appid": 1091500,
@@ -6539,7 +6707,36 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1091500/6897c3848f3e0350d512f59d5bae174a1e3739f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1091500/"
+      "storeUrl": "https://store.steampowered.com/app/1091500/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          29,
+          64,
+          67,
+          66,
+          68,
+          78,
+          74,
+          55,
+          57,
+          58,
+          79,
+          69,
+          65,
+          70,
+          23,
+          61,
+          62
+        ],
+        "genreIds": [
+          "3"
+        ]
+      }
     },
     {
       "appid": 1102190,
@@ -6549,7 +6746,27 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1102190/71b1344e42cc348d3b1a40404ab0547f9ed860ae.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1102190/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1102190/"
+      "storeUrl": "https://store.steampowered.com/app/1102190/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          22,
+          28,
+          29,
+          23,
+          41,
+          42,
+          62
+        ],
+        "genreIds": [
+          "2"
+        ]
+      }
     },
     {
       "appid": 1106080,
@@ -6559,7 +6776,20 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1106080/f7c09050c75911ef5d0a86bc5e7e2139d1ea412d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1106080/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1106080/"
+      "storeUrl": "https://store.steampowered.com/app/1106080/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          23,
+          62
+        ],
+        "genreIds": [
+          "23",
+          "3"
+        ]
+      }
     },
     {
       "appid": 1169040,
@@ -6569,7 +6799,39 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1169040/b9e3becff5c706c4e57db3699ab7451cd178394e.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1169040/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1169040/"
+      "storeUrl": "https://store.steampowered.com/app/1169040/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          47,
+          9,
+          38,
+          48,
+          22,
+          28,
+          29,
+          30,
+          55,
+          56,
+          57,
+          58,
+          59,
+          23,
+          15,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "3"
+        ]
+      }
     },
     {
       "appid": 1181000,
@@ -6579,7 +6841,21 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1181000/10203ce2ead1539bbe0613c5f70ec550f21d353d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1181000/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1181000/"
+      "storeUrl": "https://store.steampowered.com/app/1181000/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
+        ]
+      }
     },
     {
       "appid": 1222140,
@@ -6589,7 +6865,23 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1222140/3d9f5bc971d44398aef740c0d8e79a358be2e800.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1222140/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1222140/"
+      "storeUrl": "https://store.steampowered.com/app/1222140/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          23,
+          43,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25"
+        ]
+      }
     },
     {
       "appid": 1245620,
@@ -6599,7 +6891,34 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1245620/b6e290dd5a92ce98f89089a207733c70c41a1871.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1245620/"
+      "storeUrl": "https://store.steampowered.com/app/1245620/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          67,
+          68,
+          74,
+          79,
+          69,
+          70,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "3"
+        ]
+      }
     },
     {
       "appid": 1364780,
@@ -6609,7 +6928,37 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1364780/d8057ee15238077329f869c1610e257461ab3f76.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1364780/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1364780/"
+      "storeUrl": "https://store.steampowered.com/app/1364780/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          37,
+          24,
+          27,
+          22,
+          29,
+          35,
+          67,
+          68,
+          78,
+          75,
+          79,
+          69,
+          70,
+          18,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25"
+        ]
+      }
     },
     {
       "appid": 1366540,
@@ -6619,7 +6968,22 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1366540/55fa75b8e6586427da47f58f320e975e990a460b.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1366540/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1366540/"
+      "storeUrl": "https://store.steampowered.com/app/1366540/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          62
+        ],
+        "genreIds": [
+          "23",
+          "28",
+          "2",
+          "70"
+        ]
+      }
     },
     {
       "appid": 1433340,
@@ -6629,7 +6993,27 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1433340/fce7f7d050591517802de41deff591e42d495601.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1433340/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1433340/"
+      "storeUrl": "https://store.steampowered.com/app/1433340/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          29,
+          41,
+          42,
+          43,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "28"
+        ]
+      }
     },
     {
       "appid": 1510580,
@@ -6639,7 +7023,22 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1510580/7a7c69259b7d1f622d8f7c0d34f93a85683c8fa4.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1510580/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1510580/"
+      "storeUrl": "https://store.steampowered.com/app/1510580/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "23",
+          "28"
+        ]
+      }
     },
     {
       "appid": 1515950,
@@ -6649,7 +7048,30 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1515950/2715c826a625a0cac409491c1982a459a71f7349.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1515950/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1515950/"
+      "storeUrl": "https://store.steampowered.com/app/1515950/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          39,
+          24,
+          22,
+          28,
+          29,
+          35,
+          23,
+          25,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "37"
+        ]
+      }
     },
     {
       "appid": 1586800,
@@ -6659,7 +7081,24 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1586800/b5a095e562863dae985be2bf9ab7ae8e4179d3a9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1586800/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1586800/"
+      "storeUrl": "https://store.steampowered.com/app/1586800/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "4",
+          "23"
+        ]
+      }
     },
     {
       "appid": 1902710,
@@ -6669,7 +7108,23 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1902710/020e2e9983ba887272cac08625b6ab2e2bdabb7d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1902710/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1902710/"
+      "storeUrl": "https://store.steampowered.com/app/1902710/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "3"
+        ]
+      }
     },
     {
       "appid": 1929870,
@@ -6679,7 +7134,21 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1929870/af66323cd4d2a0ad17d326a9c576fbd1a63ab8d5.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1929870/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1929870/"
+      "storeUrl": "https://store.steampowered.com/app/1929870/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          18,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
+        ]
+      }
     },
     {
       "appid": 2149010,
@@ -6689,7 +7158,23 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2149010/6d1326d97decbaeddca21c14daa5041d464a1a63.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2149010/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2149010/"
+      "storeUrl": "https://store.steampowered.com/app/2149010/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          55,
+          57,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25"
+        ]
+      }
     },
     {
       "appid": 2218460,
@@ -6699,7 +7184,35 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2218460/ccdf521a210177005f1af13603930b15df7ab1fe.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2218460/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2218460/"
+      "storeUrl": "https://store.steampowered.com/app/2218460/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          27,
+          22,
+          29,
+          67,
+          68,
+          78,
+          74,
+          69,
+          18,
+          23,
+          15,
+          25,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23"
+        ]
+      }
     },
     {
       "appid": 2747770,
@@ -6709,7 +7222,27 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2747770/08d55c896ec4ed99c85c2418a6dfbbfcf49f2476.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2747770/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2747770/"
+      "storeUrl": "https://store.steampowered.com/app/2747770/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          28,
+          64,
+          67,
+          66,
+          68,
+          75,
+          76,
+          80,
+          74,
+          62
+        ],
+        "genreIds": [
+          "23"
+        ]
+      }
     },
     {
       "appid": 2796010,
@@ -6719,7 +7252,38 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2796010/a80c96dde162ef5ed25704384b6e312b6b6cddf9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2796010/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2796010/"
+      "storeUrl": "https://store.steampowered.com/app/2796010/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          39,
+          24,
+          22,
+          28,
+          29,
+          60,
+          55,
+          56,
+          57,
+          58,
+          23,
+          15,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23",
+          "28",
+          "2",
+          "37"
+        ]
+      }
     },
     {
       "appid": 2828500,
@@ -6729,7 +7293,16 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2828500/0866a1d27e96a96c7d013c41eb6fa2ec6a935a7d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2828500/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2828500/"
+      "storeUrl": "https://store.steampowered.com/app/2828500/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [],
+        "genreIds": [
+          "37",
+          "57"
+        ]
+      }
     },
     {
       "appid": 3097560,
@@ -6739,7 +7312,26 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3097560/5342338ad1fd3561c1ed8c6d2ed4ae0e6ada2e9c.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3097560/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/3097560/"
+      "storeUrl": "https://store.steampowered.com/app/3097560/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          9,
+          38,
+          62
+        ],
+        "genreIds": [
+          "4",
+          "23",
+          "28",
+          "2",
+          "70"
+        ]
+      }
     },
     {
       "appid": 3240220,
@@ -6749,7 +7341,31 @@
       "lastPlayed": null,
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3240220/8355a7bbdb704f727bfba80ec56bc7228991338e.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3240220/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/3240220/"
+      "storeUrl": "https://store.steampowered.com/app/3240220/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          35,
+          57,
+          58,
+          18,
+          41,
+          42
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "9"
+        ]
+      }
     }
   ]
 }
