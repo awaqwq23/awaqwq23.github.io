@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-11T07:38:49.400Z",
+  "updatedAt": "2026-08-11T13:43:55.772Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 231,
     "playedGameCount": 172,
-    "totalMinutes": 167436,
-    "recentMinutes": 1524
+    "totalMinutes": 167590,
+    "recentMinutes": 1678
   },
   "games": [
     {
@@ -49,9 +49,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 5846,
-      "playtimeTwoWeeks": 964,
-      "lastPlayed": "2026-08-11T07:34:45.000Z",
+      "playtimeForever": 5870,
+      "playtimeTwoWeeks": 989,
+      "lastPlayed": "2026-08-11T07:59:05.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/"
@@ -59,9 +59,9 @@
     {
       "appid": 286160,
       "name": "Tabletop Simulator",
-      "playtimeForever": 5637,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-07-12T17:00:13.000Z",
+      "playtimeForever": 5697,
+      "playtimeTwoWeeks": 60,
+      "lastPlayed": "2026-08-11T13:27:05.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/286160/19f5b90e3c7084758f885ded843631b13929fa26.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/286160/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/286160/"
@@ -147,6 +147,16 @@
       "storeUrl": "https://store.steampowered.com/app/1623730/"
     },
     {
+      "appid": 250900,
+      "name": "The Binding of Isaac: Rebirth",
+      "playtimeForever": 3076,
+      "playtimeTwoWeeks": 531,
+      "lastPlayed": "2026-08-11T12:21:38.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/250900/"
+    },
+    {
       "appid": 3419430,
       "name": "Bongo Cat",
       "playtimeForever": 3074,
@@ -155,16 +165,6 @@
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3419430/b25d4b846c745bdf809f5657af00298e0ae62465.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3419430/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/3419430/"
-    },
-    {
-      "appid": 250900,
-      "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 3006,
-      "playtimeTwoWeeks": 462,
-      "lastPlayed": "2026-08-10T07:34:08.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/250900/"
     },
     {
       "appid": 2826180,
