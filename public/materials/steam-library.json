@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-11T02:28:40.324Z",
+  "updatedAt": "2026-08-11T07:38:49.400Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 231,
     "playedGameCount": 172,
-    "totalMinutes": 167207,
-    "recentMinutes": 1296
+    "totalMinutes": 167436,
+    "recentMinutes": 1524
   },
   "games": [
     {
@@ -47,6 +47,16 @@
       "storeUrl": "https://store.steampowered.com/app/105600/"
     },
     {
+      "appid": 2868840,
+      "name": "Slay the Spire 2",
+      "playtimeForever": 5846,
+      "playtimeTwoWeeks": 964,
+      "lastPlayed": "2026-08-11T07:34:45.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2868840/"
+    },
+    {
       "appid": 286160,
       "name": "Tabletop Simulator",
       "playtimeForever": 5637,
@@ -55,16 +65,6 @@
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/286160/19f5b90e3c7084758f885ded843631b13929fa26.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/286160/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/286160/"
-    },
-    {
-      "appid": 2868840,
-      "name": "Slay the Spire 2",
-      "playtimeForever": 5617,
-      "playtimeTwoWeeks": 736,
-      "lastPlayed": "2026-08-10T16:11:52.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2868840/"
     },
     {
       "appid": 2060160,
