@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-12T13:49:12.910Z",
+  "updatedAt": "2026-08-12T19:27:50.052Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 232,
     "playedGameCount": 173,
-    "totalMinutes": 167905,
-    "recentMinutes": 1992
+    "totalMinutes": 167994,
+    "recentMinutes": 2079
   },
   "games": [
     {
@@ -48,9 +48,9 @@
     {
       "appid": 431960,
       "name": "Wallpaper Engine",
-      "playtimeForever": 15915,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-06-15T15:05:49.000Z",
+      "playtimeForever": 15918,
+      "playtimeTwoWeeks": 3,
+      "lastPlayed": "2026-08-12T15:42:01.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/431960/72edaed9d748c6cf7397ffb1c83f0b837b9ebd9d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/431960/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/431960/",
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 6032,
-      "playtimeTwoWeeks": 1151,
-      "lastPlayed": "2026-08-12T13:47:04.000Z",
+      "playtimeForever": 6096,
+      "playtimeTwoWeeks": 1214,
+      "lastPlayed": "2026-08-12T14:50:35.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -2761,6 +2761,47 @@
       }
     },
     {
+      "appid": 438100,
+      "name": "VRChat",
+      "playtimeForever": 222,
+      "playtimeTwoWeeks": 21,
+      "lastPlayed": "2026-08-12T15:15:46.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/438100/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          20,
+          49,
+          36,
+          9,
+          38,
+          27,
+          28,
+          52,
+          53,
+          35,
+          55,
+          56,
+          57,
+          58,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "29",
+          "28",
+          "18",
+          "37",
+          "70"
+        ]
+      }
+    },
+    {
       "appid": 1793250,
       "name": "Take Me To The Dungeon!!",
       "playtimeForever": 215,
@@ -2953,47 +2994,6 @@
           "1",
           "4",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 438100,
-      "name": "VRChat",
-      "playtimeForever": 200,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-07-26T11:34:36.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/438100/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": true,
-        "categoryIds": [
-          1,
-          20,
-          49,
-          36,
-          9,
-          38,
-          27,
-          28,
-          52,
-          53,
-          35,
-          55,
-          56,
-          57,
-          58,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "4",
-          "29",
-          "28",
-          "18",
-          "37",
-          "70"
         ]
       }
     },
