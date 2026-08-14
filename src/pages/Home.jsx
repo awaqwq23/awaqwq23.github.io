@@ -78,7 +78,7 @@ const features = [
 const stats = [
   { icon: 'fa-dice', value: 7, suffix: '', label: '款小游戏' },
   { icon: 'fa-bookmark', value: 260, suffix: '+', label: '条收藏' },
-  { icon: 'fa-pen-fancy', value: 16, suffix: '', label: '篇文章' },
+  { icon: 'fa-pen-fancy', value: 17, suffix: '', label: '篇文章' },
   { icon: 'fa-mug-hot', value: 2026, suffix: '', label: '一直在折腾' },
 ]
 
