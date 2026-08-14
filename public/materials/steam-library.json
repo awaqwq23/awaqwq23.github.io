@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-13T19:26:35.846Z",
+  "updatedAt": "2026-08-14T13:44:44.161Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
+    "status": 1,
     "lastLogoff": "2026-08-13T16:48:18.000Z"
   },
   "stats": {
     "gameCount": 232,
     "playedGameCount": 173,
-    "totalMinutes": 168134,
-    "recentMinutes": 2220
+    "totalMinutes": 168164,
+    "recentMinutes": 2250
   },
   "games": [
     {
@@ -2623,6 +2623,47 @@
       }
     },
     {
+      "appid": 438100,
+      "name": "VRChat",
+      "playtimeForever": 252,
+      "playtimeTwoWeeks": 51,
+      "lastPlayed": "2026-08-14T13:29:03.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/438100/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          20,
+          49,
+          36,
+          9,
+          38,
+          27,
+          28,
+          52,
+          53,
+          35,
+          55,
+          56,
+          57,
+          58,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "29",
+          "28",
+          "18",
+          "37",
+          "70"
+        ]
+      }
+    },
+    {
       "appid": 2853160,
       "name": "SHOOPER NOVA",
       "playtimeForever": 247,
@@ -2757,47 +2798,6 @@
           "4",
           "23",
           "2"
-        ]
-      }
-    },
-    {
-      "appid": 438100,
-      "name": "VRChat",
-      "playtimeForever": 222,
-      "playtimeTwoWeeks": 21,
-      "lastPlayed": "2026-08-12T15:15:46.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/438100/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": true,
-        "categoryIds": [
-          1,
-          20,
-          49,
-          36,
-          9,
-          38,
-          27,
-          28,
-          52,
-          53,
-          35,
-          55,
-          56,
-          57,
-          58,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "4",
-          "29",
-          "28",
-          "18",
-          "37",
-          "70"
         ]
       }
     },
