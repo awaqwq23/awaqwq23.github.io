@@ -815,7 +815,22 @@ ul { list-style: none; }
   border: 0;
   cursor: zoom-in;
 }
-.media-tile img { width: 100%; height: auto; min-height: 100px; background: var(--surface-2); }
+.media-tile > button:disabled { cursor: wait; }
+.media-tile img { display: block; width: 100%; height: auto; min-height: 100px; background: var(--surface-2); }
+.media-tile-placeholder {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  background: linear-gradient(135deg, var(--surface-2), var(--surface));
+  font-size: 0.66rem;
+  font-weight: 750;
+}
+.media-tile-placeholder > i { color: var(--primary); font-size: 1.15rem; }
+.media-tile-placeholder.has-error > i { color: #ef4444; }
 .media-tile-zoom {
   position: absolute;
   inset: auto 0.55rem 0.55rem auto;
@@ -887,8 +902,12 @@ body.modal-open { overflow: hidden; }
 .lightbox-toolbar span { flex: 0 0 auto; color: #94a3b8; font: 700 0.62rem var(--font-mono); }
 .icon-action { width: 36px; height: 36px; display: grid; place-items: center; padding: 0; color: #dbeafe !important; background: rgba(255, 255, 255, 0.08); border: 0; border-radius: 9px; cursor: pointer; }
 .icon-action:hover { color: white !important; background: rgba(255, 255, 255, 0.16); }
+.icon-action.is-disabled { opacity: 0.45; cursor: wait; }
 .lightbox-stage { position: relative; min-height: 0; flex: 1; display: grid; place-items: center; padding: 1rem 4rem; overflow: auto; }
 .lightbox-stage img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.lightbox-loading { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; color: #cbd5e1; font-size: 0.75rem; }
+.lightbox-loading i { color: #93c5fd; font-size: 1.6rem; }
+.lightbox-loading.has-error i { color: #fca5a5; }
 .lightbox-arrow { position: fixed; top: 50%; z-index: 1; width: 43px; height: 54px; display: grid; place-items: center; color: white; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 11px; cursor: pointer; }
 .lightbox-arrow:hover { background: rgba(255, 255, 255, 0.2); }
 .lightbox-arrow.prev { left: max(1.4rem, calc(50vw - 620px)); }

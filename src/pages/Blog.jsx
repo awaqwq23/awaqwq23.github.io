@@ -6,6 +6,7 @@ import shinozawaArticle from '../../docs/charactor/筱泽广 学马仕/文档/1.
 
 const PASSWORD_HASH = '3831024cd98f9dea0d83f434bbd0a7492b068b1ca4d39f1904eaf35ae9361c27'
 const GALLERY_PAGE_SIZE = 12
+const GALLERY_LOAD_CONCURRENCY = 3
 
 const modules = [
   { id: 'posts', icon: 'fa-pen-nib', eyebrow: 'WRITING', title: '普通博客', desc: '随笔、生活记录与偶尔冒出来的想法', color: 'blue' },
@@ -88,6 +89,7 @@ function Modal({ children, label, onClose, className = '' }) {
 
 function Lightbox({ images, index, onChange, onClose }) {
   const image = images[index]
+  const imageReady = image?.status === 'ready' && image.src
 
   useEffect(() => {
     const onKeyDown = event => {
@@ -108,9 +110,13 @@ function Lightbox({ images, index, onChange, onClose }) {
           <span>{index + 1} / {images.length}</span>
         </div>
         <div>
-          <a className="icon-action" href={image.src} download={image.name} title="下载原图" aria-label={`下载 ${image.name}`}>
-            <i className="fas fa-download" />
-          </a>
+          {imageReady ? (
+            <a className="icon-action" href={image.src} download={image.name} title="下载原图" aria-label={`下载 ${image.name}`}>
+              <i className="fas fa-download" />
+            </a>
+          ) : (
+            <span className="icon-action is-disabled" title="图片加载中" aria-hidden="true"><i className="fas fa-spinner fa-spin" /></span>
+          )}
           <button className="icon-action" type="button" onClick={onClose} title="关闭" aria-label="关闭大图">
             <i className="fas fa-times" />
           </button>
@@ -122,7 +128,14 @@ function Lightbox({ images, index, onChange, onClose }) {
             <i className="fas fa-chevron-left" />
           </button>
         )}
-        <img src={image.src} alt={image.name} />
+        {imageReady ? (
+          <img src={image.src} alt={image.name} />
+        ) : (
+          <div className={`lightbox-loading${image.status === 'error' ? ' has-error' : ''}`} role="status">
+            <i className={`fas ${image.status === 'error' ? 'fa-circle-exclamation' : 'fa-spinner fa-spin'}`} />
+            <span>{image.status === 'error' ? '图片加载失败，请切页后重试' : '正在加载当前页图片…'}</span>
+          </div>
+        )}
         {images.length > 1 && (
           <button className="lightbox-arrow next" type="button" onClick={() => onChange((index + 1) % images.length)} aria-label="下一张">
             <i className="fas fa-chevron-right" />
@@ -133,16 +146,89 @@ function Lightbox({ images, index, onChange, onClose }) {
   )
 }
 
+function useDisposablePageImages(images, page) {
+  const sourceImages = useMemo(
+    () => images.slice((page - 1) * GALLERY_PAGE_SIZE, page * GALLERY_PAGE_SIZE),
+    [images, page],
+  )
+  const pageKey = useMemo(
+    () => `${page}:${sourceImages.map(image => image.src).join('|')}`,
+    [page, sourceImages],
+  )
+  const [loadedPage, setLoadedPage] = useState({ key: '', items: [] })
+
+  useEffect(() => {
+    const controller = new AbortController()
+    const objectUrls = new Set()
+    let active = true
+    let nextIndex = 0
+
+    setLoadedPage({
+      key: pageKey,
+      items: sourceImages.map(image => ({ ...image, assetSrc: image.src, src: null, status: 'loading' })),
+    })
+
+    const updateItem = (index, patch) => {
+      setLoadedPage(current => {
+        if (!active || current.key !== pageKey) return current
+        const items = [...current.items]
+        items[index] = { ...items[index], ...patch }
+        return { ...current, items }
+      })
+    }
+
+    const loadNext = async () => {
+      while (active) {
+        const index = nextIndex
+        nextIndex += 1
+        if (index >= sourceImages.length) return
+
+        try {
+          const response = await fetch(sourceImages[index].src, {
+            cache: 'no-store',
+            signal: controller.signal,
+          })
+          if (!response.ok) throw new Error(`图片请求失败：${response.status}`)
+
+          const blobUrl = URL.createObjectURL(await response.blob())
+          if (!active) {
+            URL.revokeObjectURL(blobUrl)
+            return
+          }
+          objectUrls.add(blobUrl)
+          updateItem(index, { src: blobUrl, status: 'ready' })
+        } catch (error) {
+          if (error.name !== 'AbortError') updateItem(index, { status: 'error' })
+        }
+      }
+    }
+
+    const workerCount = Math.min(GALLERY_LOAD_CONCURRENCY, sourceImages.length)
+    void Promise.all(Array.from({ length: workerCount }, () => loadNext()))
+
+    return () => {
+      active = false
+      controller.abort()
+      objectUrls.forEach(url => URL.revokeObjectURL(url))
+      objectUrls.clear()
+    }
+  }, [pageKey, sourceImages])
+
+  if (loadedPage.key === pageKey) return loadedPage.items
+  return sourceImages.map(image => ({ ...image, assetSrc: image.src, src: null, status: 'loading' }))
+}
+
 function MediaGallery({ images, title, privateGallery = false }) {
   const [page, setPage] = useState(1)
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const pageCount = Math.max(1, Math.ceil(images.length / GALLERY_PAGE_SIZE))
-  const pageImages = images.slice((page - 1) * GALLERY_PAGE_SIZE, page * GALLERY_PAGE_SIZE)
+  const pageImages = useDisposablePageImages(images, page)
 
   useEffect(() => {
     setPage(1)
   }, [images])
   useEffect(() => {
+    setLightboxIndex(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [page])
 
@@ -158,16 +244,23 @@ function MediaGallery({ images, title, privateGallery = false }) {
 
       <div className="media-gallery-grid">
         {pageImages.map((image, localIndex) => {
-          const absoluteIndex = (page - 1) * GALLERY_PAGE_SIZE + localIndex
+          const imageReady = image.status === 'ready' && image.src
           return (
-            <figure className="media-tile" key={image.src}>
-              <button type="button" onClick={() => setLightboxIndex(absoluteIndex)} aria-label={`查看大图 ${image.name}`}>
-                <img src={image.src} alt={`${title} ${image.name}`} loading="lazy" />
-                <span className="media-tile-zoom"><i className="fas fa-expand" /> 查看大图</span>
+            <figure className="media-tile" key={image.assetSrc}>
+              <button type="button" onClick={() => setLightboxIndex(localIndex)} aria-label={`查看大图 ${image.name}`} disabled={!imageReady}>
+                {imageReady ? (
+                  <img src={image.src} alt={`${title} ${image.name}`} loading="lazy" decoding="async" />
+                ) : (
+                  <span className={`media-tile-placeholder${image.status === 'error' ? ' has-error' : ''}`} role="status">
+                    <i className={`fas ${image.status === 'error' ? 'fa-circle-exclamation' : 'fa-spinner fa-spin'}`} />
+                    <span>{image.status === 'error' ? '加载失败' : '加载中…'}</span>
+                  </span>
+                )}
+                {imageReady && <span className="media-tile-zoom"><i className="fas fa-expand" /> 查看大图</span>}
               </button>
               <figcaption>
                 <span>{image.name}</span>
-                <a href={image.src} download={image.name} aria-label={`下载 ${image.name}`} title="下载图片"><i className="fas fa-download" /></a>
+                {imageReady && <a href={image.src} download={image.name} aria-label={`下载 ${image.name}`} title="下载图片"><i className="fas fa-download" /></a>}
               </figcaption>
             </figure>
           )
@@ -191,7 +284,7 @@ function MediaGallery({ images, title, privateGallery = false }) {
       )}
 
       {lightboxIndex !== null && (
-        <Lightbox images={images} index={lightboxIndex} onChange={setLightboxIndex} onClose={() => setLightboxIndex(null)} />
+        <Lightbox images={pageImages} index={lightboxIndex} onChange={setLightboxIndex} onClose={() => setLightboxIndex(null)} />
       )}
     </section>
   )
