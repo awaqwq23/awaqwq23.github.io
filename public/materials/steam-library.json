@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-15T12:59:46.290Z",
+  "updatedAt": "2026-08-15T18:48:06.046Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-08-15T12:27:46.000Z"
+    "status": 0,
+    "lastLogoff": "2026-08-15T14:54:39.000Z"
   },
   "stats": {
     "gameCount": 232,
     "playedGameCount": 173,
-    "totalMinutes": 168259,
-    "recentMinutes": 2145
+    "totalMinutes": 168393,
+    "recentMinutes": 2066
   },
   "games": [
     {
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 6236,
-      "playtimeTwoWeeks": 1355,
-      "lastPlayed": "2026-08-13T16:15:20.000Z",
+      "playtimeForever": 6275,
+      "playtimeTwoWeeks": 1266,
+      "lastPlayed": "2026-08-15T15:29:01.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -358,9 +358,9 @@
     {
       "appid": 646570,
       "name": "Slay the Spire",
-      "playtimeForever": 3454,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-08-15T12:57:48.000Z",
+      "playtimeForever": 3549,
+      "playtimeTwoWeeks": 94,
+      "lastPlayed": "2026-08-15T14:32:51.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/646570/33ea124ea8c03a9ce7012d34c3b348a351612fca.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/646570/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/646570/",
@@ -466,7 +466,7 @@
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
       "playtimeForever": 3077,
-      "playtimeTwoWeeks": 429,
+      "playtimeTwoWeeks": 345,
       "lastPlayed": "2026-08-15T12:27:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
