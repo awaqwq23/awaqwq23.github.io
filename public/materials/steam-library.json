@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-14T19:15:19.061Z",
+  "updatedAt": "2026-08-15T12:59:46.290Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
-    "lastLogoff": "2026-08-14T18:57:21.000Z"
+    "status": 1,
+    "lastLogoff": "2026-08-15T12:27:46.000Z"
   },
   "stats": {
     "gameCount": 232,
     "playedGameCount": 173,
-    "totalMinutes": 168258,
-    "recentMinutes": 2344
+    "totalMinutes": 168259,
+    "recentMinutes": 2145
   },
   "games": [
     {
@@ -360,7 +360,7 @@
       "name": "Slay the Spire",
       "playtimeForever": 3454,
       "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-03-05T15:35:09.000Z",
+      "lastPlayed": "2026-08-15T12:57:48.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/646570/33ea124ea8c03a9ce7012d34c3b348a351612fca.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/646570/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/646570/",
@@ -465,9 +465,9 @@
     {
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 3076,
-      "playtimeTwoWeeks": 531,
-      "lastPlayed": "2026-08-11T12:21:38.000Z",
+      "playtimeForever": 3077,
+      "playtimeTwoWeeks": 429,
+      "lastPlayed": "2026-08-15T12:27:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/250900/",
@@ -1821,7 +1821,7 @@
       "appid": 774171,
       "name": "Muse Dash",
       "playtimeForever": 452,
-      "playtimeTwoWeeks": 18,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-01T11:11:37.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/774171/116c4098769bb51aed2d654f2943771b68c29afa.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/774171/header.jpg",
@@ -1877,7 +1877,7 @@
       "appid": 531510,
       "name": "Just Shapes & Beats",
       "playtimeForever": 428,
-      "playtimeTwoWeeks": 65,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-01T10:15:18.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/531510/12b5546afe2152bd13aa788e0e4cb375e2487297.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/531510/header.jpg",
@@ -3869,7 +3869,7 @@
       "appid": 774181,
       "name": "Rhythm Doctor",
       "playtimeForever": 97,
-      "playtimeTwoWeeks": 14,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-01T09:03:17.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/774181/9b668ca421dd493945e5b1bbfdcf8d124a316864.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/774181/header.jpg",
