@@ -9,6 +9,46 @@ const GALLERY_PAGE_SIZE = 9
 const LIGHTBOX_MIN_ZOOM = 0.5
 const LIGHTBOX_MAX_ZOOM = 5
 const LIGHTBOX_ZOOM_STEP = 0.25
+const PREFETCH_HISTORY_LIMIT = 6
+
+const prefetchedOriginals = []
+let activeOriginalPrefetch = null
+let queuedOriginalPrefetch = null
+
+function rememberPrefetchedOriginal(src) {
+  const existingIndex = prefetchedOriginals.indexOf(src)
+  if (existingIndex >= 0) prefetchedOriginals.splice(existingIndex, 1)
+  prefetchedOriginals.push(src)
+  if (prefetchedOriginals.length > PREFETCH_HISTORY_LIMIT) prefetchedOriginals.shift()
+}
+
+function runQueuedOriginalPrefetch() {
+  if (activeOriginalPrefetch || !queuedOriginalPrefetch) return
+  const src = queuedOriginalPrefetch
+  queuedOriginalPrefetch = null
+  const loader = new Image()
+  activeOriginalPrefetch = { src, loader }
+  loader.decoding = 'async'
+  loader.fetchPriority = 'low'
+
+  const finish = loaded => {
+    if (loaded) rememberPrefetchedOriginal(src)
+    loader.onload = null
+    loader.onerror = null
+    activeOriginalPrefetch = null
+    runQueuedOriginalPrefetch()
+  }
+
+  loader.onload = () => finish(true)
+  loader.onerror = () => finish(false)
+  loader.src = src
+}
+
+function prefetchOriginal(src) {
+  if (!src || prefetchedOriginals.includes(src) || activeOriginalPrefetch?.src === src) return
+  queuedOriginalPrefetch = src
+  runQueuedOriginalPrefetch()
+}
 
 const modules = [
   { id: 'posts', icon: 'fa-pen-nib', eyebrow: 'WRITING', title: '普通博客', desc: '随笔、生活记录与偶尔冒出来的想法', color: 'blue' },
@@ -208,13 +248,28 @@ function Lightbox({ images, index, onChange, onClose }) {
             style={{ width: `${frameZoom * 100}%`, height: `${frameZoom * 100}%` }}
           >
             <img
-              className={imageReady ? 'is-ready' : ''}
+              className={`lightbox-preview${imageReady ? ' is-hidden' : ''}`}
+              src={image.thumbnailSrc}
+              alt=""
+              decoding="async"
+              draggable="false"
+              aria-hidden="true"
+              style={{ maxWidth: `${imageZoom * 100}%`, maxHeight: `${imageZoom * 100}%` }}
+            />
+            <img
+              className={`lightbox-original${imageReady ? ' is-ready' : ''}`}
               src={image.src}
               alt={image.name}
               decoding="async"
               draggable="false"
+              fetchPriority="high"
               style={{ maxWidth: `${imageZoom * 100}%`, maxHeight: `${imageZoom * 100}%` }}
-              onLoad={() => { setLoadedSrc(image.src); setFailedSrc('') }}
+              onLoad={() => {
+                setLoadedSrc(image.src)
+                setFailedSrc('')
+                rememberPrefetchedOriginal(image.src)
+                if (images.length > 1) prefetchOriginal(images[(index + 1) % images.length].src)
+              }}
               onError={() => setFailedSrc(image.src)}
             />
           </div>
@@ -224,8 +279,8 @@ function Lightbox({ images, index, onChange, onClose }) {
               <span>{imageFailed ? '原图加载失败，请稍后重试' : '正在加载原图…'}</span>
             </div>
           )}
-          <div className="lightbox-zoom-hint">滚轮或 + / − 缩放 · 0 重置 · ← / → 切换</div>
         </div>
+        <div className="lightbox-zoom-hint">滚轮或 + / − 缩放 · 0 重置 · ← / → 切换</div>
         {images.length > 1 && (
           <button className="lightbox-arrow next" type="button" onClick={() => onChange((index + 1) % images.length)} aria-label="下一张">
             <i className="fas fa-chevron-right" />
@@ -266,7 +321,14 @@ function MediaGallery({ images, title, privateGallery = false }) {
       <div className="media-gallery-grid">
         {pageImages.map((image, localIndex) => (
           <figure className="media-tile" key={image.src}>
-            <button type="button" onClick={() => setLightboxIndex(localIndex)} aria-label={`查看大图 ${image.name}`}>
+            <button
+              type="button"
+              onClick={() => setLightboxIndex(localIndex)}
+              onPointerEnter={() => prefetchOriginal(image.src)}
+              onPointerDown={() => prefetchOriginal(image.src)}
+              onFocus={() => prefetchOriginal(image.src)}
+              aria-label={`查看大图 ${image.name}`}
+            >
               <img
                 src={image.thumbnailSrc}
                 alt={`${title} ${image.name}`}

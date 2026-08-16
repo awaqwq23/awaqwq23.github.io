@@ -17,29 +17,46 @@ async function trimCache(cache, maxEntries) {
   await Promise.all(keys.slice(0, Math.max(0, keys.length - maxEntries)).map(key => cache.delete(key)))
 }
 
-async function cacheFirst(request, cacheName, maxEntries) {
+async function touchCache(cache, request, response) {
+  await cache.delete(request)
+  await cache.put(request, response)
+}
+
+async function storeInCache(cache, request, response, maxEntries) {
+  await cache.put(request, response)
+  await trimCache(cache, maxEntries)
+}
+
+async function cacheFirst(request, cacheName, maxEntries, scheduleBackgroundTask) {
   const cache = await caches.open(cacheName)
   const cached = await cache.match(request)
   if (cached) {
-    try {
-      await cache.delete(request)
-      await cache.put(request, cached.clone())
-    } catch {
-      // 缓存维护失败时仍返回已经读到的图片。
-    }
+    scheduleBackgroundTask(touchCache(cache, request, cached.clone()))
     return cached
   }
 
   const response = await fetch(request)
   if (response.ok) {
-    try {
-      await cache.put(request, response.clone())
-      await trimCache(cache, maxEntries)
-    } catch {
-      // 浏览器配额不足时退回普通网络响应，不阻塞图片显示。
-    }
+    scheduleBackgroundTask(storeInCache(cache, request, response.clone(), maxEntries))
   }
   return response
+}
+
+function respondWithBoundedCache(event, cacheName, maxEntries) {
+  const backgroundTasks = []
+  const responsePromise = cacheFirst(
+    event.request,
+    cacheName,
+    maxEntries,
+    task => backgroundTasks.push(task),
+  )
+
+  event.respondWith(responsePromise)
+  event.waitUntil(
+    responsePromise
+      .then(() => Promise.allSettled(backgroundTasks))
+      .catch(() => undefined),
+  )
 }
 
 self.addEventListener('fetch', event => {
@@ -50,11 +67,11 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin || !url.pathname.startsWith('/assets/')) return
 
   if (/\/thumb-[^/]+\.webp$/i.test(url.pathname)) {
-    event.respondWith(cacheFirst(request, THUMBNAIL_CACHE, 80))
+    respondWithBoundedCache(event, THUMBNAIL_CACHE, 80)
     return
   }
 
   if (/\.(?:avif|gif|jpe?g|png|webp)$/i.test(url.pathname)) {
-    event.respondWith(cacheFirst(request, ORIGINAL_CACHE, 3))
+    respondWithBoundedCache(event, ORIGINAL_CACHE, 3)
   }
 })
