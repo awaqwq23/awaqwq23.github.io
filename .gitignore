@@ -1,6 +1,7 @@
 node_modules
 dist
 .vite
+docs/.gallery-thumbnails/
 *.local
 .DS_Store
 Thumbs.db

@@ -4,7 +4,10 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
+    "thumbnails": "node .github/scripts/generate-gallery-thumbnails.mjs",
+    "predev": "npm run thumbnails",
     "dev": "vite",
+    "prebuild": "npm run thumbnails",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -15,6 +18,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "6.0.4",
+    "sharp": "^0.35.3",
     "vite": "8.1.5"
   }
 }

@@ -1,12 +1,14 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import PostCard from '../components/PostCard'
 import { personalImages, shinozawaImages } from '../data/blogMedia'
 import shinozawaArticle from '../../docs/charactor/筱泽广 学马仕/文档/1.md?raw'
 
 const PASSWORD_HASH = '3831024cd98f9dea0d83f434bbd0a7492b068b1ca4d39f1904eaf35ae9361c27'
-const GALLERY_PAGE_SIZE = 12
-const GALLERY_LOAD_CONCURRENCY = 3
+const GALLERY_PAGE_SIZE = 9
+const LIGHTBOX_MIN_ZOOM = 0.5
+const LIGHTBOX_MAX_ZOOM = 5
+const LIGHTBOX_ZOOM_STEP = 0.25
 
 const modules = [
   { id: 'posts', icon: 'fa-pen-nib', eyebrow: 'WRITING', title: '普通博客', desc: '随笔、生活记录与偶尔冒出来的想法', color: 'blue' },
@@ -20,7 +22,7 @@ const characters = [
     name: '筱泽广',
     source: '学园偶像大师',
     note: '天才、慵懒，以及无法预测的可爱',
-    cover: shinozawaImages[0]?.src,
+    cover: shinozawaImages[0]?.thumbnailSrc,
     ready: true,
   },
   { id: 'gotoh-hitori', name: '后藤一里', source: '孤独摇滚！', note: '内容整理中，先让小孤独占个位', ready: false },
@@ -89,18 +91,83 @@ function Modal({ children, label, onClose, className = '' }) {
 
 function Lightbox({ images, index, onChange, onClose }) {
   const image = images[index]
-  const imageReady = image?.status === 'ready' && image.src
+  const viewportRef = useRef(null)
+  const [zoom, setZoom] = useState(1)
+  const [loadedSrc, setLoadedSrc] = useState('')
+  const [failedSrc, setFailedSrc] = useState('')
+  const imageReady = image?.src === loadedSrc
+  const imageFailed = image?.src === failedSrc
+
+  const updateZoom = useCallback((nextValue, anchor) => {
+    const nextZoom = Math.min(LIGHTBOX_MAX_ZOOM, Math.max(LIGHTBOX_MIN_ZOOM, nextValue))
+    if (nextZoom === zoom) return
+
+    const viewport = viewportRef.current
+    const rect = viewport?.getBoundingClientRect()
+    const anchorX = anchor && rect ? anchor.clientX - rect.left : (viewport?.clientWidth || 0) / 2
+    const anchorY = anchor && rect ? anchor.clientY - rect.top : (viewport?.clientHeight || 0) / 2
+    const contentXRatio = viewport?.scrollWidth ? (viewport.scrollLeft + anchorX) / viewport.scrollWidth : 0.5
+    const contentYRatio = viewport?.scrollHeight ? (viewport.scrollTop + anchorY) / viewport.scrollHeight : 0.5
+
+    setZoom(nextZoom)
+    requestAnimationFrame(() => {
+      if (!viewport) return
+      viewport.scrollLeft = contentXRatio * viewport.scrollWidth - anchorX
+      viewport.scrollTop = contentYRatio * viewport.scrollHeight - anchorY
+    })
+  }, [zoom])
+
+  useEffect(() => {
+    setZoom(1)
+    const viewport = viewportRef.current
+    if (viewport) {
+      viewport.scrollLeft = 0
+      viewport.scrollTop = 0
+    }
+  }, [image?.src])
 
   useEffect(() => {
     const onKeyDown = event => {
-      if (event.key === 'ArrowLeft') onChange((index - 1 + images.length) % images.length)
-      if (event.key === 'ArrowRight') onChange((index + 1) % images.length)
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault()
+        onChange((index - 1 + images.length) % images.length)
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault()
+        onChange((index + 1) % images.length)
+      }
+      if (event.key === '+' || event.key === '=') {
+        event.preventDefault()
+        updateZoom(zoom + LIGHTBOX_ZOOM_STEP)
+      }
+      if (event.key === '-' || event.key === '_') {
+        event.preventDefault()
+        updateZoom(zoom - LIGHTBOX_ZOOM_STEP)
+      }
+      if (event.key === '0') {
+        event.preventDefault()
+        updateZoom(1)
+      }
     }
     document.addEventListener('keydown', onKeyDown)
     return () => document.removeEventListener('keydown', onKeyDown)
-  }, [images.length, index, onChange])
+  }, [images.length, index, onChange, updateZoom, zoom])
+
+  useEffect(() => {
+    const viewport = viewportRef.current
+    if (!viewport) return undefined
+    const onWheel = event => {
+      event.preventDefault()
+      updateZoom(zoom + (event.deltaY < 0 ? LIGHTBOX_ZOOM_STEP : -LIGHTBOX_ZOOM_STEP), event)
+    }
+    viewport.addEventListener('wheel', onWheel, { passive: false })
+    return () => viewport.removeEventListener('wheel', onWheel)
+  }, [updateZoom, zoom])
 
   if (!image) return null
+
+  const frameZoom = zoom > 1 ? zoom : 1
+  const imageZoom = zoom > 1 ? 1 : zoom
 
   return (
     <Modal label={`查看大图：${image.name}`} onClose={onClose} className="lightbox-modal">
@@ -109,14 +176,21 @@ function Lightbox({ images, index, onChange, onClose }) {
           <strong>{image.name}</strong>
           <span>{index + 1} / {images.length}</span>
         </div>
-        <div>
-          {imageReady ? (
-            <a className="icon-action" href={image.src} download={image.name} title="下载原图" aria-label={`下载 ${image.name}`}>
-              <i className="fas fa-download" />
-            </a>
-          ) : (
-            <span className="icon-action is-disabled" title="图片加载中" aria-hidden="true"><i className="fas fa-spinner fa-spin" /></span>
-          )}
+        <div className="lightbox-toolbar-actions">
+          <div className="lightbox-zoom-controls" role="group" aria-label="图片缩放">
+            <button className="icon-action" type="button" onClick={() => updateZoom(zoom - LIGHTBOX_ZOOM_STEP)} disabled={zoom <= LIGHTBOX_MIN_ZOOM} title="缩小（-）" aria-label="缩小图片">
+              <i className="fas fa-minus" />
+            </button>
+            <button className="lightbox-zoom-value" type="button" onClick={() => updateZoom(1)} title="恢复适合窗口大小（0）" aria-label={`当前缩放 ${Math.round(zoom * 100)}%，点击重置`}>
+              {Math.round(zoom * 100)}%
+            </button>
+            <button className="icon-action" type="button" onClick={() => updateZoom(zoom + LIGHTBOX_ZOOM_STEP)} disabled={zoom >= LIGHTBOX_MAX_ZOOM} title="放大（+）" aria-label="放大图片">
+              <i className="fas fa-plus" />
+            </button>
+          </div>
+          <a className="icon-action" href={image.src} download={image.name} title="下载原图" aria-label={`下载原图 ${image.name}`}>
+            <i className="fas fa-download" />
+          </a>
           <button className="icon-action" type="button" onClick={onClose} title="关闭" aria-label="关闭大图">
             <i className="fas fa-times" />
           </button>
@@ -128,14 +202,30 @@ function Lightbox({ images, index, onChange, onClose }) {
             <i className="fas fa-chevron-left" />
           </button>
         )}
-        {imageReady ? (
-          <img src={image.src} alt={image.name} />
-        ) : (
-          <div className={`lightbox-loading${image.status === 'error' ? ' has-error' : ''}`} role="status">
-            <i className={`fas ${image.status === 'error' ? 'fa-circle-exclamation' : 'fa-spinner fa-spin'}`} />
-            <span>{image.status === 'error' ? '图片加载失败，请切页后重试' : '正在加载当前页图片…'}</span>
+        <div className="lightbox-viewport" ref={viewportRef} tabIndex="0" aria-label="大图查看区域，可使用鼠标滚轮或加减键缩放">
+          <div
+            className="lightbox-image-frame"
+            style={{ width: `${frameZoom * 100}%`, height: `${frameZoom * 100}%` }}
+          >
+            <img
+              className={imageReady ? 'is-ready' : ''}
+              src={image.src}
+              alt={image.name}
+              decoding="async"
+              draggable="false"
+              style={{ maxWidth: `${imageZoom * 100}%`, maxHeight: `${imageZoom * 100}%` }}
+              onLoad={() => { setLoadedSrc(image.src); setFailedSrc('') }}
+              onError={() => setFailedSrc(image.src)}
+            />
           </div>
-        )}
+          {!imageReady && (
+            <div className={`lightbox-loading${imageFailed ? ' has-error' : ''}`} role="status">
+              <i className={`fas ${imageFailed ? 'fa-circle-exclamation' : 'fa-spinner fa-spin'}`} />
+              <span>{imageFailed ? '原图加载失败，请稍后重试' : '正在加载原图…'}</span>
+            </div>
+          )}
+          <div className="lightbox-zoom-hint">滚轮或 + / − 缩放 · 0 重置 · ← / → 切换</div>
+        </div>
         {images.length > 1 && (
           <button className="lightbox-arrow next" type="button" onClick={() => onChange((index + 1) % images.length)} aria-label="下一张">
             <i className="fas fa-chevron-right" />
@@ -146,83 +236,14 @@ function Lightbox({ images, index, onChange, onClose }) {
   )
 }
 
-function useDisposablePageImages(images, page) {
-  const sourceImages = useMemo(
-    () => images.slice((page - 1) * GALLERY_PAGE_SIZE, page * GALLERY_PAGE_SIZE),
-    [images, page],
-  )
-  const pageKey = useMemo(
-    () => `${page}:${sourceImages.map(image => image.src).join('|')}`,
-    [page, sourceImages],
-  )
-  const [loadedPage, setLoadedPage] = useState({ key: '', items: [] })
-
-  useEffect(() => {
-    const controller = new AbortController()
-    const objectUrls = new Set()
-    let active = true
-    let nextIndex = 0
-
-    setLoadedPage({
-      key: pageKey,
-      items: sourceImages.map(image => ({ ...image, assetSrc: image.src, src: null, status: 'loading' })),
-    })
-
-    const updateItem = (index, patch) => {
-      setLoadedPage(current => {
-        if (!active || current.key !== pageKey) return current
-        const items = [...current.items]
-        items[index] = { ...items[index], ...patch }
-        return { ...current, items }
-      })
-    }
-
-    const loadNext = async () => {
-      while (active) {
-        const index = nextIndex
-        nextIndex += 1
-        if (index >= sourceImages.length) return
-
-        try {
-          const response = await fetch(sourceImages[index].src, {
-            cache: 'no-store',
-            signal: controller.signal,
-          })
-          if (!response.ok) throw new Error(`图片请求失败：${response.status}`)
-
-          const blobUrl = URL.createObjectURL(await response.blob())
-          if (!active) {
-            URL.revokeObjectURL(blobUrl)
-            return
-          }
-          objectUrls.add(blobUrl)
-          updateItem(index, { src: blobUrl, status: 'ready' })
-        } catch (error) {
-          if (error.name !== 'AbortError') updateItem(index, { status: 'error' })
-        }
-      }
-    }
-
-    const workerCount = Math.min(GALLERY_LOAD_CONCURRENCY, sourceImages.length)
-    void Promise.all(Array.from({ length: workerCount }, () => loadNext()))
-
-    return () => {
-      active = false
-      controller.abort()
-      objectUrls.forEach(url => URL.revokeObjectURL(url))
-      objectUrls.clear()
-    }
-  }, [pageKey, sourceImages])
-
-  if (loadedPage.key === pageKey) return loadedPage.items
-  return sourceImages.map(image => ({ ...image, assetSrc: image.src, src: null, status: 'loading' }))
-}
-
 function MediaGallery({ images, title, privateGallery = false }) {
   const [page, setPage] = useState(1)
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const pageCount = Math.max(1, Math.ceil(images.length / GALLERY_PAGE_SIZE))
-  const pageImages = useDisposablePageImages(images, page)
+  const pageImages = useMemo(
+    () => images.slice((page - 1) * GALLERY_PAGE_SIZE, page * GALLERY_PAGE_SIZE),
+    [images, page],
+  )
 
   useEffect(() => {
     setPage(1)
@@ -243,28 +264,29 @@ function MediaGallery({ images, title, privateGallery = false }) {
       </div>
 
       <div className="media-gallery-grid">
-        {pageImages.map((image, localIndex) => {
-          const imageReady = image.status === 'ready' && image.src
-          return (
-            <figure className="media-tile" key={image.assetSrc}>
-              <button type="button" onClick={() => setLightboxIndex(localIndex)} aria-label={`查看大图 ${image.name}`} disabled={!imageReady}>
-                {imageReady ? (
-                  <img src={image.src} alt={`${title} ${image.name}`} loading="lazy" decoding="async" />
-                ) : (
-                  <span className={`media-tile-placeholder${image.status === 'error' ? ' has-error' : ''}`} role="status">
-                    <i className={`fas ${image.status === 'error' ? 'fa-circle-exclamation' : 'fa-spinner fa-spin'}`} />
-                    <span>{image.status === 'error' ? '加载失败' : '加载中…'}</span>
-                  </span>
-                )}
-                {imageReady && <span className="media-tile-zoom"><i className="fas fa-expand" /> 查看大图</span>}
-              </button>
-              <figcaption>
-                <span>{image.name}</span>
-                {imageReady && <a href={image.src} download={image.name} aria-label={`下载 ${image.name}`} title="下载图片"><i className="fas fa-download" /></a>}
-              </figcaption>
-            </figure>
-          )
-        })}
+        {pageImages.map((image, localIndex) => (
+          <figure className="media-tile" key={image.src}>
+            <button type="button" onClick={() => setLightboxIndex(localIndex)} aria-label={`查看大图 ${image.name}`}>
+              <img
+                src={image.thumbnailSrc}
+                alt={`${title} ${image.name}`}
+                loading="lazy"
+                decoding="async"
+                fetchPriority={localIndex < 3 ? 'auto' : 'low'}
+                onError={event => {
+                  if (event.currentTarget.dataset.fallbackApplied) return
+                  event.currentTarget.dataset.fallbackApplied = 'true'
+                  event.currentTarget.src = image.src
+                }}
+              />
+              <span className="media-tile-zoom"><i className="fas fa-expand" /> 查看原图</span>
+            </button>
+            <figcaption>
+              <span>{image.name}</span>
+              <a href={image.src} download={image.name} aria-label={`下载原图 ${image.name}`} title="下载原图"><i className="fas fa-download" /></a>
+            </figcaption>
+          </figure>
+        ))}
       </div>
 
       {pageCount > 1 && (

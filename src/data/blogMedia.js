@@ -1,11 +1,23 @@
 const naturalSort = new Intl.Collator('zh-CN', { numeric: true, sensitivity: 'base' })
 
-function toMediaEntries(modules) {
+function thumbnailName(fileName) {
+  return `thumb-${fileName.replaceAll('.', '-')}.webp`
+}
+
+function toMediaEntries(modules, thumbnailModules) {
+  const thumbnails = new Map(
+    Object.entries(thumbnailModules).map(([path, src]) => [path.split('/').pop(), src]),
+  )
+
   return Object.entries(modules)
-    .map(([path, src]) => ({
-      src,
-      name: path.split('/').pop(),
-    }))
+    .map(([path, src]) => {
+      const name = path.split('/').pop()
+      return {
+        src,
+        thumbnailSrc: thumbnails.get(thumbnailName(name)) || src,
+        name,
+      }
+    })
     .sort((a, b) => naturalSort.compare(a.name, b.name))
 }
 
@@ -19,5 +31,15 @@ const personalModules = import.meta.glob(
   { eager: true, query: '?url', import: 'default' },
 )
 
-export const shinozawaImages = toMediaEntries(shinozawaModules)
-export const personalImages = toMediaEntries(personalModules)
+const shinozawaThumbnailModules = import.meta.glob(
+  '../../docs/.gallery-thumbnails/shinozawa/*.webp',
+  { eager: true, query: '?url', import: 'default' },
+)
+
+const personalThumbnailModules = import.meta.glob(
+  '../../docs/.gallery-thumbnails/personal/*.webp',
+  { eager: true, query: '?url', import: 'default' },
+)
+
+export const shinozawaImages = toMediaEntries(shinozawaModules, shinozawaThumbnailModules)
+export const personalImages = toMediaEntries(personalModules, personalThumbnailModules)
