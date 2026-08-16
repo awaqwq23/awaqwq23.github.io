@@ -238,7 +238,15 @@ function Lightbox({ images, index, onChange, onClose }) {
       </div>
       <div className="lightbox-stage">
         {images.length > 1 && (
-          <button className="lightbox-arrow prev" type="button" onClick={() => onChange((index - 1 + images.length) % images.length)} aria-label="上一张">
+          <button
+            className="lightbox-arrow prev"
+            type="button"
+            onClick={() => onChange((index - 1 + images.length) % images.length)}
+            onPointerEnter={() => prefetchOriginal(images[(index - 1 + images.length) % images.length].src)}
+            onPointerDown={() => prefetchOriginal(images[(index - 1 + images.length) % images.length].src)}
+            onFocus={() => prefetchOriginal(images[(index - 1 + images.length) % images.length].src)}
+            aria-label="上一张"
+          >
             <i className="fas fa-chevron-left" />
           </button>
         )}
@@ -268,21 +276,30 @@ function Lightbox({ images, index, onChange, onClose }) {
                 setLoadedSrc(image.src)
                 setFailedSrc('')
                 rememberPrefetchedOriginal(image.src)
-                if (images.length > 1) prefetchOriginal(images[(index + 1) % images.length].src)
               }}
               onError={() => setFailedSrc(image.src)}
             />
           </div>
+        </div>
+        <div className={`lightbox-stage-footer${!imageReady ? ' has-status' : ''}`}>
           {!imageReady && (
             <div className={`lightbox-loading${imageFailed ? ' has-error' : ''}`} role="status">
               <i className={`fas ${imageFailed ? 'fa-circle-exclamation' : 'fa-spinner fa-spin'}`} />
               <span>{imageFailed ? '原图加载失败，请稍后重试' : '正在加载原图…'}</span>
             </div>
           )}
+          <div className="lightbox-zoom-hint">滚轮或 + / − 缩放 · 0 重置 · ← / → 切换</div>
         </div>
-        <div className="lightbox-zoom-hint">滚轮或 + / − 缩放 · 0 重置 · ← / → 切换</div>
         {images.length > 1 && (
-          <button className="lightbox-arrow next" type="button" onClick={() => onChange((index + 1) % images.length)} aria-label="下一张">
+          <button
+            className="lightbox-arrow next"
+            type="button"
+            onClick={() => onChange((index + 1) % images.length)}
+            onPointerEnter={() => prefetchOriginal(images[(index + 1) % images.length].src)}
+            onPointerDown={() => prefetchOriginal(images[(index + 1) % images.length].src)}
+            onFocus={() => prefetchOriginal(images[(index + 1) % images.length].src)}
+            aria-label="下一张"
+          >
             <i className="fas fa-chevron-right" />
           </button>
         )}

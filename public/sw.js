@@ -17,11 +17,6 @@ async function trimCache(cache, maxEntries) {
   await Promise.all(keys.slice(0, Math.max(0, keys.length - maxEntries)).map(key => cache.delete(key)))
 }
 
-async function touchCache(cache, request, response) {
-  await cache.delete(request)
-  await cache.put(request, response)
-}
-
 async function storeInCache(cache, request, response, maxEntries) {
   await cache.put(request, response)
   await trimCache(cache, maxEntries)
@@ -30,10 +25,7 @@ async function storeInCache(cache, request, response, maxEntries) {
 async function cacheFirst(request, cacheName, maxEntries, scheduleBackgroundTask) {
   const cache = await caches.open(cacheName)
   const cached = await cache.match(request)
-  if (cached) {
-    scheduleBackgroundTask(touchCache(cache, request, cached.clone()))
-    return cached
-  }
+  if (cached) return cached
 
   const response = await fetch(request)
   if (response.ok) {
@@ -61,7 +53,8 @@ function respondWithBoundedCache(event, cacheName, maxEntries) {
 
 self.addEventListener('fetch', event => {
   const { request } = event
-  if (request.method !== 'GET' || request.destination !== 'image') return
+  // 下载链接的 destination 为空，也要复用已经看过的原图缓存。
+  if (request.method !== 'GET' || request.headers.has('range')) return
 
   const url = new URL(request.url)
   if (url.origin !== self.location.origin || !url.pathname.startsWith('/assets/')) return
