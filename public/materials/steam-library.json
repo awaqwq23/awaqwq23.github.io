@@ -1,13 +1,13 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-16T18:48:05.452Z",
+  "updatedAt": "2026-08-17T07:17:27.858Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
-    "lastLogoff": "2026-08-16T16:33:02.000Z"
+    "status": 3,
+    "lastLogoff": "2026-08-17T05:45:25.000Z"
   },
   "stats": {
     "gameCount": 232,
