@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-18T13:09:11.186Z",
+  "updatedAt": "2026-08-18T18:57:31.057Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -13,7 +13,7 @@
     "gameCount": 232,
     "playedGameCount": 173,
     "totalMinutes": 168599,
-    "recentMinutes": 2034
+    "recentMinutes": 1851
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 6325,
-      "playtimeTwoWeeks": 1240,
+      "playtimeTwoWeeks": 1166,
       "lastPlayed": "2026-08-17T13:47:26.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -466,7 +466,7 @@
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
       "playtimeForever": 3077,
-      "playtimeTwoWeeks": 182,
+      "playtimeTwoWeeks": 74,
       "lastPlayed": "2026-08-15T12:27:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
@@ -2735,7 +2735,7 @@
       "appid": 2132850,
       "name": "Rabbit and Steel",
       "playtimeForever": 237,
-      "playtimeTwoWeeks": 1,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-04T15:25:32.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2132850/c12f139a29e2d50549fde90783c3ccad6df12cc3.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2132850/header.jpg",
