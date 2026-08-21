@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   workflow_run:
-    workflows: ["Sync Steam library"]
+    workflows: ["Sync Steam library", "Sync anime tracker"]
     types: [completed]
 
 permissions:

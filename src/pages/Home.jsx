@@ -67,6 +67,13 @@ const features = [
     desc: '从武大附近的餐厅和我的 Steam 游戏库里，随机解决今天最难的两个问题。',
   },
   {
+    to: '/anime',
+    icon: 'fa-tv',
+    bg: 'linear-gradient(135deg, #0EA5E9, #6366F1)',
+    title: '📺 追番日历',
+    desc: '每天自动查询正在追的番剧，随时查看更新时间、更新集数和完结状态。',
+  },
+  {
     to: '/about',
     icon: 'fa-user',
     bg: 'linear-gradient(135deg, #06B6D4, #0891B2)',

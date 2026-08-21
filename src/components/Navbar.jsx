@@ -10,6 +10,7 @@ const links = [
   { to: '/today', icon: 'fa-wand-magic-sparkles', label: '今天选啥' },
   { to: '/music', icon: 'fa-headphones', label: '我的歌单' },
   { to: '/lyrics', icon: 'fa-microphone-lines', label: '歌词本' },
+  { to: '/anime', icon: 'fa-tv', label: '追番' },
   { to: '/docs', icon: 'fa-book', label: '文档' },
   { to: '/about', icon: 'fa-info-circle', label: '关于' },
 ]

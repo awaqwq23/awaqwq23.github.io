@@ -1,0 +1,48 @@
+[
+  {
+    "id": 198376,
+    "title": "梦限大",
+    "subtitle": "BanG Dream! YUME∞MITA"
+  },
+  {
+    "id": 178789,
+    "title": "无职转生 第3季",
+    "subtitle": "無職転生Ⅲ ～異世界行ったら本気だす～"
+  },
+  {
+    "id": 199111,
+    "title": "碧蓝之海 第三季",
+    "subtitle": "ぐらんぶる Season 3"
+  },
+  {
+    "id": 189275,
+    "title": "金牌得主 第二季",
+    "subtitle": "メダリスト 第2期"
+  },
+  {
+    "id": 182616,
+    "title": "逃跑的王子殿下 第二季",
+    "subtitle": "逃げ上手の若君 第二期"
+  },
+  {
+    "id": 207141,
+    "title": "尼古喵喵",
+    "subtitle": "ヤニねこ"
+  },
+  {
+    "id": 210482,
+    "title": "JoJo 飙马野郎",
+    "subtitle": "STEEL BALL RUN · 第2—3舞台",
+    "episodeOffset": 1,
+    "totalEpisodeOffset": 1,
+    "note": "已计入第1舞台更新的1集，后续舞台继续累计。"
+  },
+  {
+    "id": 189046,
+    "title": "Re:0 第四季下半篇",
+    "subtitle": "Re:ZERO 4th season · 夺还篇",
+    "episodeOffset": -11,
+    "totalEpisodes": 8,
+    "note": "仅统计下半篇“夺还篇”，不包含上半篇11集。"
+  }
+]

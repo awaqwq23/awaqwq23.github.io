@@ -12,6 +12,7 @@ import Docs from './pages/Docs'
 import MusicCuration from './pages/MusicCuration'
 import TodayPicker from './pages/TodayPicker'
 import Lyrics from './pages/Lyrics'
+import AnimeTracker from './pages/AnimeTracker'
 import { useEconomyClock } from './games/aiEconomy'
 
 function ScrollToTop() {
@@ -48,6 +49,7 @@ export default function App() {
           <Route path="/music" element={<MusicCuration />} />
           <Route path="/today" element={<TodayPicker />} />
           <Route path="/lyrics" element={<Lyrics />} />
+          <Route path="/anime" element={<AnimeTracker />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
