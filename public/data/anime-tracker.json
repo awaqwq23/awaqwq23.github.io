@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-21T09:22:45.219Z",
+  "syncedAt": "2026-08-21T09:44:04.676Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -14,6 +14,8 @@
       "sourceTitle": "BanG Dream! YUME∞MITA",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 10,
       "totalEpisodes": 13,
       "nextEpisode": 11,
@@ -37,6 +39,20 @@
       "sourceTitle": "Mushoku Tensei: Jobless Reincarnation Season 3",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 166873,
+          "title": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+          "nativeTitle": "無職転生Ⅱ ～異世界行ったら本気だす～ 第2クール",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/166873"
+        }
+      ],
       "releasedEpisodes": 8,
       "totalEpisodes": 14,
       "nextEpisode": 9,
@@ -60,6 +76,20 @@
       "sourceTitle": "Grand Blue Dreaming Season 3",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 182309,
+          "title": "Grand Blue Dreaming Season 2",
+          "nativeTitle": "ぐらんぶる Season 2",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/182309"
+        }
+      ],
       "releasedEpisodes": 7,
       "totalEpisodes": 12,
       "nextEpisode": 8,
@@ -83,6 +113,31 @@
       "sourceTitle": "Medalist Season 2",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 165171,
+          "title": "Medalist",
+          "nativeTitle": "メダリスト",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/165171"
+        },
+        {
+          "id": 206298,
+          "title": "Medalist Movie",
+          "nativeTitle": "劇場版 メダリスト",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/206298"
+        }
+      ],
       "releasedEpisodes": 9,
       "totalEpisodes": 9,
       "nextEpisode": null,
@@ -107,6 +162,20 @@
       "sourceTitle": "The Elusive Samurai Season 2",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 162896,
+          "title": "The Elusive Samurai",
+          "nativeTitle": "逃げ上手の若君",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/162896"
+        }
+      ],
       "releasedEpisodes": 5,
       "totalEpisodes": 12,
       "nextEpisode": 6,
@@ -130,6 +199,20 @@
       "sourceTitle": "Chainsmoker Cat",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 208105,
+          "title": "Yani Neko Mini",
+          "nativeTitle": "ヤニねこ ミニ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/208105"
+        }
+      ],
       "releasedEpisodes": 8,
       "totalEpisodes": null,
       "nextEpisode": 9,
@@ -153,6 +236,20 @@
       "sourceTitle": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
       "status": "NOT_YET_RELEASED",
       "format": "ONA",
+      "formatLabel": "网络动画",
+      "relatedAnime": [
+        {
+          "id": 190327,
+          "title": "STEEL BALL RUN JoJo's Bizarre Adventure 1st STAGE",
+          "nativeTitle": "ジョジョの奇妙な冒険 スティール・ボール・ラン 1st STAGE",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/190327"
+        }
+      ],
       "releasedEpisodes": 1,
       "totalEpisodes": 12,
       "nextEpisode": 2,
@@ -176,6 +273,31 @@
       "sourceTitle": "Re:ZERO -Starting Life in Another World- Season 4",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 163134,
+          "title": "Re:ZERO -Starting Life in Another World- Season 3",
+          "nativeTitle": "Re:ゼロから始める異世界生活 3rd season",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/163134"
+        },
+        {
+          "id": 210687,
+          "title": "Re:Zero kara Hajimeru Kyuukei Jikan (Break Time) 4th Season",
+          "nativeTitle": "Re:ゼロから始める休憩時間(ブレイクタイム) 4th Season",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/210687"
+        }
+      ],
       "releasedEpisodes": 2,
       "totalEpisodes": 8,
       "nextEpisode": 3,
@@ -200,6 +322,64 @@
       "sourceTitle": "A Certain Scientific Railgun",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 16049,
+          "title": "A Certain Scientific Railgun S",
+          "nativeTitle": "とある科学の超電磁砲S",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/16049"
+        },
+        {
+          "id": 9047,
+          "title": "Toaru Kagaku no Railgun: Misaka-san wa Ima Chuumoku no Mato Desukara",
+          "nativeTitle": "とある科学の超電磁砲 御坂さんはいま注目の的ですから",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/9047"
+        },
+        {
+          "id": 9063,
+          "title": "Toaru Kagaku no Railgun: Entenka no Satsuei Model mo Raku ja Arimasen wa ne.",
+          "nativeTitle": "とある科学の超電磁砲 炎天下の撮影モデルも楽じゃありませんわね.",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/9063"
+        },
+        {
+          "id": 8023,
+          "title": "Toaru Kagaku no Railgun: Motto Marutto Railgun",
+          "nativeTitle": "とある科学の超電磁砲 もっとまるっと超電磁砲",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/8023"
+        },
+        {
+          "id": 4654,
+          "title": "A Certain Magical Index",
+          "nativeTitle": "とある魔術の禁書目録",
+          "relation": "PARENT",
+          "relationLabel": "正篇",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4654"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -223,6 +403,53 @@
       "sourceTitle": "Clannad",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 4181,
+          "title": "Clannad: After Story",
+          "nativeTitle": "ＣＬＡＮＮＡＤ ~After Story~ クラナド アフターストーリー",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4181"
+        },
+        {
+          "id": 1723,
+          "title": "Clannad: The Motion Picture",
+          "nativeTitle": "劇場版 クラナド",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1723"
+        },
+        {
+          "id": 4059,
+          "title": "Clannad: Another World, Tomoyo Chapter",
+          "nativeTitle": "ＣＬＡＮＮＡＤ もうひとつの世界 智代編",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4059"
+        },
+        {
+          "id": 6351,
+          "title": "Clannad: Another World, Kyou Chapter",
+          "nativeTitle": "ＣＬＡＮＮＡＤ ~After Story~ もうひとつの世界 杏編",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/6351"
+        }
+      ],
       "releasedEpisodes": 23,
       "totalEpisodes": 23,
       "nextEpisode": null,
@@ -246,6 +473,42 @@
       "sourceTitle": "Natsume's Book of Friends Season 1",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 5300,
+          "title": "Natsume's Book of Friends Season 2",
+          "nativeTitle": "続 夏目友人帳",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/5300"
+        },
+        {
+          "id": 154978,
+          "title": "Ichiban Kuji Natsume Yuujinchou: Nyanko-sensei to Hana Shirabe",
+          "nativeTitle": "一番くじ 夏目友人帳 ニャンコ先生と花しらべ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/154978"
+        },
+        {
+          "id": 188619,
+          "title": "Natsume Yuujinchou × Kumamoto-ken: Hitoyoshi Kuma de no Yasashii Jikan",
+          "nativeTitle": "夏目友人帳×熊本県「人吉・球磨での優しい時間」",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/188619"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -269,6 +532,108 @@
       "sourceTitle": "Gintama",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 9969,
+          "title": "Gintama Season 2",
+          "nativeTitle": "銀魂’",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/9969"
+        },
+        {
+          "id": 2951,
+          "title": "Gintama: Jump Festa 2005 Special",
+          "nativeTitle": "銀魂ジャンプフェスタアニメツアー’０５",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2951"
+        },
+        {
+          "id": 6945,
+          "title": "Gintama: Jump Festa 2008 Special",
+          "nativeTitle": "ジャンプアニメツアー 2008 白夜叉降誕",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/6945"
+        },
+        {
+          "id": 10643,
+          "title": "Gintama: Dai Hanseikai",
+          "nativeTitle": "アニメ銀魂　大反省会",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10643"
+        },
+        {
+          "id": 7472,
+          "title": "Gintama - The Movie",
+          "nativeTitle": "銀魂 新訳紅桜篇",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7472"
+        },
+        {
+          "id": 20760,
+          "title": "Gintama: Yorinuki Gintama-san on Theater 2D",
+          "nativeTitle": "銀魂 よりぬき銀魂さんオンシアター2D",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20760"
+        },
+        {
+          "id": 15335,
+          "title": "Gintama: The Final Chapter - Be Forever Yorozuya",
+          "nativeTitle": "劇場版 銀魂 完結篇 万事屋よ永遠なれ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/15335"
+        },
+        {
+          "id": 162890,
+          "title": "GINTAMA - Mr. Ginpachi's Zany Class",
+          "nativeTitle": "3年Z組銀八先生",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/162890"
+        },
+        {
+          "id": 197474,
+          "title": "Gintama the Movie 2026: Yoshiwara in Flames",
+          "nativeTitle": "新劇場版 銀魂 -吉原大炎上-",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/197474"
+        }
+      ],
       "releasedEpisodes": 201,
       "totalEpisodes": 201,
       "nextEpisode": null,
@@ -292,6 +657,53 @@
       "sourceTitle": "Neon Genesis Evangelion",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 32,
+          "title": "Neon Genesis Evangelion: The End of Evangelion",
+          "nativeTitle": "新世紀エヴァンゲリオン劇場版 Air/まごころを、君に",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/32"
+        },
+        {
+          "id": 4130,
+          "title": "Petit Eva: Evangelion@School",
+          "nativeTitle": "ぷちえゔぁ",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4130"
+        },
+        {
+          "id": 102096,
+          "title": "Peaceful Times (F02) Petit Film",
+          "nativeTitle": null,
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/102096"
+        },
+        {
+          "id": 204270,
+          "title": "Evangelion 30th Anniversary Special Screening",
+          "nativeTitle": "エヴァンゲリオン放送30周年記念特別興行",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/204270"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -315,6 +727,97 @@
       "sourceTitle": "Umamusume: Pretty Derby",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 103237,
+          "title": "Uma Musume: BNW no Chikai",
+          "nativeTitle": "ウマ娘「BNWの誓い」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/103237"
+        },
+        {
+          "id": 108941,
+          "title": "UMAYON",
+          "nativeTitle": "うまよん",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV_SHORT",
+          "formatLabel": "电视短篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/108941"
+        },
+        {
+          "id": 124223,
+          "title": "Umamusume: Pretty Derby Season 2",
+          "nativeTitle": "ウマ娘 プリティーダービー Season 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/124223"
+        },
+        {
+          "id": 172420,
+          "title": "Umamusume: Pretty Derby - Beginning of a New Era",
+          "nativeTitle": "ウマ娘 プリティーダービー 新時代の扉",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/172420"
+        },
+        {
+          "id": 180516,
+          "title": "Umamusume: Cinderella Gray",
+          "nativeTitle": "ウマ娘 シンデレラグレイ",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/180516"
+        },
+        {
+          "id": 148370,
+          "title": "Umamusume: Pretty Derby - Road to the Top",
+          "nativeTitle": "ウマ娘 プリティーダービー ROAD TO THE TOP",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/148370"
+        },
+        {
+          "id": 148401,
+          "title": "Umayuru",
+          "nativeTitle": "うまゆる",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/148401"
+        },
+        {
+          "id": 207886,
+          "title": "Run Run Lantern",
+          "nativeTitle": "Run Run Lantern",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/207886"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -338,6 +841,20 @@
       "sourceTitle": "Lycoris Recoil",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 179706,
+          "title": "Lycoris Recoil -Friends are thieves of time.-",
+          "nativeTitle": "リコリス・リコイル Friends are thieves of time.",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/179706"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -361,6 +878,42 @@
       "sourceTitle": "A Record Of Mortal's Journey To Immortality",
       "status": "FINISHED",
       "format": "ONA",
+      "formatLabel": "网络动画",
+      "relatedAnime": [
+        {
+          "id": 129202,
+          "title": "Fanren Xiu Xian Zhuan: Yanjiabao Pu Zhan",
+          "nativeTitle": "凡人修仙传 燕家堡之战",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/129202"
+        },
+        {
+          "id": 159599,
+          "title": "Fanren Xiu Xian Zhuan: Fanren Feng Qi Tian Nan Chongzhi Ban",
+          "nativeTitle": "凡人修仙传之凡人风起天南 重制版",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/159599"
+        },
+        {
+          "id": 195881,
+          "title": "Fanren Xiu Xian Zhuan Movie",
+          "nativeTitle": "凡人修仙传之瀚海迷踪",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/195881"
+        }
+      ],
       "releasedEpisodes": 17,
       "totalEpisodes": 17,
       "nextEpisode": null,
@@ -384,6 +937,53 @@
       "sourceTitle": "Summer Pockets",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 195230,
+          "title": "Summer Pockets: Across the Seven Seas",
+          "nativeTitle": "Summer Pockets 久島鴎編",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/195230"
+        },
+        {
+          "id": 206609,
+          "title": "Summer Pockets: A Lifetime's Worth of Summer Breaks",
+          "nativeTitle": "Summer Pockets 紬ヴェンダース編",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/206609"
+        },
+        {
+          "id": 206610,
+          "title": "Summer Pockets: Dawn Memories",
+          "nativeTitle": "Summer Pockets 空門蒼編",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/206610"
+        },
+        {
+          "id": 206611,
+          "title": "Summer Pockets: The Girl Who Forgot Summer Vacation",
+          "nativeTitle": "Summer Pockets 鳴瀬しろは編",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/206611"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -407,6 +1007,20 @@
       "sourceTitle": "Nukitashi THE ANIMATION",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 194712,
+          "title": "Nukitashi THE ANIMATION OVAs",
+          "nativeTitle": "ぬきたし THE ANIMATION OVAs",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/194712"
+        }
+      ],
       "releasedEpisodes": 11,
       "totalEpisodes": 11,
       "nextEpisode": null,
@@ -430,6 +1044,8 @@
       "sourceTitle": "Bad Girl",
       "status": "FINISHED",
       "format": "ONA",
+      "formatLabel": "网络动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -453,6 +1069,20 @@
       "sourceTitle": "You and I Are Polar Opposites",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 210031,
+          "title": "You and I Are Polar Opposites Season 2",
+          "nativeTitle": "正反対な君と僕 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/210031"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -476,6 +1106,8 @@
       "sourceTitle": "Summer Time Rendering",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 25,
       "totalEpisodes": 25,
       "nextEpisode": null,
@@ -499,6 +1131,119 @@
       "sourceTitle": "Fate/stay night: Unlimited Blade Works",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 356,
+          "title": "Fate/stay night",
+          "nativeTitle": "Fate/stay night",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/356"
+        },
+        {
+          "id": 11741,
+          "title": "Fate/Zero Season 2",
+          "nativeTitle": "Fate/Zero 2ndシーズン",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11741"
+        },
+        {
+          "id": 20792,
+          "title": "Fate/stay night: Unlimited Blade Works 2nd Season",
+          "nativeTitle": "Fate/stay night [Unlimited Blade Works] 2ndシーズン",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20792"
+        },
+        {
+          "id": 14829,
+          "title": "Fate/kaleid liner Prisma☆Illya",
+          "nativeTitle": "Fate/kaleid liner プリズマ☆イリヤ",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/14829"
+        },
+        {
+          "id": 6922,
+          "title": "Fate/stay night: Unlimited Blade Works (Movie)",
+          "nativeTitle": "劇場版 Fate/stay night UNLIMITED BLADE WORKS",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/6922"
+        },
+        {
+          "id": 20791,
+          "title": "Fate/stay night [Heaven's Feel] I. presage flower",
+          "nativeTitle": "Fate/stay night[Heaven's Feel] Ⅰ.presage flower",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20791"
+        },
+        {
+          "id": 98035,
+          "title": "Fate/Apocrypha",
+          "nativeTitle": "Fate/Apocrypha",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98035"
+        },
+        {
+          "id": 21717,
+          "title": "Fate/EXTRA Last Encore",
+          "nativeTitle": "Fate/EXTRA Last Encore",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21717"
+        },
+        {
+          "id": 12565,
+          "title": "Fate/Prototype",
+          "nativeTitle": "Fate/Prototype",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/12565"
+        },
+        {
+          "id": 97815,
+          "title": "Fate/Grand Order: First Order",
+          "nativeTitle": "Fate/Grand Order -First Order-",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/97815"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -522,6 +1267,8 @@
       "sourceTitle": "Uncle from Another World",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -545,6 +1292,20 @@
       "sourceTitle": "Grand Blue Dreaming",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 182309,
+          "title": "Grand Blue Dreaming Season 2",
+          "nativeTitle": "ぐらんぶる Season 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/182309"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -568,6 +1329,31 @@
       "sourceTitle": "Grand Blue Dreaming Season 2",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 100922,
+          "title": "Grand Blue Dreaming",
+          "nativeTitle": "ぐらんぶる",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/100922"
+        },
+        {
+          "id": 199111,
+          "title": "Grand Blue Dreaming Season 3",
+          "nativeTitle": "ぐらんぶる Season 3",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/199111"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -591,6 +1377,31 @@
       "sourceTitle": "Miss Kobayashi's Dragon Maid",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 98502,
+          "title": "Miss Kobayashi's Dragon Something",
+          "nativeTitle": "小林さんちの○○ドラゴン",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98502"
+        },
+        {
+          "id": 98580,
+          "title": "Miss Kobayashi's Dragon Maid: Valentines and Hot Springs! (Please Don't Get Your Hopes Up)",
+          "nativeTitle": "小林さんちのメイドラゴン バレンタイン, そして温泉! (あまり期待しないでください)",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98580"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -614,6 +1425,42 @@
       "sourceTitle": "Oreimo",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 10020,
+          "title": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai TRUE ROUTE",
+          "nativeTitle": "俺の妹がこんなに可愛いわけがない TRUE ROUTE",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10020"
+        },
+        {
+          "id": 10108,
+          "title": "Oreimo Animated Commentary",
+          "nativeTitle": "俺の妹がこんなに可愛いわけがない",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10108"
+        },
+        {
+          "id": 19727,
+          "title": "Nexus",
+          "nativeTitle": "Nexus",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/19727"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -637,6 +1484,31 @@
       "sourceTitle": "The Quintessential Quintuplets",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 109261,
+          "title": "The Quintessential Quintuplets 2",
+          "nativeTitle": "五等分の花嫁∬",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/109261"
+        },
+        {
+          "id": 211710,
+          "title": "Go-toubun no Hanayome (Shinsaku OVA)",
+          "nativeTitle": "五等分の花嫁 新作OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/211710"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -660,6 +1532,53 @@
       "sourceTitle": "That Time I Got Reincarnated as a Slime",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 106509,
+          "title": "That Time I Got Reincarnated as a Slime OAD",
+          "nativeTitle": "転生したらスライムだった件 OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/106509"
+        },
+        {
+          "id": 116741,
+          "title": "The Slime Diaries",
+          "nativeTitle": "転生したらスライムだった件 転スラ日記",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/116741"
+        },
+        {
+          "id": 146503,
+          "title": "Tensei Shitara Slime Datta Ken: Sukuwareru Ramiris",
+          "nativeTitle": "転生したらスライムだった件 救われるラミリス",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/146503"
+        },
+        {
+          "id": 161802,
+          "title": "That Time I Got Reincarnated as a Slime: Visions of Coleus",
+          "nativeTitle": "転生したらスライムだった件 コリウスの夢",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/161802"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -683,6 +1602,64 @@
       "sourceTitle": "Bakemonogatari",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 15689,
+          "title": "Nekomonogatari Black",
+          "nativeTitle": "猫物語（黒）",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/15689"
+        },
+        {
+          "id": 11597,
+          "title": "Nisemonogatari",
+          "nativeTitle": "偽物語",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11597"
+        },
+        {
+          "id": 21520,
+          "title": "Koyomimonogatari",
+          "nativeTitle": "暦物語",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21520"
+        },
+        {
+          "id": 106495,
+          "title": "Nisekoimonogatari",
+          "nativeTitle": "ニセコイモノガタリ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/106495"
+        },
+        {
+          "id": 143663,
+          "title": "Bakemonogatari PV",
+          "nativeTitle": "化物語 PV",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/143663"
+        }
+      ],
       "releasedEpisodes": 15,
       "totalEpisodes": 15,
       "nextEpisode": null,
@@ -706,6 +1683,20 @@
       "sourceTitle": "86 EIGHTY-SIX",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 131586,
+          "title": "86 EIGHTY-SIX Part 2",
+          "nativeTitle": "86－エイティシックス－ 第2クール",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/131586"
+        }
+      ],
       "releasedEpisodes": 11,
       "totalEpisodes": 11,
       "nextEpisode": null,
@@ -729,6 +1720,20 @@
       "sourceTitle": "Kaguya-sama: Love is War",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 112641,
+          "title": "Kaguya-sama: Love is War?",
+          "nativeTitle": "かぐや様は告らせたい？～天才たちの恋愛頭脳戦～",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/112641"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -753,6 +1758,20 @@
       "sourceTitle": "Eromanga Sensei",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 100523,
+          "title": "Eromanga Sensei OVA",
+          "nativeTitle": "エロマンガ先生 OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/100523"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -776,6 +1795,42 @@
       "sourceTitle": "Sound! Euphonium",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21255,
+          "title": "Sound! Euphonium Shorts",
+          "nativeTitle": "響け！ユーフォニアム 吹奏楽部の日常",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21255"
+        },
+        {
+          "id": 21376,
+          "title": "Sound! Euphonium: Ready, Set, Monaka",
+          "nativeTitle": "響け！ユーフォニアム 番外編 かけだすモナカ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21376"
+        },
+        {
+          "id": 21460,
+          "title": "Sound! Euphonium 2",
+          "nativeTitle": "響け！ユーフォニアム 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21460"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -799,6 +1854,8 @@
       "sourceTitle": "Ping Pong the Animation",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 11,
       "totalEpisodes": 11,
       "nextEpisode": null,
@@ -822,6 +1879,42 @@
       "sourceTitle": "YuruYuri",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 12403,
+          "title": "YuruYuri Season 2",
+          "nativeTitle": "ゆるゆり♪♪",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/12403"
+        },
+        {
+          "id": 12665,
+          "title": "Yuru Yuri: Doushite☆Tomaranai☆Tokimeki☆Doki Doki☆Paradox☆Eternal",
+          "nativeTitle": "ゆるゆり どうして☆止まらない☆トキメキ☆ドキドキ☆パラドクス☆エターナル",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/12665"
+        },
+        {
+          "id": 167984,
+          "title": "Oomuro-ke: dear sisters",
+          "nativeTitle": "大室家 dear sisters",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/167984"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -845,6 +1938,31 @@
       "sourceTitle": "The Dangers in My Heart Season 2",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 153152,
+          "title": "The Dangers in My Heart",
+          "nativeTitle": "僕の心のヤバイやつ",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/153152"
+        },
+        {
+          "id": 209247,
+          "title": "Boku no Kokoro no Yabai Yatsu 3rd Season",
+          "nativeTitle": "僕の心のヤバイやつ 第3期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/209247"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -868,6 +1986,86 @@
       "sourceTitle": "Steins;Gate",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 10863,
+          "title": "Steins;Gate: Egoistic Poriomania",
+          "nativeTitle": "シュタインズ・ゲート 横行跋扈のポリオマニア",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10863"
+        },
+        {
+          "id": 20907,
+          "title": "Steins;Gate: Soumei Eichi no Cognitive Computing",
+          "nativeTitle": "Steins;Gate 聡明叡智のコグニティブ・コンピューティング",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20907"
+        },
+        {
+          "id": 21624,
+          "title": "Steins;Gate 0: 23β -Divide by Zero-",
+          "nativeTitle": "シュタインズ・ゲート 境界面上のミッシングリンク -Divide By Zero-",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21624"
+        },
+        {
+          "id": 11577,
+          "title": "Steins;Gate The Movie – Load Region of Déjà Vu",
+          "nativeTitle": "劇場版 シュタインズゲート 負荷領域のデジャヴ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11577"
+        },
+        {
+          "id": 4975,
+          "title": "ChäoS;HEAd",
+          "nativeTitle": "カオスヘッド",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4975"
+        },
+        {
+          "id": 13599,
+          "title": "Robotics;Notes",
+          "nativeTitle": "Robotics;Notes",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/13599"
+        },
+        {
+          "id": 21708,
+          "title": "Occultic;Nine",
+          "nativeTitle": "Occultic;Nine -オカルティック・ナイン-",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21708"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -891,6 +2089,42 @@
       "sourceTitle": "One-Punch Man",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21416,
+          "title": "One-Punch Man OVA",
+          "nativeTitle": "ワンパンマン OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21416"
+        },
+        {
+          "id": 97668,
+          "title": "One-Punch Man Season 2",
+          "nativeTitle": "ワンパンマン 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/97668"
+        },
+        {
+          "id": 21386,
+          "title": "One-Punch Man: Road to Hero",
+          "nativeTitle": "ワンパンマン「ロード・トゥ・ヒーロー」",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21386"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -914,6 +2148,42 @@
       "sourceTitle": "Kemono Friends",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 99624,
+          "title": "Kemono Friends 2",
+          "nativeTitle": "けものフレンズ 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/99624"
+        },
+        {
+          "id": 98697,
+          "title": "Kemono Friends: Basuteki",
+          "nativeTitle": "けものフレンズ　12.1話「ばすてき」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98697"
+        },
+        {
+          "id": 104187,
+          "title": "Welcome to the JAPARI PARK",
+          "nativeTitle": "ようこそジャパリパーク",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/104187"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -937,6 +2207,31 @@
       "sourceTitle": "Teasing Master Takagi-san",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 101426,
+          "title": "Karakai Jouzu no Takagi-san: Water Slide",
+          "nativeTitle": "からかい上手の高木さん ウォータースライダー",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101426"
+        },
+        {
+          "id": 107068,
+          "title": "Teasing Master Takagi-san Season 2",
+          "nativeTitle": "からかい上手の高木さん 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/107068"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -960,6 +2255,86 @@
       "sourceTitle": "BanG Dream!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 98847,
+          "title": "BanG Dream! OVA",
+          "nativeTitle": "BanG Dream! 遊んじゃった！",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98847"
+        },
+        {
+          "id": 101633,
+          "title": "BanG Dream! 2nd Season",
+          "nativeTitle": "BanG Dream! 2nd Season",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101633"
+        },
+        {
+          "id": 101596,
+          "title": "PASTEL LIFE",
+          "nativeTitle": "ぱすてるらいふ",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV_SHORT",
+          "formatLabel": "电视短篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101596"
+        },
+        {
+          "id": 101632,
+          "title": "BanG Dream! Girls Band Party!☆PICO",
+          "nativeTitle": "BanG Dream! ガルパ☆ピコ",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV_SHORT",
+          "formatLabel": "电视短篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101632"
+        },
+        {
+          "id": 113051,
+          "title": "ARGONAVIS from BanG Dream!",
+          "nativeTitle": "アルゴナビス from BanG Dream!",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/113051"
+        },
+        {
+          "id": 187166,
+          "title": "GANSO! BanG Dream Chan",
+          "nativeTitle": "元祖！バンドリちゃん",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/187166"
+        },
+        {
+          "id": 193413,
+          "title": "Tsurezure PoPiPa",
+          "nativeTitle": "つれづれポピパ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/193413"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -983,6 +2358,8 @@
       "sourceTitle": "Plastic Memories",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1006,6 +2383,75 @@
       "sourceTitle": "Ghost in the Shell: Stand Alone Complex",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 801,
+          "title": "Ghost in the Shell: Stand Alone Complex 2nd GIG",
+          "nativeTitle": "攻殻機動隊 S.A.C. 2nd GIG",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/801"
+        },
+        {
+          "id": 10949,
+          "title": "Ghost in the Shell: Stand Alone Complex - Interval",
+          "nativeTitle": "攻殻機動隊 STAND ALONE COMPLEX-インターバル-",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10949"
+        },
+        {
+          "id": 17187,
+          "title": "Ghost in the Shell: Arise - Border:1 Ghost Pain",
+          "nativeTitle": "攻殻機動隊ARISE -GHOST IN THE SHELL- border:1 Ghost Pain",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/17187"
+        },
+        {
+          "id": 43,
+          "title": "Ghost in the Shell",
+          "nativeTitle": "GHOST IN THE SHELL / 攻殻機動隊",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/43"
+        },
+        {
+          "id": 1335,
+          "title": "Ghost in the Shell: Stand Alone Complex: Tachikomatic Days",
+          "nativeTitle": "攻殻機動隊 STAND ALONE COMPLEX: Section9 Science File “タチコマな日々”",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1335"
+        },
+        {
+          "id": 177699,
+          "title": "THE GHOST IN THE SHELL",
+          "nativeTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/177699"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -1029,6 +2475,20 @@
       "sourceTitle": "the Garden of sinners Chapter 1: Thanatos. (Overlooking View)",
       "status": "FINISHED",
       "format": "MOVIE",
+      "formatLabel": "剧场版",
+      "relatedAnime": [
+        {
+          "id": 3782,
+          "title": "the Garden of sinners Chapter 2: …and nothing heart. (Murder Speculation Part A)",
+          "nativeTitle": "空の境界 殺人考察(前)",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/3782"
+        }
+      ],
       "releasedEpisodes": 1,
       "totalEpisodes": 1,
       "nextEpisode": null,
@@ -1052,6 +2512,31 @@
       "sourceTitle": "The Melancholy of Haruhi Suzumiya",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 4382,
+          "title": "The Melancholy of Haruhi Suzumiya (2009)",
+          "nativeTitle": "涼宮ハルヒの憂鬱",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4382"
+        },
+        {
+          "id": 7311,
+          "title": "The Disappearance of Haruhi Suzumiya",
+          "nativeTitle": "涼宮ハルヒの消失",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7311"
+        }
+      ],
       "releasedEpisodes": 14,
       "totalEpisodes": 14,
       "nextEpisode": null,
@@ -1075,6 +2560,31 @@
       "sourceTitle": "Lucky☆Star",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 4472,
+          "title": "Lucky☆Star OVA",
+          "nativeTitle": "らき☆すた OVA",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4472"
+        },
+        {
+          "id": 17637,
+          "title": "Miyakawa-ke no Kuufuku",
+          "nativeTitle": "宮河家の空腹",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/17637"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -1098,6 +2608,8 @@
       "sourceTitle": "Negative Positive Angler",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1121,6 +2633,31 @@
       "sourceTitle": "Oblivion Battery",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 124703,
+          "title": "Boukyaku Battery",
+          "nativeTitle": "忘却バッテリー",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/124703"
+        },
+        {
+          "id": 184141,
+          "title": "Boukyaku Battery (TV) 2nd Season",
+          "nativeTitle": "忘却バッテリー (TV) 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/184141"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1144,6 +2681,8 @@
       "sourceTitle": "Days with My Stepsister",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1167,6 +2706,20 @@
       "sourceTitle": "Train to the End of the World",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 177405,
+          "title": "Wan Wan Train Doko e Iku?",
+          "nativeTitle": "わんわんトレインどこへいく？",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/177405"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1190,6 +2743,8 @@
       "sourceTitle": "ZENSHU",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1213,6 +2768,31 @@
       "sourceTitle": "The Apothecary Diaries",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 170508,
+          "title": "Maomao no Hitorigoto",
+          "nativeTitle": "猫猫のひとりごと",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/170508"
+        },
+        {
+          "id": 176301,
+          "title": "The Apothecary Diaries Season 2",
+          "nativeTitle": "薬屋のひとりごと 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/176301"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -1236,6 +2816,42 @@
       "sourceTitle": "The Apothecary Diaries Season 2",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 161645,
+          "title": "The Apothecary Diaries",
+          "nativeTitle": "薬屋のひとりごと",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/161645"
+        },
+        {
+          "id": 186148,
+          "title": "Maomao no Hitorigoto 2nd Season",
+          "nativeTitle": "猫猫のひとりごと 第2期",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/186148"
+        },
+        {
+          "id": 195516,
+          "title": "The Apothecary Diaries Season 3",
+          "nativeTitle": "薬屋のひとりごと 第3期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/195516"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -1259,6 +2875,53 @@
       "sourceTitle": "Laid-Back Camp",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 104459,
+          "title": "LAID-BACK CAMP SEASON2",
+          "nativeTitle": "ゆるキャン△ SEASON２",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/104459"
+        },
+        {
+          "id": 101206,
+          "title": "Yuru Camp△ OVA",
+          "nativeTitle": "ゆるキャン△ OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101206"
+        },
+        {
+          "id": 104461,
+          "title": "ROOM CAMP",
+          "nativeTitle": "へやキャン△",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "TV_SHORT",
+          "formatLabel": "电视短篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/104461"
+        },
+        {
+          "id": 114981,
+          "title": "ROOM CAMP: Saunas and Grub and Three-Wheeler Bikes",
+          "nativeTitle": "へやキャン△「サウナとごはんと三輪バイク」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/114981"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1276,35 +2939,26 @@
       ]
     },
     {
-      "id": "jojo-part-8",
-      "title": "JoJo 第八部 JOJOLION",
-      "subtitle": "尚未动画化",
-      "sourceTitle": "JoJo 第八部 JOJOLION",
-      "status": "NOT_YET_RELEASED",
-      "format": null,
-      "releasedEpisodes": 0,
-      "totalEpisodes": null,
-      "nextEpisode": null,
-      "nextAiringAt": null,
-      "lastAiredAt": null,
-      "startDate": null,
-      "endDate": null,
-      "coverImage": null,
-      "coverColor": "#8b5cf6",
-      "bannerImage": null,
-      "siteUrl": "https://anilist.co/search/manga?search=JoJolion",
-      "note": "原文写作“jojo8”；目前没有可查询的动画集数或更新时间。",
-      "groups": [
-        "想看"
-      ]
-    },
-    {
       "id": 18679,
       "title": "斩服少女",
       "subtitle": "キルラキル",
       "sourceTitle": "Kill la Kill",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20572,
+          "title": "Kill la Kill: GOODBYE AGAIN",
+          "nativeTitle": "キルラキル 特別編",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20572"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -1328,6 +2982,53 @@
       "sourceTitle": "Overlord",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 87489,
+          "title": "Overlord: Ple Ple Pleiades - Nazarick Saidai no Kiki",
+          "nativeTitle": "オーバーロード ぷれぷれぷれあです 『なざりっく最大の危機』",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/87489"
+        },
+        {
+          "id": 98437,
+          "title": "Overlord II",
+          "nativeTitle": "オーバーロードⅡ",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98437"
+        },
+        {
+          "id": 21305,
+          "title": "Overlord: Ple Ple Pleiades",
+          "nativeTitle": "オーバーロード ぷれぷれぷれあです",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21305"
+        },
+        {
+          "id": 166035,
+          "title": "Overlord: Ple Ple Pleiades Tokubetsu-hen",
+          "nativeTitle": "オーバーロード ぷれぷれぷれあです 特別編",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/166035"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1351,6 +3052,119 @@
       "sourceTitle": "Naruto",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 1735,
+          "title": "Naruto: Shippuden",
+          "nativeTitle": "NARUTO -ナルト- 疾風伝",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1735"
+        },
+        {
+          "id": 442,
+          "title": "Naruto the Movie: Ninja Clash in the Land of Snow",
+          "nativeTitle": "劇場版 NARUTO -ナルト- 大活劇!雪姫忍法帖だってばよ!!",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/442"
+        },
+        {
+          "id": 594,
+          "title": "Naruto: The Lost Story - Mission: Protect the Waterfall Village",
+          "nativeTitle": "NARUTO -ナルト- 滝隠れの死闘 オレが英雄だってばよ！",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/594"
+        },
+        {
+          "id": 761,
+          "title": "NARUTO: Akaki Yotsuba no Clover wo Sagase",
+          "nativeTitle": "NARUTO -ナルト- 紅き四つ葉のクローバーを探せ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/761"
+        },
+        {
+          "id": 936,
+          "title": "Naruto the Movie: Legend of the Stone of Gelel",
+          "nativeTitle": "劇場版 NARUTO -ナルト- 大激突!幻の地底遺跡だってばよ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/936"
+        },
+        {
+          "id": 1074,
+          "title": "NARUTO: Narutimate Hero 3: Tsui ni Gekitotsu! Jounin VS Genin!! Musabetsu Dairansen Taikai Kaisai!!",
+          "nativeTitle": "NARUTO -ナルト- ナルティメットヒーロー3 ついに激突! 上忍VS下忍!! 無差別大乱戦大会開催!!",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1074"
+        },
+        {
+          "id": 2144,
+          "title": "Naruto the Movie: Guardians of the Crescent Moon Kingdom",
+          "nativeTitle": "劇場版 NARUTO -ナルト- 大興奮!みかづき島のアニマル騒動だってばよ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2144"
+        },
+        {
+          "id": 7367,
+          "title": "NARUTO: THE CROSS ROADS",
+          "nativeTitle": "NARUTO -ナルト- THE CROSS ROADS",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7367"
+        },
+        {
+          "id": 10659,
+          "title": "Naruto, the Genie, and the Three Wishes, Believe It!",
+          "nativeTitle": "劇場版 NARUTO -ナルト- そよかぜ伝 ナルトと魔神と3つのお願いだってばよ!!",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10659"
+        },
+        {
+          "id": 162561,
+          "title": "NARUTO (2026)",
+          "nativeTitle": "NARUTO -ナルト- (2026)",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/162561"
+        }
+      ],
       "releasedEpisodes": 220,
       "totalEpisodes": 220,
       "nextEpisode": null,
@@ -1374,6 +3188,449 @@
       "sourceTitle": "ONE PIECE",
       "status": "RELEASING",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 466,
+          "title": "One Piece: Defeat the Pirate Ganzack!",
+          "nativeTitle": "ONE PIECE 倒せ!海賊ギャンザック",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/466"
+        },
+        {
+          "id": 1094,
+          "title": "One Piece: Umi no Heso no Daibouken-hen",
+          "nativeTitle": "ONE PIECE TVスペシャル 海のヘソの大冒険篇",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1094"
+        },
+        {
+          "id": 1237,
+          "title": "One Piece Special: Open Upon the Great Sea! A Father's Huge, HUGE Dream!",
+          "nativeTitle": "ONE PIECE: 大海原にひらけ! でっかいでっカイ父の夢",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1237"
+        },
+        {
+          "id": 1238,
+          "title": "One Piece Special: Protect! The Last Great Performance",
+          "nativeTitle": "ONE PIECE 守れ! 最後の大舞台",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1238"
+        },
+        {
+          "id": 2020,
+          "title": "One Piece Special: The Detective Memoirs of Chief Straw Hat Luffy",
+          "nativeTitle": "ONE PIECE 年末特別企画！麦わらのルフィ親分捕物帖",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2020"
+        },
+        {
+          "id": 2386,
+          "title": "ONE PIECE: Yume no Soccer Ou!",
+          "nativeTitle": "ONE PIECE 夢のサッカー王!",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2386"
+        },
+        {
+          "id": 2490,
+          "title": "ONE PIECE: Mezase! Kaizoku Yakyuu Ou",
+          "nativeTitle": "ONE PIECE めざせ! 海賊野球王",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2490"
+        },
+        {
+          "id": 12001,
+          "title": "ONE PIECE 3D: Gekisou! Trap Coaster",
+          "nativeTitle": "ONE PIECE 3D 激走! トラップコースター",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/12001"
+        },
+        {
+          "id": 16239,
+          "title": "One Piece: Episode of Luffy - Hand Island Adventure",
+          "nativeTitle": "ONE PIECE エピソードオブルフィ 〜ハンドアイランドの冒険〜",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/16239"
+        },
+        {
+          "id": 16468,
+          "title": "ONE PIECE FILM: Z - GLORIOUS ISLAND",
+          "nativeTitle": "ONE PIECE FILM Z『GLORIOUS ISLAND』",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/16468"
+        },
+        {
+          "id": 20835,
+          "title": "One Piece 3D2Y: Overcome Ace’s Death! Luffy’s Vow to his Friends",
+          "nativeTitle": "ONE PIECE “3D2Y” エースの死を越えて! ルフィ仲間との誓い",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20835"
+        },
+        {
+          "id": 21485,
+          "title": "One Piece: Adventure of Nebulandia",
+          "nativeTitle": "ONE PIECE 〜アドベンチャー オブ ネブランディア〜",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21485"
+        },
+        {
+          "id": 21831,
+          "title": "One Piece: Heart of Gold",
+          "nativeTitle": "ONE PIECE 〜ハートオブゴールド〜",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21831"
+        },
+        {
+          "id": 459,
+          "title": "ONE PIECE: The Movie",
+          "nativeTitle": "ONE PIECE (Movie)",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/459"
+        },
+        {
+          "id": 460,
+          "title": "One Piece: Clockwork Island Adventure",
+          "nativeTitle": "ONE PIECE ねじまき島の冒険",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/460"
+        },
+        {
+          "id": 461,
+          "title": "One Piece: Chopper’s Kingdom on the Island of Strange Animals",
+          "nativeTitle": "ONE PIECE 珍獣島のチョッパー王国",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/461"
+        },
+        {
+          "id": 462,
+          "title": "One Piece The Movie: The Dead End Adventure",
+          "nativeTitle": "ONE PIECE THE MOVIE デッドエンドの冒険",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/462"
+        },
+        {
+          "id": 463,
+          "title": "One Piece: The Curse of the Sacred Sword",
+          "nativeTitle": "ONE PIECE 呪われた聖剣",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/463"
+        },
+        {
+          "id": 464,
+          "title": "One Piece: Baron Omatsuri and the Secret Island",
+          "nativeTitle": "ONE PIECE THE MOVIE オマツリ男爵と秘密の島",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/464"
+        },
+        {
+          "id": 465,
+          "title": "One Piece: Mega Mecha Soldier of Karakuri Castle",
+          "nativeTitle": "ONE PIECE THE MOVIE カラクリ城のメカ巨兵",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/465"
+        },
+        {
+          "id": 4155,
+          "title": "One Piece Film: Strong World",
+          "nativeTitle": "ONE PIECE FILM STRONG WORLD",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4155"
+        },
+        {
+          "id": 9999,
+          "title": "One Piece 3D: Mugiwara Chase",
+          "nativeTitle": "ONE PIECE 3D 麦わらチェイス",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/9999"
+        },
+        {
+          "id": 12859,
+          "title": "One Piece Film: Z",
+          "nativeTitle": "ONE PIECE FILM Z",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/12859"
+        },
+        {
+          "id": 21335,
+          "title": "One Piece Film: Gold",
+          "nativeTitle": "ONE PIECE FILM GOLD",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21335"
+        },
+        {
+          "id": 8740,
+          "title": "ONE PIECE FILM: STRONG WORLD - EPISODE:0",
+          "nativeTitle": "ONE PIECE FILM STRONG WORLD EPISODE:0",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/8740"
+        },
+        {
+          "id": 105143,
+          "title": "One Piece: Stampede",
+          "nativeTitle": "ONE PIECE STAMPEDE",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/105143"
+        },
+        {
+          "id": 107110,
+          "title": "ONE PIECE: Cry heart",
+          "nativeTitle": "ワンピース Cry heart",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/107110"
+        },
+        {
+          "id": 2385,
+          "title": "One Piece: Django's Dance Carnival",
+          "nativeTitle": "ONE PIECE ねじまき島の冒険 ジャンゴのダンスカーニバル",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2385"
+        },
+        {
+          "id": 21880,
+          "title": "ONE PIECE FILM: GOLD - episode 0 711ver.",
+          "nativeTitle": "ONE PIECE FILM GOLD 〜episode 0〜 711ver.",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21880"
+        },
+        {
+          "id": 5252,
+          "title": "One Piece: Romance Dawn Story",
+          "nativeTitle": "ONE PIECE ロマンス ドーン ストーリー",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/5252"
+        },
+        {
+          "id": 126649,
+          "title": "The Great Tongari Island Treasure Hunting Adventure",
+          "nativeTitle": "東京ワンピースタワー トンガリ島の大秘宝",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/126649"
+        },
+        {
+          "id": 141902,
+          "title": "One Piece Film: Red",
+          "nativeTitle": "ONE PIECE FILM RED",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/141902"
+        },
+        {
+          "id": 143293,
+          "title": "One Piece: Annecy Festival 60th Anniversary",
+          "nativeTitle": "One Piece: Annecy Festival 60th Anniversary",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/143293"
+        },
+        {
+          "id": 167404,
+          "title": "MONSTERS: 103 Mercies Dragon Damnation",
+          "nativeTitle": "MONSTERS 一百三情飛龍侍極",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/167404"
+        },
+        {
+          "id": 177475,
+          "title": "ONE PIECE×KAWAISOUNI! Kono Boushi wo Omae ni Azukeru",
+          "nativeTitle": "ONE PIECE×可哀想に！～この帽子を お前に預ける～",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/177475"
+        },
+        {
+          "id": 182469,
+          "title": "ONE PIECE FAN LETTER",
+          "nativeTitle": "ONE PIECE FAN LETTER",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/182469"
+        },
+        {
+          "id": 188668,
+          "title": "Koisuru ONE PIECE",
+          "nativeTitle": "恋するワンピース",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/188668"
+        },
+        {
+          "id": 197178,
+          "title": "ONE PIECE HEROINES",
+          "nativeTitle": "ONE PIECE HEROINES",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/197178"
+        },
+        {
+          "id": 187380,
+          "title": "ONE PIECE: Original Episode/Luffy, Law",
+          "nativeTitle": "ONE PIECE オリジナルエピソード／ルフィ、ロー",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/187380"
+        },
+        {
+          "id": 204432,
+          "title": "CHOPPER's",
+          "nativeTitle": "CHOPPER's",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV_SHORT",
+          "formatLabel": "电视短篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/204432"
+        }
+      ],
       "releasedEpisodes": 1174,
       "totalEpisodes": null,
       "nextEpisode": 1175,
@@ -1397,6 +3654,64 @@
       "sourceTitle": "Love Live! School Idol Project",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 19111,
+          "title": "Love Live! School Idol Project 2nd Season",
+          "nativeTitle": "ラブライブ! School idol project 2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/19111"
+        },
+        {
+          "id": 20554,
+          "title": "Love Live! School idol project OVA",
+          "nativeTitle": "ラブライブ! School idol project OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20554"
+        },
+        {
+          "id": 113970,
+          "title": "Love Live! Nijigasaki High School Idol Club",
+          "nativeTitle": "ラブライブ！虹ヶ咲学園スクールアイドル同好会",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/113970"
+        },
+        {
+          "id": 114979,
+          "title": "Love Live! Superstar!!",
+          "nativeTitle": "ラブライブ!スーパースター!!",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/114979"
+        },
+        {
+          "id": 194167,
+          "title": "Love Live! Hasunosora Jogakuin School Idol Club: Bloom Garden Party",
+          "nativeTitle": "ラブライブ！蓮ノ空女学院スクールアイドルクラブ Bloom Garden Party",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/194167"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1420,6 +3735,20 @@
       "sourceTitle": "Hyouka",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 13469,
+          "title": "Hyouka: What Should Be Had",
+          "nativeTitle": "氷菓 持つべきものは",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/13469"
+        }
+      ],
       "releasedEpisodes": 22,
       "totalEpisodes": 22,
       "nextEpisode": null,
@@ -1443,6 +3772,31 @@
       "sourceTitle": "Horimiya",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 14753,
+          "title": "Hori-san to Miyamura-kun",
+          "nativeTitle": "堀さんと宮村くん",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/14753"
+        },
+        {
+          "id": 163132,
+          "title": "Horimiya: The Missing Pieces",
+          "nativeTitle": "ホリミヤ -piece-",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/163132"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1466,6 +3820,31 @@
       "sourceTitle": "Vinland Saga",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 136430,
+          "title": "Vinland Saga Season 2",
+          "nativeTitle": "ヴィンランド・サガ SEASON2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/136430"
+        },
+        {
+          "id": 145902,
+          "title": "Ponkotsuland Saga",
+          "nativeTitle": "ポンコツランド・サガ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/145902"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -1489,6 +3868,8 @@
       "sourceTitle": "Death Note",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 37,
       "totalEpisodes": 37,
       "nextEpisode": null,
@@ -1512,6 +3893,8 @@
       "sourceTitle": "Love Lab",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1535,6 +3918,53 @@
       "sourceTitle": "Tokyo Ghoul",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21326,
+          "title": "Tokyo Ghoul: [PINTO]",
+          "nativeTitle": "東京喰種トーキョーグール【PINTO】",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21326"
+        },
+        {
+          "id": 20850,
+          "title": "Tokyo Ghoul √A",
+          "nativeTitle": "東京喰種[トーキョーグール]√A",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20850"
+        },
+        {
+          "id": 21132,
+          "title": "Tokyo Ghoul: [JACK]",
+          "nativeTitle": "東京喰種トーキョーグール [JACK]",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21132"
+        },
+        {
+          "id": 195457,
+          "title": "「unravel」×『Tokyo Ghoul』TV Animation 10th Anniversary Collaboration MV",
+          "nativeTitle": "「unravel」×『東京喰種』TV Animation 10th Anniversary Collaboration MV",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/195457"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1558,6 +3988,31 @@
       "sourceTitle": "White Album 2",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 4720,
+          "title": "White Album",
+          "nativeTitle": "WHITE ALBUM",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4720"
+        },
+        {
+          "id": 102572,
+          "title": "White Album 2 Picture Drama",
+          "nativeTitle": "ホワイトアルバム２　ピクチャードラマ「祭りの、ほんのちょっと前」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/102572"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1581,6 +4036,64 @@
       "sourceTitle": "When They Cry",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 1889,
+          "title": "When They Cry Kai",
+          "nativeTitle": "ひぐらしのなく頃に解",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1889"
+        },
+        {
+          "id": 2899,
+          "title": "Higurashi no Naku Koro ni: Nekogoroshi-hen",
+          "nativeTitle": "ひぐらしのなく頃に 猫殺し編",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/2899"
+        },
+        {
+          "id": 16700,
+          "title": "Higurashi no Naku Koro ni Kaku: Outbreak",
+          "nativeTitle": "ひぐらしのなく頃に拡〜アウトブレイク〜",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/16700"
+        },
+        {
+          "id": 4896,
+          "title": "Umineko: When They Cry",
+          "nativeTitle": "うみねこのなく頃に",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4896"
+        },
+        {
+          "id": 213396,
+          "title": "Higurashi no Naku Koro ni (Shin Anime)",
+          "nativeTitle": "ひぐらしのなく頃に (新アニメ)",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/213396"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -1604,6 +4117,31 @@
       "sourceTitle": "Barakamon",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20782,
+          "title": "Barakamon: Mijikamon",
+          "nativeTitle": "みじかもん",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20782"
+        },
+        {
+          "id": 21626,
+          "title": "Handa-kun",
+          "nativeTitle": "はんだくん",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21626"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1627,6 +4165,20 @@
       "sourceTitle": "Akame ga Kill!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20775,
+          "title": "AkaKill! Theater",
+          "nativeTitle": "アカ斬る!劇場",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20775"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -1650,6 +4202,20 @@
       "sourceTitle": "MASHLE: MAGIC AND MUSCLES",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 166610,
+          "title": "MASHLE: MAGIC AND MUSCLES Season 2",
+          "nativeTitle": "マッシュル-MASHLE- 神覚者候補選抜試験編",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/166610"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1673,6 +4239,31 @@
       "sourceTitle": "Guilty Crown",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 13411,
+          "title": "Guilty Crown: Lost Christmas",
+          "nativeTitle": "ギルティクラウン ロストクリスマス",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/13411"
+        },
+        {
+          "id": 13561,
+          "title": "Guilty Crown: 4-koma Gekijou",
+          "nativeTitle": "ギルクラ4コマ劇場 ぎる亭くら雲",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/13561"
+        }
+      ],
       "releasedEpisodes": 22,
       "totalEpisodes": 22,
       "nextEpisode": null,
@@ -1696,6 +4287,53 @@
       "sourceTitle": "Baka and Test - Summon the Beasts",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 9471,
+          "title": "Baka and Test - Summon the Beasts: Matsuri",
+          "nativeTitle": "バカとテストと召喚獣 ～祭～",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/9471"
+        },
+        {
+          "id": 7870,
+          "title": "Baka and Test - Summon the Beasts Specials",
+          "nativeTitle": "未公開映像 (制作: ムッツリ商会)",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7870"
+        },
+        {
+          "id": 7805,
+          "title": "Baka and Test - Summon the Beasts: Christmas Special",
+          "nativeTitle": "バカとテストと召喚獣 問題 クリスマスについて答えなさい",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7805"
+        },
+        {
+          "id": 107348,
+          "title": "Baka and Test Mini Special",
+          "nativeTitle": "バカとテストと召喚獣 ミニアニメ",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/107348"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1719,6 +4357,97 @@
       "sourceTitle": "The Idol Master",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 11889,
+          "title": "The Idolm@ster: 765 Pro to Iu Monogatari",
+          "nativeTitle": "アイドルマスター 765プロという物語",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11889"
+        },
+        {
+          "id": 4033,
+          "title": "The Idolm@ster: Live for You!",
+          "nativeTitle": "アイドルマスター ライブフォーユー!",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/4033"
+        },
+        {
+          "id": 1694,
+          "title": "IDOLM@STER: XENOGLOSSIA",
+          "nativeTitle": "アイドルマスター ゼノグラシア",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/1694"
+        },
+        {
+          "id": 98310,
+          "title": "THE IDOLM@STER Side M",
+          "nativeTitle": "アイドルマスター SideM",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98310"
+        },
+        {
+          "id": 120755,
+          "title": "THE IDOLM@STER Million Live!",
+          "nativeTitle": "アイドルマスター ミリオンライブ！",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/120755"
+        },
+        {
+          "id": 110219,
+          "title": "The Idolm@ster Million Live! 4th Shuunen Kinen PV",
+          "nativeTitle": "アイドルマスター ミリオンライブ！４周年記念ＰＶ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/110219"
+        },
+        {
+          "id": 20693,
+          "title": "THE IDOLM@STER CINDERELLA GIRLS",
+          "nativeTitle": "アイドルマスターシンデレラガールズ",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20693"
+        },
+        {
+          "id": 162889,
+          "title": "THE iDOLM@STER SHINY COLORS",
+          "nativeTitle": "アイドルマスター シャイニーカラーズ",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/162889"
+        }
+      ],
       "releasedEpisodes": 25,
       "totalEpisodes": 25,
       "nextEpisode": null,
@@ -1742,6 +4471,8 @@
       "sourceTitle": "ONIMAI: I'm Now Your Sister!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1765,6 +4496,20 @@
       "sourceTitle": "Daily Lives of High School Boys",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 12893,
+          "title": "Daily Lives of High School Boys Specials",
+          "nativeTitle": "男子高校生の日常",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/12893"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1788,6 +4533,8 @@
       "sourceTitle": "Wasteful Days of High School Girls",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1811,6 +4558,20 @@
       "sourceTitle": "TONIKAWA: Over The Moon For You",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 127371,
+          "title": "TONIKAWA: Over The Moon For You ~SNS~",
+          "nativeTitle": "トニカクカワイイ ～SNS～",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/127371"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1834,6 +4595,20 @@
       "sourceTitle": "Made in Abyss",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 100643,
+          "title": "Made in Abyss: Dawn of the Deep Soul",
+          "nativeTitle": "メイドインアビス 深き魂の黎明",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/100643"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -1857,6 +4632,31 @@
       "sourceTitle": "Orb: On the Movements of the Earth",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 206054,
+          "title": "Aporia",
+          "nativeTitle": "アポリア",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/206054"
+        },
+        {
+          "id": 206056,
+          "title": "Hebi",
+          "nativeTitle": "へび",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/206056"
+        }
+      ],
       "releasedEpisodes": 25,
       "totalEpisodes": 25,
       "nextEpisode": null,
@@ -1880,6 +4680,75 @@
       "sourceTitle": "Legend of the Galactic Heroes",
       "status": "FINISHED",
       "format": "OVA",
+      "formatLabel": "OVA",
+      "relatedAnime": [
+        {
+          "id": 3016,
+          "title": "Legend of the Galactic Heroes: Overture to a New War",
+          "nativeTitle": "銀河英雄伝説外伝　新たなる戦いの序曲[オーヴァチュア]",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/3016"
+        },
+        {
+          "id": 3014,
+          "title": "Legend of the Galactic Heroes: My Conquest Is the Sea of Stars",
+          "nativeTitle": "銀河英雄伝説: わが征くは星の大海",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/3014"
+        },
+        {
+          "id": 20628,
+          "title": "Legend of the Galactic Heroes: Die Neue These",
+          "nativeTitle": "銀河英雄伝説 -Die Neue These- 邂逅",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20628"
+        },
+        {
+          "id": 100780,
+          "title": "Legend of the Galactic Heroes: Die Neue These Second",
+          "nativeTitle": "銀河英雄伝説 Die Neue These 星乱",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/100780"
+        },
+        {
+          "id": 124032,
+          "title": "Legend of the Galactic Heroes: Die Neue These - Collision",
+          "nativeTitle": "銀河英雄伝説 Die Neue These 激突",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/124032"
+        },
+        {
+          "id": 148970,
+          "title": "Legend of the Galactic Heroes: Die Neue These - Intrigue",
+          "nativeTitle": "銀河英雄伝説 Die Neue These 策謀",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/148970"
+        }
+      ],
       "releasedEpisodes": 110,
       "totalEpisodes": 110,
       "nextEpisode": null,
@@ -1903,6 +4772,20 @@
       "sourceTitle": "My Dress-Up Darling",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 154768,
+          "title": "My Dress-Up Darling Season 2",
+          "nativeTitle": "その着せ替え人形は恋をする Season 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/154768"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1926,6 +4809,86 @@
       "sourceTitle": "Girls und Panzer",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 18617,
+          "title": "Girls und Panzer der Film",
+          "nativeTitle": "ガールズ&パンツァー 劇場版",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/18617"
+        },
+        {
+          "id": 15811,
+          "title": "Girls und Panzer OVA Series",
+          "nativeTitle": "ガールズ&パンツァー",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/15811"
+        },
+        {
+          "id": 18619,
+          "title": "Girls und Panzer: This is the Real Anzio Battle!",
+          "nativeTitle": "ガールズ&パンツァー これが本当のアンツィオ戦です！",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/18619"
+        },
+        {
+          "id": 130362,
+          "title": "Fushou Akiyama Yukari no Sensha Kouza",
+          "nativeTitle": "不肖 秋山優花里の戦車道講座",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/130362"
+        },
+        {
+          "id": 154147,
+          "title": "Girls und Panzer Heartful Tank Disc: Fushou Akiyama Yukari no Sensha Kouza",
+          "nativeTitle": "ガールズ＆パンツァー　ハートフル タンク ディスク: 不肖 秋山優花里の戦車道講座",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/154147"
+        },
+        {
+          "id": 188034,
+          "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
+          "nativeTitle": "ガールズ＆パンツァー もっとらぶらぶ作戦です！",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/188034"
+        },
+        {
+          "id": 209312,
+          "title": "Girls und Panzer: Ribbon no Musha Pilot-ban",
+          "nativeTitle": "ガールズ＆パンツァー リボンの武者 パイロット版",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/209312"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1949,6 +4912,8 @@
       "sourceTitle": "Catch Me at the Ballpark!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1972,6 +4937,8 @@
       "sourceTitle": "Flower and Asura",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -1995,6 +4962,42 @@
       "sourceTitle": "My Next Life as a Villainess: All Routes Lead to Doom!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 116922,
+          "title": "Katarina Nounai Kaigi",
+          "nativeTitle": "カタリナ脳内会議",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/116922"
+        },
+        {
+          "id": 119960,
+          "title": "Katarina to Manabou",
+          "nativeTitle": "カタリナと学ぼう",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/119960"
+        },
+        {
+          "id": 120209,
+          "title": "My Next Life as a Villainess: All Routes Lead to Doom! X",
+          "nativeTitle": "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…Ｘ",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/120209"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2018,6 +5021,31 @@
       "sourceTitle": "Wandering Witch: The Journey of Elaina",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 129839,
+          "title": "Haiiro no Saga",
+          "nativeTitle": "灰色のサーガ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/129839"
+        },
+        {
+          "id": 205444,
+          "title": "Majo no Tabitabi Movie",
+          "nativeTitle": "劇場版 魔女の旅々",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/205444"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2042,6 +5070,53 @@
       "sourceTitle": "Frieren: Beyond Journey’s End",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 170068,
+          "title": "Sousou no Frieren: ●● no Mahou",
+          "nativeTitle": "葬送のフリーレン ～●●の魔法～",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/170068"
+        },
+        {
+          "id": 175691,
+          "title": "Sunny",
+          "nativeTitle": "晴る",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/175691"
+        },
+        {
+          "id": 182255,
+          "title": "Frieren: Beyond Journey’s End Season 2",
+          "nativeTitle": "葬送のフリーレン 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/182255"
+        },
+        {
+          "id": 189513,
+          "title": "Sousou no Frieren: ●● no Mahou Part 2",
+          "nativeTitle": "葬送のフリーレン ～●●の魔法～ 2クール",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/189513"
+        }
+      ],
       "releasedEpisodes": 28,
       "totalEpisodes": 28,
       "nextEpisode": null,
@@ -2066,6 +5141,42 @@
       "sourceTitle": "K-ON!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 7791,
+          "title": "K-ON! Season 2",
+          "nativeTitle": "けいおん!!",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7791"
+        },
+        {
+          "id": 6862,
+          "title": "K-ON!: Live House!",
+          "nativeTitle": "けいおん!「ライブハウス！」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/6862"
+        },
+        {
+          "id": 7017,
+          "title": "K-ON! Season 1 Shorts",
+          "nativeTitle": "うらおん!",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/7017"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2089,6 +5200,20 @@
       "sourceTitle": "BOCCHI THE ROCK!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 186712,
+          "title": "Bocchi the Rock! 2nd Season",
+          "nativeTitle": "ぼっち・ざ・ろっく！ 2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/186712"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2113,6 +5238,42 @@
       "sourceTitle": "Girls Band Cry",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 175688,
+          "title": "no rhyme nor reason",
+          "nativeTitle": "偽りの理",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/175688"
+        },
+        {
+          "id": 184814,
+          "title": "white drizzle in gloom",
+          "nativeTitle": "気鬱、白濁す",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/184814"
+        },
+        {
+          "id": 199152,
+          "title": "GIRLS BAND CRY (Shinsaku Eiga)",
+          "nativeTitle": "ガールズバンドクライ (新作映画)",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/199152"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2137,6 +5298,42 @@
       "sourceTitle": "BanG Dream! It's MyGO!!!!!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 117765,
+          "title": "BanG Dream! Poppin' Dream!",
+          "nativeTitle": "BanG Dream! ぽっぴん'どりーむ!",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/117765"
+        },
+        {
+          "id": 169295,
+          "title": "Ave Mujica - The Die is Cast -",
+          "nativeTitle": "BanG Dream! Ave Mujica",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/169295"
+        },
+        {
+          "id": 193414,
+          "title": "MyGO!!!!! Member no Nichijou",
+          "nativeTitle": "MyGO!!!!!メンバーの日常",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/193414"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2161,6 +5358,42 @@
       "sourceTitle": "Delicious in Dungeon",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 111516,
+          "title": "Delicious in Dungeon CM",
+          "nativeTitle": "ダンジョン飯 CM",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/111516"
+        },
+        {
+          "id": 158627,
+          "title": "Dungeon Meshi: Senshi no Kantan Cooking!",
+          "nativeTitle": "ダンジョン飯～センシのかんたんクッキング！",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/158627"
+        },
+        {
+          "id": 178031,
+          "title": "Delicious in Dungeon Season 2",
+          "nativeTitle": "ダンジョン飯 第２期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/178031"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -2184,6 +5417,64 @@
       "sourceTitle": "Puella Magi Madoka Magica",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 11981,
+          "title": "Puella Magi Madoka Magica the Movie -Rebellion-",
+          "nativeTitle": "劇場版 魔法少女まどか☆マギカ 叛逆の物語",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11981"
+        },
+        {
+          "id": 11977,
+          "title": "Puella Magi Madoka Magica the Movie Part 1: Beginnings",
+          "nativeTitle": "劇場版 魔法少女まどか☆マギカ 始まりの物語",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11977"
+        },
+        {
+          "id": 11979,
+          "title": "Puella Magi Madoka Magica the Movie Part 2: Eternal",
+          "nativeTitle": "劇場版 魔法少女まどか☆マギカ 永遠の物語",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/11979"
+        },
+        {
+          "id": 10519,
+          "title": "Puella Magi Sonico Magica",
+          "nativeTitle": "魔法少女そに子☆マギカ",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10519"
+        },
+        {
+          "id": 104051,
+          "title": "Magia Record: Puella Magi Madoka Magica Side Story",
+          "nativeTitle": "マギアレコード 魔法少女まどか☆マギカ外伝",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/104051"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2207,6 +5498,20 @@
       "sourceTitle": "OSHI NO KO",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 166531,
+          "title": "OSHI NO KO Season 2",
+          "nativeTitle": "【推しの子】第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/166531"
+        }
+      ],
       "releasedEpisodes": 11,
       "totalEpisodes": 11,
       "nextEpisode": null,
@@ -2230,6 +5535,20 @@
       "sourceTitle": "Alya Sometimes Hides Her Feelings in Russian",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 181641,
+          "title": "Tokidoki Bosotto Rossiya-go de Dereru Tonari no Alya-san Season 2",
+          "nativeTitle": "時々ボソッとロシア語でデレる隣のアーリャさん Season 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/181641"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2253,6 +5572,20 @@
       "sourceTitle": "SPY x FAMILY",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 142838,
+          "title": "SPY x FAMILY Cour 2",
+          "nativeTitle": "SPY×FAMILY 第2クール",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/142838"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2276,6 +5609,20 @@
       "sourceTitle": "Makeine: Too Many Losing Heroines!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 189796,
+          "title": "Make Heroine ga Oosugiru! 2nd Season",
+          "nativeTitle": "負けヒロインが多すぎる！第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/189796"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2299,6 +5646,42 @@
       "sourceTitle": "JUJUTSU KAISEN",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 131573,
+          "title": "JUJUTSU KAISEN 0",
+          "nativeTitle": "呪術廻戦 0",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/131573"
+        },
+        {
+          "id": 145064,
+          "title": "JUJUTSU KAISEN Season 2",
+          "nativeTitle": "呪術廻戦 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/145064"
+        },
+        {
+          "id": 147463,
+          "title": "Jujutsu Kaisen PV",
+          "nativeTitle": "呪術廻戦PV",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/147463"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -2322,6 +5705,97 @@
       "sourceTitle": "Attack on Titan",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20691,
+          "title": "Attack on Titan Part I: Crimson Bow and Arrow",
+          "nativeTitle": "劇場版「進撃の巨人」前編～紅蓮の弓矢～",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20691"
+        },
+        {
+          "id": 20692,
+          "title": "Attack on Titan Part II: Wings of Freedom",
+          "nativeTitle": "劇場版「進撃の巨人」後編～自由の翼～",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20692"
+        },
+        {
+          "id": 20958,
+          "title": "Attack on Titan Season 2",
+          "nativeTitle": "進撃の巨人 Season２",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20958"
+        },
+        {
+          "id": 21281,
+          "title": "Attack on Titan: Junior High",
+          "nativeTitle": "進撃！巨人中学校",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21281"
+        },
+        {
+          "id": 18397,
+          "title": "Attack on Titan OVA",
+          "nativeTitle": "進撃の巨人 OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/18397"
+        },
+        {
+          "id": 20811,
+          "title": "Attack on Titan: No Regrets",
+          "nativeTitle": "進撃の巨人 外伝 悔いなき選択",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20811"
+        },
+        {
+          "id": 99634,
+          "title": "Attack on Titan: Lost Girls",
+          "nativeTitle": "進撃の巨人 LOST GIRLS",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/99634"
+        },
+        {
+          "id": 19391,
+          "title": "Attack on Titan Picture Drama",
+          "nativeTitle": "「進撃の巨人」ちみキャラ劇場\"とんでけ! 訓練兵団\"",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/19391"
+        }
+      ],
       "releasedEpisodes": 25,
       "totalEpisodes": 25,
       "nextEpisode": null,
@@ -2345,6 +5819,42 @@
       "sourceTitle": "Violet Evergarden",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 101432,
+          "title": "Violet Evergarden: Special",
+          "nativeTitle": "ヴァイオレット・エヴァーガーデン きっと\"愛\"を知る日が来るのだろう",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101432"
+        },
+        {
+          "id": 109190,
+          "title": "Violet Evergarden: Eternity and the Auto Memory Doll",
+          "nativeTitle": "ヴァイオレット・エヴァーガーデン 外伝~永遠と自動手記人形~",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/109190"
+        },
+        {
+          "id": 154164,
+          "title": "Violet Evergarden CM",
+          "nativeTitle": "ヴァイオレット・エヴァーガーデン CM",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/154164"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2368,6 +5878,31 @@
       "sourceTitle": "No Game, No Life",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20769,
+          "title": "No Game No Life Specials",
+          "nativeTitle": "ノーゲーム・ノーライフ ミニOVAs",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20769"
+        },
+        {
+          "id": 21875,
+          "title": "No Game, No Life Zero",
+          "nativeTitle": "ノーゲーム・ノーライフ ゼロ",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21875"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2391,6 +5926,20 @@
       "sourceTitle": "Monthly Girls' Nozaki-kun",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20869,
+          "title": "Monthly Girls' Nozaki-kun Specials",
+          "nativeTitle": "月刊少女野崎くん ミニOVAs",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20869"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2414,6 +5963,20 @@
       "sourceTitle": "My Deer Friend Nokotan",
       "status": "FINISHED",
       "format": "ONA",
+      "formatLabel": "网络动画",
+      "relatedAnime": [
+        {
+          "id": 187626,
+          "title": "Gorogura Gorogoro Gu ga Dekkai-hen",
+          "nativeTitle": "ごろグラごろごろ具がでっかい 篇",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/187626"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2437,6 +6000,8 @@
       "sourceTitle": "The Magical Girl and the Evil Lieutenant Used to Be Archenemies",
       "status": "FINISHED",
       "format": "TV_SHORT",
+      "formatLabel": "电视短篇",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2460,6 +6025,31 @@
       "sourceTitle": "ATRI -My Dear Moments-",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 120757,
+          "title": "ATRI -My Dear Moments- Special Animation PV",
+          "nativeTitle": "ATRI -My Dear Moments- スペシャルアニメーションPV",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/120757"
+        },
+        {
+          "id": 185481,
+          "title": "YES to NO no Aida ni",
+          "nativeTitle": "YESとNOの間に",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/185481"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2483,6 +6073,20 @@
       "sourceTitle": "MAYONAKA PUNCH",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 207886,
+          "title": "Run Run Lantern",
+          "nativeTitle": "Run Run Lantern",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/207886"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2506,6 +6110,20 @@
       "sourceTitle": "Girls' Last Tour",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 100180,
+          "title": "Girls' Weekend Class",
+          "nativeTitle": "少女週末授業",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/100180"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2529,6 +6147,31 @@
       "sourceTitle": "The Elusive Samurai",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 179719,
+          "title": "KAMAKURA STYLE",
+          "nativeTitle": "鎌倉STYLE",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/179719"
+        },
+        {
+          "id": 182616,
+          "title": "The Elusive Samurai Season 2",
+          "nativeTitle": "逃げ上手の若君 第二期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "RELEASING",
+          "siteUrl": "https://anilist.co/anime/182616"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2552,6 +6195,20 @@
       "sourceTitle": "Your lie in April",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21039,
+          "title": "Your lie in April: Moments",
+          "nativeTitle": "四月は君の嘘 MOMENTS",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21039"
+        }
+      ],
       "releasedEpisodes": 22,
       "totalEpisodes": 22,
       "nextEpisode": null,
@@ -2575,6 +6232,42 @@
       "sourceTitle": "SHIROBAKO",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20938,
+          "title": "SHIROBAKO: Gekichuugeki Animation",
+          "nativeTitle": "SHIROBAKO 劇中劇アニメーション",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20938"
+        },
+        {
+          "id": 101574,
+          "title": "SHIROBAKO the Movie",
+          "nativeTitle": "劇場版 SHIROBAKO",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/101574"
+        },
+        {
+          "id": 207886,
+          "title": "Run Run Lantern",
+          "nativeTitle": "Run Run Lantern",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/207886"
+        }
+      ],
       "releasedEpisodes": 24,
       "totalEpisodes": 24,
       "nextEpisode": null,
@@ -2598,6 +6291,64 @@
       "sourceTitle": "Sword Art Online",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 20021,
+          "title": "Sword Art Online EXTRA EDITION",
+          "nativeTitle": "ソードアート・オンライン Extra Edition",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20021"
+        },
+        {
+          "id": 20594,
+          "title": "Sword Art Online II",
+          "nativeTitle": "ソードアート・オンライン II",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20594"
+        },
+        {
+          "id": 124140,
+          "title": "Sword Art Online the Movie -Progressive- Aria of a Starless Night",
+          "nativeTitle": "劇場版 ソードアート・オンライン プログレッシブ 星なき夜のアリア",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/124140"
+        },
+        {
+          "id": 16099,
+          "title": "Sword Art OFFline",
+          "nativeTitle": "そーどあーと・おふらいん",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/16099"
+        },
+        {
+          "id": 208754,
+          "title": "Unanswered//butterfly: Sword Art Online",
+          "nativeTitle": "Unanswered//butterfly: Sword Art Online",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/208754"
+        }
+      ],
       "releasedEpisodes": 25,
       "totalEpisodes": 25,
       "nextEpisode": null,
@@ -2621,6 +6372,42 @@
       "sourceTitle": "Pop Team Epic",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 104200,
+          "title": "POP TEAM EPIC TV SPECIAL",
+          "nativeTitle": "ポプテピピックTVスペシャル",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/104200"
+        },
+        {
+          "id": 110693,
+          "title": "Poputepipikku Kinen",
+          "nativeTitle": "ポプテピ記念",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/110693"
+        },
+        {
+          "id": 143086,
+          "title": "Pop Team Epic Season 2",
+          "nativeTitle": "ポプテピピック 2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/143086"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2644,6 +6431,20 @@
       "sourceTitle": "Nichijou - My Ordinary Life",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 8857,
+          "title": "Nichijou - My Ordinary Life: Episode 0",
+          "nativeTitle": "日常の0話",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/8857"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -2667,6 +6468,20 @@
       "sourceTitle": "DAN DA DAN",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 185660,
+          "title": "DAN DA DAN Season 2",
+          "nativeTitle": "ダンダダン 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/185660"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2690,6 +6505,42 @@
       "sourceTitle": "Love, Chunibyo & Other Delusions",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 16934,
+          "title": "Love, Chunibyo & Other Delusions: Glimmering...Explosive Festival (Slapstick Noel)",
+          "nativeTitle": "中二病でも恋がしたい! 煌めきの... 聖爆誕祭（スラップステック・ノエル）",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/16934"
+        },
+        {
+          "id": 15687,
+          "title": "Love, Chunibyo & Other Delusions Lite",
+          "nativeTitle": "中二病でも恋がしたい！Lite",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/15687"
+        },
+        {
+          "id": 15879,
+          "title": "Love, Chunibyo & Other Delusions: Depth of Field - Ai to Nikushimi Gekijou",
+          "nativeTitle": "中二病でも恋がしたい！DEPTH OF FIELD ～ 愛と憎しみ劇場",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/15879"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2713,6 +6564,64 @@
       "sourceTitle": "Cells at Work!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 105662,
+          "title": "Cells at Work!: The Common Cold",
+          "nativeTitle": "はたらく細胞「風邪症候群」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/105662"
+        },
+        {
+          "id": 108631,
+          "title": "Cells at Work!!",
+          "nativeTitle": "はたらく細胞!!",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/108631"
+        },
+        {
+          "id": 117533,
+          "title": "Cells at Work! CODE BLACK",
+          "nativeTitle": "はたらく細胞BLACK",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/117533"
+        },
+        {
+          "id": 109085,
+          "title": "Cells at Work! Specials",
+          "nativeTitle": "はたらく細胞 Specials",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/109085"
+        },
+        {
+          "id": 138675,
+          "title": "Pocari Sweat web movie: Hataraku Saibou Dai 11.5-wa Necchuushou - Moshimo Pocari Sweat ga Attara",
+          "nativeTitle": "ポカリスエットweb movie｜はたらく細胞第11.5話熱中症～もしもポカリスエットがあったら～",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/138675"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2736,6 +6645,42 @@
       "sourceTitle": "Himouto! Umaru-chan",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21327,
+          "title": "Himouto! Umaru-chan OVA",
+          "nativeTitle": "干物妹！うまるちゃん OVA",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21327"
+        },
+        {
+          "id": 21328,
+          "title": "Himouto! Umaru-chanS",
+          "nativeTitle": "ひもうと! うまるちゃんS",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21328"
+        },
+        {
+          "id": 98572,
+          "title": "Himouto! Umaru-chan R",
+          "nativeTitle": "干物妹! うまるちゃん R",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/98572"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2759,6 +6704,42 @@
       "sourceTitle": "Ave Mujica - The Die is Cast -",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 163571,
+          "title": "BanG Dream! It's MyGO!!!!!",
+          "nativeTitle": "BanG Dream! It's MyGO!!!!!",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/163571"
+        },
+        {
+          "id": 189121,
+          "title": "BanG Dream! It's MyGO!!!!! / Ave Mujica (Zoku-hen)",
+          "nativeTitle": "BanG Dream! It's MyGO!!!!! / Ave Mujica (続編)",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/189121"
+        },
+        {
+          "id": 197543,
+          "title": "BanG Dream! Ave Mujica: prima aurora",
+          "nativeTitle": "BanG Dream! Ave Mujica prima aurora",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "NOT_YET_RELEASED",
+          "siteUrl": "https://anilist.co/anime/197543"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2782,6 +6763,20 @@
       "sourceTitle": "Medalist",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 189275,
+          "title": "Medalist Season 2",
+          "nativeTitle": "メダリスト 第2期",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/189275"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2805,6 +6800,31 @@
       "sourceTitle": "Amagi Brilliant Park",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21053,
+          "title": "Amagi Brilliant Park: Wakuwaku Mini Theater Rakugaki Backstage",
+          "nativeTitle": "甘城ブリリアントパーク「わくわくミニシアター らくがきバックステージ」",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21053"
+        },
+        {
+          "id": 21077,
+          "title": "Amagi Brilliant Park: No Time to Take It Easy!",
+          "nativeTitle": "甘城ブリリアントパーク 「のんびりしている暇がない!」",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21077"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2828,6 +6848,8 @@
       "sourceTitle": "mono",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2851,6 +6873,20 @@
       "sourceTitle": "Food for the Soul",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 207886,
+          "title": "Run Run Lantern",
+          "nativeTitle": "Run Run Lantern",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/207886"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2874,6 +6910,31 @@
       "sourceTitle": "Panty & Stocking with Garterbelt",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 10739,
+          "title": "Panty & Stocking in Sanitarybox",
+          "nativeTitle": null,
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/10739"
+        },
+        {
+          "id": 151799,
+          "title": "New PANTY & STOCKING with GARTERBELT",
+          "nativeTitle": "New PANTY & STOCKING with GARTERBELT",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/151799"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -2897,6 +6958,42 @@
       "sourceTitle": "KONOSUBA -God's blessing on this wonderful world!",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 21574,
+          "title": "KONOSUBA -God's blessing on this wonderful world!: God's Blessings On This Wonderful Choker!",
+          "nativeTitle": "この素晴らしい世界に祝福を！ この素晴らしいチョーカーに祝福を!",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21574"
+        },
+        {
+          "id": 21699,
+          "title": "KONOSUBA -God's blessing on this wonderful world! 2",
+          "nativeTitle": "この素晴らしい世界に祝福を！2",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/21699"
+        },
+        {
+          "id": 150075,
+          "title": "KONOSUBA -An Explosion on This Wonderful World!",
+          "nativeTitle": "この素晴らしい世界に爆焔を！",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/150075"
+        }
+      ],
       "releasedEpisodes": 10,
       "totalEpisodes": 10,
       "nextEpisode": null,
@@ -2920,6 +7017,53 @@
       "sourceTitle": "Revue Starlight",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 103254,
+          "title": "Revue Starlight Specials",
+          "nativeTitle": "少女☆歌劇 レヴュー・スタァライト 特別篇",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "SPECIAL",
+          "formatLabel": "特别篇",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/103254"
+        },
+        {
+          "id": 109153,
+          "title": "Shoujo☆Conto All Starlight",
+          "nativeTitle": "少女☆寸劇(コント) オールスタァライト",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/109153"
+        },
+        {
+          "id": 113024,
+          "title": "Revue Starlight: The Movie",
+          "nativeTitle": "劇場版 少女☆歌劇 レヴュースタァライト",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/113024"
+        },
+        {
+          "id": 155775,
+          "title": "Afuregu!: Aufregendes leben",
+          "nativeTitle": "アフレぐ！〜Aufregendes leben〜",
+          "relation": "OTHER",
+          "relationLabel": "关联作",
+          "format": "MUSIC",
+          "formatLabel": "音乐动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/155775"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2943,6 +7087,8 @@
       "sourceTitle": "Apocalypse Hotel",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -2966,6 +7112,31 @@
       "sourceTitle": "JoJo's Bizarre Adventure (TV)",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 3603,
+          "title": "JoJo no Kimyou na Bouken: Phantom Blood",
+          "nativeTitle": "ジョジョの奇妙な冒険 ファントム ブラッド",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/3603"
+        },
+        {
+          "id": 20474,
+          "title": "JoJo's Bizarre Adventure: Stardust Crusaders",
+          "nativeTitle": "ジョジョの奇妙な冒険 スターダストクルセイダース",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/20474"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -2989,6 +7160,8 @@
       "sourceTitle": "Takopi's Original Sin",
       "status": "FINISHED",
       "format": "ONA",
+      "formatLabel": "网络动画",
+      "relatedAnime": [],
       "releasedEpisodes": 6,
       "totalEpisodes": 6,
       "nextEpisode": null,
@@ -3012,6 +7185,20 @@
       "sourceTitle": "Mushoku Tensei: Jobless Reincarnation",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 127720,
+          "title": "Mushoku Tensei: Jobless Reincarnation Cour 2",
+          "nativeTitle": "無職転生 ～異世界行ったら本気だす～ 第2クール",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/127720"
+        }
+      ],
       "releasedEpisodes": 11,
       "totalEpisodes": 11,
       "nextEpisode": null,
@@ -3035,6 +7222,42 @@
       "sourceTitle": "Date A Live",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 17641,
+          "title": "Date A Live: Date to Date",
+          "nativeTitle": "デート・ア・ライブ DATE TO DATE",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "OVA",
+          "formatLabel": "OVA",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/17641"
+        },
+        {
+          "id": 111852,
+          "title": "Date A Bullet: Dead or Bullet & Nightmare or Queen",
+          "nativeTitle": "デート・ア・バレット デッド・オア・バレット",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/111852"
+        },
+        {
+          "id": 121034,
+          "title": "Date A Bullet: Dead or Bullet & Nightmare or Queen",
+          "nativeTitle": "デート・ア・バレット ナイトメア・オア・クイーン",
+          "relation": "SPIN_OFF",
+          "relationLabel": "衍生作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/121034"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -3058,6 +7281,31 @@
       "sourceTitle": "Demon Slayer: Kimetsu no Yaiba",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 112151,
+          "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+          "nativeTitle": "鬼滅の刃 無限列車編",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/112151"
+        },
+        {
+          "id": 129874,
+          "title": "Demon Slayer: Kimetsu no Yaiba Mugen Train Arc",
+          "nativeTitle": "鬼滅の刃 無限列車編 (TV)",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/129874"
+        }
+      ],
       "releasedEpisodes": 26,
       "totalEpisodes": 26,
       "nextEpisode": null,
@@ -3081,6 +7329,20 @@
       "sourceTitle": "There's No Freaking Way I'll Be Your Lover! Unless…",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 199112,
+          "title": "There's No Freaking Way I'll Be Your Lover! Unless… ~Next Shine~",
+          "nativeTitle": "わたしが恋人になれるわけないじゃん、ムリムリ! (※ムリじゃなかった!?)〜ネクストシャイン！〜",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/199112"
+        }
+      ],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -3104,6 +7366,20 @@
       "sourceTitle": "New PANTY & STOCKING with GARTERBELT",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 8795,
+          "title": "Panty & Stocking with Garterbelt",
+          "nativeTitle": "パンティ＆ストッキングwithガーターベルト",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "TV",
+          "formatLabel": "TV动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/8795"
+        }
+      ],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -3127,6 +7403,8 @@
       "sourceTitle": "CITY THE ANIMATION",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,
@@ -3150,6 +7428,8 @@
       "sourceTitle": "See You Tomorrow at the Food Court",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 6,
       "totalEpisodes": 6,
       "nextEpisode": null,
@@ -3173,6 +7453,42 @@
       "sourceTitle": "The Legend of Luoxiaohei",
       "status": "FINISHED",
       "format": "ONA",
+      "formatLabel": "网络动画",
+      "relatedAnime": [
+        {
+          "id": 102664,
+          "title": "Luo Xiaohei Zhan Ji: Fan Wai",
+          "nativeTitle": "罗小黑战记 番外",
+          "relation": "SIDE_STORY",
+          "relationLabel": "外传",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/102664"
+        },
+        {
+          "id": 131239,
+          "title": "Luo Xiaohei Zhan Ji: Zhongsheng Zhi Men",
+          "nativeTitle": "罗小黑战记 众生之门",
+          "relation": "SEQUEL",
+          "relationLabel": "续作",
+          "format": "ONA",
+          "formatLabel": "网络动画",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/131239"
+        },
+        {
+          "id": 166475,
+          "title": "The Legend of Hei 2",
+          "nativeTitle": "罗小黑战记 2",
+          "relation": "PREQUEL",
+          "relationLabel": "前作",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/166475"
+        }
+      ],
       "releasedEpisodes": 28,
       "totalEpisodes": 28,
       "nextEpisode": null,
@@ -3196,6 +7512,31 @@
       "sourceTitle": "Little Witch Academia (TV)",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [
+        {
+          "id": 14349,
+          "title": "Little Witch Academia",
+          "nativeTitle": "リトルウィッチアカデミア",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/14349"
+        },
+        {
+          "id": 19489,
+          "title": "Little Witch Academia: The Enchanted Parade",
+          "nativeTitle": "リトルウィッチアカデミア 魔法仕掛けのパレード",
+          "relation": "ALTERNATIVE",
+          "relationLabel": "其他版本",
+          "format": "MOVIE",
+          "formatLabel": "剧场版",
+          "status": "FINISHED",
+          "siteUrl": "https://anilist.co/anime/19489"
+        }
+      ],
       "releasedEpisodes": 25,
       "totalEpisodes": 25,
       "nextEpisode": null,
@@ -3219,6 +7560,8 @@
       "sourceTitle": "Cultural Exchange with a Game Centre Girl",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -3243,6 +7586,8 @@
       "sourceTitle": "VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 12,
       "totalEpisodes": 12,
       "nextEpisode": null,
@@ -3266,6 +7611,8 @@
       "sourceTitle": "Secrets of the Silent Witch",
       "status": "FINISHED",
       "format": "TV",
+      "formatLabel": "TV动画",
+      "relatedAnime": [],
       "releasedEpisodes": 13,
       "totalEpisodes": 13,
       "nextEpisode": null,

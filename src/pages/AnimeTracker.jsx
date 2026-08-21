@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { NavLink } from 'react-router'
 
 const FILTERS = [
   { id: 'all', label: '全部' },
@@ -98,6 +99,7 @@ function AnimeCard({ entry, now, watchProgress, onWatchProgressChange }) {
 
       <div className="anime-card-body">
         <div className="anime-group-tags">
+          <span className="anime-format-tag"><i className={entry.format === 'MOVIE' ? 'fas fa-film' : 'fas fa-clapperboard'} /> {entry.formatLabel || entry.format || '动画'}</span>
           {(entry.groups || []).map(group => <span key={group}>{group}</span>)}
         </div>
         <div className="anime-title-row">
@@ -136,6 +138,21 @@ function AnimeCard({ entry, now, watchProgress, onWatchProgressChange }) {
             </>
           )}
         </div>
+
+        {entry.relatedAnime?.length > 0 && (
+          <details className="anime-series-details">
+            <summary><i className="fas fa-code-branch" /> 系列季度与剧场版 <strong>{entry.relatedAnime.length}</strong></summary>
+            <div className="anime-series-list">
+              {entry.relatedAnime.map(related => (
+                <a href={related.siteUrl} target="_blank" rel="noopener noreferrer" key={related.id}>
+                  <span>{related.relationLabel} · {related.formatLabel}</span>
+                  <strong>{related.title}</strong>
+                  <i className="fas fa-arrow-up-right-from-square" />
+                </a>
+              ))}
+            </div>
+          </details>
+        )}
 
         <div className="anime-personal-progress">
           <div className="anime-personal-heading">
@@ -276,6 +293,10 @@ export default function AnimeTracker() {
 
   return (
     <div className="page anime-tracker-page">
+      <nav className="anime-page-tabs" aria-label="追番页面">
+        <NavLink to="/anime" end><i className="fas fa-bookmark" /> 我的追番</NavLink>
+        <NavLink to="/anime/bangumi"><i className="fas fa-star" /> Bangumi 高分连载</NavLink>
+      </nav>
       <header className="anime-hero">
         <div className="anime-hero-copy">
           <span className="page-kicker">ANIME WATCHLIST</span>

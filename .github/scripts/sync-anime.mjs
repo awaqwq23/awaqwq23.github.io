@@ -22,6 +22,19 @@ const query = `
         bannerImage
         siteUrl
         nextAiringEpisode { airingAt episode }
+        relations {
+          edges {
+            relationType(version: 2)
+            node {
+              id
+              type
+              format
+              status
+              title { romaji english native }
+              siteUrl
+            }
+          }
+        }
       }
     }
   }
@@ -71,6 +84,51 @@ function toIsoDate(epochSeconds) {
   return epochSeconds ? new Date(epochSeconds * 1000).toISOString() : null
 }
 
+const FORMAT_LABELS = {
+  TV: 'TV动画',
+  TV_SHORT: '电视短篇',
+  MOVIE: '剧场版',
+  SPECIAL: '特别篇',
+  OVA: 'OVA',
+  ONA: '网络动画',
+  MUSIC: '音乐动画',
+}
+
+const RELATION_LABELS = {
+  PREQUEL: '前作',
+  SEQUEL: '续作',
+  PARENT: '正篇',
+  SIDE_STORY: '外传',
+  SPIN_OFF: '衍生作',
+  ALTERNATIVE: '其他版本',
+  COMPILATION: '总集篇',
+  CONTAINS: '包含篇章',
+  OTHER: '关联作',
+}
+
+function createRelatedAnime(media) {
+  const seen = new Set()
+  return (media.relations?.edges || [])
+    .filter(edge => edge.node?.type === 'ANIME' && FORMAT_LABELS[edge.node.format])
+    .filter(edge => RELATION_LABELS[edge.relationType])
+    .filter(edge => {
+      if (seen.has(edge.node.id)) return false
+      seen.add(edge.node.id)
+      return true
+    })
+    .map(edge => ({
+      id: edge.node.id,
+      title: edge.node.title.english || edge.node.title.romaji || edge.node.title.native,
+      nativeTitle: edge.node.title.native || null,
+      relation: edge.relationType,
+      relationLabel: RELATION_LABELS[edge.relationType],
+      format: edge.node.format,
+      formatLabel: FORMAT_LABELS[edge.node.format],
+      status: edge.node.status,
+      siteUrl: edge.node.siteUrl,
+    }))
+}
+
 function createEntry(config, media, nowSeconds) {
   const episodeOffset = config.episodeOffset || 0
   const sourceReleasedEpisodes = media.status === 'FINISHED' && media.episodes
@@ -94,6 +152,8 @@ function createEntry(config, media, nowSeconds) {
     sourceTitle: media.title.english || media.title.romaji || media.title.native,
     status: media.status,
     format: media.format,
+    formatLabel: FORMAT_LABELS[media.format] || media.format || '动画',
+    relatedAnime: createRelatedAnime(media),
     releasedEpisodes,
     totalEpisodes,
     nextEpisode,
@@ -118,6 +178,8 @@ function createManualEntry(config) {
     sourceTitle: config.title,
     status: 'NOT_YET_RELEASED',
     format: null,
+    formatLabel: '动画企划',
+    relatedAnime: [],
     releasedEpisodes: 0,
     totalEpisodes: null,
     nextEpisode: null,
