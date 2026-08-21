@@ -94,11 +94,50 @@ function totalEpisodes(subject) {
   return Number.isFinite(value) && value > 0 ? value : null
 }
 
+function infoboxText(subject, keys) {
+  const item = (subject.infobox || []).find(entry => keys.includes(entry.key))
+  if (!item) return ''
+  if (Array.isArray(item.value)) return item.value.map(value => value?.v || value).filter(Boolean).join('、')
+  return String(item.value || '')
+}
+
+function parseBangumiDate(value) {
+  const isoMatch = String(value || '').match(/(\d{4})-(\d{1,2})(?:-(\d{1,2}))?/)
+  const chineseMatch = String(value || '').match(/(\d{4})年\s*(\d{1,2})月(?:\s*(\d{1,2})日)?/)
+  const match = isoMatch || chineseMatch
+  if (!match) return null
+  const [, year, month, day] = match
+  return `${year}-${String(month).padStart(2, '0')}${day ? `-${String(day).padStart(2, '0')}` : ''}`
+}
+
+function estimateEndDate(startDate, episodes) {
+  if (!startDate || !episodes) return null
+  const start = new Date(`${startDate}T00:00:00Z`)
+  if (Number.isNaN(start.getTime())) return null
+  start.setUTCDate(start.getUTCDate() + Math.max(0, episodes - 1) * 7)
+  return start.toISOString().slice(0, 10)
+}
+
+function detectOrigin(subject) {
+  const tags = [
+    ...(subject.tags || []).map(tag => typeof tag === 'string' ? tag : tag.name),
+    ...(subject.meta_tags || []),
+    infoboxText(subject, ['国家', '地区', '国家/地区', '制作国家']),
+  ].join(' ')
+  if (/国产|国漫|中国动画|国创|中国大陆|中国香港|中国台湾/.test(tags)) return { origin: 'china', originLabel: '国产动画' }
+  if (/欧美|美国|美漫|迪士尼|加拿大|英国|法国|德国|澳大利亚/.test(tags)) return { origin: 'western', originLabel: '欧美动画' }
+  if (/韩国|韩漫/.test(tags)) return { origin: 'korea', originLabel: '韩国动画' }
+  return { origin: 'japan', originLabel: '日本动画' }
+}
+
 function normalizeSubject(subject, quarterStart, calendarWeekday = null) {
   const episodes = totalEpisodes(subject)
   const airDate = subject.date || subject.air_date || null
   const startedBeforeQuarter = Boolean(airDate && airDate < quarterStart)
   const isLongRunning = startedBeforeQuarter || (episodes != null && episodes >= LONG_RUNNING_EPISODES)
+  const explicitEndDate = parseBangumiDate(infoboxText(subject, ['播放结束', '放送结束', '上映结束']))
+  const endDate = explicitEndDate || (isLongRunning ? estimateEndDate(airDate, episodes) : null)
+  const { origin, originLabel } = detectOrigin(subject)
   return {
     id: subject.id,
     title: subject.name_cn || subject.name,
@@ -112,6 +151,10 @@ function normalizeSubject(subject, quarterStart, calendarWeekday = null) {
     watchingCount: Number(subject.collection?.doing || 0),
     platform: subject.platform || null,
     totalEpisodes: episodes,
+    endDate,
+    endDateEstimated: Boolean(endDate && !explicitEndDate),
+    origin,
+    originLabel,
     tags: (subject.tags || []).slice(0, 5).map(tag => typeof tag === 'string' ? tag : tag.name),
     image: httpsUrl(subject.images?.large || subject.images?.common),
     url: `https://bgm.tv/subject/${subject.id}`,
@@ -223,7 +266,7 @@ async function main() {
   }
 
   const payload = {
-    schemaVersion: 2,
+    schemaVersion: 3,
     syncedAt: now.toISOString(),
     scoreThreshold: SCORE_THRESHOLD,
     archiveStartYear: ARCHIVE_START_YEAR,
@@ -231,6 +274,12 @@ async function main() {
     currentQuarter: currentKey,
     nextQuarter: nextKey,
     longRunningRule: `总集数达到 ${LONG_RUNNING_EPISODES} 话，或开播时间早于所选季度且仍在连载`,
+    originOptions: [
+      { id: 'japan', label: '日本动画' },
+      { id: 'china', label: '国产动画' },
+      { id: 'western', label: '欧美动画' },
+      { id: 'korea', label: '韩国动画' },
+    ],
     source: {
       name: 'Bangumi 番组计划',
       url: 'https://bgm.tv/anime/browser',
