@@ -9,6 +9,7 @@ const FILTERS = [
 
 const GROUP_ORDER = ['近期追番', '正在看', '想看', '他人推荐', '已看', '想二刷', '已二刷', '已放弃']
 const PAGE_SIZE = 12
+const WATCH_PROGRESS_KEY = 'awa-anime-watch-progress-v1'
 
 const STATUS_COPY = {
   RELEASING: { label: '连载中', icon: 'fa-satellite-dish' },
@@ -56,7 +57,13 @@ function getSortTime(entry) {
   return Number.MAX_SAFE_INTEGER - 1
 }
 
-function AnimeCard({ entry, now }) {
+function clampEpisode(value, totalEpisodes) {
+  const episode = Number.parseInt(value, 10)
+  if (!Number.isFinite(episode)) return 1
+  return Math.max(1, totalEpisodes ? Math.min(totalEpisodes, episode) : episode)
+}
+
+function AnimeCard({ entry, now, watchProgress, onWatchProgressChange }) {
   const status = STATUS_COPY[entry.status] || { label: '状态未知', icon: 'fa-circle-question' }
   const progress = entry.totalEpisodes
     ? Math.min(100, Math.round(entry.releasedEpisodes / entry.totalEpisodes * 100))
@@ -64,6 +71,20 @@ function AnimeCard({ entry, now }) {
   const episodeCopy = entry.totalEpisodes
     ? `${entry.releasedEpisodes} / ${entry.totalEpisodes} 集`
     : `已更新 ${entry.releasedEpisodes} 集`
+  const personalStatus = watchProgress?.status || 'not_started'
+  const personalEpisode = personalStatus === 'watching' ? watchProgress.episode : 1
+  const personalStatusCopy = personalStatus === 'finished'
+    ? '已看完'
+    : personalStatus === 'watching'
+      ? `看到第 ${personalEpisode} 集`
+      : '还没看'
+
+  const setEpisode = value => {
+    onWatchProgressChange(entry.id, {
+      status: 'watching',
+      episode: clampEpisode(value, entry.totalEpisodes),
+    })
+  }
 
   return (
     <article className={`anime-card status-${entry.status.toLowerCase()}`} style={{ '--anime-accent': entry.coverColor || '#3b82f6' }}>
@@ -116,6 +137,48 @@ function AnimeCard({ entry, now }) {
           )}
         </div>
 
+        <div className="anime-personal-progress">
+          <div className="anime-personal-heading">
+            <span><i className="fas fa-bookmark" /> 我的进度</span>
+            <strong>{personalStatusCopy}</strong>
+          </div>
+          <div className="anime-progress-controls" role="group" aria-label={`${entry.title}的观看进度`}>
+            <button
+              type="button"
+              className={personalStatus === 'not_started' ? 'active' : ''}
+              onClick={() => onWatchProgressChange(entry.id, null)}
+            >
+              没看
+            </button>
+            <div className={`anime-episode-picker ${personalStatus === 'watching' ? 'active' : ''}`}>
+              <button type="button" onClick={() => setEpisode(personalEpisode - 1)} aria-label={`${entry.title}观看集数减一`}>−</button>
+              <label>
+                看到第
+                <input
+                  type="number"
+                  min="1"
+                  max={entry.totalEpisodes || undefined}
+                  value={personalEpisode}
+                  onChange={event => setEpisode(event.target.value)}
+                  aria-label={`${entry.title}看到的集数`}
+                />
+                集
+              </label>
+              <button type="button" onClick={() => setEpisode(personalEpisode + 1)} aria-label={`${entry.title}观看集数加一`}>+</button>
+            </div>
+            <button
+              type="button"
+              className={personalStatus === 'finished' ? 'active finished' : ''}
+              onClick={() => onWatchProgressChange(entry.id, {
+                status: 'finished',
+                episode: entry.totalEpisodes || Math.max(entry.releasedEpisodes || 0, personalEpisode),
+              })}
+            >
+              看完
+            </button>
+          </div>
+        </div>
+
         {entry.note && <p className="anime-note"><i className="fas fa-circle-info" /> {entry.note}</p>}
         <a className="anime-source-link" href={entry.siteUrl} target="_blank" rel="noopener noreferrer">
           在 AniList 查看条目 <i className="fas fa-arrow-up-right-from-square" />
@@ -133,6 +196,14 @@ export default function AnimeTracker() {
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
   const [now, setNow] = useState(Date.now())
+  const [watchProgress, setWatchProgress] = useState(() => {
+    try {
+      const savedProgress = JSON.parse(window.localStorage.getItem(WATCH_PROGRESS_KEY) || '{}')
+      return savedProgress && typeof savedProgress === 'object' && !Array.isArray(savedProgress) ? savedProgress : {}
+    } catch {
+      return {}
+    }
+  })
 
   useEffect(() => {
     const controller = new AbortController()
@@ -151,6 +222,23 @@ export default function AnimeTracker() {
       window.clearInterval(timer)
     }
   }, [])
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(WATCH_PROGRESS_KEY, JSON.stringify(watchProgress))
+    } catch {
+      // The tracker still works for this session when browser storage is unavailable.
+    }
+  }, [watchProgress])
+
+  const updateWatchProgress = (entryId, nextProgress) => {
+    setWatchProgress(current => {
+      const next = { ...current }
+      if (nextProgress) next[String(entryId)] = nextProgress
+      else delete next[String(entryId)]
+      return next
+    })
+  }
 
   const groups = useMemo(() => {
     const available = new Set((data?.entries || []).flatMap(entry => entry.groups || []))
@@ -238,7 +326,15 @@ export default function AnimeTracker() {
 
           {entries.length ? (
             <section className="anime-grid">
-              {entries.map(entry => <AnimeCard key={entry.id} entry={entry} now={now} />)}
+              {entries.map(entry => (
+                <AnimeCard
+                  key={entry.id}
+                  entry={entry}
+                  now={now}
+                  watchProgress={watchProgress[String(entry.id)]}
+                  onWatchProgressChange={updateWatchProgress}
+                />
+              ))}
             </section>
           ) : (
             <div className="anime-empty"><i className="fas fa-inbox" /><p>这个分类里暂时没有番剧</p></div>
@@ -254,7 +350,10 @@ export default function AnimeTracker() {
 
           <footer className="anime-data-note">
             <i className="fas fa-database" />
-            <span>数据来自 <a href={data.source.url} target="_blank" rel="noopener noreferrer">{data.source.name}</a>。{data.source.note}</span>
+            <span>
+              数据来自 <a href={data.source.url} target="_blank" rel="noopener noreferrer">{data.source.name}</a>。{data.source.note}
+              <small><i className="fas fa-shield-halved" /> 观看进度只保存在当前浏览器，不会上传，也不会被每日更新覆盖。</small>
+            </span>
           </footer>
         </>
       ) : error ? (
