@@ -1,5 +1,5 @@
 import { mkdir, readdir, stat } from 'node:fs/promises'
-import { extname, join, resolve } from 'node:path'
+import { extname, join, relative, resolve } from 'node:path'
 import sharp from 'sharp'
 
 const THUMBNAIL_WIDTH = 640
@@ -10,16 +10,30 @@ const CONCURRENCY = 3
 const FORCE = process.argv.includes('--force')
 const SUPPORTED_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif'])
 
-const galleries = [
-  {
-    source: resolve('docs/charactor/筱泽广 学马仕/图片'),
-    output: resolve('docs/.gallery-thumbnails/shinozawa'),
-  },
-  {
-    source: resolve('docs/pictures/personalgirl'),
-    output: resolve('docs/.gallery-thumbnails/personal'),
-  },
-]
+const docsRoot = resolve('docs')
+const thumbnailRoot = resolve('docs/.gallery-thumbnails')
+const mediaRoots = [resolve('docs/charactor'), resolve('docs/pictures')]
+const legacyOutputs = new Map([
+  [resolve('docs/charactor/筱泽广 学马仕/图片'), resolve('docs/.gallery-thumbnails/shinozawa')],
+  [resolve('docs/pictures/personalgirl'), resolve('docs/.gallery-thumbnails/personal')],
+])
+
+async function findGalleries(directory) {
+  const entries = await readdir(directory, { withFileTypes: true })
+  const hasImages = entries.some(entry => entry.isFile() && SUPPORTED_EXTENSIONS.has(extname(entry.name).toLowerCase()))
+  const children = await Promise.all(entries
+    .filter(entry => entry.isDirectory())
+    .map(entry => findGalleries(join(directory, entry.name))))
+  return [
+    ...(hasImages ? [{
+      source: directory,
+      output: legacyOutputs.get(directory) || resolve(thumbnailRoot, relative(docsRoot, directory)),
+    }] : []),
+    ...children.flat(),
+  ]
+}
+
+const galleries = (await Promise.all(mediaRoots.map(findGalleries))).flat()
 
 function thumbnailName(fileName) {
   return `thumb-${fileName.replaceAll('.', '-')}.webp`

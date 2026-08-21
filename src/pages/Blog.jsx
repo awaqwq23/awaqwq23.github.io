@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import PostCard from '../components/PostCard'
-import { personalImages, shinozawaImages } from '../data/blogMedia'
-import shinozawaArticle from '../../docs/charactor/筱泽广 学马仕/文档/1.md?raw'
+import { characterArticles, characterMedia, pictureMedia } from '../data/blogMedia'
 
 const PASSWORD_HASH = '3831024cd98f9dea0d83f434bbd0a7492b068b1ca4d39f1904eaf35ae9361c27'
 const GALLERY_PAGE_SIZE = 9
@@ -53,21 +52,51 @@ function prefetchOriginal(src) {
 const modules = [
   { id: 'posts', icon: 'fa-pen-nib', eyebrow: 'WRITING', title: '普通博客', desc: '随笔、生活记录与偶尔冒出来的想法', color: 'blue' },
   { id: 'characters', icon: 'fa-star', eyebrow: 'FAVORITES', title: '喜好角色', desc: '角色收藏、发癫文字与完整图片仓库', color: 'purple' },
+  { id: 'memes', icon: 'fa-face-laugh-squint', eyebrow: 'REACTIONS', title: '表情包', desc: '按角色整理的反应图与聊天库存', color: 'cyan' },
   { id: 'pictures', icon: 'fa-camera-retro', eyebrow: 'PRIVATE', title: '个人照片', desc: '需要密码才能进入的私人影像角落', color: 'pink' },
 ]
 
-const characters = [
-  {
-    id: 'shinozawa-hiro',
-    name: '筱泽广',
-    source: '学园偶像大师',
-    note: '天才、慵懒，以及无法预测的可爱',
-    cover: shinozawaImages[0]?.thumbnailSrc,
-    ready: true,
-  },
-  { id: 'gotoh-hitori', name: '后藤一里', source: '孤独摇滚！', note: '内容整理中，先让小孤独占个位', ready: false },
-  { id: 'muelsyse', name: '缪尔赛斯', source: '明日方舟', note: '档案正在漂来的路上', ready: false },
+const characterDefinitions = [
+  { folder: '筱泽广 学马仕', id: 'shinozawa-hiro', name: '筱泽广', source: '学园偶像大师', note: '天才、慵懒，以及无法预测的可爱' },
+  { folder: '后藤一里 孤独摇滚', id: 'gotoh-hitori', name: '后藤一里', source: '孤独摇滚！', note: '小孤独的角色档案与反应图收藏' },
+  { folder: '缪尔赛斯 明日方舟', id: 'muelsyse', name: '缪尔赛斯', source: '明日方舟', note: '精灵、生态，以及莱茵生命的旧友' },
+  { folder: '伊蕾娜 魔女之旅', id: 'elaina', name: '伊蕾娜', source: '魔女之旅', note: '旅行、见闻与灰之魔女的故事' },
+  { folder: '其他角色', id: 'other-characters', name: '其他角色', source: '综合收藏', note: '暂未单独建档的角色图片合集' },
 ]
+
+function characterCollections(folder, predicate) {
+  return Object.entries(characterMedia[folder] || {})
+    .filter(([collection]) => predicate(collection))
+    .flatMap(([, images]) => images)
+}
+
+const characters = characterDefinitions.map(definition => {
+  const images = characterCollections(definition.folder, collection => !collection.includes('表情包'))
+  const memes = characterCollections(definition.folder, collection => collection.includes('表情包'))
+  const article = (characterArticles[definition.folder] || []).filter(markdown => markdown.trim()).join('\n\n')
+  return {
+    ...definition,
+    images,
+    article,
+    memeCount: memes.length,
+    cover: images[0]?.thumbnailSrc || memes[0]?.thumbnailSrc,
+    ready: Boolean(article || images.length),
+  }
+})
+
+const memeAlbums = characters
+  .map(character => ({
+    id: character.id,
+    title: `${character.name}表情包`,
+    shortTitle: character.name,
+    images: characterCollections(character.folder, collection => collection.includes('表情包')),
+  }))
+  .filter(album => album.images.length)
+
+const pictureNames = { personal: '个人照片', personalgirl: '个人女孩照片' }
+const pictureAlbums = Object.entries(pictureMedia)
+  .map(([id, images]) => ({ id, title: pictureNames[id] || id, shortTitle: pictureNames[id] || id, images }))
+  .sort((left, right) => left.id === 'personal' ? -1 : right.id === 'personal' ? 1 : left.title.localeCompare(right.title, 'zh-CN'))
 
 const catLabels = {
   all: '全部',
@@ -391,6 +420,41 @@ function MediaGallery({ images, title, privateGallery = false }) {
   )
 }
 
+function CollectionGallery({ albums, privateGallery = false, emptyText = '这里还没有图片。' }) {
+  const [selectedId, setSelectedId] = useState(albums[0]?.id)
+  const selected = albums.find(album => album.id === selectedId) || albums[0]
+
+  useEffect(() => {
+    if (!albums.some(album => album.id === selectedId)) setSelectedId(albums[0]?.id)
+  }, [albums, selectedId])
+
+  if (!selected) {
+    return <div className="collection-empty"><i className="fas fa-images" /><p>{emptyText}</p></div>
+  }
+
+  return (
+    <div className="collection-browser">
+      {albums.length > 1 && (
+        <div className="collection-tabs" role="tablist" aria-label="图片分类">
+          {albums.map(album => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={album.id === selected.id}
+              className={album.id === selected.id ? 'active' : ''}
+              key={album.id}
+              onClick={() => setSelectedId(album.id)}
+            >
+              {album.shortTitle} <span>{album.images.length}</span>
+            </button>
+          ))}
+        </div>
+      )}
+      <MediaGallery images={selected.images} title={selected.title} privateGallery={privateGallery} />
+    </div>
+  )
+}
+
 function MarkdownArticle({ markdown }) {
   const blocks = markdown.split(/\n\s*\n/).map(block => block.trim()).filter(Boolean)
   return (
@@ -401,7 +465,6 @@ function MarkdownArticle({ markdown }) {
         if (block.startsWith('## ')) return <h3 key={index}>{block.slice(3)}</h3>
         return <p key={index}>{block}</p>
       })}
-      <div className="character-article-sign">— awaqwq233 的角色收藏夹</div>
     </article>
   )
 }
@@ -459,12 +522,15 @@ function PostsModule() {
 
 function CharactersModule() {
   const [selectedId, setSelectedId] = useState(characters[0].id)
-  const [view, setView] = useState('article')
+  const [view, setView] = useState(characters[0].article ? 'article' : 'images')
   const selected = characters.find(character => character.id === selectedId)
+  const activeView = view === 'article' && !selected.article
+    ? 'images'
+    : view === 'images' && !selected.images.length ? 'article' : view
 
   useEffect(() => {
-    setView('article')
-  }, [selectedId])
+    setView(selected.article ? 'article' : 'images')
+  }, [selected.article, selectedId])
 
   return (
     <section className="character-module blog-module-panel">
@@ -474,7 +540,7 @@ function CharactersModule() {
           <h2>选择一位喜欢的角色</h2>
           <p>每个文件夹会慢慢长成一份角色档案。</p>
         </div>
-        <div className="folder-count"><i className="fas fa-folder-open" /> 3 个角色文件夹</div>
+        <div className="folder-count"><i className="fas fa-folder-open" /> {characters.length} 个角色文件夹</div>
       </div>
 
       <div className="character-picker">
@@ -482,7 +548,7 @@ function CharactersModule() {
           <button key={character.id} type="button" className={`character-card${selectedId === character.id ? ' active' : ''}${!character.ready ? ' placeholder' : ''}`} onClick={() => setSelectedId(character.id)}>
             <div className="character-cover">
               {character.cover ? <img src={character.cover} alt={character.name} /> : <i className="fas fa-folder" />}
-              <span>{character.ready ? '已收录' : '待填充'}</span>
+              <span>{character.ready ? '已收录' : character.memeCount ? '仅表情包' : '待填充'}</span>
             </div>
             <div className="character-card-copy">
               <strong>{character.name}</strong>
@@ -501,22 +567,38 @@ function CharactersModule() {
               <h2>{selected.name} <small>／ {selected.source}</small></h2>
             </div>
             <div className="character-view-switch" role="tablist" aria-label="角色内容类型">
-              <button type="button" role="tab" aria-selected={view === 'article'} className={view === 'article' ? 'active' : ''} onClick={() => setView('article')}><i className="fas fa-align-left" /> 文章</button>
-              <button type="button" role="tab" aria-selected={view === 'images'} className={view === 'images' ? 'active' : ''} onClick={() => setView('images')}><i className="fas fa-images" /> 图片 <span>{shinozawaImages.length}</span></button>
+              {selected.article && <button type="button" role="tab" aria-selected={activeView === 'article'} className={activeView === 'article' ? 'active' : ''} onClick={() => setView('article')}><i className="fas fa-align-left" /> 文章</button>}
+              {selected.images.length > 0 && <button type="button" role="tab" aria-selected={activeView === 'images'} className={activeView === 'images' ? 'active' : ''} onClick={() => setView('images')}><i className="fas fa-images" /> 图片 <span>{selected.images.length}</span></button>}
             </div>
           </div>
-          {view === 'article'
-            ? <MarkdownArticle markdown={shinozawaArticle} />
-            : <MediaGallery images={shinozawaImages} title="筱泽广图片收藏" />}
+          {activeView === 'article'
+            ? <MarkdownArticle markdown={selected.article} />
+            : <MediaGallery images={selected.images} title={`${selected.name}图片收藏`} />}
         </div>
       ) : (
         <div className="character-empty-state">
           <i className="fas fa-box-open" />
           <span>PLACEHOLDER</span>
           <h2>{selected.name}的文件夹还空空的</h2>
-          <p>角色入口已经准备好，文章和图片之后会在这里出现。</p>
+          <p>{selected.memeCount ? `已在表情包模块收录 ${selected.memeCount} 张，文章和角色图片之后会在这里出现。` : '角色入口已经准备好，文章和图片之后会在这里出现。'}</p>
         </div>
       )}
+    </section>
+  )
+}
+
+function MemesModule() {
+  return (
+    <section className="meme-module blog-module-panel">
+      <div className="module-intro-row">
+        <div>
+          <span>REACTION COLLECTION</span>
+          <h2>表情包收藏</h2>
+          <p>按角色分类，点开即可查看或下载原图。</p>
+        </div>
+        <div className="folder-count"><i className="fas fa-face-laugh" /> {memeAlbums.reduce((total, album) => total + album.images.length, 0)} 张</div>
+      </div>
+      <CollectionGallery albums={memeAlbums} emptyText="表情包文件夹暂时是空的。" />
     </section>
   )
 }
@@ -568,7 +650,8 @@ function PasswordModal({ onUnlock, onClose }) {
 }
 
 function PicturesModule({ unlocked, onRequestUnlock }) {
-  if (unlocked) return <MediaGallery images={personalImages} title="个人照片" privateGallery />
+  const pictureCount = pictureAlbums.reduce((total, album) => total + album.images.length, 0)
+  if (unlocked) return <CollectionGallery albums={pictureAlbums} privateGallery emptyText="个人相册暂时是空的。" />
   return (
     <section className="private-album-locked blog-module-panel">
       <div className="private-lock-visual">
@@ -577,7 +660,7 @@ function PicturesModule({ unlocked, onRequestUnlock }) {
       </div>
       <span>PRIVATE · PASSWORD REQUIRED</span>
       <h2>个人照片暂时藏在门后</h2>
-      <p>这是一个仅供朋友查看的私人影像角落。点击下方按钮，输入密码后查看全部 {personalImages.length} 张照片。</p>
+      <p>这是一个仅供朋友查看的私人影像角落。点击下方按钮，输入密码后查看全部 {pictureCount} 张照片。</p>
       <button className="btn btn-primary" type="button" onClick={onRequestUnlock}><i className="fas fa-key" /> 输入密码查看</button>
       <small><i className="fas fa-circle-info" /> 此处是静态站点的访问提示，不等同于服务端加密存储。</small>
     </section>
@@ -626,6 +709,7 @@ export default function Blog() {
       <div className="blog-module-content">
         {activeModule === 'posts' && <PostsModule />}
         {activeModule === 'characters' && <CharactersModule />}
+        {activeModule === 'memes' && <MemesModule />}
         {activeModule === 'pictures' && <PicturesModule unlocked={unlocked} onRequestUnlock={() => setPasswordOpen(true)} />}
       </div>
 
