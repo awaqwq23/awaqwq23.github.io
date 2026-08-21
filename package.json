@@ -7,6 +7,7 @@
     "thumbnails": "node .github/scripts/generate-gallery-thumbnails.mjs",
     "sync:local": "node .github/scripts/sync-local-content.mjs",
     "sync:anime": "node .github/scripts/sync-anime.mjs",
+    "sync:blog": "node .github/scripts/sync-blog.mjs",
     "predev": "npm run thumbnails",
     "dev": "vite",
     "prebuild": "npm run thumbnails",

@@ -7,6 +7,9 @@ const FILTERS = [
   { id: 'FINISHED', label: '已完结' },
 ]
 
+const GROUP_ORDER = ['近期追番', '正在看', '想看', '他人推荐', '已看', '想二刷', '已二刷', '已放弃']
+const PAGE_SIZE = 12
+
 const STATUS_COPY = {
   RELEASING: { label: '连载中', icon: 'fa-satellite-dish' },
   NOT_YET_RELEASED: { label: '待播', icon: 'fa-hourglass-half' },
@@ -73,6 +76,9 @@ function AnimeCard({ entry, now }) {
       </div>
 
       <div className="anime-card-body">
+        <div className="anime-group-tags">
+          {(entry.groups || []).map(group => <span key={group}>{group}</span>)}
+        </div>
         <div className="anime-title-row">
           <div>
             <h2>{entry.title}</h2>
@@ -123,6 +129,9 @@ export default function AnimeTracker() {
   const [data, setData] = useState(null)
   const [error, setError] = useState('')
   const [filter, setFilter] = useState('all')
+  const [group, setGroup] = useState('all')
+  const [search, setSearch] = useState('')
+  const [page, setPage] = useState(1)
   const [now, setNow] = useState(Date.now())
 
   useEffect(() => {
@@ -143,9 +152,25 @@ export default function AnimeTracker() {
     }
   }, [])
 
-  const entries = useMemo(() => (data?.entries || [])
-    .filter(entry => filter === 'all' || entry.status === filter)
-    .sort((left, right) => getSortTime(left) - getSortTime(right)), [data, filter])
+  const groups = useMemo(() => {
+    const available = new Set((data?.entries || []).flatMap(entry => entry.groups || []))
+    return GROUP_ORDER.filter(item => available.has(item))
+  }, [data])
+
+  const filteredEntries = useMemo(() => {
+    const keyword = search.trim().toLocaleLowerCase('zh-CN')
+    return (data?.entries || [])
+      .filter(entry => filter === 'all' || entry.status === filter)
+      .filter(entry => group === 'all' || entry.groups?.includes(group))
+      .filter(entry => !keyword || `${entry.title} ${entry.subtitle} ${entry.sourceTitle}`.toLocaleLowerCase('zh-CN').includes(keyword))
+      .sort((left, right) => getSortTime(left) - getSortTime(right))
+  }, [data, filter, group, search])
+
+  const pageCount = Math.max(1, Math.ceil(filteredEntries.length / PAGE_SIZE))
+  const entries = useMemo(() => filteredEntries.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), [filteredEntries, page])
+
+  useEffect(() => { setPage(1) }, [filter, group, search])
+  useEffect(() => { if (page > pageCount) setPage(pageCount) }, [page, pageCount])
 
   const summary = useMemo(() => {
     const all = data?.entries || []
@@ -187,15 +212,28 @@ export default function AnimeTracker() {
             <div><i className="fas fa-circle-check" /><span><strong>{summary.finished}</strong>已经完结</span></div>
           </section>
 
+          <div className="anime-browse-controls">
+            <label className="anime-search">
+              <i className="fas fa-magnifying-glass" />
+              <input value={search} onChange={event => setSearch(event.target.value)} placeholder="搜索番剧名称" aria-label="搜索番剧名称" />
+              {search && <button type="button" onClick={() => setSearch('')} aria-label="清空搜索"><i className="fas fa-times" /></button>}
+            </label>
+            <label className="anime-group-select">
+              <i className="fas fa-folder-open" />
+              <select value={group} onChange={event => setGroup(event.target.value)} aria-label="按番单分类筛选">
+                <option value="all">全部番单分类</option>
+                {groups.map(item => <option value={item} key={item}>{item}</option>)}
+              </select>
+            </label>
+          </div>
+
           <div className="anime-toolbar">
-            <div className="anime-filters" role="group" aria-label="按状态筛选">
+            <div className="anime-filters" role="group" aria-label="按放送状态筛选">
               {FILTERS.map(item => (
-                <button type="button" key={item.id} className={filter === item.id ? 'active' : ''} onClick={() => setFilter(item.id)}>
-                  {item.label}
-                </button>
+                <button type="button" key={item.id} className={filter === item.id ? 'active' : ''} onClick={() => setFilter(item.id)}>{item.label}</button>
               ))}
             </div>
-            <span><i className="fas fa-rotate" /> {syncFormatter.format(new Date(data.syncedAt))} 查询</span>
+            <span><strong>{filteredEntries.length}</strong> 部 · 第 {page}/{pageCount} 页 · <i className="fas fa-rotate" /> {syncFormatter.format(new Date(data.syncedAt))} 查询</span>
           </div>
 
           {entries.length ? (
@@ -204,6 +242,14 @@ export default function AnimeTracker() {
             </section>
           ) : (
             <div className="anime-empty"><i className="fas fa-inbox" /><p>这个分类里暂时没有番剧</p></div>
+          )}
+
+          {pageCount > 1 && (
+            <nav className="anime-pagination" aria-label="追番列表分页">
+              <button type="button" onClick={() => setPage(value => Math.max(1, value - 1))} disabled={page === 1}><i className="fas fa-arrow-left" /> 上一页</button>
+              <span>第 <strong>{page}</strong> / {pageCount} 页</span>
+              <button type="button" onClick={() => setPage(value => Math.min(pageCount, value + 1))} disabled={page === pageCount}>下一页 <i className="fas fa-arrow-right" /></button>
+            </nav>
           )}
 
           <footer className="anime-data-note">

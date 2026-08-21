@@ -9,7 +9,7 @@ const outputPath = join(projectRoot, 'public', 'data', 'anime-tracker.json')
 
 const query = `
   query AnimeTracker($ids: [Int]) {
-    Page(page: 1, perPage: 50) {
+    Page(page: 1, perPage: 25) {
       media(id_in: $ids, type: ANIME) {
         id
         title { romaji english native }
@@ -22,9 +22,6 @@ const query = `
         bannerImage
         siteUrl
         nextAiringEpisode { airingAt episode }
-        airingSchedule(page: 1, perPage: 50) {
-          nodes { airingAt episode }
-        }
       }
     }
   }
@@ -32,7 +29,7 @@ const query = `
 
 const sleep = milliseconds => new Promise(resolvePromise => setTimeout(resolvePromise, milliseconds))
 
-async function fetchAniList(ids) {
+async function fetchAniListBatch(ids) {
   let lastError
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
@@ -56,6 +53,15 @@ async function fetchAniList(ids) {
   throw lastError
 }
 
+async function fetchAniList(ids) {
+  const results = []
+  for (let index = 0; index < ids.length; index += 25) {
+    results.push(...await fetchAniListBatch(ids.slice(index, index + 25)))
+    if (index + 25 < ids.length) await sleep(1200)
+  }
+  return results
+}
+
 function toDateString(date) {
   if (!date?.year || !date?.month || !date?.day) return null
   return [date.year, date.month, date.day].map((part, index) => index ? String(part).padStart(2, '0') : part).join('-')
@@ -67,15 +73,11 @@ function toIsoDate(epochSeconds) {
 
 function createEntry(config, media, nowSeconds) {
   const episodeOffset = config.episodeOffset || 0
-  const schedules = media.airingSchedule?.nodes || []
-  const airedSchedules = schedules.filter(schedule => schedule.airingAt <= nowSeconds)
-  const latestAired = airedSchedules.reduce((latest, schedule) => {
-    if (!latest || schedule.episode > latest.episode) return schedule
-    return latest
-  }, null)
   const sourceReleasedEpisodes = media.status === 'FINISHED' && media.episodes
     ? media.episodes
-    : latestAired?.episode ?? Math.max(0, (media.nextAiringEpisode?.episode || 1) - 1)
+    : media.nextAiringEpisode
+      ? Math.max(0, media.nextAiringEpisode.episode - 1)
+      : 0
   const inferredTotal = media.episodes == null ? null : media.episodes + (config.totalEpisodeOffset || 0)
   const totalEpisodes = config.totalEpisodes ?? inferredTotal
   const releasedEpisodes = Math.max(0, totalEpisodes == null
@@ -96,7 +98,7 @@ function createEntry(config, media, nowSeconds) {
     totalEpisodes,
     nextEpisode,
     nextAiringAt: toIsoDate(media.nextAiringEpisode?.airingAt),
-    lastAiredAt: toIsoDate(latestAired?.airingAt),
+    lastAiredAt: null,
     startDate: toDateString(media.startDate),
     endDate: toDateString(media.endDate),
     coverImage: media.coverImage?.extraLarge || media.coverImage?.large || null,
@@ -104,19 +106,47 @@ function createEntry(config, media, nowSeconds) {
     bannerImage: media.bannerImage || null,
     siteUrl: media.siteUrl,
     note: config.note || null,
+    groups: config.groups || ['其他'],
+  }
+}
+
+function createManualEntry(config) {
+  return {
+    id: config.manualId,
+    title: config.title,
+    subtitle: config.subtitle || '暂无动画条目',
+    sourceTitle: config.title,
+    status: 'NOT_YET_RELEASED',
+    format: null,
+    releasedEpisodes: 0,
+    totalEpisodes: null,
+    nextEpisode: null,
+    nextAiringAt: null,
+    lastAiredAt: null,
+    startDate: null,
+    endDate: null,
+    coverImage: null,
+    coverColor: '#8b5cf6',
+    bannerImage: null,
+    siteUrl: config.siteUrl || 'https://anilist.co/',
+    note: config.note || null,
+    groups: config.groups || ['其他'],
   }
 }
 
 async function main() {
   const watchlist = JSON.parse(await readFile(watchlistPath, 'utf8'))
-  const ids = watchlist.map(item => item.id)
+  const ids = watchlist.filter(item => Number.isInteger(item.id)).map(item => item.id)
+  if (new Set(ids).size !== ids.length) throw new Error('追番配置中存在重复的 AniList ID')
   const mediaList = await fetchAniList(ids)
   const mediaById = new Map(mediaList.map(media => [media.id, media]))
   const missingIds = ids.filter(id => !mediaById.has(id))
   if (missingIds.length) throw new Error(`AniList 未返回这些条目：${missingIds.join(', ')}`)
 
   const now = new Date()
-  const entries = watchlist.map(config => createEntry(config, mediaById.get(config.id), Math.floor(now.getTime() / 1000)))
+  const entries = watchlist.map(config => config.manualId
+    ? createManualEntry(config)
+    : createEntry(config, mediaById.get(config.id), Math.floor(now.getTime() / 1000)))
   const payload = {
     syncedAt: now.toISOString(),
     timezone: 'Asia/Shanghai',
