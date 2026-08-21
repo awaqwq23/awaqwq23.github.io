@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "thumbnails": "node .github/scripts/generate-gallery-thumbnails.mjs",
+    "sync:local": "node .github/scripts/sync-local-content.mjs",
     "predev": "npm run thumbnails",
     "dev": "vite",
     "prebuild": "npm run thumbnails",

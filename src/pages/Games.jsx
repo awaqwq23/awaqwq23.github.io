@@ -15,12 +15,30 @@ import FlyingWhale from '../games/FlyingWhale'
 import JoyBeanRunner from '../games/JoyBeanRunner'
 import SteamLibrary from '../components/SteamLibrary'
 
+function MechanicalFrontier() {
+  const frameRef = useRef(null)
+
+  return (
+    <div className="mvz-embed">
+      <div className="mvz-toolbar">
+        <span><i className="fas fa-circle-info" /> 建议使用横屏；游戏进度保存在当前浏览器</span>
+        <div>
+          <button onClick={() => frameRef.current?.requestFullscreen?.()}><i className="fas fa-expand" /> 全屏</button>
+          <a href="/games/mvz/index.html" target="_blank" rel="noreferrer"><i className="fas fa-arrow-up-right-from-square" /> 新窗口打开</a>
+        </div>
+      </div>
+      <iframe ref={frameRef} src="/games/mvz/index.html" title="机械边境 Web 游戏" allow="fullscreen" />
+    </div>
+  )
+}
+
 function AS({ children, d = 0 }) {
   const [ref, show] = useScrollReveal(0.05)
   return <div ref={ref} className={`reveal${show ? ' visible' : ''}`} style={{ transitionDelay: `${d}s` }}>{children}</div>
 }
 
 const GAMES = [
+  { id: 'mechanical-frontier', name: '机械边境', emoji: '⚙️', desc: '5×10 战场上的原创机械资源塔防游戏', tag: '完整游戏', bg: 'linear-gradient(145deg, #29472f, #76b849 58%, #eaf5b6)', Comp: MechanicalFrontier },
   { id: 'ai-token-gacha', name: '算力奇点：模型抽卡', emoji: '✦', desc: '抽模型 Token、兑换算力、升级整座 AI 实验室', tag: '新作', bg: 'radial-gradient(circle at 50% 44%, #fbbf24 0 3%, #7c3aed 18%, #111827 58%, #030712)', Comp: AITokenGacha },
   { id: 'flying-whale', name: '我的大银鲸会飞', emoji: '🐋', desc: '点击跃升加分，穿过其他 AI 公司的封锁', tag: '新作', bg: 'linear-gradient(145deg, #061b3c, #2563eb 58%, #7dd3fc)', Comp: FlyingWhale },
   { id: 'joy-bean-runner', name: '震动的欢乐豆', emoji: '🫘', desc: '让豆包欢乐豆跳过其他 AI 公司，跑得更远', tag: '新作', bg: 'linear-gradient(145deg, #7c2d12, #f43f5e 54%, #fdba74)', Comp: JoyBeanRunner },
