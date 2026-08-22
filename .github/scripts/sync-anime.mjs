@@ -6,6 +6,7 @@ const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const projectRoot = resolve(scriptDirectory, '..', '..')
 const watchlistPath = join(projectRoot, '.github', 'data', 'anime-watchlist.json')
 const outputPath = join(projectRoot, 'public', 'data', 'anime-tracker.json')
+const BANGUMI_CONCURRENCY = 4
 
 const query = `
   query AnimeTracker($ids: [Int]) {
@@ -22,19 +23,6 @@ const query = `
         bannerImage
         siteUrl
         nextAiringEpisode { airingAt episode }
-        relations {
-          edges {
-            relationType(version: 2)
-            node {
-              id
-              type
-              format
-              status
-              title { romaji english native }
-              siteUrl
-            }
-          }
-        }
       }
     }
   }
@@ -48,6 +36,7 @@ async function fetchAniListBatch(ids) {
     try {
       const response = await fetch('https://graphql.anilist.co', {
         method: 'POST',
+        signal: AbortSignal.timeout(30_000),
         headers: {
           'Content-Type': 'application/json',
           'User-Agent': 'awaqwq233.github.io anime tracker',
@@ -94,42 +83,76 @@ const FORMAT_LABELS = {
   MUSIC: '音乐动画',
 }
 
-const RELATION_LABELS = {
-  PREQUEL: '前作',
-  SEQUEL: '续作',
-  PARENT: '正篇',
-  SIDE_STORY: '外传',
-  SPIN_OFF: '衍生作',
-  ALTERNATIVE: '其他版本',
-  COMPILATION: '总集篇',
-  CONTAINS: '包含篇章',
-  OTHER: '关联作',
+const BANGUMI_API_ROOT = 'https://api.bgm.tv'
+const BANGUMI_HEADERS = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+  'User-Agent': 'awaqwq233.github.io anime tracker',
 }
 
-function createRelatedAnime(media) {
-  const seen = new Set()
-  return (media.relations?.edges || [])
-    .filter(edge => edge.node?.type === 'ANIME' && FORMAT_LABELS[edge.node.format])
-    .filter(edge => RELATION_LABELS[edge.relationType])
-    .filter(edge => {
-      if (seen.has(edge.node.id)) return false
-      seen.add(edge.node.id)
-      return true
+function normalizeTitle(value) {
+  return String(value || '').normalize('NFKC').toLocaleLowerCase('zh-CN')
+    .replace(/[\s\-—–:：·・!！?？'"“”‘’\[\]()（）【】]/g, '')
+}
+
+function bangumiAliases(subject) {
+  const aliases = [subject?.name, subject?.name_cn]
+  const aliasBox = (subject?.infobox || []).find(item => item.key === '别名')
+  if (Array.isArray(aliasBox?.value)) aliases.push(...aliasBox.value.map(item => item?.v || item))
+  return aliases.map(normalizeTitle).filter(Boolean)
+}
+
+async function fetchBangumiJson(url, options = {}) {
+  let lastError
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(url, { ...options, signal: AbortSignal.timeout(30_000), headers: { ...BANGUMI_HEADERS, ...options.headers } })
+      if (!response.ok) throw new Error(`Bangumi 请求失败（HTTP ${response.status}）`)
+      return await response.json()
+    } catch (error) {
+      lastError = error
+      if (attempt < 3) await sleep(attempt * 800)
+    }
+  }
+  throw lastError
+}
+
+function relationFormatLabel(relation) {
+  if (/剧场|电影/.test(relation || '')) return '剧场版'
+  if (/番外|特别/.test(relation || '')) return '特别篇'
+  return '关联动画'
+}
+
+async function fetchBangumiMetadata(config, media) {
+  const candidates = [config.subtitle, config.title, media.title.native, media.title.romaji, media.title.english].filter(Boolean)
+  const expected = new Set(candidates.map(normalizeTitle))
+  for (const keyword of candidates) {
+    const result = await fetchBangumiJson(`${BANGUMI_API_ROOT}/v0/search/subjects?limit=10`, {
+      method: 'POST', body: JSON.stringify({ keyword, sort: 'match', filter: { type: [2] } }),
     })
-    .map(edge => ({
-      id: edge.node.id,
-      title: edge.node.title.english || edge.node.title.romaji || edge.node.title.native,
-      nativeTitle: edge.node.title.native || null,
-      relation: edge.relationType,
-      relationLabel: RELATION_LABELS[edge.relationType],
-      format: edge.node.format,
-      formatLabel: FORMAT_LABELS[edge.node.format],
-      status: edge.node.status,
-      siteUrl: edge.node.siteUrl,
-    }))
+    const matches = (result.data || []).filter(subject => bangumiAliases(subject).some(alias => expected.has(alias)))
+    const subject = matches.sort((left, right) => Number(right.rating?.total || 0) - Number(left.rating?.total || 0))[0]
+    if (!subject) { await sleep(120); continue }
+    const relations = await fetchBangumiJson(`${BANGUMI_API_ROOT}/v0/subjects/${subject.id}/subjects`)
+    return {
+      bangumiId: subject.id,
+      score: Number(subject.rating?.score || 0) || null,
+      bangumiUrl: `https://bgm.tv/subject/${subject.id}`,
+      relationSource: 'Bangumi',
+      relatedAnime: relations.filter(item => item.type === 2).map(item => ({
+        id: item.id,
+        title: item.name_cn || item.name,
+        nativeTitle: item.name || null,
+        relationLabel: item.relation || '关联作',
+        formatLabel: relationFormatLabel(item.relation),
+        siteUrl: `https://bgm.tv/subject/${item.id}`,
+      })),
+    }
+  }
+  return { bangumiId: null, score: null, bangumiUrl: null, relationSource: null, relatedAnime: [] }
 }
 
-function createEntry(config, media, nowSeconds) {
+function createEntry(config, media, bangumiMetadata) {
   const episodeOffset = config.episodeOffset || 0
   const sourceReleasedEpisodes = media.status === 'FINISHED' && media.episodes
     ? media.episodes
@@ -153,7 +176,10 @@ function createEntry(config, media, nowSeconds) {
     status: media.status,
     format: media.format,
     formatLabel: FORMAT_LABELS[media.format] || media.format || '动画',
-    relatedAnime: createRelatedAnime(media),
+    bangumiId: bangumiMetadata.bangumiId,
+    score: bangumiMetadata.score,
+    relationSource: bangumiMetadata.relationSource,
+    relatedAnime: bangumiMetadata.relatedAnime,
     releasedEpisodes,
     totalEpisodes,
     nextEpisode,
@@ -165,6 +191,7 @@ function createEntry(config, media, nowSeconds) {
     coverColor: media.coverImage?.color || '#3b82f6',
     bannerImage: media.bannerImage || null,
     siteUrl: media.siteUrl,
+    bangumiUrl: bangumiMetadata.bangumiUrl,
     note: config.note || null,
     groups: config.groups || ['其他'],
   }
@@ -179,6 +206,9 @@ function createManualEntry(config) {
     status: 'NOT_YET_RELEASED',
     format: null,
     formatLabel: '动画企划',
+    bangumiId: null,
+    score: null,
+    relationSource: null,
     relatedAnime: [],
     releasedEpisodes: 0,
     totalEpisodes: null,
@@ -206,9 +236,30 @@ async function main() {
   if (missingIds.length) throw new Error(`AniList 未返回这些条目：${missingIds.join(', ')}`)
 
   const now = new Date()
-  const entries = watchlist.map(config => config.manualId
-    ? createManualEntry(config)
-    : createEntry(config, mediaById.get(config.id), Math.floor(now.getTime() / 1000)))
+  const entries = new Array(watchlist.length)
+  let cursor = 0
+  async function enrichWorker() {
+    while (cursor < watchlist.length) {
+      const index = cursor
+      cursor += 1
+      const config = watchlist[index]
+      if (config.manualId) {
+        entries[index] = createManualEntry(config)
+        continue
+      }
+      const media = mediaById.get(config.id)
+      let bangumiMetadata = { bangumiId: null, score: null, bangumiUrl: null, relationSource: null, relatedAnime: [] }
+      try {
+        bangumiMetadata = await fetchBangumiMetadata(config, media)
+      } catch (error) {
+        console.warn(`Bangumi 关联读取失败（${config.title}）：${error.message}`)
+      }
+      entries[index] = createEntry(config, media, bangumiMetadata)
+      console.log(`Bangumi 关联 ${index + 1}/${watchlist.length}：${config.title}${bangumiMetadata.bangumiId ? ` → ${bangumiMetadata.bangumiId}` : '（未匹配）'}`)
+      await sleep(150)
+    }
+  }
+  await Promise.all(Array.from({ length: BANGUMI_CONCURRENCY }, () => enrichWorker()))
   const payload = {
     syncedAt: now.toISOString(),
     timezone: 'Asia/Shanghai',

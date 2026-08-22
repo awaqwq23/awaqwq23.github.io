@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink } from 'react-router'
+import {
+  BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, TRACKER_PROGRESS_KEY,
+  buildTrackerBangumiMap, createExportPayload, mergeBangumiRecordIntoTracker,
+  fetchBangumiEntryFromUrl, parseImportPayload, readStoredObject, sanitizeCustomEntries, sanitizeProgress,
+  writeStoredObject,
+} from '../utils/animeRecords'
 
 const PAGE_SIZE = 12
-const BANGUMI_PROGRESS_KEY = 'awa-bangumi-watch-progress-v1'
-const TRACKER_PROGRESS_KEY = 'awa-anime-watch-progress-v1'
-const EXPORT_APP_ID = 'awaqwq233-anime-records'
 const QUARTER_NAMES = { 1: '冬季 · 1月档', 2: '春季 · 4月档', 3: '夏季 · 7月档', 4: '秋季 · 10月档' }
 const VIEW_MODES = [
   { id: 'quarter', label: '季度高分', icon: 'fa-calendar-days' },
@@ -21,7 +24,7 @@ const ORIGIN_FILTERS = [
 ]
 const PERSONAL_FILTERS = [
   { id: 'all', label: '全部记录' },
-  { id: 'interested', label: '感兴趣' },
+  { id: 'interested', label: '想看' },
   { id: 'watching', label: '正在看' },
   { id: 'finished', label: '已看完' },
   { id: 'not_started', label: '还没看' },
@@ -33,33 +36,10 @@ const syncFormatter = new Intl.DateTimeFormat('zh-CN', {
   hour: '2-digit', minute: '2-digit', hour12: false,
 })
 
-function readStoredObject(key) {
-  try {
-    const value = JSON.parse(window.localStorage.getItem(key) || '{}')
-    return value && typeof value === 'object' && !Array.isArray(value) ? value : {}
-  } catch {
-    return {}
-  }
-}
-
 function clampEpisode(value, totalEpisodes) {
   const episode = Number.parseInt(value, 10)
   if (!Number.isFinite(episode)) return 1
   return Math.max(1, totalEpisodes ? Math.min(totalEpisodes, episode) : episode)
-}
-
-function sanitizeProgress(rawProgress, includeInterest) {
-  const sanitized = {}
-  if (!rawProgress || typeof rawProgress !== 'object' || Array.isArray(rawProgress)) return sanitized
-  for (const [id, value] of Object.entries(rawProgress)) {
-    if (['__proto__', 'prototype', 'constructor'].includes(id) || !value || typeof value !== 'object' || Array.isArray(value)) continue
-    const status = ['not_started', 'watching', 'finished'].includes(value.status) ? value.status : 'not_started'
-    const episode = Math.max(0, Math.min(99999, Number.parseInt(value.episode, 10) || 0))
-    const record = { status, episode }
-    if (includeInterest) record.interest = ['neutral', 'interested', 'not_interested'].includes(value.interest) ? value.interest : 'neutral'
-    sanitized[id] = record
-  }
-  return sanitized
 }
 
 function formatMonth(value) {
@@ -111,11 +91,11 @@ function BangumiCard({ subject, progress, onProgressChange }) {
           <div className="bangumi-personal-heading"><span><i className="fas fa-user-check" /> 我的记录</span><strong>{statusCopy}</strong></div>
           <div className="bangumi-interest-controls" role="group" aria-label={`${subject.title}兴趣标记`}>
             <span>兴趣</span>
-            <button type="button" className={interest === 'interested' ? 'active interested' : ''} onClick={() => onProgressChange(subject.id, { interest: interest === 'interested' ? 'neutral' : 'interested' })}><i className="fas fa-heart" /> 感兴趣</button>
+            <button type="button" className={interest === 'interested' ? 'active interested' : ''} onClick={() => onProgressChange(subject.id, { interest: interest === 'interested' ? 'neutral' : 'interested', status: 'not_started', episode: 0 })}><i className="fas fa-bookmark" /> 想看</button>
             <button type="button" className={interest === 'not_interested' ? 'active not-interested' : ''} onClick={() => onProgressChange(subject.id, { interest: interest === 'not_interested' ? 'neutral' : 'not_interested' })}><i className="fas fa-eye-slash" /> 不感兴趣</button>
           </div>
           <div className="bangumi-watch-controls" role="group" aria-label={`${subject.title}观看进度`}>
-            <button type="button" className={status === 'not_started' ? 'active' : ''} onClick={() => onProgressChange(subject.id, { status: 'not_started', episode: 0 })}>没看</button>
+            <button type="button" className={status === 'not_started' && interest === 'interested' ? 'active' : ''} onClick={() => onProgressChange(subject.id, { status: 'not_started', episode: 0, interest: 'interested' })}>想看</button>
             <div className={`bangumi-episode-picker ${status === 'watching' ? 'active' : ''}`}>
               <button type="button" onClick={() => setEpisode(episode - 1)} aria-label={`${subject.title}观看集数减一`}>−</button>
               <label>第 <input type="number" min="1" max={subject.totalEpisodes || undefined} value={episode} onChange={event => setEpisode(event.target.value)} aria-label={`${subject.title}看到的集数`} /> 话</label>
@@ -133,6 +113,7 @@ function BangumiCard({ subject, progress, onProgressChange }) {
 
 export default function BangumiAiring() {
   const [data, setData] = useState(null)
+  const [trackerData, setTrackerData] = useState(null)
   const [error, setError] = useState('')
   const [selectedQuarterKey, setSelectedQuarterKey] = useState('')
   const [viewMode, setViewMode] = useState('quarter')
@@ -146,19 +127,16 @@ export default function BangumiAiring() {
 
   useEffect(() => {
     const controller = new AbortController()
-    fetch(`/data/bangumi-airing.json?v=${Date.now()}`, { cache: 'no-store', signal: controller.signal })
-      .then(response => {
-        if (!response.ok) throw new Error(`读取失败（${response.status}）`)
-        return response.json()
-      })
-      .then(payload => { setData(payload); setSelectedQuarterKey(payload.currentQuarter) })
+    Promise.all([
+      fetch(`/data/bangumi-airing.json?v=${Date.now()}`, { cache: 'no-store', signal: controller.signal }).then(response => { if (!response.ok) throw new Error(`读取失败（${response.status}）`); return response.json() }),
+      fetch(`/data/anime-tracker.json?v=${Date.now()}`, { cache: 'no-store', signal: controller.signal }).then(response => response.ok ? response.json() : null),
+    ])
+      .then(([payload, trackerPayload]) => { setData(payload); setTrackerData(trackerPayload); setSelectedQuarterKey(payload.currentQuarter) })
       .catch(fetchError => { if (fetchError.name !== 'AbortError') setError(fetchError.message || 'Bangumi 高分数据暂时无法读取') })
     return () => controller.abort()
   }, [])
 
-  useEffect(() => {
-    try { window.localStorage.setItem(BANGUMI_PROGRESS_KEY, JSON.stringify(progress)) } catch { /* session-only fallback */ }
-  }, [progress])
+  useEffect(() => { writeStoredObject(BANGUMI_PROGRESS_KEY, progress) }, [progress])
 
   useEffect(() => {
     if (!notice) return undefined
@@ -181,6 +159,21 @@ export default function BangumiAiring() {
     return [...subjectsById.values()].sort((left, right) => right.score - left.score || (left.rank || Number.MAX_SAFE_INTEGER) - (right.rank || Number.MAX_SAFE_INTEGER))
   }, [data])
   const longRunningSubjects = useMemo(() => allSubjects.filter(subject => subject.isLongRunning).sort((left, right) => Number(right.isAiring) - Number(left.isAiring) || (left.airDate || '').localeCompare(right.airDate || '')), [allSubjects])
+  const trackerEntries = trackerData?.entries || []
+  const idMaps = useMemo(() => buildTrackerBangumiMap(trackerEntries, allSubjects), [trackerEntries, allSubjects])
+
+  useEffect(() => {
+    if (!trackerEntries.length || !allSubjects.length) return
+    const trackerProgress = sanitizeProgress(readStoredObject(TRACKER_PROGRESS_KEY))
+    setProgress(current => {
+      const next = { ...current }
+      for (const [trackerId, bangumiId] of idMaps.trackerToBangumi) {
+        const record = trackerProgress[trackerId]
+        if (record && !next[bangumiId]) next[bangumiId] = { ...record, interest: record.status === 'not_started' ? 'interested' : 'neutral' }
+      }
+      return next
+    })
+  }, [trackerEntries, allSubjects, idMaps])
 
   const baseSubjects = viewMode === 'all'
     ? allSubjects
@@ -214,20 +207,39 @@ export default function BangumiAiring() {
   }
 
   const updateProgress = (subjectId, patch) => {
-    setProgress(current => ({
-      ...current,
-      [String(subjectId)]: { status: 'not_started', episode: 0, interest: 'neutral', ...current[String(subjectId)], ...patch },
-    }))
+    const subject = allSubjects.find(item => String(item.id) === String(subjectId))
+    if (!subject) return
+    const previousSnapshot = progress[String(subjectId)] || { status: 'not_started', episode: 0, interest: 'neutral' }
+    const shouldRemoveFromTracker = patch.interest === 'neutral' && previousSnapshot.interest === 'interested' && (patch.status || previousSnapshot.status) === 'not_started'
+    setProgress(current => {
+      const previous = current[String(subjectId)] || { status: 'not_started', episode: 0, interest: 'neutral' }
+      const nextRecord = { ...previous, ...patch }
+      const shouldRemove = patch.interest === 'neutral' && previous.interest === 'interested' && nextRecord.status === 'not_started'
+      mergeBangumiRecordIntoTracker(subject, shouldRemove ? { ...nextRecord, interest: 'not_interested' } : nextRecord, trackerEntries, idMaps.bangumiToTracker)
+      return { ...current, [String(subjectId)]: nextRecord }
+    })
+    if (patch.interest !== 'not_interested' && !shouldRemoveFromTracker) {
+      fetchBangumiEntryFromUrl(subject.url).then(entry => {
+        const enrichedEntry = {
+          ...entry,
+          status: subject.isAiring ? 'RELEASING' : entry.status,
+          formatLabel: subject.platform || entry.formatLabel,
+          releasedEpisodes: subject.releasedEpisodes || (subject.isAiring ? 0 : entry.releasedEpisodes),
+        }
+        const relationCache = readStoredObject(BANGUMI_RELATIONS_KEY)
+        relationCache[String(subject.id)] = enrichedEntry.relatedAnime
+        writeStoredObject(BANGUMI_RELATIONS_KEY, relationCache)
+        if (!idMaps.bangumiToTracker.has(String(subject.id))) {
+          const customEntries = sanitizeCustomEntries(readStoredObject(CUSTOM_TRACKER_KEY))
+          customEntries[String(enrichedEntry.id)] = enrichedEntry
+          writeStoredObject(CUSTOM_TRACKER_KEY, customEntries)
+        }
+      }).catch(() => { /* progress remains usable if relation lookup is temporarily unavailable */ })
+    }
   }
 
   const exportRecords = () => {
-    const payload = {
-      app: EXPORT_APP_ID,
-      version: 1,
-      exportedAt: new Date().toISOString(),
-      trackerProgress: sanitizeProgress(readStoredObject(TRACKER_PROGRESS_KEY), false),
-      bangumiProgress: sanitizeProgress(progress, true),
-    }
+    const payload = createExportPayload(readStoredObject(TRACKER_PROGRESS_KEY), progress, readStoredObject(CUSTOM_TRACKER_KEY))
     const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const anchor = document.createElement('a')
@@ -245,14 +257,15 @@ export default function BangumiAiring() {
     event.target.value = ''
     if (!file) return
     try {
-      const payload = JSON.parse(await file.text())
-      if (payload?.app !== EXPORT_APP_ID || payload?.version !== 1) throw new Error('文件格式不属于本站番剧记录')
-      const importedBangumi = sanitizeProgress(payload.bangumiProgress, true)
-      const importedTracker = sanitizeProgress(payload.trackerProgress, false)
+      const imported = parseImportPayload(JSON.parse(await file.text()))
+      const importedBangumi = imported.bangumiProgress
+      const importedTracker = imported.trackerProgress
       const mergedBangumi = { ...progress, ...importedBangumi }
-      const mergedTracker = { ...sanitizeProgress(readStoredObject(TRACKER_PROGRESS_KEY), false), ...importedTracker }
+      const mergedTracker = { ...sanitizeProgress(readStoredObject(TRACKER_PROGRESS_KEY)), ...importedTracker }
+      const mergedCustom = { ...sanitizeCustomEntries(readStoredObject(CUSTOM_TRACKER_KEY)), ...imported.customEntries }
       setProgress(mergedBangumi)
-      window.localStorage.setItem(TRACKER_PROGRESS_KEY, JSON.stringify(mergedTracker))
+      writeStoredObject(TRACKER_PROGRESS_KEY, mergedTracker)
+      writeStoredObject(CUSTOM_TRACKER_KEY, mergedCustom)
       setNotice(`导入成功：合并 ${Object.keys(importedBangumi).length + Object.keys(importedTracker).length} 条记录`)
     } catch (importError) {
       setNotice(`导入失败：${importError.message || '文件无法读取'}`)
@@ -268,8 +281,8 @@ export default function BangumiAiring() {
   return (
     <div className="page anime-tracker-page bangumi-airing-page">
       <nav className="anime-page-tabs" aria-label="追番页面">
-        <NavLink to="/anime" end><i className="fas fa-bookmark" /> 我的追番</NavLink>
         <NavLink to="/anime/bangumi"><i className="fas fa-star" /> Bangumi 高分连载</NavLink>
+        <NavLink to="/anime" end><i className="fas fa-bookmark" /> 我的追番</NavLink>
       </nav>
 
       <header className="bangumi-hero">

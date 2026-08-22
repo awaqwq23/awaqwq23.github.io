@@ -1776,6 +1776,7 @@ body.modal-open { overflow: hidden; }
 .anime-group-tags { display: flex; flex-wrap: wrap; gap: .25rem; margin-bottom: .38rem; }
 .anime-group-tags span { padding: .12rem .38rem; color: var(--primary); background: var(--primary-bg); border-radius: var(--radius-full); font-size: .52rem; font-weight: 800; }
 .anime-group-tags .anime-format-tag { color: #047857; background: rgba(16,185,129,.12); }
+.anime-group-tags .anime-score-tag { color: #a16207; background: rgba(250,204,21,.16); }
 .anime-format-tag i { margin-right: .12rem; }
 .anime-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: .65rem; }
 .anime-title-row > div { min-width: 0; }
@@ -1845,6 +1846,22 @@ body.modal-open { overflow: hidden; }
 .anime-empty > i { margin-bottom: .5rem; color: var(--primary); font-size: 2rem; }
 .anime-state h2 { color: var(--text-primary); font-size: 1.05rem; }
 .anime-state.error > i { color: #ef4444; }
+
+.anime-personal-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5rem; margin-bottom: .8rem; padding: .42rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.anime-personal-tabs button { display: flex; align-items: center; justify-content: center; gap: .35rem; padding: .68rem .75rem; color: var(--text-secondary); background: var(--surface-2); border: 1px solid transparent; border-radius: 10px; font: 800 .72rem var(--font-sans); cursor: pointer; }
+.anime-personal-tabs button:hover { color: var(--primary); border-color: var(--primary); }
+.anime-personal-tabs button.active { color: #fff; background: var(--gradient-primary); box-shadow: var(--shadow-blue); }
+.anime-personal-tabs button small { min-width: 20px; padding: .08rem .3rem; color: inherit; background: color-mix(in srgb, currentColor, transparent 84%); border-radius: var(--radius-full); font: 800 .57rem var(--font-mono); }
+.anime-record-tools { margin-bottom: .55rem; }
+.anime-bangumi-import { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: .6rem; margin-bottom: .75rem; padding: .58rem .7rem .58rem .85rem; color: #7c3aed; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.anime-bangumi-import:focus-within { border-color: #8b5cf6; box-shadow: 0 0 0 3px rgba(139,92,246,.12); }
+.anime-bangumi-import input { min-width: 0; color: var(--text-primary); background: transparent; border: 0; outline: 0; font: 700 .7rem var(--font-sans); }
+.anime-bangumi-import button { padding: .5rem .7rem; color: #fff; background: linear-gradient(135deg, #7c3aed, #ec4899); border: 0; border-radius: 8px; font: 800 .63rem var(--font-sans); cursor: pointer; }
+.anime-bangumi-import button:disabled { opacity: .6; cursor: wait; }
+[data-theme="dark"] .anime-group-select,
+[data-theme="dark"] .anime-group-select select,
+[data-theme="dark"] .anime-group-select select option { color: #f8fafc; background: #000; color-scheme: dark; }
+[data-theme="dark"] .anime-group-select > i { color: #93c5fd; }
 
 .bangumi-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2rem; overflow: hidden; margin-bottom: 1rem; padding: 2rem; color: #fff; background: radial-gradient(circle at 82% 18%, rgba(250,204,21,.26), transparent 30%), linear-gradient(135deg, #111827, #312e81 58%, #6d28d9); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); }
 .bangumi-hero::after { content: '7+'; position: absolute; right: 14%; bottom: -2.5rem; color: rgba(255,255,255,.055); font: 900 9rem var(--font-mono); transform: rotate(-8deg); }
@@ -2001,6 +2018,9 @@ body.modal-open { overflow: hidden; }
   .anime-progress-controls { flex-wrap: wrap; }
   .anime-episode-picker { order: 3; flex-basis: 100%; min-height: 32px; }
   .anime-progress-controls > button { flex: 1 1 calc(50% - .2rem); }
+  .anime-personal-tabs { grid-template-columns: repeat(2, 1fr); }
+  .anime-bangumi-import { grid-template-columns: auto minmax(0, 1fr); }
+  .anime-bangumi-import button { grid-column: 1 / -1; }
   .anime-pagination { justify-content: space-between; gap: .45rem; }
   .bangumi-hero { grid-template-columns: 1fr; gap: 1rem; padding: 1.35rem; }
   .bangumi-score-rule { align-items: flex-start; min-width: 0; }
