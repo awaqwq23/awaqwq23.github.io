@@ -2,6 +2,7 @@ export const TRACKER_PROGRESS_KEY = 'awa-anime-watch-progress-v1'
 export const BANGUMI_PROGRESS_KEY = 'awa-bangumi-watch-progress-v1'
 export const CUSTOM_TRACKER_KEY = 'awa-anime-custom-entries-v1'
 export const BANGUMI_RELATIONS_KEY = 'awa-bangumi-relations-v1'
+export const ANIME_REVIEWS_KEY = 'awa-anime-reviews-v1'
 export const EXPORT_APP_ID = 'awaqwq233-anime-records'
 export const RECORDS_UPDATED_EVENT = 'awa-anime-records-updated'
 
@@ -31,11 +32,31 @@ export function sanitizeProgress(rawProgress, includeInterest = false) {
   if (!rawProgress || typeof rawProgress !== 'object' || Array.isArray(rawProgress)) return sanitized
   for (const [id, value] of Object.entries(rawProgress)) {
     if (BLOCKED_KEYS.has(id) || !value || typeof value !== 'object' || Array.isArray(value)) continue
-    const status = ['not_started', 'watching', 'finished'].includes(value.status) ? value.status : 'not_started'
+    const status = ['not_started', 'watching', 'finished', 'dropped', 'none'].includes(value.status) ? value.status : 'not_started'
     const episode = Math.max(0, Math.min(99999, Number.parseInt(value.episode, 10) || 0))
     const record = { status, episode }
     if (includeInterest) record.interest = ['neutral', 'interested', 'not_interested'].includes(value.interest) ? value.interest : 'neutral'
     sanitized[id] = record
+  }
+  return sanitized
+}
+
+export function sanitizeReviews(rawReviews) {
+  const sanitized = {}
+  if (!rawReviews || typeof rawReviews !== 'object' || Array.isArray(rawReviews)) return sanitized
+  for (const [id, value] of Object.entries(rawReviews)) {
+    if (BLOCKED_KEYS.has(id) || !value || typeof value !== 'object' || Array.isArray(value)) continue
+    const text = String(value.text || '').trim().slice(0, 50_000)
+    if (!text) continue
+    const numericScore = Number(value.score)
+    sanitized[id] = {
+      text,
+      score: Number.isFinite(numericScore) && numericScore >= 1 && numericScore <= 10 ? numericScore : null,
+      title: String(value.title || '').slice(0, 200),
+      source: value.source === 'blog' ? 'blog' : 'local',
+      sourceUrl: value.source === 'blog' && value.sourceUrl ? String(value.sourceUrl).slice(0, 500) : null,
+      updatedAt: /^\d{4}-\d{2}-\d{2}T/.test(value.updatedAt || '') ? value.updatedAt : new Date().toISOString(),
+    }
   }
   return sanitized
 }
@@ -155,6 +176,8 @@ export function bangumiSubjectToTrackerEntry(subject, relations = subject.relate
 }
 
 export function categoryForEntry(entry, progress) {
+  if (progress?.status === 'none') return 'none'
+  if (progress?.status === 'dropped') return 'dropped'
   if (progress?.status === 'finished') return 'finished'
   if (progress?.status === 'watching') return 'watching'
   if (progress?.status === 'not_started') return 'planned'
@@ -162,6 +185,61 @@ export function categoryForEntry(entry, progress) {
   if (groups.includes('已看') || groups.includes('已二刷')) return 'finished'
   if (groups.includes('正在看') || groups.includes('近期追番')) return 'watching'
   return 'planned'
+}
+
+export function seriesTitleKey(value) {
+  return normalizeAnimeTitle(value)
+    .replace(/(?:第)?[一二三四五六七八九十0-9]+(?:季|期|部|章|篇)/g, '')
+    .replace(/(?:season|part|cour)\d+/g, '')
+    .replace(/(?:剧场版|映画|themovie|movie|特别篇|ova|oad|sp)$/g, '')
+    .replace(/(?:续篇|新篇|完结篇|总集篇)$/g, '')
+}
+
+export function buildSeriesGroups(entries) {
+  const list = entries || []
+  const parents = list.map((_, index) => index)
+  const find = index => {
+    while (parents[index] !== index) {
+      parents[index] = parents[parents[index]]
+      index = parents[index]
+    }
+    return index
+  }
+  const unite = (left, right) => {
+    const leftRoot = find(left)
+    const rightRoot = find(right)
+    if (leftRoot !== rightRoot) parents[rightRoot] = leftRoot
+  }
+  const idIndex = new Map()
+  const titleIndexes = new Map()
+  list.forEach((entry, index) => {
+    const bangumiId = entry.bangumiId || entry.id
+    if (bangumiId != null) idIndex.set(String(bangumiId).replace(/^bangumi-/, ''), index)
+    const titleKey = seriesTitleKey(entry.title || entry.originalTitle)
+    if (titleKey.length >= 3) {
+      const previous = titleIndexes.get(titleKey)
+      if (previous != null) unite(previous, index)
+      else titleIndexes.set(titleKey, index)
+    }
+  })
+  list.forEach((entry, index) => {
+    if (entry.relationSource !== 'Bangumi') return
+    for (const related of entry.relatedAnime || []) {
+      const relatedIndex = idIndex.get(String(related.id))
+      if (relatedIndex != null) unite(index, relatedIndex)
+    }
+  })
+  const groups = new Map()
+  list.forEach((entry, index) => {
+    const root = find(index)
+    if (!groups.has(root)) groups.set(root, [])
+    groups.get(root).push(entry)
+  })
+  return [...groups.values()].map(items => ({
+    id: items.map(item => item.bangumiId || item.id).join('-'),
+    title: items.length > 1 ? `${items[0].title} 系列` : items[0].title,
+    items,
+  }))
 }
 
 export function trackerKeyForBangumi(subjectId, bangumiToTracker) {
@@ -172,14 +250,10 @@ export function mergeBangumiRecordIntoTracker(subject, record, trackerEntries, b
   const trackerKey = trackerKeyForBangumi(subject.id, bangumiToTracker)
   const trackerProgress = sanitizeProgress(readStoredObject(TRACKER_PROGRESS_KEY))
   const customEntries = sanitizeCustomEntries(readStoredObject(CUSTOM_TRACKER_KEY))
-  if (record?.interest === 'not_interested') {
-    delete trackerProgress[trackerKey]
-    if (trackerKey.startsWith('bangumi-')) delete customEntries[trackerKey]
-  } else {
-    trackerProgress[trackerKey] = { status: record?.status || 'not_started', episode: record?.episode || 0 }
-    if (!trackerEntries.some(entry => String(entry.id) === trackerKey)) {
-      customEntries[trackerKey] = bangumiSubjectToTrackerEntry(subject)
-    }
+  const status = record?.status || (record?.interest === 'not_interested' ? 'none' : 'not_started')
+  trackerProgress[trackerKey] = { status, episode: record?.episode || 0 }
+  if (!trackerEntries.some(entry => String(entry.id) === trackerKey)) {
+    customEntries[trackerKey] = bangumiSubjectToTrackerEntry(subject)
   }
   writeStoredObject(TRACKER_PROGRESS_KEY, trackerProgress)
   writeStoredObject(CUSTOM_TRACKER_KEY, customEntries)
@@ -193,43 +267,72 @@ export function syncTrackerRecordToBangumi(entry, record, trackerToBangumi) {
   bangumiProgress[String(bangumiId)] = {
     status: record.status,
     episode: record.episode || 0,
-    interest: record.status === 'not_started' ? 'interested' : (bangumiProgress[String(bangumiId)]?.interest || 'neutral'),
+    interest: record.status === 'not_started' ? 'interested' : record.status === 'dropped' ? 'not_interested' : 'neutral',
   }
   writeStoredObject(BANGUMI_PROGRESS_KEY, bangumiProgress)
 }
 
+async function fetchWithRetry(url, attempts = 2) {
+  let lastError
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: { Accept: 'application/json' },
+        signal: AbortSignal.timeout(5_000),
+        cache: 'force-cache',
+      })
+      if (response.ok || response.status < 500) return response
+      lastError = new Error(`Bangumi 服务暂时异常（${response.status}）`)
+    } catch (error) {
+      lastError = error
+    }
+    if (attempt < attempts - 1) await new Promise(resolve => window.setTimeout(resolve, 450 * (attempt + 1)))
+  }
+  if (lastError?.name === 'TimeoutError') throw new Error('Bangumi 接口连接超时，请稍后重试')
+  throw new Error(lastError?.message || 'Bangumi 服务暂时无法连接')
+}
+
 export async function fetchBangumiEntryFromUrl(value) {
-  const match = String(value || '').trim().match(/(?:bgm\.tv|bangumi\.tv|chii\.in)\/subject\/(\d+)|^(\d+)$/i)
-  const subjectId = Number(match?.[1] || match?.[2])
+  const subjectId = bangumiIdFromValue(value)
   if (!Number.isInteger(subjectId) || subjectId <= 0) throw new Error('请输入正确的 Bangumi 条目链接')
-  const headers = { Accept: 'application/json' }
-  const [subjectResponse, relationResponse] = await Promise.all([
-    fetch(`https://api.bgm.tv/v0/subjects/${subjectId}`, { headers }),
-    fetch(`https://api.bgm.tv/v0/subjects/${subjectId}/subjects`, { headers }),
-  ])
+  const subjectResponse = await fetchWithRetry(`https://api.bgm.tv/v0/subjects/${subjectId}`)
   if (!subjectResponse.ok) throw new Error(`Bangumi 条目读取失败（${subjectResponse.status}）`)
   const subject = await subjectResponse.json()
   if (Number(subject.type) !== 2) throw new Error('这个链接不是动画条目')
-  const relations = relationResponse.ok ? await relationResponse.json() : []
+  let relations = []
+  try {
+    const relationResponse = await fetchWithRetry(`https://api.bgm.tv/v0/subjects/${subjectId}/subjects`, 2)
+    relations = relationResponse.ok ? await relationResponse.json() : []
+  } catch {
+    // 关联作读取失败不应阻止主条目导入。
+  }
   return bangumiSubjectToTrackerEntry(subject, relations)
 }
 
-export function createExportPayload(trackerProgress, bangumiProgress, customEntries) {
+export function bangumiIdFromValue(value) {
+  const rawValue = String(value || '').trim()
+  const match = rawValue.match(/^(?:(?:https?:\/\/)?(?:www\.)?(?:bgm\.tv|bangumi\.tv|chii\.in)\/subject\/)?(\d+)(?:[/?#].*)?$/i)
+  return Number(match?.[1])
+}
+
+export function createExportPayload(trackerProgress, bangumiProgress, customEntries, reviews = {}) {
   return {
     app: EXPORT_APP_ID,
-    version: 2,
+    version: 3,
     exportedAt: new Date().toISOString(),
     trackerProgress: sanitizeProgress(trackerProgress),
     bangumiProgress: sanitizeProgress(bangumiProgress, true),
     customEntries: sanitizeCustomEntries(customEntries),
+    reviews: sanitizeReviews(reviews),
   }
 }
 
 export function parseImportPayload(payload) {
-  if (payload?.app !== EXPORT_APP_ID || ![1, 2].includes(payload?.version)) throw new Error('文件格式不属于本站番剧记录')
+  if (payload?.app !== EXPORT_APP_ID || ![1, 2, 3].includes(payload?.version)) throw new Error('文件格式不属于本站番剧记录')
   return {
     trackerProgress: sanitizeProgress(payload.trackerProgress),
     bangumiProgress: sanitizeProgress(payload.bangumiProgress, true),
     customEntries: sanitizeCustomEntries(payload.customEntries),
+    reviews: sanitizeReviews(payload.reviews),
   }
 }

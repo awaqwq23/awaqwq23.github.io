@@ -5754,3 +5754,59 @@ body.modal-open { overflow: hidden; }
   .steam-scope { display: grid; grid-template-columns: repeat(3, 1fr); }
   .steam-games-grid { grid-template-columns: 1fr; }
 }
+
+/* Anime records v3: progressive rendering, series groups and local reviews */
+.route-loading { min-height: 48vh; display: grid; place-content: center; justify-items: center; gap: 0.8rem; color: var(--text-muted); font-weight: 700; }
+.route-loading i { color: var(--primary); font-size: 1.6rem; }
+.anime-summary { grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); }
+.anime-series-grid { display: grid; gap: 1.25rem; }
+.anime-series-group { min-width: 0; content-visibility: auto; contain-intrinsic-size: auto 680px; }
+.anime-series-group.grouped { padding: 1rem; border: 1px solid color-mix(in srgb, var(--primary) 26%, var(--border)); border-radius: 22px; background: color-mix(in srgb, var(--bg-card) 94%, var(--primary)); box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06); }
+.anime-series-group > header { display: flex; align-items: center; gap: 0.75rem; margin: 0 0 0.9rem; color: var(--text-primary); }
+.anime-series-group > header > i { width: 2.4rem; height: 2.4rem; border-radius: 12px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, #7057c7, #3b82f6); }
+.anime-series-group > header span { display: grid; gap: 0.12rem; }
+.anime-series-group > header small { color: var(--text-muted); font-weight: 500; }
+.anime-title-button,.bangumi-title-button { appearance: none; border: 0; padding: 0; margin: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; min-width: 0; }
+.anime-title-button h2,.bangumi-title-button h2 { transition: color 0.18s ease; }
+.anime-title-button:hover h2,.anime-title-button:focus-visible h2,.bangumi-title-button:hover h2,.bangumi-title-button:focus-visible h2 { color: var(--primary); }
+.anime-title-button small,.bangumi-title-button small { display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.35rem; color: var(--primary); font-weight: 700; }
+.bangumi-title-button { display: block; width: 100%; }
+.anime-progress-controls { flex-wrap: wrap; }
+.anime-progress-controls > button.dropped.active,.bangumi-watch-controls > button.dropped.active { background: #b45309; border-color: #b45309; color: #fff; }
+.anime-progress-controls > button.neutral.active,.bangumi-watch-controls > button.neutral.active { background: #475569; border-color: #475569; color: #fff; }
+.bangumi-progressive-loading { display: flex; align-items: center; gap: 0.55rem; margin: 0.8rem 0; padding: 0.75rem 1rem; border-radius: 12px; background: color-mix(in srgb, var(--primary) 10%, var(--bg-card)); color: var(--text-muted); }
+
+.anime-dialog-backdrop { position: fixed; inset: 0; z-index: 1100; padding: clamp(0.75rem, 3vw, 2rem); overflow-y: auto; display: grid; place-items: start center; background: rgba(2, 6, 23, 0.72); backdrop-filter: blur(8px); }
+.anime-details-dialog { position: relative; width: min(760px, 100%); margin: auto; padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid var(--border); border-radius: 24px; background: var(--bg-card); color: var(--text-primary); box-shadow: 0 30px 80px rgba(2, 6, 23, 0.32); }
+.anime-dialog-close { position: absolute; top: 0.9rem; right: 0.9rem; z-index: 2; width: 2.4rem; height: 2.4rem; border: 0; border-radius: 999px; cursor: pointer; background: color-mix(in srgb, var(--text-primary) 9%, var(--bg-card)); color: var(--text-primary); }
+.anime-details-dialog > header { display: flex; gap: 1rem; align-items: center; padding-right: 2.5rem; }
+.anime-details-dialog > header > img,.anime-details-dialog > header > i { width: 76px; height: 100px; flex: 0 0 auto; border-radius: 12px; object-fit: cover; }
+.anime-details-dialog > header > i { display: grid; place-items: center; background: color-mix(in srgb, var(--primary) 14%, var(--bg-card)); color: var(--primary); font-size: 1.8rem; }
+.anime-details-dialog > header span { color: var(--primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; }
+.anime-details-dialog > header h2 { margin: 0.3rem 0; font-size: clamp(1.35rem, 4vw, 2rem); }
+.anime-details-dialog > header p { margin: 0; color: var(--text-muted); }
+.anime-dialog-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0; }
+.anime-dialog-meta span { padding: 0.4rem 0.65rem; border-radius: 999px; background: color-mix(in srgb, var(--primary) 10%, var(--bg-card)); color: var(--text-primary); font-size: 0.85rem; }
+.anime-related-panel,.anime-review-editor { margin-top: 1rem; padding: 1rem; border: 1px solid var(--border); border-radius: 16px; background: color-mix(in srgb, var(--bg-card) 95%, var(--primary)); }
+.anime-dialog-section-title { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
+.anime-dialog-section-title > div { display: flex; align-items: center; gap: 0.65rem; }
+.anime-dialog-section-title > div > i { color: var(--primary); }
+.anime-dialog-section-title span { display: grid; }
+.anime-dialog-section-title small { color: var(--text-muted); font-weight: 500; }
+.anime-dialog-section-title em { padding: 0.25rem 0.5rem; border-radius: 999px; background: color-mix(in srgb, var(--primary) 14%, var(--bg-card)); color: var(--primary); font-size: 0.75rem; font-style: normal; font-weight: 800; }
+.anime-dialog-hint { margin: 0.7rem 0; color: var(--text-muted); }
+.anime-dialog-hint.error { color: #dc2626; }
+.anime-review-editor > label { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.65rem; color: var(--text-primary); font-weight: 700; }
+.anime-review-editor select,.anime-review-editor textarea { border: 1px solid var(--border); border-radius: 10px; background: var(--bg-primary); color: var(--text-primary); }
+.anime-review-editor select { padding: 0.45rem 0.6rem; }
+.anime-review-editor textarea { width: 100%; resize: vertical; padding: 0.8rem; line-height: 1.7; font: inherit; }
+.anime-review-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.65rem; }
+.anime-review-actions small { color: var(--text-muted); }
+.anime-review-actions button { border: 0; border-radius: 10px; padding: 0.6rem 0.9rem; cursor: pointer; background: var(--primary); color: #fff; font-weight: 800; }
+
+@media (max-width: 640px) {
+  .anime-series-group.grouped { padding: 0.7rem; border-radius: 17px; }
+  .anime-details-dialog > header { align-items: flex-start; }
+  .anime-details-dialog > header > img,.anime-details-dialog > header > i { width: 58px; height: 80px; }
+  .anime-dialog-section-title { align-items: flex-start; }
+}

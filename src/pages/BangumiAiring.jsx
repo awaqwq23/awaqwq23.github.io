@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink } from 'react-router'
+import AnimeDetailsDialog from '../components/AnimeDetailsDialog'
 import {
-  BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, TRACKER_PROGRESS_KEY,
-  buildTrackerBangumiMap, createExportPayload, mergeBangumiRecordIntoTracker,
-  fetchBangumiEntryFromUrl, parseImportPayload, readStoredObject, sanitizeCustomEntries, sanitizeProgress,
+  ANIME_REVIEWS_KEY, BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, TRACKER_PROGRESS_KEY,
+  buildSeriesGroups, buildTrackerBangumiMap, categoryForEntry, createExportPayload, mergeBangumiRecordIntoTracker,
+  fetchBangumiEntryFromUrl, parseImportPayload, readStoredObject, sanitizeCustomEntries, sanitizeProgress, sanitizeReviews,
   writeStoredObject,
 } from '../utils/animeRecords'
 
@@ -27,9 +28,22 @@ const PERSONAL_FILTERS = [
   { id: 'interested', label: '想看' },
   { id: 'watching', label: '正在看' },
   { id: 'finished', label: '已看完' },
+  { id: 'dropped', label: '不想看' },
+  { id: 'none', label: '已取消状态' },
   { id: 'not_started', label: '还没看' },
   { id: 'not_interested', label: '不感兴趣' },
 ]
+const yearRequestCache = new Map()
+
+function requestBangumiYear(year, signal) {
+  const key = String(year)
+  if (!yearRequestCache.has(key)) {
+    yearRequestCache.set(key, fetch(`/data/bangumi-airing-${year}.json`, { cache: 'force-cache', signal })
+      .then(response => { if (!response.ok) throw new Error(`${year} 年数据读取失败（${response.status}）`); return response.json() })
+      .catch(error => { yearRequestCache.delete(key); throw error }))
+  }
+  return yearRequestCache.get(key)
+}
 
 const syncFormatter = new Intl.DateTimeFormat('zh-CN', {
   timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
@@ -46,11 +60,11 @@ function formatMonth(value) {
   return /^\d{4}-\d{2}/.test(value || '') ? value.slice(0, 7).replace('-', ' 年 ') + ' 月' : '未知'
 }
 
-function BangumiCard({ subject, progress, onProgressChange }) {
+function BangumiCard({ subject, progress, review, onOpenDetails, onProgressChange }) {
   const status = progress?.status || 'not_started'
   const interest = progress?.interest || 'neutral'
-  const episode = status === 'watching' ? Math.max(1, progress.episode || 1) : 1
-  const statusCopy = status === 'finished' ? '已看完' : status === 'watching' ? `看到第 ${episode} 话` : '还没看'
+  const episode = Math.max(1, progress?.episode || 1)
+  const statusCopy = status === 'finished' ? '已看完' : status === 'watching' ? `看到第 ${episode} 话` : status === 'dropped' ? `第 ${episode} 话后不再看` : status === 'none' ? '已取消状态' : '还没看'
 
   const setEpisode = value => onProgressChange(subject.id, {
     status: 'watching',
@@ -60,7 +74,7 @@ function BangumiCard({ subject, progress, onProgressChange }) {
   return (
     <article className={`bangumi-card ${subject.isLongRunning ? 'is-long-running' : 'is-seasonal'}`}>
       <a className="bangumi-cover" href={subject.url} target="_blank" rel="noopener noreferrer" aria-label={`在 Bangumi 查看${subject.title}`}>
-        {subject.image ? <img src={subject.image} alt={`${subject.title}封面`} loading="lazy" /> : <i className="fas fa-film" />}
+        {subject.image ? <img src={subject.image} alt={`${subject.title}封面`} loading="lazy" decoding="async" fetchPriority="low" /> : <i className="fas fa-film" />}
         <strong><i className="fas fa-star" /> {subject.score.toFixed(1)}</strong>
       </a>
       <div className="bangumi-card-body">
@@ -71,7 +85,7 @@ function BangumiCard({ subject, progress, onProgressChange }) {
           {subject.platform && <span>{subject.platform}</span>}
           {subject.totalEpisodes && <span>全 {subject.totalEpisodes} 话</span>}
         </div>
-        <h2>{subject.title}</h2>
+        <button type="button" className="bangumi-title-button" onClick={() => onOpenDetails(subject)}><h2>{subject.title}</h2><small><i className="fas fa-circle-info" /> 查看全部系列{review ? ' · 已有番评' : ''}</small></button>
         {subject.originalTitle !== subject.title && <p className="bangumi-original-title">{subject.originalTitle}</p>}
         <div className="bangumi-air-date">
           <i className="fas fa-calendar-day" /> 开播 {formatMonth(subject.airDate)}
@@ -92,7 +106,7 @@ function BangumiCard({ subject, progress, onProgressChange }) {
           <div className="bangumi-interest-controls" role="group" aria-label={`${subject.title}兴趣标记`}>
             <span>兴趣</span>
             <button type="button" className={interest === 'interested' ? 'active interested' : ''} onClick={() => onProgressChange(subject.id, { interest: interest === 'interested' ? 'neutral' : 'interested', status: 'not_started', episode: 0 })}><i className="fas fa-bookmark" /> 想看</button>
-            <button type="button" className={interest === 'not_interested' ? 'active not-interested' : ''} onClick={() => onProgressChange(subject.id, { interest: interest === 'not_interested' ? 'neutral' : 'not_interested' })}><i className="fas fa-eye-slash" /> 不感兴趣</button>
+            <button type="button" className={status === 'dropped' ? 'active not-interested' : ''} onClick={() => onProgressChange(subject.id, status === 'dropped' ? { interest: 'neutral', status: 'none', episode: 0 } : { interest: 'not_interested', status: 'dropped', episode })}><i className="fas fa-eye-slash" /> 不想看</button>
           </div>
           <div className="bangumi-watch-controls" role="group" aria-label={`${subject.title}观看进度`}>
             <button type="button" className={status === 'not_started' && interest === 'interested' ? 'active' : ''} onClick={() => onProgressChange(subject.id, { status: 'not_started', episode: 0, interest: 'interested' })}>想看</button>
@@ -102,6 +116,8 @@ function BangumiCard({ subject, progress, onProgressChange }) {
               <button type="button" onClick={() => setEpisode(episode + 1)} aria-label={`${subject.title}观看集数加一`}>+</button>
             </div>
             <button type="button" className={status === 'finished' ? 'active finished' : ''} onClick={() => onProgressChange(subject.id, { status: 'finished', episode: subject.totalEpisodes || Math.max(progress?.episode || 0, 1) })}>看完</button>
+            <button type="button" className={status === 'dropped' ? 'active dropped' : ''} onClick={() => onProgressChange(subject.id, { status: 'dropped', episode, interest: 'not_interested' })}>不想看</button>
+            <button type="button" className={status === 'none' ? 'active neutral' : ''} onClick={() => onProgressChange(subject.id, { status: 'none', episode: 0, interest: 'neutral' })}>取消状态</button>
           </div>
         </div>
 
@@ -123,20 +139,54 @@ export default function BangumiAiring() {
   const [page, setPage] = useState(1)
   const [notice, setNotice] = useState('')
   const [progress, setProgress] = useState(() => sanitizeProgress(readStoredObject(BANGUMI_PROGRESS_KEY), true))
+  const [reviews, setReviews] = useState(() => sanitizeReviews(readStoredObject(ANIME_REVIEWS_KEY)))
+  const [activeEntry, setActiveEntry] = useState(null)
+  const [archiveLoading, setArchiveLoading] = useState(false)
   const importInputRef = useRef(null)
 
   useEffect(() => {
     const controller = new AbortController()
-    Promise.all([
-      fetch(`/data/bangumi-airing.json?v=${Date.now()}`, { cache: 'no-store', signal: controller.signal }).then(response => { if (!response.ok) throw new Error(`读取失败（${response.status}）`); return response.json() }),
-      fetch(`/data/anime-tracker.json?v=${Date.now()}`, { cache: 'no-store', signal: controller.signal }).then(response => response.ok ? response.json() : null),
-    ])
-      .then(([payload, trackerPayload]) => { setData(payload); setTrackerData(trackerPayload); setSelectedQuarterKey(payload.currentQuarter) })
+    fetch('/data/bangumi-airing-meta.json', { cache: 'force-cache', signal: controller.signal })
+      .then(response => { if (!response.ok) throw new Error(`读取失败（${response.status}）`); return response.json() })
+      .then(async meta => {
+        const currentYear = Number(meta.currentQuarter.slice(0, 4))
+        const [yearPayload, trackerPayload] = await Promise.all([
+          requestBangumiYear(currentYear, controller.signal),
+          fetch('/data/anime-tracker.json', { cache: 'force-cache', signal: controller.signal }).then(response => response.ok ? response.json() : null),
+        ])
+        setData({ ...meta, quarters: yearPayload.quarters })
+        setTrackerData(trackerPayload)
+        setSelectedQuarterKey(meta.currentQuarter)
+      })
       .catch(fetchError => { if (fetchError.name !== 'AbortError') setError(fetchError.message || 'Bangumi 高分数据暂时无法读取') })
     return () => controller.abort()
   }, [])
 
   useEffect(() => { writeStoredObject(BANGUMI_PROGRESS_KEY, progress) }, [progress])
+  useEffect(() => { writeStoredObject(ANIME_REVIEWS_KEY, reviews) }, [reviews])
+
+  const loadYear = async year => {
+    if (data?.quarters?.some(quarter => quarter.year === Number(year))) return
+    const payload = await requestBangumiYear(year)
+    setData(current => {
+      const existingKeys = new Set((current?.quarters || []).map(quarter => quarter.key))
+      return { ...current, quarters: [...(current?.quarters || []), ...payload.quarters.filter(quarter => !existingKeys.has(quarter.key))] }
+    })
+  }
+
+  useEffect(() => {
+    if (!data?.years?.length || viewMode === 'quarter') return undefined
+    let cancelled = false
+    setArchiveLoading(true)
+    ;(async () => {
+      for (const year of data.years) {
+        if (cancelled) return
+        await loadYear(year)
+      }
+      if (!cancelled) setArchiveLoading(false)
+    })().catch(() => { if (!cancelled) setArchiveLoading(false) })
+    return () => { cancelled = true }
+  }, [viewMode, data?.years])
 
   useEffect(() => {
     if (!notice) return undefined
@@ -144,8 +194,8 @@ export default function BangumiAiring() {
     return () => window.clearTimeout(timer)
   }, [notice])
 
-  const selectedQuarter = useMemo(() => data?.quarters?.find(quarter => quarter.key === selectedQuarterKey) || null, [data, selectedQuarterKey])
-  const years = useMemo(() => [...new Set((data?.quarters || []).map(quarter => quarter.year))].sort((left, right) => right - left), [data])
+  const selectedQuarter = useMemo(() => data?.quarters?.find(quarter => quarter.key === selectedQuarterKey) || data?.quarterSummaries?.find(quarter => quarter.key === selectedQuarterKey) || null, [data, selectedQuarterKey])
+  const years = useMemo(() => data?.years || [], [data])
   const selectedYear = selectedQuarter?.year || Number(data?.currentQuarter?.slice(0, 4)) || 2026
   const availableQuarters = useMemo(() => (data?.quarters || []).filter(quarter => quarter.year === selectedYear), [data, selectedYear])
   const allSubjects = useMemo(() => {
@@ -161,6 +211,7 @@ export default function BangumiAiring() {
   const longRunningSubjects = useMemo(() => allSubjects.filter(subject => subject.isLongRunning).sort((left, right) => Number(right.isAiring) - Number(left.isAiring) || (left.airDate || '').localeCompare(right.airDate || '')), [allSubjects])
   const trackerEntries = trackerData?.entries || []
   const idMaps = useMemo(() => buildTrackerBangumiMap(trackerEntries, allSubjects), [trackerEntries, allSubjects])
+  const reviewKeyForSubject = subject => idMaps.bangumiToTracker.get(String(subject.id)) || `bangumi-${subject.id}`
 
   useEffect(() => {
     if (!trackerEntries.length || !allSubjects.length) return
@@ -168,8 +219,10 @@ export default function BangumiAiring() {
     setProgress(current => {
       const next = { ...current }
       for (const [trackerId, bangumiId] of idMaps.trackerToBangumi) {
-        const record = trackerProgress[trackerId]
-        if (record && !next[bangumiId]) next[bangumiId] = { ...record, interest: record.status === 'not_started' ? 'interested' : 'neutral' }
+        const entry = trackerEntries.find(item => String(item.id) === String(trackerId))
+        const fallbackCategory = entry ? categoryForEntry(entry, null) : 'planned'
+        const record = trackerProgress[trackerId] || { status: fallbackCategory === 'finished' ? 'finished' : fallbackCategory === 'watching' ? 'watching' : 'not_started', episode: fallbackCategory === 'finished' ? Number(entry?.totalEpisodes || entry?.releasedEpisodes || 0) : 0 }
+        if (!next[bangumiId]) next[bangumiId] = { ...record, interest: record.status === 'not_started' ? 'interested' : record.status === 'dropped' ? 'not_interested' : 'neutral' }
       }
       return next
     })
@@ -194,31 +247,36 @@ export default function BangumiAiring() {
       .filter(subject => !keyword || `${subject.title} ${subject.originalTitle} ${(subject.tags || []).join(' ')}`.toLocaleLowerCase('zh-CN').includes(keyword))
   }, [baseSubjects, origin, personalFilter, progress, search])
 
-  const pageCount = Math.max(1, Math.ceil(filteredSubjects.length / PAGE_SIZE))
-  const subjects = useMemo(() => filteredSubjects.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), [filteredSubjects, page])
+  const groupedSubjects = useMemo(() => buildSeriesGroups(filteredSubjects), [filteredSubjects])
+  const pageCount = Math.max(1, Math.ceil(groupedSubjects.length / PAGE_SIZE))
+  const pageSeriesGroups = useMemo(() => groupedSubjects.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), [groupedSubjects, page])
 
   useEffect(() => setPage(1), [origin, personalFilter, search, selectedQuarterKey, viewMode])
   useEffect(() => { if (page > pageCount) setPage(pageCount) }, [page, pageCount])
 
-  const selectYear = year => {
-    const quarters = data.quarters.filter(quarter => quarter.year === Number(year))
+  const selectYear = async year => {
+    await loadYear(Number(year))
+    const quarters = (data.quarterSummaries || data.quarters).filter(quarter => quarter.year === Number(year))
     const preferred = quarters.find(quarter => quarter.quarter === selectedQuarter?.quarter) || quarters[0]
     if (preferred) setSelectedQuarterKey(preferred.key)
+  }
+
+  const selectQuarterKey = async key => {
+    await loadYear(Number(key.slice(0, 4)))
+    setSelectedQuarterKey(key)
   }
 
   const updateProgress = (subjectId, patch) => {
     const subject = allSubjects.find(item => String(item.id) === String(subjectId))
     if (!subject) return
-    const previousSnapshot = progress[String(subjectId)] || { status: 'not_started', episode: 0, interest: 'neutral' }
-    const shouldRemoveFromTracker = patch.interest === 'neutral' && previousSnapshot.interest === 'interested' && (patch.status || previousSnapshot.status) === 'not_started'
     setProgress(current => {
       const previous = current[String(subjectId)] || { status: 'not_started', episode: 0, interest: 'neutral' }
-      const nextRecord = { ...previous, ...patch }
-      const shouldRemove = patch.interest === 'neutral' && previous.interest === 'interested' && nextRecord.status === 'not_started'
-      mergeBangumiRecordIntoTracker(subject, shouldRemove ? { ...nextRecord, interest: 'not_interested' } : nextRecord, trackerEntries, idMaps.bangumiToTracker)
+      let nextRecord = { ...previous, ...patch }
+      if (patch.interest === 'neutral' && previous.interest === 'interested' && nextRecord.status === 'not_started') nextRecord = { ...nextRecord, status: 'none' }
+      mergeBangumiRecordIntoTracker(subject, nextRecord, trackerEntries, idMaps.bangumiToTracker)
       return { ...current, [String(subjectId)]: nextRecord }
     })
-    if (patch.interest !== 'not_interested' && !shouldRemoveFromTracker) {
+    if (patch.status !== 'none') {
       fetchBangumiEntryFromUrl(subject.url).then(entry => {
         const enrichedEntry = {
           ...entry,
@@ -239,7 +297,7 @@ export default function BangumiAiring() {
   }
 
   const exportRecords = () => {
-    const payload = createExportPayload(readStoredObject(TRACKER_PROGRESS_KEY), progress, readStoredObject(CUSTOM_TRACKER_KEY))
+    const payload = createExportPayload(readStoredObject(TRACKER_PROGRESS_KEY), progress, readStoredObject(CUSTOM_TRACKER_KEY), reviews)
     const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const anchor = document.createElement('a')
@@ -249,7 +307,7 @@ export default function BangumiAiring() {
     anchor.click()
     anchor.remove()
     URL.revokeObjectURL(url)
-    setNotice(`已导出 ${Object.keys(payload.trackerProgress).length + Object.keys(payload.bangumiProgress).length} 条本地记录`)
+    setNotice(`已导出 ${Object.keys(payload.trackerProgress).length + Object.keys(payload.bangumiProgress).length} 条本地记录和 ${Object.keys(payload.reviews).length} 条番评`)
   }
 
   const importRecords = async event => {
@@ -263,7 +321,9 @@ export default function BangumiAiring() {
       const mergedBangumi = { ...progress, ...importedBangumi }
       const mergedTracker = { ...sanitizeProgress(readStoredObject(TRACKER_PROGRESS_KEY)), ...importedTracker }
       const mergedCustom = { ...sanitizeCustomEntries(readStoredObject(CUSTOM_TRACKER_KEY)), ...imported.customEntries }
+      const mergedReviews = { ...reviews, ...imported.reviews }
       setProgress(mergedBangumi)
+      setReviews(mergedReviews)
       writeStoredObject(TRACKER_PROGRESS_KEY, mergedTracker)
       writeStoredObject(CUSTOM_TRACKER_KEY, mergedCustom)
       setNotice(`导入成功：合并 ${Object.keys(importedBangumi).length + Object.keys(importedTracker).length} 条记录`)
@@ -272,11 +332,29 @@ export default function BangumiAiring() {
     }
   }
 
+  const openDetails = subject => {
+    const record = progress[String(subject.id)]
+    const category = record?.status === 'finished' ? 'finished' : record?.status === 'watching' ? 'watching' : record?.status === 'dropped' ? 'dropped' : record?.status === 'none' ? 'none' : record?.interest === 'interested' ? 'planned' : 'none'
+    const group = buildSeriesGroups(allSubjects).find(item => item.items.some(groupSubject => String(groupSubject.id) === String(subject.id)))
+    const knownRelated = (group?.items || []).filter(item => String(item.id) !== String(subject.id)).map(item => ({ id: item.id, title: item.title, relationLabel: '同系列', formatLabel: item.platform || '动画', siteUrl: item.url }))
+    setActiveEntry({ ...subject, id: reviewKeyForSubject(subject), bangumiId: subject.id, category, coverImage: subject.image, startDate: subject.airDate, siteUrl: subject.url, relationSource: 'Bangumi', relatedAnime: knownRelated })
+  }
+
+  const saveReview = (entry, draft) => {
+    setReviews(current => {
+      const next = { ...current }
+      if (!draft.text.trim()) delete next[String(entry.id)]
+      else next[String(entry.id)] = { text: draft.text.trim(), score: draft.score, title: entry.title, source: 'local', sourceUrl: null, updatedAt: new Date().toISOString() }
+      return sanitizeReviews(next)
+    })
+    setNotice(`《${entry.title}》番评已保存到本地`)
+  }
+
   const summary = viewMode === 'long'
     ? { total: longRunningSubjects.length, primary: longRunningSubjects.filter(subject => subject.isAiring).length, secondary: longRunningSubjects.filter(subject => !subject.isAiring).length, label: '仍在连载', secondaryLabel: '已完结' }
     : viewMode === 'all'
       ? { total: allSubjects.length, primary: allSubjects.filter(subject => subject.origin === 'japan').length, secondary: allSubjects.filter(subject => subject.origin !== 'japan').length, label: '日本动画', secondaryLabel: '其他动画' }
-      : { total: selectedQuarter?.seasonalCount || 0, primary: selectedQuarter?.subjects.filter(subject => !subject.isLongRunning && subject.origin === 'japan').length || 0, secondary: selectedQuarter?.subjects.filter(subject => !subject.isLongRunning && subject.origin !== 'japan').length || 0, label: '日本动画', secondaryLabel: '其他动画' }
+      : { total: selectedQuarter?.seasonalCount || 0, primary: selectedQuarter?.subjects?.filter(subject => !subject.isLongRunning && subject.origin === 'japan').length || 0, secondary: selectedQuarter?.subjects?.filter(subject => !subject.isLongRunning && subject.origin !== 'japan').length || 0, label: '日本动画', secondaryLabel: '其他动画' }
 
   return (
     <div className="page anime-tracker-page bangumi-airing-page">
@@ -301,8 +379,8 @@ export default function BangumiAiring() {
               <div className="bangumi-quarter-heading">
                 <div><span>SEASON NAVIGATOR</span><h2>{selectedQuarter.label} <small>{QUARTER_NAMES[selectedQuarter.quarter]}</small></h2></div>
                 <div className="bangumi-live-shortcuts">
-                  <button type="button" className={selectedQuarterKey === data.currentQuarter ? 'active' : ''} onClick={() => setSelectedQuarterKey(data.currentQuarter)}><i className="fas fa-satellite-dish" /> 当前季度</button>
-                  <button type="button" className={selectedQuarterKey === data.nextQuarter ? 'active' : ''} onClick={() => setSelectedQuarterKey(data.nextQuarter)}><i className="fas fa-forward" /> 下一季度</button>
+                  <button type="button" className={selectedQuarterKey === data.currentQuarter ? 'active' : ''} onClick={() => selectQuarterKey(data.currentQuarter)}><i className="fas fa-satellite-dish" /> 当前季度</button>
+                  <button type="button" className={selectedQuarterKey === data.nextQuarter ? 'active' : ''} onClick={() => selectQuarterKey(data.nextQuarter)}><i className="fas fa-forward" /> 下一季度</button>
                 </div>
               </div>
               <div className="bangumi-quarter-controls">
@@ -339,13 +417,15 @@ export default function BangumiAiring() {
           </div>
 
           <div className="bangumi-result-copy">找到 <strong>{filteredSubjects.length}</strong> 部 · 第 {page}/{pageCount} 页</div>
-          {subjects.length > 0 ? <section className="bangumi-grid">{subjects.map(subject => <BangumiCard subject={subject} progress={progress[String(subject.id)]} onProgressChange={updateProgress} key={subject.id} />)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>{selectedQuarter.isNext && viewMode === 'quarter' ? '下一季度暂时没有符合当前筛选的高分条目，开播后会每日补充。' : '当前筛选条件下没有动画。'}</p></div>}
+          {archiveLoading && viewMode !== 'quarter' && <p className="bangumi-progressive-loading"><i className="fas fa-spinner fa-spin" /> 已先显示缓存年份，正在后台补齐其他年份…</p>}
+          {pageSeriesGroups.length > 0 ? <section className="anime-series-grid">{pageSeriesGroups.map(group => <section className={`anime-series-group${group.items.length > 1 ? ' grouped' : ''}`} key={group.id}>{group.items.length > 1 && <header><i className="fas fa-layer-group" /><span><strong>{group.title}</strong><small>{group.items.length} 部同系列动画集中展示</small></span></header>}<div className="bangumi-grid">{group.items.map(subject => <BangumiCard subject={subject} progress={progress[String(subject.id)]} review={reviews[reviewKeyForSubject(subject)]} onOpenDetails={openDetails} onProgressChange={updateProgress} key={subject.id} />)}</div></section>)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>{selectedQuarter.isNext && viewMode === 'quarter' ? '下一季度暂时没有符合当前筛选的高分条目，开播后会每日补充。' : '当前筛选条件下没有动画。'}</p></div>}
 
           {pageCount > 1 && <nav className="anime-pagination" aria-label="Bangumi 高分动画分页"><button type="button" onClick={() => setPage(value => Math.max(1, value - 1))} disabled={page === 1}><i className="fas fa-arrow-left" /> 上一页</button><span>第 <strong>{page}</strong> / {pageCount} 页</span><button type="button" onClick={() => setPage(value => Math.min(pageCount, value + 1))} disabled={page === pageCount}>下一页 <i className="fas fa-arrow-right" /></button></nav>}
 
           <footer className="anime-data-note"><i className="fas fa-database" /><span>数据来自 <a href={data.source.url} target="_blank" rel="noopener noreferrer">{data.source.name}</a>。{data.source.note}<small><i className="fas fa-route" /> 长期连载标准：{data.longRunningRule}。</small><small><i className="fas fa-shield-halved" /> 个人记录仅保存在当前浏览器，可通过 JSON 文件迁移到其他电脑。</small><small><i className="fas fa-rotate" /> 最近同步：{syncFormatter.format(new Date(data.syncedAt))}</small></span></footer>
         </>
-      ) : error ? <div className="anime-state error"><i className="fas fa-triangle-exclamation" /><h2>Bangumi 数据加载失败</h2><p>{error}</p></div> : <div className="anime-state"><i className="fas fa-spinner fa-spin" /><h2>正在读取高分动画档案</h2><p>正在整理季度、地区与长期连载数据。</p></div>}
+      ) : error ? <div className="anime-state error"><i className="fas fa-triangle-exclamation" /><h2>Bangumi 数据加载失败</h2><p>{error}</p></div> : <div className="anime-state"><i className="fas fa-spinner fa-spin" /><h2>正在读取高分动画档案</h2><p>优先读取当前年份轻量缓存。</p></div>}
+      {activeEntry && <AnimeDetailsDialog entry={activeEntry} review={reviews[String(activeEntry.id)]} onClose={() => setActiveEntry(null)} onSaveReview={saveReview} />}
     </div>
   )
 }

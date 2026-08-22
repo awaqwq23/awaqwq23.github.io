@@ -1,8 +1,8 @@
-import { mkdir, writeFile } from 'node:fs/promises'
 import { execFile } from 'node:child_process'
 import { dirname, join, resolve } from 'node:path'
 import { promisify } from 'node:util'
 import { fileURLToPath } from 'node:url'
+import { writeBangumiShards } from './write-bangumi-shards.mjs'
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url))
 const projectRoot = resolve(scriptDirectory, '..', '..')
@@ -291,8 +291,7 @@ async function main() {
     quarters,
   }
 
-  await mkdir(dirname(outputPath), { recursive: true })
-  await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')
+  await writeBangumiShards(payload, outputPath)
   const subjectCount = quarters.reduce((sum, quarter) => sum + quarter.count, 0)
   console.log(`已同步 ${quarters.length} 个季度、${subjectCount} 条高分动画记录：${outputPath}`)
 }
