@@ -1,6 +1,6 @@
 const THUMBNAIL_CACHE = 'gallery-thumbnails-v1'
 const ORIGINAL_CACHE = 'gallery-originals-v1'
-const ANIME_DATA_CACHE = 'anime-data-v1'
+const ANIME_DATA_CACHE = 'anime-data-v2'
 const ACTIVE_CACHES = new Set([THUMBNAIL_CACHE, ORIGINAL_CACHE, ANIME_DATA_CACHE])
 
 self.addEventListener('install', () => self.skipWaiting())

@@ -242,6 +242,57 @@ export function buildSeriesGroups(entries) {
   }))
 }
 
+export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
+  const list = entries || []
+  if (!catalog?.series?.length) return buildSeriesGroups(list)
+  const entriesById = new Map(list.map(entry => [String(entry.id), entry]))
+  const entriesByBangumiId = new Map(list.filter(entry => entry.bangumiId).map(entry => [String(entry.bangumiId), entry]))
+  const consumed = new Set()
+  const groups = []
+
+  for (const series of catalog.series) {
+    const sourceEntries = (series.sourceEntryIds || []).map(id => entriesById.get(String(id))).filter(Boolean)
+    const importedEntries = (series.members || []).map(member => entriesByBangumiId.get(String(member.id))).filter(Boolean)
+    if (!sourceEntries.length && !importedEntries.length) continue
+    const sourceLinks = new Map((series.sourceLinks || []).map(link => [String(link.seedId), entriesById.get(String(link.entryId))]).filter(([, entry]) => entry))
+    const relatedAnime = (series.members || []).map(member => ({
+      id: member.id,
+      title: member.title,
+      relationLabel: '同系列',
+      formatLabel: member.platform || '动画',
+      siteUrl: member.url || `https://bgm.tv/subject/${member.id}`,
+    }))
+    const items = (series.members || []).map(member => {
+      const sourceEntry = sourceLinks.get(String(member.id)) || entriesByBangumiId.get(String(member.id))
+      if (sourceEntry) consumed.add(String(sourceEntry.id))
+      const localId = sourceEntry?.id || `bangumi-${member.id}`
+      const factual = bangumiSubjectToTrackerEntry({ ...member, isAiring: member.status === 'RELEASING' }, relatedAnime.filter(item => Number(item.id) !== Number(member.id)))
+      const merged = {
+        ...sourceEntry,
+        ...factual,
+        id: localId,
+        title: member.title,
+        subtitle: member.originalTitle || '',
+        sourceTitle: member.originalTitle || member.title,
+        status: member.status || factual.status,
+        formatLabel: member.platform || '动画',
+        relationSource: 'Bangumi',
+        relatedAnimeComplete: true,
+        seriesId: series.id,
+        seriesTitle: series.title,
+        groups: sourceEntry?.groups || ['Bangumi 系列补全'],
+      }
+      const stored = progress[String(localId)]
+      return { ...merged, category: sourceEntry ? categoryForEntry(merged, stored) : stored ? categoryForEntry(merged, stored) : 'none' }
+    })
+    groups.push({ id: series.id, title: series.title, items, factual: true })
+    for (const entry of sourceEntries) consumed.add(String(entry.id))
+  }
+
+  const leftovers = list.filter(entry => !consumed.has(String(entry.id)))
+  return [...groups, ...buildSeriesGroups(leftovers)]
+}
+
 export function trackerKeyForBangumi(subjectId, bangumiToTracker) {
   return bangumiToTracker.get(String(subjectId)) || `bangumi-${subjectId}`
 }

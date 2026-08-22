@@ -23,6 +23,10 @@ export default function AnimeDetailsDialog({ entry, review, onClose, onSaveRevie
       setRelationState('idle')
       return undefined
     }
+    if (entry.relatedAnimeComplete) {
+      setRelationState('ready')
+      return undefined
+    }
     const cached = readStoredObject(BANGUMI_RELATIONS_KEY)[String(entry.bangumiId)]
     if (Array.isArray(cached)) {
       setDetails(current => ({ ...current, relatedAnime: cached, relationSource: 'Bangumi' }))
