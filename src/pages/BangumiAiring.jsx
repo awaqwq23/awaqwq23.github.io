@@ -137,6 +137,11 @@ function BangumiCard({ subject, progress, review, onOpenDetails, onProgressChang
   )
 }
 
+function BangumiExtraLinks({ extras = [] }) {
+  if (!extras.length) return null
+  return <aside className="anime-compact-extras"><span><i className="fas fa-link" /> 小番外 / 迷你动画</span><div>{extras.map(extra => <a href={extra.siteUrl} target="_blank" rel="noopener noreferrer" key={extra.id}>{extra.title}<small>{extra.formatLabel}</small><i className="fas fa-arrow-up-right-from-square" /></a>)}</div></aside>
+}
+
 export default function BangumiAiring() {
   const [data, setData] = useState(null)
   const [trackerData, setTrackerData] = useState(null)
@@ -432,7 +437,7 @@ export default function BangumiAiring() {
 
           <div className="bangumi-result-copy">找到 <strong>{filteredSubjects.length}</strong> 部 · 第 {page}/{pageCount} 页</div>
           {archiveLoading && viewMode !== 'quarter' && <p className="bangumi-progressive-loading"><i className="fas fa-spinner fa-spin" /> 已先显示缓存年份，正在后台补齐其他年份…</p>}
-          {pageSeriesGroups.length > 0 ? <section className="anime-series-grid">{pageSeriesGroups.map(group => <section className={`anime-series-group${group.items.length > 1 ? ' grouped' : ''}`} key={group.id}>{group.items.length > 1 && <header><i className="fas fa-layer-group" /><span><strong>{group.title}</strong><small>{group.items.length} 部同系列动画集中展示</small></span></header>}<div className="bangumi-grid">{group.items.map(subject => <BangumiCard subject={subject} progress={progress[String(subject.id)]} review={reviews[reviewKeyForSubject(subject)]} onOpenDetails={openDetails} onProgressChange={updateProgress} key={subject.id} />)}</div></section>)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>{selectedQuarter.isNext && viewMode === 'quarter' ? '下一季度暂时没有符合当前筛选的高分条目，开播后会每日补充。' : '当前筛选条件下没有动画。'}</p></div>}
+          {pageSeriesGroups.length > 0 ? <section className="anime-series-grid">{pageSeriesGroups.map(group => <section className={`anime-series-group${group.items.length > 1 ? ' grouped' : ''}`} key={group.id}>{group.items.length > 1 && <header><i className="fas fa-layer-group" /><span><strong>{group.title}</strong><small>{group.items.length} 部同系列正篇集中展示{group.extras?.length ? ` · ${group.extras.length} 部小番外归档为链接` : ''}</small></span></header>}<div className="bangumi-grid">{group.items.map(subject => <BangumiCard subject={subject} progress={progress[String(subject.id)]} review={reviews[reviewKeyForSubject(subject)]} onOpenDetails={openDetails} onProgressChange={updateProgress} key={subject.id} />)}</div><BangumiExtraLinks extras={group.extras} /></section>)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>{selectedQuarter.isNext && viewMode === 'quarter' ? '下一季度暂时没有符合当前筛选的高分条目，开播后会每日补充。' : '当前筛选条件下没有动画。'}</p></div>}
 
           {pageCount > 1 && <nav className="anime-pagination" aria-label="Bangumi 高分动画分页"><button type="button" onClick={() => setPage(value => Math.max(1, value - 1))} disabled={page === 1}><i className="fas fa-arrow-left" /> 上一页</button><span>第 <strong>{page}</strong> / {pageCount} 页</span><button type="button" onClick={() => setPage(value => Math.min(pageCount, value + 1))} disabled={page === pageCount}>下一页 <i className="fas fa-arrow-right" /></button></nav>}
 

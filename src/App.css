@@ -5767,7 +5767,7 @@ body.modal-open { overflow: hidden; }
 .route-loading { min-height: 48vh; display: grid; place-content: center; justify-items: center; gap: 0.8rem; color: var(--text-muted); font-weight: 700; }
 .route-loading i { color: var(--primary); font-size: 1.6rem; }
 .anime-summary { grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); }
-.anime-series-grid { display: grid; gap: 1.25rem; }
+.anime-series-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
 .anime-collection-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: start; }
 .anime-series-collection { grid-column: 1 / -1; overflow: hidden; border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--border)); border-radius: 22px; background: color-mix(in srgb, var(--bg-card) 96%, var(--primary)); box-shadow: 0 14px 34px rgba(15, 23, 42, .06); content-visibility: auto; contain-intrinsic-size: auto 160px; }
 .anime-series-collection > summary { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1rem; min-height: 116px; padding: 1rem 1.2rem; cursor: pointer; list-style: none; }
@@ -5791,11 +5791,20 @@ body.modal-open { overflow: hidden; }
 .anime-series-note p { color: var(--text-muted); font-size: .7rem; }
 .anime-series-note p i { color: var(--primary); }
 .anime-series-group { min-width: 0; content-visibility: auto; contain-intrinsic-size: auto 680px; }
-.anime-series-group.grouped { padding: 1rem; border: 1px solid color-mix(in srgb, var(--primary) 26%, var(--border)); border-radius: 22px; background: color-mix(in srgb, var(--bg-card) 94%, var(--primary)); box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06); }
+.anime-series-group:not(.grouped) .bangumi-grid { grid-template-columns: minmax(0, 1fr); }
+.anime-series-group.grouped { grid-column: 1 / -1; padding: 1rem; border: 1px solid color-mix(in srgb, var(--primary) 26%, var(--border)); border-radius: 22px; background: color-mix(in srgb, var(--bg-card) 94%, var(--primary)); box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06); }
 .anime-series-group > header { display: flex; align-items: center; gap: 0.75rem; margin: 0 0 0.9rem; color: var(--text-primary); }
 .anime-series-group > header > i { width: 2.4rem; height: 2.4rem; border-radius: 12px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, #7057c7, #3b82f6); }
 .anime-series-group > header span { display: grid; gap: 0.12rem; }
 .anime-series-group > header small { color: var(--text-muted); font-weight: 500; }
+.anime-compact-extras { margin-top: .8rem; padding: .7rem .8rem; border: 1px dashed color-mix(in srgb, var(--primary) 28%, var(--border)); border-radius: 12px; background: color-mix(in srgb, var(--primary) 5%, var(--bg-card)); }
+.anime-compact-extras > span { display: block; margin-bottom: .45rem; color: var(--text-muted); font-size: .64rem; font-weight: 800; }
+.anime-compact-extras > span i { margin-right: .25rem; color: var(--primary); }
+.anime-compact-extras > div { display: flex; flex-wrap: wrap; gap: .38rem; }
+.anime-compact-extras a { display: inline-flex; align-items: center; gap: .3rem; max-width: 100%; padding: .3rem .48rem; color: var(--text-secondary); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; font-size: .6rem; font-weight: 750; }
+.anime-compact-extras a:hover { color: var(--primary); border-color: var(--primary); }
+.anime-compact-extras a small { color: var(--text-muted); font-size: .5rem; }
+.anime-compact-extras a > i { flex: 0 0 auto; font-size: .52rem; }
 .anime-title-button,.bangumi-title-button { appearance: none; border: 0; padding: 0; margin: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; min-width: 0; }
 .anime-title-button h2,.bangumi-title-button h2 { transition: color 0.18s ease; }
 .anime-title-button:hover h2,.anime-title-button:focus-visible h2,.bangumi-title-button:hover h2,.bangumi-title-button:focus-visible h2 { color: var(--primary); }
@@ -5835,6 +5844,7 @@ body.modal-open { overflow: hidden; }
 .anime-review-actions button { border: 0; border-radius: 10px; padding: 0.6rem 0.9rem; cursor: pointer; background: var(--primary); color: #fff; font-weight: 800; }
 
 @media (max-width: 640px) {
+  .anime-series-grid { grid-template-columns: 1fr; }
   .anime-collection-grid { grid-template-columns: 1fr; }
   .anime-series-collection > summary { grid-template-columns: auto minmax(0, 1fr); gap: .7rem; min-height: 92px; padding: .75rem; }
   .anime-series-collection > summary em { grid-column: 2; }

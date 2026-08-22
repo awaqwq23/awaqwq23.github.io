@@ -150,6 +150,13 @@ export function isRealityAnimeProject(subject) {
   return /(?:THE\s*REAL\s*4-?D|リアル\s*4-?D|真实(?:版)?\s*4-?D|真人版|実写版|舞台剧|舞台劇|ステージショー)/i.test(title)
 }
 
+export function isMinorAnimeExtra(subject) {
+  const title = `${subject?.title || ''} ${subject?.originalTitle || subject?.name || ''}`
+  const platform = String(subject?.platform || subject?.formatLabel || '').toLocaleLowerCase('zh-CN')
+  return /(?:休息时间|休憩時間|迷你(?:动画|劇)?|迷你开始|小剧场|小劇場|短篇动画|短編アニメ|映像特典|特典アニメ|ぷち|プチ|ちび|ミニアニメ|mini\s*anime|chibi|break\s*time)/i.test(title)
+    || /^(?:pv|cm|mv)$/.test(platform)
+}
+
 export function normalizeAnimeTitle(value) {
   return String(value || '')
     .normalize('NFKC')
@@ -307,11 +314,22 @@ export function buildSeriesGroups(entries) {
     if (!groups.has(root)) groups.set(root, [])
     groups.get(root).push(entry)
   })
-  return [...groups.values()].map(items => ({
-    id: items.map(item => item.bangumiId || item.id).join('-'),
-    title: items.length > 1 ? `${items[0].title} 系列` : items[0].title,
-    items,
-  }))
+  return [...groups.values()].map(groupItems => {
+    const items = groupItems.filter(item => !isMinorAnimeExtra(item))
+    const extras = groupItems.filter(isMinorAnimeExtra).map(item => ({
+      id: item.bangumiId || item.id,
+      title: item.title,
+      formatLabel: item.platform || item.formatLabel || '短篇动画',
+      siteUrl: item.url || item.siteUrl || `https://bgm.tv/subject/${String(item.bangumiId || item.id).replace(/^bangumi-/, '')}`,
+    }))
+    if (!items.length) return null
+    return {
+      id: groupItems.map(item => item.bangumiId || item.id).join('-'),
+      title: items.length > 1 ? `${items[0].title} 系列` : items[0].title,
+      items,
+      extras,
+    }
+  }).filter(Boolean)
 }
 
 export function buildCatalogSeriesGroups(entries, catalog, progress = {}, removedAnime = {}) {
@@ -324,12 +342,15 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}, remove
 
   for (const series of catalog.series) {
     if (removedAnime[`series:${series.id}`]) continue
+    const catalogMembers = (series.members || []).filter(member => !isRealityAnimeProject(member))
     const sourceEntries = (series.sourceEntryIds || []).map(id => entriesById.get(String(id))).filter(Boolean)
-    const importedEntries = (series.members || []).map(member => entriesByBangumiId.get(String(member.id))).filter(Boolean)
-    if (!sourceEntries.length && !importedEntries.length) continue
+    const importedEntries = catalogMembers.map(member => entriesByBangumiId.get(String(member.id))).filter(Boolean)
+    const hasRemovedAnchor = (series.sourceEntryIds || []).some(id => removedAnime[`entry:${id}`])
+      || catalogMembers.some(member => removedAnime[`entry:${member.id}`] || removedAnime[`entry:bangumi-${member.id}`])
+    if (!sourceEntries.length && !importedEntries.length && !hasRemovedAnchor) continue
     const sourceLinks = new Map((series.sourceLinks || []).map(link => [String(link.seedId), entriesById.get(String(link.entryId))]).filter(([, entry]) => entry))
-    const logicalMembers = collapseCatalogMembers((series.members || []).filter(member => !isRealityAnimeProject(member)))
-      .filter(member => !member.memberIds.some(id => removedAnime[`entry:${id}`] || removedAnime[`entry:bangumi-${id}`]))
+    const minorMembers = catalogMembers.filter(isMinorAnimeExtra)
+    const logicalMembers = collapseCatalogMembers(catalogMembers.filter(member => !isMinorAnimeExtra(member)))
     if (!logicalMembers.length) continue
     const relatedAnime = logicalMembers.map(member => ({
       id: member.id,
@@ -383,7 +404,18 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}, remove
       return { ...merged, category: sourceEntry ? categoryForEntry(merged, stored) : stored ? categoryForEntry(merged, stored) : 'none' }
     })
     const visibleItems = items.filter(item => !removedAnime[`entry:${item.id}`] && !removedAnime[`entry:${item.bangumiId}`])
-    if (visibleItems.length) groups.push({ id: series.id, title: series.title, items: visibleItems, factual: true })
+    const extras = minorMembers.map(member => {
+      const sourceEntry = sourceLinks.get(String(member.id)) || entriesByBangumiId.get(String(member.id))
+      if (sourceEntry) consumed.add(String(sourceEntry.id))
+      return {
+        id: sourceEntry?.id || `bangumi-${member.id}`,
+        bangumiId: member.id,
+        title: member.title,
+        formatLabel: member.platform || '短篇动画',
+        siteUrl: member.url || `https://bgm.tv/subject/${member.id}`,
+      }
+    }).filter(item => !removedAnime[`entry:${item.id}`] && !removedAnime[`entry:${item.bangumiId}`])
+    if (visibleItems.length) groups.push({ id: series.id, title: series.title, items: visibleItems, extras, factual: true })
     for (const entry of sourceEntries) consumed.add(String(entry.id))
   }
 

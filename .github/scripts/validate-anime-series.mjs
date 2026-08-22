@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises'
+import { buildCatalogSeriesGroups, isMinorAnimeExtra } from '../../src/utils/animeRecords.js'
 
 const catalog = JSON.parse(await readFile(new URL('../../public/data/anime-series-catalog.json', import.meta.url), 'utf8'))
 const failures = []
@@ -41,6 +42,19 @@ expectSeries(/Re[:：]?从零开始|Re:ゼロ/, series => {
   const seasons = new Set(series.members.filter(member => /^(?:TV|WEB)$/i.test(member.platform || '')).map(member => member.title.match(/第([一二三四五六七八九十0-9]+)季/)?.[1] || (/新编集版|新編集版/.test(member.title) ? '一' : null)).filter(Boolean))
   return seasons.size >= 4 && series.members.length >= 12
 }, 'Re:0 必须保留至少四季及 OVA、短篇等动画关联作')
+
+const reZeroSeries = catalog.series.find(series => series.id === 'bgm-series-140001')
+if (reZeroSeries) {
+  const sourceId = String(reZeroSeries.sourceEntryIds[0])
+  const fourthSeason = reZeroSeries.members.find(member => /第四季/.test(member.title))
+  const initialGroup = buildCatalogSeriesGroups([{ id: sourceId, title: reZeroSeries.title, groups: ['正在看'] }], { series: [reZeroSeries] })[0]
+  if (!initialGroup || initialGroup.extras.length < 5 || initialGroup.extras.some(extra => !isMinorAnimeExtra(extra))) failures.push('Re:0 的迷你动画与休息时间必须归档到小番外链接区')
+  if (fourthSeason) {
+    const removed = { [`entry:${sourceId}`]: true, [`entry:${fourthSeason.id}`]: true, [`entry:bangumi-${fourthSeason.id}`]: true }
+    const remainingGroup = buildCatalogSeriesGroups([], { series: [reZeroSeries] }, {}, removed)[0]
+    if (!remainingGroup?.items.length || remainingGroup.items.some(item => Number(item.bangumiId) === Number(fourthSeason.id))) failures.push('删除 Re:0 单部动画后必须保留系列中的其他正篇')
+  }
+}
 
 if (failures.length) {
   console.error(failures.map(message => `- ${message}`).join('\n'))

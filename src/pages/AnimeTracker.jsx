@@ -128,12 +128,17 @@ function AnimeCard({ entry, now, watchProgress, review, onOpenDetails, onWatchPr
   )
 }
 
+function AnimeExtrasLinks({ extras = [] }) {
+  if (!extras.length) return null
+  return <aside className="anime-compact-extras"><span><i className="fas fa-link" /> 小番外 / 迷你动画</span><div>{extras.map(extra => <a href={extra.siteUrl} target="_blank" rel="noopener noreferrer" key={extra.id}>{extra.title}<small>{extra.formatLabel}</small><i className="fas fa-arrow-up-right-from-square" /></a>)}</div></aside>
+}
+
 function AnimeSeriesCollection({ group, now, reviews, watchProgress, onOpenDetails, onWatchProgressChange, onRemoveEntry, onRemoveSeries }) {
   const [expanded, setExpanded] = useState(false)
   return (
     <details className="anime-series-collection" onToggle={event => setExpanded(event.currentTarget.open)}>
-      <summary><span className="anime-series-covers">{group.items.slice(0, 3).map(item => item.coverImage ? <img src={item.coverImage} alt="" loading="lazy" decoding="async" fetchPriority="low" key={item.id} /> : <i className="fas fa-tv" key={item.id} />)}</span><span><strong>{group.title}</strong><small>Bangumi 动画关系 · {group.items.length} 部（季 / 剧场版 / OVA / 番外）</small></span><em>展开全部 <i className="fas fa-chevron-down" /></em></summary>
-      {expanded && <div className="anime-series-expanded"><div className="anime-series-note"><p><i className="fas fa-circle-info" /> 仅列动画；名称、类型与关联关系来自 Bangumi，不包含真人体验或舞台企划。</p><button type="button" className="anime-remove-button" onClick={() => onRemoveSeries(group)}><i className="fas fa-trash-can" /> 移除整个系列</button></div><div className="anime-grid">{group.items.map(entry => <AnimeCard key={entry.id} entry={entry} now={now} review={reviews[String(entry.id)]} watchProgress={watchProgress[String(entry.id)]} onOpenDetails={onOpenDetails} onWatchProgressChange={onWatchProgressChange} onRemove={onRemoveEntry} />)}</div></div>}
+      <summary><span className="anime-series-covers">{group.items.slice(0, 3).map(item => item.coverImage ? <img src={item.coverImage} alt="" loading="lazy" decoding="async" fetchPriority="low" key={item.id} /> : <i className="fas fa-tv" key={item.id} />)}</span><span><strong>{group.title}</strong><small>Bangumi 动画关系 · {group.items.length} 部正篇{group.extras?.length ? ` · ${group.extras.length} 部小番外` : ''}</small></span><em>展开全部 <i className="fas fa-chevron-down" /></em></summary>
+      {expanded && <div className="anime-series-expanded"><div className="anime-series-note"><p><i className="fas fa-circle-info" /> 正篇、季度和长篇 OVA 使用卡片；迷你动画与小剧场集中为文字链接。</p><button type="button" className="anime-remove-button" onClick={() => onRemoveSeries(group)}><i className="fas fa-trash-can" /> 移除整个系列</button></div><div className="anime-grid">{group.items.map(entry => <AnimeCard key={entry.id} entry={entry} now={now} review={reviews[String(entry.id)]} watchProgress={watchProgress[String(entry.id)]} onOpenDetails={onOpenDetails} onWatchProgressChange={onWatchProgressChange} onRemove={onRemoveEntry} />)}</div><AnimeExtrasLinks extras={group.extras} /></div>}
     </details>
   )
 }
@@ -245,7 +250,7 @@ export default function AnimeTracker() {
   const displayedGroups = useMemo(() => {
     const keyword = search.trim().toLocaleLowerCase('zh-CN')
     return catalogGroups.map(group => {
-      const groupMatches = !keyword || group.title.toLocaleLowerCase('zh-CN').includes(keyword)
+      const groupMatches = !keyword || `${group.title} ${(group.extras || []).map(extra => extra.title).join(' ')}`.toLocaleLowerCase('zh-CN').includes(keyword)
       const items = group.items.filter(entry =>
         (personalFilter === 'all' || entry.category === personalFilter)
         && (releaseFilter === 'all' || entry.status === releaseFilter)
@@ -306,11 +311,11 @@ export default function AnimeTracker() {
 
   const removeEntry = entry => {
     if (!window.confirm(`确定从网站移除《${entry.title}》吗？该条目的本地状态和番评也会删除。`)) return
-    const { trackerKeys, bangumiKeys } = purgeEntries([entry])
+    purgeEntries([entry])
     setRemovedAnime(current => {
       const next = { ...current }
-      trackerKeys.forEach(key => { next[`entry:${key}`] = true })
-      bangumiKeys.forEach(key => { next[`entry:${key}`] = true })
+      next[`entry:${entry.id}`] = true
+      if (entry.bangumiId) next[`entry:${entry.bangumiId}`] = true
       return next
     })
     setNotice(`已从网站移除《${entry.title}》`)
@@ -320,7 +325,7 @@ export default function AnimeTracker() {
     if (!window.confirm(`确定从网站移除“${group.title}”整个系列吗？系列内所有本地状态和番评也会删除。`)) return
     const seriesId = group.items[0]?.seriesId || String(group.id).split(':')[0]
     const completeGroup = catalogGroups.find(item => item.id === seriesId) || group
-    purgeEntries(completeGroup.items)
+    purgeEntries([...completeGroup.items, ...(completeGroup.extras || [])])
     setRemovedAnime(current => ({ ...current, [`series:${seriesId}`]: true }))
     setNotice(`已从网站移除“${group.title}”整个系列`)
   }
@@ -392,6 +397,12 @@ export default function AnimeTracker() {
       const catalogSeries = seriesCatalog?.series?.find(series => series.members?.some(member => Number(member.id) === Number(entry.bangumiId)))
       setRemovedAnime(current => {
         const next = { ...current }
+        if (catalogSeries && next[`series:${catalogSeries.id}`]) {
+          for (const member of catalogSeries.members || []) {
+            next[`entry:${member.id}`] = true
+            next[`entry:bangumi-${member.id}`] = true
+          }
+        }
         delete next[`entry:${key}`]; delete next[`entry:${entry.bangumiId}`]
         if (catalogSeries) delete next[`series:${catalogSeries.id}`]
         return next
@@ -444,7 +455,7 @@ export default function AnimeTracker() {
           <label className="anime-group-select"><i className="fas fa-arrow-down-wide-short" /><select value={sortMode} onChange={event => setSortMode(event.target.value)} aria-label="番剧排序方式">{ANIME_SORT_OPTIONS.map(item => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label>
         </div>
         <div className="anime-toolbar"><span><strong>{displayedGroups.length}</strong> 个作品 / 系列 · 第 {page}/{pageCount} 页 · <i className="fas fa-rotate" /> {syncFormatter.format(new Date(seriesCatalog?.generatedAt || data.syncedAt))} 查询</span></div>
-        {entries.length ? <section className="anime-collection-grid">{seriesGroups.map(group => group.items.length > 1 ? <AnimeSeriesCollection group={group} now={now} reviews={reviews} watchProgress={watchProgress} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} onRemoveEntry={removeEntry} onRemoveSeries={removeSeries} key={group.id} /> : <AnimeCard key={group.id} entry={group.items[0]} now={now} review={reviews[String(group.items[0].id)]} watchProgress={watchProgress[String(group.items[0].id)]} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} onRemove={removeEntry} />)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>这个分类里暂时没有番剧</p></div>}
+        {entries.length ? <section className="anime-collection-grid">{seriesGroups.map(group => group.items.length > 1 || group.extras?.length ? <AnimeSeriesCollection group={group} now={now} reviews={reviews} watchProgress={watchProgress} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} onRemoveEntry={removeEntry} onRemoveSeries={removeSeries} key={group.id} /> : <AnimeCard key={group.id} entry={group.items[0]} now={now} review={reviews[String(group.items[0].id)]} watchProgress={watchProgress[String(group.items[0].id)]} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} onRemove={removeEntry} />)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>这个分类里暂时没有番剧</p></div>}
         {pageCount > 1 && <nav className="anime-pagination" aria-label="追番列表分页"><button type="button" onClick={() => setPage(value => Math.max(1, value - 1))} disabled={page === 1}><i className="fas fa-arrow-left" /> 上一页</button><span>第 <strong>{page}</strong> / {pageCount} 页</span><button type="button" onClick={() => setPage(value => Math.min(pageCount, value + 1))} disabled={page === pageCount}>下一页 <i className="fas fa-arrow-right" /></button></nav>}
         <footer className="anime-data-note"><i className="fas fa-database" /><span>放送日历来自 <a href={data.source.url} target="_blank" rel="noopener noreferrer">{data.source.name}</a>，评分、导入条目和关联作来自 Bangumi。<small><i className="fas fa-shield-halved" /> 已看记录保持不变；手动粘贴 Bangumi 链接导入不受 7 分限制，其他评分明确低于 7 分的想看条目仍会移除。</small></span></footer>
       </> : error ? <div className="anime-state error"><i className="fas fa-triangle-exclamation" /><h2>追番数据加载失败</h2><p>{error}</p></div> : <div className="anime-state"><i className="fas fa-spinner fa-spin" /><h2>正在读取追番日历</h2><p>优先读取轻量缓存，稍等一下。</p></div>}
