@@ -2,10 +2,11 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink } from 'react-router'
 import AnimeDetailsDialog from '../components/AnimeDetailsDialog'
 import {
-  ANIME_REVIEWS_KEY, BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, TRACKER_PROGRESS_KEY,
+  ANIME_REVIEWS_KEY, ANIME_SORT_OPTIONS, BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, REMOVED_ANIME_KEY, TRACKER_PROGRESS_KEY,
+  animeSeasonLabel,
   bangumiIdFromValue, bangumiSubjectToTrackerEntry, buildCatalogSeriesGroups, buildSeriesGroups, buildTrackerBangumiMap, categoryForEntry, createExportPayload,
-  fetchBangumiEntryFromUrl, flattenBangumiSubjects, parseImportPayload,
-  matchBangumiSubject, normalizeAnimeTitle, readStoredObject, sanitizeCustomEntries, sanitizeProgress, sanitizeReviews,
+  compareAnimeEntries, fetchBangumiEntryFromUrl, flattenBangumiSubjects, parseImportPayload,
+  matchBangumiSubject, normalizeAnimeTitle, readStoredObject, sanitizeCustomEntries, sanitizeProgress, sanitizeRemovedAnime, sanitizeReviews,
   syncTrackerRecordToBangumi, writeStoredObject,
 } from '../utils/animeRecords'
 
@@ -21,7 +22,7 @@ const PERSONAL_FILTERS = [
   { id: 'watching', label: '正在看', icon: 'fa-play' },
   { id: 'planned', label: '想看', icon: 'fa-bookmark' },
   { id: 'dropped', label: '不想看', icon: 'fa-eye-slash' },
-  { id: 'none', label: '未分类', icon: 'fa-circle-minus' },
+  { id: 'none', label: '未看 / 未分类', icon: 'fa-circle-minus' },
 ]
 const CATEGORY_COPY = {
   finished: { label: '已看', icon: 'fa-circle-check' },
@@ -71,11 +72,11 @@ function clampEpisode(value, totalEpisodes) {
   return Math.max(1, totalEpisodes ? Math.min(totalEpisodes, episode) : episode)
 }
 
-function AnimeCard({ entry, now, watchProgress, review, onOpenDetails, onWatchProgressChange }) {
+function AnimeCard({ entry, now, watchProgress, review, onOpenDetails, onWatchProgressChange, onRemove }) {
   const status = STATUS_COPY[entry.status] || { label: '状态未知', icon: 'fa-circle-question' }
   const category = CATEGORY_COPY[entry.category]
   const releaseProgress = entry.totalEpisodes ? Math.min(100, Math.round(entry.releasedEpisodes / entry.totalEpisodes * 100)) : 0
-  const episodeCopy = entry.totalEpisodes ? `${entry.releasedEpisodes} / ${entry.totalEpisodes} 集` : `已更新 ${entry.releasedEpisodes || 0} 集`
+  const episodeCopy = entry.status === 'NOT_YET_RELEASED' ? '尚未开播' : entry.totalEpisodes ? `${entry.releasedEpisodes} / ${entry.totalEpisodes} 集` : entry.releasedEpisodes ? `已更新 ${entry.releasedEpisodes} 集` : '更新集数待确认'
   const personalEpisode = Math.max(1, watchProgress?.episode || 1)
   const personalStatusCopy = entry.category === 'finished' ? '已看完' : entry.category === 'watching' ? `看到第 ${personalEpisode} 集` : entry.category === 'dropped' ? `看到第 ${personalEpisode} 集后不再看` : entry.category === 'none' ? '已取消状态' : '准备观看'
   const setEpisode = value => onWatchProgressChange(entry, { status: 'watching', episode: clampEpisode(value, entry.totalEpisodes) })
@@ -90,6 +91,7 @@ function AnimeCard({ entry, now, watchProgress, review, onOpenDetails, onWatchPr
       <div className="anime-card-body">
         <div className="anime-group-tags">
           <span className="anime-format-tag"><i className={entry.format === 'MOVIE' ? 'fas fa-film' : 'fas fa-clapperboard'} /> {entry.formatLabel || '动画'}</span>
+          <span><i className="fas fa-calendar" /> {animeSeasonLabel(entry.startDate)}</span>
           <span><i className={`fas ${category.icon}`} /> {category.label}</span>
           {Number.isFinite(entry.score) && <span className="anime-score-tag"><i className="fas fa-star" /> {entry.score.toFixed(1)}</span>}
         </div>
@@ -97,7 +99,7 @@ function AnimeCard({ entry, now, watchProgress, review, onOpenDetails, onWatchPr
         {entry.totalEpisodes && <div className="anime-progress" aria-label={`更新进度 ${releaseProgress}%`}><span style={{ width: `${releaseProgress}%` }} /></div>}
         <div className="anime-schedule">
           {entry.nextAiringAt ? (
-            <><div className="anime-schedule-icon"><i className="fas fa-calendar-day" /></div><div><span>第 {entry.nextEpisode} 集 · 北京时间</span><strong>{dateTimeFormatter.format(new Date(entry.nextAiringAt))}</strong><small>{formatCountdown(entry.nextAiringAt, now)}</small></div></>
+            <><div className="anime-schedule-icon"><i className="fas fa-calendar-day" /></div><div><span>第 {entry.nextEpisode} 集 · 北京时间{entry.releaseEstimate ? '（按周播估算）' : ''}</span><strong>{dateTimeFormatter.format(new Date(entry.nextAiringAt))}</strong><small>{formatCountdown(entry.nextAiringAt, now)}</small></div></>
           ) : entry.status === 'FINISHED' ? (
             <><div className="anime-schedule-icon complete"><i className="fas fa-flag-checkered" /></div><div><span>放送状态</span><strong>全篇已经播放</strong><small>{entry.endDate ? `完结日期 ${entry.endDate}` : '全部集数均已更新'}</small></div></>
           ) : (
@@ -120,18 +122,18 @@ function AnimeCard({ entry, now, watchProgress, review, onOpenDetails, onWatchPr
           </div>
         </div>
         {entry.note && <p className="anime-note"><i className="fas fa-circle-info" /> {entry.note}</p>}
-        <a className="anime-source-link" href={entry.bangumiUrl || entry.siteUrl} target="_blank" rel="noopener noreferrer">在 {entry.bangumiId ? 'Bangumi' : 'AniList'} 查看条目 <i className="fas fa-arrow-up-right-from-square" /></a>
+        <div className="anime-card-actions"><a className="anime-source-link" href={entry.bangumiUrl || entry.siteUrl} target="_blank" rel="noopener noreferrer">在 {entry.bangumiId ? 'Bangumi' : 'AniList'} 查看条目 <i className="fas fa-arrow-up-right-from-square" /></a><button type="button" className="anime-remove-button" onClick={() => onRemove(entry)}><i className="fas fa-trash-can" /> 从网站移除</button></div>
       </div>
     </article>
   )
 }
 
-function AnimeSeriesCollection({ group, now, reviews, watchProgress, onOpenDetails, onWatchProgressChange }) {
+function AnimeSeriesCollection({ group, now, reviews, watchProgress, onOpenDetails, onWatchProgressChange, onRemoveEntry, onRemoveSeries }) {
   const [expanded, setExpanded] = useState(false)
   return (
     <details className="anime-series-collection" onToggle={event => setExpanded(event.currentTarget.open)}>
       <summary><span className="anime-series-covers">{group.items.slice(0, 3).map(item => item.coverImage ? <img src={item.coverImage} alt="" loading="lazy" decoding="async" fetchPriority="low" key={item.id} /> : <i className="fas fa-tv" key={item.id} />)}</span><span><strong>{group.title}</strong><small>Bangumi 动画关系 · {group.items.length} 部（季 / 剧场版 / OVA / 番外）</small></span><em>展开全部 <i className="fas fa-chevron-down" /></em></summary>
-      {expanded && <div className="anime-series-expanded"><p><i className="fas fa-circle-info" /> 仅列动画；名称、类型与关联关系来自 Bangumi，不采用旧文档的合并命名。</p><div className="anime-grid">{group.items.map(entry => <AnimeCard key={entry.id} entry={entry} now={now} review={reviews[String(entry.id)]} watchProgress={watchProgress[String(entry.id)]} onOpenDetails={onOpenDetails} onWatchProgressChange={onWatchProgressChange} />)}</div></div>}
+      {expanded && <div className="anime-series-expanded"><div className="anime-series-note"><p><i className="fas fa-circle-info" /> 仅列动画；名称、类型与关联关系来自 Bangumi，不包含真人体验或舞台企划。</p><button type="button" className="anime-remove-button" onClick={() => onRemoveSeries(group)}><i className="fas fa-trash-can" /> 移除整个系列</button></div><div className="anime-grid">{group.items.map(entry => <AnimeCard key={entry.id} entry={entry} now={now} review={reviews[String(entry.id)]} watchProgress={watchProgress[String(entry.id)]} onOpenDetails={onOpenDetails} onWatchProgressChange={onWatchProgressChange} onRemove={onRemoveEntry} />)}</div></div>}
     </details>
   )
 }
@@ -143,6 +145,7 @@ export default function AnimeTracker() {
   const [error, setError] = useState('')
   const [personalFilter, setPersonalFilter] = useState('all')
   const [releaseFilter, setReleaseFilter] = useState('all')
+  const [sortMode, setSortMode] = useState('newest')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
   const [now, setNow] = useState(Date.now())
@@ -153,6 +156,7 @@ export default function AnimeTracker() {
   const [customEntries, setCustomEntries] = useState(() => sanitizeCustomEntries(readStoredObject(CUSTOM_TRACKER_KEY)))
   const [bangumiRelations] = useState(() => readStoredObject(BANGUMI_RELATIONS_KEY))
   const [reviews, setReviews] = useState(() => sanitizeReviews(readStoredObject(ANIME_REVIEWS_KEY)))
+  const [removedAnime, setRemovedAnime] = useState(() => sanitizeRemovedAnime(readStoredObject(REMOVED_ANIME_KEY)))
   const [activeEntry, setActiveEntry] = useState(null)
   const blogImportStarted = useRef(false)
   const importInputRef = useRef(null)
@@ -172,6 +176,7 @@ export default function AnimeTracker() {
   useEffect(() => { writeStoredObject(TRACKER_PROGRESS_KEY, watchProgress) }, [watchProgress])
   useEffect(() => { writeStoredObject(CUSTOM_TRACKER_KEY, customEntries) }, [customEntries])
   useEffect(() => { writeStoredObject(ANIME_REVIEWS_KEY, reviews) }, [reviews])
+  useEffect(() => { writeStoredObject(REMOVED_ANIME_KEY, removedAnime) }, [removedAnime])
   useEffect(() => {
     if (!notice) return undefined
     const timer = window.setTimeout(() => setNotice(''), 5000)
@@ -194,7 +199,7 @@ export default function AnimeTracker() {
         relationSource: cachedRelations || entry.relationSource === 'Bangumi' ? 'Bangumi' : null,
       } : entry
       return { ...enriched, category: categoryForEntry(enriched, watchProgress[String(entry.id)]) }
-    }).filter(entry => !(entry.category === 'planned' && Number.isFinite(entry.score) && entry.score < 7))
+    }).filter(entry => !(entry.category === 'planned' && Number.isFinite(entry.score) && entry.score < 7 && !entry.groups?.includes('Bangumi 导入')))
   }, [staticEntries, customEntries, idMaps, bangumiSubjects, bangumiRelations, watchProgress])
 
   useEffect(() => {
@@ -236,19 +241,24 @@ export default function AnimeTracker() {
     }).catch(() => { /* 博客番评不阻断追番主界面 */ })
   }, [allEntries])
 
-  const catalogGroups = useMemo(() => buildCatalogSeriesGroups(allEntries, seriesCatalog, watchProgress), [allEntries, seriesCatalog, watchProgress])
+  const catalogGroups = useMemo(() => buildCatalogSeriesGroups(allEntries, seriesCatalog, watchProgress, removedAnime), [allEntries, seriesCatalog, watchProgress, removedAnime])
   const displayedGroups = useMemo(() => {
     const keyword = search.trim().toLocaleLowerCase('zh-CN')
-    return catalogGroups.filter(group => group.items.some(entry =>
-      (personalFilter === 'all' || entry.category === personalFilter)
-      && (releaseFilter === 'all' || entry.status === releaseFilter)
-      && (!keyword || `${group.title} ${entry.title} ${entry.subtitle} ${entry.sourceTitle}`.toLocaleLowerCase('zh-CN').includes(keyword))))
-      .sort((left, right) => Math.min(...left.items.map(getSortTime)) - Math.min(...right.items.map(getSortTime)))
-  }, [catalogGroups, personalFilter, releaseFilter, search])
+    return catalogGroups.map(group => {
+      const groupMatches = !keyword || group.title.toLocaleLowerCase('zh-CN').includes(keyword)
+      const items = group.items.filter(entry =>
+        (personalFilter === 'all' || entry.category === personalFilter)
+        && (releaseFilter === 'all' || entry.status === releaseFilter)
+        && (groupMatches || `${entry.title} ${entry.subtitle} ${entry.sourceTitle}`.toLocaleLowerCase('zh-CN').includes(keyword)))
+        .sort((left, right) => compareAnimeEntries(left, right, sortMode))
+      return { ...group, id: `${group.id}:${personalFilter}:${releaseFilter}`, items }
+    }).filter(group => group.items.length)
+      .sort((left, right) => compareAnimeEntries(left.items[0], right.items[0], sortMode))
+  }, [catalogGroups, personalFilter, releaseFilter, search, sortMode])
   const pageCount = Math.max(1, Math.ceil(displayedGroups.length / PAGE_SIZE))
   const seriesGroups = useMemo(() => displayedGroups.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), [displayedGroups, page])
   const entries = useMemo(() => seriesGroups.flatMap(group => group.items), [seriesGroups])
-  useEffect(() => { setPage(1) }, [personalFilter, releaseFilter, search])
+  useEffect(() => { setPage(1) }, [personalFilter, releaseFilter, search, sortMode])
   useEffect(() => { if (page > pageCount) setPage(pageCount) }, [page, pageCount])
 
   const factualEntries = useMemo(() => catalogGroups.flatMap(group => group.items), [catalogGroups])
@@ -263,7 +273,7 @@ export default function AnimeTracker() {
   const nextEntry = useMemo(() => factualEntries.filter(entry => entry.category === 'watching' && entry.nextAiringAt && new Date(entry.nextAiringAt).getTime() > now).sort((left, right) => getSortTime(left) - getSortTime(right))[0], [factualEntries, now])
 
   const updateWatchProgress = (entry, nextProgress) => {
-    if (nextProgress.status === 'not_started' && Number.isFinite(entry.score) && entry.score < 7) {
+    if (nextProgress.status === 'not_started' && Number.isFinite(entry.score) && entry.score < 7 && !entry.groups?.includes('Bangumi 导入')) {
       setNotice('该动画评分低于 7 分，已按规则从想看中移除')
       const removed = { status: 'none', episode: 0 }
       setWatchProgress(current => ({ ...current, [String(entry.id)]: removed }))
@@ -274,8 +284,49 @@ export default function AnimeTracker() {
     syncTrackerRecordToBangumi(entry, nextProgress, idMaps.trackerToBangumi)
   }
 
+  const purgeEntries = items => {
+    const trackerKeys = new Set()
+    const bangumiKeys = new Set()
+    for (const entry of items) {
+      trackerKeys.add(String(entry.id))
+      if (entry.bangumiId) bangumiKeys.add(String(entry.bangumiId))
+      for (const memberId of entry.memberIds || []) {
+        bangumiKeys.add(String(memberId))
+        trackerKeys.add(`bangumi-${memberId}`)
+      }
+    }
+    setWatchProgress(current => { const next = { ...current }; trackerKeys.forEach(key => delete next[key]); return next })
+    setCustomEntries(current => { const next = { ...current }; trackerKeys.forEach(key => delete next[key]); return next })
+    setReviews(current => { const next = { ...current }; trackerKeys.forEach(key => delete next[key]); return next })
+    const bangumiProgress = sanitizeProgress(readStoredObject(BANGUMI_PROGRESS_KEY), true)
+    bangumiKeys.forEach(key => delete bangumiProgress[key])
+    writeStoredObject(BANGUMI_PROGRESS_KEY, bangumiProgress)
+    return { trackerKeys, bangumiKeys }
+  }
+
+  const removeEntry = entry => {
+    if (!window.confirm(`确定从网站移除《${entry.title}》吗？该条目的本地状态和番评也会删除。`)) return
+    const { trackerKeys, bangumiKeys } = purgeEntries([entry])
+    setRemovedAnime(current => {
+      const next = { ...current }
+      trackerKeys.forEach(key => { next[`entry:${key}`] = true })
+      bangumiKeys.forEach(key => { next[`entry:${key}`] = true })
+      return next
+    })
+    setNotice(`已从网站移除《${entry.title}》`)
+  }
+
+  const removeSeries = group => {
+    if (!window.confirm(`确定从网站移除“${group.title}”整个系列吗？系列内所有本地状态和番评也会删除。`)) return
+    const seriesId = group.items[0]?.seriesId || String(group.id).split(':')[0]
+    const completeGroup = catalogGroups.find(item => item.id === seriesId) || group
+    purgeEntries(completeGroup.items)
+    setRemovedAnime(current => ({ ...current, [`series:${seriesId}`]: true }))
+    setNotice(`已从网站移除“${group.title}”整个系列`)
+  }
+
   const exportRecords = () => {
-    const payload = createExportPayload(watchProgress, readStoredObject(BANGUMI_PROGRESS_KEY), customEntries, reviews)
+    const payload = createExportPayload(watchProgress, readStoredObject(BANGUMI_PROGRESS_KEY), customEntries, reviews, removedAnime)
     const url = URL.createObjectURL(new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: 'application/json' }))
     const anchor = document.createElement('a')
     anchor.href = url
@@ -294,8 +345,9 @@ export default function AnimeTracker() {
       const mergedBangumi = { ...sanitizeProgress(readStoredObject(BANGUMI_PROGRESS_KEY), true), ...imported.bangumiProgress }
       const mergedCustom = { ...customEntries, ...imported.customEntries }
       const mergedReviews = { ...reviews, ...imported.reviews }
+      const mergedRemoved = { ...removedAnime, ...imported.removedAnime }
       setWatchProgress(mergedTracker); setCustomEntries(mergedCustom)
-      setReviews(mergedReviews)
+      setReviews(mergedReviews); setRemovedAnime(mergedRemoved)
       writeStoredObject(BANGUMI_PROGRESS_KEY, mergedBangumi)
       setNotice(`导入成功：合并 ${Object.keys(imported.trackerProgress).length + Object.keys(imported.bangumiProgress).length} 条记录`)
     } catch (importError) { setNotice(`导入失败：${importError.message || '文件无法读取'}`) }
@@ -336,8 +388,14 @@ export default function AnimeTracker() {
       if (!Number.isInteger(subjectId) || subjectId <= 0) throw new Error('请输入正确的 Bangumi 条目链接')
       const cachedSubject = bangumiSubjects.find(subject => Number(subject.id) === subjectId)
       const entry = cachedSubject ? bangumiSubjectToTrackerEntry(cachedSubject) : await fetchBangumiEntryFromUrl(bangumiUrl)
-      if (Number.isFinite(entry.score) && entry.score < 7) throw new Error(`该动画评分 ${entry.score.toFixed(1)}，低于 7 分，未加入想看`)
       const key = String(entry.id)
+      const catalogSeries = seriesCatalog?.series?.find(series => series.members?.some(member => Number(member.id) === Number(entry.bangumiId)))
+      setRemovedAnime(current => {
+        const next = { ...current }
+        delete next[`entry:${key}`]; delete next[`entry:${entry.bangumiId}`]
+        if (catalogSeries) delete next[`series:${catalogSeries.id}`]
+        return next
+      })
       setCustomEntries(current => ({ ...current, [key]: entry }))
       setWatchProgress(current => ({ ...current, [key]: { status: 'not_started', episode: 0 } }))
       const bangumiProgress = sanitizeProgress(readStoredObject(BANGUMI_PROGRESS_KEY), true)
@@ -370,7 +428,7 @@ export default function AnimeTracker() {
 
         <section className="bangumi-record-tools anime-record-tools">
           <div><i className="fas fa-file-arrow-down" /><span><strong>快速迁移追番数据</strong><small>观看状态、自定义条目和番评会一起导出/导入；旧博客番评自动匹配</small></span></div>
-          <div><button type="button" onClick={exportRecords}><i className="fas fa-download" /> 导出</button><button type="button" onClick={() => importInputRef.current?.click()}><i className="fas fa-upload" /> 导入文件</button><input ref={importInputRef} type="file" accept="application/json,.json" hidden onChange={importRecords} /></div>
+          <div><button type="button" onClick={exportRecords}><i className="fas fa-download" /> 导出</button><button type="button" onClick={() => importInputRef.current?.click()}><i className="fas fa-upload" /> 导入文件</button>{Object.keys(removedAnime).length > 0 && <button type="button" onClick={() => { setRemovedAnime({}); setNotice('已恢复所有从网站移除的番剧') }}><i className="fas fa-rotate-left" /> 恢复已移除</button>}<input ref={importInputRef} type="file" accept="application/json,.json" hidden onChange={importRecords} /></div>
         </section>
         <form className="anime-bangumi-import" onSubmit={importBangumiUrl}>
           <i className="fas fa-link" /><input value={bangumiUrl} onChange={event => setBangumiUrl(event.target.value)} placeholder="粘贴 Bangumi 链接，例如 https://bgm.tv/subject/604826" aria-label="Bangumi 条目链接" required /><button type="submit" disabled={isImportingUrl}>{isImportingUrl ? <><i className="fas fa-spinner fa-spin" /> 读取中</> : <><i className="fas fa-plus" /> 加入想看</>}</button>
@@ -383,11 +441,12 @@ export default function AnimeTracker() {
         <div className="anime-browse-controls">
           <label className="anime-search"><i className="fas fa-magnifying-glass" /><input value={search} onChange={event => setSearch(event.target.value)} placeholder="搜索番剧名称" aria-label="搜索番剧名称" />{search && <button type="button" onClick={() => setSearch('')} aria-label="清空搜索"><i className="fas fa-times" /></button>}</label>
           <label className="anime-group-select"><i className="fas fa-filter" /><select value={releaseFilter} onChange={event => setReleaseFilter(event.target.value)} aria-label="按放送状态筛选">{RELEASE_FILTERS.map(item => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label>
+          <label className="anime-group-select"><i className="fas fa-arrow-down-wide-short" /><select value={sortMode} onChange={event => setSortMode(event.target.value)} aria-label="番剧排序方式">{ANIME_SORT_OPTIONS.map(item => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label>
         </div>
         <div className="anime-toolbar"><span><strong>{displayedGroups.length}</strong> 个作品 / 系列 · 第 {page}/{pageCount} 页 · <i className="fas fa-rotate" /> {syncFormatter.format(new Date(seriesCatalog?.generatedAt || data.syncedAt))} 查询</span></div>
-        {entries.length ? <section className="anime-collection-grid">{seriesGroups.map(group => group.items.length > 1 ? <AnimeSeriesCollection group={group} now={now} reviews={reviews} watchProgress={watchProgress} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} key={group.id} /> : <AnimeCard key={group.id} entry={group.items[0]} now={now} review={reviews[String(group.items[0].id)]} watchProgress={watchProgress[String(group.items[0].id)]} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} />)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>这个分类里暂时没有番剧</p></div>}
+        {entries.length ? <section className="anime-collection-grid">{seriesGroups.map(group => group.items.length > 1 ? <AnimeSeriesCollection group={group} now={now} reviews={reviews} watchProgress={watchProgress} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} onRemoveEntry={removeEntry} onRemoveSeries={removeSeries} key={group.id} /> : <AnimeCard key={group.id} entry={group.items[0]} now={now} review={reviews[String(group.items[0].id)]} watchProgress={watchProgress[String(group.items[0].id)]} onOpenDetails={openTrackerDetails} onWatchProgressChange={updateWatchProgress} onRemove={removeEntry} />)}</section> : <div className="anime-empty"><i className="fas fa-inbox" /><p>这个分类里暂时没有番剧</p></div>}
         {pageCount > 1 && <nav className="anime-pagination" aria-label="追番列表分页"><button type="button" onClick={() => setPage(value => Math.max(1, value - 1))} disabled={page === 1}><i className="fas fa-arrow-left" /> 上一页</button><span>第 <strong>{page}</strong> / {pageCount} 页</span><button type="button" onClick={() => setPage(value => Math.min(pageCount, value + 1))} disabled={page === pageCount}>下一页 <i className="fas fa-arrow-right" /></button></nav>}
-        <footer className="anime-data-note"><i className="fas fa-database" /><span>放送日历来自 <a href={data.source.url} target="_blank" rel="noopener noreferrer">{data.source.name}</a>，评分、导入条目和关联作来自 Bangumi。<small><i className="fas fa-shield-halved" /> 已看记录保持不变；仅评分明确低于 7 分的想看条目会被移除。</small></span></footer>
+        <footer className="anime-data-note"><i className="fas fa-database" /><span>放送日历来自 <a href={data.source.url} target="_blank" rel="noopener noreferrer">{data.source.name}</a>，评分、导入条目和关联作来自 Bangumi。<small><i className="fas fa-shield-halved" /> 已看记录保持不变；手动粘贴 Bangumi 链接导入不受 7 分限制，其他评分明确低于 7 分的想看条目仍会移除。</small></span></footer>
       </> : error ? <div className="anime-state error"><i className="fas fa-triangle-exclamation" /><h2>追番数据加载失败</h2><p>{error}</p></div> : <div className="anime-state"><i className="fas fa-spinner fa-spin" /><h2>正在读取追番日历</h2><p>优先读取轻量缓存，稍等一下。</p></div>}
       {activeEntry && <AnimeDetailsDialog entry={activeEntry} review={reviews[String(activeEntry.id)]} onClose={() => setActiveEntry(null)} onSaveReview={saveReview} />}
     </div>

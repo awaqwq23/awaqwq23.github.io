@@ -23,6 +23,11 @@ function normalizeTitle(value) {
     .replace(/[\s\-—–:：·・!！?？'"“”‘’\[\]()（）【】~～]/g, '')
 }
 
+function isRealityProject(subject) {
+  const title = `${subject?.name_cn || subject?.title || ''} ${subject?.name || subject?.originalTitle || ''}`
+  return /(?:THE\s*REAL\s*4-?D|リアル\s*4-?D|真实(?:版)?\s*4-?D|真人版|実写版|舞台剧|舞台劇|ステージショー)/i.test(title)
+}
+
 function aliases(subject) {
   const values = [subject?.title, subject?.originalTitle, subject?.name, subject?.name_cn]
   const aliasBox = (subject?.infobox || []).find(item => item.key === '别名')
@@ -161,7 +166,7 @@ function normalizeMember(subject, relations, airingIds) {
     image: httpsUrl(subject.images?.large || subject.images?.common || subject.image),
     url: `https://bgm.tv/subject/${subject.id}`,
     status: isAiring ? 'RELEASING' : future ? 'NOT_YET_RELEASED' : 'FINISHED',
-    relations: relations.filter(item => Number(item.type) === 2 && FOLLOW_RELATIONS.has(item.relation)).map(item => ({
+    relations: relations.filter(item => Number(item.type) === 2 && FOLLOW_RELATIONS.has(item.relation) && !isRealityProject(item)).map(item => ({
       id: Number(item.id), relation: item.relation,
     })),
   }
@@ -205,9 +210,9 @@ async function main() {
           fetchJson(`${API_ROOT}/v0/subjects/${id}`),
           fetchJson(`${API_ROOT}/v0/subjects/${id}/subjects`),
         ])
-        if (Number(subject.type) !== 2) return
+        if (Number(subject.type) !== 2 || isRealityProject(subject)) return
         details.set(id, subject)
-        const animeRelations = (relations || []).filter(item => Number(item.type) === 2 && FOLLOW_RELATIONS.has(item.relation))
+        const animeRelations = (relations || []).filter(item => Number(item.type) === 2 && FOLLOW_RELATIONS.has(item.relation) && !isRealityProject(item))
         relationMap.set(id, animeRelations)
         for (const related of animeRelations) {
           const relatedId = Number(related.id)
@@ -263,7 +268,7 @@ async function main() {
       name: 'Bangumi 番组计划',
       url: 'https://bgm.tv/anime/browser',
       apiUrl: `${API_ROOT}/v0/subjects/{id}/subjects`,
-      rule: '从个人番单匹配动画种子，递归遍历前传、续集、番外篇、主线故事、衍生、总集篇和不同演绎关系；仅保留 Bangumi type=2 的动画条目。',
+      rule: '从个人番单匹配动画种子，递归遍历前传、续集、番外篇、主线故事、衍生、总集篇和不同演绎关系；仅保留 Bangumi type=2 的动画条目，并排除真人体验、舞台等现实企划。',
     },
     matchedEntryCount: seedRows.filter(row => row.seedId).length,
     unmatchedEntryIds: seedRows.filter(row => !row.seedId).map(row => row.entryId),

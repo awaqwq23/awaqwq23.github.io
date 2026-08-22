@@ -5,12 +5,12 @@
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
     "apiUrl": "https://api.bgm.tv/v0/subjects/{id}/subjects",
-    "rule": "从个人番单匹配动画种子，递归遍历前传、续集、番外篇、主线故事、衍生、总集篇和不同演绎关系；仅保留 Bangumi type=2 的动画条目。"
+    "rule": "Bangumi type=2 animation relations only; real-world attraction, live-action and stage projects are excluded."
   },
   "matchedEntryCount": 141,
   "unmatchedEntryIds": [],
   "seriesCount": 133,
-  "animationCount": 769,
+  "animationCount": 762,
   "series": [
     {
       "id": "bgm-series-386809",
@@ -8225,7 +8225,7 @@
           "seedId": 55770
         }
       ],
-      "memberCount": 24,
+      "memberCount": 22,
       "members": [
         {
           "id": 55770,
@@ -8254,10 +8254,6 @@
             {
               "id": 221781,
               "relation": "番外篇"
-            },
-            {
-              "id": 495007,
-              "relation": "衍生"
             },
             {
               "id": 499144,
@@ -8438,56 +8434,6 @@
             {
               "id": 55770,
               "relation": "主线故事"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 495007,
-          "title": "进击的巨人 THE REAL 4D",
-          "originalTitle": "進撃の巨人・ザ・リアル 4-D",
-          "aliases": [
-            "進撃の巨人・ザ・リアル 4-D",
-            "进击的巨人 THE REAL 4D"
-          ],
-          "platform": "剧场版",
-          "airDate": "2016-01-15",
-          "totalEpisodes": null,
-          "score": 7.3,
-          "image": "https://lain.bgm.tv/pic/cover/l/1d/10/495007_FQKHQ.jpg",
-          "url": "https://bgm.tv/subject/495007",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 55770,
-              "relation": "主线故事"
-            },
-            {
-              "id": 495012,
-              "relation": "续集"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 495012,
-          "title": "进击的巨人 THE REAL 4D: 2",
-          "originalTitle": "進撃の巨人・ザ・リアル 4-D: 2",
-          "aliases": [
-            "進撃の巨人・ザ・リアル 4-D: 2",
-            "进击的巨人 THE REAL 4D: 2"
-          ],
-          "platform": "剧场版",
-          "airDate": "2016-12-16",
-          "totalEpisodes": null,
-          "score": 7.5,
-          "image": "https://lain.bgm.tv/pic/cover/l/55/4d/495012_r3l06.jpg",
-          "url": "https://bgm.tv/subject/495012",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 495007,
-              "relation": "前传"
             }
           ],
           "type": 2
@@ -16717,7 +16663,7 @@
           "seedId": 265
         }
       ],
-      "memberCount": 11,
+      "memberCount": 9,
       "members": [
         {
           "id": 265,
@@ -16742,10 +16688,6 @@
           "url": "https://bgm.tv/subject/265",
           "status": "FINISHED",
           "relations": [
-            {
-              "id": 235701,
-              "relation": "衍生"
-            },
             {
               "id": 6049,
               "relation": "续集"
@@ -16944,57 +16886,6 @@
             },
             {
               "id": 3302,
-              "relation": "前传"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 235701,
-          "title": "新世纪福音战士 THE REAL 4D",
-          "originalTitle": "エヴァンゲリオン・ザ・リアル 4-D",
-          "aliases": [
-            "エヴァンゲリオン・ザ・リアル 4-D",
-            "新世纪福音战士 THE REAL 4D",
-            "EVANGELION THE REAL 4-D"
-          ],
-          "platform": "剧场版",
-          "airDate": "2015-01-23",
-          "totalEpisodes": 1,
-          "score": 5.9,
-          "image": "https://lain.bgm.tv/pic/cover/l/98/60/235701_PWuPy.jpg",
-          "url": "https://bgm.tv/subject/235701",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 265,
-              "relation": "主线故事"
-            },
-            {
-              "id": 538984,
-              "relation": "续集"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 538984,
-          "title": "新世纪福音战士 THE REAL 4D: 2.0",
-          "originalTitle": "エヴァンゲリオン・ザ・リアル 4-D: 2.0",
-          "aliases": [
-            "エヴァンゲリオン・ザ・リアル 4-D: 2.0",
-            "新世纪福音战士 THE REAL 4D: 2.0"
-          ],
-          "platform": "剧场版",
-          "airDate": "2016-01-15",
-          "totalEpisodes": null,
-          "score": 7.3,
-          "image": "https://lain.bgm.tv/pic/cover/l/19/94/538984_7q5D5.jpg",
-          "url": "https://bgm.tv/subject/538984",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 235701,
               "relation": "前传"
             }
           ],
@@ -20866,7 +20757,7 @@
           "seedId": 294993
         }
       ],
-      "memberCount": 9,
+      "memberCount": 7,
       "members": [
         {
           "id": 294993,
@@ -20885,10 +20776,6 @@
           "url": "https://bgm.tv/subject/294993",
           "status": "FINISHED",
           "relations": [
-            {
-              "id": 536594,
-              "relation": "番外篇"
-            },
             {
               "id": 369304,
               "relation": "续集"
@@ -20919,33 +20806,6 @@
           "relations": [
             {
               "id": 294993,
-              "relation": "续集"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 536594,
-          "title": "咒术回战 THE REAL 4D",
-          "originalTitle": "呪術廻戦・ザ・リアル 4-D",
-          "aliases": [
-            "呪術廻戦・ザ・リアル 4-D",
-            "咒术回战 THE REAL 4D"
-          ],
-          "platform": "剧场版",
-          "airDate": "2022-09-16",
-          "totalEpisodes": null,
-          "score": 6.5,
-          "image": "https://lain.bgm.tv/pic/cover/l/79/47/536594_swfzB.jpg",
-          "url": "https://bgm.tv/subject/536594",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 294993,
-              "relation": "主线故事"
-            },
-            {
-              "id": 640995,
               "relation": "续集"
             }
           ],
@@ -21060,30 +20920,6 @@
             {
               "id": 616668,
               "relation": "续集"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 640995,
-          "title": "咒术回战 真实版4D ～轮转的钟楼～",
-          "originalTitle": "呪術廻戦・ザ・リアル 4-D ～廻る時計台～",
-          "aliases": [
-            "呪術廻戦・ザ・リアル 4-D ～廻る時計台～",
-            "咒术回战 真实版4D ～轮转的钟楼～",
-            "咒術迴戰The Real 4-D ～迴轉鐘塔～"
-          ],
-          "platform": "剧场版",
-          "airDate": "2026-01-30",
-          "totalEpisodes": 1,
-          "score": 5.7,
-          "image": "https://lain.bgm.tv/pic/cover/l/28/e2/640995_w6WEw.jpg",
-          "url": "https://bgm.tv/subject/640995",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 536594,
-              "relation": "前传"
             }
           ],
           "type": 2
@@ -23023,7 +22859,7 @@
           "seedId": 43558
         }
       ],
-      "memberCount": 14,
+      "memberCount": 13,
       "members": [
         {
           "id": 38326,
@@ -23162,10 +22998,6 @@
           "status": "FINISHED",
           "relations": [
             {
-              "id": 524424,
-              "relation": "衍生"
-            },
-            {
               "id": 113292,
               "relation": "续集"
             },
@@ -23211,10 +23043,6 @@
             {
               "id": 150490,
               "relation": "续集"
-            },
-            {
-              "id": 524424,
-              "relation": "衍生"
             }
           ],
           "type": 2
@@ -23254,29 +23082,6 @@
             {
               "id": 289138,
               "relation": "番外篇"
-            }
-          ],
-          "type": 2
-        },
-        {
-          "id": 524424,
-          "title": "JOJO的奇妙冒险 THE REAL 4D DIO的世界",
-          "originalTitle": "ジョジョの奇妙な冒険・ザ・リアル 4-D DIOの世界",
-          "aliases": [
-            "ジョジョの奇妙な冒険・ザ・リアル 4-D DIOの世界",
-            "JOJO的奇妙冒险 THE REAL 4D DIO的世界"
-          ],
-          "platform": "剧场版",
-          "airDate": "2017-06-30",
-          "totalEpisodes": 1,
-          "score": 6.7,
-          "image": "https://lain.bgm.tv/pic/cover/l/1a/87/524424_9VVH0.jpg",
-          "url": "https://bgm.tv/subject/524424",
-          "status": "FINISHED",
-          "relations": [
-            {
-              "id": 113292,
-              "relation": "主线故事"
             }
           ],
           "type": 2

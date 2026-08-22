@@ -3,6 +3,7 @@ export const BANGUMI_PROGRESS_KEY = 'awa-bangumi-watch-progress-v1'
 export const CUSTOM_TRACKER_KEY = 'awa-anime-custom-entries-v1'
 export const BANGUMI_RELATIONS_KEY = 'awa-bangumi-relations-v1'
 export const ANIME_REVIEWS_KEY = 'awa-anime-reviews-v1'
+export const REMOVED_ANIME_KEY = 'awa-anime-removed-v1'
 export const EXPORT_APP_ID = 'awaqwq233-anime-records'
 export const RECORDS_UPDATED_EVENT = 'awa-anime-records-updated'
 
@@ -80,6 +81,75 @@ export function sanitizeCustomEntries(rawEntries) {
   return sanitized
 }
 
+export function sanitizeRemovedAnime(rawValue) {
+  const sanitized = {}
+  if (!rawValue || typeof rawValue !== 'object' || Array.isArray(rawValue)) return sanitized
+  for (const [key, value] of Object.entries(rawValue)) {
+    if (BLOCKED_KEYS.has(key) || !value || !/^(?:entry|series):[^:]+/.test(key)) continue
+    sanitized[key] = true
+  }
+  return sanitized
+}
+
+export const ANIME_SORT_OPTIONS = [
+  { id: 'newest', label: '从新到旧' },
+  { id: 'oldest', label: '从旧到新' },
+  { id: 'scoreAsc', label: '评分升序' },
+  { id: 'scoreDesc', label: '评分降序' },
+]
+
+export function animeSeasonLabel(value) {
+  const match = String(value || '').match(/^(\d{4})-(\d{2})/)
+  if (!match) return '开播时间未知'
+  const quarter = Math.min(4, Math.max(1, Math.ceil(Number(match[2]) / 3)))
+  return `${match[1]} 年 ${['冬季 · 1月档', '春季 · 4月档', '夏季 · 7月档', '秋季 · 10月档'][quarter - 1]}`
+}
+
+export function airingProgressForSubject(subject, now = Date.now()) {
+  const total = Number(subject?.totalEpisodes || subject?.total_episodes || subject?.eps || 0) || null
+  const startDate = subject?.startDate || subject?.airDate || subject?.date || null
+  const startTime = startDate ? new Date(`${startDate}T00:00:00+08:00`).getTime() : 0
+  const explicitReleased = Number(subject?.releasedEpisodes)
+  const status = subject?.status || (subject?.isAiring ? 'RELEASING' : startTime > now ? 'NOT_YET_RELEASED' : 'FINISHED')
+  let releasedEpisodes = Number.isFinite(explicitReleased) && explicitReleased > 0 ? explicitReleased : null
+  let releaseEstimate = false
+  if (status === 'FINISHED' && total) releasedEpisodes = total
+  if (releasedEpisodes == null && status === 'NOT_YET_RELEASED') releasedEpisodes = 0
+  if (releasedEpisodes == null && status === 'RELEASING' && startTime) {
+    releasedEpisodes = Math.max(0, Math.floor((now - startTime) / (7 * 864e5)) + 1)
+    if (total) releasedEpisodes = Math.min(total, releasedEpisodes)
+    releaseEstimate = true
+  }
+  if (releasedEpisodes == null) releasedEpisodes = 0
+  let nextAiringAt = subject?.nextAiringAt || null
+  let nextEpisode = Number(subject?.nextEpisode) || null
+  if (!nextAiringAt && status === 'RELEASING' && startTime) {
+    const interval = 7 * 864e5
+    let nextTime = startTime + releasedEpisodes * interval
+    if (nextTime <= now) nextTime += Math.ceil((now - nextTime + 1) / interval) * interval
+    nextAiringAt = new Date(nextTime).toISOString()
+    nextEpisode = releasedEpisodes + 1
+    releaseEstimate = true
+  }
+  return { releasedEpisodes, totalEpisodes: total, nextAiringAt, nextEpisode, releaseEstimate }
+}
+
+export function compareAnimeEntries(left, right, sortMode = 'newest') {
+  const leftDate = new Date(left?.startDate || left?.airDate || 0).getTime() || 0
+  const rightDate = new Date(right?.startDate || right?.airDate || 0).getTime() || 0
+  const leftScore = Number.isFinite(Number(left?.score)) ? Number(left.score) : null
+  const rightScore = Number.isFinite(Number(right?.score)) ? Number(right.score) : null
+  if (sortMode === 'oldest') return leftDate - rightDate || String(left?.title || '').localeCompare(String(right?.title || ''), 'zh-CN')
+  if (sortMode === 'scoreAsc') return leftScore == null && rightScore == null ? rightDate - leftDate : leftScore == null ? 1 : rightScore == null ? -1 : leftScore - rightScore || rightDate - leftDate
+  if (sortMode === 'scoreDesc') return leftScore == null && rightScore == null ? rightDate - leftDate : leftScore == null ? 1 : rightScore == null ? -1 : rightScore - leftScore || rightDate - leftDate
+  return rightDate - leftDate || (rightScore || 0) - (leftScore || 0)
+}
+
+export function isRealityAnimeProject(subject) {
+  const title = `${subject?.title || ''} ${subject?.originalTitle || subject?.name || ''}`
+  return /(?:THE\s*REAL\s*4-?D|リアル\s*4-?D|真实(?:版)?\s*4-?D|真人版|実写版|舞台剧|舞台劇|ステージショー)/i.test(title)
+}
+
 export function normalizeAnimeTitle(value) {
   return String(value || '')
     .normalize('NFKC')
@@ -143,6 +213,7 @@ export function bangumiSubjectToTrackerEntry(subject, relations = subject.relate
   const totalEpisodes = Number(subject.totalEpisodes || subject.total_episodes || subject.eps || 0) || null
   const image = subject.image || subject.images?.large || subject.images?.common || null
   const score = Number(subject.score ?? subject.rating?.score)
+  const schedule = airingProgressForSubject(subject)
   return {
     id: `bangumi-${bangumiId}`,
     bangumiId,
@@ -160,10 +231,11 @@ export function bangumiSubjectToTrackerEntry(subject, relations = subject.relate
       siteUrl: item.siteUrl || `https://bgm.tv/subject/${item.id}`,
     })),
     relationSource: 'Bangumi',
-    releasedEpisodes: subject.isAiring ? Number(subject.releasedEpisodes || 0) : (totalEpisodes || 0),
+    releasedEpisodes: schedule.releasedEpisodes,
     totalEpisodes,
-    nextEpisode: null,
-    nextAiringAt: null,
+    nextEpisode: schedule.nextEpisode,
+    nextAiringAt: schedule.nextAiringAt,
+    releaseEstimate: schedule.releaseEstimate,
     startDate: subject.airDate || subject.date || null,
     endDate: subject.endDate || null,
     coverImage: image ? String(image).replace(/^http:\/\//, 'https://') : null,
@@ -242,7 +314,7 @@ export function buildSeriesGroups(entries) {
   }))
 }
 
-export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
+export function buildCatalogSeriesGroups(entries, catalog, progress = {}, removedAnime = {}) {
   const list = entries || []
   if (!catalog?.series?.length) return buildSeriesGroups(list)
   const entriesById = new Map(list.map(entry => [String(entry.id), entry]))
@@ -251,11 +323,14 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
   const groups = []
 
   for (const series of catalog.series) {
+    if (removedAnime[`series:${series.id}`]) continue
     const sourceEntries = (series.sourceEntryIds || []).map(id => entriesById.get(String(id))).filter(Boolean)
     const importedEntries = (series.members || []).map(member => entriesByBangumiId.get(String(member.id))).filter(Boolean)
     if (!sourceEntries.length && !importedEntries.length) continue
     const sourceLinks = new Map((series.sourceLinks || []).map(link => [String(link.seedId), entriesById.get(String(link.entryId))]).filter(([, entry]) => entry))
-    const logicalMembers = collapseCatalogMembers(series.members || [])
+    const logicalMembers = collapseCatalogMembers((series.members || []).filter(member => !isRealityAnimeProject(member)))
+      .filter(member => !member.memberIds.some(id => removedAnime[`entry:${id}`] || removedAnime[`entry:bangumi-${id}`]))
+    if (!logicalMembers.length) continue
     const relatedAnime = logicalMembers.map(member => ({
       id: member.id,
       title: member.title,
@@ -267,7 +342,26 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
       const sourceEntry = member.memberIds.map(id => sourceLinks.get(String(id)) || entriesByBangumiId.get(String(id))).find(Boolean)
       if (sourceEntry) consumed.add(String(sourceEntry.id))
       const localId = sourceEntry?.id || `bangumi-${member.id}`
-      const factual = bangumiSubjectToTrackerEntry({ ...member, isAiring: member.status === 'RELEASING' }, relatedAnime.filter(item => Number(item.id) !== Number(member.id)))
+      const scheduleParts = (member.segments || [member]).map(segment => {
+        const segmentSource = sourceLinks.get(String(segment.id)) || entriesByBangumiId.get(String(segment.id))
+        return airingProgressForSubject({
+          ...segment,
+          isAiring: segment.status === 'RELEASING',
+          releasedEpisodes: segment.status === 'RELEASING' ? segmentSource?.releasedEpisodes : undefined,
+          nextAiringAt: segment.status === 'RELEASING' ? segmentSource?.nextAiringAt : undefined,
+          nextEpisode: segment.status === 'RELEASING' ? segmentSource?.nextEpisode : undefined,
+        })
+      })
+      const releasedEpisodes = scheduleParts.reduce((sum, part) => sum + part.releasedEpisodes, 0)
+      const nextPart = scheduleParts.filter(part => part.nextAiringAt && new Date(part.nextAiringAt).getTime() > Date.now())
+        .sort((left, right) => new Date(left.nextAiringAt) - new Date(right.nextAiringAt))[0]
+      const factual = bangumiSubjectToTrackerEntry({
+        ...member,
+        isAiring: member.status === 'RELEASING',
+        releasedEpisodes,
+        nextAiringAt: nextPart?.nextAiringAt,
+        nextEpisode: nextPart ? releasedEpisodes + 1 : null,
+      }, relatedAnime.filter(item => !member.memberIds.includes(Number(item.id))))
       const merged = {
         ...sourceEntry,
         ...factual,
@@ -281,22 +375,31 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
         relatedAnimeComplete: true,
         seriesId: series.id,
         seriesTitle: series.title,
+        memberIds: member.memberIds,
+        releaseEstimate: scheduleParts.some(part => part.releaseEstimate),
         groups: sourceEntry?.groups || ['Bangumi 系列补全'],
       }
       const stored = progress[String(localId)]
       return { ...merged, category: sourceEntry ? categoryForEntry(merged, stored) : stored ? categoryForEntry(merged, stored) : 'none' }
     })
-    groups.push({ id: series.id, title: series.title, items, factual: true })
+    const visibleItems = items.filter(item => !removedAnime[`entry:${item.id}`] && !removedAnime[`entry:${item.bangumiId}`])
+    if (visibleItems.length) groups.push({ id: series.id, title: series.title, items: visibleItems, factual: true })
     for (const entry of sourceEntries) consumed.add(String(entry.id))
   }
 
-  const leftovers = list.filter(entry => !consumed.has(String(entry.id)))
+  const leftovers = list.filter(entry => !consumed.has(String(entry.id)) && !removedAnime[`entry:${entry.id}`] && !removedAnime[`entry:${entry.bangumiId}`] && !isRealityAnimeProject(entry))
   return [...groups, ...buildSeriesGroups(leftovers)]
 }
 
 function catalogEditionKey(member) {
-  return String(member.title || '').normalize('NFKC').toLocaleLowerCase('zh-CN')
+  const normalized = String(member.title || '').normalize('NFKC').toLocaleLowerCase('zh-CN')
+  const numberedSeason = normalized.match(/^(.*?第\s*[一二三四五六七八九十0-9]+\s*季)/)
+  if (numberedSeason && /^(?:tv|web)$/i.test(member.platform || '')) {
+    return numberedSeason[1].replace(/[\s\-—–:：·・'"“”‘’\[\]()（）【】]/g, '')
+  }
+  return normalized
     .replace(/\s*[-—–]?\s*(?:第?\s*2\s*部分|第?\s*2\s*クール|2nd\s*cour|part\s*2|cour\s*2)$/i, '')
+    .replace(/\s*[-—–]?\s*(?:后半部分|後半クール)$/i, '')
     .replace(/\s*[-—–]?\s*(?:电影|movie)$/i, '')
     .replace(/[\s\-—–:：·・'"“”‘’\[\]()（）【】]/g, '')
 }
@@ -307,13 +410,14 @@ function collapseCatalogMembers(members) {
     const key = catalogEditionKey(member) || String(member.id)
     const current = editions.get(key)
     if (!current) {
-      editions.set(key, { ...member, memberIds: [member.id] })
+      editions.set(key, { ...member, memberIds: [member.id], segments: [member] })
       continue
     }
     const statuses = new Set([current.status, member.status])
     editions.set(key, {
       ...current,
       memberIds: [...current.memberIds, member.id],
+      segments: [...(current.segments || []), member],
       totalEpisodes: (current.totalEpisodes || 0) + (member.totalEpisodes || 0) || null,
       score: Math.max(Number(current.score || 0), Number(member.score || 0)) || null,
       status: statuses.has('RELEASING') ? 'RELEASING' : statuses.has('NOT_YET_RELEASED') ? 'NOT_YET_RELEASED' : 'FINISHED',
@@ -397,24 +501,26 @@ export function bangumiIdFromValue(value) {
   return Number(match?.[1])
 }
 
-export function createExportPayload(trackerProgress, bangumiProgress, customEntries, reviews = {}) {
+export function createExportPayload(trackerProgress, bangumiProgress, customEntries, reviews = {}, removedAnime = {}) {
   return {
     app: EXPORT_APP_ID,
-    version: 3,
+    version: 4,
     exportedAt: new Date().toISOString(),
     trackerProgress: sanitizeProgress(trackerProgress),
     bangumiProgress: sanitizeProgress(bangumiProgress, true),
     customEntries: sanitizeCustomEntries(customEntries),
     reviews: sanitizeReviews(reviews),
+    removedAnime: sanitizeRemovedAnime(removedAnime),
   }
 }
 
 export function parseImportPayload(payload) {
-  if (payload?.app !== EXPORT_APP_ID || ![1, 2, 3].includes(payload?.version)) throw new Error('文件格式不属于本站番剧记录')
+  if (payload?.app !== EXPORT_APP_ID || ![1, 2, 3, 4].includes(payload?.version)) throw new Error('文件格式不属于本站番剧记录')
   return {
     trackerProgress: sanitizeProgress(payload.trackerProgress),
     bangumiProgress: sanitizeProgress(payload.bangumiProgress, true),
     customEntries: sanitizeCustomEntries(payload.customEntries),
     reviews: sanitizeReviews(payload.reviews),
+    removedAnime: sanitizeRemovedAnime(payload.removedAnime),
   }
 }

@@ -2,9 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink } from 'react-router'
 import AnimeDetailsDialog from '../components/AnimeDetailsDialog'
 import {
-  ANIME_REVIEWS_KEY, BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, TRACKER_PROGRESS_KEY,
-  buildSeriesGroups, buildTrackerBangumiMap, categoryForEntry, createExportPayload, mergeBangumiRecordIntoTracker,
-  fetchBangumiEntryFromUrl, parseImportPayload, readStoredObject, sanitizeCustomEntries, sanitizeProgress, sanitizeReviews,
+  ANIME_REVIEWS_KEY, ANIME_SORT_OPTIONS, BANGUMI_PROGRESS_KEY, BANGUMI_RELATIONS_KEY, CUSTOM_TRACKER_KEY, REMOVED_ANIME_KEY, TRACKER_PROGRESS_KEY,
+  airingProgressForSubject, animeSeasonLabel, buildSeriesGroups, buildTrackerBangumiMap, categoryForEntry, compareAnimeEntries, createExportPayload, mergeBangumiRecordIntoTracker,
+  fetchBangumiEntryFromUrl, isRealityAnimeProject, parseImportPayload, readStoredObject, sanitizeCustomEntries, sanitizeProgress, sanitizeRemovedAnime, sanitizeReviews,
   writeStoredObject,
 } from '../utils/animeRecords'
 
@@ -49,6 +49,10 @@ const syncFormatter = new Intl.DateTimeFormat('zh-CN', {
   timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
   hour: '2-digit', minute: '2-digit', hour12: false,
 })
+const nextUpdateFormatter = new Intl.DateTimeFormat('zh-CN', {
+  timeZone: 'Asia/Shanghai', month: 'long', day: 'numeric', weekday: 'short',
+  hour: '2-digit', minute: '2-digit', hour12: false,
+})
 
 function clampEpisode(value, totalEpisodes) {
   const episode = Number.parseInt(value, 10)
@@ -65,6 +69,10 @@ function BangumiCard({ subject, progress, review, onOpenDetails, onProgressChang
   const interest = progress?.interest || 'neutral'
   const episode = Math.max(1, progress?.episode || 1)
   const statusCopy = status === 'finished' ? '已看完' : status === 'watching' ? `看到第 ${episode} 话` : status === 'dropped' ? `第 ${episode} 话后不再看` : status === 'none' ? '已取消状态' : '还没看'
+  const schedule = airingProgressForSubject(subject)
+  const releaseCopy = subject.isAiring
+    ? `已更新 ${schedule.releasedEpisodes}${schedule.totalEpisodes ? ` / ${schedule.totalEpisodes}` : ''} 话${schedule.releaseEstimate ? '（估算）' : ''}`
+    : schedule.totalEpisodes ? `已更新完 · 全 ${schedule.totalEpisodes} 话` : subject.airDate && new Date(`${subject.airDate}T00:00:00+08:00`).getTime() > Date.now() ? '尚未开播' : '更新集数待确认'
 
   const setEpisode = value => onProgressChange(subject.id, {
     status: 'watching',
@@ -84,15 +92,17 @@ function BangumiCard({ subject, progress, review, onOpenDetails, onProgressChang
           {subject.isAiring && <span className="is-airing"><i className="fas fa-satellite-dish" /> 当前放送</span>}
           {subject.platform && <span>{subject.platform}</span>}
           {subject.totalEpisodes && <span>全 {subject.totalEpisodes} 话</span>}
+          <span><i className="fas fa-calendar" /> {animeSeasonLabel(subject.airDate)}</span>
         </div>
         <button type="button" className="bangumi-title-button" onClick={() => onOpenDetails(subject)}><h2>{subject.title}</h2><small><i className="fas fa-circle-info" /> 查看全部系列{review ? ' · 已有番评' : ''}</small></button>
         {subject.originalTitle !== subject.title && <p className="bangumi-original-title">{subject.originalTitle}</p>}
         <div className="bangumi-air-date">
-          <i className="fas fa-calendar-day" /> 开播 {formatMonth(subject.airDate)}
+          <i className="fas fa-calendar-day" /> 开播 {animeSeasonLabel(subject.airDate)}
           {subject.isLongRunning && (
             <span> · {subject.isAiring ? '仍在连载' : `${subject.endDateEstimated ? '约 ' : ''}结束 ${formatMonth(subject.endDate)}`}</span>
           )}
         </div>
+        <div className="bangumi-release-status"><span><i className="fas fa-list-ol" /> {releaseCopy}</span>{schedule.nextAiringAt ? <strong><i className="fas fa-clock" /> 下次第 {schedule.nextEpisode} 话：{nextUpdateFormatter.format(new Date(schedule.nextAiringAt))}{schedule.releaseEstimate ? '（按周播估算）' : ''}</strong> : subject.isAiring ? <strong><i className="fas fa-clock" /> 下次更新时间待官方公布</strong> : null}</div>
         <div className="bangumi-numbers">
           <span>Bangumi 排名 <strong>{subject.rank ? `#${subject.rank}` : '暂无'}</strong></span>
           <span><strong>{subject.scoreCount.toLocaleString('zh-CN')}</strong> 人评分</span>
@@ -135,6 +145,7 @@ export default function BangumiAiring() {
   const [viewMode, setViewMode] = useState('quarter')
   const [origin, setOrigin] = useState('japan')
   const [personalFilter, setPersonalFilter] = useState('all')
+  const [sortMode, setSortMode] = useState('newest')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
   const [notice, setNotice] = useState('')
@@ -206,7 +217,7 @@ export default function BangumiAiring() {
         subjectsById.set(subject.id, previous ? { ...previous, ...subject, isAiring: previous.isAiring || subject.isAiring } : subject)
       }
     }
-    return [...subjectsById.values()].sort((left, right) => right.score - left.score || (left.rank || Number.MAX_SAFE_INTEGER) - (right.rank || Number.MAX_SAFE_INTEGER))
+    return [...subjectsById.values()].filter(subject => !isRealityAnimeProject(subject)).sort((left, right) => right.score - left.score || (left.rank || Number.MAX_SAFE_INTEGER) - (right.rank || Number.MAX_SAFE_INTEGER))
   }, [data])
   const longRunningSubjects = useMemo(() => allSubjects.filter(subject => subject.isLongRunning).sort((left, right) => Number(right.isAiring) - Number(left.isAiring) || (left.airDate || '').localeCompare(right.airDate || '')), [allSubjects])
   const trackerEntries = trackerData?.entries || []
@@ -245,13 +256,14 @@ export default function BangumiAiring() {
         return (record?.status || 'not_started') === personalFilter
       })
       .filter(subject => !keyword || `${subject.title} ${subject.originalTitle} ${(subject.tags || []).join(' ')}`.toLocaleLowerCase('zh-CN').includes(keyword))
-  }, [baseSubjects, origin, personalFilter, progress, search])
+      .sort((left, right) => compareAnimeEntries(left, right, sortMode))
+  }, [baseSubjects, origin, personalFilter, progress, search, sortMode])
 
-  const groupedSubjects = useMemo(() => buildSeriesGroups(filteredSubjects), [filteredSubjects])
+  const groupedSubjects = useMemo(() => buildSeriesGroups(filteredSubjects).map(group => ({ ...group, items: [...group.items].sort((left, right) => compareAnimeEntries(left, right, sortMode)) })).sort((left, right) => compareAnimeEntries(left.items[0], right.items[0], sortMode)), [filteredSubjects, sortMode])
   const pageCount = Math.max(1, Math.ceil(groupedSubjects.length / PAGE_SIZE))
   const pageSeriesGroups = useMemo(() => groupedSubjects.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), [groupedSubjects, page])
 
-  useEffect(() => setPage(1), [origin, personalFilter, search, selectedQuarterKey, viewMode])
+  useEffect(() => setPage(1), [origin, personalFilter, search, selectedQuarterKey, sortMode, viewMode])
   useEffect(() => { if (page > pageCount) setPage(pageCount) }, [page, pageCount])
 
   const selectYear = async year => {
@@ -297,7 +309,7 @@ export default function BangumiAiring() {
   }
 
   const exportRecords = () => {
-    const payload = createExportPayload(readStoredObject(TRACKER_PROGRESS_KEY), progress, readStoredObject(CUSTOM_TRACKER_KEY), reviews)
+    const payload = createExportPayload(readStoredObject(TRACKER_PROGRESS_KEY), progress, readStoredObject(CUSTOM_TRACKER_KEY), reviews, readStoredObject(REMOVED_ANIME_KEY))
     const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const anchor = document.createElement('a')
@@ -326,6 +338,7 @@ export default function BangumiAiring() {
       setReviews(mergedReviews)
       writeStoredObject(TRACKER_PROGRESS_KEY, mergedTracker)
       writeStoredObject(CUSTOM_TRACKER_KEY, mergedCustom)
+      writeStoredObject(REMOVED_ANIME_KEY, { ...sanitizeRemovedAnime(readStoredObject(REMOVED_ANIME_KEY)), ...imported.removedAnime })
       setNotice(`导入成功：合并 ${Object.keys(importedBangumi).length + Object.keys(importedTracker).length} 条记录`)
     } catch (importError) {
       setNotice(`导入失败：${importError.message || '文件无法读取'}`)
@@ -414,6 +427,7 @@ export default function BangumiAiring() {
             <label className="anime-search"><i className="fas fa-magnifying-glass" /><input value={search} onChange={event => setSearch(event.target.value)} placeholder="搜索动画或标签" aria-label="搜索高分动画" />{search && <button type="button" onClick={() => setSearch('')} aria-label="清空搜索"><i className="fas fa-times" /></button>}</label>
             <label className="bangumi-select-filter"><i className="fas fa-earth-asia" /><select value={origin} onChange={event => setOrigin(event.target.value)} aria-label="按动画地区筛选">{ORIGIN_FILTERS.map(item => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label>
             <label className="bangumi-select-filter"><i className="fas fa-user-check" /><select value={personalFilter} onChange={event => setPersonalFilter(event.target.value)} aria-label="按个人记录筛选">{PERSONAL_FILTERS.map(item => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label>
+            <label className="bangumi-select-filter"><i className="fas fa-arrow-down-wide-short" /><select value={sortMode} onChange={event => setSortMode(event.target.value)} aria-label="高分番排序方式">{ANIME_SORT_OPTIONS.map(item => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label>
           </div>
 
           <div className="bangumi-result-copy">找到 <strong>{filteredSubjects.length}</strong> 部 · 第 {page}/{pageCount} 页</div>
