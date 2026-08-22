@@ -255,15 +255,16 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
     const importedEntries = (series.members || []).map(member => entriesByBangumiId.get(String(member.id))).filter(Boolean)
     if (!sourceEntries.length && !importedEntries.length) continue
     const sourceLinks = new Map((series.sourceLinks || []).map(link => [String(link.seedId), entriesById.get(String(link.entryId))]).filter(([, entry]) => entry))
-    const relatedAnime = (series.members || []).map(member => ({
+    const logicalMembers = collapseCatalogMembers(series.members || [])
+    const relatedAnime = logicalMembers.map(member => ({
       id: member.id,
       title: member.title,
       relationLabel: '同系列',
       formatLabel: member.platform || '动画',
       siteUrl: member.url || `https://bgm.tv/subject/${member.id}`,
     }))
-    const items = (series.members || []).map(member => {
-      const sourceEntry = sourceLinks.get(String(member.id)) || entriesByBangumiId.get(String(member.id))
+    const items = logicalMembers.map(member => {
+      const sourceEntry = member.memberIds.map(id => sourceLinks.get(String(id)) || entriesByBangumiId.get(String(id))).find(Boolean)
       if (sourceEntry) consumed.add(String(sourceEntry.id))
       const localId = sourceEntry?.id || `bangumi-${member.id}`
       const factual = bangumiSubjectToTrackerEntry({ ...member, isAiring: member.status === 'RELEASING' }, relatedAnime.filter(item => Number(item.id) !== Number(member.id)))
@@ -291,6 +292,35 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
 
   const leftovers = list.filter(entry => !consumed.has(String(entry.id)))
   return [...groups, ...buildSeriesGroups(leftovers)]
+}
+
+function catalogEditionKey(member) {
+  return normalizeAnimeTitle(member.title)
+    .replace(/(?:第?2部分|第?2クール|2ndcour|part2|cour2)$/i, '')
+    .replace(/(?:电影|movie)$/i, '')
+}
+
+function collapseCatalogMembers(members) {
+  const editions = new Map()
+  for (const member of members) {
+    const key = catalogEditionKey(member) || String(member.id)
+    const current = editions.get(key)
+    if (!current) {
+      editions.set(key, { ...member, memberIds: [member.id] })
+      continue
+    }
+    const statuses = new Set([current.status, member.status])
+    editions.set(key, {
+      ...current,
+      memberIds: [...current.memberIds, member.id],
+      totalEpisodes: (current.totalEpisodes || 0) + (member.totalEpisodes || 0) || null,
+      score: Math.max(Number(current.score || 0), Number(member.score || 0)) || null,
+      status: statuses.has('RELEASING') ? 'RELEASING' : statuses.has('NOT_YET_RELEASED') ? 'NOT_YET_RELEASED' : 'FINISHED',
+      aliases: [...new Set([...(current.aliases || []), ...(member.aliases || [])])],
+      relations: [...(current.relations || []), ...(member.relations || [])],
+    })
+  }
+  return [...editions.values()]
 }
 
 export function trackerKeyForBangumi(subjectId, bangumiToTracker) {
