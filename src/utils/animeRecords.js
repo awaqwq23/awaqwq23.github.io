@@ -295,9 +295,10 @@ export function buildCatalogSeriesGroups(entries, catalog, progress = {}) {
 }
 
 function catalogEditionKey(member) {
-  return normalizeAnimeTitle(member.title)
-    .replace(/(?:第?2部分|第?2クール|2ndcour|part2|cour2)$/i, '')
-    .replace(/(?:电影|movie)$/i, '')
+  return String(member.title || '').normalize('NFKC').toLocaleLowerCase('zh-CN')
+    .replace(/\s*[-—–]?\s*(?:第?\s*2\s*部分|第?\s*2\s*クール|2nd\s*cour|part\s*2|cour\s*2)$/i, '')
+    .replace(/\s*[-—–]?\s*(?:电影|movie)$/i, '')
+    .replace(/[\s\-—–:：·・'"“”‘’\[\]()（）【】]/g, '')
 }
 
 function collapseCatalogMembers(members) {
