@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-21T16:55:29.952Z",
+  "syncedAt": "2026-08-22T16:44:52.242Z",
   "subjects": [
     {
       "id": 2463,
@@ -113,16 +113,6 @@
       "platform": "TV"
     },
     {
-      "id": 1851,
-      "title": "天使的心跳！",
-      "originalTitle": "Angel Beats!",
-      "score": 7.6,
-      "url": "https://bgm.tv/subject/1851",
-      "airDate": "2010-04-02",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 106653,
       "title": "探险活宝 第一季",
       "originalTitle": "Adventure Time season 1",
@@ -130,6 +120,16 @@
       "url": "https://bgm.tv/subject/106653",
       "airDate": "2010-04-05",
       "totalEpisodes": 26,
+      "platform": "TV"
+    },
+    {
+      "id": 1851,
+      "title": "天使的心跳！",
+      "originalTitle": "Angel Beats!",
+      "score": 7.6,
+      "url": "https://bgm.tv/subject/1851",
+      "airDate": "2010-04-02",
+      "totalEpisodes": 13,
       "platform": "TV"
     },
     {
@@ -313,6 +313,16 @@
       "platform": "TV"
     },
     {
+      "id": 106654,
+      "title": "探险活宝 第二季",
+      "originalTitle": "Adventure Time season 2",
+      "score": 7.7,
+      "url": "https://bgm.tv/subject/106654",
+      "airDate": "2010-10-11",
+      "totalEpisodes": 26,
+      "platform": "TV"
+    },
+    {
       "id": 8081,
       "title": "荒川爆笑团2",
       "originalTitle": "荒川アンダー ザ ブリッジ×ブリッジ",
@@ -320,16 +330,6 @@
       "url": "https://bgm.tv/subject/8081",
       "airDate": "2010-10-03",
       "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
-      "id": 106654,
-      "title": "探险活宝 第二季",
-      "originalTitle": "Adventure Time season 2",
-      "score": 7.6,
-      "url": "https://bgm.tv/subject/106654",
-      "airDate": "2010-10-11",
-      "totalEpisodes": 26,
       "platform": "TV"
     },
     {
@@ -1376,7 +1376,7 @@
       "id": 40310,
       "title": "少女与战车",
       "originalTitle": "ガールズ＆パンツァー",
-      "score": 7.6,
+      "score": 7.7,
       "url": "https://bgm.tv/subject/40310",
       "airDate": "2012-10-08",
       "totalEpisodes": 12,
@@ -1926,7 +1926,7 @@
       "id": 81372,
       "title": "宝可梦 起源",
       "originalTitle": "ポケットモンスター THE ORIGIN",
-      "score": 7.3,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/81372",
       "airDate": "2013-10-02",
       "totalEpisodes": 4,
@@ -2526,7 +2526,7 @@
       "id": 60901,
       "title": "苍穹之法芙娜 EXODUS",
       "originalTitle": "蒼穹のファフナー EXODUS",
-      "score": 7.8,
+      "score": 7.9,
       "url": "https://bgm.tv/subject/60901",
       "airDate": "2015-01-08",
       "totalEpisodes": 13,
@@ -2656,7 +2656,7 @@
       "id": 129844,
       "title": "钻石王牌 第二季",
       "originalTitle": "ダイヤのA -SECOND SEASON-",
-      "score": 7.6,
+      "score": 7.7,
       "url": "https://bgm.tv/subject/129844",
       "airDate": "2015-04-06",
       "totalEpisodes": 51,
@@ -2776,7 +2776,7 @@
       "id": 122864,
       "title": "怪盗Joker2",
       "originalTitle": "怪盗ジョーカー シーズン2",
-      "score": 7.1,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/122864",
       "airDate": "2015-04-06",
       "totalEpisodes": 13,
@@ -2866,7 +2866,7 @@
       "id": 114967,
       "title": "无头骑士异闻录×2 转",
       "originalTitle": "デュラララ!!×2 転",
-      "score": 7.2,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/114967",
       "airDate": "2015-07-04",
       "totalEpisodes": 12,
@@ -3743,16 +3743,6 @@
       "platform": "TV"
     },
     {
-      "id": 211936,
-      "title": "Princess Principal",
-      "originalTitle": "プリンセス・プリンシパル",
-      "score": 7.4,
-      "url": "https://bgm.tv/subject/211936",
-      "airDate": "2017-07-09",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 205485,
       "title": "咕噜咕噜魔法阵",
       "originalTitle": "魔法陣グルグル",
@@ -3760,6 +3750,16 @@
       "url": "https://bgm.tv/subject/205485",
       "airDate": "2017-07-11",
       "totalEpisodes": 24,
+      "platform": "TV"
+    },
+    {
+      "id": 211936,
+      "title": "Princess Principal",
+      "originalTitle": "プリンセス・プリンシパル",
+      "score": 7.4,
+      "url": "https://bgm.tv/subject/211936",
+      "airDate": "2017-07-09",
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
@@ -6533,22 +6533,22 @@
       "platform": "TV"
     },
     {
-      "id": 467461,
-      "title": "胆大党",
-      "originalTitle": "ダンダダン",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/467461",
-      "airDate": "2024-10-03",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 489820,
       "title": "乱马1/2",
       "originalTitle": "らんま1/2",
       "score": 7.5,
       "url": "https://bgm.tv/subject/489820",
       "airDate": "2024-10-05",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 467461,
+      "title": "胆大党",
+      "originalTitle": "ダンダダン",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/467461",
+      "airDate": "2024-10-03",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -7006,7 +7006,7 @@
       "id": 548818,
       "title": "金牌得主 第二季",
       "originalTitle": "メダリスト 第2期",
-      "score": 7.7,
+      "score": 7.8,
       "url": "https://bgm.tv/subject/548818",
       "airDate": "2026-01-24",
       "totalEpisodes": 9,
@@ -7306,7 +7306,7 @@
       "id": 622206,
       "title": "尼古喵喵",
       "originalTitle": "ヤニねこ",
-      "score": 7.2,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/622206",
       "airDate": "2026-07-02",
       "totalEpisodes": null,
@@ -7333,22 +7333,22 @@
       "platform": "TV"
     },
     {
-      "id": 569116,
-      "title": "碧蓝之海 第三季",
-      "originalTitle": "ぐらんぶる Season 3",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/569116",
-      "airDate": "2026-07-06",
-      "totalEpisodes": null,
-      "platform": "TV"
-    },
-    {
       "id": 615835,
       "title": "炒翻天",
       "originalTitle": "鉄鍋のジャン",
       "score": 7.1,
       "url": "https://bgm.tv/subject/615835",
       "airDate": "2026-07-05",
+      "totalEpisodes": null,
+      "platform": "TV"
+    },
+    {
+      "id": 569116,
+      "title": "碧蓝之海 第三季",
+      "originalTitle": "ぐらんぶる Season 3",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/569116",
+      "airDate": "2026-07-06",
       "totalEpisodes": null,
       "platform": "TV"
     },
