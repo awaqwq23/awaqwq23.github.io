@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-21T09:44:04.676Z",
+  "syncedAt": "2026-08-21T16:55:29.876Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -176,10 +176,10 @@
           "siteUrl": "https://anilist.co/anime/162896"
         }
       ],
-      "releasedEpisodes": 5,
+      "releasedEpisodes": 6,
       "totalEpisodes": 12,
-      "nextEpisode": 6,
-      "nextAiringAt": "2026-08-21T14:30:00.000Z",
+      "nextEpisode": 7,
+      "nextAiringAt": "2026-08-28T14:30:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-17",
       "endDate": null,
