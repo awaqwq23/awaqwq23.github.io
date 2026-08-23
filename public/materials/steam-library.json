@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-22T18:50:11.227Z",
+  "updatedAt": "2026-08-23T07:01:59.187Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
-    "lastLogoff": "2026-08-22T18:15:02.000Z"
+    "status": 3,
+    "lastLogoff": "2026-08-23T03:03:02.000Z"
   },
   "stats": {
     "gameCount": 232,
     "playedGameCount": 173,
     "totalMinutes": 168858,
-    "recentMinutes": 2006
+    "recentMinutes": 1988
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 6435,
-      "playtimeTwoWeeks": 1172,
+      "playtimeTwoWeeks": 1154,
       "lastPlayed": "2026-08-22T12:50:19.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
