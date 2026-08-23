@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-22T16:44:52.242Z",
+  "syncedAt": "2026-08-23T16:46:37.095Z",
   "subjects": [
     {
       "id": 2463,
@@ -3463,16 +3463,6 @@
       "platform": "TV"
     },
     {
-      "id": 126622,
-      "title": "海绵宝宝 第十季",
-      "originalTitle": "SpongeBob SquarePants (Season 10)",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/126622",
-      "airDate": "2016-10-15",
-      "totalEpisodes": 11,
-      "platform": "TV"
-    },
-    {
       "id": 176615,
       "title": "昭和元禄落语心中 -助六再临篇-",
       "originalTitle": "昭和元禄落語心中 -助六再び篇-",
@@ -6533,22 +6523,22 @@
       "platform": "TV"
     },
     {
-      "id": 489820,
-      "title": "乱马1/2",
-      "originalTitle": "らんま1/2",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/489820",
-      "airDate": "2024-10-05",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 467461,
       "title": "胆大党",
       "originalTitle": "ダンダダン",
       "score": 7.5,
       "url": "https://bgm.tv/subject/467461",
       "airDate": "2024-10-03",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 489820,
+      "title": "乱马1/2",
+      "originalTitle": "らんま1/2",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/489820",
+      "airDate": "2024-10-05",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -6843,16 +6833,6 @@
       "platform": "TV"
     },
     {
-      "id": 514358,
-      "title": "小城日常",
-      "originalTitle": "CITY THE ANIMATION",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/514358",
-      "airDate": "2025-07-06",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 390555,
       "title": "新 吊带袜天使",
       "originalTitle": "New PANTY & STOCKING with GARTERBELT",
@@ -7006,7 +6986,7 @@
       "id": 548818,
       "title": "金牌得主 第二季",
       "originalTitle": "メダリスト 第2期",
-      "score": 7.8,
+      "score": 7.7,
       "url": "https://bgm.tv/subject/548818",
       "airDate": "2026-01-24",
       "totalEpisodes": 9,
@@ -7213,6 +7193,16 @@
       "platform": "TV"
     },
     {
+      "id": 530725,
+      "title": "死神 千年血战篇-祸进谭-",
+      "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
+      "score": 8,
+      "url": "https://bgm.tv/subject/530725",
+      "airDate": "2026-07-25",
+      "totalEpisodes": 10,
+      "platform": "TV"
+    },
+    {
       "id": 679578,
       "title": "喜羊羊与灰太狼之破界山海诀番外篇",
       "originalTitle": "喜羊羊与灰太狼之破界山海诀番外篇",
@@ -7240,16 +7230,6 @@
       "url": "https://bgm.tv/subject/545917",
       "airDate": "2026-07-03",
       "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
-      "id": 530725,
-      "title": "死神 千年血战篇-祸进谭-",
-      "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
-      "score": 7.8,
-      "url": "https://bgm.tv/subject/530725",
-      "airDate": "2026-07-25",
-      "totalEpisodes": 10,
       "platform": "TV"
     },
     {
