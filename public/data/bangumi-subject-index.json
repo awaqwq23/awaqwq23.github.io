@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-23T16:46:37.095Z",
+  "syncedAt": "2026-08-24T16:59:28.585Z",
   "subjects": [
     {
       "id": 2463,
@@ -1376,7 +1376,7 @@
       "id": 40310,
       "title": "少女与战车",
       "originalTitle": "ガールズ＆パンツァー",
-      "score": 7.7,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/40310",
       "airDate": "2012-10-08",
       "totalEpisodes": 12,
@@ -6643,16 +6643,6 @@
       "platform": "TV"
     },
     {
-      "id": 487630,
-      "title": "我独自升级 第二季 -起于暗影-",
-      "originalTitle": "俺だけレベルアップな件 Season 2 -Arise from the Shadow-",
-      "score": 7.4,
-      "url": "https://bgm.tv/subject/487630",
-      "airDate": "2025-01-04",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 530751,
       "title": "凡人修仙传 虚天战纪",
       "originalTitle": "凡人修仙传 虚天战纪",
@@ -6661,6 +6651,16 @@
       "airDate": "2025-01-04",
       "totalEpisodes": 2,
       "platform": "WEB"
+    },
+    {
+      "id": 487630,
+      "title": "我独自升级 第二季 -起于暗影-",
+      "originalTitle": "俺だけレベルアップな件 Season 2 -Arise from the Shadow-",
+      "score": 7.4,
+      "url": "https://bgm.tv/subject/487630",
+      "airDate": "2025-01-04",
+      "totalEpisodes": 13,
+      "platform": "TV"
     },
     {
       "id": 471578,
@@ -6833,6 +6833,16 @@
       "platform": "TV"
     },
     {
+      "id": 514358,
+      "title": "小城日常",
+      "originalTitle": "CITY THE ANIMATION",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/514358",
+      "airDate": "2025-07-06",
+      "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
       "id": 390555,
       "title": "新 吊带袜天使",
       "originalTitle": "New PANTY & STOCKING with GARTERBELT",
@@ -6986,7 +6996,7 @@
       "id": 548818,
       "title": "金牌得主 第二季",
       "originalTitle": "メダリスト 第2期",
-      "score": 7.7,
+      "score": 7.8,
       "url": "https://bgm.tv/subject/548818",
       "airDate": "2026-01-24",
       "totalEpisodes": 9,
@@ -7183,6 +7193,16 @@
       "platform": "TV"
     },
     {
+      "id": 530725,
+      "title": "死神 千年血战篇-祸进谭-",
+      "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
+      "score": 8.2,
+      "url": "https://bgm.tv/subject/530725",
+      "airDate": "2026-07-25",
+      "totalEpisodes": 10,
+      "platform": "TV"
+    },
+    {
       "id": 552533,
       "title": "穹庐下的魔女",
       "originalTitle": "天幕のジャードゥーガル",
@@ -7190,16 +7210,6 @@
       "url": "https://bgm.tv/subject/552533",
       "airDate": "2026-07-04",
       "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
-      "id": 530725,
-      "title": "死神 千年血战篇-祸进谭-",
-      "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
-      "score": 8,
-      "url": "https://bgm.tv/subject/530725",
-      "airDate": "2026-07-25",
-      "totalEpisodes": 10,
       "platform": "TV"
     },
     {
@@ -7276,7 +7286,7 @@
       "id": 496276,
       "title": "攻壳机动队 THE GHOST IN THE SHELL",
       "originalTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
-      "score": 7.5,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/496276",
       "airDate": "2026-07-07",
       "totalEpisodes": 10,

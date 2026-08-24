@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "syncedAt": "2026-08-23T16:46:37.095Z",
+  "syncedAt": "2026-08-24T16:59:28.585Z",
   "scoreThreshold": 7,
   "archiveStartYear": 2010,
   "archiveEndYear": 2026,
@@ -931,9 +931,9 @@
       "isCurrent": false,
       "isNext": false,
       "refreshMode": "daily-score",
-      "count": 12,
+      "count": 13,
       "longRunningCount": 0,
-      "seasonalCount": 12
+      "seasonalCount": 13
     },
     {
       "key": "2025-Q4",
