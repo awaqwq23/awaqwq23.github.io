@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-24T19:01:42.642Z",
+  "updatedAt": "2026-08-25T07:09:31.348Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
+    "status": 3,
     "lastLogoff": "2026-08-24T15:22:57.000Z"
   },
   "stats": {
     "gameCount": 233,
     "playedGameCount": 174,
-    "totalMinutes": 169168,
-    "recentMinutes": 1958
+    "totalMinutes": 169295,
+    "recentMinutes": 1882
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 6559,
-      "playtimeTwoWeeks": 942,
+      "playtimeTwoWeeks": 739,
       "lastPlayed": "2026-08-24T15:15:12.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -2333,6 +2333,42 @@
       }
     },
     {
+      "appid": 4001890,
+      "name": "How to Fish",
+      "playtimeForever": 313,
+      "playtimeTwoWeeks": 313,
+      "lastPlayed": "2026-08-25T06:28:02.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/4001890/5c598fcb05447d87a6c67b5b9224103d7d93c16d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/4001890/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/4001890/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          22,
+          28,
+          68,
+          55,
+          56,
+          57,
+          58,
+          79,
+          69,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23",
+          "28"
+        ]
+      }
+    },
+    {
       "appid": 3167020,
       "name": "Escape From Duckov",
       "playtimeForever": 292,
@@ -3227,42 +3263,6 @@
         "genreIds": [
           "1",
           "25"
-        ]
-      }
-    },
-    {
-      "appid": 4001890,
-      "name": "How to Fish",
-      "playtimeForever": 186,
-      "playtimeTwoWeeks": 186,
-      "lastPlayed": "2026-08-24T09:47:23.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/4001890/5c598fcb05447d87a6c67b5b9224103d7d93c16d.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/4001890/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/4001890/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          22,
-          28,
-          68,
-          55,
-          56,
-          57,
-          58,
-          79,
-          69,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "4",
-          "23",
-          "28"
         ]
       }
     },
