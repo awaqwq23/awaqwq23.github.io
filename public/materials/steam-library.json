@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-25T13:12:24.403Z",
+  "updatedAt": "2026-08-25T18:58:36.816Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-08-25T09:02:02.000Z"
+    "status": 0,
+    "lastLogoff": "2026-08-25T18:29:08.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 169405,
-    "recentMinutes": 1829
+    "totalMinutes": 169739,
+    "recentMinutes": 1994
   },
   "games": [
     {
@@ -77,9 +77,9 @@
     {
       "appid": 105600,
       "name": "Terraria",
-      "playtimeForever": 6575,
-      "playtimeTwoWeeks": 8,
-      "lastPlayed": "2026-08-25T12:25:32.000Z",
+      "playtimeForever": 6676,
+      "playtimeTwoWeeks": 109,
+      "lastPlayed": "2026-08-25T18:10:57.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/105600/",
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 6559,
-      "playtimeTwoWeeks": 689,
-      "lastPlayed": "2026-08-24T15:15:12.000Z",
+      "playtimeForever": 6651,
+      "playtimeTwoWeeks": 780,
+      "lastPlayed": "2026-08-25T15:26:05.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -151,7 +151,7 @@
       "appid": 286160,
       "name": "Tabletop Simulator",
       "playtimeForever": 5933,
-      "playtimeTwoWeeks": 251,
+      "playtimeTwoWeeks": 108,
       "lastPlayed": "2026-08-21T16:28:24.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/286160/19f5b90e3c7084758f885ded843631b13929fa26.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/286160/header.jpg",
@@ -1750,6 +1750,34 @@
       }
     },
     {
+      "appid": 1793250,
+      "name": "Take Me To The Dungeon!!",
+      "playtimeForever": 465,
+      "playtimeTwoWeeks": 250,
+      "lastPlayed": "2026-08-25T16:16:21.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1793250/aea1c3c9fe428308166a642bb6c6710fea7c6a92.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1793250/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1793250/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "23",
+          "3",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 504230,
       "name": "Celeste",
       "playtimeForever": 461,
@@ -2296,34 +2324,6 @@
         "genreIds": [
           "1",
           "37"
-        ]
-      }
-    },
-    {
-      "appid": 1793250,
-      "name": "Take Me To The Dungeon!!",
-      "playtimeForever": 324,
-      "playtimeTwoWeeks": 109,
-      "lastPlayed": "2026-08-25T10:36:39.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1793250/aea1c3c9fe428308166a642bb6c6710fea7c6a92.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1793250/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1793250/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          23,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "4",
-          "23",
-          "3",
-          "28",
-          "2"
         ]
       }
     },
@@ -4720,7 +4720,7 @@
       "appid": 1299120,
       "name": "Mosaique Neko Waifus 2",
       "playtimeForever": 25,
-      "playtimeTwoWeeks": 25,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-11T17:41:48.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1299120/2668ef9045f0c326e8d468f1faffd1db62384f48.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1299120/header.jpg",
