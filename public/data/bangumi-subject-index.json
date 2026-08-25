@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-24T16:59:28.585Z",
+  "syncedAt": "2026-08-25T16:59:41.415Z",
   "subjects": [
     {
       "id": 2463,
@@ -2226,7 +2226,7 @@
       "id": 88287,
       "title": "请问您今天要来点兔子吗？",
       "originalTitle": "ご注文はうさぎですか？",
-      "score": 7.4,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/88287",
       "airDate": "2014-04-10",
       "totalEpisodes": 12,
@@ -5623,22 +5623,22 @@
       "platform": "TV"
     },
     {
-      "id": 332261,
-      "title": "JOJO的奇妙冒险 石之海",
-      "originalTitle": "ジョジョの奇妙な冒険 ストーンオーシャン",
-      "score": 7.2,
-      "url": "https://bgm.tv/subject/332261",
-      "airDate": "2022-01-07",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 333158,
       "title": "更衣人偶坠入爱河",
       "originalTitle": "その着せ替え人形は恋をする",
       "score": 7.2,
       "url": "https://bgm.tv/subject/333158",
       "airDate": "2022-01-08",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 332261,
+      "title": "JOJO的奇妙冒险 石之海",
+      "originalTitle": "ジョジョの奇妙な冒険 ストーンオーシャン",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/332261",
+      "airDate": "2022-01-07",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -6816,7 +6816,7 @@
       "id": 508003,
       "title": "石纪元 科学与未来 第2部分",
       "originalTitle": "Dr.STONE SCIENCE FUTURE 第2クール",
-      "score": 7.5,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/508003",
       "airDate": "2025-07-10",
       "totalEpisodes": 12,
@@ -6974,7 +6974,7 @@
     },
     {
       "id": 604826,
-      "title": "超时空辉夜姬！",
+      "title": "超辉夜姬！",
       "originalTitle": "超かぐや姫！",
       "score": 8.1,
       "url": "https://bgm.tv/subject/604826",
