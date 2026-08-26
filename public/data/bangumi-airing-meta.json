@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "syncedAt": "2026-08-25T16:59:41.415Z",
+  "syncedAt": "2026-08-26T18:06:22.399Z",
   "scoreThreshold": 7,
   "archiveStartYear": 2010,
   "archiveEndYear": 2026,
@@ -133,8 +133,8 @@
       "isCurrent": false,
       "isNext": false,
       "refreshMode": "daily-score",
-      "count": 18,
-      "longRunningCount": 9,
+      "count": 19,
+      "longRunningCount": 10,
       "seasonalCount": 9
     },
     {
@@ -987,9 +987,9 @@
       "isCurrent": true,
       "isNext": false,
       "refreshMode": "daily-live",
-      "count": 17,
+      "count": 18,
       "longRunningCount": 2,
-      "seasonalCount": 15
+      "seasonalCount": 16
     },
     {
       "key": "2026-Q4",

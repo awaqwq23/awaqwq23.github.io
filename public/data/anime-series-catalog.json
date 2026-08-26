@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T17:04:04.889Z",
+  "generatedAt": "2026-08-26T18:10:40.824Z",
   "source": {
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
@@ -10352,7 +10352,7 @@
           "platform": "TV",
           "airDate": "2011-04-06",
           "totalEpisodes": 26,
-          "score": 8.8,
+          "score": 8.9,
           "image": "https://lain.bgm.tv/pic/cover/l/a9/79/10380_YwP4R.jpg",
           "url": "https://bgm.tv/subject/10380",
           "status": "FINISHED",

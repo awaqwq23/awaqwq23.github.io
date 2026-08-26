@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-25T16:59:41.415Z",
+  "syncedAt": "2026-08-26T18:06:22.399Z",
   "subjects": [
     {
       "id": 2463,
@@ -526,7 +526,7 @@
       "id": 10380,
       "title": "命运石之门",
       "originalTitle": "STEINS;GATE",
-      "score": 8.8,
+      "score": 8.9,
       "url": "https://bgm.tv/subject/10380",
       "airDate": "2011-04-06",
       "totalEpisodes": 25,
@@ -700,6 +700,16 @@
       "url": "https://bgm.tv/subject/10377",
       "airDate": "2011-04-14",
       "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
+      "id": 126621,
+      "title": "海绵宝宝 第九季",
+      "originalTitle": "SpongeBob SquarePants (Season 9)",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/126621",
+      "airDate": "2011-04-03",
+      "totalEpisodes": 26,
       "platform": "TV"
     },
     {
@@ -2226,7 +2236,7 @@
       "id": 88287,
       "title": "请问您今天要来点兔子吗？",
       "originalTitle": "ご注文はうさぎですか？",
-      "score": 7.3,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/88287",
       "airDate": "2014-04-10",
       "totalEpisodes": 12,
@@ -2866,7 +2876,7 @@
       "id": 114967,
       "title": "无头骑士异闻录×2 转",
       "originalTitle": "デュラララ!!×2 転",
-      "score": 7.3,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/114967",
       "airDate": "2015-07-04",
       "totalEpisodes": 12,
@@ -3216,7 +3226,7 @@
       "id": 169274,
       "title": "偶像活动Stars",
       "originalTitle": "アイカツスターズ!",
-      "score": 7.3,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/169274",
       "airDate": "2016-04-07",
       "totalEpisodes": 50,
@@ -3903,16 +3913,6 @@
       "platform": "TV"
     },
     {
-      "id": 208930,
-      "title": "偶像大师 SideM",
-      "originalTitle": "アイドルマスター SideM",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/208930",
-      "airDate": "2017-10-07",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 227532,
       "title": "饮湖上初晴后雨",
       "originalTitle": "饮湖上初晴后雨",
@@ -3921,6 +3921,16 @@
       "airDate": "2017-10-10",
       "totalEpisodes": 1,
       "platform": "WEB"
+    },
+    {
+      "id": 208930,
+      "title": "偶像大师 SideM",
+      "originalTitle": "アイドルマスター SideM",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/208930",
+      "airDate": "2017-10-07",
+      "totalEpisodes": 13,
+      "platform": "TV"
     },
     {
       "id": 206925,
@@ -4153,16 +4163,6 @@
       "platform": "TV"
     },
     {
-      "id": 234413,
-      "title": "偶像活动Friends",
-      "originalTitle": "アイカツフレンズ!",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/234413",
-      "airDate": "2018-04-05",
-      "totalEpisodes": 50,
-      "platform": "TV"
-    },
-    {
       "id": 217249,
       "title": "漫画女孩",
       "originalTitle": "こみっくがーるず",
@@ -4180,6 +4180,16 @@
       "url": "https://bgm.tv/subject/234531",
       "airDate": "2018-04-01",
       "totalEpisodes": 97,
+      "platform": "TV"
+    },
+    {
+      "id": 234413,
+      "title": "偶像活动Friends",
+      "originalTitle": "アイカツフレンズ!",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/234413",
+      "airDate": "2018-04-05",
+      "totalEpisodes": 50,
       "platform": "TV"
     },
     {
@@ -4473,16 +4483,6 @@
       "platform": "TV"
     },
     {
-      "id": 246429,
-      "title": "BanG Dream! 第二季",
-      "originalTitle": "BanG Dream! 2nd Season",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/246429",
-      "airDate": "2019-01-03",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 145354,
       "title": "玛纳利亚的密友",
       "originalTitle": "マナリアフレンズ",
@@ -4490,6 +4490,16 @@
       "url": "https://bgm.tv/subject/145354",
       "airDate": "2019-01-20",
       "totalEpisodes": 10,
+      "platform": "TV"
+    },
+    {
+      "id": 246429,
+      "title": "BanG Dream! 第二季",
+      "originalTitle": "BanG Dream! 2nd Season",
+      "score": 7.3,
+      "url": "https://bgm.tv/subject/246429",
+      "airDate": "2019-01-03",
+      "totalEpisodes": 13,
       "platform": "TV"
     },
     {
@@ -5623,22 +5633,22 @@
       "platform": "TV"
     },
     {
-      "id": 333158,
-      "title": "更衣人偶坠入爱河",
-      "originalTitle": "その着せ替え人形は恋をする",
-      "score": 7.2,
-      "url": "https://bgm.tv/subject/333158",
-      "airDate": "2022-01-08",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 332261,
       "title": "JOJO的奇妙冒险 石之海",
       "originalTitle": "ジョジョの奇妙な冒険 ストーンオーシャン",
       "score": 7.2,
       "url": "https://bgm.tv/subject/332261",
       "airDate": "2022-01-07",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 333158,
+      "title": "更衣人偶坠入爱河",
+      "originalTitle": "その着せ替え人形は恋をする",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/333158",
+      "airDate": "2022-01-08",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -7196,7 +7206,7 @@
       "id": 530725,
       "title": "死神 千年血战篇-祸进谭-",
       "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
-      "score": 8.2,
+      "score": 8.3,
       "url": "https://bgm.tv/subject/530725",
       "airDate": "2026-07-25",
       "totalEpisodes": 10,
@@ -7350,6 +7360,16 @@
       "url": "https://bgm.tv/subject/325767",
       "airDate": "2026-07-07",
       "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 541285,
+      "title": "与你相恋到生命尽头",
+      "originalTitle": "きみが死ぬまで恋をしたい",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/541285",
+      "airDate": "2026-07-07",
+      "totalEpisodes": 13,
       "platform": "TV"
     }
   ]
