@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-26T18:06:22.399Z",
+  "syncedAt": "2026-08-28T00:59:18.761Z",
   "subjects": [
     {
       "id": 2463,
@@ -526,7 +526,7 @@
       "id": 10380,
       "title": "命运石之门",
       "originalTitle": "STEINS;GATE",
-      "score": 8.9,
+      "score": 8.8,
       "url": "https://bgm.tv/subject/10380",
       "airDate": "2011-04-06",
       "totalEpisodes": 25,
@@ -4406,7 +4406,7 @@
       "id": 251060,
       "title": "钱进球场 第二季",
       "originalTitle": "グラゼニ シーズン2",
-      "score": 7.2,
+      "score": 7.1,
       "url": "https://bgm.tv/subject/251060",
       "airDate": "2018-10-05",
       "totalEpisodes": 12,
@@ -5376,7 +5376,7 @@
       "id": 313937,
       "title": "画江湖之不良人 第四季",
       "originalTitle": "画江湖之不良人Ⅳ",
-      "score": 7.7,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/313937",
       "airDate": "2021-04-29",
       "totalEpisodes": 13,
@@ -6533,22 +6533,22 @@
       "platform": "TV"
     },
     {
-      "id": 467461,
-      "title": "胆大党",
-      "originalTitle": "ダンダダン",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/467461",
-      "airDate": "2024-10-03",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 489820,
       "title": "乱马1/2",
       "originalTitle": "らんま1/2",
       "score": 7.5,
       "url": "https://bgm.tv/subject/489820",
       "airDate": "2024-10-05",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 467461,
+      "title": "胆大党",
+      "originalTitle": "ダンダダン",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/467461",
+      "airDate": "2024-10-03",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -7333,6 +7333,16 @@
       "platform": "TV"
     },
     {
+      "id": 325767,
+      "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
+      "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/325767",
+      "airDate": "2026-07-07",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
       "id": 615835,
       "title": "炒翻天",
       "originalTitle": "鉄鍋のジャン",
@@ -7350,26 +7360,6 @@
       "url": "https://bgm.tv/subject/569116",
       "airDate": "2026-07-06",
       "totalEpisodes": null,
-      "platform": "TV"
-    },
-    {
-      "id": 325767,
-      "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
-      "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/325767",
-      "airDate": "2026-07-07",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
-      "id": 541285,
-      "title": "与你相恋到生命尽头",
-      "originalTitle": "きみが死ぬまで恋をしたい",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/541285",
-      "airDate": "2026-07-07",
-      "totalEpisodes": 13,
       "platform": "TV"
     }
   ]
