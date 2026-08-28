@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-28T11:25:28.233Z",
+  "updatedAt": "2026-08-28T22:22:43.174Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-08-28T09:02:03.000Z"
+    "status": 0,
+    "lastLogoff": "2026-08-28T16:46:59.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 170611,
-    "recentMinutes": 2476
+    "totalMinutes": 170919,
+    "recentMinutes": 2659
   },
   "games": [
     {
@@ -77,9 +77,9 @@
     {
       "appid": 105600,
       "name": "Terraria",
-      "playtimeForever": 7302,
-      "playtimeTwoWeeks": 735,
-      "lastPlayed": "2026-08-28T11:19:33.000Z",
+      "playtimeForever": 7610,
+      "playtimeTwoWeeks": 1042,
+      "lastPlayed": "2026-08-28T16:26:38.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/105600/",
@@ -2156,7 +2156,7 @@
       "appid": 438100,
       "name": "VRChat",
       "playtimeForever": 346,
-      "playtimeTwoWeeks": 124,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-14T15:03:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
