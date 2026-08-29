@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-29T07:06:42.196Z",
+  "updatedAt": "2026-08-29T16:44:17.279Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-08-29T06:37:18.000Z"
+    "lastLogoff": "2026-08-29T08:04:37.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 170919,
-    "recentMinutes": 2664
+    "totalMinutes": 171254,
+    "recentMinutes": 2860
   },
   "games": [
     {
@@ -77,9 +77,9 @@
     {
       "appid": 105600,
       "name": "Terraria",
-      "playtimeForever": 7610,
-      "playtimeTwoWeeks": 1042,
-      "lastPlayed": "2026-08-28T16:26:38.000Z",
+      "playtimeForever": 7882,
+      "playtimeTwoWeeks": 1315,
+      "lastPlayed": "2026-08-29T16:17:40.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/105600/",
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 6897,
-      "playtimeTwoWeeks": 665,
-      "lastPlayed": "2026-08-29T06:32:31.000Z",
+      "playtimeForever": 6960,
+      "playtimeTwoWeeks": 684,
+      "lastPlayed": "2026-08-29T07:35:21.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -359,7 +359,7 @@
       "appid": 646570,
       "name": "Slay the Spire",
       "playtimeForever": 3717,
-      "playtimeTwoWeeks": 263,
+      "playtimeTwoWeeks": 168,
       "lastPlayed": "2026-08-22T11:40:05.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/646570/33ea124ea8c03a9ce7012d34c3b348a351612fca.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/646570/header.jpg",
@@ -466,7 +466,7 @@
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
       "playtimeForever": 3099,
-      "playtimeTwoWeeks": 23,
+      "playtimeTwoWeeks": 22,
       "lastPlayed": "2026-08-19T12:49:11.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
