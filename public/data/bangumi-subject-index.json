@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-29T00:35:30.207Z",
+  "syncedAt": "2026-08-29T19:26:23.170Z",
   "subjects": [
     {
       "id": 2463,
@@ -2236,7 +2236,7 @@
       "id": 88287,
       "title": "请问您今天要来点兔子吗？",
       "originalTitle": "ご注文はうさぎですか？",
-      "score": 7.4,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/88287",
       "airDate": "2014-04-10",
       "totalEpisodes": 12,
@@ -2666,7 +2666,7 @@
       "id": 129844,
       "title": "钻石王牌 第二季",
       "originalTitle": "ダイヤのA -SECOND SEASON-",
-      "score": 7.7,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/129844",
       "airDate": "2015-04-06",
       "totalEpisodes": 51,
@@ -3743,16 +3743,6 @@
       "platform": "TV"
     },
     {
-      "id": 205485,
-      "title": "咕噜咕噜魔法阵",
-      "originalTitle": "魔法陣グルグル",
-      "score": 7.4,
-      "url": "https://bgm.tv/subject/205485",
-      "airDate": "2017-07-11",
-      "totalEpisodes": 24,
-      "platform": "TV"
-    },
-    {
       "id": 211936,
       "title": "Princess Principal",
       "originalTitle": "プリンセス・プリンシパル",
@@ -3760,6 +3750,16 @@
       "url": "https://bgm.tv/subject/211936",
       "airDate": "2017-07-09",
       "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 205485,
+      "title": "咕噜咕噜魔法阵",
+      "originalTitle": "魔法陣グルグル",
+      "score": 7.4,
+      "url": "https://bgm.tv/subject/205485",
+      "airDate": "2017-07-11",
+      "totalEpisodes": 24,
       "platform": "TV"
     },
     {
@@ -4163,16 +4163,6 @@
       "platform": "TV"
     },
     {
-      "id": 217249,
-      "title": "漫画女孩",
-      "originalTitle": "こみっくがーるず",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/217249",
-      "airDate": "2018-04-05",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 234531,
       "title": "鬼太郎 第六季",
       "originalTitle": "ゲゲゲの鬼太郎",
@@ -4180,6 +4170,16 @@
       "url": "https://bgm.tv/subject/234531",
       "airDate": "2018-04-01",
       "totalEpisodes": 97,
+      "platform": "TV"
+    },
+    {
+      "id": 217249,
+      "title": "漫画女孩",
+      "originalTitle": "こみっくがーるず",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/217249",
+      "airDate": "2018-04-05",
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
@@ -4483,16 +4483,6 @@
       "platform": "TV"
     },
     {
-      "id": 145354,
-      "title": "玛纳利亚的密友",
-      "originalTitle": "マナリアフレンズ",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/145354",
-      "airDate": "2019-01-20",
-      "totalEpisodes": 10,
-      "platform": "TV"
-    },
-    {
       "id": 246429,
       "title": "BanG Dream! 第二季",
       "originalTitle": "BanG Dream! 2nd Season",
@@ -4500,6 +4490,16 @@
       "url": "https://bgm.tv/subject/246429",
       "airDate": "2019-01-03",
       "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
+      "id": 145354,
+      "title": "玛纳利亚的密友",
+      "originalTitle": "マナリアフレンズ",
+      "score": 7.3,
+      "url": "https://bgm.tv/subject/145354",
+      "airDate": "2019-01-20",
+      "totalEpisodes": 10,
       "platform": "TV"
     },
     {
@@ -6936,7 +6936,7 @@
       "id": 553106,
       "title": "王者天下 第六季",
       "originalTitle": "キングダム 第6シリーズ",
-      "score": 7.5,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/553106",
       "airDate": "2025-10-04",
       "totalEpisodes": 13,
