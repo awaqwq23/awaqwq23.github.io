@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-29T19:26:23.170Z",
+  "syncedAt": "2026-08-30T19:21:33.505Z",
   "subjects": [
     {
       "id": 2463,
@@ -2236,7 +2236,7 @@
       "id": 88287,
       "title": "请问您今天要来点兔子吗？",
       "originalTitle": "ご注文はうさぎですか？",
-      "score": 7.3,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/88287",
       "airDate": "2014-04-10",
       "totalEpisodes": 12,
@@ -4473,16 +4473,6 @@
       "platform": "TV"
     },
     {
-      "id": 240039,
-      "title": "不吉波普不笑",
-      "originalTitle": "ブギーポップは笑わない",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/240039",
-      "airDate": "2019-01-04",
-      "totalEpisodes": 18,
-      "platform": "TV"
-    },
-    {
       "id": 246429,
       "title": "BanG Dream! 第二季",
       "originalTitle": "BanG Dream! 2nd Season",
@@ -4490,6 +4480,16 @@
       "url": "https://bgm.tv/subject/246429",
       "airDate": "2019-01-03",
       "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
+      "id": 240039,
+      "title": "不吉波普不笑",
+      "originalTitle": "ブギーポップは笑わない",
+      "score": 7.3,
+      "url": "https://bgm.tv/subject/240039",
+      "airDate": "2019-01-04",
+      "totalEpisodes": 18,
       "platform": "TV"
     },
     {
@@ -7279,7 +7279,7 @@
       "score": 7.5,
       "url": "https://bgm.tv/subject/899",
       "airDate": "1996-01-08",
-      "totalEpisodes": 1339,
+      "totalEpisodes": 1340,
       "platform": "TV"
     },
     {
@@ -7289,7 +7289,7 @@
       "score": 7.5,
       "url": "https://bgm.tv/subject/598058",
       "airDate": "2026-07-05",
-      "totalEpisodes": null,
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {

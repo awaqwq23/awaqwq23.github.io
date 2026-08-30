@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-29T19:26:08.936Z",
+  "syncedAt": "2026-08-30T19:21:17.260Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -66,13 +66,13 @@
           "siteUrl": "https://bgm.tv/subject/444557"
         }
       ],
-      "releasedEpisodes": 9,
+      "releasedEpisodes": 10,
       "totalEpisodes": 14,
-      "nextEpisode": 10,
-      "nextAiringAt": "2026-08-30T15:00:00.000Z",
+      "nextEpisode": 11,
+      "nextAiringAt": "2026-09-06T15:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-04",
-      "endDate": null,
+      "endDate": "2026-09-27",
       "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178789-hNXjKFzUq7mk.jpg",
       "coverColor": "#28bbe4",
       "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178789-9nHWmoRLlcLu.jpg",
@@ -3526,10 +3526,10 @@
           "siteUrl": "https://bgm.tv/subject/285391"
         }
       ],
-      "releasedEpisodes": 1175,
+      "releasedEpisodes": 1176,
       "totalEpisodes": null,
-      "nextEpisode": 1176,
-      "nextAiringAt": "2026-08-30T14:16:00.000Z",
+      "nextEpisode": 1177,
+      "nextAiringAt": "2026-09-06T14:16:00.000Z",
       "lastAiredAt": null,
       "startDate": "1999-10-20",
       "endDate": null,
