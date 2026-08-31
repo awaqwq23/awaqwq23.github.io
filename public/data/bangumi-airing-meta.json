@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "syncedAt": "2026-08-30T19:21:33.505Z",
+  "syncedAt": "2026-08-31T21:30:23.463Z",
   "scoreThreshold": 7,
   "archiveStartYear": 2010,
   "archiveEndYear": 2026,
@@ -133,8 +133,8 @@
       "isCurrent": false,
       "isNext": false,
       "refreshMode": "daily-score",
-      "count": 19,
-      "longRunningCount": 10,
+      "count": 18,
+      "longRunningCount": 9,
       "seasonalCount": 9
     },
     {

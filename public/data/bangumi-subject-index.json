@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-08-30T19:21:33.505Z",
+  "syncedAt": "2026-08-31T21:30:23.463Z",
   "subjects": [
     {
       "id": 2463,
@@ -700,16 +700,6 @@
       "url": "https://bgm.tv/subject/10377",
       "airDate": "2011-04-14",
       "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
-      "id": 126621,
-      "title": "海绵宝宝 第九季",
-      "originalTitle": "SpongeBob SquarePants (Season 9)",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/126621",
-      "airDate": "2011-04-03",
-      "totalEpisodes": 26,
       "platform": "TV"
     },
     {
@@ -1873,6 +1863,16 @@
       "platform": "TV"
     },
     {
+      "id": 119892,
+      "title": "怪诞小镇短篇集",
+      "originalTitle": "Gravity Falls Shorts",
+      "score": 7.7,
+      "url": "https://bgm.tv/subject/119892",
+      "airDate": "2013-10-14",
+      "totalEpisodes": 17,
+      "platform": "TV"
+    },
+    {
       "id": 73083,
       "title": "钻石王牌",
       "originalTitle": "ダイヤのA",
@@ -1880,16 +1880,6 @@
       "url": "https://bgm.tv/subject/73083",
       "airDate": "2013-10-06",
       "totalEpisodes": 75,
-      "platform": "TV"
-    },
-    {
-      "id": 119892,
-      "title": "怪诞小镇短篇集",
-      "originalTitle": "Gravity Falls Shorts",
-      "score": 7.6,
-      "url": "https://bgm.tv/subject/119892",
-      "airDate": "2013-10-14",
-      "totalEpisodes": 17,
       "platform": "TV"
     },
     {
@@ -2876,7 +2866,7 @@
       "id": 114967,
       "title": "无头骑士异闻录×2 转",
       "originalTitle": "デュラララ!!×2 転",
-      "score": 7.2,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/114967",
       "airDate": "2015-07-04",
       "totalEpisodes": 12,
@@ -4473,16 +4463,6 @@
       "platform": "TV"
     },
     {
-      "id": 246429,
-      "title": "BanG Dream! 第二季",
-      "originalTitle": "BanG Dream! 2nd Season",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/246429",
-      "airDate": "2019-01-03",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 240039,
       "title": "不吉波普不笑",
       "originalTitle": "ブギーポップは笑わない",
@@ -4490,6 +4470,16 @@
       "url": "https://bgm.tv/subject/240039",
       "airDate": "2019-01-04",
       "totalEpisodes": 18,
+      "platform": "TV"
+    },
+    {
+      "id": 246429,
+      "title": "BanG Dream! 第二季",
+      "originalTitle": "BanG Dream! 2nd Season",
+      "score": 7.3,
+      "url": "https://bgm.tv/subject/246429",
+      "airDate": "2019-01-03",
+      "totalEpisodes": 13,
       "platform": "TV"
     },
     {
@@ -6533,22 +6523,22 @@
       "platform": "TV"
     },
     {
-      "id": 489820,
-      "title": "乱马1/2",
-      "originalTitle": "らんま1/2",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/489820",
-      "airDate": "2024-10-05",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 467461,
       "title": "胆大党",
       "originalTitle": "ダンダダン",
       "score": 7.5,
       "url": "https://bgm.tv/subject/467461",
       "airDate": "2024-10-03",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 489820,
+      "title": "乱马1/2",
+      "originalTitle": "らんま1/2",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/489820",
+      "airDate": "2024-10-05",
       "totalEpisodes": 12,
       "platform": "TV"
     },
