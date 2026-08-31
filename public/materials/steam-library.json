@@ -1,27 +1,27 @@
 {
   "status": "ready",
-  "updatedAt": "2026-08-31T05:38:13.392Z",
+  "updatedAt": "2026-08-31T13:54:22.277Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-08-31T04:46:59.000Z"
+    "lastLogoff": "2026-08-31T12:42:23.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 171386,
-    "recentMinutes": 2922
+    "totalMinutes": 171532,
+    "recentMinutes": 2931
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
-      "playtimeForever": 41395,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-07-02T02:41:39.000Z",
+      "playtimeForever": 41410,
+      "playtimeTwoWeeks": 14,
+      "lastPlayed": "2026-08-31T08:21:05.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2622000/",
@@ -77,9 +77,9 @@
     {
       "appid": 105600,
       "name": "Terraria",
-      "playtimeForever": 7882,
-      "playtimeTwoWeeks": 1315,
-      "lastPlayed": "2026-08-29T16:17:40.000Z",
+      "playtimeForever": 7884,
+      "playtimeTwoWeeks": 1317,
+      "lastPlayed": "2026-08-31T13:43:22.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/105600/",
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 7092,
-      "playtimeTwoWeeks": 817,
+      "playtimeTwoWeeks": 767,
       "lastPlayed": "2026-08-30T14:27:43.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -359,7 +359,7 @@
       "appid": 646570,
       "name": "Slay the Spire",
       "playtimeForever": 3717,
-      "playtimeTwoWeeks": 97,
+      "playtimeTwoWeeks": 12,
       "lastPlayed": "2026-08-22T11:40:05.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/646570/33ea124ea8c03a9ce7012d34c3b348a351612fca.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/646570/header.jpg",
@@ -1750,6 +1750,47 @@
       }
     },
     {
+      "appid": 438100,
+      "name": "VRChat",
+      "playtimeForever": 469,
+      "playtimeTwoWeeks": 122,
+      "lastPlayed": "2026-08-31T13:31:28.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/438100/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          20,
+          49,
+          36,
+          9,
+          38,
+          27,
+          28,
+          52,
+          53,
+          35,
+          55,
+          56,
+          57,
+          58,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "29",
+          "28",
+          "18",
+          "37",
+          "70"
+        ]
+      }
+    },
+    {
       "appid": 1793250,
       "name": "Take Me To The Dungeon!!",
       "playtimeForever": 465,
@@ -2149,47 +2190,6 @@
         "genreIds": [
           "28",
           "2"
-        ]
-      }
-    },
-    {
-      "appid": 438100,
-      "name": "VRChat",
-      "playtimeForever": 346,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-08-14T15:03:27.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/438100/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": true,
-        "categoryIds": [
-          1,
-          20,
-          49,
-          36,
-          9,
-          38,
-          27,
-          28,
-          52,
-          53,
-          35,
-          55,
-          56,
-          57,
-          58,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "4",
-          "29",
-          "28",
-          "18",
-          "37",
-          "70"
         ]
       }
     },
@@ -4960,6 +4960,16 @@
       }
     },
     {
+      "appid": 1329410,
+      "name": "雀魂麻将(MahjongSoul)",
+      "playtimeForever": 16,
+      "playtimeTwoWeeks": 6,
+      "lastPlayed": "2026-08-31T08:32:03.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1329410/9403eb9b90dc6f036dde903a669d70dab3b65e12.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1329410/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1329410/"
+    },
+    {
       "appid": 3480990,
       "name": "There Are No Orcs",
       "playtimeForever": 16,
@@ -5010,16 +5020,6 @@
           "25"
         ]
       }
-    },
-    {
-      "appid": 1329410,
-      "name": "雀魂麻将(MahjongSoul)",
-      "playtimeForever": 10,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2024-08-02T13:04:33.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1329410/9403eb9b90dc6f036dde903a669d70dab3b65e12.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1329410/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1329410/"
     },
     {
       "appid": 641990,
