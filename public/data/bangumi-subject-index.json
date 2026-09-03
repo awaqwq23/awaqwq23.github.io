@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-01T19:26:14.685Z",
+  "syncedAt": "2026-09-03T19:20:39.566Z",
   "subjects": [
     {
       "id": 2463,
@@ -113,16 +113,6 @@
       "platform": "TV"
     },
     {
-      "id": 106653,
-      "title": "探险活宝 第一季",
-      "originalTitle": "Adventure Time season 1",
-      "score": 7.6,
-      "url": "https://bgm.tv/subject/106653",
-      "airDate": "2010-04-05",
-      "totalEpisodes": 26,
-      "platform": "TV"
-    },
-    {
       "id": 1851,
       "title": "天使的心跳！",
       "originalTitle": "Angel Beats!",
@@ -130,6 +120,16 @@
       "url": "https://bgm.tv/subject/1851",
       "airDate": "2010-04-02",
       "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
+      "id": 106653,
+      "title": "探险活宝 第一季",
+      "originalTitle": "Adventure Time season 1",
+      "score": 7.6,
+      "url": "https://bgm.tv/subject/106653",
+      "airDate": "2010-04-05",
+      "totalEpisodes": 26,
       "platform": "TV"
     },
     {
@@ -2866,7 +2866,7 @@
       "id": 114967,
       "title": "无头骑士异闻录×2 转",
       "originalTitle": "デュラララ!!×2 転",
-      "score": 7.3,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/114967",
       "airDate": "2015-07-04",
       "totalEpisodes": 12,
@@ -4716,7 +4716,7 @@
       "id": 289031,
       "title": "拳愿阿修罗 Part 2",
       "originalTitle": "ケンガンアシュラ パート2",
-      "score": 7.3,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/289031",
       "airDate": "2019-10-31",
       "totalEpisodes": 12,
@@ -5366,7 +5366,7 @@
       "id": 313937,
       "title": "画江湖之不良人 第四季",
       "originalTitle": "画江湖之不良人Ⅳ",
-      "score": 7.6,
+      "score": 7.7,
       "url": "https://bgm.tv/subject/313937",
       "airDate": "2021-04-29",
       "totalEpisodes": 13,
@@ -6523,22 +6523,22 @@
       "platform": "TV"
     },
     {
-      "id": 467461,
-      "title": "胆大党",
-      "originalTitle": "ダンダダン",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/467461",
-      "airDate": "2024-10-03",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 489820,
       "title": "乱马1/2",
       "originalTitle": "らんま1/2",
       "score": 7.5,
       "url": "https://bgm.tv/subject/489820",
       "airDate": "2024-10-05",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 467461,
+      "title": "胆大党",
+      "originalTitle": "ダンダダン",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/467461",
+      "airDate": "2024-10-03",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -6926,7 +6926,7 @@
       "id": 553106,
       "title": "王者天下 第六季",
       "originalTitle": "キングダム 第6シリーズ",
-      "score": 7.4,
+      "score": 7.5,
       "url": "https://bgm.tv/subject/553106",
       "airDate": "2025-10-04",
       "totalEpisodes": 13,
