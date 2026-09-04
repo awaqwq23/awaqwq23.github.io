@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-03T19:20:19.618Z",
+  "syncedAt": "2026-09-04T19:00:31.921Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -189,10 +189,10 @@
           "siteUrl": "https://bgm.tv/subject/424573"
         }
       ],
-      "releasedEpisodes": 7,
+      "releasedEpisodes": 8,
       "totalEpisodes": 12,
-      "nextEpisode": 8,
-      "nextAiringAt": "2026-09-04T14:30:00.000Z",
+      "nextEpisode": 9,
+      "nextAiringAt": "2026-09-11T14:30:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-17",
       "endDate": null,

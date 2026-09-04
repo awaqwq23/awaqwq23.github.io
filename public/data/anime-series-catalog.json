@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-03T19:24:42.986Z",
+  "generatedAt": "2026-09-04T19:04:54.631Z",
   "source": {
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
@@ -561,7 +561,7 @@
           "platform": "TV",
           "airDate": null,
           "totalEpisodes": null,
-          "score": 5.8,
+          "score": 5.4,
           "image": "https://lain.bgm.tv/pic/cover/l/ed/a1/550507_mNM82.jpg",
           "url": "https://bgm.tv/subject/550507",
           "status": "FINISHED",
@@ -1524,7 +1524,7 @@
           "platform": "剧场版",
           "airDate": "2026-04-24",
           "totalEpisodes": 1,
-          "score": 6.2,
+          "score": 6.3,
           "image": "https://lain.bgm.tv/pic/cover/l/6d/9b/544816_ftEj4.jpg",
           "url": "https://bgm.tv/subject/544816",
           "status": "FINISHED",

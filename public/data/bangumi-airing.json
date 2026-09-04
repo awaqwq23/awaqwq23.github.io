@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "syncedAt": "2026-09-03T19:20:39.566Z",
+  "syncedAt": "2026-09-04T19:00:51.995Z",
   "scoreThreshold": 7,
   "archiveStartYear": 2010,
   "archiveEndYear": 2026,
@@ -24811,9 +24811,9 @@
             "id": 3
           },
           "score": 8.3,
-          "scoreCount": 14729,
+          "scoreCount": 14734,
           "rank": 105,
-          "watchingCount": 16081,
+          "watchingCount": 16087,
           "platform": "TV",
           "totalEpisodes": 1191,
           "endDate": "2025-12-28",
@@ -25091,9 +25091,9 @@
             "id": 6
           },
           "score": 7.5,
-          "scoreCount": 11546,
-          "rank": 899,
-          "watchingCount": 10796,
+          "scoreCount": 11547,
+          "rank": 898,
+          "watchingCount": 10798,
           "platform": "TV",
           "totalEpisodes": 1340,
           "endDate": "2021-09-06",
