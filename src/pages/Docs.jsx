@@ -35,14 +35,6 @@ const MODULES = [
     kind: 'music',
   },
   {
-    id: 'curated-music',
-    name: '我的手选歌单',
-    desc: '推荐、想学和已经会唱的歌，由我手动维护，不依赖平台同步',
-    icon: 'fa-headphones',
-    bg: 'linear-gradient(135deg, #0f172a, #7c3aed 60%, #ec4899)',
-    route: '/music',
-  },
-  {
     id: 'dev',
     name: '开发软件',
     desc: '常用编程语言、IDE、运行环境与数据库下载入口',

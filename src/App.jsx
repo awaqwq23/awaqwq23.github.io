@@ -11,7 +11,6 @@ const Toys = lazy(() => import('./pages/Toys'))
 const Games = lazy(() => import('./pages/Games'))
 const About = lazy(() => import('./pages/About'))
 const Docs = lazy(() => import('./pages/Docs'))
-const MusicCuration = lazy(() => import('./pages/MusicCuration'))
 const TodayPicker = lazy(() => import('./pages/TodayPicker'))
 const Lyrics = lazy(() => import('./pages/Lyrics'))
 const AnimeTracker = lazy(() => import('./pages/AnimeTracker'))
@@ -48,7 +47,6 @@ export default function App() {
           <Route path="/games" element={<Games />} />
           <Route path="/about" element={<About />} />
           <Route path="/docs" element={<Docs />} />
-          <Route path="/music" element={<MusicCuration />} />
           <Route path="/today" element={<TodayPicker />} />
           <Route path="/lyrics" element={<Lyrics />} />
           <Route path="/anime" element={<AnimeTracker />} />

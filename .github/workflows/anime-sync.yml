@@ -15,13 +15,17 @@ concurrency:
 
 jobs:
   sync:
+    # This scheduled refresh is optional maintenance. External API outages must
+    # never turn the website's deployment status red.
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Fetch anime schedules
+        id: anime_schedules
         run: node .github/scripts/sync-anime.mjs
       - name: Fetch high-rated Bangumi broadcasts
         run: node .github/scripts/sync-bangumi.mjs
@@ -39,3 +43,9 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "chore: sync anime tracker"
           git push
+      - name: Report maintenance result
+        if: always()
+        run: |
+          echo "## Anime sync" >> "$GITHUB_STEP_SUMMARY"
+          echo "AniList refresh: ${{ steps.anime_schedules.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "This maintenance job is non-blocking and never gates GitHub Pages deployment." >> "$GITHUB_STEP_SUMMARY"

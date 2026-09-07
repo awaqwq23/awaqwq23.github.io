@@ -8,7 +8,6 @@ const links = [
   { to: '/toys', icon: 'fa-gamepad', label: '小玩具' },
   { to: '/games', icon: 'fa-gamepad', label: '游戏' },
   { to: '/today', icon: 'fa-wand-magic-sparkles', label: '今天选啥' },
-  { to: '/music', icon: 'fa-headphones', label: '我的歌单' },
   { to: '/lyrics', icon: 'fa-microphone-lines', label: '歌词本' },
   { to: '/anime', icon: 'fa-tv', label: '追番' },
   { to: '/docs', icon: 'fa-book', label: '文档' },

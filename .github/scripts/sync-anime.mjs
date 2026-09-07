@@ -276,7 +276,14 @@ async function main() {
   console.log(`已同步 ${entries.length} 部番剧：${outputPath}`)
 }
 
-main().catch(error => {
-  console.error(error instanceof Error ? error.message : error)
+await main().catch(async error => {
+  const message = error instanceof Error ? error.message : String(error)
+  const cached = await readFile(outputPath, 'utf8').then(JSON.parse).catch(() => null)
+  if (Array.isArray(cached?.entries) && cached.entries.length > 0) {
+    console.warn(`追番数据刷新失败，保留上一次可用缓存：${message}`)
+    console.warn(`缓存时间：${cached.syncedAt || '未知'}；缓存条目：${cached.entries.length}`)
+    return
+  }
+  console.error(`追番数据刷新失败且没有可用缓存：${message}`)
   process.exitCode = 1
 })
