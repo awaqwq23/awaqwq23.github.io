@@ -10,11 +10,20 @@ const metadataLimit = Number(process.argv.find(argument => argument.startsWith('
 if (!apiKey && !metadataOnly) throw new Error('Missing STEAM_API_KEY')
 
 async function steamRequest(interfaceName, method, version, parameters = {}) {
-  const url = new URL(`https://api.steampowered.com/${interfaceName}/${method}/${version}/`)
-  url.search = new URLSearchParams({ key: apiKey, format: 'json', ...parameters })
-  const response = await fetch(url)
-  if (!response.ok) throw new Error(`Steam API ${method} failed with ${response.status}`)
-  return response.json()
+  let lastError
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const url = new URL(`https://api.steampowered.com/${interfaceName}/${method}/${version}/`)
+      url.search = new URLSearchParams({ key: apiKey, format: 'json', ...parameters })
+      const response = await fetch(url, { signal: AbortSignal.timeout(30_000) })
+      if (!response.ok) throw new Error(`Steam API ${method} failed with ${response.status}`)
+      return response.json()
+    } catch (error) {
+      lastError = error
+      if (attempt < 3) await wait(attempt * 1500)
+    }
+  }
+  throw lastError
 }
 
 const previous = await readFile(outputPath, 'utf8').then(JSON.parse).catch(() => null)

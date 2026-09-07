@@ -23,8 +23,26 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Refresh bound Steam library
+        id: refresh_steam
+        continue-on-error: true
+        run: node .github/scripts/sync-steam.mjs
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          STEAM_ID: '76561198825902593'
+      - name: Refresh NetEase playlist mirror
+        id: refresh_netease
+        continue-on-error: true
+        run: node .github/scripts/sync-netease.mjs
       - run: npm ci
       - run: npm run build
+      - name: Report optional data refreshes
+        if: always()
+        run: |
+          echo "## Deployment data refresh" >> "$GITHUB_STEP_SUMMARY"
+          echo "Steam: ${{ steps.refresh_steam.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "NetEase: ${{ steps.refresh_netease.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "External refresh failures keep the last committed data and never block Pages." >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

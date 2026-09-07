@@ -278,15 +278,12 @@ function TodayPicker() {
       setScanMessage('没有找到 appmanifest_*.acf，请选择 SteamLibrary/steamapps 文件夹')
       return
     }
-    setInstalledGames(current => {
-      const merged = new Map(current.map(game => [Number(game.appid), game]))
-      games.forEach(game => merged.set(Number(game.appid), game))
-      return [...merged.values()].sort((left, right) => left.name.localeCompare(right.name))
-    })
+    const replacement = new Map(games.map(game => [Number(game.appid), game]))
+    setInstalledGames([...replacement.values()].sort((left, right) => left.name.localeCompare(right.name)))
     setGameScope('installed')
     setGameResult(null)
     setScanStatus('ready')
-    setScanMessage(`已在本机识别 ${games.length} 款 Steam 游戏`)
+    setScanMessage(`已用本次扫描覆盖本机游戏列表，共识别 ${replacement.size} 款 Steam 游戏`)
   }
 
   const scanSteamFolder = async () => {
