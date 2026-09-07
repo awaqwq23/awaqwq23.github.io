@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-04T19:00:51.995Z",
+  "syncedAt": "2026-09-07T20:00:29.868Z",
   "subjects": [
     {
       "id": 2463,
@@ -2226,7 +2226,7 @@
       "id": 88287,
       "title": "请问您今天要来点兔子吗？",
       "originalTitle": "ご注文はうさぎですか？",
-      "score": 7.4,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/88287",
       "airDate": "2014-04-10",
       "totalEpisodes": 12,
@@ -3716,7 +3716,7 @@
       "id": 212008,
       "title": "RWBY Volume 1-3: The Beginning",
       "originalTitle": "RWBY Volume 1-3: The Beginning",
-      "score": 7.7,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/212008",
       "airDate": "2017-07-07",
       "totalEpisodes": 13,
@@ -3983,6 +3983,16 @@
       "platform": "TV"
     },
     {
+      "id": 227240,
+      "title": "新干线变形机器人",
+      "originalTitle": "新幹線変形ロボ シンカリオン",
+      "score": 7.7,
+      "url": "https://bgm.tv/subject/227240",
+      "airDate": "2018-01-06",
+      "totalEpisodes": 76,
+      "platform": "TV"
+    },
+    {
       "id": 183878,
       "title": "紫罗兰永恒花园",
       "originalTitle": "ヴァイオレット・エヴァーガーデン",
@@ -3990,16 +4000,6 @@
       "url": "https://bgm.tv/subject/183878",
       "airDate": "2018-01-10",
       "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
-      "id": 227240,
-      "title": "新干线变形机器人",
-      "originalTitle": "新幹線変形ロボ シンカリオン",
-      "score": 7.6,
-      "url": "https://bgm.tv/subject/227240",
-      "airDate": "2018-01-06",
-      "totalEpisodes": 76,
       "platform": "TV"
     },
     {
@@ -4283,16 +4283,6 @@
       "platform": "TV"
     },
     {
-      "id": 228350,
-      "title": "战栗杀机",
-      "originalTitle": "BANANA FISH",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/228350",
-      "airDate": "2018-07-05",
-      "totalEpisodes": 24,
-      "platform": "TV"
-    },
-    {
       "id": 253250,
       "title": "路西法 反叛的堕天使",
       "originalTitle": "ルシファー 反逆の堕天使",
@@ -4301,6 +4291,16 @@
       "airDate": "2018-07-08",
       "totalEpisodes": 20,
       "platform": "WEB"
+    },
+    {
+      "id": 228350,
+      "title": "战栗杀机",
+      "originalTitle": "BANANA FISH",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/228350",
+      "airDate": "2018-07-05",
+      "totalEpisodes": 24,
+      "platform": "TV"
     },
     {
       "id": 237834,
@@ -4473,16 +4473,6 @@
       "platform": "TV"
     },
     {
-      "id": 246429,
-      "title": "BanG Dream! 第二季",
-      "originalTitle": "BanG Dream! 2nd Season",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/246429",
-      "airDate": "2019-01-03",
-      "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
       "id": 145354,
       "title": "玛纳利亚的密友",
       "originalTitle": "マナリアフレンズ",
@@ -4490,6 +4480,16 @@
       "url": "https://bgm.tv/subject/145354",
       "airDate": "2019-01-20",
       "totalEpisodes": 10,
+      "platform": "TV"
+    },
+    {
+      "id": 246429,
+      "title": "BanG Dream! 第二季",
+      "originalTitle": "BanG Dream! 2nd Season",
+      "score": 7.3,
+      "url": "https://bgm.tv/subject/246429",
+      "airDate": "2019-01-03",
+      "totalEpisodes": 13,
       "platform": "TV"
     },
     {
@@ -4916,7 +4916,7 @@
       "id": 298070,
       "title": "非人哉 49-60集",
       "originalTitle": "非人哉 Part.3",
-      "score": 7.2,
+      "score": 7.1,
       "url": "https://bgm.tv/subject/298070",
       "airDate": "2020-01-08",
       "totalEpisodes": 12,
@@ -7136,7 +7136,7 @@
       "id": 508004,
       "title": "石纪元 科学与未来 第3部分",
       "originalTitle": "Dr.STONE SCIENCE FUTURE 第3クール",
-      "score": 7.3,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/508004",
       "airDate": "2026-04-02",
       "totalEpisodes": 13,
@@ -7196,7 +7196,7 @@
       "id": 530725,
       "title": "死神 千年血战篇-祸进谭-",
       "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
-      "score": 8.3,
+      "score": 8.2,
       "url": "https://bgm.tv/subject/530725",
       "airDate": "2026-07-25",
       "totalEpisodes": 10,
@@ -7316,20 +7316,10 @@
       "id": 570583,
       "title": "Grow Up Show ～向日葵马戏团～",
       "originalTitle": "グロウアップショウ ～ひまわりのサーカス団～",
-      "score": 7.1,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/570583",
       "airDate": "2026-07-04",
       "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
-      "id": 325767,
-      "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
-      "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/325767",
-      "airDate": "2026-07-07",
-      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
@@ -7340,6 +7330,16 @@
       "url": "https://bgm.tv/subject/615835",
       "airDate": "2026-07-05",
       "totalEpisodes": null,
+      "platform": "TV"
+    },
+    {
+      "id": 325767,
+      "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
+      "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/325767",
+      "airDate": "2026-07-07",
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {

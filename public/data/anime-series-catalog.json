@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-04T19:04:54.631Z",
+  "generatedAt": "2026-09-07T20:05:07.110Z",
   "source": {
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
@@ -918,7 +918,7 @@
           "platform": "WEB",
           "airDate": "2026-09-25",
           "totalEpisodes": 11,
-          "score": 7.6,
+          "score": 7.7,
           "image": "https://lain.bgm.tv/pic/cover/l/ab/4f/639938_2JKQ7.jpg",
           "url": "https://bgm.tv/subject/639938",
           "status": "NOT_YET_RELEASED",
@@ -1524,7 +1524,7 @@
           "platform": "剧场版",
           "airDate": "2026-04-24",
           "totalEpisodes": 1,
-          "score": 6.3,
+          "score": 6.5,
           "image": "https://lain.bgm.tv/pic/cover/l/6d/9b/544816_ftEj4.jpg",
           "url": "https://bgm.tv/subject/544816",
           "status": "FINISHED",
@@ -2878,7 +2878,7 @@
           "airDate": "2025-07-05",
           "totalEpisodes": 12,
           "score": 7.7,
-          "image": "https://lain.bgm.tv/pic/cover/l/38/44/398951_M97dM.jpg",
+          "image": "https://lain.bgm.tv/pic/cover/l/38/44/398951_973Z3.jpg",
           "url": "https://bgm.tv/subject/398951",
           "status": "FINISHED",
           "relations": [
@@ -4706,7 +4706,7 @@
           "platform": "TV",
           "airDate": "2024-05-04",
           "totalEpisodes": 2,
-          "score": 6.5,
+          "score": 6.6,
           "image": "https://lain.bgm.tv/pic/cover/l/7b/44/484412_yJxRS.jpg",
           "url": "https://bgm.tv/subject/484412",
           "status": "FINISHED",
@@ -6346,7 +6346,7 @@
           ],
           "platform": "TV",
           "airDate": "2026-04-05",
-          "totalEpisodes": 22,
+          "totalEpisodes": 23,
           "score": 7.8,
           "image": "https://lain.bgm.tv/pic/cover/l/23/3d/602059_4j4UW.jpg",
           "url": "https://bgm.tv/subject/602059",
@@ -7967,7 +7967,7 @@
           "relations": [
             {
               "id": 411428,
-              "relation": "衍生"
+              "relation": "番外篇"
             },
             {
               "id": 373267,
@@ -11477,7 +11477,7 @@
           ],
           "platform": "WEB",
           "airDate": "2026-02-21",
-          "totalEpisodes": 17,
+          "totalEpisodes": 18,
           "score": 5.9,
           "image": "https://lain.bgm.tv/pic/cover/l/7b/01/630665_wAc8h.jpg",
           "url": "https://bgm.tv/subject/630665",
@@ -13062,7 +13062,7 @@
           "platform": "WEB",
           "airDate": "2022-10-16",
           "totalEpisodes": 24,
-          "score": 5.9,
+          "score": 5.8,
           "image": "https://lain.bgm.tv/pic/cover/l/88/f4/380506_AuIpQ.jpg",
           "url": "https://bgm.tv/subject/380506",
           "status": "FINISHED",
@@ -16719,20 +16719,20 @@
           "status": "FINISHED",
           "relations": [
             {
+              "id": 6048,
+              "relation": "总集篇"
+            },
+            {
               "id": 6049,
               "relation": "续集"
             },
             {
-              "id": 6048,
+              "id": 39923,
               "relation": "总集篇"
             },
             {
               "id": 772,
               "relation": "不同演绎"
-            },
-            {
-              "id": 39923,
-              "relation": "总集篇"
             }
           ]
         },
@@ -22037,7 +22037,7 @@
           "platform": "TV",
           "airDate": null,
           "totalEpisodes": null,
-          "score": 2.3,
+          "score": 2.4,
           "image": "https://lain.bgm.tv/pic/cover/l/45/55/548133_cZDqY.jpg",
           "url": "https://bgm.tv/subject/548133",
           "status": "FINISHED",
@@ -22079,7 +22079,7 @@
           "platform": "TV",
           "airDate": "2026-07-02",
           "totalEpisodes": 13,
-          "score": 5.4,
+          "score": 5.3,
           "image": "https://lain.bgm.tv/pic/cover/l/1c/e4/583729_KxOZV.jpg",
           "url": "https://bgm.tv/subject/583729",
           "status": "RELEASING",
@@ -24256,7 +24256,7 @@
           "platform": "WEB",
           "airDate": "2020-07-10",
           "totalEpisodes": 25,
-          "score": 6.4,
+          "score": 6.5,
           "image": "https://lain.bgm.tv/pic/cover/l/93/74/310194_b205z.jpg",
           "url": "https://bgm.tv/subject/310194",
           "status": "FINISHED",
