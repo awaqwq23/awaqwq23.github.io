@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-08T11:21:48.727Z",
+  "updatedAt": "2026-09-08T16:39:50.434Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
+    "status": 3,
     "lastLogoff": "2026-09-07T16:47:50.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 173440,
-    "recentMinutes": 4033
+    "totalMinutes": 173574,
+    "recentMinutes": 3903
   },
   "games": [
     {
@@ -77,9 +77,9 @@
     {
       "appid": 105600,
       "name": "Terraria",
-      "playtimeForever": 8768,
-      "playtimeTwoWeeks": 2193,
-      "lastPlayed": "2026-09-07T15:31:30.000Z",
+      "playtimeForever": 8902,
+      "playtimeTwoWeeks": 2296,
+      "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/105600/",
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 7277,
-      "playtimeTwoWeeks": 718,
+      "playtimeTwoWeeks": 626,
       "lastPlayed": "2026-09-06T16:27:44.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -1794,7 +1794,7 @@
       "appid": 1793250,
       "name": "Take Me To The Dungeon!!",
       "playtimeForever": 465,
-      "playtimeTwoWeeks": 141,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-25T16:16:21.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1793250/aea1c3c9fe428308166a642bb6c6710fea7c6a92.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1793250/header.jpg",
