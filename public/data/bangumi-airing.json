@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "syncedAt": "2026-09-07T20:00:29.868Z",
+  "syncedAt": "2026-09-08T19:27:34.645Z",
   "scoreThreshold": 7,
   "archiveStartYear": 2010,
   "archiveEndYear": 2026,
@@ -24811,9 +24811,9 @@
             "id": 3
           },
           "score": 8.3,
-          "scoreCount": 14738,
-          "rank": 104,
-          "watchingCount": 16095,
+          "scoreCount": 14740,
+          "rank": 105,
+          "watchingCount": 16098,
           "platform": "TV",
           "totalEpisodes": 1191,
           "endDate": "2025-12-28",
@@ -24926,11 +24926,11 @@
           "origin": "china",
           "originLabel": "国产动画",
           "tags": [
-            "子供向",
             "奇幻",
-            "WEB",
-            "搞笑",
-            "中国"
+            "子供向",
+            "日常",
+            "中国",
+            "原创"
           ],
           "image": "https://lain.bgm.tv/pic/cover/l/70/6f/679578_82PoC.jpg",
           "url": "https://bgm.tv/subject/679578",
@@ -25093,7 +25093,7 @@
           "score": 7.5,
           "scoreCount": 11550,
           "rank": 900,
-          "watchingCount": 10800,
+          "watchingCount": 10801,
           "platform": "TV",
           "totalEpisodes": 1340,
           "endDate": "2021-09-06",
