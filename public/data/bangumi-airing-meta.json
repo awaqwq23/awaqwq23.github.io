@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "syncedAt": "2026-09-08T19:27:34.645Z",
+  "syncedAt": "2026-09-09T19:19:13.933Z",
   "scoreThreshold": 7,
   "archiveStartYear": 2010,
   "archiveEndYear": 2026,
@@ -105,9 +105,9 @@
       "isCurrent": false,
       "isNext": false,
       "refreshMode": "daily-score",
-      "count": 16,
+      "count": 15,
       "longRunningCount": 5,
-      "seasonalCount": 11
+      "seasonalCount": 10
     },
     {
       "key": "2011-Q1",
@@ -987,8 +987,8 @@
       "isCurrent": true,
       "isNext": false,
       "refreshMode": "daily-live",
-      "count": 17,
-      "longRunningCount": 2,
+      "count": 18,
+      "longRunningCount": 3,
       "seasonalCount": 15
     },
     {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-08T19:27:34.645Z",
+  "syncedAt": "2026-09-09T19:19:13.933Z",
   "subjects": [
     {
       "id": 2463,
@@ -410,16 +410,6 @@
       "url": "https://bgm.tv/subject/20056",
       "airDate": "2010-10-20",
       "totalEpisodes": 26,
-      "platform": "TV"
-    },
-    {
-      "id": 17777,
-      "title": "宫西达也剧场 你看起来很好吃",
-      "originalTitle": "宮西達也劇場 おまえうまそうだな",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/17777",
-      "airDate": "2010-10-04",
-      "totalEpisodes": 20,
       "platform": "TV"
     },
     {
@@ -5366,7 +5356,7 @@
       "id": 313937,
       "title": "画江湖之不良人 第四季",
       "originalTitle": "画江湖之不良人Ⅳ",
-      "score": 7.7,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/313937",
       "airDate": "2021-04-29",
       "totalEpisodes": 13,
@@ -6246,7 +6236,7 @@
       "id": 441140,
       "title": "瑞克和莫蒂 第七季",
       "originalTitle": "Rick and Morty Season 7",
-      "score": 7.3,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/441140",
       "airDate": "2023-10-15",
       "totalEpisodes": 10,
@@ -6523,22 +6513,22 @@
       "platform": "TV"
     },
     {
-      "id": 489820,
-      "title": "乱马1/2",
-      "originalTitle": "らんま1/2",
-      "score": 7.5,
-      "url": "https://bgm.tv/subject/489820",
-      "airDate": "2024-10-05",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 467461,
       "title": "胆大党",
       "originalTitle": "ダンダダン",
       "score": 7.5,
       "url": "https://bgm.tv/subject/467461",
       "airDate": "2024-10-03",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 489820,
+      "title": "乱马1/2",
+      "originalTitle": "らんま1/2",
+      "score": 7.5,
+      "url": "https://bgm.tv/subject/489820",
+      "airDate": "2024-10-05",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -7136,7 +7126,7 @@
       "id": 508004,
       "title": "石纪元 科学与未来 第3部分",
       "originalTitle": "Dr.STONE SCIENCE FUTURE 第3クール",
-      "score": 7.2,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/508004",
       "airDate": "2026-04-02",
       "totalEpisodes": 13,
@@ -7286,7 +7276,7 @@
       "id": 496276,
       "title": "攻壳机动队 THE GHOST IN THE SHELL",
       "originalTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
-      "score": 7.4,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/496276",
       "airDate": "2026-07-07",
       "totalEpisodes": 10,
@@ -7300,6 +7290,16 @@
       "url": "https://bgm.tv/subject/622206",
       "airDate": "2026-07-02",
       "totalEpisodes": null,
+      "platform": "TV"
+    },
+    {
+      "id": 325767,
+      "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
+      "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/325767",
+      "airDate": "2026-07-07",
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
@@ -7326,20 +7326,10 @@
       "id": 615835,
       "title": "炒翻天",
       "originalTitle": "鉄鍋のジャン",
-      "score": 7.1,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/615835",
       "airDate": "2026-07-05",
       "totalEpisodes": null,
-      "platform": "TV"
-    },
-    {
-      "id": 325767,
-      "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
-      "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/325767",
-      "airDate": "2026-07-07",
-      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
@@ -7351,6 +7341,16 @@
       "airDate": "2026-07-06",
       "totalEpisodes": null,
       "platform": "TV"
+    },
+    {
+      "id": 572768,
+      "title": "一念永恒 完结季",
+      "originalTitle": "一念永恒 完结季",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/572768",
+      "airDate": "2026-07-22",
+      "totalEpisodes": 47,
+      "platform": "WEB"
     }
   ]
 }
