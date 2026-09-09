@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-09T11:25:50.984Z",
+  "updatedAt": "2026-09-09T16:40:13.369Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -13,7 +13,7 @@
     "gameCount": 234,
     "playedGameCount": 174,
     "totalMinutes": 173575,
-    "recentMinutes": 3722
+    "recentMinutes": 3425
   },
   "games": [
     {
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 2225,
+      "playtimeTwoWeeks": 1928,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
