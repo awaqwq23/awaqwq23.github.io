@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-09T20:57:13.307Z",
+  "updatedAt": "2026-09-10T16:26:00.178Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -13,7 +13,7 @@
     "gameCount": 234,
     "playedGameCount": 174,
     "totalMinutes": 173575,
-    "recentMinutes": 3366
+    "recentMinutes": 3077
   },
   "games": [
     {
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 1869,
+      "playtimeTwoWeeks": 1599,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 7277,
-      "playtimeTwoWeeks": 515,
+      "playtimeTwoWeeks": 496,
       "lastPlayed": "2026-09-06T16:27:44.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
