@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-11T16:30:10.278Z",
+  "updatedAt": "2026-09-11T20:59:13.364Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-09-09T18:02:14.000Z"
+    "status": 0,
+    "lastLogoff": "2026-09-11T17:55:31.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 173832,
-    "recentMinutes": 2911
+    "totalMinutes": 173840,
+    "recentMinutes": 2918
   },
   "games": [
     {
@@ -150,9 +150,9 @@
     {
       "appid": 286160,
       "name": "Tabletop Simulator",
-      "playtimeForever": 6190,
-      "playtimeTwoWeeks": 257,
-      "lastPlayed": "2026-09-11T16:26:56.000Z",
+      "playtimeForever": 6198,
+      "playtimeTwoWeeks": 264,
+      "lastPlayed": "2026-09-11T16:34:06.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/286160/19f5b90e3c7084758f885ded843631b13929fa26.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/286160/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/286160/",
