@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-10T19:08:55.759Z",
+  "syncedAt": "2026-09-11T19:11:12.782Z",
   "subjects": [
     {
       "id": 2463,
@@ -2216,7 +2216,7 @@
       "id": 88287,
       "title": "请问您今天要来点兔子吗？",
       "originalTitle": "ご注文はうさぎですか？",
-      "score": 7.3,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/88287",
       "airDate": "2014-04-10",
       "totalEpisodes": 12,
@@ -5586,7 +5586,7 @@
       "id": 331480,
       "title": "明日同学的水手服",
       "originalTitle": "明日ちゃんのセーラー服",
-      "score": 7.5,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/331480",
       "airDate": "2022-01-08",
       "totalEpisodes": 12,
@@ -6633,16 +6633,6 @@
       "platform": "TV"
     },
     {
-      "id": 530751,
-      "title": "凡人修仙传 虚天战纪",
-      "originalTitle": "凡人修仙传 虚天战纪",
-      "score": 7.4,
-      "url": "https://bgm.tv/subject/530751",
-      "airDate": "2025-01-04",
-      "totalEpisodes": 2,
-      "platform": "WEB"
-    },
-    {
       "id": 487630,
       "title": "我独自升级 第二季 -起于暗影-",
       "originalTitle": "俺だけレベルアップな件 Season 2 -Arise from the Shadow-",
@@ -6651,6 +6641,16 @@
       "airDate": "2025-01-04",
       "totalEpisodes": 13,
       "platform": "TV"
+    },
+    {
+      "id": 530751,
+      "title": "凡人修仙传 虚天战纪",
+      "originalTitle": "凡人修仙传 虚天战纪",
+      "score": 7.4,
+      "url": "https://bgm.tv/subject/530751",
+      "airDate": "2025-01-04",
+      "totalEpisodes": 2,
+      "platform": "WEB"
     },
     {
       "id": 471578,
@@ -6916,7 +6916,7 @@
       "id": 553106,
       "title": "王者天下 第六季",
       "originalTitle": "キングダム 第6シリーズ",
-      "score": 7.5,
+      "score": 7.4,
       "url": "https://bgm.tv/subject/553106",
       "airDate": "2025-10-04",
       "totalEpisodes": 13,
@@ -7073,16 +7073,6 @@
       "platform": "WEB"
     },
     {
-      "id": 547888,
-      "title": "Re：从零开始的异世界生活 第四季 丧失篇",
-      "originalTitle": "Re:ゼロから始める異世界生活 4th season 喪失編",
-      "score": 7.8,
-      "url": "https://bgm.tv/subject/547888",
-      "airDate": "2026-04-08",
-      "totalEpisodes": 11,
-      "platform": "TV"
-    },
-    {
       "id": 602059,
       "title": "航海王 埃鲁巴夫篇",
       "originalTitle": "ONE PIECE エルバフ編",
@@ -7090,6 +7080,16 @@
       "url": "https://bgm.tv/subject/602059",
       "airDate": "2026-04-05",
       "totalEpisodes": null,
+      "platform": "TV"
+    },
+    {
+      "id": 547888,
+      "title": "Re：从零开始的异世界生活 第四季 丧失篇",
+      "originalTitle": "Re:ゼロから始める異世界生活 4th season 喪失編",
+      "score": 7.7,
+      "url": "https://bgm.tv/subject/547888",
+      "airDate": "2026-04-08",
+      "totalEpisodes": 11,
       "platform": "TV"
     },
     {
@@ -7246,7 +7246,7 @@
       "id": 495291,
       "title": "再见菈菈",
       "originalTitle": "さよならララ",
-      "score": 7.6,
+      "score": 7.5,
       "url": "https://bgm.tv/subject/495291",
       "airDate": "2026-07-05",
       "totalEpisodes": 12,
@@ -7273,16 +7273,6 @@
       "platform": "TV"
     },
     {
-      "id": 496276,
-      "title": "攻壳机动队 THE GHOST IN THE SHELL",
-      "originalTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/496276",
-      "airDate": "2026-07-07",
-      "totalEpisodes": 10,
-      "platform": "TV"
-    },
-    {
       "id": 622206,
       "title": "尼古喵喵",
       "originalTitle": "ヤニねこ",
@@ -7293,22 +7283,22 @@
       "platform": "TV"
     },
     {
+      "id": 496276,
+      "title": "攻壳机动队 THE GHOST IN THE SHELL",
+      "originalTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/496276",
+      "airDate": "2026-07-07",
+      "totalEpisodes": 10,
+      "platform": "TV"
+    },
+    {
       "id": 325767,
       "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
       "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
       "score": 7.2,
       "url": "https://bgm.tv/subject/325767",
       "airDate": "2026-07-07",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
-      "id": 339515,
-      "title": "幼女战记 第二季",
-      "originalTitle": "幼女戦記Ⅱ",
-      "score": 7.2,
-      "url": "https://bgm.tv/subject/339515",
-      "airDate": "2026-07-08",
       "totalEpisodes": 12,
       "platform": "TV"
     },
@@ -7323,10 +7313,20 @@
       "platform": "TV"
     },
     {
+      "id": 339515,
+      "title": "幼女战记 第二季",
+      "originalTitle": "幼女戦記Ⅱ",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/339515",
+      "airDate": "2026-07-08",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
       "id": 615835,
       "title": "炒翻天",
       "originalTitle": "鉄鍋のジャン",
-      "score": 7.2,
+      "score": 7.1,
       "url": "https://bgm.tv/subject/615835",
       "airDate": "2026-07-05",
       "totalEpisodes": null,
