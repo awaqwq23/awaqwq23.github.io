@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-11T11:24:08.550Z",
+  "updatedAt": "2026-09-11T16:30:10.278Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 173575,
-    "recentMinutes": 2957
+    "totalMinutes": 173832,
+    "recentMinutes": 2911
   },
   "games": [
     {
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 1595,
+      "playtimeTwoWeeks": 1292,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
@@ -150,9 +150,9 @@
     {
       "appid": 286160,
       "name": "Tabletop Simulator",
-      "playtimeForever": 5933,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-08-21T16:28:24.000Z",
+      "playtimeForever": 6190,
+      "playtimeTwoWeeks": 257,
+      "lastPlayed": "2026-09-11T16:26:56.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/286160/19f5b90e3c7084758f885ded843631b13929fa26.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/286160/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/286160/",
