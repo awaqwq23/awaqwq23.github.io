@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-12T04:37:46.158Z",
+  "updatedAt": "2026-09-12T10:49:43.190Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 173840,
-    "recentMinutes": 2918
+    "totalMinutes": 174057,
+    "recentMinutes": 3072
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 7277,
-      "playtimeTwoWeeks": 380,
+      "playtimeTwoWeeks": 317,
       "lastPlayed": "2026-09-06T16:27:44.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -2760,6 +2760,34 @@
       }
     },
     {
+      "appid": 281990,
+      "name": "Stellaris",
+      "playtimeForever": 241,
+      "playtimeTwoWeeks": 217,
+      "lastPlayed": "2026-09-12T10:28:51.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/281990/cb4a03deab1e34ed2a5cbbdf419c66bb6459625f.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/281990/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/281990/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          27,
+          22,
+          29,
+          30,
+          23,
+          62
+        ],
+        "genreIds": [
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 2273430,
       "name": "BlazBlue Entropy Effect",
       "playtimeForever": 241,
@@ -4738,34 +4766,6 @@
         "genreIds": [
           "4",
           "3"
-        ]
-      }
-    },
-    {
-      "appid": 281990,
-      "name": "Stellaris",
-      "playtimeForever": 24,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2024-12-21T13:07:37.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/281990/cb4a03deab1e34ed2a5cbbdf419c66bb6459625f.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/281990/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/281990/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          27,
-          22,
-          29,
-          30,
-          23,
-          62
-        ],
-        "genreIds": [
-          "28",
-          "2"
         ]
       }
     },
