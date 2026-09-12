@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-04T19:00:31.921Z",
+  "syncedAt": "2026-09-12T18:28:12.825Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -12,11 +12,11 @@
       "title": "梦限大",
       "subtitle": "BanG Dream! YUME∞MITA",
       "sourceTitle": "BanG Dream! YUME∞MITA",
-      "status": "RELEASING",
+      "status": "FINISHED",
       "format": "TV",
       "formatLabel": "TV动画",
       "bangumiId": 583729,
-      "score": 5.4,
+      "score": 4.9,
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
@@ -28,10 +28,10 @@
           "siteUrl": "https://bgm.tv/subject/598058"
         }
       ],
-      "releasedEpisodes": 12,
+      "releasedEpisodes": 13,
       "totalEpisodes": 13,
-      "nextEpisode": 13,
-      "nextAiringAt": "2026-09-10T14:00:00.000Z",
+      "nextEpisode": null,
+      "nextAiringAt": null,
       "lastAiredAt": null,
       "startDate": "2026-07-02",
       "endDate": "2026-09-10",
@@ -66,10 +66,10 @@
           "siteUrl": "https://bgm.tv/subject/444557"
         }
       ],
-      "releasedEpisodes": 10,
+      "releasedEpisodes": 11,
       "totalEpisodes": 14,
-      "nextEpisode": 11,
-      "nextAiringAt": "2026-09-06T15:00:00.000Z",
+      "nextEpisode": 12,
+      "nextAiringAt": "2026-09-13T15:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-04",
       "endDate": "2026-09-27",
@@ -104,10 +104,10 @@
           "siteUrl": "https://bgm.tv/subject/515880"
         }
       ],
-      "releasedEpisodes": 9,
+      "releasedEpisodes": 10,
       "totalEpisodes": 12,
-      "nextEpisode": 10,
-      "nextAiringAt": "2026-09-07T15:00:00.000Z",
+      "nextEpisode": 11,
+      "nextAiringAt": "2026-09-14T15:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-07",
       "endDate": null,
@@ -189,14 +189,14 @@
           "siteUrl": "https://bgm.tv/subject/424573"
         }
       ],
-      "releasedEpisodes": 8,
+      "releasedEpisodes": 9,
       "totalEpisodes": 12,
-      "nextEpisode": 9,
-      "nextAiringAt": "2026-09-11T14:30:00.000Z",
+      "nextEpisode": 10,
+      "nextAiringAt": "2026-09-18T14:30:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-17",
       "endDate": null,
-      "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182616-ZOCgArw9cgqI.jpg",
+      "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182616-DymJCBpkR4qs.jpg",
       "coverColor": "#e45050",
       "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182616-kmIqMEUsLYrO.jpg",
       "siteUrl": "https://anilist.co/anime/182616",
@@ -227,13 +227,13 @@
           "siteUrl": "https://bgm.tv/subject/630665"
         }
       ],
-      "releasedEpisodes": 9,
-      "totalEpisodes": null,
-      "nextEpisode": 10,
-      "nextAiringAt": "2026-09-10T15:30:00.000Z",
+      "releasedEpisodes": 10,
+      "totalEpisodes": 12,
+      "nextEpisode": 11,
+      "nextAiringAt": "2026-09-17T15:30:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-03",
-      "endDate": null,
+      "endDate": "2026-09-25",
       "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx207141-h5q5KJPd6vaX.jpg",
       "coverColor": "#50a1f1",
       "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/207141-MvHAS2YVfJzL.jpg",
@@ -282,7 +282,7 @@
       "format": "TV",
       "formatLabel": "TV动画",
       "bangumiId": 547888,
-      "score": 7.8,
+      "score": 7.7,
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
@@ -310,10 +310,10 @@
           "siteUrl": "https://bgm.tv/subject/638494"
         }
       ],
-      "releasedEpisodes": 4,
+      "releasedEpisodes": 5,
       "totalEpisodes": 8,
-      "nextEpisode": 5,
-      "nextAiringAt": "2026-09-09T13:00:00.000Z",
+      "nextEpisode": 6,
+      "nextAiringAt": "2026-09-16T13:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-04-08",
       "endDate": "2026-09-30",
@@ -621,14 +621,6 @@
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
-          "id": 116370,
-          "title": "日本动画（人）博览会",
-          "nativeTitle": "日本アニメ（ーター）見本市",
-          "relationLabel": "其他",
-          "formatLabel": "关联动画",
-          "siteUrl": "https://bgm.tv/subject/116370"
-        },
-        {
           "id": 235701,
           "title": "新世纪福音战士 THE REAL 4D",
           "nativeTitle": "エヴァンゲリオン・ザ・リアル 4-D",
@@ -637,36 +629,12 @@
           "siteUrl": "https://bgm.tv/subject/235701"
         },
         {
-          "id": 6049,
-          "title": "新世纪福音战士剧场版 Air/真心为你",
-          "nativeTitle": "新世紀エヴァンゲリオン劇場版 Air/まごころを、君に",
-          "relationLabel": "续集",
-          "formatLabel": "关联动画",
-          "siteUrl": "https://bgm.tv/subject/6049"
-        },
-        {
-          "id": 6048,
-          "title": "新世纪福音战士剧场版 死与新生",
-          "nativeTitle": "新世紀エヴァンゲリオン劇場版 シト新生",
-          "relationLabel": "总集篇",
-          "formatLabel": "关联动画",
-          "siteUrl": "https://bgm.tv/subject/6048"
-        },
-        {
-          "id": 2682,
-          "title": "EVA爆笑学园",
-          "nativeTitle": "ぷちえゔぁ",
-          "relationLabel": "角色出演",
-          "formatLabel": "关联动画",
-          "siteUrl": "https://bgm.tv/subject/2682"
-        },
-        {
-          "id": 318769,
-          "title": "绫波丽，第一次的口红出镜",
-          "nativeTitle": "綾波レイ、はじめての口紅",
+          "id": 116370,
+          "title": "日本动画（人）博览会",
+          "nativeTitle": "日本アニメ（ーター）見本市",
           "relationLabel": "其他",
           "formatLabel": "关联动画",
-          "siteUrl": "https://bgm.tv/subject/318769"
+          "siteUrl": "https://bgm.tv/subject/116370"
         },
         {
           "id": 318795,
@@ -677,12 +645,36 @@
           "siteUrl": "https://bgm.tv/subject/318795"
         },
         {
-          "id": 772,
-          "title": "福音战士新剧场版：序",
-          "nativeTitle": "ヱヴァンゲリヲン新劇場版:序",
-          "relationLabel": "不同演绎",
+          "id": 318769,
+          "title": "绫波丽，第一次的口红出镜",
+          "nativeTitle": "綾波レイ、はじめての口紅",
+          "relationLabel": "其他",
           "formatLabel": "关联动画",
-          "siteUrl": "https://bgm.tv/subject/772"
+          "siteUrl": "https://bgm.tv/subject/318769"
+        },
+        {
+          "id": 2682,
+          "title": "EVA爆笑学园",
+          "nativeTitle": "ぷちえゔぁ",
+          "relationLabel": "角色出演",
+          "formatLabel": "关联动画",
+          "siteUrl": "https://bgm.tv/subject/2682"
+        },
+        {
+          "id": 6048,
+          "title": "新世纪福音战士剧场版 死与新生",
+          "nativeTitle": "新世紀エヴァンゲリオン劇場版 シト新生",
+          "relationLabel": "总集篇",
+          "formatLabel": "关联动画",
+          "siteUrl": "https://bgm.tv/subject/6048"
+        },
+        {
+          "id": 6049,
+          "title": "新世纪福音战士剧场版 Air/真心为你",
+          "nativeTitle": "新世紀エヴァンゲリオン劇場版 Air/まごころを、君に",
+          "relationLabel": "续集",
+          "formatLabel": "关联动画",
+          "siteUrl": "https://bgm.tv/subject/6049"
         },
         {
           "id": 39923,
@@ -691,6 +683,14 @@
           "relationLabel": "总集篇",
           "formatLabel": "关联动画",
           "siteUrl": "https://bgm.tv/subject/39923"
+        },
+        {
+          "id": 772,
+          "title": "福音战士新剧场版：序",
+          "nativeTitle": "ヱヴァンゲリヲン新劇場版:序",
+          "relationLabel": "不同演绎",
+          "formatLabel": "关联动画",
+          "siteUrl": "https://bgm.tv/subject/772"
         }
       ],
       "releasedEpisodes": 26,
@@ -3526,10 +3526,10 @@
           "siteUrl": "https://bgm.tv/subject/285391"
         }
       ],
-      "releasedEpisodes": 1176,
+      "releasedEpisodes": 1177,
       "totalEpisodes": null,
-      "nextEpisode": 1177,
-      "nextAiringAt": "2026-09-06T14:16:00.000Z",
+      "nextEpisode": 1178,
+      "nextAiringAt": "2026-09-13T14:16:00.000Z",
       "lastAiredAt": null,
       "startDate": "1999-10-20",
       "endDate": null,
@@ -5645,8 +5645,8 @@
           "id": 411428,
           "title": "剧场版 间谍过家家 代号：白",
           "nativeTitle": "劇場版 SPY×FAMILY CODE: White",
-          "relationLabel": "衍生",
-          "formatLabel": "关联动画",
+          "relationLabel": "番外篇",
+          "formatLabel": "特别篇",
           "siteUrl": "https://bgm.tv/subject/411428"
         },
         {
