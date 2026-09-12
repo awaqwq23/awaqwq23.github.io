@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-12T10:49:43.190Z",
+  "updatedAt": "2026-09-12T15:33:26.822Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-09-11T17:55:31.000Z"
+    "lastLogoff": "2026-09-12T13:17:37.000Z"
   },
   "stats": {
     "gameCount": 234,
     "playedGameCount": 174,
-    "totalMinutes": 174057,
-    "recentMinutes": 3072
+    "totalMinutes": 174147,
+    "recentMinutes": 2933
   },
   "games": [
     {
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 1292,
+      "playtimeTwoWeeks": 1063,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
@@ -2289,6 +2289,34 @@
       }
     },
     {
+      "appid": 281990,
+      "name": "Stellaris",
+      "playtimeForever": 331,
+      "playtimeTwoWeeks": 307,
+      "lastPlayed": "2026-09-12T11:58:49.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/281990/cb4a03deab1e34ed2a5cbbdf419c66bb6459625f.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/281990/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/281990/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          27,
+          22,
+          29,
+          30,
+          23,
+          62
+        ],
+        "genreIds": [
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 730,
       "name": "Counter-Strike 2",
       "playtimeForever": 326,
@@ -2755,34 +2783,6 @@
           "1",
           "4",
           "23",
-          "2"
-        ]
-      }
-    },
-    {
-      "appid": 281990,
-      "name": "Stellaris",
-      "playtimeForever": 241,
-      "playtimeTwoWeeks": 217,
-      "lastPlayed": "2026-09-12T10:28:51.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/281990/cb4a03deab1e34ed2a5cbbdf419c66bb6459625f.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/281990/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/281990/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          27,
-          22,
-          29,
-          30,
-          23,
-          62
-        ],
-        "genreIds": [
-          "28",
           "2"
         ]
       }
