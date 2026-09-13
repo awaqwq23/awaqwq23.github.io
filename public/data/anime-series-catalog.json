@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T18:32:40.127Z",
+  "generatedAt": "2026-09-13T18:54:36.358Z",
   "source": {
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
@@ -1547,7 +1547,7 @@
           "platform": "剧场版",
           "airDate": "2026-09-11",
           "totalEpisodes": 1,
-          "score": 6.3,
+          "score": 6.6,
           "image": "https://lain.bgm.tv/pic/cover/l/86/a6/563041_dLFAU.jpg",
           "url": "https://bgm.tv/subject/563041",
           "status": "RELEASING",
@@ -6372,7 +6372,7 @@
           "airDate": "2026-07-05",
           "totalEpisodes": 1,
           "score": 6.2,
-          "image": "https://lain.bgm.tv/pic/cover/l/b1/dd/577191_c7zCc.jpg",
+          "image": "https://lain.bgm.tv/pic/cover/l/b1/dd/577191_5RoIl.jpg",
           "url": "https://bgm.tv/subject/577191",
           "status": "FINISHED",
           "relations": [
@@ -11477,7 +11477,7 @@
           ],
           "platform": "WEB",
           "airDate": "2026-02-21",
-          "totalEpisodes": 18,
+          "totalEpisodes": 19,
           "score": 5.9,
           "image": "https://lain.bgm.tv/pic/cover/l/7b/01/630665_wAc8h.jpg",
           "url": "https://bgm.tv/subject/630665",
@@ -11502,7 +11502,7 @@
           ],
           "platform": "TV",
           "airDate": "2026-07-02",
-          "totalEpisodes": 12,
+          "totalEpisodes": 13,
           "score": 7.3,
           "image": "https://lain.bgm.tv/pic/cover/l/6a/b3/622206_dpWcC.jpg",
           "url": "https://bgm.tv/subject/622206",
@@ -13289,7 +13289,7 @@
           "platform": "TV",
           "airDate": "2026-07-17",
           "totalEpisodes": 12,
-          "score": 6.8,
+          "score": 6.9,
           "image": "https://lain.bgm.tv/pic/cover/l/5d/00/517106_Il9mk.jpg",
           "url": "https://bgm.tv/subject/517106",
           "status": "RELEASING",
@@ -20531,7 +20531,7 @@
           "relations": [
             {
               "id": 654672,
-              "relation": "不同演绎"
+              "relation": "总集篇"
             }
           ]
         },
@@ -20550,12 +20550,7 @@
           "image": "https://lain.bgm.tv/pic/cover/l/6a/1b/654672_5k7KQ.jpg",
           "url": "https://bgm.tv/subject/654672",
           "status": "NOT_YET_RELEASED",
-          "relations": [
-            {
-              "id": 527620,
-              "relation": "不同演绎"
-            }
-          ]
+          "relations": []
         }
       ]
     },
@@ -24440,7 +24435,7 @@
           "platform": "TV",
           "airDate": "2026-04-08",
           "totalEpisodes": 11,
-          "score": 7.7,
+          "score": 7.8,
           "image": "https://lain.bgm.tv/pic/cover/l/8e/70/547888_46dnk.jpg",
           "url": "https://bgm.tv/subject/547888",
           "status": "FINISHED",

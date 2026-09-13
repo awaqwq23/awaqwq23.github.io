@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-12T18:28:12.825Z",
+  "syncedAt": "2026-09-13T18:50:01.496Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -66,10 +66,10 @@
           "siteUrl": "https://bgm.tv/subject/444557"
         }
       ],
-      "releasedEpisodes": 11,
+      "releasedEpisodes": 12,
       "totalEpisodes": 14,
-      "nextEpisode": 12,
-      "nextAiringAt": "2026-09-13T15:00:00.000Z",
+      "nextEpisode": 13,
+      "nextAiringAt": "2026-09-20T15:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-04",
       "endDate": "2026-09-27",
@@ -177,7 +177,7 @@
       "format": "TV",
       "formatLabel": "TV动画",
       "bangumiId": 517106,
-      "score": 6.8,
+      "score": 6.9,
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
@@ -282,7 +282,7 @@
       "format": "TV",
       "formatLabel": "TV动画",
       "bangumiId": 547888,
-      "score": 7.7,
+      "score": 7.8,
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
@@ -3526,10 +3526,10 @@
           "siteUrl": "https://bgm.tv/subject/285391"
         }
       ],
-      "releasedEpisodes": 1177,
+      "releasedEpisodes": 1178,
       "totalEpisodes": null,
-      "nextEpisode": 1178,
-      "nextAiringAt": "2026-09-13T14:16:00.000Z",
+      "nextEpisode": 1179,
+      "nextAiringAt": "2026-09-20T14:16:00.000Z",
       "lastAiredAt": null,
       "startDate": "1999-10-20",
       "endDate": null,
@@ -7165,7 +7165,7 @@
           "id": 654672,
           "title": "タコピーの原罪 -ありがとう、また明日-",
           "nativeTitle": "タコピーの原罪 -ありがとう、また明日-",
-          "relationLabel": "不同演绎",
+          "relationLabel": "总集篇",
           "formatLabel": "关联动画",
           "siteUrl": "https://bgm.tv/subject/654672"
         }
