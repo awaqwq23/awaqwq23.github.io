@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-14T04:59:02.979Z",
+  "updatedAt": "2026-09-14T12:50:56.989Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -13,14 +13,14 @@
     "gameCount": 234,
     "playedGameCount": 174,
     "totalMinutes": 174147,
-    "recentMinutes": 2757
+    "recentMinutes": 2655
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 853,
+      "playtimeTwoWeeks": 839,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -1753,7 +1753,7 @@
       "appid": 438100,
       "name": "VRChat",
       "playtimeForever": 469,
-      "playtimeTwoWeeks": 122,
+      "playtimeTwoWeeks": 40,
       "lastPlayed": "2026-08-31T13:31:28.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/438100/52c5f93bd9f8de008307f5fad95023600267462c.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/438100/header.jpg",
@@ -4963,7 +4963,7 @@
       "appid": 1329410,
       "name": "雀魂麻将(MahjongSoul)",
       "playtimeForever": 16,
-      "playtimeTwoWeeks": 6,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-08-31T08:32:03.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1329410/9403eb9b90dc6f036dde903a669d70dab3b65e12.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1329410/header.jpg",
