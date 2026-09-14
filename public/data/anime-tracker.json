@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-13T18:50:01.496Z",
+  "syncedAt": "2026-09-14T20:20:36.050Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -104,13 +104,13 @@
           "siteUrl": "https://bgm.tv/subject/515880"
         }
       ],
-      "releasedEpisodes": 10,
+      "releasedEpisodes": 11,
       "totalEpisodes": 12,
-      "nextEpisode": 11,
-      "nextAiringAt": "2026-09-14T15:00:00.000Z",
+      "nextEpisode": 12,
+      "nextAiringAt": "2026-09-21T15:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-07",
-      "endDate": null,
+      "endDate": "2026-09-22",
       "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199111-gBSuBG61ElcW.jpg",
       "coverColor": "#5daed6",
       "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/199111-Z8y9awn2Zb6v.jpg",
@@ -195,7 +195,7 @@
       "nextAiringAt": "2026-09-18T14:30:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-07-17",
-      "endDate": null,
+      "endDate": "2026-10-02",
       "coverImage": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182616-DymJCBpkR4qs.jpg",
       "coverColor": "#e45050",
       "bannerImage": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182616-kmIqMEUsLYrO.jpg",

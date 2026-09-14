@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T18:54:36.358Z",
+  "generatedAt": "2026-09-14T20:26:38.793Z",
   "source": {
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
@@ -1547,7 +1547,7 @@
           "platform": "剧场版",
           "airDate": "2026-09-11",
           "totalEpisodes": 1,
-          "score": 6.6,
+          "score": 6.7,
           "image": "https://lain.bgm.tv/pic/cover/l/86/a6/563041_dLFAU.jpg",
           "url": "https://bgm.tv/subject/563041",
           "status": "RELEASING",
@@ -3669,7 +3669,7 @@
           "score": 7.2,
           "image": "https://lain.bgm.tv/pic/cover/l/7e/10/496276_Qeu06.jpg",
           "url": "https://bgm.tv/subject/496276",
-          "status": "RELEASING",
+          "status": "FINISHED",
           "relations": [
             {
               "id": 237,
@@ -4462,7 +4462,7 @@
           "platform": "TV",
           "airDate": "2021-09-12",
           "totalEpisodes": 1,
-          "score": 6.7,
+          "score": 6.6,
           "image": "https://lain.bgm.tv/pic/cover/l/ff/16/349032_o67gS.jpg",
           "url": "https://bgm.tv/subject/349032",
           "status": "FINISHED",
@@ -6371,8 +6371,8 @@
           "platform": "TV",
           "airDate": "2026-07-05",
           "totalEpisodes": 1,
-          "score": 6.2,
-          "image": "https://lain.bgm.tv/pic/cover/l/b1/dd/577191_5RoIl.jpg",
+          "score": 6.1,
+          "image": "https://lain.bgm.tv/pic/cover/l/b1/dd/577191_c7zCc.jpg",
           "url": "https://bgm.tv/subject/577191",
           "status": "FINISHED",
           "relations": [
@@ -16396,7 +16396,7 @@
           "platform": "TV",
           "airDate": "2026-07-05",
           "totalEpisodes": 13,
-          "score": 7.8,
+          "score": 7.7,
           "image": "https://lain.bgm.tv/pic/cover/l/fa/9b/638497_85455.jpg",
           "url": "https://bgm.tv/subject/638497",
           "status": "RELEASING",
@@ -20961,7 +20961,7 @@
           "platform": "TV",
           "airDate": null,
           "totalEpisodes": null,
-          "score": 8.4,
+          "score": 8.3,
           "image": "https://lain.bgm.tv/pic/cover/l/5f/c2/616668_ZVzQ3.jpg",
           "url": "https://bgm.tv/subject/616668",
           "status": "FINISHED",

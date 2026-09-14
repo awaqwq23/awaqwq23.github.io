@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-13T18:50:21.735Z",
+  "syncedAt": "2026-09-14T20:20:57.113Z",
   "subjects": [
     {
       "id": 2463,
@@ -1023,16 +1023,6 @@
       "platform": "TV"
     },
     {
-      "id": 28687,
-      "title": "罗马浴场",
-      "originalTitle": "テルマエ・ロマエ",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/28687",
-      "airDate": "2012-01-12",
-      "totalEpisodes": 3,
-      "platform": "TV"
-    },
-    {
       "id": 20799,
       "title": "爱杀宝贝",
       "originalTitle": "キルミーベイベー",
@@ -1040,6 +1030,16 @@
       "url": "https://bgm.tv/subject/20799",
       "airDate": "2012-01-05",
       "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
+      "id": 28687,
+      "title": "罗马浴场",
+      "originalTitle": "テルマエ・ロマエ",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/28687",
+      "airDate": "2012-01-12",
+      "totalEpisodes": 3,
       "platform": "TV"
     },
     {
@@ -2353,16 +2353,6 @@
       "platform": "TV"
     },
     {
-      "id": 100443,
-      "title": "东京残响",
-      "originalTitle": "残響のテロル",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/100443",
-      "airDate": "2014-07-10",
-      "totalEpisodes": 11,
-      "platform": "TV"
-    },
-    {
       "id": 100526,
       "title": "黑执事 马戏团篇",
       "originalTitle": "黒執事 Book of Circus",
@@ -2370,6 +2360,16 @@
       "url": "https://bgm.tv/subject/100526",
       "airDate": "2014-07-10",
       "totalEpisodes": 10,
+      "platform": "TV"
+    },
+    {
+      "id": 100443,
+      "title": "东京残响",
+      "originalTitle": "残響のテロル",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/100443",
+      "airDate": "2014-07-10",
+      "totalEpisodes": 11,
       "platform": "TV"
     },
     {
@@ -4133,16 +4133,6 @@
       "platform": "TV"
     },
     {
-      "id": 217249,
-      "title": "漫画女孩",
-      "originalTitle": "こみっくがーるず",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/217249",
-      "airDate": "2018-04-05",
-      "totalEpisodes": 12,
-      "platform": "TV"
-    },
-    {
       "id": 234413,
       "title": "偶像活动Friends",
       "originalTitle": "アイカツフレンズ!",
@@ -4150,6 +4140,16 @@
       "url": "https://bgm.tv/subject/234413",
       "airDate": "2018-04-05",
       "totalEpisodes": 50,
+      "platform": "TV"
+    },
+    {
+      "id": 217249,
+      "title": "漫画女孩",
+      "originalTitle": "こみっくがーるず",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/217249",
+      "airDate": "2018-04-05",
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
@@ -5346,7 +5346,7 @@
       "id": 313937,
       "title": "画江湖之不良人 第四季",
       "originalTitle": "画江湖之不良人Ⅳ",
-      "score": 7.6,
+      "score": 7.7,
       "url": "https://bgm.tv/subject/313937",
       "airDate": "2021-04-29",
       "totalEpisodes": 13,
@@ -5576,7 +5576,7 @@
       "id": 331480,
       "title": "明日同学的水手服",
       "originalTitle": "明日ちゃんのセーラー服",
-      "score": 7.5,
+      "score": 7.6,
       "url": "https://bgm.tv/subject/331480",
       "airDate": "2022-01-08",
       "totalEpisodes": 12,
@@ -7305,18 +7305,18 @@
     {
       "id": 615835,
       "title": "炒翻天",
-      "originalTitle": "鉄鍋のジャン",
+      "originalTitle": "鉄鍋のジャン!",
       "score": 7.2,
       "url": "https://bgm.tv/subject/615835",
       "airDate": "2026-07-05",
-      "totalEpisodes": null,
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
       "id": 339515,
       "title": "幼女战记 第二季",
       "originalTitle": "幼女戦記Ⅱ",
-      "score": 7.1,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/339515",
       "airDate": "2026-07-08",
       "totalEpisodes": 12,
