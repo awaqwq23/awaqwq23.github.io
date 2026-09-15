@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T20:26:38.793Z",
+  "generatedAt": "2026-09-15T19:47:53.709Z",
   "source": {
     "name": "Bangumi 番组计划",
     "url": "https://bgm.tv/anime/browser",
@@ -889,6 +889,7 @@
           "aliases": [
             "スティール・ボール・ラン ジョジョの奇妙な冒険 1st STAGE",
             "飙马野郎 JOJO的奇妙冒险 第一赛段",
+            "JOJO的奇妙冒险 S7",
             "Steel Ball Run JoJo’s Bizarre Adventure",
             "SBR JOJO的奇妙冒险"
           ],
@@ -1547,7 +1548,7 @@
           "platform": "剧场版",
           "airDate": "2026-09-11",
           "totalEpisodes": 1,
-          "score": 6.7,
+          "score": 6.8,
           "image": "https://lain.bgm.tv/pic/cover/l/86/a6/563041_dLFAU.jpg",
           "url": "https://bgm.tv/subject/563041",
           "status": "RELEASING",
@@ -4462,7 +4463,7 @@
           "platform": "TV",
           "airDate": "2021-09-12",
           "totalEpisodes": 1,
-          "score": 6.6,
+          "score": 6.7,
           "image": "https://lain.bgm.tv/pic/cover/l/ff/16/349032_o67gS.jpg",
           "url": "https://bgm.tv/subject/349032",
           "status": "FINISHED",
@@ -15591,7 +15592,7 @@
           "aliases": [
             "無職転生Ⅲ ～異世界行ったら本気だす～",
             "无职转生 第三季 ～到了异世界就拿出真本事～",
-            "ushoku Tensei: Jobless Reincarnation Season 3",
+            "Mushoku Tensei: Jobless Reincarnation Season 3",
             "Mushoku Tensei III: Isekai Ittara Honki Dasu",
             "无职转生 第三季 ～在异世界认真地活下去～"
           ],
@@ -20859,10 +20860,6 @@
           "status": "FINISHED",
           "relations": [
             {
-              "id": 294993,
-              "relation": "前传"
-            },
-            {
               "id": 582014,
               "relation": "总集篇"
             },
@@ -20873,6 +20870,10 @@
             {
               "id": 472741,
               "relation": "续集"
+            },
+            {
+              "id": 294993,
+              "relation": "前传"
             }
           ]
         },
