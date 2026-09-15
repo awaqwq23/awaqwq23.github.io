@@ -1,26 +1,26 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-15T11:46:05.988Z",
+  "updatedAt": "2026-09-15T17:02:48.302Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-09-14T17:24:22.000Z"
+    "lastLogoff": "2026-09-15T14:02:05.000Z"
   },
   "stats": {
     "gameCount": 235,
     "playedGameCount": 175,
-    "totalMinutes": 174348,
-    "recentMinutes": 2510
+    "totalMinutes": 174439,
+    "recentMinutes": 2548
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 839,
+      "playtimeTwoWeeks": 786,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -3749,6 +3749,41 @@
       }
     },
     {
+      "appid": 1172470,
+      "name": "Apex Legends",
+      "playtimeForever": 115,
+      "playtimeTwoWeeks": 113,
+      "lastPlayed": "2026-09-15T13:10:31.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1172470/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          35,
+          72,
+          74,
+          55,
+          57,
+          58
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "37"
+        ]
+      }
+    },
+    {
       "appid": 3630410,
       "name": "Little Witch Survivors",
       "playtimeForever": 113,
@@ -4793,41 +4828,6 @@
           "25",
           "4",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 1172470,
-      "name": "Apex Legends",
-      "playtimeForever": 24,
-      "playtimeTwoWeeks": 22,
-      "lastPlayed": "2026-09-15T11:39:19.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1172470/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": true,
-        "categoryIds": [
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          35,
-          72,
-          74,
-          55,
-          57,
-          58
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "37"
         ]
       }
     },
