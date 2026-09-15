@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-15T04:56:53.903Z",
+  "updatedAt": "2026-09-15T11:46:05.988Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
+    "status": 1,
     "lastLogoff": "2026-09-14T17:24:22.000Z"
   },
   "stats": {
-    "gameCount": 234,
-    "playedGameCount": 174,
-    "totalMinutes": 174324,
-    "recentMinutes": 2789
+    "gameCount": 235,
+    "playedGameCount": 175,
+    "totalMinutes": 174348,
+    "recentMinutes": 2510
   },
   "games": [
     {
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 1017,
+      "playtimeTwoWeeks": 716,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
@@ -4793,6 +4793,41 @@
           "25",
           "4",
           "23"
+        ]
+      }
+    },
+    {
+      "appid": 1172470,
+      "name": "Apex Legends",
+      "playtimeForever": 24,
+      "playtimeTwoWeeks": 22,
+      "lastPlayed": "2026-09-15T11:39:19.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1172470/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          35,
+          72,
+          74,
+          55,
+          57,
+          58
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "37"
         ]
       }
     },
