@@ -1,26 +1,26 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-16T04:51:25.057Z",
+  "updatedAt": "2026-09-16T11:37:40.373Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
+    "status": 3,
     "lastLogoff": "2026-09-15T17:23:05.000Z"
   },
   "stats": {
     "gameCount": 235,
     "playedGameCount": 175,
-    "totalMinutes": 174439,
-    "recentMinutes": 2481
+    "totalMinutes": 174497,
+    "recentMinutes": 2377
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 719,
+      "playtimeTwoWeeks": 583,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 716,
+      "playtimeTwoWeeks": 690,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 7452,
-      "playtimeTwoWeeks": 360,
-      "lastPlayed": "2026-09-14T16:22:47.000Z",
+      "playtimeForever": 7510,
+      "playtimeTwoWeeks": 418,
+      "lastPlayed": "2026-09-16T09:48:37.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
