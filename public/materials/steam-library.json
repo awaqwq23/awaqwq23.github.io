@@ -1,26 +1,26 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-16T11:37:40.373Z",
+  "updatedAt": "2026-09-16T16:59:11.051Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-09-15T17:23:05.000Z"
+    "status": 0,
+    "lastLogoff": "2026-09-16T16:55:45.000Z"
   },
   "stats": {
     "gameCount": 235,
     "playedGameCount": 175,
     "totalMinutes": 174497,
-    "recentMinutes": 2377
+    "recentMinutes": 2113
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 583,
+      "playtimeTwoWeeks": 575,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 690,
+      "playtimeTwoWeeks": 434,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
