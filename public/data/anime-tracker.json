@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-15T19:43:25.257Z",
+  "syncedAt": "2026-09-16T19:35:37.994Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -177,7 +177,7 @@
       "format": "TV",
       "formatLabel": "TV动画",
       "bangumiId": 517106,
-      "score": 6.9,
+      "score": 6.8,
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
@@ -310,10 +310,10 @@
           "siteUrl": "https://bgm.tv/subject/638494"
         }
       ],
-      "releasedEpisodes": 5,
+      "releasedEpisodes": 6,
       "totalEpisodes": 8,
-      "nextEpisode": 6,
-      "nextAiringAt": "2026-09-16T13:00:00.000Z",
+      "nextEpisode": 7,
+      "nextAiringAt": "2026-09-23T13:00:00.000Z",
       "lastAiredAt": null,
       "startDate": "2026-04-08",
       "endDate": "2026-09-30",

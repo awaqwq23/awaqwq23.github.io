@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-15T19:43:43.537Z",
+  "syncedAt": "2026-09-16T19:35:59.094Z",
   "subjects": [
     {
       "id": 2463,
@@ -1306,7 +1306,7 @@
       "id": 33352,
       "title": "爆漫王。3",
       "originalTitle": "バクマン。3",
-      "score": 8.2,
+      "score": 8.3,
       "url": "https://bgm.tv/subject/33352",
       "airDate": "2012-10-06",
       "totalEpisodes": 25,
@@ -1536,7 +1536,7 @@
       "id": 52586,
       "title": "迷你偶像",
       "originalTitle": "ぷちます! -プチ・アイドルマスター-",
-      "score": 7.2,
+      "score": 7.1,
       "url": "https://bgm.tv/subject/52586",
       "airDate": "2013-01-01",
       "totalEpisodes": 64,
@@ -2353,16 +2353,6 @@
       "platform": "TV"
     },
     {
-      "id": 100526,
-      "title": "黑执事 马戏团篇",
-      "originalTitle": "黒執事 Book of Circus",
-      "score": 7.1,
-      "url": "https://bgm.tv/subject/100526",
-      "airDate": "2014-07-10",
-      "totalEpisodes": 10,
-      "platform": "TV"
-    },
-    {
       "id": 100443,
       "title": "东京残响",
       "originalTitle": "残響のテロル",
@@ -2370,6 +2360,16 @@
       "url": "https://bgm.tv/subject/100443",
       "airDate": "2014-07-10",
       "totalEpisodes": 11,
+      "platform": "TV"
+    },
+    {
+      "id": 100526,
+      "title": "黑执事 马戏团篇",
+      "originalTitle": "黒執事 Book of Circus",
+      "score": 7.1,
+      "url": "https://bgm.tv/subject/100526",
+      "airDate": "2014-07-10",
+      "totalEpisodes": 10,
       "platform": "TV"
     },
     {
@@ -7173,16 +7173,6 @@
       "platform": "TV"
     },
     {
-      "id": 530725,
-      "title": "死神 千年血战篇-祸进谭-",
-      "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
-      "score": 8.1,
-      "url": "https://bgm.tv/subject/530725",
-      "airDate": "2026-07-25",
-      "totalEpisodes": 10,
-      "platform": "TV"
-    },
-    {
       "id": 552533,
       "title": "穹庐下的魔女",
       "originalTitle": "天幕のジャードゥーガル",
@@ -7190,6 +7180,16 @@
       "url": "https://bgm.tv/subject/552533",
       "airDate": "2026-07-04",
       "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 530725,
+      "title": "死神 千年血战篇-祸进谭-",
+      "originalTitle": "BLEACH 千年血戦篇-禍進譚-",
+      "score": 8,
+      "url": "https://bgm.tv/subject/530725",
+      "airDate": "2026-07-25",
+      "totalEpisodes": 10,
       "platform": "TV"
     },
     {
@@ -7276,7 +7276,7 @@
       "id": 325767,
       "title": "感谢对战。 ～大小姐才不玩格斗游戏～",
       "originalTitle": "対ありでした。 ～お嬢さまは格闘ゲームなんてしない～",
-      "score": 7.2,
+      "score": 7.3,
       "url": "https://bgm.tv/subject/325767",
       "airDate": "2026-07-07",
       "totalEpisodes": 12,
@@ -7293,6 +7293,16 @@
       "platform": "TV"
     },
     {
+      "id": 615835,
+      "title": "炒翻天",
+      "originalTitle": "鉄鍋のジャン！",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/615835",
+      "airDate": "2026-07-05",
+      "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
       "id": 570583,
       "title": "Grow Up Show ～向日葵马戏团～",
       "originalTitle": "グロウアップショウ ～ひまわりのサーカス団～",
@@ -7300,16 +7310,6 @@
       "url": "https://bgm.tv/subject/570583",
       "airDate": "2026-07-04",
       "totalEpisodes": 13,
-      "platform": "TV"
-    },
-    {
-      "id": 615835,
-      "title": "炒翻天",
-      "originalTitle": "鉄鍋のジャン!",
-      "score": 7.2,
-      "url": "https://bgm.tv/subject/615835",
-      "airDate": "2026-07-05",
-      "totalEpisodes": 12,
       "platform": "TV"
     },
     {
