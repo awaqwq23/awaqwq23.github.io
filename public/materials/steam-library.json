@@ -1,12 +1,12 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-16T16:59:11.051Z",
+  "updatedAt": "2026-09-17T04:55:08.341Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
+    "status": 1,
     "lastLogoff": "2026-09-16T16:55:45.000Z"
   },
   "stats": {
@@ -3753,7 +3753,7 @@
       "name": "Apex Legends",
       "playtimeForever": 115,
       "playtimeTwoWeeks": 113,
-      "lastPlayed": "2026-09-15T13:10:31.000Z",
+      "lastPlayed": "2026-09-17T04:52:02.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/1172470/",
