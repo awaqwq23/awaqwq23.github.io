@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-17T04:55:08.341Z",
+  "updatedAt": "2026-09-17T11:44:23.498Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,15 +12,15 @@
   "stats": {
     "gameCount": 235,
     "playedGameCount": 175,
-    "totalMinutes": 174497,
-    "recentMinutes": 2113
+    "totalMinutes": 174605,
+    "recentMinutes": 1947
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 575,
+      "playtimeTwoWeeks": 301,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -2894,6 +2894,41 @@
       }
     },
     {
+      "appid": 1172470,
+      "name": "Apex Legends",
+      "playtimeForever": 223,
+      "playtimeTwoWeeks": 221,
+      "lastPlayed": "2026-09-17T06:40:21.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1172470/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          35,
+          72,
+          74,
+          55,
+          57,
+          58
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "37"
+        ]
+      }
+    },
+    {
       "appid": 881100,
       "name": "Noita",
       "playtimeForever": 213,
@@ -3745,41 +3780,6 @@
           "1",
           "4",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 1172470,
-      "name": "Apex Legends",
-      "playtimeForever": 115,
-      "playtimeTwoWeeks": 113,
-      "lastPlayed": "2026-09-17T04:52:02.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1172470/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": true,
-        "categoryIds": [
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          35,
-          72,
-          74,
-          55,
-          57,
-          58
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "37"
         ]
       }
     },
