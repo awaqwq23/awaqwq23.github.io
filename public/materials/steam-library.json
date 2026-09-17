@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-17T11:44:23.498Z",
+  "updatedAt": "2026-09-17T17:01:04.408Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,15 +12,15 @@
   "stats": {
     "gameCount": 235,
     "playedGameCount": 175,
-    "totalMinutes": 174605,
-    "recentMinutes": 1947
+    "totalMinutes": 174682,
+    "recentMinutes": 1914
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 301,
+      "playtimeTwoWeeks": 192,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -426,6 +426,35 @@
       }
     },
     {
+      "appid": 250900,
+      "name": "The Binding of Isaac: Rebirth",
+      "playtimeForever": 3176,
+      "playtimeTwoWeeks": 76,
+      "lastPlayed": "2026-09-17T16:36:47.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/250900/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          24,
+          22,
+          28,
+          29,
+          23,
+          43,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1"
+        ]
+      }
+    },
+    {
       "appid": 1623730,
       "name": "Palworld",
       "playtimeForever": 3126,
@@ -459,35 +488,6 @@
           "25",
           "23",
           "3"
-        ]
-      }
-    },
-    {
-      "appid": 250900,
-      "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 3099,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-08-19T12:49:11.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/250900/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          24,
-          22,
-          28,
-          29,
-          23,
-          43,
-          44,
-          62
-        ],
-        "genreIds": [
-          "1"
         ]
       }
     },
