@@ -1,26 +1,26 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-18T04:46:04.627Z",
+  "updatedAt": "2026-09-18T16:25:47.442Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-09-17T17:10:40.000Z"
+    "status": 1,
+    "lastLogoff": "2026-09-18T15:42:11.000Z"
   },
   "stats": {
     "gameCount": 235,
     "playedGameCount": 175,
-    "totalMinutes": 174682,
-    "recentMinutes": 1914
+    "totalMinutes": 174776,
+    "recentMinutes": 1735
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42249,
-      "playtimeTwoWeeks": 192,
+      "playtimeTwoWeeks": 97,
       "lastPlayed": "2026-09-06T12:56:27.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -78,7 +78,7 @@
       "appid": 105600,
       "name": "Terraria",
       "playtimeForever": 8902,
-      "playtimeTwoWeeks": 434,
+      "playtimeTwoWeeks": 256,
       "lastPlayed": "2026-09-08T15:34:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/105600/858961e95fbf869f136e1770d586e0caefd4cfac.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg",
@@ -428,9 +428,9 @@
     {
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 3176,
-      "playtimeTwoWeeks": 76,
-      "lastPlayed": "2026-09-17T16:36:47.000Z",
+      "playtimeForever": 3270,
+      "playtimeTwoWeeks": 170,
+      "lastPlayed": "2026-09-18T13:04:31.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/250900/",
