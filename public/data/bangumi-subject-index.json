@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "syncedAt": "2026-09-18T19:03:57.049Z",
+  "syncedAt": "2026-09-19T18:38:35.192Z",
   "subjects": [
     {
       "id": 2463,
@@ -1913,16 +1913,6 @@
       "platform": "TV"
     },
     {
-      "id": 59583,
-      "title": "飙速宅男",
-      "originalTitle": "弱虫ペダル",
-      "score": 7.3,
-      "url": "https://bgm.tv/subject/59583",
-      "airDate": "2013-10-07",
-      "totalEpisodes": 38,
-      "platform": "TV"
-    },
-    {
       "id": 69496,
       "title": "白色相簿2",
       "originalTitle": "WHITE ALBUM2",
@@ -1930,6 +1920,16 @@
       "url": "https://bgm.tv/subject/69496",
       "airDate": "2013-10-05",
       "totalEpisodes": 13,
+      "platform": "TV"
+    },
+    {
+      "id": 59583,
+      "title": "飙速宅男",
+      "originalTitle": "弱虫ペダル",
+      "score": 7.3,
+      "url": "https://bgm.tv/subject/59583",
+      "airDate": "2013-10-07",
+      "totalEpisodes": 38,
       "platform": "TV"
     },
     {
@@ -4283,16 +4283,6 @@
       "platform": "TV"
     },
     {
-      "id": 237834,
-      "title": "中间管理录利根川",
-      "originalTitle": "中間管理録トネガワ",
-      "score": 7.2,
-      "url": "https://bgm.tv/subject/237834",
-      "airDate": "2018-07-03",
-      "totalEpisodes": 24,
-      "platform": "TV"
-    },
-    {
       "id": 238589,
       "title": "咱们裸熊 第四季",
       "originalTitle": "We Bare Bears Season 4",
@@ -4300,6 +4290,16 @@
       "url": "https://bgm.tv/subject/238589",
       "airDate": "2018-07-30",
       "totalEpisodes": 44,
+      "platform": "TV"
+    },
+    {
+      "id": 237834,
+      "title": "中间管理录利根川",
+      "originalTitle": "中間管理録トネガワ",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/237834",
+      "airDate": "2018-07-03",
+      "totalEpisodes": 24,
       "platform": "TV"
     },
     {
@@ -5226,7 +5226,7 @@
       "id": 277554,
       "title": "无职转生～到了异世界就拿出真本事～",
       "originalTitle": "無職転生 ～異世界行ったら本気だす～",
-      "score": 7.9,
+      "score": 8,
       "url": "https://bgm.tv/subject/277554",
       "airDate": "2021-01-10",
       "totalEpisodes": 11,
@@ -5576,7 +5576,7 @@
       "id": 331480,
       "title": "明日同学的水手服",
       "originalTitle": "明日ちゃんのセーラー服",
-      "score": 7.6,
+      "score": 7.5,
       "url": "https://bgm.tv/subject/331480",
       "airDate": "2022-01-08",
       "totalEpisodes": 12,
@@ -6926,7 +6926,7 @@
       "id": 529966,
       "title": "乱马1/2 第二季",
       "originalTitle": "らんま1/2 第2期",
-      "score": 7.3,
+      "score": 7.2,
       "url": "https://bgm.tv/subject/529966",
       "airDate": "2025-10-04",
       "totalEpisodes": 12,
@@ -7216,7 +7216,7 @@
       "id": 545917,
       "title": "画完这个再去死",
       "originalTitle": "これ描いて死ね",
-      "score": 7.8,
+      "score": 7.9,
       "url": "https://bgm.tv/subject/545917",
       "airDate": "2026-07-03",
       "totalEpisodes": 12,
@@ -7283,16 +7283,6 @@
       "platform": "TV"
     },
     {
-      "id": 496276,
-      "title": "攻壳机动队 THE GHOST IN THE SHELL",
-      "originalTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
-      "score": 7.2,
-      "url": "https://bgm.tv/subject/496276",
-      "airDate": "2026-07-07",
-      "totalEpisodes": 10,
-      "platform": "TV"
-    },
-    {
       "id": 615835,
       "title": "炒翻天",
       "originalTitle": "鉄鍋のジャン！",
@@ -7300,6 +7290,16 @@
       "url": "https://bgm.tv/subject/615835",
       "airDate": "2026-07-05",
       "totalEpisodes": 12,
+      "platform": "TV"
+    },
+    {
+      "id": 496276,
+      "title": "攻壳机动队 THE GHOST IN THE SHELL",
+      "originalTitle": "攻殻機動隊 THE GHOST IN THE SHELL",
+      "score": 7.2,
+      "url": "https://bgm.tv/subject/496276",
+      "airDate": "2026-07-07",
+      "totalEpisodes": 10,
       "platform": "TV"
     },
     {
@@ -7329,7 +7329,7 @@
       "score": 7.1,
       "url": "https://bgm.tv/subject/569116",
       "airDate": "2026-07-06",
-      "totalEpisodes": null,
+      "totalEpisodes": 12,
       "platform": "TV"
     },
     {

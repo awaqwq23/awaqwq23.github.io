@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-18T19:03:40.704Z",
+  "syncedAt": "2026-09-19T18:38:17.802Z",
   "timezone": "Asia/Shanghai",
   "source": {
     "name": "AniList",
@@ -177,7 +177,7 @@
       "format": "TV",
       "formatLabel": "TV动画",
       "bangumiId": 517106,
-      "score": 6.8,
+      "score": 6.9,
       "relationSource": "Bangumi",
       "relatedAnime": [
         {
