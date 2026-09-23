@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-23T04:47:46.145Z",
+  "updatedAt": "2026-09-23T17:03:09.614Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-09-22T17:37:44.000Z"
+    "status": 0,
+    "lastLogoff": "2026-09-23T17:02:01.000Z"
   },
   "stats": {
-    "gameCount": 235,
-    "playedGameCount": 175,
-    "totalMinutes": 174776,
-    "recentMinutes": 1197
+    "gameCount": 236,
+    "playedGameCount": 176,
+    "totalMinutes": 174916,
+    "recentMinutes": 1338
   },
   "games": [
     {
@@ -2536,6 +2536,41 @@
       }
     },
     {
+      "appid": 1172470,
+      "name": "Apex Legends",
+      "playtimeForever": 284,
+      "playtimeTwoWeeks": 283,
+      "lastPlayed": "2026-09-23T15:28:55.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1172470/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          35,
+          72,
+          74,
+          55,
+          57,
+          58
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "37"
+        ]
+      }
+    },
+    {
       "appid": 447530,
       "name": "VA-11 Hall-A: Cyberpunk Bartender Action",
       "playtimeForever": 279,
@@ -2890,41 +2925,6 @@
           "4",
           "23",
           "2"
-        ]
-      }
-    },
-    {
-      "appid": 1172470,
-      "name": "Apex Legends",
-      "playtimeForever": 223,
-      "playtimeTwoWeeks": 221,
-      "lastPlayed": "2026-09-17T06:40:21.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1172470/8986dd626da56db5f3fe09bc1b8871739de8b00d.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1172470/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": true,
-        "categoryIds": [
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          35,
-          72,
-          74,
-          55,
-          57,
-          58
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "37"
         ]
       }
     },
@@ -4206,6 +4206,35 @@
         "genreIds": [
           "1",
           "25"
+        ]
+      }
+    },
+    {
+      "appid": 1785150,
+      "name": "Friends vs Friends",
+      "playtimeForever": 79,
+      "playtimeTwoWeeks": 79,
+      "lastPlayed": "2026-09-23T14:27:20.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1785150/6fc10e1d19f90e59276fa2760e80979381c7f9b2.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1785150/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1785150/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          9,
+          38,
+          27,
+          22,
+          28,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
         ]
       }
     },
