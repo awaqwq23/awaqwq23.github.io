@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-26T05:00:40.959Z",
+  "updatedAt": "2026-09-26T11:27:23.177Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -13,7 +13,7 @@
     "gameCount": 236,
     "playedGameCount": 176,
     "totalMinutes": 174916,
-    "recentMinutes": 1074
+    "recentMinutes": 798
   },
   "games": [
     {
@@ -2292,7 +2292,7 @@
       "appid": 281990,
       "name": "Stellaris",
       "playtimeForever": 331,
-      "playtimeTwoWeeks": 307,
+      "playtimeTwoWeeks": 31,
       "lastPlayed": "2026-09-12T11:58:49.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/281990/cb4a03deab1e34ed2a5cbbdf419c66bb6459625f.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/281990/header.jpg",
