@@ -1,18 +1,18 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-27T12:05:30.298Z",
+  "updatedAt": "2026-09-27T16:59:21.615Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-09-27T03:19:08.000Z"
+    "status": 1,
+    "lastLogoff": "2026-09-27T16:02:56.000Z"
   },
   "stats": {
-    "gameCount": 236,
-    "playedGameCount": 176,
-    "totalMinutes": 174916,
+    "gameCount": 241,
+    "playedGameCount": 177,
+    "totalMinutes": 174919,
     "recentMinutes": 767
   },
   "games": [
@@ -5417,6 +5417,16 @@
       }
     },
     {
+      "appid": 1057090,
+      "name": "Ori and the Will of the Wisps",
+      "playtimeForever": 3,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": "2025-10-03T16:46:34.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1057090/ea50b151bb1e2c39e7bdd3ff4f8cc5e8738d6983.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1057090/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1057090/"
+    },
+    {
       "appid": 2533960,
       "name": "SUMMERHOUSE",
       "playtimeForever": 3,
@@ -5808,6 +5818,30 @@
       }
     },
     {
+      "appid": 246420,
+      "name": "Kingdom Rush",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/246420/2dccbb4dbb08987e38d7efe916fd303bea8dc39a.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/246420/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/246420/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 247080,
       "name": "Crypt of the NecroDancer",
       "playtimeForever": 0,
@@ -6138,6 +6172,30 @@
         "genreIds": [
           "4",
           "23",
+          "2"
+        ]
+      }
+    },
+    {
+      "appid": 458710,
+      "name": "Kingdom Rush Frontiers",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/458710/5830f91eb62be434e08f053b59bbfa95f0e53424.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/458710/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/458710/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
           "2"
         ]
       }
@@ -6638,6 +6696,30 @@
         ],
         "genreIds": [
           "4",
+          "2"
+        ]
+      }
+    },
+    {
+      "appid": 816340,
+      "name": "Kingdom Rush Origins",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/816340/e25b57417e1d0b8f5ee41959254bd4f4ec14f017.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/816340/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/816340/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          23,
+          62
+        ],
+        "genreIds": [
+          "23",
           "2"
         ]
       }
@@ -7494,6 +7576,16 @@
           "9"
         ]
       }
+    },
+    {
+      "appid": 3470550,
+      "name": "We, Junk Artists",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3470550/6ec6416d2c013814ad04a238dc7924ab66680c52.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3470550/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/3470550/"
     }
   ]
 }
