@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-09-28T05:26:53.450Z",
+  "updatedAt": "2026-09-28T13:59:01.358Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-09-27T16:02:56.000Z"
+    "status": 1,
+    "lastLogoff": "2026-09-28T13:36:23.000Z"
   },
   "stats": {
     "gameCount": 241,
     "playedGameCount": 177,
-    "totalMinutes": 174919,
-    "recentMinutes": 767
+    "totalMinutes": 174933,
+    "recentMinutes": 746
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 7510,
-      "playtimeTwoWeeks": 233,
+      "playtimeTwoWeeks": 198,
       "lastPlayed": "2026-09-16T09:48:37.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -4887,6 +4887,24 @@
       }
     },
     {
+      "appid": 993090,
+      "name": "Lossless Scaling",
+      "playtimeForever": 21,
+      "playtimeTwoWeeks": 14,
+      "lastPlayed": "2026-09-28T07:59:14.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/993090/42900f430ed7828d2dfa25f07ac02e3de96bc520.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/993090/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/993090/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [],
+        "genreIds": [
+          "57"
+        ]
+      }
+    },
+    {
       "appid": 621060,
       "name": "PC Building Simulator",
       "playtimeForever": 20,
@@ -5236,24 +5254,6 @@
         "genreIds": [
           "23",
           "28"
-        ]
-      }
-    },
-    {
-      "appid": 993090,
-      "name": "Lossless Scaling",
-      "playtimeForever": 7,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-10-10T09:30:10.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/993090/42900f430ed7828d2dfa25f07ac02e3de96bc520.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/993090/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/993090/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [],
-        "genreIds": [
-          "57"
         ]
       }
     },
