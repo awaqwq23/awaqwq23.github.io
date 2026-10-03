@@ -1,16 +1,16 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-03T11:43:15.315Z",
+  "updatedAt": "2026-10-03T16:19:21.232Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 4,
-    "lastLogoff": "2026-10-03T10:13:39.000Z"
+    "status": 3,
+    "lastLogoff": "2026-10-03T12:02:01.000Z"
   },
   "stats": {
-    "gameCount": 241,
+    "gameCount": 242,
     "playedGameCount": 177,
     "totalMinutes": 174933,
     "recentMinutes": 154
@@ -7270,6 +7270,42 @@
         "genreIds": [
           "1",
           "37"
+        ]
+      }
+    },
+    {
+      "appid": 1551360,
+      "name": "Forza Horizon 5",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1551360/6c1d20c62c4613263548323052c62cece488876b.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1551360/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          27,
+          22,
+          28,
+          29,
+          23,
+          61,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "9",
+          "28",
+          "18"
         ]
       }
     },
