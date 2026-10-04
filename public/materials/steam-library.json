@@ -1,16 +1,16 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-03T21:18:17.267Z",
+  "updatedAt": "2026-10-04T05:56:19.487Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 4,
-    "lastLogoff": "2026-10-03T18:02:02.000Z"
+    "lastLogoff": "2026-10-04T01:14:26.000Z"
   },
   "stats": {
-    "gameCount": 242,
+    "gameCount": 243,
     "playedGameCount": 177,
     "totalMinutes": 174933,
     "recentMinutes": 154
@@ -7475,6 +7475,49 @@
           "1",
           "4",
           "23"
+        ]
+      }
+    },
+    {
+      "appid": 2483190,
+      "name": "Forza Horizon 6",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2483190/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          73,
+          66,
+          82,
+          68,
+          78,
+          60,
+          75,
+          80,
+          74,
+          69,
+          70,
+          61,
+          62
+        ],
+        "genreIds": [
+          "9",
+          "28",
+          "18"
         ]
       }
     },
