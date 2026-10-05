@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-05T05:44:11.381Z",
+  "updatedAt": "2026-10-05T14:43:40.480Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
-    "lastLogoff": "2026-10-05T05:30:19.000Z"
+    "status": 1,
+    "lastLogoff": "2026-10-05T12:05:01.000Z"
   },
   "stats": {
-    "gameCount": 243,
-    "playedGameCount": 177,
-    "totalMinutes": 174933,
-    "recentMinutes": 154
+    "gameCount": 244,
+    "playedGameCount": 179,
+    "totalMinutes": 175001,
+    "recentMinutes": 222
   },
   "games": [
     {
@@ -115,7 +115,7 @@
       "name": "Slay the Spire 2",
       "playtimeForever": 7510,
       "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-09-16T09:48:37.000Z",
+      "lastPlayed": "2026-10-05T14:38:07.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -4518,6 +4518,49 @@
       }
     },
     {
+      "appid": 2483190,
+      "name": "Forza Horizon 6",
+      "playtimeForever": 47,
+      "playtimeTwoWeeks": 47,
+      "lastPlayed": "2026-10-05T10:31:13.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2483190/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          73,
+          66,
+          82,
+          68,
+          78,
+          60,
+          75,
+          80,
+          74,
+          69,
+          70,
+          61,
+          62
+        ],
+        "genreIds": [
+          "9",
+          "28",
+          "18"
+        ]
+      }
+    },
+    {
       "appid": 703080,
       "name": "Planet Zoo",
       "playtimeForever": 39,
@@ -4883,6 +4926,33 @@
           "25",
           "23",
           "28"
+        ]
+      }
+    },
+    {
+      "appid": 332950,
+      "name": "Dark Deception",
+      "playtimeForever": 21,
+      "playtimeTwoWeeks": 21,
+      "lastPlayed": "2026-10-05T09:45:11.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/332950/12bcf34c427e39a3cdc91979cc8adefe7d031ae2.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/332950/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/332950/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          2,
+          22,
+          13,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "37"
         ]
       }
     },
@@ -7475,49 +7545,6 @@
           "1",
           "4",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 2483190,
-      "name": "Forza Horizon 6",
-      "playtimeForever": 0,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": null,
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2483190/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          73,
-          66,
-          82,
-          68,
-          78,
-          60,
-          75,
-          80,
-          74,
-          69,
-          70,
-          61,
-          62
-        ],
-        "genreIds": [
-          "9",
-          "28",
-          "18"
         ]
       }
     },
