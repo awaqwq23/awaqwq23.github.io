@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-06T00:04:48.234Z",
+  "updatedAt": "2026-10-06T06:23:41.237Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-10-06T00:04:01.000Z"
+    "status": 3,
+    "lastLogoff": "2026-10-06T06:03:01.000Z"
   },
   "stats": {
-    "gameCount": 244,
+    "gameCount": 252,
     "playedGameCount": 179,
-    "totalMinutes": 175081,
-    "recentMinutes": 301
+    "totalMinutes": 175084,
+    "recentMinutes": 304
   },
   "games": [
     {
@@ -4450,6 +4450,49 @@
       }
     },
     {
+      "appid": 2483190,
+      "name": "Forza Horizon 6",
+      "playtimeForever": 50,
+      "playtimeTwoWeeks": 50,
+      "lastPlayed": "2026-10-06T05:13:25.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2483190/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          73,
+          66,
+          82,
+          68,
+          78,
+          60,
+          75,
+          80,
+          74,
+          69,
+          70,
+          61,
+          62
+        ],
+        "genreIds": [
+          "9",
+          "28",
+          "18"
+        ]
+      }
+    },
+    {
       "appid": 311690,
       "name": "Enter the Gungeon",
       "playtimeForever": 48,
@@ -4513,49 +4556,6 @@
         ],
         "genreIds": [
           "29",
-          "18"
-        ]
-      }
-    },
-    {
-      "appid": 2483190,
-      "name": "Forza Horizon 6",
-      "playtimeForever": 47,
-      "playtimeTwoWeeks": 47,
-      "lastPlayed": "2026-10-05T10:31:13.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2483190/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          73,
-          66,
-          82,
-          68,
-          78,
-          60,
-          75,
-          80,
-          74,
-          69,
-          70,
-          61,
-          62
-        ],
-        "genreIds": [
-          "9",
-          "28",
           "18"
         ]
       }
@@ -6193,6 +6193,42 @@
       }
     },
     {
+      "appid": 431240,
+      "name": "Golf With Your Friends",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/431240/c6379c8ec66ac02565f1155bf3821b846164d93c.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/431240/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/431240/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          37,
+          24,
+          22,
+          30,
+          18,
+          15,
+          17,
+          41,
+          42,
+          44,
+          62
+        ],
+        "genreIds": [
+          "4",
+          "23",
+          "18"
+        ]
+      }
+    },
+    {
       "appid": 434650,
       "name": "Lost Castle",
       "playtimeForever": 0,
@@ -6375,6 +6411,36 @@
         ],
         "genreIds": [
           "2"
+        ]
+      }
+    },
+    {
+      "appid": 489830,
+      "name": "The Elder Scrolls V: Skyrim Special Edition",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/489830/0dfe3eed5658f9fbd8b62f8021038c0a4190f21d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/489830/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/489830/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          74,
+          79,
+          69,
+          70,
+          18,
+          23,
+          41,
+          42,
+          62
+        ],
+        "genreIds": [
+          "3"
         ]
       }
     },
@@ -7191,6 +7257,37 @@
       }
     },
     {
+      "appid": 1304930,
+      "name": "The Outlast Trials",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1304930/159a7d66ffd179c920eefe07392e6a261e899965.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1304930/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1304930/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          28,
+          55,
+          56,
+          57,
+          58,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23"
+        ]
+      }
+    },
+    {
       "appid": 1364780,
       "name": "Street Fighter™ 6",
       "playtimeForever": 0,
@@ -7282,6 +7379,35 @@
           "25",
           "23",
           "28"
+        ]
+      }
+    },
+    {
+      "appid": 1446780,
+      "name": "MONSTER HUNTER RISE",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1446780/560dd364b52075b783424961a43c01f9b69fde15.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1446780/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1446780/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          22,
+          28,
+          29,
+          23,
+          61,
+          62
+        ],
+        "genreIds": [
+          "1"
         ]
       }
     },
@@ -7407,6 +7533,41 @@
       }
     },
     {
+      "appid": 1599600,
+      "name": "PlateUp!",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1599600/c13221a2369c16d90681faf7786265a709586efe.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1599600/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1599600/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          39,
+          24,
+          22,
+          28,
+          30,
+          23,
+          43,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 1902710,
       "name": "Weird RPG",
       "playtimeForever": 0,
@@ -7457,6 +7618,32 @@
       }
     },
     {
+      "appid": 1967430,
+      "name": "Ghost Trick: Phantom Detective",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1967430/ae920bd57d6a6b0d5b2bad1b8d8860e0d54b4694.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1967430/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1967430/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          28,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25"
+        ]
+      }
+    },
+    {
       "appid": 2019300,
       "name": "Dokimon",
       "playtimeForever": 0,
@@ -7481,6 +7668,40 @@
           "4",
           "3",
           "2"
+        ]
+      }
+    },
+    {
+      "appid": 2085540,
+      "name": "Stick It to the Stickman",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2085540/a96a7943cf7f3922988918d2cceea6cf7eb2d415.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2085540/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2085540/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          39,
+          24,
+          22,
+          28,
+          30,
+          60,
+          57,
+          23,
+          17,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
         ]
       }
     },
@@ -7727,6 +7948,37 @@
         ],
         "genreIds": [
           "4",
+          "23"
+        ]
+      }
+    },
+    {
+      "appid": 5084260,
+      "name": "Fireboy & Watergirl 1: The Forest Temple",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/5084260/d0692ad25e0acd3b98ffeec585f4a34f6d9537a3.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/5084260/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/5084260/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          39,
+          24,
+          22,
+          68,
+          23,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
           "23"
         ]
       }
