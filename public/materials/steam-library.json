@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-07T06:03:04.971Z",
+  "updatedAt": "2026-10-07T13:27:18.613Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 4,
-    "lastLogoff": "2026-10-07T03:54:45.000Z"
+    "lastLogoff": "2026-10-07T13:02:44.000Z"
   },
   "stats": {
     "gameCount": 252,
     "playedGameCount": 179,
     "totalMinutes": 175084,
-    "recentMinutes": 304
+    "recentMinutes": 285
   },
   "games": [
     {
@@ -4213,7 +4213,7 @@
       "appid": 1785150,
       "name": "Friends vs Friends",
       "playtimeForever": 79,
-      "playtimeTwoWeeks": 79,
+      "playtimeTwoWeeks": 60,
       "lastPlayed": "2026-09-23T14:27:20.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1785150/6fc10e1d19f90e59276fa2760e80979381c7f9b2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1785150/header.jpg",
