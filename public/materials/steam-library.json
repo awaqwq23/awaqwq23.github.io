@@ -1,27 +1,27 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-09T06:11:41.326Z",
+  "updatedAt": "2026-10-09T13:20:11.301Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-10-09T04:42:24.000Z"
+    "lastLogoff": "2026-10-09T10:23:23.000Z"
   },
   "stats": {
     "gameCount": 259,
-    "playedGameCount": 180,
-    "totalMinutes": 175876,
-    "recentMinutes": 956
+    "playedGameCount": 182,
+    "totalMinutes": 176010,
+    "recentMinutes": 1089
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
-      "playtimeForever": 42249,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-09-06T12:56:27.000Z",
+      "playtimeForever": 42256,
+      "playtimeTwoWeeks": 6,
+      "lastPlayed": "2026-10-09T11:04:23.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2622000/",
@@ -2791,6 +2791,49 @@
       }
     },
     {
+      "appid": 2483190,
+      "name": "Forza Horizon 6",
+      "playtimeForever": 251,
+      "playtimeTwoWeeks": 251,
+      "lastPlayed": "2026-10-09T12:30:24.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2483190/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          73,
+          66,
+          82,
+          68,
+          78,
+          60,
+          75,
+          80,
+          74,
+          69,
+          70,
+          61,
+          62
+        ],
+        "genreIds": [
+          "9",
+          "28",
+          "18"
+        ]
+      }
+    },
+    {
       "appid": 2853160,
       "name": "SHOOPER NOVA",
       "playtimeForever": 247,
@@ -3493,49 +3536,6 @@
         "genreIds": [
           "37",
           "2"
-        ]
-      }
-    },
-    {
-      "appid": 2483190,
-      "name": "Forza Horizon 6",
-      "playtimeForever": 159,
-      "playtimeTwoWeeks": 159,
-      "lastPlayed": "2026-10-08T11:31:31.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2483190/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          73,
-          66,
-          82,
-          68,
-          78,
-          60,
-          75,
-          80,
-          74,
-          69,
-          70,
-          61,
-          62
-        ],
-        "genreIds": [
-          "9",
-          "28",
-          "18"
         ]
       }
     },
@@ -4695,6 +4695,30 @@
       }
     },
     {
+      "appid": 246420,
+      "name": "Kingdom Rush",
+      "playtimeForever": 33,
+      "playtimeTwoWeeks": 33,
+      "lastPlayed": "2026-10-09T11:00:28.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/246420/2dccbb4dbb08987e38d7efe916fd303bea8dc39a.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/246420/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/246420/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 275850,
       "name": "No Man's Sky",
       "playtimeForever": 33,
@@ -5681,6 +5705,40 @@
       }
     },
     {
+      "appid": 2085540,
+      "name": "Stick It to the Stickman",
+      "playtimeForever": 2,
+      "playtimeTwoWeeks": 2,
+      "lastPlayed": "2026-10-09T13:03:46.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2085540/a96a7943cf7f3922988918d2cceea6cf7eb2d415.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2085540/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2085540/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          39,
+          24,
+          22,
+          28,
+          30,
+          60,
+          57,
+          23,
+          17,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
+        ]
+      }
+    },
+    {
       "appid": 433340,
       "name": "Slime Rancher",
       "playtimeForever": 1,
@@ -6016,30 +6074,6 @@
         "genreIds": [
           "23",
           "28",
-          "2"
-        ]
-      }
-    },
-    {
-      "appid": 246420,
-      "name": "Kingdom Rush",
-      "playtimeForever": 0,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": null,
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/246420/2dccbb4dbb08987e38d7efe916fd303bea8dc39a.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/246420/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/246420/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          29,
-          23,
-          62
-        ],
-        "genreIds": [
           "2"
         ]
       }
@@ -7896,40 +7930,6 @@
           "4",
           "3",
           "2"
-        ]
-      }
-    },
-    {
-      "appid": 2085540,
-      "name": "Stick It to the Stickman",
-      "playtimeForever": 0,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": null,
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2085540/a96a7943cf7f3922988918d2cceea6cf7eb2d415.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2085540/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2085540/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          39,
-          24,
-          22,
-          28,
-          30,
-          60,
-          57,
-          23,
-          17,
-          44,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "23"
         ]
       }
     },
