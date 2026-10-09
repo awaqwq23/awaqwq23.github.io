@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-08T23:22:27.791Z",
+  "updatedAt": "2026-10-09T06:11:41.326Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-10-08T13:19:31.000Z"
+    "lastLogoff": "2026-10-09T04:42:24.000Z"
   },
   "stats": {
-    "gameCount": 258,
-    "playedGameCount": 179,
-    "totalMinutes": 175815,
-    "recentMinutes": 895
+    "gameCount": 259,
+    "playedGameCount": 180,
+    "totalMinutes": 175876,
+    "recentMinutes": 956
   },
   "games": [
     {
@@ -358,9 +358,9 @@
     {
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 3810,
-      "playtimeTwoWeeks": 540,
-      "lastPlayed": "2026-10-08T23:16:42.000Z",
+      "playtimeForever": 3859,
+      "playtimeTwoWeeks": 589,
+      "lastPlayed": "2026-10-09T00:05:18.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/250900/",
@@ -5146,6 +5146,50 @@
       }
     },
     {
+      "appid": 2211170,
+      "name": "Unrailed 2: Back on Track",
+      "playtimeForever": 12,
+      "playtimeTwoWeeks": 12,
+      "lastPlayed": "2026-10-09T05:27:12.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2211170/b1eea80c219787aa6bf7e6bbda8e1a039c145cd8.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2211170/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2211170/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          37,
+          9,
+          38,
+          39,
+          24,
+          27,
+          22,
+          28,
+          29,
+          60,
+          55,
+          56,
+          57,
+          58,
+          23,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 413410,
       "name": "Danganronpa: Trigger Happy Havoc",
       "playtimeForever": 10,
@@ -6176,6 +6220,30 @@
         ],
         "genreIds": [
           "25",
+          "23"
+        ]
+      }
+    },
+    {
+      "appid": 405640,
+      "name": "Pony Island",
+      "playtimeForever": 0,
+      "playtimeTwoWeeks": 0,
+      "lastPlayed": null,
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/405640/cbfb87666914abca2e7c06231eeb59ab2a1883e8.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/405640/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/405640/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": true,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          15,
+          62
+        ],
+        "genreIds": [
           "23"
         ]
       }
@@ -7888,50 +7956,6 @@
         ],
         "genreIds": [
           "25"
-        ]
-      }
-    },
-    {
-      "appid": 2211170,
-      "name": "Unrailed 2: Back on Track",
-      "playtimeForever": 0,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": null,
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2211170/b1eea80c219787aa6bf7e6bbda8e1a039c145cd8.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2211170/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2211170/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          37,
-          9,
-          38,
-          39,
-          24,
-          27,
-          22,
-          28,
-          29,
-          60,
-          55,
-          56,
-          57,
-          58,
-          23,
-          44,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "4",
-          "23",
-          "28",
-          "2"
         ]
       }
     },
