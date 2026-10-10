@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-09T22:40:18.370Z",
+  "updatedAt": "2026-10-10T05:55:07.836Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-10-09T13:32:32.000Z"
+    "lastLogoff": "2026-10-10T05:10:23.000Z"
   },
   "stats": {
     "gameCount": 259,
     "playedGameCount": 182,
-    "totalMinutes": 176197,
-    "recentMinutes": 1276
+    "totalMinutes": 176245,
+    "recentMinutes": 1324
   },
   "games": [
     {
@@ -4307,6 +4307,40 @@
       }
     },
     {
+      "appid": 2085540,
+      "name": "Stick It to the Stickman",
+      "playtimeForever": 77,
+      "playtimeTwoWeeks": 77,
+      "lastPlayed": "2026-10-10T05:08:06.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2085540/a96a7943cf7f3922988918d2cceea6cf7eb2d415.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2085540/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2085540/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          39,
+          24,
+          22,
+          28,
+          30,
+          60,
+          57,
+          23,
+          17,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "23"
+        ]
+      }
+    },
+    {
       "appid": 1973530,
       "name": "Limbus Company",
       "playtimeForever": 75,
@@ -4768,40 +4802,6 @@
         "genreIds": [
           "1",
           "25"
-        ]
-      }
-    },
-    {
-      "appid": 2085540,
-      "name": "Stick It to the Stickman",
-      "playtimeForever": 29,
-      "playtimeTwoWeeks": 29,
-      "lastPlayed": "2026-10-09T13:30:40.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2085540/a96a7943cf7f3922988918d2cceea6cf7eb2d415.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2085540/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2085540/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          39,
-          24,
-          22,
-          28,
-          30,
-          60,
-          57,
-          23,
-          17,
-          44,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "23"
         ]
       }
     },
