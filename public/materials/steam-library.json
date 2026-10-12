@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-12T06:01:08.381Z",
+  "updatedAt": "2026-10-12T15:29:38.185Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-10-12T05:19:10.000Z"
+    "status": 1,
+    "lastLogoff": "2026-10-12T13:19:18.000Z"
   },
   "stats": {
     "gameCount": 259,
     "playedGameCount": 182,
     "totalMinutes": 176245,
-    "recentMinutes": 1324
+    "recentMinutes": 1310
   },
   "games": [
     {
@@ -5018,7 +5018,7 @@
       "appid": 993090,
       "name": "Lossless Scaling",
       "playtimeForever": 21,
-      "playtimeTwoWeeks": 14,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-09-28T07:59:14.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/993090/42900f430ed7828d2dfa25f07ac02e3de96bc520.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/993090/header.jpg",
