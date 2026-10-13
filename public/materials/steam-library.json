@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-13T14:14:43.132Z",
+  "updatedAt": "2026-10-13T22:46:36.789Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-10-13T13:34:20.000Z"
+    "status": 0,
+    "lastLogoff": "2026-10-13T17:15:11.000Z"
   },
   "stats": {
     "gameCount": 259,
     "playedGameCount": 182,
-    "totalMinutes": 176479,
-    "recentMinutes": 1544
+    "totalMinutes": 176585,
+    "recentMinutes": 1650
   },
   "games": [
     {
@@ -333,9 +333,9 @@
     {
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 4019,
-      "playtimeTwoWeeks": 749,
-      "lastPlayed": "2026-10-09T16:20:26.000Z",
+      "playtimeForever": 4125,
+      "playtimeTwoWeeks": 855,
+      "lastPlayed": "2026-10-13T16:06:32.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/250900/",
