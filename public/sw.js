@@ -1,7 +1,6 @@
 const THUMBNAIL_CACHE = 'gallery-thumbnails-v1'
 const ORIGINAL_CACHE = 'gallery-originals-v1'
-const ANIME_DATA_CACHE = 'anime-data-v2'
-const ACTIVE_CACHES = new Set([THUMBNAIL_CACHE, ORIGINAL_CACHE, ANIME_DATA_CACHE])
+const ACTIVE_CACHES = new Set([THUMBNAIL_CACHE, ORIGINAL_CACHE])
 
 self.addEventListener('install', () => self.skipWaiting())
 
@@ -52,16 +51,6 @@ function respondWithBoundedCache(event, cacheName, maxEntries) {
   )
 }
 
-function respondStaleWhileRevalidate(event, cacheName, maxEntries) {
-  const cachePromise = caches.open(cacheName)
-  const networkPromise = cachePromise.then(cache => fetch(event.request).then(async response => {
-    if (response.ok) await storeInCache(cache, event.request, response.clone(), maxEntries)
-    return response
-  }))
-  event.waitUntil(networkPromise.catch(() => undefined))
-  event.respondWith(cachePromise.then(cache => cache.match(event.request)).then(cached => cached || networkPromise))
-}
-
 self.addEventListener('fetch', event => {
   const { request } = event
   // 下载链接的 destination 为空，也要复用已经看过的原图缓存。
@@ -69,11 +58,6 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url)
   if (url.origin !== self.location.origin) return
-
-  if (/^\/data\/(?:anime-|bangumi-).+\.json$/i.test(url.pathname)) {
-    respondStaleWhileRevalidate(event, ANIME_DATA_CACHE, 32)
-    return
-  }
 
   if (!url.pathname.startsWith('/assets/')) return
 

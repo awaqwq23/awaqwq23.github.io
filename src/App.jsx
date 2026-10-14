@@ -13,8 +13,6 @@ const About = lazy(() => import('./pages/About'))
 const Docs = lazy(() => import('./pages/Docs'))
 const TodayPicker = lazy(() => import('./pages/TodayPicker'))
 const Lyrics = lazy(() => import('./pages/Lyrics'))
-const AnimeTracker = lazy(() => import('./pages/AnimeTracker'))
-const BangumiAiring = lazy(() => import('./pages/BangumiAiring'))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -49,8 +47,6 @@ export default function App() {
           <Route path="/docs" element={<Docs />} />
           <Route path="/today" element={<TodayPicker />} />
           <Route path="/lyrics" element={<Lyrics />} />
-          <Route path="/anime" element={<AnimeTracker />} />
-          <Route path="/anime/bangumi" element={<BangumiAiring />} />
           <Route path="*" element={<NotFound />} />
         </Routes></Suspense>
       </main>
