@@ -1,27 +1,27 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-15T11:32:21.063Z",
+  "updatedAt": "2026-10-15T17:03:11.290Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-10-15T02:36:26.000Z"
+    "lastLogoff": "2026-10-15T13:27:10.000Z"
   },
   "stats": {
     "gameCount": 259,
     "playedGameCount": 182,
-    "totalMinutes": 176618,
-    "recentMinutes": 1683
+    "totalMinutes": 176738,
+    "recentMinutes": 1803
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
-      "playtimeForever": 42289,
-      "playtimeTwoWeeks": 39,
-      "lastPlayed": "2026-10-15T11:15:13.000Z",
+      "playtimeForever": 42409,
+      "playtimeTwoWeeks": 159,
+      "lastPlayed": "2026-10-15T13:15:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2622000/",
