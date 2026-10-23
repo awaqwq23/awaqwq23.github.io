@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-23T04:52:50.588Z",
+  "updatedAt": "2026-10-23T11:41:54.825Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -13,14 +13,14 @@
     "gameCount": 259,
     "playedGameCount": 182,
     "totalMinutes": 176738,
-    "recentMinutes": 871
+    "recentMinutes": 777
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42409,
-      "playtimeTwoWeeks": 159,
+      "playtimeTwoWeeks": 153,
       "lastPlayed": "2026-10-15T13:15:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -2828,7 +2828,7 @@
       "appid": 2483190,
       "name": "Forza Horizon 6",
       "playtimeForever": 251,
-      "playtimeTwoWeeks": 91,
+      "playtimeTwoWeeks": 48,
       "lastPlayed": "2026-10-09T12:30:24.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2483190/55a14aaa3f5ef5367225f3099ce564462f15b171.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2483190/header.jpg",
@@ -4732,7 +4732,7 @@
       "appid": 246420,
       "name": "Kingdom Rush",
       "playtimeForever": 33,
-      "playtimeTwoWeeks": 33,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-10-09T11:00:28.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/246420/2dccbb4dbb08987e38d7efe916fd303bea8dc39a.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/246420/header.jpg",
@@ -5207,7 +5207,7 @@
       "appid": 2211170,
       "name": "Unrailed 2: Back on Track",
       "playtimeForever": 12,
-      "playtimeTwoWeeks": 12,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-10-09T05:27:12.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2211170/b1eea80c219787aa6bf7e6bbda8e1a039c145cd8.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2211170/header.jpg",
