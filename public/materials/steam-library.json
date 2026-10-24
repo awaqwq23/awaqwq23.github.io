@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-24T04:39:15.932Z",
+  "updatedAt": "2026-10-24T11:04:10.971Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-10-24T01:37:25.000Z"
+    "lastLogoff": "2026-10-24T04:59:47.000Z"
   },
   "stats": {
     "gameCount": 259,
     "playedGameCount": 182,
-    "totalMinutes": 176738,
-    "recentMinutes": 521
+    "totalMinutes": 176812,
+    "recentMinutes": 565
   },
   "games": [
     {
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 7672,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-10-08T15:25:27.000Z",
+      "playtimeForever": 7746,
+      "playtimeTwoWeeks": 73,
+      "lastPlayed": "2026-10-24T07:30:33.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -2428,7 +2428,7 @@
       "appid": 2085540,
       "name": "Stick It to the Stickman",
       "playtimeForever": 311,
-      "playtimeTwoWeeks": 263,
+      "playtimeTwoWeeks": 234,
       "lastPlayed": "2026-10-13T08:59:43.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2085540/a96a7943cf7f3922988918d2cceea6cf7eb2d415.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2085540/header.jpg",
