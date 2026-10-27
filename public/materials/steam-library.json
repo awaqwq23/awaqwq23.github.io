@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-27T12:15:36.035Z",
+  "updatedAt": "2026-10-27T18:03:37.669Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-10-27T12:03:02.000Z"
+    "status": 0,
+    "lastLogoff": "2026-10-27T17:33:17.000Z"
   },
   "stats": {
     "gameCount": 259,
     "playedGameCount": 182,
-    "totalMinutes": 177077,
-    "recentMinutes": 596
+    "totalMinutes": 177335,
+    "recentMinutes": 747
   },
   "games": [
     {
@@ -333,9 +333,9 @@
     {
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
-      "playtimeForever": 4191,
-      "playtimeTwoWeeks": 171,
-      "lastPlayed": "2026-10-26T08:51:22.000Z",
+      "playtimeForever": 4292,
+      "playtimeTwoWeeks": 166,
+      "lastPlayed": "2026-10-27T14:19:25.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/250900/",
@@ -3484,6 +3484,50 @@
       }
     },
     {
+      "appid": 2211170,
+      "name": "Unrailed 2: Back on Track",
+      "playtimeForever": 169,
+      "playtimeTwoWeeks": 156,
+      "lastPlayed": "2026-10-27T16:55:55.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2211170/b1eea80c219787aa6bf7e6bbda8e1a039c145cd8.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2211170/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2211170/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          37,
+          9,
+          38,
+          39,
+          24,
+          27,
+          22,
+          28,
+          29,
+          60,
+          55,
+          56,
+          57,
+          58,
+          23,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "4",
+          "23",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 271590,
       "name": "Grand Theft Auto V Legacy",
       "playtimeForever": 166,
@@ -5199,50 +5243,6 @@
         ],
         "genreIds": [
           "23",
-          "2"
-        ]
-      }
-    },
-    {
-      "appid": 2211170,
-      "name": "Unrailed 2: Back on Track",
-      "playtimeForever": 12,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-10-09T05:27:12.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2211170/b1eea80c219787aa6bf7e6bbda8e1a039c145cd8.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2211170/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2211170/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          37,
-          9,
-          38,
-          39,
-          24,
-          27,
-          22,
-          28,
-          29,
-          60,
-          55,
-          56,
-          57,
-          58,
-          23,
-          44,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "4",
-          "23",
-          "28",
           "2"
         ]
       }
