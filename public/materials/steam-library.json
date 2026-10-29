@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-28T22:37:08.687Z",
+  "updatedAt": "2026-10-29T05:50:56.467Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-10-28T21:03:02.000Z"
+    "status": 1,
+    "lastLogoff": "2026-10-29T03:03:02.000Z"
   },
   "stats": {
-    "gameCount": 259,
-    "playedGameCount": 182,
-    "totalMinutes": 177443,
-    "recentMinutes": 855
+    "gameCount": 260,
+    "playedGameCount": 183,
+    "totalMinutes": 177608,
+    "recentMinutes": 1020
   },
   "games": [
     {
@@ -3555,6 +3555,38 @@
         "genreIds": [
           "1",
           "25"
+        ]
+      }
+    },
+    {
+      "appid": 4348910,
+      "name": "Probably Stolen",
+      "playtimeForever": 165,
+      "playtimeTwoWeeks": 165,
+      "lastPlayed": "2026-10-29T05:33:24.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/4348910/63d2172e624b8a6df1a81b98ed9869d1b8bbcb54.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/4348910/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/4348910/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          64,
+          68,
+          76,
+          80,
+          74,
+          69,
+          23,
+          62
+        ],
+        "genreIds": [
+          "23",
+          "3",
+          "28",
+          "2"
         ]
       }
     },
