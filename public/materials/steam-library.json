@@ -1,26 +1,26 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-29T05:50:56.467Z",
+  "updatedAt": "2026-10-29T13:04:54.877Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-10-29T03:03:02.000Z"
+    "lastLogoff": "2026-10-29T09:03:01.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 183,
-    "totalMinutes": 177608,
-    "recentMinutes": 1020
+    "totalMinutes": 177747,
+    "recentMinutes": 1016
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42409,
-      "playtimeTwoWeeks": 153,
+      "playtimeTwoWeeks": 10,
       "lastPlayed": "2026-10-15T13:15:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -2459,6 +2459,38 @@
       }
     },
     {
+      "appid": 4348910,
+      "name": "Probably Stolen",
+      "playtimeForever": 304,
+      "playtimeTwoWeeks": 304,
+      "lastPlayed": "2026-10-29T07:52:01.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/4348910/63d2172e624b8a6df1a81b98ed9869d1b8bbcb54.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/4348910/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/4348910/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          64,
+          68,
+          76,
+          80,
+          74,
+          69,
+          23,
+          62
+        ],
+        "genreIds": [
+          "23",
+          "3",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 3167020,
       "name": "Escape From Duckov",
       "playtimeForever": 292,
@@ -3555,38 +3587,6 @@
         "genreIds": [
           "1",
           "25"
-        ]
-      }
-    },
-    {
-      "appid": 4348910,
-      "name": "Probably Stolen",
-      "playtimeForever": 165,
-      "playtimeTwoWeeks": 165,
-      "lastPlayed": "2026-10-29T05:33:24.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/4348910/63d2172e624b8a6df1a81b98ed9869d1b8bbcb54.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/4348910/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/4348910/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          64,
-          68,
-          76,
-          80,
-          74,
-          69,
-          23,
-          62
-        ],
-        "genreIds": [
-          "23",
-          "3",
-          "28",
-          "2"
         ]
       }
     },
