@@ -1,26 +1,26 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-29T13:04:54.877Z",
+  "updatedAt": "2026-10-29T22:46:37.715Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-10-29T09:03:01.000Z"
+    "status": 0,
+    "lastLogoff": "2026-10-29T15:51:53.000Z"
   },
   "stats": {
     "gameCount": 260,
-    "playedGameCount": 183,
-    "totalMinutes": 177747,
-    "recentMinutes": 1016
+    "playedGameCount": 184,
+    "totalMinutes": 177862,
+    "recentMinutes": 1120
   },
   "games": [
     {
       "appid": 2622000,
       "name": "Astral Party ",
       "playtimeForever": 42409,
-      "playtimeTwoWeeks": 10,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-10-15T13:15:15.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2622000/28b423d243946c22f001974d22fc4c61b1da7da2.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2622000/header.jpg",
@@ -1260,6 +1260,44 @@
       }
     },
     {
+      "appid": 3003460,
+      "name": "Bang Bang Barrage",
+      "playtimeForever": 741,
+      "playtimeTwoWeeks": 102,
+      "lastPlayed": "2026-10-29T15:45:50.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3003460/01d276b5350c2fe17530b8670f04a2b898e23ac8.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3003460/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/3003460/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          39,
+          24,
+          22,
+          28,
+          29,
+          68,
+          78,
+          76,
+          74,
+          23,
+          25,
+          44,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "4",
+          "23"
+        ]
+      }
+    },
+    {
       "appid": 1687950,
       "name": "Persona 5 Royal",
       "playtimeForever": 726,
@@ -1453,9 +1491,9 @@
     {
       "appid": 1313140,
       "name": "Cult of the Lamb",
-      "playtimeForever": 655,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-03-17T15:14:59.000Z",
+      "playtimeForever": 657,
+      "playtimeTwoWeeks": 1,
+      "lastPlayed": "2026-10-29T15:51:52.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1313140/337223c1a97705aee1714ad9534c7d6cfabd92b0.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1313140/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/1313140/",
@@ -1490,44 +1528,6 @@
           "25",
           "23",
           "2"
-        ]
-      }
-    },
-    {
-      "appid": 3003460,
-      "name": "Bang Bang Barrage",
-      "playtimeForever": 639,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-11-02T16:07:41.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3003460/01d276b5350c2fe17530b8670f04a2b898e23ac8.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3003460/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/3003460/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          39,
-          24,
-          22,
-          28,
-          29,
-          68,
-          78,
-          76,
-          74,
-          23,
-          25,
-          44,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "4",
-          "23"
         ]
       }
     },
@@ -3836,9 +3836,9 @@
     {
       "appid": 2918500,
       "name": "Cozy Island",
-      "playtimeForever": 123,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-10-13T14:54:11.000Z",
+      "playtimeForever": 124,
+      "playtimeTwoWeeks": 1,
+      "lastPlayed": "2026-10-29T15:47:24.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2918500/e730f155e6dc6d588478e676fa46cfb110b94111.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2918500/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2918500/",
@@ -3911,9 +3911,9 @@
     {
       "appid": 1335940,
       "name": "Ball-it Hell",
-      "playtimeForever": 116,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-01-15T13:39:20.000Z",
+      "playtimeForever": 118,
+      "playtimeTwoWeeks": 2,
+      "lastPlayed": "2026-10-29T15:59:12.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1335940/1176facd91969f271363a6aeb62ee2a59543cd75.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1335940/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/1335940/",
@@ -5193,7 +5193,7 @@
       "playtimeForever": 19,
       "playtimeTwoWeeks": 0,
       "lastPlayed": "2024-12-03T10:10:06.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2835570/81779afdc4209795d9ccf7948514b9a227acf601.jpg",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2835570/b813298efcd6e936076f721365f20b192fbbe556.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2835570/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2835570/",
       "storeInfo": {
@@ -5458,6 +5458,36 @@
         "genreIds": [
           "23",
           "28"
+        ]
+      }
+    },
+    {
+      "appid": 3470550,
+      "name": "We, Junk Artists",
+      "playtimeForever": 8,
+      "playtimeTwoWeeks": 8,
+      "lastPlayed": "2026-10-29T16:09:34.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3470550/6ec6416d2c013814ad04a238dc7924ab66680c52.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3470550/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/3470550/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          29,
+          23,
+          62
+        ],
+        "genreIds": [
+          "4",
+          "23"
         ]
       }
     },
@@ -8179,36 +8209,6 @@
           "1",
           "25",
           "9"
-        ]
-      }
-    },
-    {
-      "appid": 3470550,
-      "name": "We, Junk Artists",
-      "playtimeForever": 0,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": null,
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/3470550/6ec6416d2c013814ad04a238dc7924ab66680c52.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/3470550/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/3470550/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          29,
-          23,
-          62
-        ],
-        "genreIds": [
-          "4",
-          "23"
         ]
       }
     },
