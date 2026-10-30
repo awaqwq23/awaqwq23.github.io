@@ -1,13 +1,13 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-29T22:46:37.715Z",
+  "updatedAt": "2026-10-30T05:51:51.272Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-10-29T15:51:53.000Z"
+    "lastLogoff": "2026-10-30T05:18:51.000Z"
   },
   "stats": {
     "gameCount": 260,
@@ -703,7 +703,7 @@
       "playtimeForever": 1455,
       "playtimeTwoWeeks": 0,
       "lastPlayed": "2025-03-09T06:50:31.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1669980/af41b6930b60ea5a3d8e21ba04933284253f42cf.jpg",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1669980/632f02980c8e38bd482a9162ce0380b8aff9c882.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1669980/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/1669980/",
       "storeInfo": {
