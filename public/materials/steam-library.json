@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-10-31T05:44:59.686Z",
+  "updatedAt": "2026-10-31T12:35:08.646Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
+    "status": 1,
     "lastLogoff": "2026-10-31T05:04:33.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 184,
-    "totalMinutes": 177949,
-    "recentMinutes": 1206
+    "totalMinutes": 178009,
+    "recentMinutes": 1266
   },
   "games": [
     {
@@ -4508,6 +4508,44 @@
       }
     },
     {
+      "appid": 701160,
+      "name": "Kingdom Two Crowns",
+      "playtimeForever": 62,
+      "playtimeTwoWeeks": 60,
+      "lastPlayed": "2026-10-31T12:35:00.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/701160/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          39,
+          24,
+          22,
+          28,
+          55,
+          57,
+          23,
+          41,
+          42,
+          43,
+          44,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "23",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 2113850,
       "name": "Spirit City: Lofi Sessions",
       "playtimeForever": 56,
@@ -5734,44 +5772,6 @@
         "genreIds": [
           "1",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 701160,
-      "name": "Kingdom Two Crowns",
-      "playtimeForever": 2,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-11-29T03:03:15.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/701160/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          39,
-          24,
-          22,
-          28,
-          55,
-          57,
-          23,
-          41,
-          42,
-          43,
-          44,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "23",
-          "28",
-          "2"
         ]
       }
     },
