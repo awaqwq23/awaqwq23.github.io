@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-04T06:26:14.975Z",
+  "updatedAt": "2026-11-04T19:47:02.539Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
-    "lastLogoff": "2026-11-04T04:25:41.000Z"
+    "status": 4,
+    "lastLogoff": "2026-11-04T13:18:27.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 184,
-    "totalMinutes": 178433,
-    "recentMinutes": 1690
+    "totalMinutes": 178734,
+    "recentMinutes": 1991
   },
   "games": [
     {
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 7945,
-      "playtimeTwoWeeks": 272,
-      "lastPlayed": "2026-10-26T15:42:45.000Z",
+      "playtimeForever": 8018,
+      "playtimeTwoWeeks": 345,
+      "lastPlayed": "2026-11-04T11:18:11.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -1323,6 +1323,44 @@
       }
     },
     {
+      "appid": 701160,
+      "name": "Kingdom Two Crowns",
+      "playtimeForever": 714,
+      "playtimeTwoWeeks": 712,
+      "lastPlayed": "2026-11-04T17:13:09.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/701160/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          39,
+          24,
+          22,
+          28,
+          55,
+          57,
+          23,
+          41,
+          42,
+          43,
+          44,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "23",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 602960,
       "name": "Barotrauma",
       "playtimeForever": 713,
@@ -1746,44 +1784,6 @@
         "genreIds": [
           "1",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 701160,
-      "name": "Kingdom Two Crowns",
-      "playtimeForever": 486,
-      "playtimeTwoWeeks": 484,
-      "lastPlayed": "2026-11-02T16:55:13.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/701160/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          39,
-          24,
-          22,
-          28,
-          55,
-          57,
-          23,
-          41,
-          42,
-          43,
-          44,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "23",
-          "28",
-          "2"
         ]
       }
     },
