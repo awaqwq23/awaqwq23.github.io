@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-06T19:25:55.705Z",
+  "updatedAt": "2026-11-07T06:00:57.127Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-11-06T12:49:57.000Z"
+    "status": 1,
+    "lastLogoff": "2026-11-07T04:11:57.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 184,
-    "totalMinutes": 179061,
-    "recentMinutes": 2319
+    "totalMinutes": 179102,
+    "recentMinutes": 2360
   },
   "games": [
     {
@@ -1593,6 +1593,35 @@
       }
     },
     {
+      "appid": 1188930,
+      "name": "Chrono Ark",
+      "playtimeForever": 611,
+      "playtimeTwoWeeks": 455,
+      "lastPlayed": "2026-11-07T05:52:39.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1188930/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          30,
+          18,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "23",
+          "3",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 674940,
       "name": "Stick Fight: The Game",
       "playtimeForever": 610,
@@ -1620,35 +1649,6 @@
           "1",
           "4",
           "23"
-        ]
-      }
-    },
-    {
-      "appid": 1188930,
-      "name": "Chrono Ark",
-      "playtimeForever": 570,
-      "playtimeTwoWeeks": 414,
-      "lastPlayed": "2026-11-06T18:48:11.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1188930/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          29,
-          30,
-          18,
-          23,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "23",
-          "3",
-          "2"
         ]
       }
     },
