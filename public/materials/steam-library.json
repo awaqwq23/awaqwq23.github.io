@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-07T06:00:57.127Z",
+  "updatedAt": "2026-11-07T13:05:09.094Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 260,
     "playedGameCount": 184,
-    "totalMinutes": 179102,
-    "recentMinutes": 2360
+    "totalMinutes": 179446,
+    "recentMinutes": 2629
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 8018,
-      "playtimeTwoWeeks": 345,
+      "playtimeTwoWeeks": 271,
       "lastPlayed": "2026-11-04T11:18:11.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -891,6 +891,35 @@
       }
     },
     {
+      "appid": 1188930,
+      "name": "Chrono Ark",
+      "playtimeForever": 925,
+      "playtimeTwoWeeks": 768,
+      "lastPlayed": "2026-11-07T11:06:08.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1188930/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          30,
+          18,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "23",
+          "3",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 1293830,
       "name": "Forza Horizon 4",
       "playtimeForever": 918,
@@ -1189,6 +1218,40 @@
       }
     },
     {
+      "appid": 2444750,
+      "name": "Shape of Dreams",
+      "playtimeForever": 813,
+      "playtimeTwoWeeks": 30,
+      "lastPlayed": "2026-11-07T12:58:54.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2444750/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          22,
+          28,
+          55,
+          56,
+          57,
+          58,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "3"
+        ]
+      }
+    },
+    {
       "appid": 582010,
       "name": "Monster Hunter: World",
       "playtimeForever": 807,
@@ -1222,40 +1285,6 @@
         ],
         "genreIds": [
           "1"
-        ]
-      }
-    },
-    {
-      "appid": 2444750,
-      "name": "Shape of Dreams",
-      "playtimeForever": 783,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-12-11T13:11:04.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2444750/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          22,
-          28,
-          55,
-          56,
-          57,
-          58,
-          23,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "23",
-          "3"
         ]
       }
     },
@@ -1589,35 +1618,6 @@
           "23",
           "51",
           "58"
-        ]
-      }
-    },
-    {
-      "appid": 1188930,
-      "name": "Chrono Ark",
-      "playtimeForever": 611,
-      "playtimeTwoWeeks": 455,
-      "lastPlayed": "2026-11-07T05:52:39.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1188930/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          29,
-          30,
-          18,
-          23,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "23",
-          "3",
-          "2"
         ]
       }
     },
