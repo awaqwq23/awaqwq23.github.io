@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-07T13:05:09.094Z",
+  "updatedAt": "2026-11-07T21:52:42.269Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 1,
-    "lastLogoff": "2026-11-07T04:11:57.000Z"
+    "status": 4,
+    "lastLogoff": "2026-11-07T17:37:26.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 184,
-    "totalMinutes": 179446,
-    "recentMinutes": 2629
+    "totalMinutes": 179633,
+    "recentMinutes": 2816
   },
   "games": [
     {
@@ -891,6 +891,40 @@
       }
     },
     {
+      "appid": 2444750,
+      "name": "Shape of Dreams",
+      "playtimeForever": 1000,
+      "playtimeTwoWeeks": 217,
+      "lastPlayed": "2026-11-07T16:06:27.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2444750/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          22,
+          28,
+          55,
+          56,
+          57,
+          58,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "3"
+        ]
+      }
+    },
+    {
       "appid": 1188930,
       "name": "Chrono Ark",
       "playtimeForever": 925,
@@ -1213,40 +1247,6 @@
         "genreIds": [
           "1",
           "25",
-          "3"
-        ]
-      }
-    },
-    {
-      "appid": 2444750,
-      "name": "Shape of Dreams",
-      "playtimeForever": 813,
-      "playtimeTwoWeeks": 30,
-      "lastPlayed": "2026-11-07T12:58:54.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2444750/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          22,
-          28,
-          55,
-          56,
-          57,
-          58,
-          23,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "23",
           "3"
         ]
       }
