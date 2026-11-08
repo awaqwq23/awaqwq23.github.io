@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-07T21:52:42.269Z",
+  "updatedAt": "2026-11-08T06:04:29.429Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 4,
-    "lastLogoff": "2026-11-07T17:37:26.000Z"
+    "status": 1,
+    "lastLogoff": "2026-11-08T04:08:48.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 184,
-    "totalMinutes": 179633,
-    "recentMinutes": 2816
+    "totalMinutes": 179635,
+    "recentMinutes": 2817
   },
   "games": [
     {
@@ -5102,6 +5102,24 @@
       }
     },
     {
+      "appid": 993090,
+      "name": "Lossless Scaling",
+      "playtimeForever": 23,
+      "playtimeTwoWeeks": 1,
+      "lastPlayed": "2026-11-08T04:26:59.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/993090/42900f430ed7828d2dfa25f07ac02e3de96bc520.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/993090/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/993090/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [],
+        "genreIds": [
+          "57"
+        ]
+      }
+    },
+    {
       "appid": 332950,
       "name": "Dark Deception",
       "playtimeForever": 21,
@@ -5125,24 +5143,6 @@
           "25",
           "23",
           "37"
-        ]
-      }
-    },
-    {
-      "appid": 993090,
-      "name": "Lossless Scaling",
-      "playtimeForever": 21,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-09-28T07:59:14.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/993090/42900f430ed7828d2dfa25f07ac02e3de96bc520.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/993090/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/993090/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [],
-        "genreIds": [
-          "57"
         ]
       }
     },
