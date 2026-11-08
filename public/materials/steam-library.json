@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-08T06:04:29.429Z",
+  "updatedAt": "2026-11-08T13:27:34.117Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-11-08T04:08:48.000Z"
+    "lastLogoff": "2026-11-08T13:09:28.000Z"
   },
   "stats": {
     "gameCount": 260,
-    "playedGameCount": 184,
-    "totalMinutes": 179635,
-    "recentMinutes": 2817
+    "playedGameCount": 185,
+    "totalMinutes": 179729,
+    "recentMinutes": 2906
   },
   "games": [
     {
@@ -114,7 +114,7 @@
       "appid": 2868840,
       "name": "Slay the Spire 2",
       "playtimeForever": 8018,
-      "playtimeTwoWeeks": 271,
+      "playtimeTwoWeeks": 268,
       "lastPlayed": "2026-11-04T11:18:11.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
@@ -893,9 +893,9 @@
     {
       "appid": 2444750,
       "name": "Shape of Dreams",
-      "playtimeForever": 1000,
-      "playtimeTwoWeeks": 217,
-      "lastPlayed": "2026-11-07T16:06:27.000Z",
+      "playtimeForever": 1003,
+      "playtimeTwoWeeks": 220,
+      "lastPlayed": "2026-11-08T08:00:42.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2444750/",
@@ -1289,6 +1289,44 @@
       }
     },
     {
+      "appid": 701160,
+      "name": "Kingdom Two Crowns",
+      "playtimeForever": 795,
+      "playtimeTwoWeeks": 792,
+      "lastPlayed": "2026-11-08T07:45:06.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/701160/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          39,
+          24,
+          22,
+          28,
+          55,
+          57,
+          23,
+          41,
+          42,
+          43,
+          44,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "23",
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 3003460,
       "name": "Bang Bang Barrage",
       "playtimeForever": 741,
@@ -1348,44 +1386,6 @@
         ],
         "genreIds": [
           "3"
-        ]
-      }
-    },
-    {
-      "appid": 701160,
-      "name": "Kingdom Two Crowns",
-      "playtimeForever": 714,
-      "playtimeTwoWeeks": 712,
-      "lastPlayed": "2026-11-04T17:13:09.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/701160/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          39,
-          24,
-          22,
-          28,
-          55,
-          57,
-          23,
-          41,
-          42,
-          43,
-          44,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "23",
-          "28",
-          "2"
         ]
       }
     },
@@ -1523,9 +1523,9 @@
     {
       "appid": 1942280,
       "name": "Brotato",
-      "playtimeForever": 661,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-02-02T09:30:55.000Z",
+      "playtimeForever": 662,
+      "playtimeTwoWeeks": 1,
+      "lastPlayed": "2026-11-08T08:18:37.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1942280/d9dfcab8f300a9548439f70bef7b5f4e53d0fc28.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1942280/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/1942280/",
@@ -5318,6 +5318,34 @@
       }
     },
     {
+      "appid": 255710,
+      "name": "Cities: Skylines",
+      "playtimeForever": 11,
+      "playtimeTwoWeeks": 7,
+      "lastPlayed": "2026-11-08T08:15:46.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/255710/6cf7b10dd29db28448ef79698ed2118a03617d63.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/255710/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/255710/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          30,
+          23,
+          17,
+          42,
+          62
+        ],
+        "genreIds": [
+          "28",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 413410,
       "name": "Danganronpa: Trigger Happy Havoc",
       "playtimeForever": 10,
@@ -5621,34 +5649,6 @@
       }
     },
     {
-      "appid": 255710,
-      "name": "Cities: Skylines",
-      "playtimeForever": 3,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-03-12T05:21:14.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/255710/6cf7b10dd29db28448ef79698ed2118a03617d63.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/255710/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/255710/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          29,
-          30,
-          23,
-          17,
-          42,
-          62
-        ],
-        "genreIds": [
-          "28",
-          "2"
-        ]
-      }
-    },
-    {
       "appid": 282800,
       "name": "100% Orange Juice",
       "playtimeForever": 3,
@@ -5944,6 +5944,37 @@
           "23",
           "3",
           "28"
+        ]
+      }
+    },
+    {
+      "appid": 5084260,
+      "name": "Fireboy & Watergirl 1: The Forest Temple",
+      "playtimeForever": 1,
+      "playtimeTwoWeeks": 1,
+      "lastPlayed": "2026-11-08T08:05:53.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/5084260/d0692ad25e0acd3b98ffeec585f4a34f6d9537a3.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/5084260/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/5084260/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          39,
+          24,
+          22,
+          68,
+          23,
+          44,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23"
         ]
       }
     },
@@ -8209,37 +8240,6 @@
           "1",
           "25",
           "9"
-        ]
-      }
-    },
-    {
-      "appid": 5084260,
-      "name": "Fireboy & Watergirl 1: The Forest Temple",
-      "playtimeForever": 0,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": null,
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/5084260/d0692ad25e0acd3b98ffeec585f4a34f6d9537a3.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/5084260/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/5084260/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          39,
-          24,
-          22,
-          68,
-          23,
-          44,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "23"
         ]
       }
     }
