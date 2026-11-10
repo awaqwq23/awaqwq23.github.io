@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-10T07:21:18.698Z",
+  "updatedAt": "2026-11-10T19:45:13.863Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 1,
-    "lastLogoff": "2026-11-10T05:28:00.000Z"
+    "lastLogoff": "2026-11-10T19:15:18.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 185,
-    "totalMinutes": 179729,
-    "recentMinutes": 2645
+    "totalMinutes": 179784,
+    "recentMinutes": 2443
   },
   "games": [
     {
@@ -334,7 +334,7 @@
       "appid": 250900,
       "name": "The Binding of Isaac: Rebirth",
       "playtimeForever": 4292,
-      "playtimeTwoWeeks": 101,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-10-27T14:19:25.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/250900/16d46c8630499bfc54d20745ac90786a302cd643.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/250900/header.jpg",
@@ -850,6 +850,40 @@
       }
     },
     {
+      "appid": 2444750,
+      "name": "Shape of Dreams",
+      "playtimeForever": 1058,
+      "playtimeTwoWeeks": 275,
+      "lastPlayed": "2026-11-10T12:03:51.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/2444750/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          22,
+          28,
+          55,
+          56,
+          57,
+          58,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "23",
+          "3"
+        ]
+      }
+    },
+    {
       "appid": 2001120,
       "name": "Split Fiction",
       "playtimeForever": 1042,
@@ -887,40 +921,6 @@
         "genreIds": [
           "1",
           "25"
-        ]
-      }
-    },
-    {
-      "appid": 2444750,
-      "name": "Shape of Dreams",
-      "playtimeForever": 1003,
-      "playtimeTwoWeeks": 220,
-      "lastPlayed": "2026-11-08T08:00:42.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/2444750/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          9,
-          38,
-          22,
-          28,
-          55,
-          56,
-          57,
-          58,
-          23,
-          62
-        ],
-        "genreIds": [
-          "1",
-          "25",
-          "23",
-          "3"
         ]
       }
     },
@@ -2735,7 +2735,7 @@
       "appid": 2211170,
       "name": "Unrailed 2: Back on Track",
       "playtimeForever": 277,
-      "playtimeTwoWeeks": 264,
+      "playtimeTwoWeeks": 108,
       "lastPlayed": "2026-10-28T16:03:12.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2211170/b1eea80c219787aa6bf7e6bbda8e1a039c145cd8.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2211170/header.jpg",
