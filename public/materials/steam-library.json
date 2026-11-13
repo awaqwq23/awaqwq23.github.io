@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-13T06:48:27.164Z",
+  "updatedAt": "2026-11-13T19:44:06.302Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
@@ -12,8 +12,8 @@
   "stats": {
     "gameCount": 260,
     "playedGameCount": 185,
-    "totalMinutes": 180077,
-    "recentMinutes": 2209
+    "totalMinutes": 180282,
+    "recentMinutes": 2328
   },
   "games": [
     {
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 8099,
-      "playtimeTwoWeeks": 153,
-      "lastPlayed": "2026-11-13T04:34:50.000Z",
+      "playtimeForever": 8304,
+      "playtimeTwoWeeks": 358,
+      "lastPlayed": "2026-11-13T12:18:45.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -956,7 +956,7 @@
       "appid": 1188930,
       "name": "Chrono Ark",
       "playtimeForever": 925,
-      "playtimeTwoWeeks": 768,
+      "playtimeTwoWeeks": 682,
       "lastPlayed": "2026-11-07T11:06:08.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
