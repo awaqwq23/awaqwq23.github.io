@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-13T19:44:06.302Z",
+  "updatedAt": "2026-11-14T18:05:24.954Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-11-12T13:08:09.000Z"
+    "lastLogoff": "2026-11-14T12:56:05.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 185,
     "totalMinutes": 180282,
-    "recentMinutes": 2328
+    "recentMinutes": 1991
   },
   "games": [
     {
@@ -1292,7 +1292,7 @@
       "appid": 701160,
       "name": "Kingdom Two Crowns",
       "playtimeForever": 795,
-      "playtimeTwoWeeks": 792,
+      "playtimeTwoWeeks": 455,
       "lastPlayed": "2026-11-08T07:45:06.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
