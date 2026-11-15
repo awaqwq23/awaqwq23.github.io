@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-14T18:05:24.954Z",
+  "updatedAt": "2026-11-15T18:52:40.503Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 0,
-    "lastLogoff": "2026-11-14T12:56:05.000Z"
+    "status": 3,
+    "lastLogoff": "2026-11-15T18:24:02.000Z"
   },
   "stats": {
     "gameCount": 260,
     "playedGameCount": 185,
-    "totalMinutes": 180282,
-    "recentMinutes": 1991
+    "totalMinutes": 180403,
+    "recentMinutes": 2112
   },
   "games": [
     {
@@ -48,9 +48,9 @@
     {
       "appid": 431960,
       "name": "Wallpaper Engine",
-      "playtimeForever": 15921,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-09-15T01:21:11.000Z",
+      "playtimeForever": 15922,
+      "playtimeTwoWeeks": 1,
+      "lastPlayed": "2026-11-15T14:16:01.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/431960/72edaed9d748c6cf7397ffb1c83f0b837b9ebd9d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/431960/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/431960/",
@@ -1622,6 +1622,59 @@
       }
     },
     {
+      "appid": 550,
+      "name": "Left 4 Dead 2",
+      "playtimeForever": 614,
+      "playtimeTwoWeeks": 120,
+      "lastPlayed": "2026-11-15T11:40:47.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/550/7d5a243f9500d2f8467312822f8af2a2928777ed.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/550/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/550/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          1,
+          49,
+          36,
+          9,
+          38,
+          22,
+          28,
+          29,
+          13,
+          30,
+          67,
+          66,
+          68,
+          78,
+          74,
+          55,
+          56,
+          57,
+          58,
+          59,
+          69,
+          70,
+          23,
+          8,
+          15,
+          16,
+          14,
+          41,
+          42,
+          43,
+          44,
+          62,
+          63
+        ],
+        "genreIds": [
+          "1"
+        ]
+      }
+    },
+    {
       "appid": 674940,
       "name": "Stick Fight: The Game",
       "playtimeForever": 610,
@@ -1719,59 +1772,6 @@
         "genreIds": [
           "1",
           "4"
-        ]
-      }
-    },
-    {
-      "appid": 550,
-      "name": "Left 4 Dead 2",
-      "playtimeForever": 494,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2025-01-18T07:25:04.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/550/7d5a243f9500d2f8467312822f8af2a2928777ed.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/550/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/550/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          1,
-          49,
-          36,
-          9,
-          38,
-          22,
-          28,
-          29,
-          13,
-          30,
-          67,
-          66,
-          68,
-          78,
-          74,
-          55,
-          56,
-          57,
-          58,
-          59,
-          69,
-          70,
-          23,
-          8,
-          15,
-          16,
-          14,
-          41,
-          42,
-          43,
-          44,
-          62,
-          63
-        ],
-        "genreIds": [
-          "1"
         ]
       }
     },
