@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-19T07:28:43.298Z",
+  "updatedAt": "2026-11-19T20:39:33.440Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-11-19T02:47:07.000Z"
+    "lastLogoff": "2026-11-19T16:28:51.000Z"
   },
   "stats": {
-    "gameCount": 260,
-    "playedGameCount": 185,
-    "totalMinutes": 180588,
-    "recentMinutes": 1850
+    "gameCount": 262,
+    "playedGameCount": 187,
+    "totalMinutes": 180817,
+    "recentMinutes": 1929
   },
   "games": [
     {
@@ -50,7 +50,7 @@
       "name": "Wallpaper Engine",
       "playtimeForever": 15922,
       "playtimeTwoWeeks": 1,
-      "lastPlayed": "2026-11-15T14:16:01.000Z",
+      "lastPlayed": "2026-11-19T08:51:42.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/431960/72edaed9d748c6cf7397ffb1c83f0b837b9ebd9d.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/431960/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/431960/",
@@ -956,7 +956,7 @@
       "appid": 1188930,
       "name": "Chrono Ark",
       "playtimeForever": 925,
-      "playtimeTwoWeeks": 682,
+      "playtimeTwoWeeks": 532,
       "lastPlayed": "2026-11-07T11:06:08.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
@@ -3441,6 +3441,36 @@
       }
     },
     {
+      "appid": 5480890,
+      "name": "Mayday Airways Demo",
+      "playtimeForever": 192,
+      "playtimeTwoWeeks": 192,
+      "lastPlayed": "2026-11-19T13:20:44.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/5480890/5489d0b2cec8b715823667370e1fa48bdb1eda5d.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/5480890/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/5480890/",
+      "storeInfo": {
+        "type": "demo",
+        "isFree": true,
+        "categoryIds": [
+          2,
+          1,
+          9,
+          38,
+          48,
+          10,
+          22
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "4",
+          "23",
+          "28"
+        ]
+      }
+    },
+    {
       "appid": 2593370,
       "name": "The Hungry Lamb: Traveling in the Late Ming Dynasty",
       "playtimeForever": 191,
@@ -4761,6 +4791,42 @@
           "23",
           "3",
           "2"
+        ]
+      }
+    },
+    {
+      "appid": 5175310,
+      "name": "Worst Class Ever",
+      "playtimeForever": 37,
+      "playtimeTwoWeeks": 37,
+      "lastPlayed": "2026-11-19T14:04:45.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/5175310/cd65a532953e089c1ca950a40334405d4ac118de.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/5175310/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/5175310/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          1,
+          49,
+          36,
+          47,
+          9,
+          38,
+          48,
+          22,
+          30,
+          68,
+          69,
+          23,
+          62
+        ],
+        "genreIds": [
+          "1",
+          "25",
+          "4",
+          "23",
+          "28"
         ]
       }
     },
