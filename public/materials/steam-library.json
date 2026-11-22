@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-21T19:17:58.774Z",
+  "updatedAt": "2026-11-22T06:52:17.309Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-11-21T17:53:42.000Z"
+    "lastLogoff": "2026-11-22T06:06:21.000Z"
   },
   "stats": {
     "gameCount": 262,
     "playedGameCount": 187,
     "totalMinutes": 180817,
-    "recentMinutes": 1179
+    "recentMinutes": 1150
   },
   "games": [
     {
@@ -1292,7 +1292,7 @@
       "appid": 701160,
       "name": "Kingdom Two Crowns",
       "playtimeForever": 795,
-      "playtimeTwoWeeks": 80,
+      "playtimeTwoWeeks": 52,
       "lastPlayed": "2026-11-08T07:45:06.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
@@ -5171,7 +5171,7 @@
       "appid": 993090,
       "name": "Lossless Scaling",
       "playtimeForever": 23,
-      "playtimeTwoWeeks": 1,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-11-08T04:26:59.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/993090/42900f430ed7828d2dfa25f07ac02e3de96bc520.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/993090/header.jpg",
