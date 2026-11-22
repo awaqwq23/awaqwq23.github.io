@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-22T06:52:17.309Z",
+  "updatedAt": "2026-11-22T19:42:51.943Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
     "status": 0,
-    "lastLogoff": "2026-11-22T06:06:21.000Z"
+    "lastLogoff": "2026-11-22T18:23:05.000Z"
   },
   "stats": {
     "gameCount": 262,
     "playedGameCount": 187,
     "totalMinutes": 180817,
-    "recentMinutes": 1150
+    "recentMinutes": 1087
   },
   "games": [
     {
@@ -881,7 +881,7 @@
       "appid": 2444750,
       "name": "Shape of Dreams",
       "playtimeForever": 1058,
-      "playtimeTwoWeeks": 57,
+      "playtimeTwoWeeks": 55,
       "lastPlayed": "2026-11-10T12:03:51.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2444750/d3ce738e87bae5369f078abed5cac1b5a50c21ad.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2444750/header.jpg",
@@ -1292,7 +1292,7 @@
       "appid": 701160,
       "name": "Kingdom Two Crowns",
       "playtimeForever": 795,
-      "playtimeTwoWeeks": 52,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-11-08T07:45:06.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/701160/7bf44c4e301a0f6fae78f697b39b5a1268223945.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/701160/header.jpg",
@@ -1524,7 +1524,7 @@
       "appid": 1942280,
       "name": "Brotato",
       "playtimeForever": 662,
-      "playtimeTwoWeeks": 1,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-11-08T08:18:37.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1942280/d9dfcab8f300a9548439f70bef7b5f4e53d0fc28.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1942280/header.jpg",
@@ -5387,7 +5387,7 @@
       "appid": 255710,
       "name": "Cities: Skylines",
       "playtimeForever": 11,
-      "playtimeTwoWeeks": 7,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-11-08T08:15:46.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/255710/6cf7b10dd29db28448ef79698ed2118a03617d63.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/255710/header.jpg",
@@ -6017,7 +6017,7 @@
       "appid": 5084260,
       "name": "Fireboy & Watergirl 1: The Forest Temple",
       "playtimeForever": 1,
-      "playtimeTwoWeeks": 1,
+      "playtimeTwoWeeks": 0,
       "lastPlayed": "2026-11-08T08:05:53.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/5084260/d0692ad25e0acd3b98ffeec585f4a34f6d9537a3.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/5084260/header.jpg",
