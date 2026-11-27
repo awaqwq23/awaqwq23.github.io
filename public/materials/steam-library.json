@@ -1,19 +1,19 @@
 {
   "status": "ready",
-  "updatedAt": "2026-11-27T08:37:20.931Z",
+  "updatedAt": "2026-11-27T21:19:08.633Z",
   "steamId": "76561198825902593",
   "profile": {
     "name": "awaqwq233",
     "url": "https://steamcommunity.com/profiles/76561198825902593/",
     "avatar": "https://avatars.steamstatic.com/2dbaaaafea7b99a6f70aa52e737976ca0632fb2e_full.jpg",
-    "status": 3,
-    "lastLogoff": "2026-11-26T16:31:01.000Z"
+    "status": 0,
+    "lastLogoff": "2026-11-27T18:38:10.000Z"
   },
   "stats": {
     "gameCount": 262,
     "playedGameCount": 187,
-    "totalMinutes": 180817,
-    "recentMinutes": 740
+    "totalMinutes": 181131,
+    "recentMinutes": 848
   },
   "games": [
     {
@@ -113,9 +113,9 @@
     {
       "appid": 2868840,
       "name": "Slay the Spire 2",
-      "playtimeForever": 8489,
-      "playtimeTwoWeeks": 390,
-      "lastPlayed": "2026-11-16T08:25:47.000Z",
+      "playtimeForever": 8490,
+      "playtimeTwoWeeks": 185,
+      "lastPlayed": "2026-11-27T13:18:11.000Z",
       "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/2868840/f92b09dab91f1d1738f72fe0dd9be18dcc2901f9.jpg",
       "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/2868840/header.jpg",
       "storeUrl": "https://store.steampowered.com/app/2868840/",
@@ -760,6 +760,35 @@
       }
     },
     {
+      "appid": 1188930,
+      "name": "Chrono Ark",
+      "playtimeForever": 1238,
+      "playtimeTwoWeeks": 313,
+      "lastPlayed": "2026-11-27T18:35:52.000Z",
+      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
+      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
+      "storeUrl": "https://store.steampowered.com/app/1188930/",
+      "storeInfo": {
+        "type": "game",
+        "isFree": false,
+        "categoryIds": [
+          2,
+          22,
+          29,
+          30,
+          18,
+          23,
+          62
+        ],
+        "genreIds": [
+          "25",
+          "23",
+          "3",
+          "2"
+        ]
+      }
+    },
+    {
       "appid": 1318690,
       "name": "shapez",
       "playtimeForever": 1192,
@@ -949,35 +978,6 @@
         "genreIds": [
           "1",
           "25"
-        ]
-      }
-    },
-    {
-      "appid": 1188930,
-      "name": "Chrono Ark",
-      "playtimeForever": 925,
-      "playtimeTwoWeeks": 0,
-      "lastPlayed": "2026-11-07T11:06:08.000Z",
-      "iconUrl": "https://media.steampowered.com/steamcommunity/public/images/apps/1188930/728763cce3dbc40320ee8ed4d5341329805b61c0.jpg",
-      "headerUrl": "https://cdn.akamai.steamstatic.com/steam/apps/1188930/header.jpg",
-      "storeUrl": "https://store.steampowered.com/app/1188930/",
-      "storeInfo": {
-        "type": "game",
-        "isFree": false,
-        "categoryIds": [
-          2,
-          22,
-          29,
-          30,
-          18,
-          23,
-          62
-        ],
-        "genreIds": [
-          "25",
-          "23",
-          "3",
-          "2"
         ]
       }
     },
